@@ -24,12 +24,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as PDF" options inside "Draft Programs" disabled
+    Then I see "Download as PDF" options inside "Internal Programs - Draft" disabled
 
   @62703    @disablingCSVExportFile-gPlanning
   Scenario: validate disabling of Excel download from menu option in flex table of programs-planning
@@ -39,12 +39,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as CSV" options inside "Draft Programs" disabled
+    Then I see "Download as CSV" options inside "Internal Programs - Draft" disabled
 
   @34026    @disblingQuickSearch-gPlanning
   Scenario: validate disabling of quick search in flex table of programs-planning
@@ -54,10 +54,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see quick search option is displayed
 
   @34027    @disablingAdvanceFilter-gPlanning
@@ -68,10 +68,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
 
   @34028    @disablingMenuIcon-gPlanning
@@ -82,11 +82,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    Then I see Menu icon is disabled from planning flex table "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see Menu icon is disabled from planning flex table "Internal Programs - Draft"
 
   @34029    @enableRecordSelectionForFlex-gPlanning
   Scenario: validate enabling of record selection check boxes in flex table of programs-planning
@@ -96,10 +96,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Record Selection | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "3" seconds
     Then I see select check box enabled in flex table
 
@@ -113,10 +113,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
       | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-1018                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "2" seconds
     Then I see total amount row in flex table is not displayed
 
@@ -128,10 +128,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see no "Total Records" count in "---program:-:programsTableId---"
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
@@ -144,10 +144,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Total Row Label | Automation Total | Programs           |                           | Total                      |
       | Flex Table List       | Enable Total    | true             | Programs           | Name                      | FTC-1018                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see changed label as "Automation Total" of last row name
 
   @34033    @enableAutoIndex-gPlanning
@@ -158,10 +158,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "#" in flex table header "toggleFlexTablePrograms"
 
   @34035    @disableSpecificStatusCategory-gPlanning @smoke
@@ -172,10 +172,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Filter Clause | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I softly do not see "Created" value in flex table id "---program:-:programsTableId---"
 
     Examples:
@@ -190,12 +190,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in new window | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     Then I see new tab is opened
 
   @34038    @editActionOpensInSameWindow-gPlanning @smoke
@@ -206,12 +206,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in same window | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     Then I see no new tab is opened
 
   @34039    @editActionOpensInOverLayWindow-gPlanning
@@ -222,12 +222,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in overlay | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     Then I see "Edit" opens in overLay window
 
   @34292    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshEntirePage-gPlanning
@@ -238,12 +238,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the entire page | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
     And I click on "Save" in the page details
@@ -257,12 +257,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -274,12 +274,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName     | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For User | Internal      | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -291,12 +291,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName        | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide For Context | Edit          | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -312,12 +312,12 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For Context | Edit                 | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Operator    | AND                  | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -333,12 +333,12 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide For Context | Edit                 | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Operator    | OR                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" icon for "Owner" is not displayed inside flex table
 
@@ -350,11 +350,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I hovering mouse on help text icon inside "Draft Programs" for flex table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I hovering mouse on help text icon inside "Internal Programs - Draft" for flex table
     Then I see "<new_helpText>" shown as help text
     Examples:
       | new_helpText             | old_helpText                                                                                                       |
@@ -368,12 +368,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Help | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Help" options inside "Draft Programs" enabled
+    Then I see "Help" options inside "Internal Programs - Draft" enabled
 
   @39298    @enablePageSizeFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
@@ -383,10 +383,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "Show" with page size dropdown at "---program:-:programsTableId---"
 
   @39299    @enablePaginationFieldAtFlexTable-gPlanning
@@ -397,10 +397,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
@@ -415,10 +415,10 @@ Business Need: Flex Table Component Scenarios
       | Flex Table:General    | Default Page Size | 20            | Programs           |                           |                            |
       | Flex Table List       | Enable Total      | false         | Programs           | Name                      | FTC-1018                   |
       | Flex Table:General    | Enable Total Row  | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "20" records inside flex table id "---program:-:programsTableId---"
 
   @40002 @helpTextFieldAtFlexTableColumnHeader-gPlanning @skipOnJenkins
@@ -429,10 +429,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Help Text | <new_helpText> | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I hovering mouse on help text icon inside "ID" for flex table column
     Then I see "<new_helpText>" shown as help text
 
@@ -448,10 +448,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override | Test          | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "Test" shown as flex table column title
 
   @40005    @enableTotalFieldAtFlexTable-gPlanning
@@ -463,10 +463,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Total     | true          | Programs           | Name                      | FTC-1018                   |
       | Flex Table:General    | Enable Total Row | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see total amount in flex table
 
   @40012    @sequenceFieldAtFlexTableAction-gPlanning
@@ -477,11 +477,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Sequence  | 2             | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" row action Button at position "1"
 
   @40014    @buttonHelpTextFieldAtFlexTableAction-gPlanning
@@ -492,11 +492,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Button Help Text | Automation Help | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Automation Help" as title for "Test program for automation - Created mode only" inside flex table action
 
   @40015    @actionURLFieldAtFlexTableAction-gPlanning
@@ -507,12 +507,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL | <newActionUrl> | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
@@ -527,11 +527,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see external link icon as "Test program for automation - Created mode only" for "Edit" inside flex table action
 
   @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning @smoke
@@ -544,13 +544,13 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location                   | Top           | ProgramRolesAndResponsibilities | Name                      | Edit                       |
       | Flex Table Action     | Header Action Display Type | Button        | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "Edit" button inside "Roles And Responsibilities" flex table
 
@@ -563,13 +563,13 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location  | Row           | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "New" icon for "Owner" is displayed inside flex table
 
@@ -581,12 +581,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Header Action Display Type | Menu          | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilities"
     Then I see "New" options inside "Roles And Responsibilities" enabled
@@ -599,12 +599,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Header Action Display Type | link          | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     Then I see "New" button inside "Roles And Responsibilities" flex table
 
@@ -616,11 +616,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue  |
       | Flex Table Action     | Header Action Display Type | Button        | Programs           | Name                      | View Submitted Applications |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    Then I see "View Submitted Applications" button inside "Draft Programs" flex table
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "View Submitted Applications" button inside "Internal Programs - Draft" flex table
 
   @40100    @showConfirmationBoxFieldForProgramFlexTAbleViewAction-gPlanning
   Scenario: Setup confirmation box for program flex table view action configuration and validating it at flex table of program-planning
@@ -630,12 +630,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | Programs           | Name                      | View                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "null" is displayed
 
   @40102    @ConfirmationMessageFieldForProgramFlexTAbleViewAction-gPlanning
@@ -648,12 +648,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | Programs           | Name                      | View                       |
       | Flex Table Action     | Confirmation Message  | Automation    | Programs           | Name                      | View                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table with table id "toggleFlexTablePrograms" without processing
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
     Then I see confirmation box with body "Automation" is displayed
 
   @40103    @modalTitleFieldForProgramFlexTAbleViewAction-gPlanning
@@ -666,12 +666,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action Behavior | Open in overlay  | Programs           | Name                      | View                       |
       | Flex Table Action     | Modal Title     | Automation Title | Programs           | Name                      | View                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see "Automation Title" opens in overLay window
 
   @wip @40106    @hideForProfileFieldAtProgramFlexTableEditAction-gPlanning @smoke @skiponjenkins @plscheckagain
@@ -686,11 +686,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide For Profile         | System Administrator | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression |                      | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      |                      | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -709,11 +709,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide For User            | Internal      | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression |               | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      |               | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -732,11 +732,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide For Context         | View          | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression |               | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      |               | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -756,11 +756,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject           | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
       | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -807,7 +807,7 @@ Business Need: Flex Table Component Scenarios
     And I "Approve" in the approval decision
     And I refresh the page
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see "Edit" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" is not displayed inside flex table
 
@@ -830,11 +830,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide Operator            | AND                  | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression |                      | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      |                      | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -857,11 +857,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action Sobject | Hide Operator            | OR                   | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Expression |                      | Programs           | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      |                      | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
     Examples:
@@ -876,11 +876,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName            | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:ProgramFlexTableExpressionJsonForViewAction | Programs           | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see "Edit" icon for "Test program for automation - Created mode only" is not displayed inside flex table
 
   @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
@@ -891,11 +891,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunities | Name                      | Create                     |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "Create" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table not displayed
 
   @40129    @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
@@ -905,11 +905,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User | Internal      | ActiveFundingOpportunities | Name                      | Create                     |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "Create" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table not displayed
 
   @40217    @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
@@ -922,11 +922,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide Operator    | AND                  | ActiveFundingOpportunities | Name                      | Create                     |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "Create" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table not displayed
 
   @40219    @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
@@ -940,11 +940,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunities | Name                      | Create                     |
       | Flex Table Action     | Hide Operator    | OR                   | ActiveFundingOpportunities | Name                      | Create                     |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "Create" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table not displayed
 
   @40220    @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
@@ -954,11 +954,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:ActiveFundingOpportunitiesFlexTableExpressionJson | ActiveFundingOpportunities | Name                      | Create                     |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    Then I see "Create" button inside "Draft Announcements" flex table not displayed
+    Then I see "New" button inside "Draft Announcements" flex table not displayed
 
   @40225    @activeFieldAtFlexTable-gPlanning @smoke
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
@@ -968,12 +968,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Active ?  | false         | Programs           | Name                      | FLV-1835                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I click toggle button for "Draft Programs"
-    Then I see "Active Programs" is not displayed inside program flex table dropdown
+    And I click toggle button to select "Internal Programs - Draft"
+    When I click toggle button for "Internal Programs - Draft"
+    Then I see "Internal Programs - Active" is not displayed inside program flex table dropdown
 
   @34295    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshtheGrid-gPlanning
   Scenario: validate flex table action field- refresh the grid
@@ -983,12 +983,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue    | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
@@ -1004,12 +1004,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh parent page | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     When I click on "Edit" icon for "Owner" to save inside subtab
@@ -1024,12 +1024,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Close modal and refresh grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
@@ -1039,12 +1039,12 @@ Business Need: Flex Table Component Scenarios
 
   @79734    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtFlexTable-gPlanning
   Scenario: validate by click on user value in table , respective user page should gets opened at FlexTable - gPlanning
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Nauman Shahid" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Nauman Shahid" icon for "Automation Internal Program for Testing" inside table
     Then I see "User" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
@@ -1057,10 +1057,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-1018                   |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see total amount in flex table
 
   @83081    @validateIfCustomSettingIsEnabledThenSaveButtonIsDisplayedAtTopAndBottomOfModalOnly-gPlanning
@@ -1068,16 +1068,16 @@ Business Need: Flex Table Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                                                              | name                           |
       | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                                                              | name                           |
       | true         | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
     When I navigate to "Planning" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     Then I softly see "Save" button at "Bottom" of  Modal window
@@ -1088,7 +1088,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                                                              | name                           |
       | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                                                              | name                           |
       | false        | 0            | a0b1C00000OGdbvQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
@@ -1096,9 +1096,9 @@ Business Need: Flex Table Component Scenarios
     When I navigate to "Planning" tab
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     Then I see "Save" button at "Bottom" of  Modal window
@@ -1114,14 +1114,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
@@ -1139,14 +1139,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_US  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
@@ -1164,14 +1164,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I see value "1/7/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
@@ -1190,13 +1190,13 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
     Then I see value "03/17/2021, 04:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
@@ -1215,13 +1215,13 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_US  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
     Then I see value "03/17/2021, 05:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
@@ -1240,13 +1240,13 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedMode1}"
     Then I see value "03/18/2021, 03:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
@@ -1256,10 +1256,10 @@ Business Need: Flex Table Component Scenarios
 
   @106401    @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTable
   Scenario: validate date inside value input box field is inserted successfully at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/16/2020 |
@@ -1267,10 +1267,10 @@ Business Need: Flex Table Component Scenarios
 
   @106403    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanAtFlexTable
   Scenario: validate Advance filter search for date field with greater than operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than | 09/16/2020 |
@@ -1281,10 +1281,10 @@ Business Need: Flex Table Component Scenarios
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than | 03/01/2022 |
@@ -1296,10 +1296,10 @@ Business Need: Flex Table Component Scenarios
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with Greater than or Equal to operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsTableIdNew---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date   | Greater than or Equal to | 01/01/2025                                      |
@@ -1310,10 +1310,10 @@ Business Need: Flex Table Component Scenarios
 
   @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with less than or Equal to operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than or Equal to | 09/16/2020 |
@@ -1323,10 +1323,10 @@ Business Need: Flex Table Component Scenarios
 
   @106409    @validateAdvanceFilterValueForDateFieldAtFlexTable
   Scenario: validate Advance filter search  for date field with equals operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/16/2020 |
@@ -1334,49 +1334,49 @@ Business Need: Flex Table Component Scenarios
 
   @118453    @validateQuickSearchDisplayedRelevantDataOnlyAtFlexTable
   Scenario: Validate quickSearch displayed relevant data only at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Program For Automation - Expression Builder 2"
     Then I softly see value "Test Program For Automation - Expression Builder 2" for title "Program Name" inside table "---program:-:programsTableId---"
     Then I softly do not see value "Test Program For Automation - Expression Builder" for title "Program Name" inside table "---program:-:programsTableId---"
 
   @119059    @validateQuickSearchDisplayedRelevantDataISearchedPicklistValueAtFlexTable
   Scenario: Validate quickSearch displayed relevant data if searched picklist value at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Change Requested"
     Then I softly see value "Change Requested" for title "Status" inside table "---program:-:programsTableId---"
     Then I softly do not see value "Created" for title "Status" inside table "---program:-:programsTableId---"
 
   @119074    @validateQuickSearchDisplayedRelevantDataISearchedLookupValueAtFlexTable
   Scenario: Validate quickSearch displayed relevant data if searched lookup value at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Department of Community Health"
     Then I softly see value "Department of Community Health" for title "Organization" inside table "---program:-:programsTableId---"
     Then I softly do not see value "SYSTEM" for title "Organization" inside table "---program:-:programsTableId---"
 
   @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
   Scenario: validate that cross icon is displayed at flex table quick search box
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
 
   @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
   Scenario: validate that cross icon is displayed at flex table quick search box
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see cross icon is displayed at search box at "toggleFlexTablePrograms"
 
@@ -1388,7 +1388,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTable | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1403,7 +1403,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                            | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithNotEqualsOperator | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1418,7 +1418,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                                   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorOnNameField | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1433,7 +1433,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                                      | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithNotEqualOperatorOnNameField | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1448,7 +1448,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                                    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorAndTwoFields | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1462,7 +1462,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue                                                                        | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Hide Columns | govgrants_config:HideColumnsAtAnnouncementFlexTableWithEqualOperatorOnMultipleFields | ActiveFundingOpportunities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1475,34 +1475,34 @@ Business Need: Flex Table Component Scenarios
 
   @130537    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageViewMode
   Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout view mode
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I hovering mouse on help text icon inside "Budget Period Details" for flex table
     Then I see help text is displayed at bottom
 
   @130538    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageEditMode
   Scenario: validate help text displayed at bottom of hekp icon at flex table in page layout edit mode
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I hovering mouse on help text icon inside "Budget Period Details" for flex table
     Then I see help text is displayed at bottom
 
   @130095    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFlexTable @skipOnJenkins
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
     When I hover mouse on lookup link "Christine GGPTEST5" at table
@@ -1523,10 +1523,10 @@ Business Need: Flex Table Component Scenarios
 
   @106402    @validateUserCanEnterDateManuallyAtAdvanceFilterAtFlexTable
   Scenario: validate user can enter date manually at Advance filter at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/16/2020 |
@@ -1540,16 +1540,16 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     Then I softly do not see value "12345678" for title "Number" inside table "---program:-:programsTableId---"
@@ -1566,16 +1566,16 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "12345678" into field "FundedAmount__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I softly see value "$12,345,678" for title "Funded Amount" inside table "---program:-:programsTableId---"
     Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:programsTableId---"
@@ -1594,17 +1594,17 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
       | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I softly see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
     Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
@@ -1615,10 +1615,10 @@ Business Need: Flex Table Component Scenarios
 
   @145475    @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTable
   Scenario: validate Advance filter search with does not contain operator at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Does not contains | test |
@@ -1634,16 +1634,16 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
 
@@ -1659,19 +1659,19 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Pagination | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
     Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Bottom"
 
   @148305    @validateQuickSearchWorkingForPartialValueFromPicklistFieldAtFlexTable
   Scenario:To verify, Picklist value is searchable in Quick search of Data table if partial keyword is entered.
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Create"
     And I pause execution for "4" seconds
     When I perform quick search for "Package Testing"
@@ -1681,10 +1681,10 @@ Business Need: Flex Table Component Scenarios
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containg numeric value followed by space at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "edu 2 program"
     And I pause execution for "10" seconds
     Then I see "edu 2 program" value in flex table id "---program:-:programsTableId---"
@@ -1692,17 +1692,17 @@ Business Need: Flex Table Component Scenarios
   @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containing special character followed by space at flex table
     Given I delete the record "Program @@/ created for special char" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Program @@/ created for special char" into field "fieldProgramName__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ created"
     And I pause execution for "3" seconds
     Then I see "Program @@/ created for special char" value in flex table id "---program:-:programsTableId---"
@@ -1710,17 +1710,17 @@ Business Need: Flex Table Component Scenarios
   @148894    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndNumericValueAtFlexTable
   Scenario: Validate quick search working containing space between alpha and numeric value at flex table
     Given I delete the record "Program 1 Created for numeric value" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Program 1 Created for numeric value" into field "fieldProgramName__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program 1 Created"
     And I pause execution for "8" seconds
     Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
@@ -1728,17 +1728,17 @@ Business Need: Flex Table Component Scenarios
   @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
   Scenario: Validate quick search working containing space between alpha and special character at flex table
     Given I delete the record "Program @@/ Created for special value" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Program @@/ Created for special value" into field "ProgramName__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "3" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ Created"
     And I pause execution for "10" seconds
     Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
@@ -1746,17 +1746,17 @@ Business Need: Flex Table Component Scenarios
   @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
   Scenario: Validate quick search working containing space between numeric and special character at flex table
     Given I delete the record "Program @@/ 1 Created for special value" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Program @@/ 1 Created for special value" into field "ProgramName__c"
     And I click on "Save and Close Modal" in the page details
     And I pause execution for "3" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ 1 Created"
     And I pause execution for "3" seconds
     Then I see "Program @@/ 1 Created for special value" value in flex table id "---program:-:programsTableId---"
@@ -1766,7 +1766,7 @@ Business Need: Flex Table Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "nge Req"
     And I pause execution for "15" seconds
     Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
@@ -1776,27 +1776,27 @@ Business Need: Flex Table Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Requested"
     And I pause execution for "10" seconds
     Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
 
   @150000    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet3AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "mitt" at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "mitt"
     And I pause execution for "3" seconds
     Then I softly see "Submitted for Approval" value in flex table id "---program:-:programsTableId---"
 
   @150003    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet4AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "rea" at flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "rea"
     Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
 
@@ -1810,17 +1810,17 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9265                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
@@ -1831,27 +1831,27 @@ Business Need: Flex Table Component Scenarios
 
   @151627    @validateIsSearchWorkingForLongTextSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for long text searched in flex table quick search box
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I pause execution for "3" seconds
-    Then I softly see "{Framework_recordUsed:programInCreatedModeOnly}" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:programsTableId---"
 
   @151631    @validateIsSearchWorkingForShortTextSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for short text searched in flex table quick search box
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test program for automation - Created"
     And I pause execution for "3" seconds
-    Then I softly see "{Framework_recordUsed:programInCreatedModeOnly}" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:programsTableId---"
 
   @148905    @validateIsSearchWorkingForSpecialCharNumberAndAlphabetsTogetherSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for special char,number,alphabets searched in flex table quick search box
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1862,12 +1862,12 @@ Business Need: Flex Table Component Scenarios
   @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable
   Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
@@ -1893,17 +1893,17 @@ Business Need: Flex Table Component Scenarios
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
       | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9265                   |
       | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-1542                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I enter value "1235" into field "Number_Test__c"
     And I click on "Save" in the page details
     When I pause execution for "6" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
@@ -1921,17 +1921,17 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
       | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I enter value "90000" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     Then I see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
 
@@ -1941,10 +1941,10 @@ Business Need: Flex Table Component Scenarios
 
   @155301    @validateIfUserSearchRecordAtQuickSearchThenRecordCountIsDisplayedCorrectlyUnderFlexTableShowRecord
   Scenario: Validate if user search any record then total record count should display correctly under showing total records
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program Created"
     And I pause execution for "3" seconds
     Then I see the text :
@@ -1955,7 +1955,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone            |
       | en_US  | America/Los_Angeles |
@@ -1971,7 +1971,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone            |
       | en_US  | America/Los_Angeles |
@@ -1987,7 +1987,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone            |
       | en_US  | America/Los_Angeles |
@@ -2003,7 +2003,7 @@ Business Need: Flex Table Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update the locale and timezone related changes:
       | locale | timeZone            |
       | en_US  | America/Los_Angeles |
@@ -2022,12 +2022,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue    | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
@@ -2043,12 +2043,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Close modal and refresh grid | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I record webelement at table "ProgramRolesAndResponsibilities" for column "Owner"
     And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilities" with wait for record
@@ -2064,12 +2064,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the entire page | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
     And I click on "Save" in the page details
@@ -2077,7 +2077,7 @@ Business Need: Flex Table Component Scenarios
 
   @174406 @sprint19 @jyoti
   Scenario:Data Table - To verify,lookup  fields should not  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
@@ -2089,7 +2089,7 @@ Business Need: Flex Table Component Scenarios
 
   @174403 @jyoti
   Scenario: To verify,lookup  fields should not be displayed as text in on edit  modal , when 'Show link as Text' checkbox is un-checked
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
@@ -2101,7 +2101,7 @@ Business Need: Flex Table Component Scenarios
 
   @174394 @jyoti
   Scenario: Data Table - To verify,lookup  fields should not  be displayed as text in on modal , when 'Show link as Text' checkbox is un-checked
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
@@ -2118,12 +2118,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -2141,12 +2141,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
@@ -2164,10 +2164,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2187,10 +2187,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2204,7 +2204,7 @@ Business Need: Flex Table Component Scenarios
 
 #  @flextablebug-test
 #  Scenario: Run flex table specific steps for specific time continuosly to ensure no error is displayed
-#    When I login as "Automation" user
+#    When I login to "As a Grantor" app as "ADMIN" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
 #    When I perform sequence of actions on flex table for "120" minute
@@ -2218,10 +2218,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see value "Internal Program" for title "Record Type ID" inside table "---program:-:programsTableId---"
     Examples:
       | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                     |
@@ -2229,7 +2229,7 @@ Business Need: Flex Table Component Scenarios
 
   @180701 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "All"
@@ -2238,7 +2238,7 @@ Business Need: Flex Table Component Scenarios
 
   @180704 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "Program"
@@ -2247,7 +2247,7 @@ Business Need: Flex Table Component Scenarios
 
   @180719 @jyoti
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "All"
@@ -2256,7 +2256,7 @@ Business Need: Flex Table Component Scenarios
 
   @180705 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "Announcement"
@@ -2265,7 +2265,7 @@ Business Need: Flex Table Component Scenarios
 
   @180717 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I click on global search and select "Application"
@@ -2274,7 +2274,7 @@ Business Need: Flex Table Component Scenarios
 
   @181411 @jyoti
   Scenario: Quick Search- To verify,When User seach " Sub Awards" in Quick Search box correct results should show
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Active Grants"
@@ -2289,11 +2289,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see quick search option is displayed
 
   @217223 @disableAdvanceFilterForpmuser
@@ -2304,28 +2304,28 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I pause execution for "6" seconds
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
 
   @217229 @IndexColumnIsNotDisplyed
   Scenario: To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I softly do not see "#" in flex table header "---program:-:programTableDivId---"
 
   @217333 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidId
   Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
       | ID | Contains | PG-343-036--- |
@@ -2333,10 +2333,10 @@ Business Need: Flex Table Component Scenarios
 
   @217334 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdPMuser
   Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
       | ID | Contains | PG-343-036--- |
@@ -2345,7 +2345,7 @@ Business Need: Flex Table Component Scenarios
   @217335 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdSPIuser
   Scenario: To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I click on advance filter "#advfApplications" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfApplications"
@@ -2360,10 +2360,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
       | Number Test | Equals to | 11,1,1,1 |
@@ -2381,10 +2381,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
       | Number Test | Equals to | 11,1,1,1 |
@@ -2404,7 +2404,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
       | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2425,7 +2425,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
       | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2446,7 +2446,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Show Confirmation Box | true          | ApplicationBudgetPeriods | Name                      | New                        |
       | Flex Table Action     | Confirmation Message  | Automation    | ApplicationBudgetPeriods | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2467,10 +2467,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2490,10 +2490,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2513,10 +2513,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2536,12 +2536,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I pause execution for "5" seconds
     When I navigate to "Financials" sub tab
     When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "---program:-:enhancedGridTableId---" panel
@@ -2559,10 +2559,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2574,7 +2574,7 @@ Business Need: Flex Table Component Scenarios
 
   @184286 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist field with 'not Equals to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2585,7 +2585,7 @@ Business Need: Flex Table Component Scenarios
 
   @184285 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist field with 'Equals to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2596,7 +2596,7 @@ Business Need: Flex Table Component Scenarios
 
   @184284 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with 'less  than or equal to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2608,7 +2608,7 @@ Business Need: Flex Table Component Scenarios
 
   @184283 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2621,7 +2621,7 @@ Business Need: Flex Table Component Scenarios
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2632,7 +2632,7 @@ Business Need: Flex Table Component Scenarios
 
   @184242 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2645,7 +2645,7 @@ Business Need: Flex Table Component Scenarios
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2656,7 +2656,7 @@ Business Need: Flex Table Component Scenarios
 
   @184240 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less than or equal to   ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2675,10 +2675,10 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Confirmation Message  | Automation    | TmpActiveGrantsGrid | Name                      | New                        |
       | Flex Table Action     | Show Confirmation Box | true          | TmpActiveGrantsGrid | Name                      | New                        |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2691,7 +2691,7 @@ Business Need: Flex Table Component Scenarios
 
   @174396 @sprint20
   Scenario: Data Table - To verify,lookup  fields should  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -2704,7 +2704,7 @@ Business Need: Flex Table Component Scenarios
 
   @184082 @sprint23 @userstoryid_174108
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with 'Contains' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2715,7 +2715,7 @@ Business Need: Flex Table Component Scenarios
 
   @184088 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Ends  with ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2726,7 +2726,7 @@ Business Need: Flex Table Component Scenarios
 
   @184089 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with 'Contains' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2737,7 +2737,7 @@ Business Need: Flex Table Component Scenarios
 
   @184091 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Does not Contains' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2748,7 +2748,7 @@ Business Need: Flex Table Component Scenarios
 
   @184107 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' start with ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2759,7 +2759,7 @@ Business Need: Flex Table Component Scenarios
 
   @184108 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Ends with  ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2770,7 +2770,7 @@ Business Need: Flex Table Component Scenarios
 
   @184230 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist  field with ' Equals to ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2781,7 +2781,7 @@ Business Need: Flex Table Component Scenarios
 
   @184232 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist  field with ' Not Equals to ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2792,7 +2792,7 @@ Business Need: Flex Table Component Scenarios
 
   @184237 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than  ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2803,7 +2803,7 @@ Business Need: Flex Table Component Scenarios
 
   @184087 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' start with ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2814,7 +2814,7 @@ Business Need: Flex Table Component Scenarios
 
   @184234 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'Equals to ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2825,7 +2825,7 @@ Business Need: Flex Table Component Scenarios
 
   @184085 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2836,12 +2836,12 @@ Business Need: Flex Table Component Scenarios
 
   @187565 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled  icon id displayed on the table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId1}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:NewProgramCreatedId1}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:NewProgramCreatedId1}" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
@@ -2850,7 +2850,7 @@ Business Need: Flex Table Component Scenarios
 
   @184238 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less  than or eual to ' Operator
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2861,12 +2861,12 @@ Business Need: Flex Table Component Scenarios
 
   @184238 @sprint23
   Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see field "Description" inside page block
 
@@ -2878,12 +2878,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see value "Gauravsingh GGPTEST5" for title "Full Name" inside table "---program:-:ProgramContactsTableId---"
 
@@ -2895,12 +2895,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Attachments" sub tab
     Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
 
@@ -2918,11 +2918,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see field "Applicant Organization" inside page block
 
@@ -2938,12 +2938,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramBudgetPeriod |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:Field ProgramName__c not found for sobject BudgetPeriod__c : table:a0I1500000ITVOSEA5 |
@@ -2960,7 +2960,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | SearchGrantorProgram |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search inside global search "Test"
@@ -2979,12 +2979,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Order By  | <newFieldsApi> | ProgramBudgetPeriod |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:unexpected token: 'ASC' |
@@ -2994,24 +2994,24 @@ Business Need: Flex Table Component Scenarios
 
   @105888    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsPMUser
   Scenario: validate flex  table at record table is rendered properly by Automation user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I click on "View" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "BP-8623" in "---program:-:budgetPeriodDetailsTableId---" panel
     Then I see "Status" shown as flex table column title
 
   @105918    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsAutomationUser
   Scenario: validate enhanced grid at record table is rendered properly by Automation user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View Program Details" icon for "Test program for automation - Created mode only" inside table
+    When I click on "View" icon for "Test program for automation - Created mode only" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "GT-test-005" in "---program:-:enhancedGridTableId---" panel
     Then I see "Project Title" shown as flex table column title
@@ -3024,127 +3024,127 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "#" shown inside flex table with id "---program:-:programTableDivId---"
 
   @217240 @ToVerifyNotRecordFoundInsideTable
   Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Heloo"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217241 @ToVerifyNoRecordsFoundDisplyedInFlexTable
   Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Heloo"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217242 @ToVerifyNoRecordsFoundDisplyedInFlexTableforspiuser
   Scenario: To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Heloo"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217243 @ToVerifyNotRecordFoundInsideTableForAdminuser
   Scenario: To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "100.10,00"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217244 @ToVerifyNotRecordFoundInsideTableForPMuser
   Scenario: To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "100.10,00"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217245 @ToVerifyNotRecordFoundInsideTableForSPIuser
   Scenario:  To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "100.10,00"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217273 @ToVerifyNotRecordFoundInsideTableForAdminuser(DateFormat)
   Scenario:  To verify that when user entered Date in wrong format, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "2020/09/16/"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217274 @ToVerifyNotRecordFoundInsideTableForSPIuser(DateFormat)
   Scenario: To verify that when user entered Date in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "2020/09/16/"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217275 @ToVerifyNotRecordFoundInsideTableForAdminuser(EGMDID)
   Scenario:To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217276 @ToVerifyNotRecordFoundInsideTableForPMuser(EGMDID)
   Scenario: To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217277 @ToVerifyNotRecordFoundInsideTableForSPIuser(EGMDID)
   Scenario: To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "17912222-PG-343"
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217278 @ToVerifyNotRecordFoundInsideTableForAdminuser @jyoti
   Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:PlanningProgramContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:PlanningProgramContactsTableId---"
 
   @217279 @ToVerifyNotRecordFoundInsideTableForPMuser @jyoti
   Scenario: To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "AllenX" in "---program:-:PlanningProgramContactsTableId---" panel
     Then I see "No records found" inside flex table with id "---program:-:PlanningProgramContactsTableId---"
@@ -3157,10 +3157,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" shown as flex table column title
 
   @217553 @FiledNameFromBakenddisplyedPM @jyoti
@@ -3171,12 +3171,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" shown as flex table column title
 
   @217554 @FiledNameFromBakenddisplyedSPIuser @jyoti
@@ -3187,9 +3187,9 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see "ID" shown as flex table column title
 
@@ -3201,7 +3201,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Order By  | <newFieldsApi> | SearchGrantorProgram |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search inside global search "Test"
@@ -3215,7 +3215,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
     When I login as "AUTOMATION-ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
@@ -3224,7 +3224,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
     When I login as "AUTOMATION-ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
@@ -3233,7 +3233,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
     When I login as "AUTOMATION-ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
@@ -3241,27 +3241,27 @@ Business Need: Flex Table Component Scenarios
 
   @206613 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
 
   @206616 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario:  To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
 
   @206620 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario:  To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
@@ -3269,27 +3269,27 @@ Business Need: Flex Table Component Scenarios
 
   @206621 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario:  To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
 
   @206623 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario:   To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
 
   @206625 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
   Scenario:   To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
@@ -3303,12 +3303,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
@@ -3320,12 +3320,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
@@ -3337,12 +3337,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
@@ -3354,12 +3354,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
@@ -3371,12 +3371,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
@@ -3388,10 +3388,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Upload" button is displayed
 
   @217214 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
@@ -3402,25 +3402,25 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Upload" button is displayed
 
   @217215 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI @dnyaneshwari
   Scenario:To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     Then I do not see "Upload" button is displayed
 
   @217272 @Norecordsfound @dnyaneshwari
   Scenario:To verify that when user entered Date in wrong format, then 'No records found' message get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "dfrtyuiodfgyhui"
     And I pause execution for "3" seconds
     Then I see the text :
@@ -3434,10 +3434,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see no "Total Records" count in "---program:-:programsTableId---"
 
   @217220 @TotalRecordCount @dnyaneshwari
@@ -3448,15 +3448,15 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "7" seconds
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see no "Total Records" count in "---program:-:programsTableId---"
 
   @217216 @PageSize @dnyaneshwari
@@ -3467,10 +3467,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
   @217217 @PageSize @dnyaneshwari
@@ -3481,15 +3481,15 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I re-login as "Automation-PM" user on "default" portal
     And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
   @217218 @PageSize @dnyaneshwari
@@ -3500,11 +3500,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I click toggle button to select "Internal Programs - Draft"
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
 
@@ -3516,10 +3516,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
   @217293 @DisableMenu @dnyaneshwari
@@ -3530,15 +3530,15 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
   @217294 @DisableMenu @dnyaneshwari
@@ -3549,57 +3549,57 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Disable Menu | true          | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I click toggle button to select "Internal Programs - Draft"
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
   @217415 @SortDirection @dnyaneshwari
   Scenario: To verify that on selecting None option for Sort direction, records on flex table get sorted by ascending order
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see grouped row value is in "Ascending" order
 
   @217416 @SortDirection @dnyaneshwari
   Scenario:  To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see grouped row value is in "Ascending" order
 
   @217417 @SortDirection @dnyaneshwari
   Scenario:  To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     Then I see grouped row value is in "Ascending" order
 
   @217418 @FilterCriteria @dnyaneshwari
   Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see record with text "Created" in "---program:-:programTableDivId---"
 
   @217419 @FilterCriteria @dnyaneshwari
   Scenario: To verify that if user not entered any filter criteria to display records, then all the available records get displayed
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see record with text "Approved" in "---program:-:programTableDivId---"
 
   @217420 @FilterCriteria @dnyaneshwari
   Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     Then I see record with text "Submitted to Grantor" in "---program:-:programTableDivId---"
 
@@ -3611,11 +3611,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I click toggle button to select "Internal Programs - Draft"
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
 
@@ -3627,14 +3627,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as PDF" options inside "Draft Programs" disabled
+    Then I see "Download as PDF" options inside "Internal Programs - Draft" disabled
 
   @217318 @disablingXls-ExportFile-gPlanning @jyoti
   Scenario: PM - UI - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
@@ -3644,15 +3644,15 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (XLS / CSV) | false         | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I see "Download as CSV" options inside "Draft Programs" disabled
+    Then I see "Download as CSV" options inside "Internal Programs - Draft" disabled
 
   @217555 @HideColoumnJsonNotHideData @jyoti
   Scenario: Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
@@ -3662,10 +3662,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" in flex table header "---program:-:programsTableId---"
 
   @217556 @HideColoumnJsonNotHideDataPMUser
@@ -3676,11 +3676,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" in flex table header "---program:-:programsTableId---"
 
   @217557 @HideColoumnJsonNotHideDataSPIUser
@@ -3691,11 +3691,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForChildFlexTableAtEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    And I click toggle button to select "Internal Programs - Draft"
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     Then I see "ID" in flex table header "---program:-:programTableDivId---"
 
@@ -3707,10 +3707,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" in flex table header "---program:-:programsTableId---"
 
   @217559 @HideCellJsonNotHideDataPmUser @jyoti
@@ -3721,11 +3721,11 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "ID" in flex table header "---program:-:programsTableId---"
 
   @217560  @HideCellJsonNotHideDataSPIUser @jyoti
@@ -3736,9 +3736,9 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | Programs           | Name                      | FTC-1016                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     And I pause execution for "8" seconds
     Then I see "ID" in flex table header "---program:-:programTableDivId---"
@@ -3751,12 +3751,12 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     Then I see "Total:" inside rows of enhanced grid id "---program:-:enhancedGridTableId---"
 
@@ -3768,14 +3768,14 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                                | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid1 | TmpActiveGrantsGrid | Name                      | FTC-1506                   |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
-    When I re-login to "Grants Portal" app as "Automation-SPI" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
     When I perform quick search for "AP-734-140"
     When I click on "View" icon for "AP-734-140" inside table
@@ -3786,9 +3786,9 @@ Business Need: Flex Table Component Scenarios
   Scenario:AdminConfig-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
     When I login to "As a Grantor" app as "Automation-Admin" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    Then I do not see "Help" options inside "Draft Programs" enabled
+    Then I do not see "Help" options inside "Internal Programs - Draft" enabled
 
   @217288 @Toverifydisabling'EnableHelp'HelpfeaturenotgedisplayedunderMenusectionforrespectiveflextable. @Vrishali
   Scenario: SPI-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
@@ -3799,7 +3799,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Help | false         | Applications       |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableApplications"
     Then I do not see "Help" options inside "Applications" enabled
@@ -3809,7 +3809,7 @@ Business Need: Flex Table Component Scenarios
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
     Then I do not see select check box enabled in flex table
     Examples:
@@ -3820,7 +3820,7 @@ Business Need: Flex Table Component Scenarios
   @217291 @verifydisablingEnableRecordSelectionrecordselectioncolumnnotgetdisplayedforrespectiveflextable. @Vrishali
   Scenario:SPI-To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I pause execution for "5" seconds
     Then I do not see select check box enabled in flex table
@@ -3835,7 +3835,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "#" shown inside flex table with id "toggleFlexTablePrograms"
     Examples:
       | User             |
@@ -3844,30 +3844,30 @@ Business Need: Flex Table Component Scenarios
 
   @231997 @ToVerifyEnterTheValueManuallyIt'sGettingResult @Jyoti
   Scenario: Quick search-To verify, Enter the value manually it's getting the result
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "34.345"
     Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
 
   @231998 @ToVerifyEnterTheValueManuallyIt'sGettingResult @Jyoti
   Scenario:  Quick search-To verify, Enter the value without semicolumn then the expected result is getting
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "343450"
     Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
 
   @208991 @FlexTableRecordRenderedProperly @Jyoti
   Scenario: validate flex  table at record table is rendered properly by internal user in edit mode and showing coloumn name as Status
-    When I login as "AUTOMATION-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -3875,12 +3875,12 @@ Business Need: Flex Table Component Scenarios
 
   @208986 @FlexTableRecordRenderedProperlyPMuser @Jyoti
   Scenario: validate flex  table at record table is rendered properly by internal user in edit mode and showing coloumn name as Status
-    When I login as "AUTOMATION-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -3888,28 +3888,28 @@ Business Need: Flex Table Component Scenarios
 
   @208981 @NoRecordsFoundDisplyedOnUI @Jyoti
   Scenario: Verify that user search  not crated record then after searching we can see "No records found" inside flex tbl for internal user
-    When I login as "AUTOMATION-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Automation For Testing"
     Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
 
   @208964 @ToVerifyDownloadASPDFIsDisplyedOnMenuIconInsideFlexTable @Jyoti
   Scenario: verify that Menu button is availble on flex table and after clicking on that we see "Download as pdf"
-    When I login as "AUTOMATION-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as PDF" inside flex table with id "---program:-:programTableDivId---"
 
   @208966 @ToVerifyDownloadACSVIsDisplyedOnMenuIconInsideFlexTable @Jyoti
   Scenario: verify that "Download as csv" is displaying on Menu button
-    When I login as "AUTOMATION-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     Then I see "Download as CSV" inside flex table with id "---program:-:programTableDivId---"
 
@@ -3922,7 +3922,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Applications       |                           |                            |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     Then I see "#" shown inside flex table with id "toggleFlexTableApplications"
 
@@ -3934,10 +3934,10 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     Then I see "<fieldDisplayNames>" in flex table header "toggleFlexTablePrograms"
 
     Examples:

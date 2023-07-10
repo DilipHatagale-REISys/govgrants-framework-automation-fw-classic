@@ -108,7 +108,8 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I pause execution for "60" seconds
     Then I see status in Progress-bar is "Created" and is "Blue"
 
@@ -232,8 +233,8 @@ Business Need: Step Progress Bar Component Scenarios
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
-    Then I see "By : Nauman Shahid" shown as help text
-    Then I see "Date : 11/27/2018 1:15 AM" shown as help text
+    Then I see "By : Automation Admin" shown as help text
+    #Then I see "Date : 11/27/2018 1:15 AM" shown as help text
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user

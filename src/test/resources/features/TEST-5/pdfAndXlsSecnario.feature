@@ -39,7 +39,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
-    Then I see "Active Programs" on page "1" of "govgrants" pdf file
+    Then I see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
   @35095    @validateSkipFormForDownload-gapplications @smoke
   Scenario: Setup skip form download for 'General Application Budget Form' in configuration and validating inside Applications view
@@ -52,8 +52,8 @@ Business Need: All pdf and xls related scenario including component and complete
      When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "AP-755-198"
-    When I click on "View" icon for "Test announcement for program 2" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
