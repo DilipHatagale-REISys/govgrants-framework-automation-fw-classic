@@ -754,12 +754,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-      | Page Tabs Config          | Highlights Panel?        | false                      | Grantee State Program | Name                      | TAB-409                    |
+      | Page Tabs Config          | Highlights Panel?        | false                      | Grantor State Program | Name                      | TAB-409                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                | fieldNewValue              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject           | Hide Decision Expression |                            | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject           | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-      | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantee State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "10" seconds
@@ -804,7 +804,7 @@ Business Need: Flex Table Component Scenarios
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
@@ -1305,13 +1305,12 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsTableIdNew---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date   | Greater than or Equal to | 01/01/2025                                        |
+      | Start Date   | Greater than or Equal to | 06/19/2023                                        |
       | Program Name | Contains                 | Automation Internal Program for Time Zone Testing |
-    When I perform quick search for "01/01/2025"
-    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:ProgramsTableIdNew---"
-    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:ProgramsTableIdNew---"
+    Then I softly see value "06/19/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with less than or Equal to operator at flex table
@@ -1477,7 +1476,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    And I pause execution for "10" seconds
+    And I pause execution for "15" seconds
     When I hovering mouse on help text icon inside "Contacts@1234567890!@#$%^&*()" for flex table
     Then I see help text is displayed at bottom
 
@@ -1673,8 +1672,8 @@ Business Need: Flex Table Component Scenarios
     And I pause execution for "4" seconds
     When I perform quick search for "Road Construction"
     And I pause execution for "10" seconds
-    Then I softly see "Road Construction" value in flex table id "---program:-:ProgramsTableIdNew---"
-    Then I softly do not see "Automation Test" value in flex table id "---program:-:ProgramsTableIdNew---"
+    Then I softly see "Road Construction" value in flex table id "---program:-:programsTableId---"
+    Then I softly do not see "Automation Test" value in flex table id "---program:-:programsTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containg numeric value followed by space at flex table
@@ -1806,7 +1805,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9265                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1887,7 +1886,7 @@ Business Need: Flex Table Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantee State Program | Name                      | PBD-9265                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
       | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-1542                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2227,7 +2226,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
     Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
@@ -2236,7 +2235,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Program"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
     Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
@@ -2245,7 +2244,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: Search Table-To verify,the date-time column then the same format displayed as in the record's field
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
     Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
@@ -2254,7 +2253,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Announcement"
     When I perform quick search inside global search "AN-343-028"
     Then I see value "10/20/2021, 03:09 AM" for title "Application Deadline" inside table "PageTemplateApp"
@@ -2263,7 +2262,7 @@ Business Need: Flex Table Component Scenarios
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Application  "
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Application"
     When I perform quick search inside global search "AP-755-214"
     Then I see value "11/27/2018, 07:10 PM" for title "Application Deadline" inside table "PageTemplateApp"
@@ -2273,9 +2272,9 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    And I click toggle button to select "Active Grants"
-    When I perform quick search for "Sub Awards"
-    Then I see value "Sub Awards" for title "Spend Type" inside table "flexTableDivId"
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush  Application"
+    Then I see value "Vrush  Application" for title "Grant Title" inside table "---program:-:programTableDivId---"
 
   @217231 @disablequickSeachForpmuser
   Scenario:  To verify that on disabling 'Enable Quick Search' Quick search feature not displayed on UI for respective flex table
@@ -2287,7 +2286,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see quick search option is displayed
@@ -2303,7 +2302,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I pause execution for "6" seconds
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
@@ -2324,7 +2323,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
-      | ID | Contains | PG-343-036--- |
+      | EGMS ID | Contains | PG-343-036--- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217334 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdPMuser
@@ -2335,7 +2334,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfPrograms"
-      | ID | Contains | PG-343-036--- |
+      | EGMS ID | Contains | PG-343-036--- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217335 @AdvanceFilterShowingNoRecordsFoundWheWeenterInvalidIdSPIuser
@@ -2345,7 +2344,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Applications" tab
     When I click on advance filter "#advfApplications" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "advfApplications"
-      | ID | Contains | 0392222AP-603- |
+      | EGMS ID | Contains | 0392222AP-603- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
   @217336 @NumberFieldInWrongFormat
@@ -2378,7 +2377,7 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
@@ -2598,9 +2597,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed and Archived Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than or Equal to | 11/26/2021  01:11 PM |
+      | Application Due Date | Less than or Equal to | 04/23/2023 |
     When I pause execution for "2" seconds
-    Then I softly see value "11/15/2021 3:16 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+    Then I softly see value "04/23/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184283 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
@@ -2610,10 +2609,10 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed and Archived Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than or Equal to | 08/30/2017, 01:07 PM |
+      | Application Due Date | Greater than or Equal to | 04/23/2023 |
     When I pause execution for "10" seconds
-    When I perform quick search for "08/30/2017"
-    Then I softly see value "08/30/2017, 01:07 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+   # When I perform quick search for "08/30/2017"
+    Then I softly see value "04/23/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
@@ -2623,8 +2622,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed and Archived Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Less than | 04/24/2018, 07:45 PM |
-    Then I softly see value "10/31/2017, 02:37 AM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+      | Application Due Date | Less than | 05/02/2023 |
+    Then I softly see value "05/02/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184242 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  Greater than  ' Operator
@@ -2635,9 +2634,9 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Application Deadline | Greater than | 12/04/2017, 01:05 AM |
+      | Application Due Date | Greater than | 04/23/2023 |
     And I pause execution for "5" seconds
-    Then I softly see value "04/24/2018, 07:45 PM" for title "Application Deadline" inside table "---program:-:programTableDivId---"
+    Then I softly see value "04/23/2023" for title "Application Due Datee" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
@@ -2703,43 +2702,43 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Contains | AN-852-006 |
-    Then I softly see value "AN-852-006" for title "EGMS ID" inside table "---program:-:programTableDivId---"
+      | EGMS ID | Contains | AN-A11-158 |
+    Then I softly see value "AN-A11-158" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184088 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Ends  with ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Ends with | 501-032 |
-    Then I softly see value "AN-501-032" for title "EGMS ID" inside table "---program:-:programTableDivId---"
+      | EGMS ID | Ends with | A11-159 |
+    Then I softly see value "AN-A11-159" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184089 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with 'Contains' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Contains | for school |
-    Then I softly see value "for school" for title "Announcement Name" inside table "---program:-:programTableDivId---"
+      | Announcement Name | Contains | Calendar Testing |
+    Then I softly see value "Calendar Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184091 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Does not Contains' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Does not contains | Announcement created for calendar test |
+      | Announcement Name | Does not contains | Announcement created for calendar test |
     Then I softly do not see value "Announcement created for calendar test" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184107 @sprint23
@@ -2747,22 +2746,22 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Starts with | Announcement created for calendar test |
-    Then I softly see value "Announcement created for calendar test" for title "Announcement Name" inside table "---program:-:programTableDivId---"
+      | Announcement Name | Starts with | Program For Announcement |
+    Then I softly see value "Program For Announcement Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184108 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Ends with  ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | Announcement Title | Ends with | Announcement created for calendar test |
-    Then I softly see value "Announcement created for calendar test" for title "Announcement Name" inside table "---program:-:programTableDivId---"
+      | Announcement Name | Ends with | Application |
+    Then I softly see value "Program For Application" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184230 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for picklist  field with ' Equals to ' Operator
@@ -2805,7 +2804,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Closed and Archived Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
-      | ID | Starts with | AN-852 |
+      | EGMS ID | Starts with | AN-852 |
     Then I softly see value "AN-852-006" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184234 @sprint23 @dnyaneshwari
@@ -2826,8 +2825,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed and Archived Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside id "advfActiveFundingOpportunitiesAll"
-      | ID | Does not contains | AN-343-030 |
+    When I enter advance filter values inside id "---program:-:programTableDivId---"
+      | EGMS ID | Does not contains | AN-343-030 |
     Then I do not see value "AN-343-030" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @187565 @sprint23
@@ -2836,35 +2835,35 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:NewProgramCreatedId1}"
-    When I click on "View" icon for "{Framework_recordUsed:NewProgramCreatedId1}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see field "Description" inside page block
+    Then I see field "Description Field" inside page block
 
   @184238 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less  than or eual to ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values inside id "---program:-:programTableDivId---"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$0.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
-  @184238 @sprint23
-  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-    When I navigate to "Overview" sub tab
-    Then I see field "Description" inside page block
+#  @184238 @sprint23
+#  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
+#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I setup my app as "As a Grantor"
+#    And I navigate to "Planning" tab
+#    And I click toggle button to select "Internal Programs - Active"
+#    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
+#    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+#    When I navigate to "Overview" sub tab
+#    Then I see field "Description Field" inside page block
 
   @174393 @sprint20 @needtocheckshowlinknotrevertall
   Scenario: Data Table - To verify, Relationship fields of a record in Data table should not be displayed as text when 'Show link as Text' checkbox is checked
@@ -2873,15 +2872,15 @@ Business Need: Flex Table Component Scenarios
       | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-13602                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see value "Gauravsingh GGPTEST5" for title "Full Name" inside table "---program:-:ProgramContactsTableId---"
+    Then I softly see value "Automation FO" for title "Name" inside table "---program:-:ProgramContactsTableId---"
 
   @173822 @sprint20
   Scenario: Data Table - To verify, Lookup  fields of a record in Data table should be displayed as text when 'Show link as Text' checkbox is checked
@@ -2890,11 +2889,11 @@ Business Need: Flex Table Component Scenarios
       | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-13602                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Attachments" sub tab
@@ -2913,7 +2912,7 @@ Business Need: Flex Table Component Scenarios
       | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-1558                   |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-13602                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2937,7 +2936,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
@@ -2978,7 +2977,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     When I navigate to "Overview" sub tab
@@ -2993,24 +2992,24 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "PG-A11-1244"
+    When I click on "View" icon for "PG-A11-1244" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "BP-8623" in "---program:-:budgetPeriodDetailsTableId---" panel
-    Then I see "Status" shown as flex table column title
+    When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
+    Then I see "Name" shown as flex table column title
 
   @105918    @verifyThatEnhancedGridIsDisplayedAtRecordLevelByLoggedInAsAutomationUser
   Scenario: validate enhanced grid at record table is rendered properly by Automation user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation - Created mode only"
-    When I click on "View" icon for "Test program for automation - Created mode only" inside table
-    When I navigate to "Financials" sub tab
-    When I perform quick search for "GT-test-005" in "---program:-:enhancedGridTableId---" panel
-    Then I see "Project Title" shown as flex table column title
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "PG-A11-1244"
+    When I click on "View" icon for "PG-A11-1244" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "govgrantsuat@gmail.com.invalid" in "---program:-:programContactsTableId---" panel
+    Then I see "Email" shown as flex table column title
 
   @217228 @ToCheckIndexColumnIsPresentInsideTable
   Scenario: To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
@@ -3208,88 +3207,88 @@ Business Need: Flex Table Component Scenarios
       | NameName,Id,ProgramName__c,Account__c, | Name             |
 
   @206586 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
-    When I login as "AUTOMATION-ADMIN" user
+  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
+     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206610 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
-    When I login as "AUTOMATION-ADMIN" user
+  Scenario: To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
+     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206612 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario: To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
-    When I login as "AUTOMATION-ADMIN" user
+  Scenario: To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
+     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206613 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
+  Scenario: To verify - when user click on bulk PDF then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for Automation user
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206616 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario:  To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for Automation user
+  Scenario:  To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for Automation user
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206620 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario:  To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display
+  Scenario:  To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206621 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario:  To verify - when user click on bulk PDF then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+  Scenario:  To verify - when user click on bulk PDF then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for internal user
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206623 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario:   To verify - when user click on bulk CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+  Scenario:   To verify - when user click on bulk CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for internal user
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @206625 @BulkPdfandBulkCsv @sprint5 @dnyaneshwari
-  Scenario:   To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator." message should get display for internal user
+  Scenario:   To verify - when user click on bulk PDF and CSV then "You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator." message should get display for internal user
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
     Then I see the following message in the page details contains:
-      | You will receive an email within 30 mins. If you haven't receive any response please contact to system adminstrator. |
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
   @207067 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
   Scenario: E-grid - To verify Subtotal and Total label displayed properly on 1st page and also on other pages.

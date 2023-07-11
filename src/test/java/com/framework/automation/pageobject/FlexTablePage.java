@@ -66,14 +66,16 @@ public class FlexTablePage extends GovGrantsManager {
      * assert true if check box select record enabled
      */
     public void assertFlexTabelRecordSelectionEnabled(String usage) {
-        try{
-       if(usage.equalsIgnoreCase("see")){
-            Assert.assertTrue(isSelectRecordCheckBox());
-       }else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isSelectRecordCheckBox());
-       }}catch (Exception e) {
+        try {
+            if (usage.equalsIgnoreCase("see")) {
+                Assert.assertTrue(isSelectRecordCheckBox());
+            } else if (usage.equalsIgnoreCase("do not see")) {
+                Assert.assertFalse(isSelectRecordCheckBox());
             }
+        } catch (Exception e) {
         }
+    }
+
     /**
      * assert true if total row calculation is disabled
      */
@@ -163,7 +165,8 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')] " +
-                "| //div//a[@title='" + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
+                "| //div//a[@title='" + blockTitle + "']/..//span[contains(@class,'fa-info')]" +
+                "| //span[text()='" + blockTitle + "']/ancestor::a/following-sibling::span/helpicon[@help-text='flexTableConfig.HeaderDescription']"));
     }
 
     /**
@@ -1114,6 +1117,7 @@ public class FlexTablePage extends GovGrantsManager {
 
     /**
      * return true if field is required displayed in edit mode
+     *
      * @param fieldApiName
      */
     private boolean assertFieldIsRequired(String fieldApiName) {
@@ -1131,8 +1135,8 @@ public class FlexTablePage extends GovGrantsManager {
      * saved total page records and validate it in refresh mode
      */
 
-    public void assertFieldRelatedPageRecords(String id, String key){
-        By record = By.xpath("(//div[@id='"+id+"']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
+    public void assertFieldRelatedPageRecords(String id, String key) {
+        By record = By.xpath("(//div[@id='" + id + "']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
         I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
     }
 }
