@@ -159,4 +159,23 @@ public class SendEmail_Test8Page extends GovGrantsManager {
         I.amPerforming().click().on(ByUsing.xpath("//table[@class='table']/tbody/tr/td[contains(@data-title,'File-Name') and contains(text(),'" + fileName + "')]/following-sibling::td/a"));
     }
 
+    public void assertTextDisplayedOrNot(String usage, String displayedText) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(textDisplayedInSendEmailModal(displayedText)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(textDisplayedInSendEmailModal(displayedText)).isFalse();
+        }
+    }
+
+    private Boolean textDisplayedInSendEmailModal(String displayedText) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='sendEmail']/descendant::label[contains(text(),'" + displayedText + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
 }

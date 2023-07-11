@@ -71,4 +71,9 @@ public class SendEmail_Test8Steps {
         sendEmail_Test8Page.clickOnFileButton(fileName);
     }
 
+
+    @Then("^I (see|do not see) the text \"([^\"]*)\" in send email page$")
+    public void iSeeTheTextInSendEmailPage(String usage, String displayedText) {
+        sendEmail_Test8Page.assertTextDisplayedOrNot(usage, displayedText);
+    }
 }

@@ -16,7 +16,7 @@ Business Need: Send Email Component Scenarios
 #      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
@@ -46,7 +46,7 @@ Business Need: Send Email Component Scenarios
 #      | m031C000000k9o8QAA | EnableEmailValidation | true         | GNT__KeyValueHolder__mdt |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
@@ -74,7 +74,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -93,20 +93,8 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
-  @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
+  @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -116,8 +104,9 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "ashwini M" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-phone" with user "ashwini M" is displayed on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-users" with user "Automation SPI" is displayed on send email modal
+    Then I see iconName "fa fa-users" with user "Automation PK" is displayed on send email modal
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
   Scenario: Validate If Group checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
@@ -126,7 +115,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -142,9 +131,8 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-users" with user "test group 1" is displayed on send email modal
-    Then I see iconName "fa fa-users" with user "test group 2" is displayed on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-users" with user "group 1" is displayed on send email modal
 
   @69214 @validateIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
@@ -153,7 +141,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -179,7 +167,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -195,24 +183,15 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "ashwini M" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-phone" with user "ashwini M" is displayed on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
+    Then I see below users is displayed in suggestion box under send email modal:
+      | userName       |
+      | Automation PM  |
+      | Automation SPI |
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
-  Scenario: Validate If Internal+ External checkbox is checked At CC Field then only Group is shown in suggestion box at send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario:Verify if Internal+External user checkbox is checked and search user in CC email then both Internal+External users is displayed in suggestion
+   When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -222,11 +201,12 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Au" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName      |
-      | Automation PM |
-      | Bushan Paul   |
+      | userName       |
+      | Automation PM  |
+      | Automation FO  |
+      | Automation EXE |
 
   @69090 @validateIfAttachmentUploadedAndEmailSendThenEmailIsSentWithUploadedFile
   Scenario: Validate If attachment uploaded and email is send then email is sent with uploaded attachment under send email modal
@@ -241,7 +221,7 @@ Business Need: Send Email Component Scenarios
 #      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
@@ -274,7 +254,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -301,7 +281,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -328,7 +308,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -359,7 +339,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -386,7 +366,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -413,14 +393,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -451,14 +431,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -488,14 +468,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -530,7 +510,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -555,7 +535,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -585,7 +565,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -618,7 +598,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -645,7 +625,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -671,7 +651,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -697,7 +677,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -743,7 +723,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -768,7 +748,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -796,7 +776,7 @@ Business Need: Send Email Component Scenarios
 #      | en_US  | America/New_York |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update the locale and timezone related changes:
 #      | locale | timeZone     |
 #      | en_IN  | Asia/Kolkata |
@@ -821,7 +801,7 @@ Business Need: Send Email Component Scenarios
 #      | en_US  | America/New_York |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update the locale and timezone related changes:
 #      | locale | timeZone         |
 #      | en_CA  | America/New_York |
@@ -846,7 +826,7 @@ Business Need: Send Email Component Scenarios
 #      | en_US  | America/New_York |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    And I update the locale and timezone related changes:
 #      | locale | timeZone       |
 #      | en_US  | America/Panama |
@@ -868,7 +848,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -898,7 +878,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -928,7 +908,7 @@ Business Need: Send Email Component Scenarios
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -959,7 +939,7 @@ Business Need: Send Email Component Scenarios
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -991,7 +971,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1026,7 +1006,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1063,7 +1043,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1123,7 +1103,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1160,7 +1140,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1190,7 +1170,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1221,7 +1201,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1234,7 +1214,7 @@ Business Need: Send Email Component Scenarios
 #    And I update custom metadata setting changes:
 #      | id                 | label                          | booleanValue | customMetaDataApiName    |
 #      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1277,7 +1257,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1308,14 +1288,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1340,7 +1320,7 @@ Business Need: Send Email Component Scenarios
     And I refresh the page
     When I navigate to "Collab" sub tab
     When I perform quick search for "Re: Test Automation Email1" in "---program:-:communicationHistoryTableId---" panel
-    Then I see "Re: Test Automation Email1" value in flex table id "---program:-:communicationHistoryTableId---"
+    Then I see "RE: Test Automation Email1" value in flex table id "---program:-:communicationHistoryTableId---"
 
   @116290 @validateNameIsDisplayedForExternalUserSelectedInToFieldInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field then name of user is displayed in view modal
@@ -1349,14 +1329,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1385,14 +1365,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1432,14 +1412,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1485,14 +1465,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1535,14 +1515,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1553,10 +1533,9 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "ExternalP User 1" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
-    When I select value "ExternalP User 1" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "Dipak@gmail.com" into field "{testData:ToField}" on send email modal
+    When I enter value "" into field "{testData:ToField}" on send email modal
     Then I softly do not see user suggestion box displayed at send email modal
 
   @118790 @validateEmailIsSentSuccessfullyToMultipleGroupsAndIsDisplayedInToFieldAtSendEmailModal
@@ -1566,14 +1545,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1597,7 +1576,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -1610,7 +1589,7 @@ Business Need: Send Email Component Scenarios
 #    And I update custom metadata setting changes:
 #      | id                 | label                          | booleanValue | customMetaDataApiName    |
 #      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1707,14 +1686,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1740,14 +1719,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1773,14 +1752,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1806,14 +1785,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1839,14 +1818,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1873,14 +1852,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1906,14 +1885,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1940,14 +1919,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1973,14 +1952,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2007,14 +1986,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2040,14 +2019,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2073,7 +2052,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -2086,7 +2065,7 @@ Business Need: Send Email Component Scenarios
 #    And I update custom metadata setting changes:
 #      | id                 | label                          | booleanValue | customMetaDataApiName    |
 #      | m031C000000XZXyQAO | SendEmailFilesLinkConfigHolder | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2135,7 +2114,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -2150,9 +2129,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    Then I see the text :
-      | Send Copy (Cc) to Me |
-    Then I see the text "Hello Eric FD," inside Body
+    Then I see the text "Send Copy (Cc) to Me" in send email page
 
   @150757 @verifyHelpTextAtSendCopyCCToMeFieldIsPresentOnModalWhileSendingEmail
   Scenario: Validate display help text at "Send Copy (Cc) to Me" field on send email modal
@@ -2161,7 +2138,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -2186,7 +2163,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -2201,12 +2178,8 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "ashwinimahore456@gmail.com" into field "{testData:ToField}" on send email modal
-    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
-    And I enter check value as "" for label "{testData:SendCopyCheckbox}"
-    When I click on "Send" button in send email modal
-    And I pause execution for "3" seconds
-    Then I see value "ashwini.mahore@yopmail.com" for label "{testData:CcField}"
+    And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
+    Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
   @147387    @validateSingleAttachmentCanBeAttachedAtSendInvitationModalForAdminUser
   Scenario: validate single attachment can be attached at send invitation modal for admin user
@@ -2243,14 +2216,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2274,14 +2247,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2315,14 +2288,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2333,26 +2306,14 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "sham" into field "{testData:ToField}" on send email modal
+    When I enter value "dilip" into field "{testData:ToField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName        |
-      | Shambhavi Burge |
+      | userName       |
+      | DILIP Hatagale |
 
   @163533 @ValidateUserSelectInternalCcFieldItShowActiveInternalUserWithStandardUser
   Scenario: Validate User Select Internal Cc Field It Show Active Internal User With Standard User
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2363,26 +2324,14 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "sham" into field "{testData:CcField}" on send email modal
+    When I enter value "dilip" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName        |
-      | Shambhavi Burge |
+      | userName       |
+      | DILIP Hatagale |
 
   @163534 @ValidateUserSelectInternalToFieldItShowActiveInternalUserWithStandardUserAndShowContactOfUser
   Scenario: Validate User Select Internal To Field It Show Active Internal User With Standard User And Show Contact Of User
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2393,27 +2342,15 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Davi" into field "{testData:ToField}" on send email modal
+    When I enter value "Tejashree" into field "{testData:ToField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName          |
-      | David PM          |
-      | Davinder GGPTEST5 |
+      | userName            |
+      | Tejashree Tejashree |
+      | Tejashree Damdhar   |
 
   @163535 @ValidateUserSelectInternalCcFieldItShowActiveInternalUserWithStandardUserAndShowContactOfUser
   Scenario: Validate User Select Internal Cc Field It Show Active Internal User With Standard User And Show Contact Of User
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2424,11 +2361,11 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Davi" into field "{testData:CcField}" on send email modal
+    When I enter value "Tejashree" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName          |
-      | David PM          |
-      | Davinder GGPTEST5 |
+      | userName            |
+      | Tejashree Tejashree |
+      | Tejashree Damdhar   |
 
   @161867 @ValidateUserSendEmailWithMultipleEmailAddressesAreSeparatedBySemicolon
   Scenario: Validate User Send Email With Multiple Email Addresses Are Separated By Semicolon
@@ -2437,14 +2374,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2468,14 +2405,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2504,7 +2441,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -2531,14 +2468,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2563,14 +2500,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2595,14 +2532,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2629,14 +2566,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2662,14 +2599,14 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
 #    And I update custom global setting changes:
 #      | id                 | ownerId            | booleanValue               | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2696,15 +2633,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2758,15 +2695,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2809,15 +2746,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2861,15 +2798,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2912,15 +2849,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2963,15 +2900,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3012,15 +2949,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3088,15 +3025,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3136,15 +3073,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3186,15 +3123,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3258,15 +3195,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3333,15 +3270,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3411,15 +3348,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3471,15 +3408,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3529,15 +3466,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3589,15 +3526,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3646,15 +3583,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3697,15 +3634,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3749,15 +3686,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3799,15 +3736,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3854,15 +3791,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3930,15 +3867,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4006,15 +3943,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4068,15 +4005,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4135,15 +4072,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4202,15 +4139,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4257,15 +4194,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4322,15 +4259,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4393,15 +4330,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4467,15 +4404,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4526,15 +4463,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4584,8 +4521,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4621,8 +4558,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4658,8 +4595,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4672,7 +4609,7 @@ Business Need: Send Email Component Scenarios
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "test group 2" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
+    When I enter value "group 1" into field "{testData:CcField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160256 @jyoti
@@ -4682,8 +4619,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4710,15 +4647,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4782,15 +4719,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4842,15 +4779,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4913,15 +4850,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4987,8 +4924,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5020,8 +4957,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5042,8 +4979,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5068,8 +5005,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5103,8 +5040,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5127,8 +5064,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5164,8 +5101,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5202,8 +5139,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5223,8 +5160,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5261,8 +5198,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5273,7 +5210,7 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    When I enter value "dilip" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160226 @jyoti
@@ -5283,8 +5220,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5309,8 +5246,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5334,8 +5271,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5368,8 +5305,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5403,15 +5340,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5478,15 +5415,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5543,15 +5480,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5614,15 +5551,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5686,15 +5623,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5748,15 +5685,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5805,15 +5742,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5907,15 +5844,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5998,15 +5935,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6080,15 +6017,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6147,15 +6084,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6206,15 +6143,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6293,15 +6230,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6363,15 +6300,15 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-026                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
+#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
 #    Given I have "customMetaData" configuration as below:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
 #    And I update custom metadata setting changes:
 #      | id                 | label        | booleanValue | customMetaDataApiName    |
 #      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6431,13 +6368,7 @@ Business Need: Send Email Component Scenarios
 
   @168973 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon on Collab emails table, then  reply back content is aligned properly
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6456,22 +6387,17 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "60" seconds
     Then I validate that following reply back content is aligned properly:
-      | -----Original Message-----       |
-      | From: ashwini.mahore@yopmail.com |
-      | Sent:                            |
-      | To: snehal.mulange@reisystems.in |
-      | Subject: test                    |
+      | -----Original Message-----        |
+      | From: automationadmin@yopmail.com |
+      | Sent:                             |
+      | To: snehal.mulange@reisystems.in  |
+      | Subject: test                     |
 
   @168974 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when attachment is attached for the mail , then  reply back content is aligned properly
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6514,8 +6440,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6557,13 +6483,7 @@ Business Need: Send Email Component Scenarios
 
   @168977 @jyoti
   Scenario: Send email -To verify,When User click on  reply icon when enternal is selected  for the mail , then reply back content is aligned properly
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6584,12 +6504,14 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "test" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "60" seconds
     Then I validate that following reply back content is aligned properly:
-      | -----Original Message-----       |
-      | From: ashwini.mahore@yopmail.com |
-      | Sent:                            |
-      | To: tst@gmail.com                |
-      | Subject: test                    |
+      | -----Original Message-----        |
+      | From: automationadmin@yopmail.com |
+      | Sent:                             |
+      | To: testcontact@yopmail.com       |
+      | Subject: test                     |
+
 
   @173457 @tejal
   Scenario: Verify user should see the Required field symbol ( * ) for TO field  at send email modal
@@ -6598,8 +6520,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6619,8 +6541,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6654,8 +6576,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6684,8 +6606,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6714,8 +6636,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6751,8 +6673,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6787,8 +6709,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6826,8 +6748,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6868,8 +6790,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6901,8 +6823,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6940,8 +6862,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6979,8 +6901,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7018,8 +6940,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7048,13 +6970,13 @@ Business Need: Send Email Component Scenarios
 
   @181341 @dnyaneshwari @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (Internal)   field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7077,19 +6999,21 @@ Business Need: Send Email Component Scenarios
 
   @186124 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to "true" when select file is attached to "TO- External " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7110,8 +7034,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7136,19 +7060,21 @@ Business Need: Send Email Component Scenarios
 
   @186684 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- internal" reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7167,19 +7093,21 @@ Business Need: Send Email Component Scenarios
 
   @186681 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO-external" reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7198,19 +7126,21 @@ Business Need: Send Email Component Scenarios
 
   @186677 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO- internal " reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7230,19 +7160,21 @@ Business Need: Send Email Component Scenarios
 
   @186678 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- external " reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7253,8 +7185,8 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I perform quick search for "send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment" inside table
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -7262,19 +7194,21 @@ Business Need: Send Email Component Scenarios
 
   @186294 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- Internal " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7289,19 +7223,21 @@ Business Need: Send Email Component Scenarios
 
   @186295 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- External " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7316,19 +7252,21 @@ Business Need: Send Email Component Scenarios
 
   @186297 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Internal " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7341,19 +7279,21 @@ Business Need: Send Email Component Scenarios
 
   @186298 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- External " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -7371,8 +7311,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7398,8 +7338,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7432,8 +7372,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7456,19 +7396,21 @@ Business Need: Send Email Component Scenarios
 
   @187614 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- internal " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-1306"
-    When I click on "Edit" icon for "PG-A11-1306" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7493,8 +7435,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7527,8 +7469,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7559,8 +7501,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7591,7 +7533,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7612,7 +7554,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7633,7 +7575,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7654,7 +7596,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7676,7 +7618,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7698,7 +7640,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7719,7 +7661,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7750,8 +7692,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7784,8 +7726,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7808,8 +7750,8 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7832,7 +7774,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7852,7 +7794,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7873,7 +7815,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7894,7 +7836,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7915,7 +7857,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7936,7 +7878,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7957,7 +7899,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
@@ -7985,7 +7927,7 @@ Business Need: Send Email Component Scenarios
 #      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantee State Program | Name                      | TAB-026                    |
+#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
 #    Given I have "global" configuration as below:
 #      | id                 | ownerId            | booleanValue                | customSettingApiName |
 #      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
