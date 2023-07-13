@@ -76,4 +76,9 @@ public class SendEmail_Test8Steps {
     public void iSeeTheTextInSendEmailPage(String usage, String displayedText) {
         sendEmail_Test8Page.assertTextDisplayedOrNot(usage, displayedText);
     }
+
+    @When("I close Send Email modal by clicking on x top right button")
+    public void iCloseSendEmailModalByClickingOnXTopRightButton() {
+        sendEmail_Test8Page.clickOnXButtonOnModal();
+    }
 }

@@ -178,4 +178,8 @@ public class SendEmail_Test8Page extends GovGrantsManager {
         return flag;
     }
 
+    public void clickOnXButtonOnModal() {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='Send Email']/parent::button[@aria-label='Close']"));
+    }
+
 }

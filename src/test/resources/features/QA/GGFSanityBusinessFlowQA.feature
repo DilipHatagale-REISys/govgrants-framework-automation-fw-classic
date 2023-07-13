@@ -366,8 +366,10 @@ Business Need: Sanity check for all Component Scenarios
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
     And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I pause execution for "7" seconds
     And I click modal button "Save and Continue"
-    When I click on "Save" in the page details
+    And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
