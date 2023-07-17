@@ -15,7 +15,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id              | description             | name                  |
       | true         | 0            | a0kR000000Af2tA | Session Enable Reminder | SessionEnableReminder |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
@@ -25,7 +25,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -47,7 +47,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
@@ -66,7 +66,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id              | description             | name                    |
       | false        | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id              | description             | name                    |
       | true         | 0            | a0kR000000Af2tF | SessionEnableManagement | SessionEnableManagement |
@@ -80,20 +80,20 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I navigate to "Planning" tab
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 
   @61455   @VerifySessionTimeoutDialogBoxTitle @checkSoftly @checkCustomLabel @wip
   Scenario: Verify session timeout Dialog Box title
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Test Automation" is displayed
@@ -103,7 +103,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -116,7 +116,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -129,7 +129,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -142,7 +142,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -183,7 +183,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -208,10 +208,10 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Attachments" sub tab
     When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
     When I pause execution for "120" seconds
@@ -232,10 +232,10 @@ Business Need: New API related scenarios temporary
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:ApplicationRolesAndResponsibilityTableId---"
     When I pause execution for "120" seconds
@@ -246,7 +246,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -265,7 +265,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I perform quick search for "Demo_Title"
@@ -280,7 +280,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I perform scroll on page layout
@@ -295,7 +295,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-    When I login as "Automation" user
+   When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds

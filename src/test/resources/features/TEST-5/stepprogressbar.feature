@@ -26,11 +26,11 @@ Business Need: Step Progress Bar Component Scenarios
   @34348    @disablingRenderingOfProgressBarForUser-gPlanning
   Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
-      | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
+      | configurationCategory                  | fieldName              | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Header Config:General | Render for Application | <defaultuser>     | PB-0108            |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User |               | PB-0108            |                           |                            |
+      | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -268,7 +268,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -298,7 +298,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                              | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAppAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -313,7 +313,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsing$UserAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -328,7 +328,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                             | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -343,7 +343,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldsAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -358,7 +358,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingUserAndProfileAsViewOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -373,7 +373,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingProfileWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
@@ -388,7 +388,7 @@ Business Need: Step Progress Bar Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                                      | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | HIDE EXPRESSION JSON | govgrants_config:HideStepProgressBarDetailsUsingFieldProfileAndUserTypeWithOROperatorOnStandardObj | Account Progress Bar | Name                      | Level 1                    |
-   When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Organizations" subheader on left panel
