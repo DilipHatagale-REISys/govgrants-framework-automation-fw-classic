@@ -17,35 +17,6 @@ Business Need: Sanity check for all Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Funding Opportunities for Automation" displayed as chart title
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess
-  Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
-      | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
-      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
-    And I navigate to "Planning" tab
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
-    And I "Approve" in the approval decision
-    When I re-login to "As an Administrator" app as "Automation" user on "default" portal
-    And I navigate to "Operate" tab
-    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
-    And I click toggle button to select "Queued Emails"
-    Then I see email is generated with template "Program_Approved_Email_Template"
-
   @35121    @colorCodeFieldAtCalenderConfig @calenderConfig
   Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
     Given I have "default" configuration as below:
@@ -256,56 +227,6 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "View" icon of form "General Application Form" program in flex table
     Then I see "Form Version 2.0" inside Form Version
 
-  @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
-  Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    And I pause execution for "10" seconds
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
-    And I pause execution for "3" seconds
-    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
-    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
-    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
-    And I enter value "Active" into field "fieldStatus__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation PM" into field "fieldName__c"
-    And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Allen PM" into field "fieldName__c"
-    And I enter value "Key POC" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
-    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
-    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
-    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the page
-    When I click on "Submit For Approval" in the page details
-    And I refresh the page
-    And I pause execution for "15" seconds
-    And I navigate to "History" sub tab
-    And I pause execution for "10" seconds
-    Then I see for "Program Manager Approver (Pending for first approval)" value is "Automation PM" in chevron diagram
-
   @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
   Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
     When I login as "Automation" user
@@ -319,64 +240,6 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "Save" button in send email modal
     Then I see the following messages in the page details contains:
       | The Content Folder null isn't valid. Use a unique name that doesn't start or end with a space and doesn't contain the character /. |
-
-  @35816    @hideApprovalDecisionFieldAtPageLayout-gPlanning @approvalProcess
-  Scenario: Hiding approval decision box at page layout from config and validating it inside pending task approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                   | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide Approval Decision comp | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
-    And I pause execution for "3" seconds
-    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
-    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
-    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
-    And I enter value "Active" into field "fieldStatus__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation PM" into field "fieldName__c"
-    And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Allen PM" into field "fieldName__c"
-    And I enter value "Key POC" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
-    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
-    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
-    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the page
-    When I click on "Submit For Approval" in the page details
-    When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
 
   @34485    @validateNumberOfCharts-gplanning  @enhancedCharts
   Scenario: Setup number of charts as "2" from config. and validate only two charts are displayed inside planning

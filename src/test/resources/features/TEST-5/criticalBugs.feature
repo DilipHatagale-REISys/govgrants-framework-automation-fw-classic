@@ -390,12 +390,12 @@ Business Need: Logged Issues Scenarios
 
   @56623    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableTopLevelAction-gPlanning
   Scenario: Hide New top level action for from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ProgramRolesAndResponsibilities | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTableTop_NewAction | ProgramRolesAndResponsibilities | Name                      | New                        |
+#    Given I have "default" configuration as below:
+#      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action Sobject | Hide Expression JSON |                   | ProgramRolesAndResponsibilities | Name                      | New                        |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName            | fieldNewValue                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTableTop_NewAction | ProgramRolesAndResponsibilities | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

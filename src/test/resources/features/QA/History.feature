@@ -431,6 +431,8 @@ Business Need: history Component Scenarios
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldFundedAmount__c"
+    And I enter value "0" into field "fieldStartDate__c"
+    And I enter value "730" into field "fieldEndDate__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I enter value "400000" into field "fieldFundedAmount__c"

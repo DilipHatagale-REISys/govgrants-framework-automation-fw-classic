@@ -366,6 +366,7 @@ Business Need: Sanity check for all Component Scenarios
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
     And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
+
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"

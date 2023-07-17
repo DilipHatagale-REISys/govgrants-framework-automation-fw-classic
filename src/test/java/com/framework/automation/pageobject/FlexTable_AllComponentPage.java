@@ -190,8 +190,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 " //div[@id='" + tabeleId + "']/div/div/span/select[@id='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + buttonName + "'] |" +
-                "//div[@id='"+tabeleId+"']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
-                "//div[@id='"+tabeleId+"']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='"+buttonName+"']"));
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "']"));
     }
 
     public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {
@@ -214,5 +214,41 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
+    }
+
+    public void assertHyperlinkTextIsDisplayed(String usage, String value, String columnName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isHyperlinkTextIsDisplayed(value, columnName, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isHyperlinkTextIsDisplayed(value, columnName, tableId));
+        }
+    }
+
+    private boolean isHyperlinkTextIsDisplayed(String value, String columnName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//span[@ng-bind='fieldLabel' and contains(text(),'" + columnName + "')]/ancestor::table//tbody/tr/td//*[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+    public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By filterAction = null;
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
+        By inputField = By.xpath("//div[@id='flexTableDivId']//field//input");
+
+        filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
+        if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
+            I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
+        } else {
+            I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
+        }
+        I.amPerforming().click().on(filterAction);
     }
 }

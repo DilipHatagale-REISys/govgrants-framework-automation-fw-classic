@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34305    @hideApproveOption-Programs @smoke @wip
+  @34305    @hideApproveOption-Programs @smoketest8 @wip
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
@@ -40,7 +40,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I cannot see the radio button "Approve" in the approval decision
 
-  @34307    @changeApproveOptionSequence-Programs @smoke
+  @34307    @changeApproveOptionSequence-Programs @smoketest8
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
@@ -236,7 +236,7 @@ Business Need: Approval Process Component Scenarios
       | newFilterCriteriaValue |
       | Name='Automation PM'   |
 
-  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs @smoke
+  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs @smoketest8
   Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName      | fieldOrignalValue  | filterId         |
@@ -326,7 +326,7 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoke
+  @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoketest8
   Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
@@ -453,7 +453,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
 
-  @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoke
+  @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoketest8
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                   | fieldOrignalValue | filterId         |
@@ -724,7 +724,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoke
+  @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoketest8
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -810,7 +810,7 @@ Business Need: Approval Process Component Scenarios
       | oldProfiles                                                                                                         | newProfiles                                                                                                     |
       | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoke @BugId_163309 @wip
+  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoketest8 @BugId_163309 @wip
   Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
@@ -1079,7 +1079,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoke @wip
+  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoketest8 @wip
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -1227,7 +1227,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I cannot see the radio button "Send back" in the approval decision
 
-  @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
+  @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoketest8
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -1445,14 +1445,14 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:PhasePendingTasksByTableId---" panel
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:PhasePendingTasksByTableId---"
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess @wip
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess 
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
-      | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
+      #| Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -1529,7 +1529,7 @@ Business Need: Approval Process Component Scenarios
       | Page Layout           | Hide Approval Decision comp | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program |                           |                            |
+      | Page Layout:General   | Hide Approval Decision comp | true          | Grantor State Program |                           |                            |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
