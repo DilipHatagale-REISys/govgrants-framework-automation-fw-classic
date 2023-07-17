@@ -1,5 +1,6 @@
 package com.framework.automation.pageobject;
 
+import com.automation.rei.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.DeviceBucket;
@@ -7,15 +8,17 @@ import com.testingblaze.objects.InstanceRecording;
 import com.testingblaze.register.I;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class SendEmail_Test8Page extends GovGrantsManager {
     /******* "Variables and Locators" *****************/
-    private static By SearchByCcXpath, SearchByToXpath;
+    private static By SearchByCcXpath, SearchByToXpath, stylesIcon;
 
     public SendEmail_Test8Page() {
         SearchByToXpath = By.xpath("//div[@class='form-group required ng-scope']//div//button[@type='button']");
         SearchByCcXpath = By.xpath("//div[@class='form-group ng-scope']//div//button[@type='button']");
+        stylesIcon = ByUsing.xpath("//div[contains(@class,'cke_inner')]//a[contains(@title,'Styles')]");
     }
 
     public void assertHelpTextIsDisplayedOrNotDisplayed(String usage, String field, String helpText) {
@@ -178,8 +181,16 @@ public class SendEmail_Test8Page extends GovGrantsManager {
         return flag;
     }
 
-    public void clickOnXButtonOnModal() {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='Send Email']/parent::button[@aria-label='Close']"));
+    public void clickOnXButtonOnModal(String modalName) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='" + modalName + "']/parent::button[@aria-label='Close'] "));
     }
 
+    public void selectAndClickAtIconToChangeTextFormattingInStyle(String styleName) {
+//        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='Send Email']/parent::button[@aria-label='Close']"));
+        String selectAll = Keys.chord(Keys.CONTROL, "a");
+        WebElement ele = I.amPerforming().getElementReference().of(ByUsing.xpath("//body[contains(@class,'cke_editable')]"));
+        I.amPerforming().textInput().in(ele, selectAll);
+        I.amPerforming().click().on(stylesIcon);
+        I.amPerforming().click().on(ByUsing.xpath("//html[@class='cke_panel_container cke_browser_webkit']/body/div[@title='Formatting Styles']/ul/li/a[@title='" + styleName + "']"));
+    }
 }

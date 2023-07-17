@@ -76,7 +76,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
-      | Reject | Forward | Send Back | Approve |
+      | Reject | Forward | Send back | Approve |
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
@@ -152,7 +152,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    Then I can see the radio button "Approve" in the approval decision
+    Then I can see the radio button "Approved" in the approval decision
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision

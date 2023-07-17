@@ -210,24 +210,12 @@ Business Need: Send Email Component Scenarios
 
   @69090 @validateIfAttachmentUploadedAndEmailSendThenEmailIsSentWithUploadedFile
   Scenario: Validate If attachment uploaded and email is send then email is sent with uploaded attachment under send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    Given I have "customMetaData" configuration as below:
-#      | id                 | label                 | booleanValue | customMetaDataApiName    |
-#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-#    And I update custom metadata setting changes:
-#      | id                 | label                 | booleanValue | customMetaDataApiName    |
-#      | m031C000000k9o3QAA | EnableEmailAttachment | true         | GNT__KeyValueHolder__mdt |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -235,14 +223,11 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "Test automation mail subject 1" inside table
-    When I pause execution for "2" seconds
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
+    When I enter value "Test attachment uploaded" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
@@ -276,18 +261,12 @@ Business Need: Send Email Component Scenarios
 
   @81118 @validateAtReplyModalIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -295,26 +274,27 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "ashwini M" into field "{testData:CcField}" on send email modal
-    Then I see iconName "fa fa-phone" with user "ashwini M" is displayed on send email modal
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "checkbox is checked at CC" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I click on "Reply" icon for "checkbox is checked at CC" inside table
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "dilip" into field "{testData:CcField}" on send email modal
+    When I enter value "DILIP Hatagale" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-user" with user "ashwini M" is displayed on send email modal
 
   @81120 @validateAtReplyModalIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -322,15 +302,21 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "checkbox is checked at CC" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I click on "Reply" icon for "checkbox is checked at CC" inside table
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "Au" into field "{testData:CcField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
-      | userName      |
-      | Automation PM |
-      | Bushan Paul   |
+      | userName       |
+      | Automation PM  |
+      | Automation EXE |
 
   @89268 @validateTheItemsPresentInSearByFieldDropDownAtTOEmailFieldAtSendEmailModal @sendEmail
   Scenario: Validate the options present under search by field dropdown at TO email field at send email modal
@@ -505,18 +491,12 @@ Business Need: Send Email Component Scenarios
 
   @89743 @validateReplyModalTitleAtSendEmail @sendEmail
   Scenario: Validate reply modal title at send email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -524,8 +504,16 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "reply" icon for "Test automation mail subject 1" inside table
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Validate reply modal title" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I perform quick search for "Validate reply modal title" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "reply" icon for "Validate reply modal title" inside table
     Then I see "Reply" opens in overLay window
 
   @89675 @validateThatFileIsDeletedSuccessfullyByclickOnCrossIconAtAttachedFileInSendEmailModal @sendEmail
@@ -672,18 +660,12 @@ Business Need: Send Email Component Scenarios
 
   @89234 @validateDisplayOfToEmailSentSUccessfullyMessageInSendEmailModal @sendEmail
   Scenario: Validate if reply email is sent then alert message is displayed on send email modal
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -694,42 +676,23 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "DND-Test Automation Record" into field "Subject" on send email modal
-    When I enter value "DND-Test Automation Record" into field "Body Content" on send email modal
+    When I enter value "Test Email Sent Succesfully" into field "Subject" on send email modal
+    When I enter value "Test Email Sent Succesfully" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    And I click on "Reply" icon for "DND-Test Automation Record" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "Test Email Sent Succesfully" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    When I perform quick search for "RE: DND-Test Automation Record" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Delete" icon for "RE: DND-Test Automation Record" inside table
-    When I pause execution for "2" seconds
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
-    When I enter value "test body content" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I navigate to "Collab" sub tab
-    When I perform quick search for "Re: Test data select file" in "---program:-:communicationHistoryTableId---" panel
-    Then I see "Re: Test data select file" value in flex table id "---program:-:communicationHistoryTableId---"
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
   @89725 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtViewSendEmailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at view mail window
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -737,24 +700,27 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "5/6/2022 7:14 pm" on html page
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "asterisk mark view modal" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I perform quick search for "asterisk mark view modal" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "asterisk mark view modal" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "view" icon for "asterisk mark view modal" inside table
+    Then I see current date is displayed in "View" on send email modal
 
   @91328 @validateAsteriskMarkAtRequiredFieldsInSendEmailModalAtReplyMailWindow @sendEmail
   Scenario: Validate asterisk mark is displayed at required fields in send email modal at reply mail window
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-#    Given I have "global" configuration as below:
-#      | id                 | ownerId            | booleanValue                | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:false | GNT__GlobalConfig__c |
-#    And I update custom global setting changes:
-#      | id                 | ownerId            | booleanValue               | customSettingApiName |
-#      | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -762,8 +728,15 @@ Business Need: Send Email Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "reply" icon for "Test automation mail subject 1" inside table
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test asterisk mark" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test asterisk mark" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "reply" icon for "Test asterisk mark" inside table
     Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
   @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
@@ -1173,7 +1146,7 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     And I pause execution for "5" seconds
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
-    When I close Send Email modal by clicking on x top right button
+    When I close "Send Email" modal by clicking on x top right button
     When I navigate to "Collab" sub tab
     When I perform quick search for "Email Created To Check Attached File Link" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "Email Created To Check Attached File Link" inside table
@@ -1295,7 +1268,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "external user selected in TO" into field "Subject" on send email modal
     When I enter value "external user selected in TO" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
-    When I close Send Email modal by clicking on x top right button
+    When I close "Send Email" modal by clicking on x top right button
     When I navigate to "Collab" sub tab
     When I perform quick search for "external user selected in TO" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "external user selected in TO" inside table
@@ -1475,7 +1448,7 @@ Business Need: Send Email Component Scenarios
   Scenario: validate Email Template rendering with body content at send invitation modal for admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     When I navigate to "Overview" sub tab
@@ -1492,7 +1465,7 @@ Business Need: Send Email Component Scenarios
   Scenario: validate Email Template rendering with body content at send invitation modal for external user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Organization Profile" content inside "Activities" subheader on left panel
     When I navigate to "Overview" sub tab
     When I perform quick search for "Michael Jones" in "ContactsByAccount" panel
@@ -1516,7 +1489,7 @@ Business Need: Send Email Component Scenarios
   Scenario: validate Email Template rendering with body content at send invitation modal for internal user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     When I navigate to "Overview" sub tab
@@ -1643,9 +1616,10 @@ Business Need: Send Email Component Scenarios
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I enter value "Test Automation" into field "Subject" on send email modal
     When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Strikethrough" inside CK editor
+#    And I change formatting of all text to "Deleted Text" inside CK editor
+    And I change style of all text to "Deleted Text" inside CK editor
     When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Strikethrough" format inside CK editor
+    Then I see "Test Body formatting" displayed in "Deleted Text" format inside CK editor
 
   @147301  @verifyTextInsideCkEditorInputBoxIsDisplayedAsplainTextInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as plain text at send email modal
@@ -1985,7 +1959,7 @@ Business Need: Send Email Component Scenarios
   Scenario: validate single attachment can be attached at send invitation modal for admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     When I navigate to "Overview" sub tab
@@ -2000,7 +1974,7 @@ Business Need: Send Email Component Scenarios
   Scenario: validate To email field value is auto populated at send invitation modal for admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
     When I click on "View" icon for "Secretary of Health" inside table
     When I navigate to "Overview" sub tab
@@ -2241,7 +2215,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     Then I softly see the text containing :
       | this record |
@@ -2405,7 +2379,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -2467,7 +2441,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
@@ -2518,7 +2492,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2570,7 +2544,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
@@ -2621,7 +2595,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
@@ -2672,7 +2646,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
@@ -2721,7 +2695,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -2797,7 +2771,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "Send Email" opens in overLay window
@@ -2845,7 +2819,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -2895,7 +2869,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -2967,7 +2941,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3042,7 +3016,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3120,7 +3094,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3180,7 +3154,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3238,7 +3212,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3298,7 +3272,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3355,7 +3329,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -3406,7 +3380,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -3458,7 +3432,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -3508,7 +3482,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -3541,20 +3515,12 @@ Business Need: Send Email Component Scenarios
 
   @169931 @jyoti
   Scenario: Send Email-To verify,User reply with file the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
-#    Given I have "customMetaData" configuration as below:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-#    And I update custom metadata setting changes:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3563,33 +3529,23 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+    And I save the field labeled "EGMS ID" as "id"
+#    When I navigate to "Files" sub tab
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:ToField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "Jason FD" into field "{testData:ToField}" on send email modal
-    When I select value "Jason FD" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Rawimas GGPTEST5" into field "{testData:ToField}" on send email modal
-    When I select value "Rawimas GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I enter value "tejashree.damdhar@reisystems.in;tejashree.deshpandea@reisystems.in;automationpm1@yopmail.com" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:CcField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "Jason FD" into field "{testData:CcField}" on send email modal
-    When I select value "Jason FD" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Rawimas GGPTEST5" into field "{testData:CcField}" on send email modal
-    When I select value "Rawimas GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I enter value "tejashree.damdhar@reisystems.in;tejashree.deshpandea@reisystems.in;automationpm1@yopmail.com" into field "{testData:CcField}" on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Subject" on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -3598,39 +3554,29 @@ Business Need: Send Email Component Scenarios
     And I click on "Reply" icon for "reply TO& CC with internal & external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     And I click modal button "Select Files"
-    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    And I pause execution for "70" seconds
     Then I see "Body Content" as "Body Content" on send email modal
-    Then I see "Sender:" as "Body Content" on send email modal
-    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
-    Then I see "Sender Organization:" as "Body Content" on send email modal
-    Then I see the text containing :
-      | Department of Community Health |
-    Then I see "Internal Link to the record:" as "Body Content" on send email modal
-    Then I see "{SavedValue:id}" as "Body Content" on send email modal
-    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
-    Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see "From:" as "Body Content" on send email modal
+    Then I see "automationadmin@yopmail.com" as "Body Content" on send email modal
+    Then I see "Sent:" as "Body Content" on send email modal
+    Then I see "To: tejashree.damdhar@reisystems.in;tejashree.deshpandea@reisystems.in;automationpm1@yopmail.com" as "Body Content" on send email modal
+    Then I see "Subject:" as "Body Content" on send email modal
+    Then I see "reply TO& CC with internal & external" as "Body Content" on send email modal
 
   @169930 @jyoti
   Scenario:Send Email-To verify,User reply with attachment the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
-#    Given I have "customMetaData" configuration as below:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-#    And I update custom metadata setting changes:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3639,33 +3585,33 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+    And I save the field labeled "EGMS ID" as "id"
+#    When I navigate to "Files" sub tab
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:ToField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "Jason FD" into field "{testData:ToField}" on send email modal
-    When I select value "Jason FD" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Rawimas GGPTEST5" into field "{testData:ToField}" on send email modal
-    When I select value "Rawimas GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "DILIP" into field "{testData:ToField}" on send email modal
+    When I select value "DILIP Hatagale" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM1" with iconName "fa fa-user" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:CcField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
-    When I enter value "Jason FD" into field "{testData:CcField}" on send email modal
-    When I select value "Jason FD" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Rawimas GGPTEST5" into field "{testData:CcField}" on send email modal
-    When I select value "Rawimas GGPTEST5" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "DILIP" into field "{testData:CcField}" on send email modal
+    When I select value "DILIP Hatagale" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
+    When I select value "Automation PM1" with iconName "fa fa-user" into field on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Subject" on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -3675,38 +3621,30 @@ Business Need: Send Email Component Scenarios
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
     And I click modal button "Select Files"
-    When I check "TestAutomationFile.csv" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
+#    When I close modal by clicking the top right x button
+    When I close "Reply" modal by clicking on x top right button
+    When I perform quick search for "RE: reply TO& CC with internal & external" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "View" icon for "RE: reply TO& CC with internal & external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "60" seconds
     Then I see "Body Content" as "Body Content" on send email modal
-    Then I see "Sender:" as "Body Content" on send email modal
-    Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
-    Then I see "Sender Organization:" as "Body Content" on send email modal
-    Then I see the text containing :
-      | Department of Community Health |
-    Then I see "Internal Link to the record:" as "Body Content" on send email modal
-    Then I see "{SavedValue:id}" as "Body Content" on send email modal
-    Then I see "Recipient Link to the record:" as "Body Content" on send email modal
-    Then I see "{SavedValue:id}" as "Body Content" on send email modal
+    Then I see "reply the mail" as "Body Content" on send email modal
+    Then I see "-----Original Message-----" as "Body Content" on send email modal
+    Then I see "From:" as "Body Content" on send email modal
+    Then I see "Sent:" as "Body Content" on send email modal
+    Then I see "Subject: reply TO& CC with internal & external" as "Body Content" on send email modal
 
   @169929 @jyoti
   Scenario: Send Email-To verify,User reply the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active         | false             | ApiGeneratedId:0 |
-#      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2626                    |
-#      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
-#    Given I have "customMetaData" configuration as below:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | false        | GNT__KeyValueHolder__mdt |
-#    And I update custom metadata setting changes:
-#      | id                 | label        | booleanValue | customMetaDataApiName    |
-#      | m036O000000fxpeQAA | SendEmaiBody | true         | GNT__KeyValueHolder__mdt |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3715,17 +3653,12 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:ToField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Surya Namasivayam" into field "{testData:CcField}" on send email modal
-    When I select value "Surya Namasivayam" with iconName "fa fa-phone" into field on send email modal
+    When I enter value "test1@reisystem.in;test2@reisystem.in;test3@reisystem.in" into field "{testData:ToField}" on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Subject" on send email modal
     When I enter value "reply TO& CC with internal & external" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
@@ -3736,12 +3669,13 @@ Business Need: Send Email Component Scenarios
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I click on "View" icon for "RE: reply TO& CC with internal & external" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "80" seconds
     Then I see "Body Content" as "Body Content" on send email modal
-    Then I see "Sender:" as "Body Content" on send email modal
     Then I see "ashwini.mahore@yopmail.com, Nauman Shahid" as "Body Content" on send email modal
     Then I see "Sender Organization:" as "Body Content" on send email modal
     Then I see the text containing :
       | Department of Community Health |
+
     Then I see "Internal Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
@@ -3777,7 +3711,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3844,7 +3778,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -3911,7 +3845,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -3966,7 +3900,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4031,7 +3965,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4102,7 +4036,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4176,7 +4110,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -4235,7 +4169,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -4286,7 +4220,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4323,7 +4257,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4417,7 +4351,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4489,7 +4423,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -4549,7 +4483,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4620,7 +4554,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -4687,7 +4621,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4720,7 +4654,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
@@ -4742,7 +4676,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -4768,7 +4702,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4803,7 +4737,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -4827,7 +4761,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4864,7 +4798,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -4923,7 +4857,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -5034,7 +4968,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -5068,7 +5002,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -5110,7 +5044,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5185,7 +5119,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5250,7 +5184,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5321,7 +5255,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5393,7 +5327,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -5455,7 +5389,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -5512,7 +5446,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5614,7 +5548,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5705,7 +5639,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -5787,7 +5721,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5854,7 +5788,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5913,7 +5847,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -6000,7 +5934,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -6070,7 +6004,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -6159,7 +6093,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -6203,7 +6137,7 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Files" sub tab
     When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
     When I upload file "TestAutomationFile.csv" into library with sharing
@@ -6290,12 +6224,12 @@ Business Need: Send Email Component Scenarios
 
   @181340 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO  (External)  field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6304,14 +6238,14 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+#    When I navigate to "Files" sub tab
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6325,12 +6259,12 @@ Business Need: Send Email Component Scenarios
 
   @181347 @sprint23 @needtoaddattachment
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (Group)   field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6339,12 +6273,15 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
+    When I enter value "group" into field "{testData:CcField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I enter value "Attachment  from TO &  CC (Group)" into field "Subject" on send email modal
     When I enter value "test for internal with file" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
@@ -6355,12 +6292,12 @@ Business Need: Send Email Component Scenarios
 
   @181342 @sprint23 @jyoti
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (group )  field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6369,12 +6306,12 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group for Admin" with iconName "fa fa-users" into field on send email modal
     When I enter value "test" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
@@ -6385,12 +6322,12 @@ Business Need: Send Email Component Scenarios
 
   @181343 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO & CC (External) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6400,13 +6337,13 @@ Business Need: Send Email Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6422,12 +6359,12 @@ Business Need: Send Email Component Scenarios
 
   @181339 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6436,14 +6373,14 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+#    When I navigate to "Files" sub tab
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6458,12 +6395,12 @@ Business Need: Send Email Component Scenarios
 
   @181344 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO  (External)  field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6472,14 +6409,14 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+#    When I navigate to "Files" sub tab
+#    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
+#    When I upload file "TestAutomationFile.csv" into library with sharing
+#    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
+#    When I select Classification as "Medical Reports" at upload file modal
+#    When I click on "Upload" button in send email modal
+#    When I pause execution for "5" seconds
+#    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6497,12 +6434,12 @@ Business Need: Send Email Component Scenarios
 
   @181345 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (External)   field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6511,14 +6448,6 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6539,26 +6468,26 @@ Business Need: Send Email Component Scenarios
 
   @181346 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO (group )  field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    And I save the field labeled "ID" as "id"
+    And I save the field labeled "EGMS ID" as "id"
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "grou" into field "{testData:ToField}" on send email modal
+    When I select value "group for PM user" with iconName "fa fa-users" into field on send email modal
     When I enter value "Attachment  from TO (group )" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
@@ -6572,12 +6501,12 @@ Business Need: Send Email Component Scenarios
 
   @181376 @sprint23
   Scenario: Send Email -To verify , When user reply  an Email with an Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6586,38 +6515,33 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "Attachment  from to  (External)" into field "Subject" on send email modal
+    When I enter value "Attachment from to (Internal)" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    And I click on "Reply" icon for "Attachment  from to  (External)" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "Attachment from to (Internal)" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Reply test Attachment from to Internal" into field "Body Content" on send email modal
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "RE: Attachment from to (Internal)" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "RE: Attachment from to (Internal)" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @183895 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+#    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6650,12 +6574,12 @@ Business Need: Send Email Component Scenarios
 
   @183842 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO (internal &External) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -6664,14 +6588,6 @@ Business Need: Send Email Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6682,44 +6598,54 @@ Business Need: Send Email Component Scenarios
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
     When I upload attachment "TestAutomationFile.csv" in send email modal
-    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @183830 @sprint23
   Scenario: Send Email -To verify , When user reply an Email with an multiple Attachment  from TO (internal) field that attachment is dispalyed in the column on the messages page block
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-    When I navigate to "Files" sub tab
-    When I click on top right button "Add Files" in flex table with id "---program:-:PlanningFilesFlexGridId---"
-    When I upload file "TestAutomationFile.csv" into library with sharing
-    When I enter value as "test Automation upload from files list" in field "Description" at Library Files
-    When I select Classification as "Medical Reports" at upload file modal
-    When I click on "Upload" button in send email modal
-    When I pause execution for "5" seconds
-    And I refresh the page
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "multiple Attachment  from TO (internal &External)" into field "Subject" on send email modal
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
+    When I enter value "snehal.mulange@reisystems.in ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
+    When I enter value "send email select file attachment" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
     And I pause execution for "5" seconds
     When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "multiple Attachment from TO (internal &External)" into field "Subject" on send email modal
+    When I enter value "test" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I click on "Reply" icon for "multiple Attachment from TO (internal &External)" inside table
+    When I enter value "reply test" into field "Body Content" on send email modal
+    When I upload attachment "TestAutomationFile.csv" in send email modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I pause execution for "5" seconds
+    When I perform quick search for "RE: multiple Attachment from TO (internal &External)" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @181341 @dnyaneshwari @sprint23
@@ -6783,13 +6709,12 @@ Business Need: Send Email Component Scenarios
 
   @186685 @sprint24 @dnyaneshwari
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- group" reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6799,15 +6724,14 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I enter value "send email select file attachment" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
-    When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
-    When I click on "Reply" icon for "send email select file attachment	" inside table
+    When I perform quick search for "send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
+    When I click on "Reply" icon for "send email select file attachment" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
@@ -7060,12 +6984,12 @@ Business Need: Send Email Component Scenarios
 
   @186300 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Group " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -7076,23 +7000,23 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I enter value "send email select file attachment" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
-    When I upload attachment "TestAutomationFile.csv" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186296 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- group   " email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -7103,31 +7027,38 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
-    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
-    When I enter value "reply for  To & cc group" into field "Subject" on send email modal
-    When I enter value "reply for  To & cc group" into field "Body Content" on send email modal
+    When I enter value "group" into field "{testData:CcField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "select file is attached" into field "Subject" on send email modal
+    When I enter value "select file is attached" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
+    And I pause execution for "5" seconds
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I perform quick search for "select file is attached" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "select file is attached" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
     And I click modal button "Select Files"
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on "Send" button in send email modal
+    When I close "Reply" modal by clicking on x top right button
+   # When I close modal by clicking the top right x button
+    When I perform quick search for "select file is attached" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186679 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- group " reply email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7137,15 +7068,17 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
-    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:CcField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I enter value "reply for  To group" into field "Subject" on send email modal
     When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "reply for  To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187614 @sprint24 @dnyaneshwari
@@ -7184,12 +7117,12 @@ Business Need: Send Email Component Scenarios
 
   @187627 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- group " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -7203,27 +7136,31 @@ Business Need: Send Email Component Scenarios
     When I enter value "test group 1" into field "{testData:ToField}" on send email modal
     When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
-    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
-    When I enter value "reply for  To group" into field "Subject" on send email modal
-    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I enter value "group" into field "{testData:CcField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for To group" into field "Subject" on send email modal
+    When I enter value "reply for To group" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "reply for To group" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
     And I click modal button "Select Files"
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187630 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- external " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -7237,27 +7174,32 @@ Business Need: Send Email Component Scenarios
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply for  To & cc " into field "Subject" on send email modal
-    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I enter value "Test able to see true" into field "Subject" on send email modal
+    When I enter value "Test able to see true" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I perform quick search for "Test able to see true" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Test able to see true" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test able to see true" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
     When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test able to see true" in "---program:-:communicationHistoryTableId---" panel
+    When I perform quick search for "Test able to see true" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187635 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- internal " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -7269,15 +7211,17 @@ Business Need: Send Email Component Scenarios
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply for  To & cc " into field "Subject" on send email modal
-    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I enter value "Test able to see false" into field "Subject" on send email modal
+    When I enter value "Test able to see false" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I perform quick search for "Test able to see false" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test able to see false" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "Test able to see false" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @195079 @ToverifyUsershouldnotbeabletosee"Uploadfilemodal"whentheusercheck"Group"inthecheckbox&typeanytextin"TO"fieldandpressenter @jyoti @userstory_174060
@@ -7410,12 +7354,12 @@ Business Need: Send Email Component Scenarios
 
   @187636 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- external " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7428,25 +7372,27 @@ Business Need: Send Email Component Scenarios
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply for  To & cc " into field "Subject" on send email modal
-    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I enter value "Test false Attachment" into field "Subject" on send email modal
+    When I enter value "Test false Attachment" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I perform quick search for "Test false Attachment" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test false Attachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "Test false Attachment" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187639 @sprint26 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- group " reply  email
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -7457,37 +7403,38 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 1" into field "{testData:ToField}" on send email modal
-    When I select value "test group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "group" into field "{testData:ToField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
-    When I enter value "test group 2" into field "{testData:CcField}" on send email modal
-    When I select value "test group 2" with iconName "fa fa-users" into field on send email modal
-    When I enter value "reply for  To group" into field "Subject" on send email modal
-    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I enter value "group" into field "{testData:CcField}" on send email modal
+    When I select value "group 1" with iconName "fa fa-users" into field on send email modal
+    When I enter value "reply for To group" into field "Subject" on send email modal
+    When I enter value "reply for To group" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I refresh the page
-    And I click on "Reply" icon for "reply for  To group" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Reply" icon for "reply for To group" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "reply the mail" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
+    When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -7499,24 +7446,24 @@ Business Need: Send Email Component Scenarios
 
   @205481 @sprint6 @ToVerifySpelling @dnyaneshwari
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected for internal user
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-#      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "Email Created" into field "Subject" on send email modal
+    When I enter value "Test confirmation message" into field "Subject" on send email modal
     When I click on "Send" button in send email modal
     Then I see the following messages in the page details :
       | Email Sent Successfully. |

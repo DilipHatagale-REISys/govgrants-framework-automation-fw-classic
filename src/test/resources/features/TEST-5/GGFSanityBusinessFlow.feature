@@ -32,6 +32,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    And I pause execution for "05" seconds
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
@@ -133,6 +134,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds

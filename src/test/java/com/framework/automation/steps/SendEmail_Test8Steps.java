@@ -77,8 +77,14 @@ public class SendEmail_Test8Steps {
         sendEmail_Test8Page.assertTextDisplayedOrNot(usage, displayedText);
     }
 
-    @When("I close Send Email modal by clicking on x top right button")
-    public void iCloseSendEmailModalByClickingOnXTopRightButton() {
-        sendEmail_Test8Page.clickOnXButtonOnModal();
+
+    @And("I change style of all text to {string} inside CK editor")
+    public void iChangeStyleOfAllTextToInsideCKEditor(String styleName) {
+        sendEmail_Test8Page.selectAndClickAtIconToChangeTextFormattingInStyle(styleName);
+    }
+
+    @When("I close {string} modal by clicking on x top right button")
+    public void iCloseModalByClickingOnXTopRightButton(String modalName) {
+        sendEmail_Test8Page.clickOnXButtonOnModal(modalName);
     }
 }

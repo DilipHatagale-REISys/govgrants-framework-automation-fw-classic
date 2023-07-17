@@ -3428,6 +3428,11 @@ public class PageLayoutPage extends GovGrantsManager {
                     flag = true;
                 }
                 break;
+            case "DELETED TEXT":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//del[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
         }
         return flag;
     }
