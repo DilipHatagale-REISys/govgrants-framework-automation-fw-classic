@@ -717,7 +717,7 @@ Business Need: Calender Config Component Scenarios
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:PEGMSID}"
-    Then I see the header is "Program" in the page details
+    Then I see the header is "Internal Program" in the page details
 
   @127491    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarAtRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at page detail layout

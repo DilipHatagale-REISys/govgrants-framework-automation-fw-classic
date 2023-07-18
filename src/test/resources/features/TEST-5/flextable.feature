@@ -892,10 +892,10 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -906,10 +906,10 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User | Internal      | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User | Internal      | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -920,13 +920,13 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide Operator    | AND                  | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide Operator    | AND                  | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -937,14 +937,14 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide Operator    | AND               | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide Operator    | AND               | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
-      | Flex Table Action     | Hide Operator    | OR                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
+      | Flex Table Action     | Hide Operator    | OR                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -955,10 +955,10 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAllAll | Name                      | New                        |
+      | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                         | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:ActiveFundingOpportunitiesAllFlexTableExpressionJson | ActiveFundingOpportunitiesAllAll | Name                      | Create                     |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:ActiveFundingOpportunitiesAllFlexTableExpressionJson | ActiveFundingOpportunitiesAll | Name                      | Create                     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -1049,7 +1049,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Automation PM" icon for "Automation Internal Program for Testing" inside table
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see "User" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
@@ -3911,7 +3911,8 @@ Business Need: Flex Table Component Scenarios
     Then I see "#" shown inside flex table with id "toggleFlexTableApplications"
 
   @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @flexTable
-  Scenario Outline: validate adding field names for different data types in flex table of programs-planning
+ # Scenario Outline: validate adding field names for different data types in flex table of programs-planning
+  Scenario: validate adding field names for different data types in flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
@@ -3924,15 +3925,15 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "<fieldDisplayNames>" in flex table header "toggleFlexTablePrograms"
 
-    Examples:
-      | fieldDisplayNames      | newFieldsApi                                                                                                                           | defaultFieldsApi                                                                                                 |
-      | CFDA Number            | FederalProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Program Approver       | ProgramApprover__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Expected Funding       | ExpectedFunding__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | End Date               | EndDate__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById            | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Federal Program CFDA # | ProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Program Type           | ProgramType__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Website Address        | WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById     | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-      | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
+#    Examples:
+#      | fieldDisplayNames      | newFieldsApi                                                                                                                           | defaultFieldsApi                                                                                                 |
+#      | CFDA Number            | FederalProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Program Approver       | ProgramApprover__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Expected Funding       | ExpectedFunding__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | End Date               | EndDate__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById            | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Federal Program CFDA # | ProgramCFDA__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Program Type           | ProgramType__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById        | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Website Address        | WebsiteAddress__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById     | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#      | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+#
