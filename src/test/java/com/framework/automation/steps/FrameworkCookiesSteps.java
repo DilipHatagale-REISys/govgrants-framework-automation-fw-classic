@@ -99,5 +99,10 @@ public class FrameworkCookiesSteps {
     public void iClickOnButtonInsideTabelHeader(String button, String tableHeader) {
         frameworkCookiesPage.iClickOnCloseButtonWithHeader(button, tableHeader);
     }
+
+    @Then("^I (see|do not see) field \"([^\"]*)\" as \"([^\"]*)\" inside program information$")
+    public void iSeeFieldAsInsideProgramInformation(String usage,String field, String value) {
+frameworkCookiesPage.displayProgramDetailsValueWithField(usage, field, value);
+    }
 }
 

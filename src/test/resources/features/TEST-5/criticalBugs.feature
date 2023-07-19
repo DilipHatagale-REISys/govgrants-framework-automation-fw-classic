@@ -3892,7 +3892,9 @@ Business Need: Logged Issues Scenarios
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
-    Then I see field "Expected Future Funding" as "$50,000"
+   And I pause execution for "500" seconds
+    #Then I see field "Expected Future Funding" as "$500,000"
+    Then I see field "Expected Future Funding" as "$500,000" inside program information
 
   @100200    @verifyThatTotalValueAndDollarSymbolIsRightAlignedInsideTable
   Scenario Outline: validate that total value and dollar symbol is right aligned inside table

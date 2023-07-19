@@ -260,4 +260,23 @@ public class FrameworkCookiesPage extends GovGrantsManager {
     public void iClickOnCloseButtonWithHeader(String button, String tableHeader) {
         I.amPerforming().click().on(ByUsing.xpath("//p[text()='" + tableHeader + "']/preceding-sibling::button[@aria-label='" + button + "']"));
     }
+
+    public void displayProgramDetailsValueWithField(String usage, String field, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(valueDisplayedUderField(field, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(valueDisplayedUderField(field, value)).isFalse();
+        }
+    }
+
+    private Boolean valueDisplayedUderField(String field, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='fieldExpectedFunding__c']/dl//span[text()='" + field + "']/ancestor::dt/following-sibling::dd//span[contains(text(),'" + value + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }
