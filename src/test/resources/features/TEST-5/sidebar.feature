@@ -10,10 +10,10 @@ Business Need: Side bar Component Scenarios
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName                  | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Side Bar Header:General | Sidebar Component Sequence | Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        |                           |                            |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,ActivityMenu,TaskMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        | Phase Name                |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    Then i see "Tasks" shown at number "4" in sideBar
+    Then i see "Tasks" shown at number "3" in sideBar
 
   @33876    @validateSidebarTaskMenuRemoval-gHome @smoke
   Scenario: validate disabling of task menu from side bar
@@ -22,7 +22,7 @@ Business Need: Side bar Component Scenarios
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName                  | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Side Bar Header:General | Sidebar Component Sequence | Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        |                           |                            |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        | Phase Name                |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I do not see "Tasks" at sidebar
@@ -34,7 +34,7 @@ Business Need: Side bar Component Scenarios
       | Side Bar Header       | Sidebar Component Sequence | Search,TaskMenu,ActivityMenu,RecentlyViewed,TechnicalSupport,Links | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName                  | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        |                           |                            |
+      | Side Bar Header:General | Sidebar Component Sequence | Search,TaskMenu,RecentlyViewed,TechnicalSupport,Links | GrantorHome        | Phase Name                |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I do not see "Activities" at sidebar
@@ -42,11 +42,11 @@ Business Need: Side bar Component Scenarios
   @33881    @validateLabelChangeOfAccordionContent-gHome @smoke
   Scenario: validate change of label in My tasks accordion content
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Name      | Completed         | GrantorHome        | Name                      | Automation                 |
+      | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Phase Name | Completed         | GrantorHome        | Phase Name                | Automation                 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Name      | Automation    | GrantorHome        | Name                      | Completed                  |
+      | configurationCategory | fieldName  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Accordian Header      | Phase Name | Automation    | GrantorHome        | Phase Name                | Completed                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side bar sub menu
@@ -70,7 +70,7 @@ Business Need: Side bar Component Scenarios
       | Accordian Content     | Available for Profiles | <Old-Profile>     | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Available for Profiles | <New-Profile> | GrantorHome        | Name                      | Reassign                   |
+      | Accordian Content     | Available for Profiles | <New-Profile> | GrantorHome        | Phase Name                | Reassign                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see changed label as "Reassign" inside "Tasks" in side bar sub menu
@@ -82,10 +82,10 @@ Business Need: Side bar Component Scenarios
   Scenario: Changing label of accordion Header
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header      | Name      | My Tasks          | GrantorHome        | Name                      | Automation                 |
+      | Accordian Header      | Name      | My Tasks          | GrantorHome        | Phase Name                | Automation                 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Header      | Name      | Automation    | GrantorHome        | Name                      | My Tasks                   |
+      | Accordian Header      | Name      | Automation    | GrantorHome        | Phase Name                | My Tasks                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see changed label as "Automation" inside "Tasks" in side accordion header menu
@@ -94,10 +94,10 @@ Business Need: Side bar Component Scenarios
   Scenario: validate after changing accordion content sequence for completed inside my tasks
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Sequence  | 1                 | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Sequence  | 1                 | GrantorHome        | Phase Name                | Completed                  |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Sequence  | 2             | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Sequence  | 2             | GrantorHome        | Phase Name                | Completed                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "Completed" shown at number "2" inside "Tasks"
@@ -106,26 +106,26 @@ Business Need: Side bar Component Scenarios
   Scenario Outline: validate accordion content opens in new window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Open in new window | false             | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Open in new window | false             | GrantorHome        | Phase Name                | Completed                  |
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Open in new window | true          | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Open in new window | true          | GrantorHome        | Phase Name                | Completed                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I navigate to "Completed" content inside "Tasks" subheader on left panel
     Then I see "<Page title>" in new tab
     Examples:
       | Page title      |
-      | HOME: Completed |
+      | Home: Completed |
 
   @33887    @validateTargetUrlForAccordionContent-gHome
   Scenario Outline: validate accordion content opens with provided target url
     Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Target Url | <Old-TargetUrl>   | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Target Url | <Old-TargetUrl>   | GrantorHome        | Phase Name                | Completed                  |
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Accordian Content     | Target Url | <New-TargetUrl> | GrantorHome        | Name                      | Completed                  |
+      | Accordian Content     | Target Url | <New-TargetUrl> | GrantorHome        | Phase Name                | Completed                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I navigate to "Completed" content inside "My Tasks" subheader on left panel
@@ -141,14 +141,14 @@ Business Need: Side bar Component Scenarios
       | Flex Grid             | Enable Page Size  | false             | ApiGeneratedId:0 |
       | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size  | true          | EnhancedDataTable  |                           |                            |
-      | Flex Grid:General     | Default Page Size | 5             | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | GrantorRelatedAwards2 |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:EnhancedDataTableId---"
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:GrantorRelatedAwards2gridTableId---"
 
   @77433    @defaultPageSizeFieldAndValidateInsideEnhancedDataTableAtSidebar-gHome
   Scenario: validate change of default page size inside dropdown at bottom of enhanced flex table at sidebar - Home phase
@@ -156,13 +156,13 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid             | Default Page Size | 10                | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Default Page Size | 5             | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 5             | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see "5" records inside enhanced grid id "---program:-:EnhancedDataTableId---"
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see "5" records inside enhanced grid id "---program:-:GrantorRelatedAwards2gridTableId---"
 
   @77462    @orderBySortByFieldAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
@@ -171,14 +171,14 @@ Business Need: Side bar Component Scenarios
       | Flex Grid             | Order By       |                   | ApiGeneratedId:0 |
       | Flex Grid             | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | GrantAbbreviation__c | EnhancedDataTable  |                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC                  | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAwardName__c | GrantorRelatedAwards2 |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC               | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see column "GrantAbbreviation__c" value is in "Ascending" order
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see column "GrantAwardName__c" value is in "Ascending" order
 
   @77463    @orderBySortByFieldDescendingAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced flex table at sidebar - Home phase
@@ -187,14 +187,14 @@ Business Need: Side bar Component Scenarios
       | Flex Grid             | Order By       |                   | ApiGeneratedId:0 |
       | Flex Grid             | Sort Direction |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | GrantAbbreviation__c | EnhancedDataTable  |                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC                 | EnhancedDataTable  |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAwardName__c | GrantorRelatedAwards2 |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC              | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see column "GrantAbbreviation__c" value is in "Descending" order
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see column "GrantAwardName__c" value is in "Descending" order
 
   @77467    @enableFormulaFieldAtFlexTableAtEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Validating subtotal of cell value of total obligated amount by entering formula at config and validating it inside enhanced flex table at sidebar - Home phase
@@ -202,13 +202,13 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see cell subtotal as expected as given formula at "NumberofProjectAreas__c" field
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see cell subtotal as expected as given formula at "AmendmentNumber__c" field
 
   @77468    @hideCellJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table at sidebar -Home
@@ -216,12 +216,12 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | configurationCategory | fieldName      | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
 
   @77471    @hideExpressionJsonFieldAtFlexTableForEnhancedDataTableAtSidebar-gHome @smoke
@@ -230,14 +230,15 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | EnhancedDataTable  | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | GrantorRelatedAwards2 | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    When I perform quick search for "Applicationg test88888" in "---program:-:flexGridEnhancedDataTableId---" panel
-    Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    When I perform quick search for "AD-GTR-01" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
+    Then I see "Edit" icon for "AD-GTR-01" is not displayed inside flex table
 
   @77614    @enablePageSizeFieldAndValidateInsideEnhancedGridAtAtSidebar-gHome @smoke
   Scenario: enabling of page size dropdown at bottom inside enhanced grid at sidebar - Home phase
@@ -246,13 +247,13 @@ Business Need: Side bar Component Scenarios
       | Flex Grid             | Enable Page Size  | true              | ApiGeneratedId:0 |
       | Flex Grid             | Default Page Size | 5                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size  | true          | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Default Page Size | 5             | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size  | true          | SubAwardFlexTable  |                           |                            |
+      | Flex Grid:General     | Default Page Size | 5             | SubAwardFlexTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:enhancedGridTableId---"
 
   @77618    @defaultPageSizeFieldAtParentFlexTableForEnhancedGridAtSidebar-gHome
@@ -261,12 +262,12 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Default Page Size | 10            | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 10            | SubAwardFlexTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     #Then I see "10" records inside enhanced grid id "---program:-:enhancedGridTableId---"
     Then I see "10" with page size dropdown at "---program:-:enhancedGridTableId---"
 
@@ -274,34 +275,34 @@ Business Need: Side bar Component Scenarios
   @77620    @orderBySortByFieldAtParentDataTableEnhancedGridForAscendingOrderAtSidebar-gHome
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | SubAwardFlexTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | SubAwardFlexTable  |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction | ASC             | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAwardName__c | SubAwardFlexTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction | ASC               | SubAwardFlexTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    Then I see column "ProjectTitle__c" value is in "Ascending" order
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    Then I see column "GrantAwardName__c" value is in "Ascending" order
 
   @77623    @orderBySortByDescFieldAtParentDataTableEnhancedGridForDescendingOrderAtSidebar-gHome @smoke
   Scenario: Changing specific column value in descending order with order by and sort by field from config and validating it inside enhanced grid at sidebar-gHome
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | SubAwardFlexTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | SubAwardFlexTable  |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | ProjectTitle__c | TmpActiveGrantsGrid |                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC            | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | GrantAwardName__c | SubAwardFlexTable  |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC              | SubAwardFlexTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    Then I see column "ProjectTitle__c" value is in "Descending" order
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    Then I see column "GrantAwardName__c" value is in "Descending" order
 
   @77701     @hideCellJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
   Scenario: Hiding specific cell value of enhanced grid from config and validating it inside enhanced grid at sidebar
@@ -310,14 +311,14 @@ Business Need: Side bar Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | EnhancedGrid1grid  | Name                      | FTC-1488                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | SubAwardFlexTable  | Name                      | FTC-13466                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    When I perform quick search for "Test1" in "---program:-:flexGridEnhancedTableId---" panel
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "product flow start" in "---program:-:flexGridEnhancedTableId---" panel
     When I pause execution for "10" seconds
-    Then I see "*****" shown inside enhanced grid table for specified record "Test1"
+    Then I see "*****" shown inside enhanced grid table for specified record "product flow start"
 
   @77705     @hideColumnJsonFieldAtEnhancedGridAtSideBar-gHome @smoke
   Scenario: Hiding specific column value of enhanced grid from config and validating it inside enhanced grid at sidebar
@@ -326,11 +327,11 @@ Business Need: Side bar Component Scenarios
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | EnhancedGrid1grid  | Name                      | FTC-1488                   |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | SubAwardFlexTable  | Name                      | FTC-13466                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see "Project Period" not displayed in enhanced grid table column title
 
   @77721    @hideExpressionJSONAtEnhancedGridViewActionForInternalUserAtSideBar-gHome @smoke
@@ -340,13 +341,13 @@ Business Need: Side bar Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | EnhancedGrid1grid  | Name                      | View                       |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_UserType_IN_Internal | SubAwardFlexTable  | Name                      | View                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    When I perform quick search for "Test1" in "---program:-:flexGridEnhancedID---" panel
-    Then I see "View" icon for "Test1" is not displayed inside flex table
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "product flow start" in "---program:-:flexGridEnhancedID---" panel
+    Then I see "View" icon for "product flow start" is not displayed inside flex table
 
   @77470     @hideColumnJsonFieldAtEnhancedDataTableAtSideBar-gHome
   Scenario: Hiding specific column value from config and validating it inside enhanced data table at sidebar
@@ -354,69 +355,72 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | EnhancedDataTable  | Name                      | FTC-1511                   |
+      | configurationCategory | fieldName        | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:Hide_Expression_Enhancedgrid_ViewAction_With_Profile_IN_SystemAdministrator | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see "Number of Project Areas" not displayed in enhanced grid table column title
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see "Version Number" not displayed in enhanced grid table column title
 
   @77822    @validateViewActionAtParentFlexTableForEnhancedGridAtSideBar-gHOME
   Scenario: validate view action at enhanced grid at sidebar - home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "View" icon for "Demo_Title" inside table
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "product flow start" in "---program:-:SubAwardFlexTableTableId---" panel
+    When I click on "View" icon for "product flow start" inside table
     Then I see "Grant View" shown as over view header
 
   @77823    @validateEditActionAtParentFlexTableForEnhancedGridAtSideBar-gHOME
   Scenario: validate edit action at enhanced grid at sidebar - home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedTableId---" panel
-    When I click on "Edit" icon for "QA Team Automation Record" inside table
-    When I enter values "Test Automation sidebar" into textarea for table id "---program:-:flexGridEnhancedID---"
-    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedID---"
-    When I perform quick search for "QA Team Automation Record" in "---program:-:flexGridEnhancedID---" panel
-    Then I see value "Test Automation sidebar" for multiple cells at column "Program Contact Address"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableTableId---" panel
+    When I click on "Edit" icon for "AD-GTR-01" inside table
+    When I enter values "Test Automation sidebar" into textarea for table id "---program:-:SubAwardFlexTableTableId---"
+    When I click on top right button "Save" in flex table with id "---program:-:SubAwardFlexTableTableId---"
+    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableTableId---" panel
+    Then I see value "Test Automation sidebar" for multiple cells at column "Title"
 
   @78043    @validateViewActionAtFlexTableEnhancedAtSideBar-gHOME
   Scenario: validate view action at flex table enhanced at sidebar - home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I click on "View" icon for "APP2- FOA for DHP12" inside table
-    Then I see "Grant View" shown as over view header
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    When I perform quick search for "Automation Direct Grant" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Automation Direct Grant" inside table
+    Then I see "Subaward" shown as over view header
 
   @78068    @validateEditActionAtEnhancedDataTableAtSideBar-gHOME
-  Scenario Outline: validate edit action at enhanced table at sidebar - home phase
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhancedDataTable  |                           |                            |
+  Scenario: validate edit action at enhanced table at sidebar - home phase
+  #Scenario Outline: validate edit action at enhanced table at sidebar - home phase
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+#      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
-    When I click on "Edit" icon for "APP2- FOA for DHP12" inside table
-    When I enter values "Test Automation sidebar 1" into textarea for table id "---program:-:flexGridEnhancedDataTableId---"
-    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedDataTableId---"
-    When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
-    Then I see value "Test Automation sidebar 1" for multiple cells at column "AddressProgramContact__c"
-
-    Examples:
-      | newFieldsApi                                                                                                                                                                     | defaultFieldsApi                                                                                                                                        |
-      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    When I perform quick search for "AD-GTR-01" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
+    When I click on "Edit" icon for "AD-GTR-01" inside table
+    When I enter value "Test Automation sidebar" into field "GrantAwardName__c"
+    When I click on top right button "Save" in flex table with id "---program:-:GrantorRelatedAwards2gridTableId---"
+    When I perform quick search for "Test Automation sidebar" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
+    Then I see value "Test Automation sidebar" for multiple cells at column "GrantAwardName__c"
+#
+#    Examples:
+#      | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                    |
+#      | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c,AddressProgramContact__c | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c |
 
   @77697    @enableOverallTotalFieldAtParentFlexTableForEnhancedGridAtSideBar-gPlanning
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid at sidebar - home phase
@@ -427,20 +431,20 @@ Business Need: Side bar Component Scenarios
       | Flex Grid:Flex Table List | Is Master View        | true                            | ApiGeneratedId:2 |
       | Flex Grid                 | Display Field Names   | <defaultFieldsApi>              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Enable Over All Total | true                        | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
-      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Is Master View        | true                        | TmpActiveGrantsGrid | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | TmpActiveGrantsGrid |                           |                            |
+      | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List           | Enable Over All Total | true                        | SubAwardFlexTable  | Name                      | FTC-1497                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | SubAwardFlexTable  | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | SubAwardFlexTable  | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Display Field Names   | <newFieldsApi>              | SubAwardFlexTable  |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
     Then I see over all total for "NumberofAwards__c" field at enhanced grid
 
     Examples:
-      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         | defaultFieldsApi                                                                                                                                                                                                                   | newFieldsApi                                     |
-      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,Status__c,NumberofAwards__c |
+      | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                           | defaultFieldsApi                                                                                                                                                                                                         | newFieldsApi                                       |
+      | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and GrantAwardName__c like 'Road%' | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,AmountAwarded__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,GrantAwardName__c,Status__c,NumberofAwards__c |
 
   @77466    @validateOverallTotalAtEnhancedDataTableAtSideBar-gHOME
   Scenario Outline: validate overall total at enhanced table at sidebar - home phase
@@ -449,18 +453,18 @@ Business Need: Side bar Component Scenarios
       | Flex Grid             | Display Field Names   | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table List       | Enable Over All Total | false              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names   | <newFieldsApi> | EnhancedDataTable  |                           |                            |
-      | Flex Table List       | Enable Over All Total | true           | EnhancedDataTable  | Name                      | FTC-1524                   |
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names   | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
+      | Flex Table List       | Enable Over All Total | true           | GrantorRelatedAwards2 | Name                      | FTC-1524                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Data table enhanced record" content inside "Organizations" subheader on left panel
-    Then I see over all total for "TotalAwardObligatedAmount__c" at enhanced grid
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    Then I see over all total for "AmountAwarded__c" at enhanced grid
 
     Examples:
-      | newFieldsApi                                                | defaultFieldsApi                                                                                                                                        |
-      | Name,ProjectTitle__c,Status__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
+      | newFieldsApi                                      | defaultFieldsApi                                                                                                                      |
+      | Name,GrantAwardName__c,Status__c,AmountAwarded__c | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c |
 
   @115097    @validateColorOfGlobalSearchBoxAtSidebar-gHome
   Scenario: validate color of global search box at sidebar
@@ -480,7 +484,7 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on global search and select "Program"
+    When I click on global search and select "Programs"
     When I perform quick search inside global search "PG-343-0058"
     Then I see cross icon is displayed at search box at "sidebarAppId"
 
@@ -488,11 +492,11 @@ Business Need: Side bar Component Scenarios
   Scenario: validate that complete text is displayed at sidebar menu on mouse hover
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
+    And I navigate to "Grants" tab
     And I pause execution for "3" seconds
-    When I hover mouse on lookup link "Data table enhanced record"
+    When I hover mouse on lookup link "Subawards"
     And I pause execution for "3" seconds
-    Then I see "Data table enhanced record" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
+    Then I see "Subawards" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
 
   @126111    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfProgramIsSelected
   Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if program is selected
@@ -505,8 +509,9 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I click on global search and select "Program"
     When I perform quick search inside global search "PG-A11-1244" without processing
+    When I click on global search and select "Programs"
+    #When I perform quick search inside global search "PG-A11-1244" without processing
     Then I softly see record "PG-A11-1244" is displayed inside autosuggestion dropdown at global search
     Then I softly see record "PG-A11-1244" is displayed inside autosuggestion dropdown at global search
 
@@ -644,13 +649,13 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
-    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value "Automation FO" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I check "{SavedValue:PEGMSID}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -840,10 +845,10 @@ Business Need: Side bar Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Formula   |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | TmpActiveGrantsGrid | Name                      | FTC-1491                   |
+      | configurationCategory | fieldName | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Formula   | govgrants_config:FormulaFieldAtEnhancedGrid | SubAwardFlexTable  | Name                      | FTC-1491                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Home" tab
-    When I navigate to "Flex Grid Enhanced" content inside "Organizations" subheader on left panel
-    Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
+    And I navigate to "Monitoring" tab
+    When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
+    Then I see cell subtotal as expected as given formula at "AmountAwarded__c" field

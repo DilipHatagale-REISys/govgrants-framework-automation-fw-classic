@@ -390,7 +390,7 @@ Business Need: Flex Table enhanced Component Scenarios
     And I pause execution for "5" seconds
     #Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
     Then I see only the following ordered options in dropdown field "ProjectRole__c" :
-      |     | --None-- | Authorized Signatory | Ebiz POC | Fiscal Contact | Grants Administrator | Principal Investigator | Program Manager | Project Director/Manager | Other |
+      |  | --None-- | Authorized Signatory | Ebiz POC | Fiscal Contact | Grants Administrator | Principal Investigator | Program Manager | Project Director/Manager | Other |
 
 
   @106413  @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTableEnhanced
@@ -439,8 +439,8 @@ Business Need: Flex Table enhanced Component Scenarios
     Then I softly do not see value "3/20/2019--3/20/2022" for title "Project Period" inside table "---program:-:programContactsTableId---"
 
     Examples:
-      | newFieldsApi                                      | defaultFieldsApi                                                                                                                                  |
-      | ProjectTitle__c,Status__c,CurrentProjectPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,ProjectRole__c,TotalAwardObligatedAmount__c |
+      | newFieldsApi                                                          | defaultFieldsApi                                                      |
+      | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c |
 
   @111920  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedDataTable @skipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Enhanced data table
@@ -526,7 +526,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -543,7 +543,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -611,7 +611,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -657,7 +657,7 @@ Business Need: Flex Table enhanced Component Scenarios
 
   @208595   @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
   Scenario:To verify , Mini layout UI at ME-Grid  table looks as   object name to the top, field title under it, then line separator for Internal user
-    When I login as "Automation-PM" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -684,7 +684,7 @@ Business Need: Flex Table enhanced Component Scenarios
 
   @208597    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedGrid
   Scenario:To verify , Mini layout UI at form looks as   object name to the top, field title under it, then line separator for Internal user
-    When I login as "Automation-PM" user
+    When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
