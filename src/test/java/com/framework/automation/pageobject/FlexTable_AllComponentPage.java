@@ -234,12 +234,13 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         }
         return flag;
     }
+
     public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
         By filterAction = null;
         By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
         By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
         By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
-        By inputField = By.xpath("//div[@id='flexTableDivId']//field//input");
+        By inputField = By.xpath("//div[@id='flexTableDivId']//field//input | //div[@id='flexGridGrantorRelatedAwards2']//field//input | //div[@id='GrantorRelatedAwards2FlexToggle']//field//input");
 
         filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
         I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
