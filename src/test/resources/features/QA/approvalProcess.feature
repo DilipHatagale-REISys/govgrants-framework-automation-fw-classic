@@ -43,11 +43,13 @@ Business Need: Approval Process Component Scenarios
   @34307    @changeApproveOptionSequence-Programs @smoke
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Sequence  | 1                 | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Sequence              | 1                 | ApiGeneratedId:1 |
+      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Sequence  | 5             | ADAC-0105          |
+      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Sequence              | 5             | ADAC-0105          |
+      | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0105          |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -368,6 +370,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I select radio button "Approve" in the approval decision
     When I enter comment "Automation testing" in the approval decision
+    And I pause execution for "300" seconds
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Confirmation box for automation" is displayed
 
@@ -663,7 +666,7 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details

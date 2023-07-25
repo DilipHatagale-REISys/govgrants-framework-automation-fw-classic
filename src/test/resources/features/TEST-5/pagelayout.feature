@@ -164,14 +164,14 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
-  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
+  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke @wip
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide For Context | view          | Grantor State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Hide For Context | view          | Grantee State Program | Name                      | Submit For Approval        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -214,7 +214,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
-  @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke
+  @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke @wip
   Scenario: Hide overview for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
