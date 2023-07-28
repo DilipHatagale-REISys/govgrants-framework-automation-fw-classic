@@ -295,7 +295,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Default Page Size | 10                 | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
@@ -308,13 +308,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335049 @dilip
   Scenario: Flex table-Enable Record Selection-Admin-Config-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | Programs              | Name                      |                            |
-      | Flex Table:General    | Default Page Size | 10            | RecipientApplications | Name                      |                            |
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
