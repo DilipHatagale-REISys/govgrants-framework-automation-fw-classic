@@ -252,8 +252,8 @@ Business Need: New API related scenarios temporary
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I pause execution for "60" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
@@ -268,7 +268,7 @@ Business Need: New API related scenarios temporary
    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I perform quick search for "Demo_Title"
+    When I perform quick search for "Automation Internal Program for Testing"
     When I pause execution for "70" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
 
