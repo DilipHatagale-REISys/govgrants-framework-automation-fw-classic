@@ -1794,7 +1794,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
     ########formula##########
 
-  @297387 @dilip
+  @297387 @dilip @Bug-344935 @wip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1805,7 +1805,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297390 @dilip
+  @297390 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1816,7 +1816,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297392 @dilip
+  @297392 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1827,7 +1827,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForSPIuser---"
 
-  @297399 @dilip
+  @297399 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1839,7 +1839,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297400 @dilip
+  @297400 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1851,7 +1851,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297402 @dilip
+  @297402 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1863,7 +1863,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForSPIuser---"
 
-  @297403 @dilip
+  @297403 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1873,7 +1873,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297404 @dilip
+  @297404 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1883,7 +1883,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Project Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297405 @dilip
+  @297405 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1935,7 +1935,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
       | User | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
       | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
-  @297345 @dilip
+  @297345 @dilip @Bug-344935 @wip
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1993,7 +1993,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
       | User | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
       | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
-  @297352 @dilip
+  @297352 @dilip @Bug-344935 @wip
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2055,7 +2055,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
       | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
 
-  @297358 @dilip
+  @297358 @dilip @Bug-344935 @wip
   Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

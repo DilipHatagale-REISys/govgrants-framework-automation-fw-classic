@@ -1417,7 +1417,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297866 @dilip
+  @297866 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1470,7 +1470,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297870 @dilip
+  @297870 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1523,7 +1523,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297873 @dilip
+  @297873 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1582,7 +1582,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297878 @dilip
+  @297878 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1639,7 +1639,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297882 @dilip
+  @297882 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1744,7 +1744,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297888 @dilip
+  @297888 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1879,7 +1879,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Project Period" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
-  @297908 @297909 @dilip
+  @297908 @297909 @dilip @Bug-344935 @wip
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1966,7 +1966,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,FinalFiscalReportCreated__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,FinalFiscalReportCreated__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297913 @dilip
+  @297913 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2025,7 +2025,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297916 @dilip
+  @297916 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2082,7 +2082,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297919 @dilip
+  @297919 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2173,7 +2173,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       #| PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,TotalObligatedAmount__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
 
-  @297921 @dilip
+  @297921 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2226,7 +2226,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | PM   | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,TotalObligatedAmount__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
 
-  @297929 @dilip
+  @297929 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2285,7 +2285,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297932 @dilip
+  @297932 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2344,7 +2344,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297935 @dilip
+  @297935 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (spi)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

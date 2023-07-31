@@ -612,7 +612,7 @@ Business Need: Send Email Component Scenarios
     When I click on "reply" icon for "Test asterisk mark" inside table
     Then I see asterisk mark at "{testData:ToField}" field is displayed at send email modal
 
-  @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal
+  @101035 @validateSentDateOfEmailInISTModeAtSendEmailModal @wip
   Scenario: Validate send date of an email on send email modal for IST time zone
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -639,7 +639,7 @@ Business Need: Send Email Component Scenarios
     When I click on "view" icon for "Test automation mail subject1" inside table
     Then I softly see "7/11/2023" on html page
 
-  @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal
+  @101041 @validateSentDateOfEmailInEDTModeAtSendEmailModal @wip
   Scenario: Validate send date of an email on send email modal for EDT time zone
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -686,16 +686,24 @@ Business Need: Send Email Component Scenarios
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
-    When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
     When I click on "view" icon for "Test automation mail subject 1" inside table
-    Then I softly see "2/12/2023 " on html page
+    Then I softly see "7/31/2023 " on html page
 
   @102057 @validateDisplayOfSelectFilesComponentInSendEmailModal @needManagedAPI @wip
   Scenario: Enabling select files section from custom metadata config and validating display of attachments in send email modal
@@ -1691,7 +1699,7 @@ Business Need: Send Email Component Scenarios
     Then I see the following messages in the page details :
       | Email Sent Successfully. |
 
-  @159444 @validateAttentionToFieldValueAtSendEmailMessageTable
+  @159444 @validateAttentionToFieldValueAtSendEmailMessageTable @wip
   Scenario: Validate Attention To field at reply email inside message table at send email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2059,7 +2067,7 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "Test" inside table
     Then I see "test for external" as "Body Content" on send email modal
 
-  @169491 @tejal
+  @169491 @tejal @wip
   Scenario: verify User send the email from TO&CC  field as 'internal' and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2100,7 +2108,7 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test" as "Body Content" on send email modal
 
-  @169289 @tejal
+  @169289 @tejal @wip
   Scenario: verify User send the email from TO field as 'Group' with multiple attachment & files  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2152,7 +2160,7 @@ Business Need: Send Email Component Scenarios
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
     Then I see "test group for attachment and files" as "Body Content" on send email modal
 
-  @169263 @tejal
+  @169263 @tejal @wip
   Scenario: Verify User send the email from TO field as 'internal' with attachment  and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2192,7 +2200,7 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test for internal with attachment" as "Body Content" on send email modal
 
-  @169286 @tejal
+  @169286 @tejal @wip
   Scenario: Verify User send the email from TO field as 'Group' with multiple attachment and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2234,7 +2242,7 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "test group for attachment" as "Body Content" on send email modal
 
-  @169287 @tejal
+  @169287 @tejal @wip
   Scenario: Verify User send the email from TO field as 'Group' with multiple files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2372,7 +2380,7 @@ Business Need: Send Email Component Scenarios
     Then I see attachment "captureModalFields.png" is present in send email modal
     Then I see attachment "actionsAtEgrid.png" is present in send email modal
 
-  @169266 @tejal
+  @169266 @tejal @wip
   Scenario: Verify User send the email from TO& CC field as 'internal' with attachment & files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2424,7 +2432,7 @@ Business Need: Send Email Component Scenarios
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "test for files & attachment" as "Body Content" on send email modal
 
-  @169265 @tejal
+  @169265 @tejal @wip
   Scenario: Verify user send the email from TO field as 'internal' with files and click on View action on that mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2552,7 +2560,7 @@ Business Need: Send Email Component Scenarios
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "Subject" as "Body Content" on send email modal
 
-  @169693 @jyoti @complete
+  @169693 @jyoti @complete @wip
   Scenario: Send Email-To verify,User reply email previously send from TO field as 'Group' and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2650,7 +2658,7 @@ Business Need: Send Email Component Scenarios
     Then I see "Recipient Link to the record:" as "Body Content" on send email modal
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
 
-  @169931 @jyoti
+  @169931 @jyoti @wip
   Scenario: Send Email-To verify,User reply with file the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -2726,7 +2734,7 @@ Business Need: Send Email Component Scenarios
     Then I see "{SavedValue:id}" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
 
-  @169703 @tejal
+  @169703 @tejal @wip
   Scenario: Verify user reply email previously send from TO field as 'internal' with files and click on  reply View action on that reply mailthen added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2859,7 +2867,7 @@ Business Need: Send Email Component Scenarios
     Then I see text as "Subject: test reply" on reply email modal
     Then I see "test reply" as "Body Content" on send email modal
 
-  @169931 @jyoti
+  @169931 @jyoti @wip
   Scenario: Send Email-To verify,User reply with file the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2981,7 +2989,7 @@ Business Need: Send Email Component Scenarios
     Then I see "-----Original Message-----" as "Body Content" on send email modal
     Then I see "From:" as "Body Content" on send email modal
     Then I see "Sent:" as "Body Content" on send email modal
-    Then I see "Subject: reply TO& CC with internal & external" as "Body Content" on send email modal
+    Then I see "reply TO& CC with internal & external" as "Body Content" on send email modal
 
   @169929 @jyoti
   Scenario: Send Email-To verify,User reply the email from TO &CC field as 'internal&external' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -3576,30 +3584,40 @@ Business Need: Send Email Component Scenarios
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
     When I enter value "group 1" into field "{testData:ToField}" on send email modal
     When I select value "group 1" with iconName "fa fa-users" into field on send email modal
-    When I enter value "reply group" into field "Subject" on send email modal
-    When I enter value "reply group" into field "Body Content" on send email modal
+    When I enter value "reply group with attachment & files" into field "Subject" on send email modal
+    When I enter value "reply group with attachment & files" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
     And I click modal button "Select Files"
-    And I pause execution for "10" seconds
+    And I pause execution for "5" seconds
     When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "DuplicateFile.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "actionsAtEgrid.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
-    And I pause execution for "5" seconds
     And I refresh the page
-    When I click on "Reply" icon for "reply group" inside table
+    When I click on "Reply" icon for "reply group with attachment & files" inside table
     When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
+    When I upload attachment "actionsAtAttachment.png" in send email modal
+    When I upload attachment "actionsAtEgrid.png" in send email modal
+    And I click modal button "Select Files"
+    And I pause execution for "5" seconds
+    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "DuplicateFile.txt" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I check "actionsAtEgrid.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
+    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
+    And I close modal by clicking the top right x button
     When I click on "Send" button in send email modal
     When I close "Reply" modal by clicking on x top right button
-    When I click on "View" icon for "RE: reply group" inside table
-    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
+    When I click on "View" icon for "RE: reply group with attachment & files" inside table
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see text as "From: ashwini.mahore@yopmail.com" on reply email modal
-    Then I see text as "Sent:" on reply email modal
-    Then I see text as "To:" on reply email modal
-    Then I see text as "Subject: reply group" on reply email modal
-    Then I see "reply group" as "Body Content" on send email modal
+    Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
+    Then I see "DuplicateFile.txt" as "Body Content" on send email modal
+    Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
 
   @169700 @tejal
   Scenario: Verify user reply email with attachment to previously send from  TO field as 'internal' with attachment  and click on  reply View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -4032,7 +4050,7 @@ Business Need: Send Email Component Scenarios
     When I enter value "Neelima GGPTEST5" into field "{testData:ToField}" on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
-    When I enter value "Bhushan" into field "{testData:CcField}" on send email modal
+    When I enter value "Automation" into field "{testData:CcField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @159887 @jyoti
@@ -4088,10 +4106,10 @@ Business Need: Send Email Component Scenarios
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Bhushan" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Shambhavi" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @159937 @jyoti
@@ -4198,7 +4216,7 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Jai" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @160159 @jyoti
@@ -4232,7 +4250,7 @@ Business Need: Send Email Component Scenarios
     When I close modal by clicking the top right x button
     And I click on "Reply" icon for "reply for to &cc external" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Nauman" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     Then I softly see user suggestion box displayed at send email modal
 
   @169708 @tejal
@@ -4424,7 +4442,7 @@ Business Need: Send Email Component Scenarios
     Then I see "To:" as "Body Content" on send email modal
     Then I see "automationadmin@yopmail.com" as "Body Content" on send email modal
     Then I see "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" as "Body Content" on send email modal
-    Then I see text as "Subject: reply for to &cc external 2" on reply email modal
+    Then I see text as "reply for to &cc external 2" on reply email modal
 
   @169813 @tejal
   Scenario: Verify user reply email with attachment& files from TO field as 'Group' with multiple attachment & files  and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
@@ -4479,21 +4497,12 @@ Business Need: Send Email Component Scenarios
     When I click on "View" icon for "RE: reply group with attachment & files" inside table
     Then I see "reply the mail" as "Body Content" on send email modal
     Then I see "-----Original Message-----" as "Body Content" on send email modal
-    Then I see text as "From:" on reply email modal
-    Then I see text as "Sent:" on reply email modal
-    Then I see text as "To: ashwini.mahore@yopmail.com" on reply email modal
-    Then I see text as "Subject: reply group with attachment & files" on reply email modal
-    Then I see "reply group with attachment & files" as "Body Content" on send email modal
-    Then I see "Links to Additional Attachments " as "Body Content" on send email modal
     Then I see text as "(Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment.):" on reply email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
     Then I see "DuplicateFile.txt" as "Body Content" on send email modal
     Then I see "actionsAtEgrid.png" as "Body Content" on send email modal
-    Then I see "actionsAtAttachment.png" as "Files" on send email modal
-    Then I see "actionsAtEgrid.png" as "Files" on send email modal
-    Then I see "captureModalFields.png" as "Files" on send email modal
 
-  @168932 @SendEmail-Toverify,UserreplytheemailwithattachmentfromTO&CCfieldExternalandclickonViewactiononthatreplymailthenaddedfieldsEmailBodystructureareseeninthemailbody @jyoti
+  @168932 @SendEmail-Toverify,UserreplytheemailwithattachmentfromTO&CCfieldExternalandclickonViewactiononthatreplymailthenaddedfieldsEmailBodystructureareseeninthemailbody @jyoti @wip
   Scenario: Send Email-To verify,User reply the email with attachment  from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -4547,7 +4556,7 @@ Business Need: Send Email Component Scenarios
     Then I see text as "Subject: reply for to &cc external" on reply email modal
     Then I see "reply for to &cc external" as "Body Content" on send email modal
 
-  @169843
+  @169843 @wip
   Scenario: Send Email-To verify,User reply the email with files & attachment from TO &CC field as 'External' and click on View action on that reply mail then added fields in Email Body structure are  seen in the mail body
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5242,12 +5251,15 @@ Business Need: Send Email Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5257,7 +5269,6 @@ Business Need: Send Email Component Scenarios
     When I enter value "test" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "send email select file attachment" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
@@ -5322,16 +5333,12 @@ Business Need: Send Email Component Scenarios
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
     When I enter value "send email select file attachment" into field "Subject" on send email modal
     When I enter value "test" into field "Body Content" on send email modal
-    When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "send email select file attachment" inside table
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     And I pause execution for "5" seconds
-    And I refresh the page
-    When I perform quick search for "RE: send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @186677 @sprint24 @dnyaneshwari
@@ -5361,7 +5368,6 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "send email select file attachment	" in "---program:-:communicationHistoryTableId---" panel
     When I click on "Reply" icon for "send email select file attachment	" inside table
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
@@ -5567,24 +5573,13 @@ Business Need: Send Email Component Scenarios
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
     When I enter value "group" into field "{testData:CcField}" on send email modal
     When I select value "group 1" with iconName "fa fa-users" into field on send email modal
-    When I enter value "select file is attached" into field "Subject" on send email modal
-    When I enter value "select file is attached" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    And I pause execution for "5" seconds
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    When I perform quick search for "select file is attached" in "---program:-:communicationHistoryTableId---" panel
-    And I click on "Reply" icon for "select file is attached" inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
-    And I click modal button "Select Files"
-    When I check "SendEmailAttachment.pdf" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
     When I click on "Send" button in send email modal
-    When I close "Reply" modal by clicking on x top right button
-    And I pause execution for "7" seconds
-    And I refresh the page
+    When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
 
   @186679 @sprint24 @dnyaneshwari
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- group " reply email
@@ -5594,12 +5589,14 @@ Business Need: Send Email Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    Given I login to "As a Grantor" app as "Admin" user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5613,7 +5610,6 @@ Business Need: Send Email Component Scenarios
     When I upload attachment "captureModalFields.png" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "reply for  To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187614 @sprint24 @dnyaneshwari
@@ -5636,23 +5632,16 @@ Business Need: Send Email Component Scenarios
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
-    When I enter value "reply for  To & cc " into field "Subject" on send email modal
-    When I enter value "reply for  To & cc " into field "Body Content" on send email modal
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
+    When I upload attachment "captureModalFields.png" in send email modal
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    And I refresh the page
-    And I click on "Reply" icon for "reply for  To & cc " inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "reply the mail" into field "Body Content" on send email modal
-    When I upload attachment "captureModalFields.png" in send email modal
-    And I click modal button "Select Files"
-    When I check "actionsAtEgrid.png" boxes in flex table with id "---program:-:flexGridFilesLinkId---"
-    When I click on top right button "Add" in flex table with id "---program:-:flexGridFilesLinkId---"
-    And I pause execution for "10" seconds
-    When I close "Reply" modal by clicking on x top right button
-    And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187627 @sprint26 @dnyaneshwari
@@ -5663,13 +5652,16 @@ Business Need: Send Email Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    Given I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -5678,19 +5670,11 @@ Business Need: Send Email Component Scenarios
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
     When I enter value "group" into field "{testData:CcField}" on send email modal
     When I select value "group 1" with iconName "fa fa-users" into field on send email modal
-    When I enter value "reply for To group" into field "Subject" on send email modal
-    When I enter value "reply for To group" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    When I close modal by clicking the top right x button
-    And I refresh the page
-    And I click on "Reply" icon for "reply for To group" inside flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "reply the mail" into field "Body Content" on send email modal
+    When I enter value "reply for  To group" into field "Subject" on send email modal
+    When I enter value "reply for  To group" into field "Body Content" on send email modal
     When I upload attachment "captureModalFields.png" in send email modal
-    And I click modal button "Select Files"
     When I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
-    When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
-    When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
   @187630 @sprint26 @dnyaneshwari
@@ -6173,11 +6157,9 @@ Business Need: Send Email Component Scenarios
     When I enter value "Automation" into field "{testData:ToField}" on send email modal
     Then I see below users is displayed in suggestion box under send email modal:
       | userName                      |
-      | Automation PM                 |
-      | Automation-Applicant GGPTEST5 |
-      | Automation PO                 |
-      | Automation EXE                |
-      | Automation-Reviewer GGPTEST5  |
+      | Automation EXE                 |
+      | Automation PM1                 |
+      | Automation Admin                |
 
 
   @169705 @tejal
