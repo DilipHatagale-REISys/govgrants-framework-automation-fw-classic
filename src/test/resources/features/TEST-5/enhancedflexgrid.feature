@@ -3805,8 +3805,8 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @181116 @sprint20
-  Scenario :E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
+  @181116 @sprint20 @wip
+  Scenario:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
