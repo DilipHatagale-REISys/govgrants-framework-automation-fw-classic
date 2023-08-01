@@ -3,7 +3,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.
 
-  @39294    @skipFieldForExportFieldAtFlexTable-gPlanning
+  @39294    @skipFieldForExportFieldAtFlexTable-gPlanning @pass
   Scenario: Setup skip form export for 'Status_c' in configuration and validating inside program flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -23,7 +23,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I cannot see "Status" on page "1" of "govgrants" pdf file
 
-  @40233    @showInPdfFieldAtFlexTable-gPlanning
+  @40233    @showInPdfFieldAtFlexTable-gPlanning @pass
   Scenario: Disabling active programs from list view of program flex table from config and validating it at program flex table-programs
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -81,7 +81,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I cannot see "Program Information" on page "1" of "govgrants" pdf file
 
-  @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring
+  @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring @pass
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -136,8 +136,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -164,8 +164,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -197,8 +197,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -229,8 +229,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
     When I expand nested table containing column value "1"
@@ -263,8 +263,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
     When I expand nested table containing column value "1"
@@ -325,8 +325,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -350,8 +350,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -448,8 +448,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -545,7 +545,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Opportunity Overview" on page "1" of "govgrants" pdf file
 
-  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount
+  @57143    @pdfFileShouldGetDownloadedProperlyForFundingAccount @pass
   Scenario: validate downloaded pdf file should get downloaded properly with content of funding account
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -586,7 +586,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Email" on page "1" of "govgrants" pdf file
 
-  @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check
+  @56833    @pdfFileShouldGetDownloadedProperlyForProgramServiceArea @check @pass
   Scenario: validate downloaded pdf file should get downloaded properly with text containing program servicearea
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -625,7 +625,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: validate pdf file getting downloaded properly for Task Summary By Due Date Chart with content My Late Tasks
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Late" content inside "Task Summary By Due Date" charts
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as PDF" from parallel lines dropdown of "My Late Tasks "
@@ -633,7 +633,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "My Late Tasks" on page "1" of "govgrants" pdf file
 
-  @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable
+  @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable @pass
   Scenario: Validate PDF is getting downloaded correctly at program flex table
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -730,8 +730,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -853,7 +853,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table:General    | Enable Export (XLS / CSV) | true          | TasksLate          |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Late" content inside "Task Summary By Due Date" charts
     When I click on parallel lines menu bar with data target value "#toggleFlexTableTasksLate"
     And I select "Download as CSV" from parallel lines dropdown of "My Late Tasks "
@@ -913,8 +913,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -940,8 +940,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -1387,7 +1387,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpActiveGrantsGrid |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -1411,7 +1411,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpActiveGrantsGrid |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Flex Grid Enhanced" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -1429,7 +1429,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General     | Enable Export (PDF) | true          | EnhancedDataTable  |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1447,7 +1447,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:General     | Enable Export (xls / csv) | true          | EnhancedDataTable  |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Data table enhanced record" content inside "Manage Organizations" subheader on left panel
     When I click on parallel lines menu bar with data target value "#EnhancedDataTableFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Grants Enhanced Table"
@@ -1457,7 +1457,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that file is getting download from folder under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1470,7 +1470,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that file is getting download from folder under home phase library for Author profile
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1483,7 +1483,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that if click on download at library then files only from that library is getting downloaded under home phase library
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -1496,7 +1496,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that user can download file from FileList tab - Home phase
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "FilePresentInsideFolderDND.xls" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -1528,7 +1528,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that admin user can download library and it's files at  asset library
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -1539,7 +1539,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Verify that admin user can download the attached files from  asset library
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
@@ -2554,8 +2554,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -2607,7 +2607,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: validate download as pdf at case table- gHome
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "tmpcase1FlexTable"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableCaseList"
     And I select "Download as PDF" from parallel lines dropdown of "Open Cases"
@@ -2632,7 +2632,7 @@ Business Need: All pdf and xls related scenario including component and complete
   Scenario: Validate download as PDF at reassigned task
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
     And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
@@ -2695,7 +2695,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
     And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
@@ -2704,7 +2704,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
     When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePhasePendingTasks"
     And I select "Download as PDF" from parallel lines dropdown of "Pending Tasks (Assigned To Me)"
@@ -2810,7 +2810,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -2844,7 +2844,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I pause execution for "5" seconds
     When I perform quick search for "CollabFileVanish.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:PlanningFilesFlexGridId---"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Delete" action at "Collab temp" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -2866,7 +2866,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Comment" action at "Test Automation Post For collab attachment functionality check - record level" comment inside my feed
     And I click on "Attach File" button at collab
     And I pause execution for "3" seconds
@@ -2891,7 +2891,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
  #130107 file uploaded from home phase is displayed inside attachment tab - record detail
     Then I softly see "Creating a Core Service Area" on page "1" of "govgrants" pdf file
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I click on "Delete" action at "Automation file upload at record post collab" comment inside my feed
     And I click modal button "OK"
     And I refresh the page
@@ -3172,8 +3172,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -3197,8 +3197,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
@@ -3220,8 +3220,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
@@ -3246,8 +3246,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
@@ -3717,8 +3717,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "Edit" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Review Steps"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
@@ -3745,8 +3745,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program for Review Steps"
+    When I click on "Edit" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Financials" sub tab
     And I click toggle button to select "Review Steps"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
