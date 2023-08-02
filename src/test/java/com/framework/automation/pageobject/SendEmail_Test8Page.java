@@ -182,7 +182,7 @@ public class SendEmail_Test8Page extends GovGrantsManager {
     }
 
     public void clickOnXButtonOnModal(String modalName) {
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='" + modalName + "']/parent::button[@aria-label='Close'] "));
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='" + modalName + "']/parent::button[@aria-label='Close']"));
     }
 
     public void selectAndClickAtIconToChangeTextFormattingInStyle(String styleName) {
@@ -192,5 +192,13 @@ public class SendEmail_Test8Page extends GovGrantsManager {
         I.amPerforming().textInput().in(ele, selectAll);
         I.amPerforming().click().on(stylesIcon);
         I.amPerforming().click().on(ByUsing.xpath("//html[@class='cke_panel_container cke_browser_webkit']/body/div[@title='Formatting Styles']/ul/li/a[@title='" + styleName + "']"));
+    }
+
+    public void assertFieldOnModal(String value) {
+        I.amPerforming().assertionsTo().assertThat(isFieldDisplayedOnModal(value)).isTrue();
+    }
+
+    private boolean isFieldDisplayedOnModal(String value) {
+        return I.amPerforming().getElementReference().of(By.xpath("//*[contains(text(),'reply the mail')]")).getText().contains(value);
     }
 }

@@ -87,4 +87,9 @@ public class SendEmail_Test8Steps {
     public void iCloseModalByClickingOnXTopRightButton(String modalName) {
         sendEmail_Test8Page.clickOnXButtonOnModal(modalName);
     }
+
+    @Then("I see text as {string} in reply email modal")
+    public void iSeeTextAsInReplyEmailModal(String value) {
+        sendEmail_Test8Page.assertFieldOnModal(value);
+    }
 }
