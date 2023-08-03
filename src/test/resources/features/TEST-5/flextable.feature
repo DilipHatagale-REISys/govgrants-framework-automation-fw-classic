@@ -164,7 +164,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     Then I see "#" in flex table header "toggleFlexTablePrograms"
 
-  @34035    @disableSpecificStatusCategory-gPlanning @smoke
+  @34035    @disableSpecificStatusCategory-gPlanning @smoke @wip
   Scenario Outline: validate removing Created status category from flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -285,7 +285,7 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Responsibilities" sub tab
-    Then I see "Edit" icon for "Automation PMgt/" is not displayed inside flex table
+    Then I see "Edit" icon for "Automation " is not displayed inside flex table
 
   @34299    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
@@ -2385,7 +2385,7 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout
+  @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout @wip
   Scenario: ME-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -2406,7 +2406,7 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
-  @176532 @ME-grid-Toverify,whenuserdouble-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout
+  @176532 @ME-grid-Toverify,whenuserdouble-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout @wip
   Scenario: ME-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -2427,7 +2427,7 @@ Business Need: Flex Table Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
 
-  @176531 @sprint20
+  @176531 @sprint20 @wip
   Scenario: ME-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |

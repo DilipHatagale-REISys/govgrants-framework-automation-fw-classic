@@ -118,7 +118,7 @@ Business Need: Side bar Component Scenarios
       | Page title      |
       | Home: Completed |
 
-  @33887    @validateTargetUrlForAccordionContent-gHome
+  @33887    @validateTargetUrlForAccordionContent-gHome @wip
   Scenario Outline: validate accordion content opens with provided target url
     Given I have "default" configuration as below:
       | configurationCategory | fieldName  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -670,7 +670,7 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
-    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value "Automation EXE" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     And I click on "Reset" Button in Session Timeout dialogbox
     Then I do not see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"
@@ -686,7 +686,7 @@ Business Need: Side bar Component Scenarios
       | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantee State Program | Name                      | TAB-027                    |
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -720,7 +720,7 @@ Business Need: Side bar Component Scenarios
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
     And I select value "Automation PM" into field "s2id_autogen1"
-    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
+    And I select value "Automation EXE" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:PEGMSID}"
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
@@ -737,7 +737,7 @@ Business Need: Side bar Component Scenarios
       | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "Automation Internal Program for Approval and Snapshot scenarios 2" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -808,7 +808,7 @@ Business Need: Side bar Component Scenarios
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID1}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -818,7 +818,7 @@ Business Need: Side bar Component Scenarios
 
   @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at sidebar
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

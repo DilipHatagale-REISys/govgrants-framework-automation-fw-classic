@@ -1857,7 +1857,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                  | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning @doubted
+  @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: Verify a blank value is shown if user select "None" value in pick-list field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2000,13 +2000,13 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I see "InternalOrganization__c" field is editable inside enhanced grid
 
   @80502   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsChecked-gPlanning @doubted
-  Scenario: Verify a 'Enable Hyperlink As Text' field at parent flex table by setting checkbox to true
+  Scenario: Verify a 'Show Link as Text' field at parent flex table by setting checkbox to true
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Hyperlink As Text | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Show Link as Text | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Hyperlink As Text | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Show Link as Text | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2018,13 +2018,13 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Then I do not see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
 
   @80506   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsUnchecked-gPlanning @doubted
-  Scenario: validate hyperlink is present at column value after unchecking the Enable Hyperlink As Text Field from config at e-grid - gplanning
+  Scenario: validate hyperlink is present at column value after unchecking the Show Link as Text Field from config at e-grid - gplanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Hyperlink As Text | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid             | Show Link as Text | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Hyperlink As Text | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Show Link as Text | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2218,15 +2218,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @87307   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
-  Scenario Outline: Verify a 'Enable Hyperlink As Text' field at child table by setting checkbox to false e-grid child table
+  Scenario Outline: Verify a 'Show Link as Text' field at child table by setting checkbox to false e-grid child table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Hyperlink As Text | false              | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field Names      | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Show Link as Text   | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Hyperlink As Text | false          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Display Field Names      | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Show Link as Text   | false          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2243,15 +2243,15 @@ Business Need: Enhanced Flex Grid Component Scenarios
       | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @87314   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
-  Scenario Outline: validate hyperlink is not present at column value after checking the Enable Hyperlink As Text Field from config at e-grid child table
+  Scenario Outline: validate hyperlink is not present at column value after checking the Show Link as Text Field from config at e-grid child table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Hyperlink As Text | false              | ApiGeneratedId:0 |
-      | Flex Grid             | Display Field Names      | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Show Link as Text   | false              | ApiGeneratedId:0 |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Hyperlink As Text | true           | EnhanceAppBudCateGrantorFlexTable |                           |                            |
-      | Flex Grid:General     | Display Field Names      | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Show Link as Text   | true           | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

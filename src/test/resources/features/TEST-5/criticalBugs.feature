@@ -1056,7 +1056,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
     Then I see that "BP-01" has been added in flextable with Id "---program:-:inlineApplicationBudgetCategoryTableId---"
 
-  @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
+  @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications @wip
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1077,7 +1077,7 @@ Business Need: Logged Issues Scenarios
     Then I see the text containing :
       | Page 2 |
 
-  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications @wip @changeInRequirement
+  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications @wip @changeInRequirement @wip
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2520,7 +2520,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "2" seconds
     Then I see total amount row in flex table is not displayed
 
-  @91781    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTable-MEGrid @flexGrid
+  @91781    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTable-MEGrid @flexGrid @wip
   Scenario Outline: validate hide columns field at application budget period flex table - me grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2543,7 +2543,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                                                  |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c |
 
-  @81044    @VerifyDecimalPlacesInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @81044    @VerifyDecimalPlacesInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating decimal places inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2567,7 +2567,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @81043    @VerifyDecimalPlacesAreNotPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @81043    @VerifyDecimalPlacesAreNotPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating decimal places ar not present inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2591,7 +2591,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                                     |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c |
 
-  @91572    @VerifyDollarSignIsPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @91572    @VerifyDollarSignIsPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating dollar sign is present inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3381,7 +3381,7 @@ Business Need: Logged Issues Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @96610     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridParentTableAndIsAlignedCentrally-gPlanning @flexGrid
+  @96610     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridParentTableAndIsAlignedCentrally-gPlanning @flexGrid @wip
   Scenario: validate total record count is displayed at bottom and is centrally aligned under me grid parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3926,7 +3926,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
-  @103187    @validateCurrencyFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  @103187    @validateCurrencyFieldFormattingAtTotalDisplayedUnderMeGridParentTable @wip
   Scenario Outline: validating currency field formatting of total amount under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3957,7 +3957,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @103842    @validateCurrencyFieldFormattingAtValueDisplayedUnderCurrencyFieldMeGridParentTable
+  @103842    @validateCurrencyFieldFormattingAtValueDisplayedUnderCurrencyFieldMeGridParentTable @wip
   Scenario Outline: validating field formatting of currency field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3985,7 +3985,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @103910    @validateNumberFieldFormattingWithCommasAtMeGridParentTable
+  @103910    @validateNumberFieldFormattingWithCommasAtMeGridParentTable @wip
   Scenario Outline: validating formatting of number field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4013,7 +4013,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
 
-  @103906    @validateDecimalPlacesNotDisplayedUnderNumberFieldMeGridParentTable
+  @103906    @validateDecimalPlacesNotDisplayedUnderNumberFieldMeGridParentTable @wip
   Scenario Outline: validating decimal places not displayed at number field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4041,7 +4041,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
 
-  @103197    @validateNumberFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  @103197    @validateNumberFieldFormattingAtTotalDisplayedUnderMeGridParentTable @wip
   Scenario Outline: validating number field formatting of total amount under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

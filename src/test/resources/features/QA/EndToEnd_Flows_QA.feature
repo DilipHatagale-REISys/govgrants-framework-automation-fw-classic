@@ -641,7 +641,7 @@ Business Need: security review Scenarios
 
   @109914    @verifyProgramtIsGettingCreatedByLoginAsPMUser
   Scenario: validate that program is getting created by login as PM user
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -655,7 +655,7 @@ Business Need: security review Scenarios
 
   @109928    @verifyProgramInSubmitForApprovalModeIsGettingCreatedByLoginAsPMUser @flow
   Scenario: validate that program in submit for approval mode is getting created by login as PM user
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -686,7 +686,7 @@ Business Need: security review Scenarios
 
   @109931    @verifyProgramInApprovedModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to approved after getting approved by both the approvers
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -736,7 +736,7 @@ Business Need: security review Scenarios
 
   @109932    @verifyProgramInActiveModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -804,7 +804,7 @@ Business Need: security review Scenarios
 
   @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser @flow
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -860,7 +860,7 @@ Business Need: security review Scenarios
 
   @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @flow
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1002,7 +1002,7 @@ Business Need: security review Scenarios
 
   @110209   @verifyAnnouncementInSubmittedForApprovalMode @flow
   Scenario: validate announcement in submitted for approval state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1123,7 +1123,7 @@ Business Need: security review Scenarios
 
   @109392   @verifyAnnouncementInCreatedMode @flow
   Scenario: validate announcement in created state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1191,7 +1191,7 @@ Business Need: security review Scenarios
 
   @110694   @verifyRejectActionAtProgramSubmittedForApproval @flow
   Scenario: validate reject action at program submitted for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1239,7 +1239,7 @@ Business Need: security review Scenarios
 
   @110717   @verifySendBackActionPerformedByProgramApprover @flow
   Scenario: validate sending back action performed by program approver
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1293,7 +1293,7 @@ Business Need: security review Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @flow
   Scenario: validate announcement in published state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1435,7 +1435,7 @@ Business Need: security review Scenarios
 
   @110210   @verifyAnnouncementInApprovedMode @flow
   Scenario: validate announcement in approved state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1535,7 +1535,7 @@ Business Need: security review Scenarios
   Scenario: validate opportunity in submitted state
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1635,7 +1635,7 @@ Business Need: security review Scenarios
   Scenario: validate grant created ad activated by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
    #program Activation
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
