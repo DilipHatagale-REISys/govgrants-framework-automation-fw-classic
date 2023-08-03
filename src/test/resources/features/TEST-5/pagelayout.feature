@@ -9830,7 +9830,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
