@@ -1142,4 +1142,63 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextFromIcon(String iconId) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon']"));
     }
+
+    public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By filterAction = null;
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
+        By inputField = By.xpath("//div[@id='" + advanceFilterId + "']//field//input");
+
+        filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
+        if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
+            I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
+        } else {
+            I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
+        }
+        I.amPerforming().click().on(filterAction);
+    }
+
+    public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isFalse();
+        }
+    }
+
+    private boolean assertFlextableValueDisplayed(String columnValue, String columnTitle, String flextableDivId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='ng-binding' and text()='" + columnTitle + "']/ancestor::div[@id='" + flextableDivId + "']/descendant::span[text()='" + columnValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertMiniPagelayoutDisplayedOrNot(String usage, String displayType, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertMiniLayoutDisplayed(displayType, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertMiniLayoutDisplayed(displayType, value)).isFalse();
+        }
+    }
+
+    private boolean assertMiniLayoutDisplayed(String displayType, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[@role='form']//div[@class='tooltipLabel' and text()='" + displayType + "']/following-sibling::div[@class='tooltipValue' and text()='" + value + "'] |" +
+                    "//div[@class='tooltipWrapper']/*[text()='" + displayType + "']/following-sibling::*[text()='" + value + "'] |" +
+                    "//*[@role='form']//div[@class='tooltipLabel' and text()='" + displayType + "']/following-sibling::div[@class='tooltipValue']/*[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
 }

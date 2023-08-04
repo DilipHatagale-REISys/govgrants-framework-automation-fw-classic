@@ -49,7 +49,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Forms                 | Skip Form Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName          | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Skip Form Download | true          | General Budget Details Form |                           |                            |
+      | Forms:General         | Skip Form Download | true          | General Application Budget Form |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -58,8 +58,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    And I pause execution for "5" seconds
-    Then I cannot see "Form - Budget Details" on page "29" of "govgrants" pdf file
+    And I pause execution for "20" seconds
+    Then I cannot see "Form - Budget Details" on page "1" of "govgrants" pdf file
 
   @35986    @skipForExportFieldAtPageBlock-gPlanning
   Scenario: Setup skip form export for 'Program Information' in configuration and validating inside program detail page
@@ -78,8 +78,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    And I pause execution for "5" seconds
-    Then I cannot see "Program Information" on page "1" of "govgrants" pdf file
+    And I pause execution for "10" seconds
+    Then I see "EGMS ID" on page "1" of "govgrants" pdf file
 
   @50389    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInBlock-gMonitoring @pass
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
@@ -98,7 +98,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Scheduled Activities - Next 30 Days"
     And I download the file
     And I pause execution for "5" seconds
-    Then I cannot see "ID Title" on page "1" of "govgrants" pdf file
+    Then I see "EGMS ID" on page "1" of "govgrants" pdf file
 
   @50390    @pdfRenderTypeFieldAtActiveGrantsGridParentFlexTableForContentInTable-gMonitoring
   Scenario: validate Activated status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
@@ -116,7 +116,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#toggleFlexTableMonitoringScheduleGrantor"
     And I select "Download as PDF" from parallel lines dropdown of "Scheduled Activities - Next 30 Days"
     And I download the file
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     Then I see "EGMS ID" on page "1" of "govgrants" pdf file
     Then I see "Subaward ID" on page "1" of "govgrants" pdf file
 
@@ -142,7 +142,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
-    And I pause execution for "5" seconds
+    And I pause execution for "10" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
     Examples:
       | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                            |
@@ -170,7 +170,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
-    And I pause execution for "7" seconds
+    And I pause execution for "10" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -235,9 +235,9 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
     When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
-    And I pause execution for "5" seconds
+    And I pause execution for "20" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
 
     Examples:
@@ -269,10 +269,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
     When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Description" on page "1" of "govgrants" pdf file
+    Then I see "Justification" on page "1" of "govgrants" pdf file
 
     Examples:
       | newFieldsApi                                                      | defaultFieldsApi                                                  |

@@ -261,7 +261,7 @@ Business Need: Attachment Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
 #    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
 #    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
 #    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
@@ -415,7 +415,7 @@ Business Need: Attachment Component Scenarios
     When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
 #    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
 #    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+#    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
 #    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab

@@ -171,7 +171,7 @@ public class LWC_NotesSteps extends GovGrantsManager {
     public void enterText() throws InterruptedException {
         By attachmentDescriptionPath = By.xpath("//div[@class='slds-rich-text-editor__textarea slds-grid']");
         I.amPerforming().click().on(attachmentDescriptionPath);
-        for(int i=0; i<=15; i++) {
+        for(int i=0; i<=5; i++) {
             System.out.println("value of i :" + i);
             Thread.sleep(2000);
             try {

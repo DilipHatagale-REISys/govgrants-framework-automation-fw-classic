@@ -10,7 +10,8 @@ Business Need: SnapshotHistory Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -32,7 +33,8 @@ Business Need: SnapshotHistory Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -96,7 +98,8 @@ Business Need: SnapshotHistory Component Scenarios
 #    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
 #    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -122,7 +125,8 @@ Business Need: SnapshotHistory Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"

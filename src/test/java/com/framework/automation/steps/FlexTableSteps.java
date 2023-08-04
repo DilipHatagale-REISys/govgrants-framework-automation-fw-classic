@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.springframework.context.annotation.Description;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class FlexTableSteps {
@@ -389,5 +390,26 @@ public class FlexTableSteps {
     @When("I hovering mouse on help text {string} icon")
     public void iHoveringMouseOnHelpTextIcon(String iconId) {
         flexTablePage.getHelpTextFromIcon(iconId);
+    }
+
+    @When("I enter advance filter values in table id \"([^\"]*)\"$")
+    public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
+    public void iSeeValueForTheTitleInsideTable(String usage, String columnValue, String columnTitle, String flextableDivId) {
+        flexTablePage.assertFlextableValuesDisplayedOrNot(usage, columnValue, columnTitle, flextableDivId);
+    }
+
+    @Then("I (see|not see) \"([^\"]*)\" as \"([^\"]*)\" in mini page layout$")
+    public void iSoftlySeeAsInMiniPageLayout(String usage, String displayType, String value) {
+        flexTablePage.assertMiniPagelayoutDisplayedOrNot(usage, displayType, value);
+    }
+
+
+    @When("I click on top right button \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void iClickOnTopRightButtonInTableId(String button, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div//button[@title='" + button + "']"));
     }
 }
