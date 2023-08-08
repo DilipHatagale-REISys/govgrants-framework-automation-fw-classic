@@ -2,25 +2,27 @@ package com.framework.automation.steps.lwcsteps;
 
 //import com.framework.automation.pageobject.LWCPage.AttachmentsPage;
 
+import com.framework.automation.pageobject.LWCPage.AttachmentsPage;
 import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.controller.DeviceBucket;
 import com.testingblaze.objects.Elements;
-import com.testingblaze.objects.InstanceRecording;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
 public class AttachmentSteps {
     //private AttachmentsPage attachmentsPage;
+    AttachmentsPage attachmentsPage;
+
+    public AttachmentSteps() {
+        attachmentsPage = new AttachmentsPage();
+    }
 
     @And("I enter value {string} into description box")
     public void iEnterValueIntoDescriptionBox(String description) {
@@ -29,14 +31,12 @@ public class AttachmentSteps {
 
     @And("I click on {string} on LWC modal")
     public void iClickOnOnLWCModal(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "'] | //button[@type='button' and text()='" + button + "'] | //*[@value='"+ button+"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "'] | //button[@type='button' and text()='" + button + "'] | //*[@value='" + button + "']"));
     }
 
     @When("I upload attachment {string} in attachments LWC modal")
     public void iUploadAttachmentInAttachmentsLWCModal(String attachment) {
-        By attachmentChooseFilePath = By.xpath("//div[@class='custom-upload']//input[@type='file'] | //div[@class='slds-file-selector slds-file-selector_files']//lightning-primitive-file-droppable-zone//slot//input[@type='file']");
-        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
-        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachment);
+        attachmentsPage.uploadFileInAttachmentslwcModal(attachment);
     }
 
     @When("I click on {string} icon for {string} inside table name {string}")
@@ -59,14 +59,8 @@ public class AttachmentSteps {
 
     @And("I select {string} from dropdown of filetype")
     public void iSelectFromDropdownOfFiletype(String value) {
-        I.amPerforming().click().on(ByUsing.xpath("//button[@aria-label='Select Progress']"));
-        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div//lightning-base-combobox-item//span//span[@class='slds-truncate']"));
-        for (Elements opt : options) {
-            if (opt.getText().equals(value)) {
-                opt.isDisplayed();
-                opt.click();
-            }
-        }
+        attachmentsPage.selectFileTypeFromDropDown(value);
+
     }
 
     @And("I click on top right button {string} in tableName {string} for LWC")
@@ -204,29 +198,9 @@ public class AttachmentSteps {
         I.amPerforming().click().on(button);
     }
 
-    //validate message in page displayed
-    @Then("I see the following message in the LWC page details :")
-    public void iSeeTheFollowingMessageInTheLWCPageDetails(String message) {
-        for(int i=0; i<=10; i++){
-            MessageInTheLWCPageDetails(message);
-            //            I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//h2[contains(text(),'The document')text()=' The document you are attempting to upload exists in the Workspace']"))
-        }
-
-    }
-
-    private void MessageInTheLWCPageDetails(String message) {
-        I.amPerforming().assertionsTo().assertThat(isValidateMessageDisplayedInsideFormDetails(message));
-
-    }
-
-    private boolean isValidateMessageDisplayedInsideFormDetails(String message) {
-        boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h2[text()='" + message + "']"))) {
-            return true;
-        } else if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//h2[contains(text(),'The document')]"))) {
-            return true;
-        }
-        return flag;
+    @Then("I (see|do not see) \"([^\"]*)\" message displayed in modal$")
+    public void iSeeMessageDisplayedInModal(String usage, String message) {
+        attachmentsPage.messageIsDisplayedOrNotOnModal(usage, message);
     }
 
     //navigate to tab on modal
@@ -310,34 +284,19 @@ public class AttachmentSteps {
 
     }
 
-    @Then("I softly see column {string} in table name {string}")
-    public void iSoftlySeeColumnInTableName(String columnName, String arg1) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tr[@class='slds-line-height_reset']//th//span[@title='" + columnName + "']"));
+    @Then("I softly (see|do not see) column \"([^\"]*)\" in table name \"([^\"]*)\"$")
+    public void iSoftlySeeColumnInTableName(String usage, String value, String tableName) {
+        attachmentsPage.valueIsDisplayedOrNot(usage, value, tableName);
     }
 
-    @Then("I can see {string} into column {string} against value {string}")
-    public void iCanSeeIntoColumnAgainstValue(String value, String field, String fileName) {
-        String locator = "//tr//td[@data-label='" + field + "']//div[@title='" + value + "']";
-        List<Elements> allOptions = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath(locator));
-        for (Elements opt : allOptions) {
-            if (opt.getText().equals(fileName)) {
-                opt.isDisplayed();
-            }
-        }
+    @Then("I (see|do not see) \"([^\"]*)\" into column \"([^\"]*)\" against value \"([^\"]*)\"$")
+    public void iCanSeeIntoColumnAgainstValue(String usage, String value, String field, String fileName) {
+        attachmentsPage.canSeeIntoColumnAgainstValue(usage, value, field, fileName);
     }
 
-    @Then("I softly (can see|cannot see) row level action button \"([^\"]*)\" against \"([^\"]*)\" in table name \"([^\"]*)\"$")
-    public void iSoftlyCanSeeRowLevelActionButtonAgainstInTableName(String icon, String fileName, String tableName) {
-        // String locator = "//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_x-small header panel-heading']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']";
-        I.amPerforming().assertionsTo().assertThat(iSoftlyCanSeeRowLevelActionButtonTableName(icon, fileName, tableName)).isTrue();
-    }
-
-    private boolean iSoftlyCanSeeRowLevelActionButtonTableName(String icon, String fileName, String tableName) {
-        boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//*[text()='" + tableName + "']/ancestor::div/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {
-            return true;
-        }
-        return flag;
+    @Then("I (see|cannot see) row level action button \"([^\"]*)\" against \"([^\"]*)\" in table name \"([^\"]*)\"$")
+    public void iSoftlyCanSeeRowLevelActionButtonAgainstInTableName(String usage, String icon, String fileName, String tableName) {
+        attachmentsPage.iSoftlyCanSeeRowLevelActionButtonTableName(usage, icon, fileName, tableName);
     }
 
     @Then("I see recently added snapshot in table name {string} with current date")
@@ -347,23 +306,12 @@ public class AttachmentSteps {
 
     @And("I click on saved snap shot {string}")
     public void iClickOnSavedSnapShot(String fileName) {
-        // I.amPerforming().click().withJavaScript(ByUsing.xpath("//a[contains(text(),'"+fileName+"')]"));
         I.amPerforming().click().on(ByUsing.xpath("//a[contains(text(),'" + fileName + "')]"));
     }
 
     @Then("I see generated snapshot {string} is displayed with {string}")
     public void iSeeGeneratedSnapshotIsDisplayedWith(String fileName, String columnName) {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "']"));
-    }
-
-    @Then("I see total records count in {string} table equals to Total record displayed on UI")
-    public void iSeeTotalRecordsCountInTableEqualsToTotalRecordDisplayedOnUI(String tableName) {
-        List<Elements> option = I.amPerforming().getElementReference().forListOfElements().of(ByUsing.xpath("//td[@data-label='Attachment Name']//div//a"));
-        int size = option.size();
-        if (tableName.equals("Snapshot History")) {
-            String totalRecords = I.amPerforming().getElementReference().of(ByUsing.xpath("//span[text()='Snapshot History']//ancestor::gnt-snapshot-history//descendant::span[contains(text(),'Total Records :')]")).getText();
-            Assert.assertTrue(totalRecords.contains(Integer.toString(size)));
-        }
     }
 
     @And("I click on {string} in modal")
@@ -431,14 +379,14 @@ public class AttachmentSteps {
 
     @And("I click on {string} inside description field")
     public void iClickOnInsideDescriptionField(String allignment) {
-        I.amPerforming().click().on(ByUsing.xpath("(//a[@title='"+ allignment +"'])[1]"));
+        I.amPerforming().click().on(ByUsing.xpath("(//a[@title='" + allignment + "'])[1]"));
     }
 
     @And("I click on {string} format and Select paragraph format {string} from dropdown")
     public void iClickOnFormatAndSelectParagraphFormatFromDropdown(String field, String format) throws InterruptedException {
         if (field.equals("Normal")) {
             I.amPerforming().click().on(ByUsing.xpath("(//span[@class='cke_combo cke_combo__format cke_combo_off'])[1]"));
-            I.amPerforming().click().on(ByUsing.xpath("//a[@title='"+ format +"']"));
+            I.amPerforming().click().on(ByUsing.xpath("//a[@title='" + format + "']"));
         }
     }
 
@@ -451,16 +399,17 @@ public class AttachmentSteps {
 
     @Then("I see inside {string} no any space after format change")
     public void iSeeInsideNoAnySpaceAfterFormatChange(String field) {
-        if (field.equals("Test Description Field")){
+        if (field.equals("Test Description Field")) {
             List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//span[text()='" + field + "']/parent::dt/following-sibling::dd/span/span/div"));
             Assert.assertEquals(options.size(), 0);
         }
 
     }
-///////////////Responsibility Peer Reviewers#############
+
+    ///////////////Responsibility Peer Reviewers#############
     @And("I click on {string} action button respective {string} Description")
     public void iClickOnActionButtonRespectiveDescription(String button, String DescriptionText) {
-        I.amPerforming().click().on(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='"+ DescriptionText+"']/ancestor::td//following-sibling::td/div//a[@title='"+ button+"']"));
+        I.amPerforming().click().on(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='" + DescriptionText + "']/ancestor::td//following-sibling::td/div//a[@title='" + button + "']"));
     }
 
     @Then("I do not see {string} Description inside {string} table")
@@ -478,12 +427,22 @@ public class AttachmentSteps {
 
     @Then("I see {string} action button respective {string} Description and Enabled")
     public void iSeeActionButtonRespectiveDescriptionAndEnabled(String button, String DescriptionText) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='" + DescriptionText+ "']/ancestor::td//following-sibling::td/div//a[@title='"+ button + "']"),true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='" + DescriptionText + "']/ancestor::td//following-sibling::td/div//a[@title='" + button + "']"), true);
     }
 
     @Then("I see newly added record with Description {string} in row")
     public void iSeeNewlyAddedRecordWithDescriptionInRow(String DescriptionText) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='" + DescriptionText+ "']"),true);
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//tbody[@id='tableBody']//td//span[text()='" + DescriptionText + "']"), true);
 
+    }
+
+    @Then("I (see|do not see) Total Records count \"([^\"]*)\" in table name \"([^\"]*)\"$")
+    public void iSeeTotalRecordsCountInTableName(String usage, String record, String tableName) {
+        attachmentsPage.isRecordDisplayedOrNot(usage, record, tableName);
+    }
+
+    @Then("I softly (see|do not see) value \"([^\"]*)\" displayed in table \"([^\"]*)\"$")
+    public void iSoftlySeeValueDisplayedInTable(String usage, String value, String tableName) {
+        attachmentsPage.valueIsDisplayedOrNot(usage, value, tableName);
     }
 }
