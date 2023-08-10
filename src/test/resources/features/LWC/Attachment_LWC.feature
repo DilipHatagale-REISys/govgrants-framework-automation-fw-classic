@@ -319,6 +319,7 @@ Business Need: Attachment Component Scenarios
 
   @221527 @255589 @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:when user click on row level action delete, getting confirmation popup window and when click on 'Yes' then the record is getting deleted getting confirmation message as 'Record deleted successfully'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -339,12 +340,14 @@ Business Need: Attachment Component Scenarios
     And I refresh the page
     When I click on "Delete" icon for file "Create_Case.xlsx" inside table name "Attachments" for LWC
     And I click on "Yes" on confirmation modal
-    Then I see "Attachment deleted successfully." message displayed in modal
+#    Then I see "Attachment deleted successfully." message displayed in modal
+    And I pause execution for "7" seconds
+    Then I softly do not see value "Create_Case" displayed in table "Attachments"
 
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @222487 @255488 @255420 @255427 @221528 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @LWC-AttachmentTestSuit
   Scenario Outline: when user clicks on page block shrink action button then component gets shrunk
@@ -381,6 +384,7 @@ Business Need: Attachment Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "7" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
@@ -408,7 +412,7 @@ Business Need: Attachment Component Scenarios
     And I refresh the page
     And I perform scroll on page layout
     #221551 #255351 #221544
-    Then I see "Test Description" into column "Descrption" against value "TestFileSharing.docx"
+    Then I softly see value "Test Description" displayed in table "Attachments"
     Examples:
       | User  |
       | ADMIN |

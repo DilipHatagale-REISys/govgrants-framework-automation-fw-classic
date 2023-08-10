@@ -14,15 +14,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import com.framework.automation.pageobject.ApprovalHistoryComponentPage;
+import com.framework.automation.pageobject.LWCPage.LWC_ApprovalHistoryComponentPage;
 import org.openqa.selenium.NoSuchElementException;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class SendEmailSteps extends GovGrantsManager {
     Actions actions;
-    ApprovalHistoryComponentPage approvalHistoryComponentPage;
+    LWC_ApprovalHistoryComponentPage LWCApprovalHistoryComponentPage;
 
     @When("^I upload attachment \"([^\"]*)\" in send email LWC modal$")
     public void i_upload_attachment_something_in_send_email_lwc_modal(String attachmentName) throws Throwable {
@@ -180,19 +179,6 @@ public class SendEmailSteps extends GovGrantsManager {
     @Then("I can see Upload file & drop files actions on send email reply modal are enabled")
     public void iCanSeeUploadFileDropFilesActionsOnSendEmailReplyModalAreEnabled() {
         Assert.assertTrue(I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@class='custom-upload']//input[@type='file']")));
-    }
-
-    @And("I click on top right button {string} in tableName {string}")
-    public void iClickOnTopRightButtonInTableName(String button, String tableName) {
-        if (tableName.contains("Attachments") || tableName.equals("Notes")) {
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div/following-sibling::lightning-button//button[@title='" + button + "'] | //div[@class='NotesAttach']//div[@ng-controller='customNotesAppCtrl']/div//div/button[@type='button' and @title='"+ button +"'] | " +
-                    "//div[@class='panel panel-default ng-scope']/div//button[contains(@ng-click,'"+ tableName +"') and @title='"+ button +"'] | " +
-                    "//div[@class='panel panel-default ng-scope']/div/div//button[contains(@title,'"+ tableName +"')]//*[text()='"+ button +"']"));
-        } else if (tableName.contains("Contacts")) {
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/parent::div//following-sibling::div//div//div//div/lightning-button//button[@title='" + button + "']"));
-        } else if (tableName.contains("Associate table")) {
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//button[@title='" + button + "' and @class='secondaryBtn ng-scope ng-binding']"));
-        }
     }
 
     @Then("I see {string} field under the Send Email LWC modal")

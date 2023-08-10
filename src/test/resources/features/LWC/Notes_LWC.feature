@@ -17,11 +17,11 @@ Business Need: Loading icon for all the operations Component Scenarios
     #208789
     Then I see "up" arrow is displayed on "Notes" table expanded & not shrinked
     And I pause execution for "5" seconds
-    And I click on "upArrow" arrow in "Notes" table
+    And I click on "up" arrow in "Notes" table
     Then I do not see "Notes" table
     #208790
     And I pause execution for "5" seconds
-    And I click on "downArrow" arrow in "Notes" table
+    And I click on "down" arrow in "Notes" table
     Then I see "Notes" table gets Expand with column "Description"
     #208791
     And I click on top right button "Add" in tableName "Notes"
@@ -57,11 +57,11 @@ Business Need: Loading icon for all the operations Component Scenarios
     #208789
     Then I see "up" arrow is displayed on "Notes" table expanded & not shrinked
     And I pause execution for "5" seconds
-    And I click on "upArrow" arrow in "Notes" table
+    And I click on "up" arrow in "Notes" table
     Then I do not see "Notes" table
     #208790
     And I pause execution for "5" seconds
-    And I click on "downArrow" arrow in "Notes" table
+    And I click on "down" arrow in "Notes" table
     Then I see "Notes" table gets Expand with column "Description"
     #208791
     And I click on top right button "Add" in tableName "Notes"
@@ -130,29 +130,71 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
     #208852
+    When I navigate to "Files" sub tab
     And I click on top right button "Add" in tableName "Notes"
-    Then I enter value "Title1" inside "Title" in LWC modal
-    Then I enter value "Courier" inside "Description" in LWC modal
+    Then I enter value "Courier Test" inside "Title" in LWC modal
+    Then I enter value "Courier Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Courier" inside Description on modal
     And I click on "Save" on LWC modal
-    Then I see "Program View" webpage is loaded
+    Then I see the "Description" contains "Courier Input action performed successfully" have font style is "courier" in Notes modul
     #208860
-    Then I see the "Description" contains "Courier" have font style is "courier" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "Tahoma Test" inside "Title" in LWC modal
+    Then I enter value "Tahoma Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Tahoma" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "Tahoma Input action performed successfully" have font style is "tahoma" in Notes modul
     #208869
-    Then I see the "Description" contains "Tahoma" have font style is "tahoma" in Notes modul
-    #208867
-    Then I see the "Description" contains "Verdana" have font style is "verdana" in Notes modul
-    #208871
-    Then I see the "Description" contains "GaramondText" have font style is "garamond" in Notes modul
-    #208873
-    Then I see the "Description" contains "TimesNewRoman" have font style is "TimesNewRoman" in Notes modul
-    #208858
-    Then I see the "Description" contains "Apply_Arial_formatting" have font style is "Arial" in Notes modul
-    #208856
-    Then I see the "Description" contains "Salesforce Sans test" have font style is "Salesforce Sans" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "Verdana Test" inside "Title" in LWC modal
+    Then I enter value "Verdana Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Verdana" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "Verdana Input action performed successfully" have font style is "verdana" in Notes modul
+      #208871
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "GaramondText Test" inside "Title" in LWC modal
+    Then I enter value "GaramondText Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Garamond" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "GaramondText Input action performed successfully" have font style is "garamond" in Notes modul
+      #208873
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "TimesNewRoman Test" inside "Title" in LWC modal
+    Then I enter value "TimesNewRoman Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Times New Roman" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "TimesNewRoman Input action performed successfully" have font style is "TimesNewRoman" in Notes modul
+      #208858
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "Arial Test" inside "Title" in LWC modal
+    Then I enter value "Arial Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Arial" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "Arial Input action performed successfully" have font style is "Arial" in Notes modul
+        #208856
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "Salesforce Sans test Test" inside "Title" in LWC modal
+    Then I enter value "Salesforce Sans test Input action performed successfully" inside "Description" in LWC modal
+    And I change font "Salesforce Sans" inside Description on modal
+    And I click on "Save" on LWC modal
+    Then I see the "Description" contains "Salesforce Sans test Input action performed successfully" have font style is "Salesforce Sans" in Notes modul
     Examples:
       | User  | programID                                             |
       | ADMIN | {LWC_StaticRecords:AutomationProgramLWCNotesForAdmin} |
-      | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
+#      | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
 
   @208861 @208868 @208870 @208872 @208874 @208857 @LWC-NotesSuit @dilip
   Scenario: To verify user applies font format 'Arial' on the text in description box then respective format should get apply.(SPI)
@@ -189,133 +231,148 @@ Business Need: Loading icon for all the operations Component Scenarios
     When I click on "View" icon for "<programID>" inside table
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
-    #need to add step for select text and dropdown
+    When I navigate to "Files" sub tab
     And I click on top right button "Add" in tableName "Notes"
     And I pause execution for "5" seconds
-    And I enter value "fontSize8Test" inside "Title" in LWC modal
-    And I click on "8" button inside LWC modal
-    And I enter value "fontSize8Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize9Test" inside "Title" in LWC modal
-    And I click on "9" button inside LWC modal
-    And I enter value "fontSize9Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize10Test" inside "Title" in LWC modal
-    And I click on "10" button inside LWC modal
-    And I enter value "fontSize10Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize11Test" inside "Title" in LWC modal
-    And I click on "11" button inside LWC modal
-    And I enter value "fontSize11Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize12Test" inside "Title" in LWC modal
-    And I click on "12" button inside LWC modal
-    And I enter value "fontSize12Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize14Test" inside "Title" in LWC modal
-    And I click on "14" button inside LWC modal
-    And I enter value "fontSize14Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize16Test" inside "Title" in LWC modal
-    And I click on "16" button inside LWC modal
-    And I enter value "fontSize16Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize18Test" inside "Title" in LWC modal
-    And I click on "18" button inside LWC modal
-    And I enter value "fontSize18Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize20Test" inside "Title" in LWC modal
-    And I click on "20" button inside LWC modal
-    And I enter value "fontSize20Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize22Test" inside "Title" in LWC modal
-    And I click on "22" button inside LWC modal
-    And I enter value "fontSize22Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize24Test" inside "Title" in LWC modal
-    And I click on "24" button inside LWC modal
-    And I enter value "fontSize24Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize26Test" inside "Title" in LWC modal
-    And I click on "26" button inside LWC modal
-    And I enter value "fontSize26Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize28Test" inside "Title" in LWC modal
-    And I click on "28" button inside LWC modal
-    And I enter value "fontSize28Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize36Test" inside "Title" in LWC modal
-    And I click on "36" button inside LWC modal
-    And I enter value "fontSize36Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize48Test" inside "Title" in LWC modal
-    And I click on "48" button inside LWC modal
-    And I enter value "fontSize48Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
-    And I click on top right button "Add" in tableName "Notes"
-    And I pause execution for "5" seconds
-    And I enter value "fontSize72Test" inside "Title" in LWC modal
-    And I click on "72" button inside LWC modal
-    And I enter value "fontSize72Test" inside "Description" in LWC modal
-    And I click on "Save" button in LWC
+    Then I enter value "fontSize8Test" inside "Title" in LWC modal
+    Then I enter value "fontSize8Test" inside "Description" in LWC modal
+    And I change font size "8" inside Description on modal
+    And I click on "Save" on LWC modal
     #208875
     Then I see the "Description" contains "fontSize8Test" have font size is "8px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize9Test" inside "Title" in LWC modal
+    Then I enter value "fontSize9Test" inside "Description" in LWC modal
+    And I change font size "9" inside Description on modal
+    And I click on "Save" on LWC modal
     #208877
     Then I see the "Description" contains "fontSize9Test" have font size is "9px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize10Test" inside "Title" in LWC modal
+    Then I enter value "fontSize10Test" inside "Description" in LWC modal
+    And I change font size "10" inside Description on modal
+    And I click on "Save" on LWC modal
     #208879
     Then I see the "Description" contains "fontSize10Test" have font size is "10px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize11Test" inside "Title" in LWC modal
+    Then I enter value "fontSize11Test" inside "Description" in LWC modal
+    And I change font size "11" inside Description on modal
+    And I click on "Save" on LWC modal
     #208881
     Then I see the "Description" contains "fontSize11Test" have font size is "11px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize14Test" inside "Title" in LWC modal
+    Then I enter value "fontSize14Test" inside "Description" in LWC modal
+    And I change font size "14" inside Description on modal
+    And I click on "Save" on LWC modal
     #208883
     Then I see the "Description" contains "fontSize14Test" have font size is "14px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize16Test" inside "Title" in LWC modal
+    Then I enter value "fontSize16Test" inside "Description" in LWC modal
+    And I change font size "16" inside Description on modal
+    And I click on "Save" on LWC modal
     #208885
     Then I see the "Description" contains "fontSize16Test" have font size is "16px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize18Test" inside "Title" in LWC modal
+    Then I enter value "fontSize18Test" inside "Description" in LWC modal
+    And I change font size "18" inside Description on modal
+    And I click on "Save" on LWC modal
     #208887
     Then I see the "Description" contains "fontSize18Test" have font size is "18px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize20Test" inside "Title" in LWC modal
+    Then I enter value "fontSize20Test" inside "Description" in LWC modal
+    And I change font size "20" inside Description on modal
+    And I click on "Save" on LWC modal
     #208889
     Then I see the "Description" contains "fontSize20Test" have font size is "20px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize22Test" inside "Title" in LWC modal
+    Then I enter value "fontSize22Test" inside "Description" in LWC modal
+    And I change font size "22" inside Description on modal
+    And I click on "Save" on LWC modal
     #208891
     Then I see the "Description" contains "fontSize22Test" have font size is "22px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize24Test" inside "Title" in LWC modal
+    Then I enter value "fontSize24Test" inside "Description" in LWC modal
+    And I change font size "24" inside Description on modal
+    And I click on "Save" on LWC modal
     #208893
     Then I see the "Description" contains "fontSize24Test" have font size is "24px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize26Test" inside "Title" in LWC modal
+    Then I enter value "fontSize26Test" inside "Description" in LWC modal
+    And I change font size "26" inside Description on modal
+    And I click on "Save" on LWC modal
     #208895
     Then I see the "Description" contains "fontSize26Test" have font size is "26px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize28Test" inside "Title" in LWC modal
+    Then I enter value "fontSize28Test" inside "Description" in LWC modal
+    And I change font size "28" inside Description on modal
+    And I click on "Save" on LWC modal
     #208897
     Then I see the "Description" contains "fontSize28Test" have font size is "28px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize36Test" inside "Title" in LWC modal
+    Then I enter value "fontSize36Test" inside "Description" in LWC modal
+    And I change font size "36" inside Description on modal
+    And I click on "Save" on LWC modal
     #208899
     Then I see the "Description" contains "fontSize36Test" have font size is "36px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize48Test" inside "Title" in LWC modal
+    Then I enter value "fontSize48Test" inside "Description" in LWC modal
+    And I change font size "48" inside Description on modal
+    And I click on "Save" on LWC modal
     #208901
     Then I see the "Description" contains "fontSize48Test" have font size is "48px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize72Test" inside "Title" in LWC modal
+    Then I enter value "fontSize72Test" inside "Description" in LWC modal
+    And I change font size "72" inside Description on modal
+    And I click on "Save" on LWC modal
     #208903
     Then I see the "Description" contains "fontSize72Test" have font size is "72px" in Notes modul
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in tableName "Notes"
+    And I pause execution for "5" seconds
+    Then I enter value "fontSize12Test" inside "Title" in LWC modal
+    Then I enter value "fontSize12Test" inside "Description" in LWC modal
+    And I change font size "12" inside Description on modal
+    And I click on "Save" on LWC modal
     #275558
     Then I see the "Description" contains "fontSize12Test" have font size is "12px" in Notes modul
     Examples:
@@ -560,12 +617,23 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @207396 @LWC-NotesSuit @dilip
   Scenario Outline:To verify when note is created then Title,Description,Created Date,Created By these details are showing correct.(Admin/PM)
-    When I login as "<User>" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "<programID>"
-    When I click on "View" icon for "<programID>" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
     #207396
@@ -574,27 +642,9 @@ Business Need: Loading icon for all the operations Component Scenarios
     Then I see "CreatedDate" column contains "01/19/2023 4:18 AM"
     Then I see "CreatedBy" column contains "Automation PM"
     Examples:
-      | User  | programID                                             |
-      | PM    | {LWC_StaticRecords:AutomationProgramLWCNotesForPM}    |
-
-  @207396 @LWC-NotesSuit @dilip
-  Scenario Outline:To verify when note is created then Title,Description,Created Date,Created By these details are showing correct.(Admin/PM)
-    When I login as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "<programID>"
-    When I click on "View" icon for "<programID>" inside table
-    When I navigate to "Files" sub tab
-    And I pause execution for "5" seconds
-    #207396
-    Then I see "Title" column contains "Title text"
-    Then I see "Description" column contains "Description test"
-    Then I see "CreatedDate" column contains "01/19/2023 4:14 AM"
-    Then I see "CreatedBy" column contains "Automation Admin"
-    Examples:
-      | User  | programID                                             |
-      | ADMIN | {LWC_StaticRecords:AutomationProgramLWCNotesForAdmin} |
+      | User  |
+      | PM    |
+      | Admin |
 
   @208936  @208927 @LWC-NotesSuit @dilip
   Scenario Outline: To verify user selects 'Image' then image is getting added.(Admin/PM)

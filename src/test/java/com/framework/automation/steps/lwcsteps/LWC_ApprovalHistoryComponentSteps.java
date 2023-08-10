@@ -1,6 +1,8 @@
 package com.framework.automation.steps.lwcsteps;
 
 import com.automation.rei.handlers.govgrants;
+import com.framework.automation.pageobject.FlexTablePage;
+import com.framework.automation.pageobject.LWCPage.LWC_ApprovalHistoryComponentPage;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.controller.DeviceBucket;
@@ -28,6 +30,13 @@ import java.util.List;
 
 
 public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
+
+    LWC_ApprovalHistoryComponentPage lwc_ApprovalHistoryComponentPage;
+
+    public LWC_ApprovalHistoryComponentSteps() {
+        lwc_ApprovalHistoryComponentPage = new LWC_ApprovalHistoryComponentPage();
+    }
+
     Actions actions;
 
     @When("I click on {string} icon")
@@ -83,16 +92,9 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
         }
     }
 
-    @Then("I see {string} arrow is displayed on {string} table expanded & not shrinked")
-    public void iSeeArrowIsDisplayedOnTable(String arrow, String tableTitle) {
-        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']//lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-        Assert.assertTrue(ArrowDisplayed);
-    }
-
-    @Then("I see {string} massage under Approval History")
-    public void iSeeMassageUnderApprovalHistory(String massage) {
-        boolean massageDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//gnt-approval-history//descendant::td[text()='" + massage + "']"));
-        Assert.assertTrue(massageDisplayed);
+    @Then("^I (see|do not see) \"([^\"]*)\" massage under Approval History$")
+    public void iSeeMassageUnderApprovalHistory(String usage,String message) {
+        lwc_ApprovalHistoryComponentPage.assertIfMessageIsDisabled(usage,message);
     }
 
     @Then("I see {string} and comments is changed {string} in Approval history table")
@@ -344,4 +346,8 @@ public class LWC_ApprovalHistoryComponentSteps extends GovGrantsManager {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(text(),'" + dateColumn + "')]//parent::tr//following-sibling::tr//td//div[text()='" + status + "']"), true);
     }
 
+    @And("I enter text inside Description box \"([^\"]*)\"$")
+    public void iEnterTextInsideDescriptionBox(String text) {
+        lwc_ApprovalHistoryComponentPage.enterTextInsideDescriptionBox(text);
+    }
 }

@@ -110,8 +110,7 @@ public class AttachmentsPage extends GovGrantsManager {
     private boolean isColumnDisplaedOrNot(String value, String tableName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//thead/tr//*[text()='" + value + "'] | " +
-                    "//span[text()='" + tableName + "']/ancestor::gnt-attachment//tbody/tr//a[contains(normalize-space(.),'" + value + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//tbody/tr//a[contains(normalize-space(.),'" + value + "')] | //span[text()='" + tableName + "']/ancestor::gnt-attachment//thead/tr//*[text()='" + value + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

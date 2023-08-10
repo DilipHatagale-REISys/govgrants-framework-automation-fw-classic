@@ -72,11 +72,6 @@ public class AttachmentSteps {
         I.amPerforming().waitFor().makeThreadSleep(3000);
     }
 
-    @Then("I see {string} is in LWC modal window")
-    public void iSeeIsInLWCModalWindow(String header) {
-        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='slds-modal__container']/descendant::h2[text()='" + header + "']")));
-    }
-
     @And("I click {string} on confirmation modal window")
     public void iClickOnConfirmationModalWindow(String action) {
         By button = (ByUsing.xpath("//div[@class=\"slds-modal__container\"]/descendant::button[text()='" + action + "']"));
@@ -232,10 +227,8 @@ public class AttachmentSteps {
     //row level action step
     @When("I click on {string} icon for file {string} inside table name {string} for LWC")
     public void iClickOnIconForFileInsideTableNameForLWC(String icon, String fileName, String tableName) {
-        if (tableName.contains("Attachments")) {
-            I.amPerforming().click().on(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_xx-small header']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
-            I.amPerforming().click().withJavaScript(ByUsing.xpath("//*[text()='" + tableName + "']/ancestor::div[@class='slds-text-color_inverse slds-p-around_xx-small header']/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"));
-        }
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//tbody/tr//*[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']/span"));
+//        I.amPerforming().click().on(ByUsing.xpath("//span[text()='" + tableName + "']/ancestor::gnt-attachment//tbody/tr//*[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']/span"));
     }
 
     @And("I click on {string} on confirmation modal")
@@ -243,18 +236,6 @@ public class AttachmentSteps {
         I.amPerforming().click().withJavaScript(ByUsing.xpath("//div[@class='slds-modal__container']/descendant::button[text()='" + value + "']"));
     }
 
-    //step for shrink and expand block
-    @And("I click on {string} arrow in {string} table")
-    public void iClickOnArrowInTable(String arrow, String tableTitle) {
-//        if (arrow.equals("up")) {
-//            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-//        } else if (arrow.equals("down")) {
-//            I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']/lightning-primitive-icon//*[@data-key='" + arrow + "']"));
-//        } else
-        I.amPerforming().click().withJavaScript(ByUsing.xpath("//lightning-icon[@title='" + tableTitle + "']//lightning-primitive-icon//*[@class='slds-icon']"));
-        //  I.amPerforming().click().on(ByUsing.xpath("//lightning-icon[@title='"+tableTitle+"']"));
-
-    }
 
     @Then("I do not see {string} table")
     public void iDoNotSeeTable(String columnName) {
