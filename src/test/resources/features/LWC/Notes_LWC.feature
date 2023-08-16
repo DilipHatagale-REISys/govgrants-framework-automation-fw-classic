@@ -569,7 +569,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     And I pause execution for "5" seconds
     And I enter value "Left align text test" inside "Title" in LWC modal
     And I enter value "Left align text test" inside "Description" in LWC modal
-    And I click on "Left align text" button inside LWC modal
+    When I click on "Left align text" button inside LWC modal
     And I click on "Save" button in LWC
     #208920
     Then I see "Description" column contains "Center align text test" font format "center" align text get apply
