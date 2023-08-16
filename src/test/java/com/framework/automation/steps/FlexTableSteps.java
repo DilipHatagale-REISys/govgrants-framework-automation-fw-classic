@@ -392,16 +392,6 @@ public class FlexTableSteps {
         flexTablePage.getHelpTextFromIcon(iconId);
     }
 
-    @When("I enter advance filter values in table id \"([^\"]*)\"$")
-    public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
-        flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
-    }
-
-    @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
-    public void iSeeValueForTheTitleInsideTable(String usage, String columnValue, String columnTitle, String flextableDivId) {
-        flexTablePage.assertFlextableValuesDisplayedOrNot(usage, columnValue, columnTitle, flextableDivId);
-    }
-
     @Then("I (see|not see) \"([^\"]*)\" as \"([^\"]*)\" in mini page layout$")
     public void iSoftlySeeAsInMiniPageLayout(String usage, String displayType, String value) {
         flexTablePage.assertMiniPagelayoutDisplayedOrNot(usage, displayType, value);
