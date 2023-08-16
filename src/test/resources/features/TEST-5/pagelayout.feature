@@ -10,14 +10,14 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Header    | Program - {!ProgramName__c} | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Header    | Program - {!FederalProgramCFDA__c} | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Header    | Program - {!FederalProgramCFDA__c} | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    Then I see "Automation Internal Program for Testing" shown as over view title in header "Program"
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    Then I see "TPA01" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
   Scenario: validate the page instructions text apears as configured in Edit view
@@ -26,13 +26,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Instruction Text" shown as page instruction text
 
   @34049    @setUpHeaderOverRideField-gPlanning
@@ -42,12 +42,12 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Create Header Override | Creating New Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Create Header Override | Creating New Program for Automation | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Create Header Override | Creating New Program for Automation | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Draft Programs"
+    When I click on top right button "New" in flex table with id "Programs"
     Then I see "Creating New Program for Automation" shown as over view header
 
   @34052    @hideDecisionExpression-gPlanning @smoke
@@ -57,20 +57,19 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Hide Decision Expression | <old_hide_config> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Decision Expression | <new_hide_config> | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Hide Decision Expression | <new_hide_config> | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
+    When I enter "Creation" values from "Program_Field_Values.xlsx"
+    And I click on "Save and Close Modal" in the page details
     And I pause execution for "10" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     Then I see "Submit For Approval" button is not displayed
 
     Examples:
@@ -84,13 +83,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionJson | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Hide Expression JSON | govgrants_config:HideExpressionJson | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @34069    @hideForProfile-gPlanning @smoke
@@ -100,13 +99,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Hide for profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Hide for profile | System Administrator | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Hide for profile | System Administrator | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @34043    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
@@ -116,13 +115,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide Pdf Download | true          | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Hide Pdf Download | true          | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" in the page details
     Then I do not see "Download as PDF" options is displayed
 
@@ -133,13 +132,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Hide On Demand Snapshot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snapshot | true          | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Hide On Demand Snapshot | true          | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" in the page details
     Then I do not see "Take Snapshot" options is displayed
 
@@ -147,24 +146,24 @@ Business Need: Page Layout Component Scenarios
   Scenario: Enable prompt input box for Submit for approval button configuration and validating it for Created status view icon
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Enable Prompt Input Dialog | false             | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dailogue Header     |                   | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dialogue Text       |                   | Grantor State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Enable Prompt Input Dialog | false             | Grantee State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Prompt Dailogue Header     |                   | Grantee State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Prompt Dialogue Text       |                   | Grantee State Program | Name                      | Submit For Approval        |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Prompt Dailogue Header     | Automation Header | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Prompt Dialogue Text       | Automation Text   | Grantor State Program | Name                      | Submit For Approval        |
-      | Page Layout Action    | Enable Prompt Input Dialog | true              | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Prompt Dailogue Header     | Automation Header | Grantee State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Prompt Dialogue Text       | Automation Text   | Grantee State Program | Name                      | Submit For Approval        |
+      | Page Layout Action    | Enable Prompt Input Dialog | true              | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
-  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke @wip
+  @34056    @hideForContextFieldForMainPageLayoutAction-gPlanning @smoke
   Scenario: Hide submit for approval button for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -172,12 +171,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide For Context | view          | Grantee State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Submit For Approval" button is not displayed at view detail page
 
   @35814    @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
@@ -187,13 +186,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Cancel Button Label |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Cancel Button Label | Auto Cancel   | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Cancel Button Label | Auto Cancel   | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Cancel" button is displayed at edit detail page
 
@@ -204,30 +203,30 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Save Button Label |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Save Button Label | Auto Save     | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Save Button Label | Auto Save     | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
-  @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke @wip
+  @35817    @hideForContextFieldAtPageLayout-gPlanning @smoke
   Scenario: Hide overview for program view page and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide For Context | view          | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide For Context | view          | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @34354    @sortOrderForFieldAtPageTab-gPlanning
@@ -237,13 +236,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Overview" shown at number "5" inside subtabs
 
   @34355    @headerInstructionTextFieldAtPageTab-gPlanning
@@ -253,13 +252,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Header Instruction Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName               | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Header Instruction Text | Automation Header Text | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Automation Header Text" shown as header instruction text
 
   @34357    @tabTitleFieldAtPagePageTab-gPlanning
@@ -269,13 +268,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Tab Title | Overview          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Title | Automation Overview | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Tab Title | Automation Overview | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see "Automation Overview" sub tab is displayed at view detail page
 
   @34359    @tabIconFieldAtPageTab-gPlanning
@@ -285,13 +284,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Tab Icon  | govgrants_config:TabIconDefaultCss | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Tab Icon  | govgrants_config:TabIconNewCss | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Tab Icon  | govgrants_config:TabIconNewCss | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see pencil icon as "Overview" sub tab
 
   @35949    @isActiveFieldAtPageTab-gPlanning @smoke
@@ -301,13 +300,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35955    @hideForUserAtPageTab-gPlanning @smoke
@@ -317,13 +316,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide for User | Internal      | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35956    @hideForProfileAtPageTab-gPlanning @smoke
@@ -333,13 +332,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for Profile |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
@@ -349,13 +348,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide Decision Field |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35962    @highlightsPanelFeildAtPageTab-gPlanning
@@ -365,13 +364,13 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see complete header overview tab is displayed at view detail page
 
   @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
@@ -381,29 +380,29 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35979    @pageBlockTitleFieldAtPageBlock-gPlanning
   Scenario: Changing page block title from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
-      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantor State Program | GNT__PageBlockTitle__c    | Program Information Automation |
+      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | Program Information Automation |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Program Information Automation | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Page Block Title | Program Information Automation | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information Automation" page block displayed
 
   @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
@@ -413,13 +412,13 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
@@ -429,61 +428,61 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Sort Order | 10            | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Sort Order | 10            | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" shown at number "5" inside detail page
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
   Scenario: Setup header instruction text for program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName               | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Header Instruction Text |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Header Instruction Text |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName               | fieldNewValue         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Header Instruction Text | Header for Automation | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Header Instruction Text | Header for Automation | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
 
   @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide for Context |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide for Context | View          | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide for Context | View          | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide for User |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide for User | Internal      | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide for User | Internal      | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
@@ -495,15 +494,15 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantor State Program | Name                      | TAB-029                    |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-029                    |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Operator         | AND                  | Grantee State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35958    @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
@@ -515,103 +514,103 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide for User    |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantor State Program | Name                      | TAB-029                    |
-      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantor State Program | Name                      | TAB-029                    |
-      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Operator         | OR                   | Grantee State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide for Profile | System Administrator | Grantee State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide for User    | Internal             | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @36039    @hideForProfileAtPageBlock-gPlanning @smoke
   Scenario: Hide program information page block for particular user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Operator         |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for User    |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for User    |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Operator         | AND                  | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Operator         | AND                  | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @wip @changeInDOMStructure
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Total Fields per Row | 2                 | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Total Fields per Row | 2                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Total Fields per Row | 3             | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Total Fields per Row | 3             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Program Information" page block contains "3" elements
 
   @36041    @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Operator         |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block:Page Block Detail | Hide for User    |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide for User    |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Operator         | OR                   | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Operator         | OR                   | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | Page Block:Page Block Detail | Hide for Profile | System Administrator | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+      | Page Block:Page Block Detail | Hide for User    | Internal             | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Hide Decision Field |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke
@@ -623,13 +622,13 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue              | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General            | Header          | Program Contacts           | ProgramContacts                 |                           |                            |
       | Flex Grid:General            | Header          | Roles And Responsibilities | ProgramRolesAndResponsibilities |                           |                            |
-      | Page Block:Page Block Detail | Flex Table Name | ApiGeneratedId:1           | Grantor State Program           | GNT__PageBlockTitle__c    | Contacts                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Flex Table Name | ApiGeneratedId:1           | Grantee State Program           | GNT__PageBlockTitle__c    | Contacts                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see Roles And Responsibilities flex table inside page block
 
@@ -642,13 +641,13 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName             | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General            | Flex Grid Config Name | ProgramOutcomes    | ProgramOutcomes       |                           |                            |
       | Flex Grid:General            | Flex Grid Config Name | MonitoringGridView | MonitoringGridView    |                           |                            |
-      | Page Block:Page Block Detail | Flex Grid Name        | ApiGeneratedId:1   | Grantor State Program | GNT__PageBlockTitle__c    | Out Comes                  |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Flex Grid Name        | ApiGeneratedId:1   | Grantee State Program | GNT__PageBlockTitle__c    | Out Comes                  |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 
@@ -656,17 +655,17 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hiding edit action item at row level inside attachments page block from config using disable option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions |                   | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable              | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantee State Program                                      | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" in the page details
@@ -678,17 +677,17 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hiding edit action item at row level inside attachments page block from config using hide option and validating it at program-submitted for approval detail page
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName                           | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantor State Program | Name                      | Edit                       |
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Disable           | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName                           | fieldNewValue        | coreComponentField                                         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Program                                | Status                              | Created              | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantor State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantor State Program                                      | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail           | Hide/Disable attachment Row actions | Hide                 | Grantee State Program                                      | GNT__PageBlockTitle__c    | Attachments                |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile                    | System Administrator | Grantee State Program                                      | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
     When I click on "Save" in the page details
@@ -700,214 +699,214 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field API Name | ProgramName__c    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field API Name | ProgramName__c    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field API Name | BudgetingPreference__c | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field API Name | BudgetingPreference__c | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field "Budgeting Preference" inside page block
 
   @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36100    @sortOrderFieldAtPageBlockDetail-gPlanning
   Scenario: Changing sort order of program name page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Sort Order | 0                 | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Sort Order | 0                 | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Sort Order | 1             | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Sort Order | 1             | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" shown at number "1" inside "Program Information" page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
   Scenario: Changing label of program name page block detail fom config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Title             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Title             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation Title | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation Title | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field "Automation Title" inside page block
 
   @36106    @readOnlyFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hide program name field at page block detail from config validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide for Context |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide for Context | View          | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hiding of program name page block detail for internal user from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide for User |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide for User | Internal      | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hide program name page block detail for specific profile from configuration and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36113    @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using AND operator and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Operator         |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Operator         |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Operator         | AND                  | Grantor State Program | Name                      | PBD-9162                   |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PBD-9162                   |
-      | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Operator         | AND                  | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36114    @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
   Scenario: Hide program name page block detail from config using OR operator and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Operator         | AND               | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Operator         | AND               | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Operator         | OR                   | Grantor State Program | Name                      | PBD-9162                   |
-      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | PBD-9162                   |
-      | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Operator         | OR                   | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36126    @readOnlyForContextFieldAtPageBlockDetail-gPlanning
   Scenario: changing rendering behaviour of program name read only for context from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For Context |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only For Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only For Context | Edit          | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only For Context | Edit          | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name to read only for specific profile from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName             | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only For Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName             | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only For Profile | System Administrator | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only For Profile | System Administrator | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -918,16 +917,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing the values for Attachement classifications field from config and validating it at Program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                  | fieldOrignalValue                                     | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Attachment Classifications | Program Artifacts;Financial Artifacts;Other Artifacts | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Attachment Classifications | Program Artifacts;Financial Artifacts;Other Artifacts | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                  | fieldNewValue                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Attachment Classifications | AnnouncementArtifacts1;AnnouncementArtifacts2; | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Attachment Classifications | AnnouncementArtifacts1;AnnouncementArtifacts2; | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "AddAttachments" button inside attachments page block
     Then I see "AnnouncementArtifacts1:AnnouncementArtifacts2" inside Type selectbox
@@ -936,98 +935,98 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hiding program name while making is hidden field as false from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Hiding of program name at pege block detail by making change  inside hide decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Decision Field |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Operator            | AND               | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Operator            | AND               | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | PBD-9162                   |
-      | Page Block Config:Page Block Rule Detail | Operator            |                      | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Operator            |                      | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name while making change for is hidden field as false from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only For User |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only For User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName          | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only For User | Internal      | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only For User | Internal      | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name while making change for read decision field from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Decision Field |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Decision Field | ShowActiveProgram__c | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Decision Field | ShowActiveProgram__c | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
   Scenario: Hiding program name label at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName          | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization      | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization      | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName          | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Header Text | Organization Automation | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
@@ -1035,16 +1034,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing column header and its data of lookup modal from config and valiodating it on program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Code__c       | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
@@ -1052,18 +1051,18 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Validate removing Created status category from table on lookup modal from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | Name              | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <oldLookupFilter> | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantor State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newLookupDisplayName> | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria     | <newLookupFilter>      | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     When I perform quick search for "Automation test organization" in "---program:-:AccountTableId---" panel
     Then I see "Created" status in lookup modal table
@@ -1080,7 +1079,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Attachment Classifications | Test1;Test2;  | Annoucement Profile-FOA | Name                      | PBD-5205                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -1097,13 +1096,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Submit Warning Message | You Will not be able to edit the Program once it is submitted , Are you sure you want to continue ? | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Submit Warning Message | Test message for Automation | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Submit Warning Message | Test message for Automation | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
 
   @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
@@ -1113,13 +1112,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Is Active | false         | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" button is not displayed
 
   @36200    @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
@@ -1129,13 +1128,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Action Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Behavior | Open in overlay | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Action Behavior | Open in overlay | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInEditModeOnly}"
-    When I click on "View" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInEditModeOnly}" inside table
     When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
@@ -1146,8 +1145,8 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Action Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Behavior | Open in new window | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Action Behavior | Open in new window | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -1155,9 +1154,9 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "PEGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
+    When I click on "View Program Details" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Edit" in the page details
     Then I see new tab is opened
 
@@ -1168,13 +1167,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Display Area | Menu              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Display Area | Page Header   | Grantor State Program | Name                      | Create Campaign            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Display Area | Page Header   | Grantee State Program | Name                      | Create Campaign            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Create Campaign" button is displayed
 
   @36205    @displayAreaFieldForEditAtPageLayoutAction-gPlanning
@@ -1184,13 +1183,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Display Area | Page Header       | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Display Area | Menu          | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Display Area | Menu          | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click on "Menu" in the page details
     Then I see Edit options inside Menu Dropdown
 
@@ -1202,30 +1201,30 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Header Sequence | 1                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Header Sequence | 1             | Grantor State Program | Name                      | Edit                       |
-      | Page Layout Action    | Header Sequence | 2             | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout Action    | Header Sequence | 1             | Grantee State Program | Name                      | Edit                       |
+      | Page Layout Action    | Header Sequence | 2             | Grantee State Program | Name                      | Submit For Approval        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Edit" Button at position "0"
 
   @35982    @helpTextFieldAtPageBlock-gPlanning
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Program Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1236,16 +1235,16 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing content of help text long field at page block detail from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1259,61 +1258,61 @@ Business Need: Page Layout Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlock | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlock | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see "Program Information" page block displayed
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlockDetail | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageBlockDetail | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: changing rendering behaviour of program name read only with read only expression json field from config and validaying it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                 | fieldNewValue                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON | govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only Expression JSON | govgrants_config:ReadOnlyExpressionJsonForPageBlockDetail | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide for Context |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for Context | View          | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide for Context | View          | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1321,16 +1320,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide for Profile |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide for Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1338,16 +1337,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName     | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide for User |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide for User |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide for User | Internal      | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1356,20 +1355,20 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantor State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    | OR                   | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    | OR                   | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1377,20 +1376,20 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide edit row level action using AND operator from configuration and validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantor State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    |                   | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    |                   | Grantee State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantor State Program | Name                      | Edit                       |
-      | Page Block Rule:Page Block Rule Detail | Hide Operator    | AND                  | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide For Profile | System Administrator | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide For User    | Internal             | Grantee State Program | Name                      | Edit                       |
+      | Page Block Rule:Page Block Rule Detail | Hide Operator    | AND                  | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1402,12 +1401,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide For Context | View          |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1423,12 +1422,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide for Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1444,12 +1443,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide for User | Internal      |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1469,12 +1468,12 @@ Business Need: Page Layout Component Scenarios
       | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide Operator    | AND                  |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1494,12 +1493,12 @@ Business Need: Page Layout Component Scenarios
       | Uid Config:Uid        | Hide For Profile | System Administrator |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide For User    | Internal             |                    | Internal Unique Id        | <value>                    |
       | Uid Config:Uid        | Hide Operator    | OR                   |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1511,16 +1510,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide edit action from attachment page block from config validating it at attachments table
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Rule:Page Block Rule Detail | Hide Decision Field |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Rule:Page Block Rule Detail | Hide Decision Field |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName           | fieldNewValue    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Rule:Page Block Rule Detail | Hide Decision Field | HideDeleteBtn__c | Grantor State Program | Name                      | Edit                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Rule:Page Block Rule Detail | Hide Decision Field | HideDeleteBtn__c | Grantee State Program | Name                      | Edit                       |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Active Programs"
     When I perform quick search for "Test Demo"
-    When I click on "View" icon for "Test Demo" inside table
+    When I click on "View Program Details" icon for "Test Demo" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon is disabled inside "Attachments" page block
 
@@ -1532,12 +1531,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Uid Config:Uid        | Hide Decision Field | HideDeleteBtn__c |                    | Internal Unique Id        | <value>                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Active Programs"
     When I perform quick search for "Test Demo"
-    When I click on "View" icon for "Test Demo" inside table
+    When I click on "View Program Details" icon for "Test Demo" inside table
     When I navigate to "Attachments" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1549,16 +1548,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                 | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     Then I see "Save and Close" at bottom of Attachment Modal
@@ -1567,16 +1566,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing save attachment behaviour at attachment modal from config and validating it at attachment modal
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                 | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save              | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName                 | fieldNewValue                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save and Close Modal | Grantor State Program | GNT__PageBlockTitle__c    | Attachments                |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Save Attachment Behaviour | Save and Save and Close Modal | Grantee State Program | GNT__PageBlockTitle__c    | Attachments                |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     And I see "Save" at bottom of Attachment Modal
@@ -1586,14 +1585,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and removing program title and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9168                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9168                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "   " into field "ProgramNameText__c"
@@ -1606,14 +1605,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and removing owner organization value and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
@@ -1627,14 +1626,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and removing Number Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9161                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldNumber__c"
@@ -1647,14 +1646,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at kpi required Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-6440                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-6440                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "--None--" into field "fieldKPIsRequired__c"
@@ -1667,14 +1666,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at project start period Field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "No" into field "fieldKPIsRequired__c"
@@ -1688,14 +1687,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at expected future funding and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-688                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-688                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "0" into field "fieldStartDate__c"
@@ -1709,14 +1708,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at URL field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-4719                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-4719                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "50000" into field "fieldExpectedFunding__c"
@@ -1730,14 +1729,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at project goals field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
@@ -1751,14 +1750,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at percentage field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9165                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldPercent__c"
@@ -1771,14 +1770,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at date and time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9166                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9166                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldDateandTime__c"
@@ -1791,14 +1790,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at time field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9167                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9167                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldTime__c"
@@ -1811,14 +1810,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: changing value of required behaviour and keeping none at authorization field and validating error message while submitting program for approval
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9164                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9164                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "" into field "fieldAuthorization__c"
@@ -1829,19 +1828,19 @@ Business Need: Page Layout Component Scenarios
 
   @79735    @verifyByClickOnUserValueItShouldRedirectedToRespectiveUserPageAtPageLayout-gPlanning
   Scenario: validate by click on user value in table , respective user page should get opens at page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
 
   @82792   @verifyThatOptionAsALLIsPresentUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that by click on by phase dropdown at refine filter , an option as ALL is displayed - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I click on By phase dropdown at dashboard
@@ -1849,7 +1848,7 @@ Business Need: Page Layout Component Scenarios
 
   @82793   @verifyThatOptionAsCollabIsNotPresentUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that by click on by phase dropdown at refine filter , an option as Collab is not displayed - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I click on By phase dropdown at dashboard
@@ -1860,9 +1859,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see icon for "Link" is present in rich text area description field
 
@@ -1871,9 +1870,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -1885,9 +1884,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -1897,14 +1896,14 @@ Business Need: Page Layout Component Scenarios
 
   @83110    @verifyHyperLinkIsNotPresentAtUserNameUnderUserProfilePage
   Scenario: validate that a hyperlink is not present at user name under user profile page
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I select "My Profile" from user dropdown
     Then I see hyperlink is not present at "Nauman Shahid" user
 
   @83111   @verifySpaceIsPresentBetweenLikesAndLabelUnderUserProfilePage
   Scenario: validate that space is present between likes count and label under user profile page
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I select "My Profile" from user dropdown
     Then I softly see likesCount / label as "0" is present at user detail page
@@ -1918,7 +1917,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Announcement Create - Grantor | Name                      | PBD-9217                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -1930,7 +1929,7 @@ Business Need: Page Layout Component Scenarios
 
   @83324   @verifyAlertMessageForEnteringIncorrectDataAtURLFieldInModal-gAnnouncement
   Scenario: validate alert message for enetering incorrect data at url field on modal
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -1943,7 +1942,7 @@ Business Need: Page Layout Component Scenarios
 
   @83323 @verifyURLFieldIsAcceptsCorrectURLEnteredOnModalWindow-gAnnouncement
   Scenario:validate if correct URL value entered in URL field on modal and click on continue button then it redirects to next page
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -1961,7 +1960,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | GNT__PageBlockTitle__c    | Digital signature          |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -1978,12 +1977,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header    | <enteredValue> | SelectNGOContacts  |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -1997,16 +1996,16 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing page block title with the 255 character value from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantor State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -2017,16 +2016,16 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing page block title with the 255 character including special characters value from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName        | fieldOrignalValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantor State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
+      | Page Block:Page Block Detail | Page Block Title | Program Information | Grantee State Program | GNT__PageBlockTitle__c    | <enteredValue>             |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName        | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantor State Program | GNT__PageBlockTitle__c    | Program Information        |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Page Block Title | <enteredValue> | Grantee State Program | GNT__PageBlockTitle__c    | Program Information        |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -2035,7 +2034,7 @@ Business Need: Page Layout Component Scenarios
 
   @83730    @verifyNavigationLogoIsLoadingOnChangingTheCustomAppFromUI
   Scenario: validate that navigation app is loading on changing the custom app on ui -gHOME
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see navigation logo on page
 
@@ -2048,7 +2047,7 @@ Business Need: Page Layout Component Scenarios
       | id                 | Name     | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIqAAK | Grant__c | {000}            | 0           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
     Given I delete the record "Test Automation Grants Record" from the object "Grant__c" with field "ProjectTitle__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click on top right button "New" in flex table with id "ActiveGrants"
@@ -2073,7 +2072,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | GNT__PageBlockTitle__c    | Digital signature          |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -2084,110 +2083,110 @@ Business Need: Page Layout Component Scenarios
 
   @84215 @verifyThatDarkBlueColorIsDisplayedForLoggedInUser-StateAsAGrantor
   Scenario: verify that page header / page is displayed in dark blue color for logged in user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see page is in "Dark Blue" color
 
   @84216 @verifyThatVeryDarkBlueColorIsDisplayedForLoggedInUser-StateAsAGrantee
   Scenario: verify that page header / page is displayed in very dark blue color for logged in user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see page is in "Very Dark Blue" color
 
   @84224 @verifyThatVeryDarkGrayColorIsDisplayedForLoggedInUser-StateAsAdministrator
   Scenario: verify that page header / page is displayed in Very dark gray color for logged in user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As an Administrator"
     Then I see page is in "Very Dark gray" color
 
   @84572 @verifyThatDarkBlueColorIsDisplayedAtFooterForLoggedInUser-StateAsAGrantor
   Scenario: verify that footer is displayed in dark blue color for logged in user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see page footer is in "Dark Blue" color
 
   @84575 @verifyThatVeryDarkBlueColorIsDisplayedAtFooterForLoggedInUser-StateAsAGrantee
   Scenario: verify that page footer is displayed in very dark blue color for logged in user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see page footer is in "Very Dark Blue" color
 
   @84577 @verifyThatVeryDarkGrayColorIsDisplayedAtFooterForLoggedInUser-StateAsAdministrator
   Scenario: verify that page footer is displayed in Very dark gray color for logged in user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As an Administrator"
     Then I see page footer is in "Very Dark gray" color
 
   @84227 @verifyThatDarkBlueColorIsDisplayedAtAllButtonsBackgroundForLoggedInUser-StateAsAGrantor
   Scenario: verify that dark blue color is displayed at background for all buttons for logged in user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see header action has "Dark Blue" background color
 
   @84592 @verifyThatVeryDarkBlueColorIsDisplayedAtSidebarBackgroundForLoggedInUser-StateAsAGrantor
   Scenario: verify that very dark blue color is displayed as background for sidebar for logged in user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see sidebar has "Very Dark Blue" background color
 
   @84593 @verifyThatVeryDarkBlue1ColorIsDisplayedAtSidebarBackgroundForLoggedInUser-StateAsAGrantee
   Scenario: verify that Very Dark Blue 1 color is displayed as background for sidebar for logged in user-StateAsAGrantee
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see sidebar has "Very Dark Blue 1" background color
 
   @84595 @verifyThatBlackColorIsDisplayedAtSidebarBackgroundForLoggedInUser-AsAnAdministrator
   Scenario: verify that black color is displayed as background for sidebar for logged in user-As an Administrator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As an Administrator"
     Then I see sidebar has "Black" background color
 
   @84594 @verifyThatVeryDarkCyanColorIsDisplayedAtSidebarBackgroundForLoggedInUser-recipient
   Scenario: verify that Very dark cyan color is displayed as background for sidebar for logged in user-recipient
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
     Then I see sidebar has "Very dark cyan" background color
 
   @84218 @verifyThatVeryDarkBlueColorIsDisplayedForLoggedInUser-recipient
   Scenario: verify that page header / page is displayed in Very dark desaturated cyan color for logged in user-recipient
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
     Then I see page footer is in "Very dark desaturated cyan" color
 
   @84755 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForLoggedInUser-StateAsAGrantor
   Scenario: verify that very dark blue color is displayed as background for phases tab for logged in user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see phase tab has "Very Dark Blue" background color
 
   @84756 @verifyThatVeryDarkBlue1ColorIsDisplayedAtPhasesTabForLoggedInUser-StateAsAGrantee
   Scenario: verify that Very Dark Blue 1 color is displayed as background for phases tab for logged in user-StateAsAGrantee
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     Then I see phase tab has "Very Dark Blue 1" background color
 
   @84772 @verifyThatBlackColorIsDisplayedAtPhasesTabForLoggedInUser-AsAnAdministrator
   Scenario: verify that black color is displayed as background for phases tab for logged in user-As an Administrator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As an Administrator"
     Then I see phase tab has "Black" background color
 
   @84757 @verifyThatVeryDarkCyanColorIsDisplayedAtPhasesTabForLoggedInUser-recipient
   Scenario: verify that Very dark cyan color is displayed as background for phases tab for logged in user-recipient
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Sub-Recipient"
     Then I see phase tab has "Very dark cyan" background color
 
   @84598 @verifyThatDropDownArrowIsUsedAtUserProfileSelectionDropdown
   Scenario: verify that dropdown arrow is displayed at user drop-down at header
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see arrow is displayed at user drop-down
 
   @84743 @verifyThatWhiteColorIsDisplayedForActiveTabAtHeader
   Scenario: verify that white color is displayed for active tab at header
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see active tab has White background colour
@@ -2201,10 +2200,10 @@ Business Need: Page Layout Component Scenarios
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2220,10 +2219,10 @@ Business Need: Page Layout Component Scenarios
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                          | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:false | GNT__NameTemplateConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -2235,7 +2234,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
@@ -2253,7 +2252,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
@@ -2271,7 +2270,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -2289,7 +2288,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
       | en_US  | America/Panama |
@@ -2307,7 +2306,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
       | en_CA  | America/New_York |
@@ -2325,7 +2324,7 @@ Business Need: Page Layout Component Scenarios
     Given I have "timeZoneLocale" configuration as below:
       | locale | timeZone         |
       | en_US  | America/New_York |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
       | en_IN  | Asia/Kolkata |
@@ -2340,19 +2339,19 @@ Business Need: Page Layout Component Scenarios
 
   @84732 @verifyThatBlackColorIsDisplayedForActiveTabAtWorkspaceLibrary-gHome
   Scenario: verify that black color is displayed at background for active tab at workspace library section
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     Then I see active tab has Black background colour at my workspace section
 
   @86820 @verifyThatLookupModalWindowIsDisplayedProperly
   Scenario: verify that lookup modal window is displayed properly
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2360,17 +2359,17 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: verify that lookup modal window is displayed properly if lookup contains more that 2 display fields
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultValue>    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <defaultValue>    | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newValue>    | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Lookup Display Field Names | <newValue>    | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2390,15 +2389,15 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                       | fieldName     | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue     |
       | Name Template Sequence Config:Name Template | Last Sequence | 2                 |                       | Internal Unique Id        | p8BKf5E0q1cd1Re8ybgBWh1jQ0Ap3D |
-      | Page Layout:General                         | Header        | Program - {!Name} | Grantor State Program |                           |                                |
+      | Page Layout:General                         | Header        | Program - {!Name} | Grantee State Program |                           |                                |
     And I update custom name template setting changes:
       | id                 | Name       | AutoNumberFormat | StartNumber | booleanValue                                         | customSettingApiName       |
       | a0e15000008FjIyAAK | Program__c | {000}            | 1           | GNT__Active__c:true,GNT__SkipAutoNumberReset__c:true | GNT__NameTemplateConfig__c |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
@@ -2408,96 +2407,96 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @102107    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide end date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Project Period End Date" is not displayed inside page block detail
 
   @102114    @verifyHideFieldJsonFieldByDisablingTitleFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to disable title field Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field "ProgramName__c" is disabled
 
   @102115    @verifyHideFieldJsonFieldByDisablingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to disable date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field "EndDate__c" is disabled
 
   @102248    @verifyIdDateTimeFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
   Scenario:validate disabled dateTime field value is not getting changed on page scroll in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see value "11/30/2022" of "Project Period End Date" field is not changed on page scroll
 
   @102251    @verifyIdDateFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
   Scenario:validate disabled date field value is not getting changed on page scroll in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see value "10/15/2021 7:43 AM" of "Date &Time" field is not changed on page scroll
 
   @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue
@@ -2508,12 +2507,12 @@ Business Need: Page Layout Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label                | booleanValue | customMetaDataApiName    |
       | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "www.google.com" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2528,12 +2527,12 @@ Business Need: Page Layout Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label                | booleanValue | customMetaDataApiName    |
       | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2548,12 +2547,12 @@ Business Need: Page Layout Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label                | booleanValue | customMetaDataApiName    |
       | m031C000000XZY2QAO | URL Validation Regex | true         | GNT__KeyValueHolder__mdt |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2568,12 +2567,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
     And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "Test_URL__c"
@@ -2590,9 +2589,9 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see bulb icon at header instruction is displayed
 
   @111900    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gApplication
@@ -2608,14 +2607,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate required for submit icon at description Field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-2781                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-2781                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
@@ -2624,16 +2623,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate required for submit icon at description Field for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-2781                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-2781                   |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
   @112009  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
@@ -2641,7 +2640,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
@@ -2649,16 +2648,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-584                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-584                    |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -2687,24 +2686,24 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Draft Programs"
+    When I click on top right button "New" in flex table with id "Programs"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @113061    @verifyBadgesShownAtOverviewTabInEditModeIfRequiredForSubmitFieldIsBlankForAdminUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2733,48 +2732,48 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for admin user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see missing field badge on "Overview" tab
 
   @112562    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see missing field badge on "Overview" tab
 
   @112558    @verifyBadgesShownAtOverviewTabInEditModeIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2784,21 +2783,21 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see missing field badge on "Overview" tab
 
   @112363    @verifyThatAdminUserIsAbleToAccessChatterNativePage-gPlanning
   Scenario Outline: verify that admin user is able to access chatter native page
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to url "<URL_Value>"
     Then I see "chatterPage" page displayed
@@ -2826,18 +2825,18 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantor State Program | Name                      | PBD-9228                   |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-9228                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -2849,18 +2848,18 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for PM user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantor State Program | Name                      | PBD-9228                   |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -2894,36 +2893,36 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify that badges are not displayed at Overview tab in page edit mode if all required for submit fields all filled for admin user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-3098                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3098                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @114071    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
   Scenario: verify display of badges if req field is hidden by using hide field json at picklist field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -2932,22 +2931,22 @@ Business Need: Page Layout Component Scenarios
 
   @114073    @verifyDisplayOfBadgesIfReqTextFieldIsHiddenByUsingHideFieldJSONOnPicklistFieldValueAsCooperativeAgreement
   Scenario: verify display of badges if req field is hidden by using hide field json at picklist field for value as Cooperative Agreement
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Cooperative Agreement" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -2956,22 +2955,22 @@ Business Need: Page Layout Component Scenarios
 
   @114084    @verifyDisplayOfBadgesIfMultipleReqtFieldsIsHiddenByUsingHideFieldJSONOnPicklistFieldValue
   Scenario: verify display of badges if multiple req fields is hidden by using hide field json at picklist field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -2981,22 +2980,22 @@ Business Need: Page Layout Component Scenarios
 
   @114096    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONNotEqualsToOnPicklistFieldValueFromConfig
   Scenario: verify display of badges if req field is hidden by using hide field json not equals to operator at picklist field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3005,22 +3004,22 @@ Business Need: Page Layout Component Scenarios
 
   @114195    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONPicklistFieldValueIfValueIsProjectGrants
   Scenario: verify display of badges if req field is hidden by using hide field json at picklist field if value is project grants
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3029,22 +3028,22 @@ Business Need: Page Layout Component Scenarios
 
   @114203    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONNotEqualsToPicklistFieldValueFromConfigInEditMode
   Scenario: verify display of badges if req field is hidden by using hide field json not equals to operator at picklist field in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3054,22 +3053,22 @@ Business Need: Page Layout Component Scenarios
 
   @114198    @verifyDisplayOfBadgesIfMultipleReqtFieldsAsPicklistAndTextIsHiddenByUsingHideFieldJSONOnPicklistFieldValue
   Scenario: verify display of badges if multiple req fields as picklist and text are hidden by using hide field json at picklist field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3079,22 +3078,22 @@ Business Need: Page Layout Component Scenarios
 
   @114220    @verifyDisplayOfBadgesIfSubmitReqFieldIsHiddenUsingNotEqualsOperatorAndSaveReqFieldUsingEqualsOperator
   Scenario: verify display of badges if req field is hidden usig not equals operator and save req field hidden by equals operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3105,22 +3104,22 @@ Business Need: Page Layout Component Scenarios
 
   @114195    @verifyDisplayOfBadgesIfMultipleReqForSaveAndSubmitFieldsAresHiddenUsingHideFieldJSON
   Scenario: verify badges are hidden if req for save and submit fields are hidden
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3131,22 +3130,22 @@ Business Need: Page Layout Component Scenarios
 
   @111861    @verifyDisplayOfBadgesIfMultipleReqForSaveAndSubmitFieldsAresHiddenUsingHideFieldJSONCombinations
   Scenario: verify badges are hidden if req for save and submit fields are hidden using hide field json combinations
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3157,22 +3156,22 @@ Business Need: Page Layout Component Scenarios
 
   @114380    @verifyTitleAndBadgeIsNotDisplayedIfReqForSubmitFieldIsHideUsingPicklistFieldInViewMode
   Scenario: verify badge is hidden from overview tab if title fields is hidden using hide field json on picklist field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination4 | Grantor State Program | Name                      | PBD-3883                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination4 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9162                   |
     When I click on "Edit" in the page details
     And I enter value "NGO" into field "FunderType__c"
     Then I softly see "Title" is not displayed inside page block detail
@@ -3181,22 +3180,22 @@ Business Need: Page Layout Component Scenarios
 
   @114412    @verifyTitleAndBadgeIsNotDisplayedIfSaveAndSubmitReqFieldsAreHidddenUsingPicklistFieldInEditMode
   Scenario: verify badge is hidden from overview tab if picklist and goal fields are hidden using hide field json on picklist field in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination5 | Grantor State Program | Name                      | PBD-3883                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination5 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "NGO" into field "FunderType__c"
     When I click on "Save" in the page details
@@ -3207,22 +3206,22 @@ Business Need: Page Layout Component Scenarios
 
   @114212    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingNumberFieldInViewMode
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on number field in value in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6 | Grantor State Program | Name                      | PBD-9161                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6 | Grantee State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "123" into field "Number__c"
     When I click on "Save" in the page details
@@ -3232,22 +3231,22 @@ Business Need: Page Layout Component Scenarios
 
   @114215    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenByUsingURLFieldInViewMode
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json at URL field in value in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination7 | Grantor State Program | Name                      | PBD-4719                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination7 | Grantee State Program | Name                      | PBD-4719                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "www.google.com" into field "WebsiteAddress__c"
     When I click on "Save" in the page details
@@ -3256,22 +3255,22 @@ Business Need: Page Layout Component Scenarios
 
   @114199    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingTEXTFieldInViewMode
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on text field in value in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination8 | Grantor State Program | Name                      | PBD-9164                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination8 | Grantee State Program | Name                      | PBD-9164                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "ABC" into field "Authorization__c"
     When I click on "Save" in the page details
@@ -3280,22 +3279,22 @@ Business Need: Page Layout Component Scenarios
 
   @114372   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateFieldInViewMode @wip
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on date field in value in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination9 | Grantor State Program | Name                      | PBD-9171                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination9 | Grantee State Program | Name                      | PBD-9171                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "11/12/2020" into field "Publisheddate__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3304,22 +3303,22 @@ Business Need: Page Layout Component Scenarios
 
   @114219   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingNumberFieldValueInViewModeUsingNotEqualsOperator
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on number field with not in operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination10 | Grantor State Program | Name                      | PBD-9161                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination10 | Grantee State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "123" into field "Number__c"
     When I click on "Save" in the page details
@@ -3328,22 +3327,22 @@ Business Need: Page Layout Component Scenarios
 
   @114218    @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingURLFieldForNotEqualsOperator
   Scenario: verify badge is hidden from overview tab if text field hidden using hide field json on URL field for not equals operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination7 | Grantor State Program | Name                      | PBD-4719                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination7 | Grantee State Program | Name                      | PBD-4719                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "www.google.comm" into field "WebsiteAddress__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3352,22 +3351,22 @@ Business Need: Page Layout Component Scenarios
 
   @111861    @verifyDisplayOfBadgesIfMultipleReqForSaveAndSubmitFieldsAresHiddenUsingHideFieldJSONCombinations
   Scenario: verify badges are hidden if req for save and submit fields are hidden using hide field json combinations
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3381,19 +3380,19 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3405,19 +3404,19 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -3429,19 +3428,19 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination5 | Grantor State Program | Name                      | PBD-3883                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination5 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "NGO" into field "FunderType__c"
     Then I softly see "Program Type" is not displayed inside page block detail
@@ -3451,22 +3450,22 @@ Business Need: Page Layout Component Scenarios
 
   @114502    @verifyDisplayOfBadgesToPMUserIfMultipleReqFieldsAreHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
   Scenario: verify display of badges by hiding date,picklist,text field using hide field JSON
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination13 | Grantor State Program | Name                      | PBD-3883                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination13 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "NGO" into field "FunderType__c"
     Then I softly see "Program Type" is not displayed inside page block detail
@@ -3478,22 +3477,22 @@ Business Need: Page Layout Component Scenarios
 
   @114503    @verifyDisplayOfBadgesToPMUserIfMultipleReqFieldsAreHiddenByUsingHideFieldJSONUsingNotEqualsOperator
   Scenario: verify display of badges by hiding date,picklist,text field using hide field JSON using not equals operator
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination14 | Grantor State Program | Name                      | PBD-3883                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination14 | Grantee State Program | Name                      | PBD-3883                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "State" into field "FunderType__c"
     Then I softly see "Program Type" is not displayed inside page block detail
@@ -3505,22 +3504,22 @@ Business Need: Page Layout Component Scenarios
 
   @114508    @verifyDisplayOfBadgesByHiddenPicklistTextFieldUsingHideFieldJSONAtLookupField
   Scenario: verify display of badges by hiding picklist,Text field using hide field JSON on lookup value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination15 | Grantor State Program | Name                      | PBD-3178                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination15 | Grantee State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I enter value "Department of Community Health" into field "Account__c"
     Then I softly see "Program Type" is not displayed inside page block detail
@@ -3530,24 +3529,24 @@ Business Need: Page Layout Component Scenarios
 
   @114537   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateAndNumberFieldUsing2DifferentJSONInEditMode
   Scenario: verify badge is hidden from overview tab if text field hidden using 2 different JSON on date, text field in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6  | Grantor State Program | Name                      | PBD-9161                   |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination16 | Grantor State Program | Name                      | PBD-9171                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6  | Grantee State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination16 | Grantee State Program | Name                      | PBD-9171                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I pause execution for "5" seconds
     And I enter value "12/11/2020" into field "fieldStartDate__c"
@@ -3575,24 +3574,24 @@ Business Need: Page Layout Component Scenarios
 
   @114538   @verifyTitleAndBadgeIsNotDisplayedIfTextIsHidddenUsingDateAndNumberFieldUsing2DifferentJSONInViewMode
   Scenario: verify badge is hidden from overview tab if text field hidden using 2 different JSON on date, text field in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6  | Grantor State Program | Name                      | PBD-9161                   |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination16 | Grantor State Program | Name                      | PBD-9171                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination6  | Grantee State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination16 | Grantee State Program | Name                      | PBD-9171                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     And I pause execution for "5" seconds
     And I enter value "12/11/2020" into field "fieldStartDate__c"
@@ -3605,18 +3604,18 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:validate special characters are accepted in help text field at page block seperator type of block at detail page
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantor State Program | Name                      | PBD-9228                   |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-9228                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Grantee State Program | Name                      | PBD-9228                   |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantee State Program | Name                      | PBD-9228                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -3648,12 +3647,12 @@ Business Need: Page Layout Component Scenarios
 
   @115664 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForAdminUser-StateAsAGrantor
   Scenario: verify that very dark blue color is displayed as background for phases tab for admin user-StateAsAGrantor
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see phase tab has "Very Dark Blue" background color
 
   @115665 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForSPIUser-StateAsAGrantor
@@ -3669,23 +3668,23 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSON | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
 
   @117880    @verifyFaviconIconDisplayedAtBrowserTab
   Scenario: verify favicon icon displayed at browser tab
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I softly see FaviconIcon at "Planning" browser tab
@@ -3698,16 +3697,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as formula loans in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3717,16 +3716,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value as blank and using not equals operator in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3736,16 +3735,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Grant" into field "ProgramType__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3755,23 +3754,23 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide title from Overview page block using picklist field value and using multiple conditions in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
 
   @119856  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditPage-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Active Grants"
@@ -3781,7 +3780,7 @@ Business Need: Page Layout Component Scenarios
 
   @119858  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForAdminUserAtEditModal-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for admin user at modal
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3790,7 +3789,7 @@ Business Need: Page Layout Component Scenarios
 
   @119859    @requiredToSaveBehaviourAtModalWindowIfDataInAnyRequiredFieldIsMissing-gPlanning
   Scenario: validate req to save error message at announcement create modal
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3813,7 +3812,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-3111                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-3111                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3844,7 +3843,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-3111                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-3111                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3875,7 +3874,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9239                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9239                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3907,7 +3906,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9239                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9239                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3937,7 +3936,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-9240                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3967,7 +3966,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -3997,7 +3996,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -4027,7 +4026,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9238                   |
       | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-9240                   |
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-9240                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -4052,13 +4051,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -4070,12 +4069,12 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click toggle button to select "Draft Programs"
+    When I click on top right button "New" in flex table with id "Programs"
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -4087,63 +4086,63 @@ Business Need: Page Layout Component Scenarios
       | Page Layout           | Page Instruction Text | govgrants_config:PageInstructionText | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Layout:General   | Page Instruction Text | Automation Instruction Text | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
 
   @120091    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInViewMode-gPlanning
   Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "ProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9163                   |
     And I refresh the page
     Then I see "Missing fields information" shown as help text at visual indicator inside page layout
 
   @120089    @verifyHelpTextAtVisualIndicatorShownAtTabInsidePageLayoutInEditMode-gPlanning
   Scenario: verify help text displayed on mouse hover at visual indicator at tab inside page layout in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9163                   |
     When I click on "Edit" in the page details
     Then I see "Missing fields information" shown as help text at visual indicator inside page layout
 
   @120233    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInViewMode
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -4151,12 +4150,12 @@ Business Need: Page Layout Component Scenarios
 
   @120235    @validateLoadingIconIsNotDisplayedAtAddNotesModalWindowInEditMode
   Scenario: validate loading icon is not displayed at add Notes modal window when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -4164,12 +4163,12 @@ Business Need: Page Layout Component Scenarios
 
   @120234    @validateLoadingIconIsNotDisplayedAtAddAttachmentModalWindowInViewMode
   Scenario: validate loading icon is not displayed at add attachment modal window when record is in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
@@ -4177,12 +4176,12 @@ Business Need: Page Layout Component Scenarios
 
   @120236    @validateLoadingIconIsNotDisplayedAtAddAttachmentsModalWindowInEditMode
   Scenario: validate loading icon is not displayed at add Attachments modal window when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Attachments"
     And I wait for "5" seconds
@@ -4190,12 +4189,12 @@ Business Need: Page Layout Component Scenarios
 
   @120450    @validateNotesIsAddedSuccessfullyUsingAddNotesButton
   Scenario: validate Notes are getting added successfully using add button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
-    When I click on "View" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Attachments" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -4207,12 +4206,12 @@ Business Need: Page Layout Component Scenarios
 
   @120237    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInEditMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "5" seconds
@@ -4220,12 +4219,12 @@ Business Need: Page Layout Component Scenarios
 
   @120239    @validateLoadingIconIsNotDisplayedAtAssociateModalWindowInViewMode
   Scenario: validate loading icon is not displayed at associate modal at flex table when record is in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I wait for "5" seconds
@@ -4257,10 +4256,10 @@ Business Need: Page Layout Component Scenarios
 
   @120451    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileEditingRecord
   Scenario: validate are getting edited successfully without throwing alert message if all required fields are filled
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     And I pause execution for "7" seconds
@@ -4272,10 +4271,10 @@ Business Need: Page Layout Component Scenarios
 
   @120452    @validateAlertMessageNotDisplayedAtNotesIfAllRequiredFieldsAreFilledWhileAddingNewRecord
   Scenario: validate records are getting added successfully without throwing alert message if all required fields are filled
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Attachments" sub tab
@@ -4288,12 +4287,12 @@ Business Need: Page Layout Component Scenarios
 
   @120516  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMod
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at page detail in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Department of Community Health"
@@ -4303,12 +4302,12 @@ Business Need: Page Layout Component Scenarios
 
   @120519  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtModalWindow
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at modal window
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Program Approver" inside table
     And I pause execution for "3" seconds
@@ -4320,12 +4319,12 @@ Business Need: Page Layout Component Scenarios
 
   @120517  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtEnhancedGridLookupValue
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at enhanced grid lookup value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedID---" panel
     When I hover mouse on lookup link "Child Development Centre" at table
@@ -4335,12 +4334,12 @@ Business Need: Page Layout Component Scenarios
 
   @120515  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtFlexTableLookupValue @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at table lookup value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Allen PM" in "toggleFlexTableProgramContacts" panel
     When I hover mouse on lookup link "Allen PM" at table
@@ -4350,7 +4349,7 @@ Business Need: Page Layout Component Scenarios
 
   @120518  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtMeGridLookupValue@skipOnJenkins @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at ME Grid lookup value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -4365,7 +4364,7 @@ Business Need: Page Layout Component Scenarios
 
   @120455  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinks @skipOnJenkins
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at sidebar links
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -4389,12 +4388,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | Type__c,Title__c,Description__c,Status__c,DueDate__c,CreatedBy.Name | ProgramStrategicGoals |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Plan" sub tab
     When I hover mouse on lookup link "Nauman Shahid" at grid
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
@@ -4404,36 +4403,36 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-3188                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
   Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-3188                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I click on "Save" in the page details
     Then I do not see missing field badge on "Overview" tab
 
@@ -4441,40 +4440,40 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate that visual indicator not displayed at detail page if req for save field is hidden in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-3188                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @121226  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsHidden
   Scenario: validate that visual indicator not displayed at detail page if req for save field is hidden
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantor State Program | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    |                   | Grantee State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-3188                   |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-3188                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantee State Program | Name                      | PBD-3188                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantee State Program | Name                      | PBD-3188                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @122001    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTableWhenPageRedirectBehaviourIsSetToSaveAndContinue
@@ -4484,11 +4483,11 @@ Business Need: Page Layout Component Scenarios
       | Forms                 | Page Redirect Behaviour | Save              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Forms:General         | Page Redirect Behaviour | Save and Continue | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Forms:General         | Page Redirect Behaviour | Save and Continue | Grantee State Program |                           |                            |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     And I click on "Cancel" in the page details
     Then I see expected table with id "toggleFlexTablePrograms"
@@ -4506,7 +4505,7 @@ Business Need: Page Layout Component Scenarios
 
   @125231  @VerifyMiniPageLayoutShouldDisplayedProperlyOnMouseHoverAtSidebarLinksWithLabelAndValue
   Scenario: validate that mini page layout is getting displayed properly on mouse hover at sidebar links with label and value
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -4520,7 +4519,7 @@ Business Need: Page Layout Component Scenarios
 
   @125229  @VerifyMiniPageLayoutShouldDisplayedWithUnBoldValueOnMouseHoverAtSidebarLinks
   Scenario: validate that mini page layout is getting displayed without bold value on mouse hover at sidebar links
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -4537,7 +4536,7 @@ Business Need: Page Layout Component Scenarios
 
   @125232  @VerifyMiniPageLayoutShouldDisplayedWithGreyBackgrounfOnMouseHoverAtSidebarLinks
   Scenario: validate that mini page layout is getting displayed withgrey background on mouse hover at sidebar links
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -4550,23 +4549,23 @@ Business Need: Page Layout Component Scenarios
 
   @112159  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I enter value "Department of Children health" into field "fieldAccount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @125696    @verifyByClickOnUserValueInEditModeItShouldRedirectedToRespectiveUserPageAtPageLayout-gPlanning
   Scenario: validate by click on user value in edit mode , respective user page should get opens at page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
@@ -4574,7 +4573,7 @@ Business Need: Page Layout Component Scenarios
   @126061   @VerifyDisplayOfSidebarComponentAndLogoAtAdminUserIfAdminUserEntryIsDeletedFromUserPreferenceConfigCustomSetting
   Scenario: Validating sidebar components, logo is rendering properly for ADMIN user even after deleting user entery from user preference config custom setting
     Given I delete the record "Nauman Shahid" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
@@ -4608,10 +4607,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Validating history tables and forms under attachment tab are rendering properly for PM user even after deleting user entery from user preference config custom setting
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9232                   |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9232                   |
     Given I delete the record "Automation PM" from the object "GNT__UserPreferences__c" with field "SetupOwner.Name"
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
@@ -4628,19 +4627,19 @@ Business Need: Page Layout Component Scenarios
 
   @125745    @verifyByClickOnUserValueInViewModeItShouldOpenInNewTabAtPageLayout-gPlanning
   Scenario: validate by click on user value in view , it should open in new tab at page layout - gPlanning
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see new tab is opened
 
   @127792   @verifyThatUserCanFilterByPlanningPhaseUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using planning phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4651,7 +4650,7 @@ Business Need: Page Layout Component Scenarios
 
   @127793   @verifyThatUserCanFilterByAnnouncementPhaseUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using Announcement phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4662,7 +4661,7 @@ Business Need: Page Layout Component Scenarios
 
   @127794   @verifyThatUserCanFilterByApplicationPhaseUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using Applications phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4673,7 +4672,7 @@ Business Need: Page Layout Component Scenarios
 
   @127795   @verifyThatUserCanFilterByApplicationAndGrantsBothPhasesUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using Applications and grants both phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4687,7 +4686,7 @@ Business Need: Page Layout Component Scenarios
 
   @127796   @verifyQuickSearchWorkingAtAnalyticsTabTable-gDashboard
   Scenario: validate quick search working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4700,7 +4699,7 @@ Business Need: Page Layout Component Scenarios
 
   @127797   @verifyThatUserCanFilterByMultiplePhasesUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using multiple phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4723,7 +4722,7 @@ Business Need: Page Layout Component Scenarios
 
   @127799   @verifyThatUserCanFilterByAllPhasesUnderRefineFilterByPhaseDropdown-gDashboard
   Scenario: validate that User should able to filter by using ALL phase - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4740,7 +4739,7 @@ Business Need: Page Layout Component Scenarios
 
   @127821   @verifyTAdvanceFilterWorkingAtAnalyticsPhase-gDashboard
   Scenario: validate advance filter working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4751,7 +4750,7 @@ Business Need: Page Layout Component Scenarios
 
   @127822   @verifyClearAllButtonWorkingAtAnalyticsPhase-gDashboard
   Scenario: validate clear all button working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4766,7 +4765,7 @@ Business Need: Page Layout Component Scenarios
 
   @127823   @verifyViewActionAtStandardReportRecordUnderAnalyticsTable-gDashboard
   Scenario: validate view action is working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4777,7 +4776,7 @@ Business Need: Page Layout Component Scenarios
 
   @127943   @verifyTAdvanceFilterWithNotEqualsOperatorWorkingAtAnalyticsPhase-gDashboard
   Scenario: validate advance filter working with not equals operator at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Standard Reports" content inside "Activities" subheader on left panel
@@ -4789,7 +4788,7 @@ Business Need: Page Layout Component Scenarios
 
   @127947   @verifyViewActionAtCustomReportRecordUnderAnalyticsTable-gDashboard
   Scenario: validate view action at custom record is working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Custom Reports" content inside "Activities" subheader on left panel
@@ -4799,7 +4798,7 @@ Business Need: Page Layout Component Scenarios
 
   @127946   @verifyEditActionAtCustomReportRecordUnderAnalyticsTable-gDashboard
   Scenario Outline: validate edit action at custom record is working at analytics tab table - gDashboard
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Analytics" tab
     When I navigate to "View Custom Reports" content inside "Activities" subheader on left panel
@@ -4817,13 +4816,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0065                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0065                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE SUCCESS MSG DND |
 
@@ -4834,13 +4833,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0065                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0065                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE SUCCESS MSG DND |
 
@@ -4851,13 +4850,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Blue" color:
       | test is done for page layout |
 
@@ -4868,13 +4867,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0064                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0064                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Brown" color:
       | TEST PAGE ALERT MSG DND |
 
@@ -4886,14 +4885,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Context |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    |               | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Context | Edit          | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | Edit          | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -4905,14 +4904,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Context |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    |               | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | View          | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -4923,13 +4922,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0066                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0066                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4941,14 +4940,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0070                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0070                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I see below message at page detail in "Blue" color:
       | test is done for page layout    |
       | TEST PAGE INFORMATION MSG DND 1 |
@@ -4960,13 +4959,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0066                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0066                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4977,13 +4976,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User |               | Grantor State Program | Name                      | LM-0067                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User |               | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE ERROR MSG DND |
 
@@ -4994,13 +4993,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantor State Program | Name                      | LM-0067                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5011,13 +5010,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantor State Program | Name                      | LM-0067                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User | Internal      | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5029,14 +5028,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Profile |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantor State Program | Name                      | LM-0067                    |
-      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantor State Program | Name                      | LM-0067                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantee State Program | Name                      | LM-0067                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5048,14 +5047,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Profile |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantor State Program | Name                      | LM-0067                    |
-      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantor State Program | Name                      | LM-0067                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    |                      | Grantee State Program | Name                      | LM-0067                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0067                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5066,13 +5065,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0071                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
 
@@ -5083,13 +5082,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0072                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0072                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Blue" color:
       | TEST PAGE BLOCK INFORMATION MSG DND |
 
@@ -5100,13 +5099,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0073                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0073                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Brown" color:
       | TEST PAGE BLOCK ALERT MSG DND |
 
@@ -5117,13 +5116,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0074                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0074                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see the following messages in the page details contains:
       | TEST PAGE BLOCK WARNING MSG DND |
 
@@ -5134,13 +5133,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0075                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0075                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE BLOCK ERROR MSG DND |
 
@@ -5151,24 +5150,24 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0076                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0076                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
   @130096    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtPageLayout
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I hover mouse on lookup link "Department of Community Health"
     And I pause execution for "3" seconds
@@ -5186,12 +5185,12 @@ Business Need: Page Layout Component Scenarios
 
   @130098    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtModalWindow
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at modal window
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Nauman Shahid" inside table
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
@@ -5212,23 +5211,23 @@ Business Need: Page Layout Component Scenarios
 
   @130293    @helpTextDisplayedAtBottomOfHelpIconAtPageLayoutInViewMode
   Scenario: validate help text displayed at bottom of help icon at page layout view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
   @130294    @helpTextDisplayedAtBottomOfHelpIconAtPageLayoutInEditMode
   Scenario: validate help text displayed at bottom of help icon at page layout edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
@@ -5240,14 +5239,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0071                    |
-      | Page Message Config:Page Layout Action     | Hide For User |               | Grantor State Program | Name                      | LM-0065                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                    |
+      | Page Message Config:Page Layout Action     | Hide For User |               | Grantee State Program | Name                      | LM-0065                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
       | TEST PAGE SUCCESS MSG DND       |
@@ -5261,15 +5260,15 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Context |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    |               | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Profile | PM            | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Context | Edit          | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    |               | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | PM            | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | Edit          | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I see below message at page detail in "Blue" color:
       | test is done for page layout |
 
@@ -5281,14 +5280,14 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Profile |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    | Internal             | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    | Internal             | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -5301,15 +5300,15 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For Context |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName        | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Layout Action | Hide For User    | Internal             | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantor State Program | Name                      | LM-0063                    |
-      | Page Message Config:Page Layout Action | Hide For Context | Edit                 | Grantor State Program | Name                      | LM-0063                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Layout Action | Hide For User    | Internal             | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Profile | System Administrator | Grantee State Program | Name                      | LM-0063                    |
+      | Page Message Config:Page Layout Action | Hide For Context | Edit                 | Grantee State Program | Name                      | LM-0063                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -5320,13 +5319,13 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0076                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0076                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
@@ -5338,12 +5337,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see the following page detail buttons :
       | Cancel |
       | Save   |
@@ -5356,12 +5355,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see "Description" field is rendered as rich text area
 
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout @skipOnJenkins
@@ -5372,12 +5371,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Christine GGPTEST5" at table
@@ -5392,12 +5391,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "40,000" text enter in field "fieldFundedAmount__c"
 
@@ -5409,12 +5408,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see expected table with id "toggleFlexTableProgramContacts"
 
@@ -5426,12 +5425,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see "11/30/2020" text enter in field "fieldStartDate__c"
 
@@ -5443,10 +5442,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly2}"
     When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly2}" inside table
     When I navigate to "Overview" sub tab
@@ -5460,12 +5459,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<helpText>" shown as help text
 
@@ -5481,12 +5480,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
     Then I see value "Christine GGPTEST5" for title "Full Name" inside table "toggleFlexTableProgramContacts"
@@ -5499,12 +5498,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @131795  @verifyCharacterCountDisplayedInsideCKEditorBoxAtRichTextAreaFieldInsideEditPageLayout
@@ -5515,12 +5514,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5539,12 +5538,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
     When I pause execution for "20" seconds
     Then I see CK editor box color changed to "green"
@@ -5557,12 +5556,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5578,12 +5577,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5599,12 +5598,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5620,12 +5619,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5643,12 +5642,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5666,12 +5665,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5844,12 +5843,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Decision Field |               | Programs           | Name                      | Edit1                      |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Grant" into field "ProgramType__c"
     When I click dropdown field "fieldProgramSubType__c"
@@ -5864,7 +5863,7 @@ Business Need: Page Layout Component Scenarios
 
   @133727  @verifyContinueActionAtCreateAnnouncementModalWindow
   Scenario: validate continue action at create announcement modal window
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on top right button "Create" in flex table with id "---program:-:AnnouncementTableId---"
@@ -5875,12 +5874,12 @@ Business Need: Page Layout Component Scenarios
 
   @duplicate @wip @130094    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtSidebar
   Scenario:validate title,Label and value at mini page layout is getting displayed properly on mouse hover at sidebar
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I navigate to "HOME" tab
     When I hover mouse on lookup link "PG-343-0058"
     And I pause execution for "3" seconds
@@ -5898,14 +5897,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -5916,14 +5915,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide picklist from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -5935,14 +5934,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide text from from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -5953,14 +5952,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide currency field from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -5971,14 +5970,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide date from Overview page block using text field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantor State Program | Name                      | PBD-9162                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfTextInEditMode | Grantee State Program | Name                      | PBD-9162                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "StartDate__c" is disabled
@@ -5987,14 +5986,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide date, text and picklist from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideMultipleFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideMultipleFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -6007,14 +6006,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide text from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "ProgramName__c" is disabled
@@ -6023,14 +6022,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide picklist from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "ProgramType__c" is disabled
@@ -6039,14 +6038,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide currency from Overview page block using date field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfDateInEditMode | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see field "FundedAmount__c" is disabled
@@ -6059,10 +6058,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                 | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
@@ -6078,10 +6077,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                            | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
@@ -6097,10 +6096,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                 | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
@@ -6116,10 +6115,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxNdURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
@@ -6136,10 +6135,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                              | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistNdURLFieldOnTheBasisOfPicklistOnModal | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Roles" sub tab
@@ -6153,14 +6152,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide checkbox from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -6171,14 +6170,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide checkbox,picklist,date &currency field  from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -6196,7 +6195,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                               | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistOnModal | Announcement Create - Grantor | Name                      | PBD-6759                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6208,14 +6207,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide lookup from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     And I enter value "Grant" into field "ProgramType__c"
@@ -6224,12 +6223,12 @@ Business Need: Page Layout Component Scenarios
 
   @134480    @verifyByClickAtSaveActionOnModalAModalWindowIsGettingClosed
   Scenario: verify by click at Save action on modal layout then modal is  getting closed automatically
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
-    When I click on "View" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
@@ -6246,10 +6245,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                   | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message @ | An Approver is a required field for a program |
       | Program                      | Status    | Created                         | Test Automation Program for error message dnd |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -6271,7 +6270,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
       | Program                      | Status    | Created                           | Test Automation Program for error message dnd |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
@@ -6288,22 +6287,22 @@ Business Need: Page Layout Component Scenarios
 
   @136938    @verifyDisplayOfMissingFieldMessageIfReqForSaveFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save picklist field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-2600                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-2600                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @136938 verify that picklist field is hidden on the basis of program type field value
@@ -6315,22 +6314,22 @@ Business Need: Page Layout Component Scenarios
 
   @137275    @verifyDisplayOfMissingFieldMessageIfReqForSaveDateFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save date field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-9171                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9171                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137275 verify that date field is hidden on the basis of program type field value
@@ -6342,22 +6341,22 @@ Business Need: Page Layout Component Scenarios
 
   @137281    @verifyDisplayOfMissingFieldMessageIfReqForSaveURLFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save URL field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantor State Program | Name                      | PBD-9222                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantee State Program | Name                      | PBD-9222                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137281 verify that URL field is hidden on the basis of program type field value
@@ -6369,22 +6368,22 @@ Business Need: Page Layout Component Scenarios
 
   @137282    @verifyDisplayOfMissingFieldMessageIfReqForSaveCurrencyFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save currency field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-9159                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-9159                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137282 verify that currency field is hidden on the basis of program type field value
@@ -6396,22 +6395,22 @@ Business Need: Page Layout Component Scenarios
 
   @137283    @verifyDisplayOfMissingFieldMessageIfReqForSavePercentFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save percent field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | PBD-9165                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantee State Program | Name                      | PBD-9165                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137283 verify that percent field is hidden on the basis of program type field value
@@ -6423,22 +6422,22 @@ Business Need: Page Layout Component Scenarios
 
   @137286    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save time field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-9167                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9167                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137286 verify that Time field is hidden on the basis of program type field value
@@ -6450,22 +6449,22 @@ Business Need: Page Layout Component Scenarios
 
   @137288    @verifyDisplayOfMissingFieldMessageIfReqForSaveTimeFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save Date and Time field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-9166                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantee State Program | Name                      | PBD-9166                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137288 verify that Date/Time field is hidden on the basis of program type field value
@@ -6477,22 +6476,22 @@ Business Need: Page Layout Component Scenarios
 
   @137289    @verifyDisplayOfMissingFieldMessageIfReqForSaveNumberFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save Number field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantee State Program | Name                      | PBD-9161                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137289 verify that Number field is hidden on the basis of program type field value
@@ -6504,22 +6503,22 @@ Business Need: Page Layout Component Scenarios
 
   @137290    @verifyDisplayOfMissingFieldMessageIfReqForSaveLookupFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save lookup field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-3178                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantee State Program | Name                      | PBD-3178                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137290 verify that lookup field is hidden on the basis of program type field value
@@ -6531,22 +6530,22 @@ Business Need: Page Layout Component Scenarios
 
   @137291    @verifyDisplayOfMissingFieldMessageIfReqForSaveTextFieldIsHiddenUsingHideFieldJSON
   Scenario: verify missing field msg is not displayed if req for save text field is hidden using hide field json
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  |                   | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-646                    |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-9162                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantee State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantee State Program | Name                      | PBD-9162                   |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "ProgramType__c"
  # @137291 verify that text field is hidden on the basis of program type field value
@@ -6568,7 +6567,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | PBD-9247                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | PBD-9247                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6594,7 +6593,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-9248                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-9248                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6620,7 +6619,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9249                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9249                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6646,7 +6645,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                           | Announcement Create - Grantor | Name                      | PBD-9250                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                        | Announcement Create - Grantor | Name                      | PBD-9250                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6672,7 +6671,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                        | Announcement Create - Grantor | Name                      | PBD-9251                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                     | Announcement Create - Grantor | Name                      | PBD-9251                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6698,7 +6697,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                         | Announcement Create - Grantor | Name                      | PBD-9252                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                      | Announcement Create - Grantor | Name                      | PBD-9252                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6724,7 +6723,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9253                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9253                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6750,7 +6749,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCheckboxFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9254                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9254                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6776,7 +6775,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                             | Announcement Create - Grantor | Name                      | PBD-9255                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                          | Announcement Create - Grantor | Name                      | PBD-9255                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6802,7 +6801,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldOnModalUsingHideFieldJSON | Announcement Create - Grantor | Name                      | PBD-6759                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                            | Announcement Create - Grantor | Name                      | PBD-9256                   |
       | Page Block Config:Page Block Rule Detail | Is Active         | true                                                         | Announcement Create - Grantor | Name                      | PBD-9256                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -6820,14 +6819,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide start date field using profile as system admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -6836,14 +6835,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide start date field using user type as Internal in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -6852,14 +6851,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide start date field using context as Edit in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -6868,14 +6867,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide start date field using user app as As a Grantor in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -6884,78 +6883,78 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab for Profile Admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideExpressionJsonForPageTab | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145662    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=InternalInEditMode
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145663    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_EditInEditMode
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context edit in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145664    @verifyHideExpressionJsonFieldByHidingTabUsingUserAppAsAGrantorInEditMode
   Scenario: Hide OVERVIEW Tab for user app state as Grantor in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145666    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserTypeAsInternalInEditMode
   Scenario: Set up hide expression json value to Hide page block using user type as Internal in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailForUserTypeAsInternal | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -6965,14 +6964,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide expression json value to Hide page block using user app state as Grantor in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -6982,14 +6981,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide expression json value to Hide page block using using context as Edit in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextAsEdit | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -6999,14 +6998,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide expression json value to Hide page block for Profile Admin in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockAndBlockDetailForProfileAsAdmin | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -7016,30 +7015,30 @@ Business Need: Page Layout Component Scenarios
   Scenario: Hide OVERVIEW Tab using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145836    @verifyHideExpressioJsonByHidingFieldsUsingPicklistFieldValueInEditMode
   Scenario: validate hide expression by hiding date field using field as picklist in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingPicklistWithOperatorEqualsTo | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForFieldUsingPicklistWithOperatorEqualsTo | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -7048,14 +7047,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate hide expression by hiding date field using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | PBD-584                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | PBD-584                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
@@ -7064,14 +7063,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate hide expression by hiding tab using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-029                    |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantee State Program | Name                      | TAB-029                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | TAB-029                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | TAB-029                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     Then I cannot see "Overview" sub tab at view detail page
@@ -7080,14 +7079,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate hide expression by hiding page block using picklist field value operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageTabsOrPageBlocksUsingPicklistFieldValue | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -7097,14 +7096,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate hide expression by hiding page block using user operator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block            | Hide Expression JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantor State Program | Name                      | PB-110                     |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabFieldUsingUserOperator | Grantee State Program | Name                      | PB-110                     |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:InternalProgramforFundedAmount}"
     When I click on "Edit" icon for "{Framework_recordUsed:InternalProgramforFundedAmount}" inside table
     When I navigate to "Overview" sub tab
@@ -7118,7 +7117,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserTypeOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7134,7 +7133,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7150,7 +7149,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingContextOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7166,7 +7165,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserAppOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7182,7 +7181,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7198,7 +7197,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7214,7 +7213,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserTypeOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7230,7 +7229,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingProfileOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7246,7 +7245,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingContextOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7262,7 +7261,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingUserAppOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7278,7 +7277,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingFieldOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7294,7 +7293,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7312,7 +7311,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsing$UserOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7323,11 +7322,11 @@ Business Need: Page Layout Component Scenarios
 
   @146706    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPicklistFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved picklist field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "Tax Credit" into field "ProgramType__c"
@@ -7338,10 +7337,10 @@ Business Need: Page Layout Component Scenarios
 
   @147904    @verifyByClickAtSaveActionAtPageLayoutARecordIsGettingSavedWithChangedData
   Scenario: validate by click at save action at page layout, a record is getting saved with changed data
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I enter value "XYZ" into field "Authorization__c"
@@ -7362,7 +7361,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7378,7 +7377,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7394,7 +7393,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7410,7 +7409,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7428,7 +7427,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingAndOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7447,7 +7446,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingMultiOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7464,7 +7463,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                           | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7480,7 +7479,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName                     | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7498,7 +7497,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                              | fieldName                           | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | Note Add Hide Expression JSON       | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
       | Notes And Attachment Action Sobject Config:General | Attachment Add Hide Expression JSON | govgrants_config:HideAddActionUsingOrOperatorForNotesAttachment | Application__c     |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "Demo_Title"
@@ -7510,10 +7509,10 @@ Business Need: Page Layout Component Scenarios
   @146837    @validateNotesViewActionWorkingOrNot
   Scenario: validate Notes View action working correctly at programs-planning
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -7527,10 +7526,10 @@ Business Need: Page Layout Component Scenarios
   @146931    @validateEditNotesModalOpensByClickAtEditActionAtNotes
   Scenario: validate Notes edit modal opens by click at Edit action at programs-planning
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -7542,40 +7541,40 @@ Business Need: Page Layout Component Scenarios
 
   @148171    @verifyHideFieldJSONWorkingForLongTextAreaFieldInEditMode
   Scenario: verify hide field json working for long text area fields in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantee State Program | Name                      | PBD-646                    |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
 
   @148172    @verifyHideFieldJSONWorkingForLongTextAreaFieldInViewMode
   Scenario: verify hide field json working for long text area fields in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantee State Program | Name                      | PBD-646                    |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "ProgramType__c"
     When I click on "Save" in the page details
@@ -7585,23 +7584,23 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify number field is displayed with 4 decimal places at page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9261                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9261                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I enter value "12344" into field "Removenumber__c"
     And I click on "Save" in the page details
     Then I see field "Removenumber" as "12,344.0000"
 
   @146261    @verifyInternalContactTableIsCollapsedByClickAtCollapsedArrow
   Scenario: validate that Internal Contacts Table is collapsing by click at expand collapse as expected
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
@@ -7612,7 +7611,7 @@ Business Need: Page Layout Component Scenarios
 
   @146267    @verifyRecipientContactTableIsCollapsedByClickAtCollapsedArrow
   Scenario: validate that recipient Contacts Table is collapsing by click at expand collapse as expected
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
@@ -7622,7 +7621,7 @@ Business Need: Page Layout Component Scenarios
 
   @149193    @verifyInternalContactTableIsExpandedByClickAtExpandArrow
   Scenario: validate that Internal Contacts Table is expanded by click at expand collapse as expected
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
@@ -7631,7 +7630,7 @@ Business Need: Page Layout Component Scenarios
 
   @149197   @verifyInternalRecipientTableIsExpandedByClickAtExpandArrow
   Scenario: validate that recipient Contacts Table is expanded by click at expand collapse as expected
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Contacts" content inside "Manage Organizations" subheader on left panel
@@ -7642,16 +7641,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify missing field msg is displayed for phone no field if req for save is set
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-9263                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I clear the value from field "Phone_Field__c"
@@ -7669,10 +7668,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I navigate to "Roles" sub tab
@@ -7686,16 +7685,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at newly created record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantee State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-9263                   |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantee State Program | Name                      | PBD-9263                   |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -7713,10 +7712,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Roles and Responsibilities 7 | Name                      | PBD-9267                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I navigate to "Roles" sub tab
@@ -7728,11 +7727,11 @@ Business Need: Page Layout Component Scenarios
 
   @149695    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "123" into field "ProgramName__c"
@@ -7742,11 +7741,11 @@ Business Need: Page Layout Component Scenarios
 
   @149678    @verifyAnAlertMessageIsDisplayedForUnsavedTextFieldDataIfPageRefreshedAtPageLayout
   Scenario: validate the alert message is displayed for unsaved text field data by click on browser refresh
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "123" into field "ProgramName__c"
@@ -7756,11 +7755,11 @@ Business Need: Page Layout Component Scenarios
 
   @149700    @verifyThatUserCanSaveAnUnsavedDataIfPageRefreshedAtPageLayout
   Scenario: validate the user can save unsaved data by click on save button at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     And I clear the value from field "fieldProgramName__c"
@@ -7770,22 +7769,22 @@ Business Need: Page Layout Component Scenarios
 
   @148392  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @148393    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedNumberFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Number__c"
@@ -7795,11 +7794,11 @@ Business Need: Page Layout Component Scenarios
 
   @148394    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedNumberFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved number field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Number__c"
@@ -7809,10 +7808,10 @@ Business Need: Page Layout Component Scenarios
 
   @148395  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInNumberFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in number field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Number__c"
@@ -7820,11 +7819,11 @@ Business Need: Page Layout Component Scenarios
 
   @148398    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedCurrencyFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
@@ -7834,11 +7833,11 @@ Business Need: Page Layout Component Scenarios
 
   @148397    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedCurrencyFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Currency field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
@@ -7848,10 +7847,10 @@ Business Need: Page Layout Component Scenarios
 
   @148399  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInCurrencyFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Currency field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
@@ -7859,11 +7858,11 @@ Business Need: Page Layout Component Scenarios
 
   @148400    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedPercentFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Percent__c"
@@ -7873,11 +7872,11 @@ Business Need: Page Layout Component Scenarios
 
   @148401    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedPercentFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved Percent field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Percent__c"
@@ -7887,10 +7886,10 @@ Business Need: Page Layout Component Scenarios
 
   @148402  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInPercentFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Percent field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1" into field "Percent__c"
@@ -7898,11 +7897,11 @@ Business Need: Page Layout Component Scenarios
 
   @148466    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedURLFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved url field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "URL__c"
@@ -7912,11 +7911,11 @@ Business Need: Page Layout Component Scenarios
 
   @148467    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedURLFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved url field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "URL__c"
@@ -7926,10 +7925,10 @@ Business Need: Page Layout Component Scenarios
 
   @148468  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInURLFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in url field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "www.google.com" into field "URL__c"
@@ -7937,11 +7936,11 @@ Business Need: Page Layout Component Scenarios
 
   @148469    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedLongTextAreaFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
@@ -7951,11 +7950,11 @@ Business Need: Page Layout Component Scenarios
 
   @148470    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedLongTextAreaFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved long text area field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
@@ -7965,10 +7964,10 @@ Business Need: Page Layout Component Scenarios
 
   @148471  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInLongTextAreaFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in long text area field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
@@ -7976,11 +7975,11 @@ Business Need: Page Layout Component Scenarios
 
   @148473    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedTextAreaFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved text area field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "Authorization__c"
@@ -7990,11 +7989,11 @@ Business Need: Page Layout Component Scenarios
 
   @148474    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedTextAreaFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved text area field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "Authorization__c"
@@ -8004,10 +8003,10 @@ Business Need: Page Layout Component Scenarios
 
   @148475  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInTextAreaFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in text area field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test" into field "Authorization__c"
@@ -8015,7 +8014,7 @@ Business Need: Page Layout Component Scenarios
 
   @148501    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserBackArrowForUnsavedMultiPicklistFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser navigation arrow
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -8030,7 +8029,7 @@ Business Need: Page Layout Component Scenarios
 
   @148503    @verifyAnAlertMessageIsDisplayedByClickedAtBrowserRefreshButtonForUnsavedMultiPicklistFieldDataAtPageLayout
   Scenario: validate the alert message is displayed for unsaved multi-picklist field data by click on browser refresh button
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -8044,7 +8043,7 @@ Business Need: Page Layout Component Scenarios
 
   @148505  @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClicknCancelButtonWithUnsavedDataInMultiPicklistFieldAtPageLayout
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in multi-picklist field at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -8057,15 +8056,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate the alert message is displayed for unsaved email field data by click on browser navigation arrow
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9271                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test@yopmail.com" into field "testemail__c"
@@ -8077,15 +8076,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate the alert message is displayed for unsaved email field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9271                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test@yopmail.com" into field "testemail__c"
@@ -8097,14 +8096,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Email field at page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9271                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9271                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "test@yopmail.com" into field "testemail__c"
@@ -8114,15 +8113,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate the alert message is displayed for unsaved Phone field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "9987" into field "Phone_Field__c"
@@ -8134,15 +8133,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate the alert message is displayed for unsaved Phone field data by click on browser navigation arrow
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "9987" into field "Phone_Field__c"
@@ -8154,14 +8153,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Phone field at page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "9987" into field "Phone_Field__c"
@@ -8171,17 +8170,17 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate the alert message is displayed for unsaved Picklist field data by click on browser refresh button
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8191,27 +8190,27 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate that users should be warned when they click on Cancel button with unsaved data in Picklist field at page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9263                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9263                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
   @151016   @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtPageLayout
   Scenario: verify that user gets he validation message with the field name by entering invalid data in url field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -8220,12 +8219,12 @@ Business Need: Page Layout Component Scenarios
 
   @148176    @verifyDisplayOfPicklistFieldDropdownValuesInsidePageLayout
   Scenario: validate that dropdown values under picklist field are displayed properly at edit page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I click dropdown field "fieldIsProjectServiceAreaneeded__c"
     Then I see only the following ordered options in dropdown field "fieldIsProjectServiceAreaneeded__c" :
       | --None-- |
@@ -8236,26 +8235,26 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify if applied hide field json on text field and click on save button then record is getting saved successfully
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldUsingHideFiledJSON | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldUsingHideFiledJSON | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I click on "Save" in the page details
     And I pause execution for "4" seconds
     Then I see "programview" in current url
 
   @148175  @VerifyMiniPageLayoutAtLookupFieldShouldDisplayedProperlyOnMouseHoverAtPageDetailInEditMode @skipOnJenkins
   Scenario: validate that mini page layout at lookup field is getting displayed properly on mouse hover at page detail in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
@@ -8269,15 +8268,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: validate required for save message is displayed for rich text field at page layout for ADINuser
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-584                    |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-584                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForDescriptionScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "CreationWithoutDescription" values from "Program_Field_Values.xlsx"
     And I click on "Save" in the page details
@@ -8287,7 +8286,7 @@ Business Need: Page Layout Component Scenarios
 
   @151008    @verifyThatUserGetsTheErrorMessageByEnteringInvalidURLAtModal
   Scenario: verify that user gets he validation message with the field name by entering invalid data in url field at modal
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -8306,7 +8305,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName              | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <newLookupFilter> | GrantIntermediateLayout2 | Name                      | PBD-8040                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
@@ -8325,7 +8324,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName              | fieldNewValue     | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Lookup Filter Criteria | <newLookupFilter> | GrantIntermediateLayout2 | Name                      | PBD-8040                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click on top right button "New ISA Grant" in flex table with id "ActiveGrants"
@@ -8339,12 +8338,12 @@ Business Need: Page Layout Component Scenarios
 
   @148732 @verifyThatAddNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that add notes modal window is displayed properly
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Attachments" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     Then I see modal with id "addAtt" displayed properly
@@ -8352,10 +8351,10 @@ Business Need: Page Layout Component Scenarios
   @148734 @verifyThatEditNotesModalWindowIsDisplayedProperlyInSize
   Scenario: verify that edit notes modal window is displayed properly
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8367,10 +8366,10 @@ Business Need: Page Layout Component Scenarios
 
   @152777  @VerifyThatPageDoesNotRefreshAfterClickingOnOKAtConfirmationMsgAtPageLayout
   Scenario: validate that page does not refresh after click at confirmation pop-up action "OK" at page layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Overview" sub tab
@@ -8388,10 +8387,10 @@ Business Need: Page Layout Component Scenarios
   @155305    @validateCurrencyFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate currency field value accepts the numbers inside page block detail in view mode
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8404,10 +8403,10 @@ Business Need: Page Layout Component Scenarios
   @155304    @validatePercentFieldValueAcceptTheNumbersInPageBlockDetail
   Scenario: Validate percent field value accepts the numbers inside page block detail in view mode
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8419,10 +8418,10 @@ Business Need: Page Layout Component Scenarios
 
   @148368  @VerifyTextAreaFieldDisplaysVerticallyAndDoesNotOverLappedOnOtherFieldsAtPageDetailInEditMode
   Scenario: validate that textarea field is displayed vertically alligned and not overlapped on other fields at page detail in edit mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "Road Construction"
     When I click on "Edit" icon for "Road Construction" inside table
     When I navigate to "Overview" sub tab
@@ -8436,12 +8435,12 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8494,12 +8493,12 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
@@ -8525,12 +8524,12 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
@@ -8552,7 +8551,7 @@ Business Need: Page Layout Component Scenarios
 
   @160606 @VerifySubjectAndBodyFieldsAreAutoPopulatedWithAlreadyProvidedInvitationData  @vaibhavC
   Scenario: Verify Subject And Body Fields Are Auto Populated With Already Provided Invitation Data
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "HOME" tab
     When I navigate to "Internal Organization(s)" content inside "Activities" subheader on left panel
@@ -8574,25 +8573,25 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Equal to oprator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
       | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-9158                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
       | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
@@ -8603,25 +8602,25 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Equal to oprator in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
       | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-9158                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
       | Flex Table Action                        | Hide Decision Field |                                                                                                        | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
@@ -8632,25 +8631,25 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Not Equal to oprator in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
       | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-9158                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
@@ -8661,25 +8660,25 @@ Business Need: Page Layout Component Scenarios
   Scenario: Set up hide field json value to Hide URL field from Program information page block using checkbox field value with Not Equal to oprator in view mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantee State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
       | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-9158                   |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-9158                   |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantee State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "ID" as "EGMSID"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{SavedValue:EGMSID}"
     When I click on "Edit" icon for "{SavedValue:EGMSID}" inside table
     When I navigate to "Overview" sub tab
@@ -8695,10 +8694,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue                                                                   | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8717,10 +8716,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue                                                                      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisableQueueLookupFeildOnPBDJSONExpressionUsingNotEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8734,15 +8733,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify If We Disabled Owner Organization Field On PBD Json Expression Using Equal To Operator Then Owner Organization Field Disabled
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantor State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     And I pause execution for "5" seconds
@@ -8754,15 +8753,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify If We Enabled Owner Organization Field On PBD Json Expression Using Not EqualTo Operator Then Owner Organization Field Enabled
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantor State Program | Name                      | PBD-646                    |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantee State Program | Name                      | PBD-646                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8780,10 +8779,10 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutOnViewModeDisableQueuedLookupUsingEqualToOperator | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -8804,7 +8803,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I click on "Save" in the page details
@@ -8820,14 +8819,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify Owner organization field is not displayed if user is not displayed using hide field json on Page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
@@ -8843,25 +8842,25 @@ Business Need: Page Layout Component Scenarios
       | Page Message Config   | Hide For User | Internal          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                      | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantor State Program | Name                      | LM-0071                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Message Config:Page Block Rule Detail | Hide For User |               | Grantee State Program | Name                      | LM-0071                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see the following message in the page details contains:
       | TEST PAGE BLOCK SUCCESS MSG DND |
     Then I softly see "null" is not displayed inside page block detail
 
   @158907 @verifyMultiPicklistFieldIsRenderedAsChekboxThenWeAreAddingSelectAllOption
   Scenario: To validate that if there is multi picklist field is rendred as checkbox then add extra checkbox as Select All Option
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -8871,16 +8870,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify Select All Chcekbox Is Removed From UI Page Layout for the Multiselect Picklist Rendering on Edit layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see below checkbox options for field "TypesOfAssistance__c"
       | Select All |
@@ -8889,14 +8888,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify Owner organization field is not displayed if user is not displayed using hide field PBD json exp Not Equal To operator on Page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-646                    |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantee State Program | Name                      | PBD-646                    |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
@@ -8913,10 +8912,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:ShowQueueLookupFeildOnPBDJSONExpressionUsingEqualToOperatorWhenUserNotShow | Roles and Responsibilities 7 | Name                      | PBD-8028                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios1}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios1}" inside table
     When I navigate to "Roles" sub tab
@@ -8932,7 +8931,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName       | fieldNewValue                                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForDropdownHideConfigForText | Announcement__c    |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I perform quick search for "FOA-USAID-004"
@@ -8947,16 +8946,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Validate Type Of Assistance In The Multiselect Picklist Read Only For The Page Layout Config
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see that "TypesOfAssistance__c" rendered in view mode only
 
@@ -8969,13 +8968,13 @@ Business Need: Page Layout Component Scenarios
     And I update custom metadata setting changes:
       | id                 | label   | booleanValue | customMetaDataApiName    |
       | m036O000000k9wRQAQ | BaseURL | true         | GNT__KeyValueHolder__mdt |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     Then I see "HOME" phase
 
   @158464 @ValidateEditLayoutMultipickListTypeOfInstanceOnUiDisplayProperly
   Scenario: Validate Edit Layout Multipick List Type Of Instance On Ui Display Properly
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -8986,12 +8985,12 @@ Business Need: Page Layout Component Scenarios
 
   @153789 @ValidateSingleCheckboxIsDisplayedForCheckboxField
   Scenario: Validate Single Checkbox Is Displayed For Checkbox Field
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I see checkbox is displayed for field "fieldCFDA_Data__c"
 
@@ -9003,7 +9002,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                              | fieldName       | fieldNewValue                                        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Notes And Attachment Action Sobject Config:General | History Objects | govgrants_config:JsonForHistoryObjectForChildGrantee | Announcement__c    |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -9019,16 +9018,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify Relationship fields  should be shown as text in View layout when 'show link as text' checkbox is check
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantor State Program | Name                      | PBD-9279                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly do not see link "GT-HRGr-001" inside Page block
 
@@ -9036,32 +9035,32 @@ Business Need: Page Layout Component Scenarios
   Scenario: verify Relationship fields  should be shown as text in Edit  layout when 'show link as text' checkbox is check
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantor State Program | Name                      | PBD-9279                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | true          | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
 
   @170112 @tejal
   Scenario: Verify Relationship fields  should be shown as Hyperlink not a text  in Edit  layout when 'show link as text' checkbox is uncheck
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantor State Program | Name                      | PBD-9279                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -9069,16 +9068,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify Relationship fields  should be shown as Hyperlink not a text  in view   layout when 'show link as text' checkbox is uncheck
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantor State Program | Name                      | PBD-9279                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Show Link as Text | false         | Grantee State Program | Name                      | PBD-9279                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -9086,16 +9085,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User checked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9107,14 +9106,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the checkbox when Hide Select All Checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9283                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9283                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9127,16 +9126,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: page layout -To verify,alternate rendering is configured for multi-select picklist fields and the User unchecked the "Hide Select All Checkbox" field from the config, then select all the options is enabled on the page layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9145,14 +9144,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify,alternate rendering is configured for text   field, the admin  user should be able to check the checkbox
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantee State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "PG-343-0079"
     When I click on "Edit" icon for "PG-343-0079" inside table
     When I navigate to "Overview" sub tab
@@ -9162,20 +9161,20 @@ Business Need: Page Layout Component Scenarios
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is unchecked
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0  |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:1  |
-      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantor State Program | ApiGeneratedId: 2 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:1  |
+      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantee State Program | ApiGeneratedId: 2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-9283                   |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-9163                   |
-      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9283                   |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantee State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "60" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
@@ -9187,18 +9186,18 @@ Business Need: Page Layout Component Scenarios
   Scenario:page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the all checkbox when Hide Select All Checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId          |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0  |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:1  |
-      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantor State Program | ApiGeneratedId: 2 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:1  |
+      | Page Block Config:Page Block Rule Detail | Is Active                | false             | Grantee State Program | ApiGeneratedId: 2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9283                   |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9163                   |
-      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantor State Program | Name                      | PBD-9163                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9283                   |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9163                   |
+      | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantee State Program | Name                      | PBD-9163                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9213,7 +9212,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9228,7 +9227,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9243,7 +9242,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9258,7 +9257,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9273,7 +9272,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9288,7 +9287,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9303,7 +9302,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9318,7 +9317,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9333,7 +9332,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -9347,15 +9346,15 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in  font Arial Nova for currency field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9159                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
@@ -9367,15 +9366,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantor State Program | Name                      | PBD-9159                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
@@ -9387,15 +9386,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for currency field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantor State Program | Name                      | PBD-9159                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9159                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
@@ -9407,15 +9406,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial  for Percent field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantor State Program | Name                      | PBD-9165                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
@@ -9427,15 +9426,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Percent field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9165                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
@@ -9447,15 +9446,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for percent  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantor State Program | Name                      | PBD-9165                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9165                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
@@ -9467,15 +9466,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in  font Arial Nova for Number field (Nauman shahid
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9161                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     And I pause execution for "4" seconds
@@ -9488,15 +9487,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri for Number  field Automation user(Nauman shahid)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantor State Program | Name                      | PBD-9161                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Dynamic field Config | Grantee State Program | Name                      | PBD-9161                   |
+    When I login as "AUTOMATION" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
@@ -9507,10 +9506,10 @@ Business Need: Page Layout Component Scenarios
 
   @171509 @jyoti
   Scenario: page layout -To verify,alternate rendering is configured for Long text area  field, the admin user should be able to check the checkbox
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I navigate to "Overview" sub tab
@@ -9520,12 +9519,12 @@ Business Need: Page Layout Component Scenarios
   @170159 @tejal
   Scenario: Verify When Snapshot is generated manually, When pass the name dynamically from keyValueMap is not given then filename is not display on   'snapshot history'
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
+    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction2}" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -9534,7 +9533,7 @@ Business Need: Page Layout Component Scenarios
 
 #  @172301 @tejal @functionalitynotworking
 #  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Planning phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9546,7 +9545,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172303 @tejal
 #  Scenario: When Admin users select  Announcement Phase from Filter's dropdown, then they should see only Announcement phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9558,7 +9557,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172304 @tejal
 #  Scenario: When Admin users select Application Phase from Filter's dropdown, then they should see only Application phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9570,7 +9569,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172305 @tejal
 #  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Grants phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9582,7 +9581,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172306 @tejal
 #  Scenario: When Admin users select Planning Phase from Filter's dropdown, then they should see only Planning and Announcement phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9596,7 +9595,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172307 @tejal
 #  Scenario: When Admin users select Planning and Application Phase from Filter's dropdown, then they should see only Planning and Application phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9610,7 +9609,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172308 @tejal
 #  Scenario: When Admin users select Planning and Grants Phase from Filter's dropdown, then they should see only Planning and Grants phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9624,7 +9623,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172310 @tejal
 #  Scenario: When Admin users select Announcement and Application Phase from Filter's dropdown, then they should see only Announcement and Application phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9638,7 +9637,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172312 @tejal
 #  Scenario: Admin users select Announcement and Grants Phase from Filter's dropdown, then they should see only Announcement and Grants phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9652,7 +9651,7 @@ Business Need: Page Layout Component Scenarios
 #
 #  @172313 @tejal
 #  Scenario: When Admin users select Application and Grants Phase from Filter's dropdown, then they should see only Application and Grants phase's tasks
-#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login as "Automation" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "HOME" tab
 #    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
@@ -9666,10 +9665,10 @@ Business Need: Page Layout Component Scenarios
 
   @172151 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the GovGrants side.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9682,14 +9681,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User fill the lookup field ( Required for submit  ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9702,14 +9701,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9720,10 +9719,10 @@ Business Need: Page Layout Component Scenarios
 
   @172212 @jyoti
   Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9736,14 +9735,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User hover over the lookup field icon(Required Behavior-required to save ) on page layout edit mode  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9757,14 +9756,14 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the object level  side
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue  | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Owner Organization | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Owner Organization | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9778,14 +9777,14 @@ Business Need: Page Layout Component Scenarios
   Scenario:Page layout-To verify User fill the lookup field ( Required for save ) and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | --None--          | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-3178                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantee State Program | Name                      | PBD-3178                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -9797,7 +9796,7 @@ Business Need: Page Layout Component Scenarios
 
   @172155 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon on (Required Behavior-required to save)  modal   then it should display the Field label override name from the GovGrants side.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -9807,12 +9806,12 @@ Business Need: Page Layout Component Scenarios
 
   @186950 @sprint26
   Scenario: To verify, all the Multiselect picklist fields (Selected/Unselected) should be displayed on the UI in View Mode
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -9820,16 +9819,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Hide Label' from page layout config, then its Label should not be visible on Page layout in Edit mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9837,16 +9836,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Hide Label' from page layout config, then its Label should not be visible on Page layout in View mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName  | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9854,16 +9853,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field's lable is overriden with 'Field Label Override' config, then it should be visible on Page layout in Edit mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
@@ -9871,16 +9870,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field's lable is overriden with 'Field Label Override' config, then it should be visible on Page layout in View mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
@@ -9888,16 +9887,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Is Hidden Field' from page layout config, then it should not be visible on Page layout in Edit mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9905,16 +9904,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Is Hidden Field' from page layout config, then it should not be visible on Page layout in View mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9922,22 +9921,22 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, if "Disable Select All' config is checked, then 'Select all' is not displayed on Page layout in Edit mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select all" inside page block
 
   @172177 @sprint19
   Scenario: Page layout-To verify User hover over the lookup field icon on modal   then it should display the Field label override name from the GovGrants side.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Closed/Reject Announcements"
@@ -9947,7 +9946,7 @@ Business Need: Page Layout Component Scenarios
 
   @172175 @sprint19
   Scenario: Page layout-To verify User hover over the lookup field icon (Required Behavior-required to save) on modal   then it should display the Field label override name from the GovGrants side.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -9957,7 +9956,7 @@ Business Need: Page Layout Component Scenarios
 
   @181120 @Toverifyifanyfieldisrequiredtosaveanduserclickonsavebuttonthenitshowsthevalidationmessageonmodal,notredirectingtotheeditlayout
   Scenario: To verify, if any field is required to save and user click on save button then it shows the validation message on modal, not redirecting to the edit layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I pause execution for "2" seconds
@@ -9969,10 +9968,10 @@ Business Need: Page Layout Component Scenarios
 
   @174655 @sprint20 @userstory_171188
   Scenario: page layout : To verify, User should see the  name of the subrecipient's organization  under the planning /home Pending Tasks (Assigned to Me)
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
@@ -10010,16 +10009,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, 'Select All' option out of Multiselect picklist fields should not be displayed in Edit Layout the UI in View Mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -10027,16 +10026,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in Edit mode (but 'Select All' option should be visible)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -10044,16 +10043,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, Multiselect picklist field is marked as 'Read Only' from page layout config, then it should not be editable on Page layout in View mode (without 'Select All' option)
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -10061,16 +10060,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, if "Disable Select All' config is checked, then 'Select all' is not displayed on Page layout in View mode.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-9258                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantee State Program | Name                      | PBD-9258                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -10080,7 +10079,7 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
@@ -10098,15 +10097,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9165                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
@@ -10118,15 +10117,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "123456783456789456789045678945678" into field "Number__c"
@@ -10138,15 +10137,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9165                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1234567834567834567834567834567834567" into field "Percent__c"
@@ -10158,15 +10157,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri Light(Headings) font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "13456789034567894567890234567" into field "Number__c"
@@ -10178,15 +10177,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for currency field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9159                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
@@ -10198,15 +10197,15 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9165                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
@@ -10218,15 +10217,15 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for Number   field
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Number            | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9161                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9161                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "145678967890673456784567894567896788" into field "Number__c"
@@ -10238,15 +10237,15 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Percent           | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9165                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9165                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
@@ -10258,15 +10257,15 @@ Business Need: Page Layout Component Scenarios
   Scenario:  To verify - Validation message should display properly when we use field label override in Calibri(Body) font Style for percent  field  for internal user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Funded Amount     | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantor State Program | Name                      | PBD-9159                   |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Go to platform setup | Grantee State Program | Name                      | PBD-9159                   |
     When I login as "AUTOMATION-ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
     When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
     When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
@@ -10279,7 +10278,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10293,7 +10292,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10304,10 +10303,10 @@ Business Need: Page Layout Component Scenarios
 
   @208962 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario:Validation message should not display when user enter 4 digit no for automation user
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10321,7 +10320,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10335,7 +10334,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10348,16 +10347,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the Text fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "Title" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10369,16 +10368,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the Lookup  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJson | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJson | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "Owner Organization" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10390,16 +10389,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the Number fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonNumberField | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonNumberField | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldNumber__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10411,16 +10410,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the Date and Time fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForDateAndTime | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForDateAndTime | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldDateandTime__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10432,16 +10431,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the currency  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForFundedAmount | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForFundedAmount | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldFundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10453,16 +10452,16 @@ Business Need: Page Layout Component Scenarios
   Scenario: To verify, When hidden the percent  fields which are required for save then no validation error is displayed on UI on saving the record
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantee State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForPercentField | Grantor State Program | Name                      | PBD-2600                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForPercentField | Grantee State Program | Name                      | PBD-2600                   |
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldPercent__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10482,7 +10481,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab
@@ -10499,10 +10498,10 @@ Business Need: Page Layout Component Scenarios
 
   @217210 @HeaderInstructionIsNotDisplayedOnUi @jyoti
   Scenario: Header Instruction - Admin - Config - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
 
   @217211 @HeaderInstructionIsNotDisplayedOnUiForPMUser @jyoti
@@ -10510,7 +10509,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     Then I do not see "Header Instruction" options inside "flexTableDivId" enabled
 
   @217207 @HeaderHelpTextIconNotDisplayedOnUi @Jyoti
@@ -10521,10 +10520,10 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     Then I do not see "Help" options inside "flexTableDivId" enabled
 
     Examples:
@@ -10539,12 +10538,12 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I re-login as "Automation-PM" user on "default" portal
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Draft Programs"
     Then I do not see "Help" options inside "flexTableDivId" enabled
 
     Examples:
@@ -10559,7 +10558,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
     And I pause execution for "7" seconds
@@ -10572,12 +10571,12 @@ Business Need: Page Layout Component Scenarios
 
   @205033 @WhenIPressEnterButtonThenItIsNotTakingExtraLineSpace @Jyoti
   Scenario: Editor-To verify,When user add the text  it is not taking any extra line space between paragraphs/2 lines after pressing 'Enter'
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10591,7 +10590,7 @@ Business Need: Page Layout Component Scenarios
 
   @205036 @IfIChangingStyleExtraLineShouldNotComeforMarker @Jyoti
   Scenario: CK Editor-To verify,When user add the text  and After changing the style then extra line should not  come between paragraphs.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -10613,7 +10612,7 @@ Business Need: Page Layout Component Scenarios
 
   @205429 @IfIChangingStyleExtraLineShouldNotCome @Jyoti
   Scenario: CK Editor-To verify,When internal user add the text  and After changing the style then extra line should not  come between paragraphs.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -10635,7 +10634,7 @@ Business Need: Page Layout Component Scenarios
 
   @205037 @IfIChangingfontExtraLineShouldNotComeforMarker @Jyoti
   Scenario: CK Editor-To verify,When user add the text  and  changing the font then extra line should Not come between paragraphs.
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -10657,10 +10656,10 @@ Business Need: Page Layout Component Scenarios
 
   @208969 @ValidationMessageShouldNotDisplay @Sprint5
   Scenario: Validation message should not display properly when user enter 4 digit number
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    When I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab

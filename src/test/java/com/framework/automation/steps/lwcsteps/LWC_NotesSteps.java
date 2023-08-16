@@ -189,16 +189,9 @@ public class LWC_NotesSteps extends GovGrantsManager {
         Assert.assertFalse(elementPresentOnWebPage);
     }
 
-    @And("I click on {string} button inside LWC modal")
+    @And("I click on \"([^\"]*)\" button inside LWC modal$")
     public void iClickOnButtonInsideLWCModal(String button) {
-        if (button.equals("Center align text") || button.equals("Right align text") || button.equals("Left align text")) {
-            I.amPerforming().click().on(ByUsing.xpath("//button[@title='" + button + "']"));
-        } else if (button.equals("Bold")) {
-            I.amPerforming().click().on(ByUsing.xpath("//button[@title='" + button + "']"));
-        } else if (button.equals("8") || button.equals("9") || button.equals("10") || button.equals("11") || button.equals("12") || button.equals("14") || button.equals("16") || button.equals("18") || button.equals("20") || button.equals("22") || button.equals("24") || button.equals("26") || button.equals("28") || button.equals("36") || button.equals("48") || button.equals("72")) {
-            I.amPerforming().click().on(ByUsing.xpath("//div[@class='slds-rich-text-editor slds-grid slds-grid_vertical slds-nowrap']/div/div//div[@class='slds-rich-text-editor__select slds-size_xx-small']"));
-            I.amPerforming().click().on(ByUsing.xpath("//span[@class='slds-media__body']/span[@title='" + button + "']"));
-        }
+        lwc_NotesPage.selectDescriptionTextAndClickOnToolbar(button);
     }
 
     @And("I change font \"([^\"]*)\" inside Description on modal$")
@@ -223,7 +216,17 @@ public class LWC_NotesSteps extends GovGrantsManager {
         I.amPerforming().textInput().in(ele, selectAll);
         I.amPerforming().getElementReference().of(ByUsing.xpath("(//div[@class='slds-rich-text-editor__toolbar slds-shrink-none ql-toolbar']/div//button)[2]"));
         I.amPerforming().click().on(ByUsing.xpath("(//div[@class='slds-rich-text-editor__toolbar slds-shrink-none ql-toolbar']/div//button)[2]"));
-        WebElement ele1 = I.amPerforming().getElementReference().of(ByUsing.xpath("//*[@title='" + fontSize + "'] | //div[@id='dropdown-element-414']//*[text()='"+fontSize+"']"));
+        WebElement ele1 = I.amPerforming().getElementReference().of(ByUsing.xpath("//*[@title='" + fontSize + "'] | //div[@id='dropdown-element-414']//*[text()='" + fontSize + "']"));
         I.amPerforming().click().on(ele1);
+    }
+
+    @Then("^I (see|do not see) Description contains \"([^\"]*)\" inside Notes table with \"([^\"]*)\" html tag$")
+    public void iSeeDescriptionContainsInsideNotesTableWithHtmlTag(String usage, String textValue, String htmlTag) {
+        lwc_NotesPage.assertIfFormatingIsCorrect(usage,textValue,htmlTag);
+    }
+
+    @Then("^I (see|do not see) text inside table \"([^\"]*)\" are text align \"([^\"]*)\"$")
+    public void iSeeTextInsideTableAreTextAlign(String usage, String textValue, String allignment) {
+        lwc_NotesPage.assertTextAlignment(usage, textValue, allignment);
     }
 }
