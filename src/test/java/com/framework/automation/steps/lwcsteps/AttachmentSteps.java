@@ -31,7 +31,7 @@ public class AttachmentSteps {
 
     @And("I click on {string} on LWC modal")
     public void iClickOnOnLWCModal(String button) {
-        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "'] | //button[@type='button' and text()='" + button + "'] | //*[@value='" + button + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//footer//button[@title='" + button + "'] | //li[@title='" + button + "'] | //button[@type='button' and text()='" + button + "'] | //*[@value='" + button + "'] | //*[text()='" + button + "']"));
     }
 
     @When("I upload attachment {string} in attachments LWC modal")

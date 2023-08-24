@@ -3,12 +3,14 @@ package com.framework.automation.steps;
 import com.framework.automation.pageobject.FlexTablePage;
 import com.testingblaze.actionsfactory.api.ByUsing;
 import com.testingblaze.exception.TestingBlazeCustomException;
+import com.testingblaze.objects.Elements;
 import com.testingblaze.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.springframework.context.annotation.Description;
 
 import java.io.IOException;
@@ -401,5 +403,56 @@ public class FlexTableSteps {
     @When("I click on top right button \"([^\"]*)\" in table id \"([^\"]*)\"$")
     public void iClickOnTopRightButtonInTableId(String button, String tableId) {
         I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div//button[@title='" + button + "']"));
+    }
+
+    @Then("^I (see|do not see) flex table with id \"([^\"]*)\" is displayed$")
+    public void iSeeFlexTableWithIdIsDisplayed(String usage, String tableId) {
+        flexTablePage.assertIfFlexTableIsDisplayed(usage, tableId);
+    }
+
+    @And("I save the total record available from flex table id {string} as {string}")
+    public void iSaveTheTotalRecordAvailableFromFlexTableIdAs(String id, String key) {
+        flexTablePage.assertFieldRelatedPageRecordsAvailable(id, key);
+    }
+
+    @Then("^I (see|do not see) Advance Filter box is displayed inside table id \"([^\"]*)\" in flex table$")
+    public void iSeeAdvanceFilterBoxIsDisplayedInsideTableId(String usage, String value) {
+        flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
+    }
+
+    @Then("^I (see|do not see) dropdown value \"([^\"]*)\" under field name \"([^\"]*)\" inside flex table$")
+    public void iSeeDropdownValueUnderFieldNameInsideFlexTable(String usage, String dropdownValue, String columnName) {
+        flexTablePage.assertSpecificItemsInsideListViewDropdown(usage, dropdownValue, columnName);
+    }
+
+    @And("I click on {string} after click advance filter")
+    public void iClickOnAfterClickAdvanceFilter(String fieldName) {
+        flexTablePage.clickOnButtonAfterClickingAdvFilter(fieldName);
+    }
+
+    @And("I click on {string} and select {string}")
+    public void iClickOnAndSelect(String field, String dropdownValue) {
+        flexTablePage.clickOnDopDownButtonAndSelectValue(field, dropdownValue);
+    }
+
+    @Then("^I (see|do not see) Operator list change with field \"([^\"]*)\"$")
+    public void iSeeOperatorListChangeWithField(String usage, String dropdownValue) {
+        flexTablePage.assertIfValueChange(usage, dropdownValue);
+    }
+
+
+    @When("I enter advance filter values in table id \"([^\"]*)\"$")
+    public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" button is enabled in flex table")
+    public void iSeeButtonIsEnabledInFlexTable(String usage, String button) {
+        flexTablePage.assertIfButtonEnabled(usage, button);
+    }
+
+    @Then("^I (see|do not see) filter \"([^\"]*)\" is displayed$")
+    public void iSeeFilterIsDisplayed(String usage, String value) {
+        flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
     }
 }

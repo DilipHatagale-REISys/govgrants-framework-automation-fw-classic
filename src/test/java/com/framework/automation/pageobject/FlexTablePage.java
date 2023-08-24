@@ -1139,6 +1139,11 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
     }
 
+    public void assertFieldRelatedPageRecordsAvailable(String id, String key) {
+        By record = By.xpath("//div[@id='" + id + "']//*[contains(@class,'spacing bold-padded ng-binding')]");
+        I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
+    }
+
     public void getHelpTextFromIcon(String iconId) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon']"));
     }
@@ -1150,6 +1155,47 @@ public class FlexTablePage extends GovGrantsManager {
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(assertMiniLayoutDisplayed(displayType, value)).isFalse();
         }
+    }
+
+
+    public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
+        }
+    }
+
+    public void assertSpecificItemsInsideListViewDropdown(String usage, String dropdownValue, String columnName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isValuePresentInsideDropDown(dropdownValue, columnName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isValuePresentInsideDropDown(dropdownValue, columnName)).isFalse();
+        }
+    }
+
+    private boolean assertAdvanceFilterDisplayed(String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + value + "']/div//button[contains(@class,'advf-button')]//span[@class='fa fa-filter'] |" +
+                    " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 
     private boolean assertMiniLayoutDisplayed(String displayType, String value) {
@@ -1165,4 +1211,92 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
+
+    public void assertIfFlexTableIsDisplayed(String usage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(flexTableIsDisplayed(tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(flexTableIsDisplayed(tableId)).isFalse();
+        }
+    }
+
+    private boolean flexTableIsDisplayed(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(" //a[contains(@data-target,'" + tableId + "')] | //div[@id='" + tableId + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void clickOnButtonAfterClickingAdvFilter(String fieldName) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + fieldName + "'] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + fieldName + "')] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='filter in filterDisplayList']//*[@aria-label='" + fieldName + "'] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x']"));
+    }
+
+    public void clickOnDopDownButtonAndSelectValue(String field, String dropdownValue) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + field + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + field + "']//option[text()='" + dropdownValue + "']"));
+    }
+
+    public void assertIfValueChange(String usage, String dropdownValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(dropdownValue)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(dropdownValue)).isFalse();
+        }
+    }
+
+    private boolean assertIfValueChangeWithColumnName(String dropdownValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='Operator']//option[@selected='selected' and text()='" + dropdownValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By filterAction = null;
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
+        By inputField = By.xpath("//div[@id='" + advanceFilterId + "']//field//input");
+
+        filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
+        if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
+            I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
+        } else {
+            I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
+        }
+        I.amPerforming().click().on(filterAction);
+    }
+
+    public void assertIfButtonEnabled(String usage, String button) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfButtonEnabledMethod(button)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfButtonEnabledMethod(button)).isFalse();
+        }
+    }
+
+    private boolean assertIfButtonEnabledMethod(String button) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@id='advfPrograms']//div[@class='form-group']//span/*[contains(@class,'" + button + "')] |" +
+                    " //div[@id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + button + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }
