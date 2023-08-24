@@ -56,25 +56,25 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I see "Automation Application" on page "1" of "govgrants" pdf file
+    Then I see "Application In Created State Only" on page "1" of "govgrants" pdf file
 
-  @wip @109612    @verifyThatPageContentDisplayedProperlyByLoggedInAsSPIUserAndClickOnDownloadedPDFFromPageLayout
+  @109612    @verifyThatPageContentDisplayedProperlyByLoggedInAsSPIUserAndClickOnDownloadedPDFFromPageLayout
   Scenario: validate if logged in as SPI user and downloaded PDF from page layout then page content displayed in pdf file
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
-    Then I see "Program For Application" on page "1" of "govgrants" pdf file
+    Then I see "New Application For Testing Only" on page "1" of "govgrants" pdf file
 
   @wip @109378    @verifyThatByLoginAsSPIUserMEGridDisplayedInsideDownloadedPDF
   Scenario: validate by logged in as SPI user ME grid displayed inside downloaded pdf
@@ -131,8 +131,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts"
@@ -145,8 +145,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Budget" sub tab
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Budget Periods"
@@ -159,8 +159,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Contacts"
@@ -182,8 +182,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
@@ -301,7 +301,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
@@ -335,13 +335,13 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramInCreatedModeWithViewAction}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Pre-Screen Review" in downloaded xls or csv file "govgrants"
 
 
-  @wip @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
+   @100486    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormModalViewMode
   Scenario Outline: validate by download as pdf if skip default theme checkbox is checked at dynamic form modal view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue       | filterId         |
@@ -358,7 +358,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     When I navigate to "Setup" sub tab
@@ -372,7 +372,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                      |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=ModalView |
 
-  @wip @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
+   @100489    @validateDownloadAsPDFIfSkipPDFDefaultThemeCheckBoxIsCheckedAtDynamicFormLayoutViewMode
   Scenario: validate by download as pdf if skip default theme checkbox is checked at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -385,17 +385,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Dynamic Form 1" on page "1" of "govgrants" pdf file
 
-  @wip @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
+  @100127   @validateDependentQuestionJsonFieldByMakingNumberAndWrittenFieldAsRequiredFromMultipleSectionsUsingCurrencyFieldValueInsideDynamicFormInEditMode
   Scenario: validate Dependent Question Json Field by making number and written as req from section 1 and section 3 on the basis of currency field value in form edit mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -420,10 +420,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     When I enter values into "Section 1" page block
       | Field   | Value |
@@ -440,7 +440,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Written Section 3 is Required to save under Section 3. |
       | Number Section 3 is Required to save under Section 3.  |
 
-  @wip @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @100873    @validateCurrencyValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate currency value with symbol is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -451,17 +451,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "$12.00" on page "1" of "govgrants" pdf file
 
-  @wip @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+   @100874    @validatePercentValueWithSymbolIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate percent value with symbol is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -472,17 +472,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "12.00 %" on page "1" of "govgrants" pdf file
 
-  @wip @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @100877    @validateMaxScoreIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate max score as 0.0 is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -493,17 +493,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "0.0" on page "1" of "govgrants" pdf file
 
-  @wip @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @100879    @validateThatForCheckboxAValueAsTrueOrFalseIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate if checkbox field is checked then it should displayed inside downloaded PDF as true at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -514,17 +514,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "true" on page "1" of "govgrants" pdf file
 
-  @wip @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @100880    @validateDecimalValuesAtNumberCurrencyPercentFieldIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate decimal values are displayed for number , currency, percent field inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -535,10 +535,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -547,7 +547,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "12.00 %" on page "1" of "govgrants" pdf file
     Then I softly see "12.00" on page "1" of "govgrants" pdf file
 
-  @wip @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @100994    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -558,17 +558,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
 
-  @wip @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @101005    @validateSectionInstructionIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate section instruction is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -579,17 +579,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Demo Section instruction" on page "1" of "govgrants" pdf file
 
-  @wip @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @101005    @validateWrittenFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate written field value is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -600,17 +600,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Test Automation" on page "1" of "govgrants" pdf file
 
-  @wip @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
+  @101006    @validateRichTextAreaFieldValueIsDisplayedInsideDownloadedPDFAtDynamicFormLayoutViewMode
   Scenario: validate rich text area field value is displayed inside downloaded PDF at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -621,17 +621,17 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Test Automation Rich Text" on page "1" of "govgrants" pdf file
 
-  @wip @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  @101025   @validateIfCurrencyFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -642,21 +642,21 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                                   | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                  | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                  | CI-0002            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I cannot see "Currency" on page "1" of "govgrants" pdf file
 
-  @wip @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @101026   @validateIfCurrencyFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -667,21 +667,21 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                                      | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyUsingWrittenFieldValueForPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                     | CI-0004            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                     | CI-0002            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     Then I see "Currency" on page "1" of "govgrants" pdf file
 
-  @wip @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
+  @106081   @validateIfCurrencyNumberPercentFieldIsHiddenFromUIThenItIsNotDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency, number , percent field is hidden from ui then it is not displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -694,16 +694,16 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                               | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                              | CI-0004            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Number                                                | CI-0006            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Percent                                               | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                              | CI-0002            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                | CI-0004           |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                               | CI-0003            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -712,7 +712,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly cannot see "Number" on page "1" of "govgrants" pdf file
     Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
 
-  @wip @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @106082   @validateIfCurrencyNumberPercentFieldIsDisabledFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency, number , percent field is disabled from ui then it is displayed in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -725,16 +725,16 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                                  | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:DisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                 | CI-0004            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Number                                                   | CI-0006            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Percent                                                  | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                 | CI-0002            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                   | CI-0004           |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                  | CI-0003            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -743,7 +743,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "Number" on page "1" of "govgrants" pdf file
     Then I softly see "Percent" on page "1" of "govgrants" pdf file
 
-  @wip @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
+  @106087   @validateIfCurrencyIsDisabledAndNumberPercentFieldIsHiddenFromUIThenItIsDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate if currency is disabled and number, percent field is hidden from ui then it is displayed accordingly in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -756,16 +756,16 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                                   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                                         | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentFieldsOnPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0004            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0006            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                        | CI-0002            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                          | CI-0004           |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                         | CI-0003            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -774,7 +774,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly cannot see "Currency" on page "1" of "govgrants" pdf file
     Then I softly cannot see "Percent" on page "1" of "govgrants" pdf file
 
-  @wip @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
+   @106088   @validateDisabledAndHiddenFieldsLikeCurrencyNumberPercentDateDisplayedInsideDownloadedPDFAtDynamicForm
   Scenario: validate disabled and hidden fields like number, percent, currency, date field displayed accordingly in downloaded pdf at dynamic form layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -788,17 +788,17 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName               | fieldNewValue                                                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Item:General  | Question Identifier     | Written                                                             | CI-0000            |                           |                            |
       | Capture Item:General  | Dependent Question Json | govgrants_config:HideAndDisableCurrencyNumberPercentDateFieldsOnPDF | CI-0000            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Currency                                                            | CI-0004            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Number                                                              | CI-0006            |                           |                            |
-      | Capture Item:General  | Question Identifier     | Percent                                                             | CI-0005            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Currency                                                            | CI-0002            |                           |                            |
+      | Capture Item:General  | Question Identifier     | Number                                                              | CI-0004           |                           |                            |
+      | Capture Item:General  | Question Identifier     | Percent                                                             | CI-0003            |                           |                            |
       | Capture Item:General  | Question Identifier     | Date                                                                | CI-0001            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -828,8 +828,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I navigate to "Files" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableFormEnhancedTable"
     And I select "Download as PDF" from parallel lines dropdown of "All Forms"
@@ -842,15 +842,15 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithConvetedToAwardStatus}" inside table
+    When I perform quick search for "Application In Created State Only"
+    When I click on "View" icon for "Application In Created State Only" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     Then I see "All Forms" on page "5" of "govgrants" pdf file
 
-  @wip @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
+   @100463    @validateByClickOnDowloadAtPDFItIsGettingOpenedInNewTabAtDynamicFormLayoutViewMode
   Scenario: validate by click on download as pdf it is getting open in new tab at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -861,10 +861,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Announcements - All"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Automation Internal Announcement for Testing"
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -877,8 +877,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I softly can see top right button "New Validate" in page detail
@@ -908,8 +908,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I clear the value from field "fieldQuestion1__c"

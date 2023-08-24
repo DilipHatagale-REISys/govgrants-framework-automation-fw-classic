@@ -1139,4 +1139,60 @@ public class FlexTablePage extends GovGrantsManager {
         By record = By.xpath("(//div[@id='" + id + "']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
         I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
     }
+
+    public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By filterAction = null;
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        By dropDownSelector3 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Value')]/..//select");
+        By inputField = By.xpath("//div[@id='" + advanceFilterId + "']//field//input");
+
+        filterAction = By.xpath("//div[@id='" + advanceFilterId + "']//a[@title='Add Filter']/span");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
+        if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
+            I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
+        } else {
+            I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
+        }
+        I.amPerforming().click().on(filterAction);
+    }
+
+    public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isFalse();
+        }
+    }
+
+    private boolean assertFlextableValueDisplayed(String columnValue, String columnTitle, String flextableDivId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='ng-binding' and text()='" + columnTitle + "']/ancestor::div[@id='" + flextableDivId + "']/descendant::span[text()='" + columnValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertValuePageBlockDisplayedOrNot(String usage, String blockName) {
+        if (usage.equalsIgnoreCase("can see")) {
+            I.amPerforming().assertionsTo().assertThat(assertValuePageBlockDisplayed(blockName)).isTrue();
+        } else if (usage.equalsIgnoreCase("can not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertValuePageBlockDisplayed(blockName)).isFalse();
+        }
+    }
+
+    private boolean assertValuePageBlockDisplayed(String blockName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='myTabs']//h3[@class='panel-title']//a[text()='" + blockName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

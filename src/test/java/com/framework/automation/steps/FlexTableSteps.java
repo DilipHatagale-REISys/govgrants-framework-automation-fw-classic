@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.springframework.context.annotation.Description;
 
 import java.io.IOException;
+import java.util.List;
 
 
 public class FlexTableSteps {
@@ -385,4 +386,18 @@ public class FlexTableSteps {
         I.amPerforming().browserOperationsTo().navigateToUrl(newUrl1);
     }
 
+    @When("I enter advance filter values in table id \"([^\"]*)\"$")
+    public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
+    public void iSeeValueForTheTitleInsideTable(String usage, String columnValue, String columnTitle, String flextableDivId) {
+        flexTablePage.assertFlextableValuesDisplayedOrNot(usage, columnValue, columnTitle, flextableDivId);
+    }
+
+    @Then("^I (can see|can not see) \"([^\"]*)\" page block displayed$")
+    public void iSeeValuePageBlockDisplayed(String usage,String blockName) {
+        flexTablePage.assertValuePageBlockDisplayedOrNot(usage, blockName);
+    }
 }

@@ -121,8 +121,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Internal Program for FlextableEnhanced"
+    When I click on "View" icon for "Automation Internal Program for FlextableEnhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
@@ -307,22 +307,16 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
-    # | Flex Table List       | Filter Clause       | <defaultFilterClause> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Enable Sub Total    | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
       | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
-      #| Flex Table List       | Filter Clause       | <newFilterClause> | GrantorRelatedAwards2 | Name                      | FLV-2548                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
     Then I see cell subtotal for "Version Number" at enhanced grid
-
-#    Examples:
-#      | defaultFilterClause                 | newFilterClause                                                   |
-#      | TotalAwardObligatedAmount__c=300000 | TotalAwardObligatedAmount__c=300000 and NumberofProjectAreas__c=1 |
 
   @77401    @hideExpressionJsonFieldAtTopLevelActionFlexTableForEnhanced-gPlanning
   Scenario: Set up configuration to hide New action and validating it inside enhanced data table -planning
@@ -339,6 +333,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
+    And I pause execution for "5" seconds
     Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
 
   @77329    @enableHideGroupingColumnFieldAtFlexTableEnhanced-gPlanning
@@ -367,8 +362,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-    Then I softly see sorting label as "* Records are sorted by " inside "---program:-:programContactsTableId---" table
-   #Then I softly see sorting label as "Created Date descending order" inside "---program:-:programContactsTableId---" table
+    And I pause execution for "10" seconds
+    Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
 
   @104409    @validatePicklistFieldValueAsNoneAtEnhancedDataTableInInlineMode-gPlanning
   Scenario: validate picklist field value as none inside enhanced data table in inline edit mode
@@ -381,11 +376,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Overview" sub tab
     When I perform quick search for "FirstName LastNam" in "---program:-:programContactsTableId---" panel
     When I click on "Edit" icon for "FirstName LastNam" inside table
-    And I pause execution for "5" seconds
-    #Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
-    Then I see only the following ordered options in dropdown field "ProjectRole__c" :
-      |  | --None-- | Authorized Signatory | Ebiz POC | Fiscal Contact | Grants Administrator | Principal Investigator | Program Manager | Project Director/Manager | Other |
-
+    Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
   @106413  @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTableEnhanced
   Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
@@ -401,8 +392,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
     When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:SubawardTableIdForAdminPM---"
-    When I enter advance filter values inside table id "---program:-:SubawardTableIdForAdminPM---"
-      | Budget Period End Date | contains | 05/01/2023 |
+    When I enter advance filter values in table id "---program:-:SubawardTableIdForAdminPM---"
+      | Budget Period End Date | equals to | 05/01/2023 |
     Then I see label containing value as "05/01/2023" inside advance filter
 
     Examples:
@@ -422,11 +413,11 @@ Business Need: Flex Table enhanced Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:GridGrantorRelatedAwards2TableId---"
-    When I enter advance filter values inside table id "advfGrantorRelatedAwards2"
-      | Budget Period Start Date | equals to | 05/01/2023 |
-    Then I softly see value "2/27/2019--2/28/2022" for title "Project Period Start Date" inside table "---program:-:SubawardTableIdForAdminPM---"
-    Then I softly do not see value "3/20/2019--3/20/2022" for title "Project Period Start Date" inside table "---program:-:SubawardTableIdForAdminPM---"
+    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:SubawardTableIdForAdminPM---"
+    When I enter advance filter values in table id "---program:-:SubawardTableIdForAdminPM---"
+      | EGMS ID | contains | AD-1000-01 |
+    Then I see value "11/18/2022" for the title "Budget Period End Date" inside table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see value "02/19/2022" for the title "Budget Period Start Date" inside table "---program:-:SubawardTableIdForAdminPM---"
 
     Examples:
       | newFieldsApi                                                                                                                                                   | defaultFieldsApi                                                                                                                                               |
@@ -455,27 +446,16 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Internal Program for FlextableEnhanced"
+    When I click on "View" icon for "Automation Internal Program for FlextableEnhanced" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
+    When I perform quick search for "Lisa Mitchell" in "---program:-:programContactsTableId---" panel
     And I pause execution for "10" seconds
-    When I hover mouse on lookup link "Automation PM" at table
+    When I hover mouse on lookup link "Lisa Mitchell" at table
     And I pause execution for "4" seconds
-    Then I softly see "Name" as "Automation PM" inside mini page layout
-    Then I softly see "Organization" as "Test Automation Organization" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-#    When I hover mouse on lookup link "SYSTEM" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Organization" as "Test Automation Organization" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-#    When I hover mouse on lookup link "SYSTEM" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Value" as "9832" inside mini page layout
+    Then I see "Name" as "Lisa Mitchell" in mini page layout
+    Then I see "Email" as "lisamitchell@gmail.com" in mini page layout
+    Then I see "Organization" as "Test Automation Organization" in mini page layout
 
   @145488  @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTableEnhanced
   Scenario: validate Advance filter  with does not contain operator At Flex Table Enhanced
@@ -484,11 +464,10 @@ Business Need: Flex Table enhanced Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:GridGrantorRelatedAwards2TableId---"
-    When I enter advance filter values inside table id "---program:-:GridGrantorRelatedAwards2TableId---"
-      | Title | does not contain | test1 |
-    #Then I softly see value "Educational Pro" for title "Project Title" inside table "---program:-:programContactsTableId---"
-    Then I softly do not see value "test1" for title "Title" inside table "---program:-:GridGrantorRelatedAwards2TableId---"
+    When I click on advance filter "#advfGrantorRelatedAwards2" of table id "---program:-:SubawardTableIdForAdminPM---"
+    When I enter advance filter values in table id "---program:-:SubawardTableIdForAdminPM---"
+      | EGMS ID | does not contain | test1 |
+    Then I do not see value "test1" for title "EGMS ID" inside table "---program:-:GridGrantorRelatedAwards2TableId---"
 
   @151054 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedDataTable
   Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced data table
@@ -499,11 +478,12 @@ Business Need: Flex Table enhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     When I perform quick search for "AD-1000-04" in "---program:-:SubawardTableIdForAdminPM---" panel
     When I click on "Edit" icon for "AD-1000-04" inside table
-    When I enter value "Test1" into field "GrantAwardName__c"
-    When I click on top right button "Save" in flex table with id "---program:-:SubawardTableIdForAdminPM---"
+    When I enter value "TestGrant" into field "GrantAwardName__c"
+    And I pause execution for "30" seconds
+    When I click on top right button "Save" in table id "---program:-:SubawardTableIdForAdminPM---"
     And I click toggle button to select "Subawards  - All"
     When I perform quick search for "AD-1000-04" in "---program:-:SubawardTableIdForAdminPM---" panel
-    Then I see field "Title" as "Test1"
+    Then I see value "TestGrant" for the title "Title" inside table "---program:-:SubawardTableIdForAdminPM---"
 
   @194928 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
@@ -647,18 +627,6 @@ Business Need: Flex Table enhanced Component Scenarios
     Then I softly see "title" as "SYSTEM" inside mini page layout
     Then I softly see "Label" as "Code" inside mini page layout
     Then I softly see "Value" as "9832" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-#    When I hover mouse on lookup link "SYSTEM" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Label" as "Code" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-#    When I hover mouse on lookup link "SYSTEM" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Value" as "9832" inside mini page layout
 
   @208597    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedGrid
   Scenario:To verify , Mini layout UI at form looks as   object name to the top, field title under it, then line separator for Internal user
@@ -675,15 +643,3 @@ Business Need: Flex Table enhanced Component Scenarios
     Then I softly see "title" as "Department of Higher Education" inside mini page layout
     Then I softly see "Label" as "Code" inside mini page layout
     Then I softly see "Value" as "755" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-#    When I hover mouse on lookup link "Department of Higher Education" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Label" as "Code" inside mini page layout
-#    And I refresh the page
-#    When I navigate to "Overview" sub tab
-#    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
-#    When I hover mouse on lookup link "Department of Higher Education" at table
-#    And I pause execution for "4" seconds
-#    Then I softly see "Value" as "755" inside mini page layout
