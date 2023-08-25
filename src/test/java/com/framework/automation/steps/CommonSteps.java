@@ -1,71 +1,26 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.projectmanager.ProjectManager;
-import com.framework.automation.webservices.ProjectWebServices;
-import com.helperPackage.register.I;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.en.Given;
+
+import com.framework.automation.projectmanager.GovGrantsManager;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import jdk.jfr.Description;
+import org.springframework.context.annotation.Description;
 
 public class CommonSteps {
-    ProjectManager projectManager;
+    GovGrantsManager govGrantsManager;
 
-    public CommonSteps(ProjectManager projectManager) {
-        this.projectManager = projectManager;
+    public CommonSteps() {
+        govGrantsManager = new GovGrantsManager();
     }
 
-    /* ReCaptcha Steps */
-
-    @Before("@recaptcha")
-    public void turnOffRecaptcha() {
-        ProjectWebServices.recaptchaChange(true);
+    @Description("click in admin menu to rechout to govegrants homepage")
+    @When("^I access the \"([^\"]*)\" for \"([^\"]*)\" app$")
+    public void accessthehomepage(String tabName, String appName) {
+        govGrantsManager.clickAdminNavBar(tabName, appName);
     }
 
-    @After("@recaptcha")
-    public void turnOnRecaptcha() {
-        ProjectWebServices.recaptchaChange(false);
-    }
-
-    @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\"$")
-    public void deleteTestData(String recordName, String objectType) {
-//        projectManager.deletionApi(recordName, objectType);
-    }
-
-    @When("I close the tab")
-    public void closeCurrentTab() {
-        I.amPerforming().browserOperationsTo().closeBrowserOrTab();
-        I.amPerforming().switchTo().windowHandler(
-                I.amPerforming().switchTo().getWindowsHandlers().size() - 1
-        );
-    }
-
-    @Then("^I (softly see|do not see) the image \"([^\"]*)\" in page detail$")
-    public void validateImageinPageDetail(String usage, String imageName) {
-        projectManager.validateImage(usage, imageName);
-    }
-
-    @Then("^I see the page contains text \"([^\"]*)\"$")
-    public void assertTextOnPage(String desiredText) {
-        projectManager.assertTextOnPage(desiredText);
-    }
-
-    @Description("Validate text message coming on confirmation box")
-    @Then("^I (softly see|see) confirmation box with quotes in body \"(.*?)\" is displayed$")
-    public void assertConfirmationBoxWithMessage(String usage, String message) {
-        projectManager.assertMessageOfConfirmationBoxPopUp(message, usage.contains("softly"));
-    }
-
-    @Description("Validate field is not editable")
-    @Then("I (softly see|see) field \"([^\"]*)\" not in edit mode$")
-    public void iSoftlySeeFieldNotInEditMode(String usage,String fieldAPIName) {
-        projectManager.assertFieldIsNotInEditMode(fieldAPIName, usage.contains("softly"));
-    }
-
-    @Then("I softly see fields value with label {string} contains {string} characters")
-    public void iSoftlySeeFieldsValueWithLabelContainsCharacters(String usage, String fieldLabel, String charCount) {
-        projectManager.assertLengthOfFieldValues(usage, fieldLabel, charCount);
+    @Then("^I see page title \"([^\"]*)\"$")
+    public void asserPageTitle(String pageTitle) {
+        govGrantsManager.assertPageTitle(pageTitle);
     }
 }
