@@ -1,17 +1,17 @@
 package com.framework.automation.steps;
 
-import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
-import com.testingblaze.controller.TestSetupController;
-import com.testingblaze.register.EnvironmentFactory;
-import com.testingblaze.report.CSS;
+import com.framework.automation.webservices.GranteeWebServices;
+import com.framework.automation.webservices.GrantorWebServices;
+import com.helperPackage.controller.TestSetupController;
+import com.helperPackage.register.EnvironmentFactory;
+import com.helperPackage.report.CSS;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import org.apache.commons.lang.StringUtils;
 
 import java.awt.*;
 import java.io.IOException;
-
 
 /**
  * @author nauman.shahid
@@ -20,15 +20,18 @@ import java.io.IOException;
  */
 
 public class setup {
-    private TestSetupController userController;
+    private final TestSetupController userController;
     private static CSS report;
-    private ProjectWebServices projectWebServices;
+    GrantorWebServices grantorWebServices;
+    GranteeWebServices granteeWebServices;
 
-    public setup(TestSetupController userController, ProjectWebServices projectWebServices) {
+    public setup(TestSetupController userController, com.framework.automation.webservices.GrantorWebServices grantorWebServices, GranteeWebServices granteeWebServices) {
         this.userController = userController;
-        if(report == null) {
-            this.report = new CSS();
-            EnvironmentFactory.setProjectName("GovGrants Framework Test Automation");
+        this.grantorWebServices = grantorWebServices;
+        this.granteeWebServices = granteeWebServices;
+        if (report == null) {
+            report = new CSS();
+            EnvironmentFactory.setProjectName("GovGrants Product Test Automation");
             EnvironmentFactory.setOrgName("REI Systems [Saas Business Unit]");
             EnvironmentFactory.setProjectPath(System.getProperty("user.dir"));
             report.reportConfigWriteUp();
@@ -41,12 +44,12 @@ public class setup {
     }
 
     @After(order = 1)
-    public void wrapUp(Scenario scenario) throws IOException {
-        try {
-            ProjectWebServices.thisValue.postDefaultConfigCall();
-            ProjectWebServices.thisValue = null;
-        } catch (Exception e) {
-            ProjectWebServices.thisValue = null;
-        }
+    public void deleteMe() {
+       if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTOR"))
+            grantorWebServices.deleteRecordInHooks();
+       else if (StringUtils.containsIgnoreCase(EnvironmentFactory.getEnvironmentName(), "GRANTEE"))
+           granteeWebServices.deleteRecordInHooks();
+        //It will deactivate the activated users.
+        //ProjectWebServices.changeUserActivationStatus("automationinternal", false);
     }
 }

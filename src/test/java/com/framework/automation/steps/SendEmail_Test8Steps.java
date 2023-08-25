@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.SendEmail_Test8Page;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

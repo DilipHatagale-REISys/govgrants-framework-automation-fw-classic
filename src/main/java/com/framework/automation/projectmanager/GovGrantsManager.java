@@ -1,8 +1,8 @@
 package com.framework.automation.projectmanager;
 
-import com.automation.rei.handlers.govgrants;
-import com.testingblaze.objects.Elements;
-import com.testingblaze.register.I;
+import com.helperPackage.handlers.govgrants;
+import com.helperPackage.objects.Elements;
+import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
