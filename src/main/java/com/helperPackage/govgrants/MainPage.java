@@ -118,13 +118,12 @@ public final class MainPage {
                 /* Ignore Exception */
             }
         }
-
-        if (EnvironmentFactory.getProjectName().contains("GovGrants Framework"))
-            try {
-                clickAdminNavBar("GovGrants Launcher Tab");
-            } catch (Exception e) {
-                // to handle any other URL where there is not Govgrants launcher
-            }
+//        if (EnvironmentFactory.getProjectName().contains("GovGrants Framework"))
+        try {
+            clickAdminNavBar("GovGrants Launcher Tab");
+        } catch (Exception e) {
+            // to handle any other URL where there is not Govgrants launcher
+        }
     }
 
     /**
@@ -474,7 +473,7 @@ public final class MainPage {
         for (File files : directory) {
             if (files.getName().endsWith(".xls")) {
                 new File(files.getAbsolutePath())
-                        .renameTo(new File(file.getAbsolutePath() + File.separator  + fileName + ".xls"));
+                        .renameTo(new File(file.getAbsolutePath() + File.separator + fileName + ".xls"));
                 extensionType = ".xls";
                 break;
             } else if (files.getName().endsWith(".csv")) {
