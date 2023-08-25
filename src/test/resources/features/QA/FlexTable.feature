@@ -3874,6 +3874,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 1000 |
-    And I click on "fa fa-plus" after click advance filter
+    When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
