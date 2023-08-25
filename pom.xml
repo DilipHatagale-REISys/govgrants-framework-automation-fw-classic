@@ -4,8 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>rei.saas.automation</groupId>
-    <artifactId>product-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>framework-project</artifactId>
+    <packaging>jar</packaging>
+    <name>REI SAAS Automation - Framework Project</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
