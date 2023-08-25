@@ -7,6 +7,7 @@
     <artifactId>framework-project</artifactId>
     <packaging>jar</packaging>
     <name>REI SAAS Automation - Framework Project</name>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
