@@ -3870,7 +3870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 1000 |
