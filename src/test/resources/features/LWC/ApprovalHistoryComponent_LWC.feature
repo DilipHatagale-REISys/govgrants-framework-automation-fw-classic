@@ -71,7 +71,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    And I pause execution for "7" seconds
+    When I pause execution for "7" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
