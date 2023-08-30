@@ -3736,6 +3736,26 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
+  @338630
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Less than or equal to' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program date | Less than | 25/08/2023 |
+    And I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    And I refresh the page
+    Then I see filter "filter in filterDisplayList" is displayed
+    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+
   @338631
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Contains ' operator
     Given I have "default" configuration as below:
@@ -3877,3 +3897,872 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
+  @338643
+  Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than ' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Less than | 100000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338644
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to ' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than or Equal to | 1000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338645
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Less than or Equal to | 10000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338648
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number  field with 'Equal to' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Equals to | 5000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338649
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than | 5000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338650
+  Scenario: Admin:-To verify,advanced filter should work for the Number field with 'Less than' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Less than | 5000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338652
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than or equal to' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than | 5000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @338653
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to  ' operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Less than or Equal to | 100000 |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+    #########################Test suite: UI (Suite ID: 336192)###############################
+
+  @338494
+  Scenario:Auto Index - Admin- Config- Verify index column (#) should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see flex table header equals "#" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338495
+  Scenario: Auto Index - PM- UI- Verify index column (#) should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see flex table header equals "#" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338498
+  Scenario: Auto Index - SPI- UI- Verify index column (#) should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see flex table header equals "#" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338505
+  Scenario: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338507
+  Scenario: Record Selection- PM- UI- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338508
+  Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338509
+  Scenario: Record Selection- Admin- Config- Verify correct Record Selection Column Header displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338511
+  Scenario: Record Selection- PM- UI- Verify correct Record Selection Column Header displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @338513
+  Scenario: Record Selection- SPI- UI- Verify correct Record Selection Column Header displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @338514
+  Scenario: Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338516
+  Scenario: Record Selection- PM- UI- Verify Record Selection Column rendered on desired position on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338517
+  Scenario: Record Selection- SPI- UI- Verify Record Selection Column rendered on desired position on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
+#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
+#      | Flex Table:General    | Record Selection Column Position | Left          | GrantsList         | Name                      |            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @338518
+  Scenario: Records description- Admin- Config- Verify correct description of records displayed on UI (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "5"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338520
+  Scenario: Records description - PM- UI- Verify correct description of records displayed on UI (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "5"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338522
+  Scenario: Records description - SPI- UI- Verify correct description of records displayed on UI (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index          | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection    | false             | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection    | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
+    Then I see table contains "Showing 1 to 5 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @338523
+  Scenario: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338525
+  Scenario: Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338526
+  Scenario: Page description - SPI- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index          | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection    | false             | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:4 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection    | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @338528
+  Scenario: Page description- Admin- Config- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Program For Test"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338529
+  Scenario: Page description - PM- UI- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Program For Test"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338531
+  Scenario: Page description - SPI- UI- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index          | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection    | false             | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:4 |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection    | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I select value inside table "---program:-:grantsFlexTableIdForSPIuser---" is "5"
+    When I perform quick search for "Automation"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @338533
+  Scenario: Page description- Admin- Config- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338534
+  Scenario: Page description - PM- UI- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338536
+  Scenario: Page description - SPI- UI- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grantor Organization | Equals to | Test Automation Organization |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
+
+  @338537
+  Scenario: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @338539
+  Scenario: Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @338540
+  Scenario: Page description - SPI- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
+
+  @338542
+  Scenario: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338543
+  Scenario: Page description - PM- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338544
+  Scenario: Page description - SPI- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    Then I do not see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
+
+  @338545
+  Scenario: Page description- Admin- Config- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338547
+  Scenario: Page description - PM- UI- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338548
+  Scenario: Page description - SPI- UI- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
+    Then I do not see "Previous" pagination arrow inside table id "toggleFlexTableGrantsList"
+
+  @338550
+  Scenario: Page description- Admin- Config- Verify we can directly jump on last page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338552
+  Scenario: Page description - PM- UI- Verify we can directly jump on last page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
+
+  @338553
+  Scenario: Page description - SPI- UI- Verify we can directly jump on last page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
+
+  @338555
+  Scenario: Page description- Admin- Config- Verify we can directly jump on First page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @338558
+  Scenario: Page description - PM- UI- Verify we can directly jump on First page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @338559
+  Scenario: Page description - SPI- UI- Verify we can directly jump on First page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
+
+  @338560
+  Scenario: Total- Admin- Config- Verify the Total of values under the column can be displayed in the Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Total Records:" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338561
+  Scenario: Total - PM- UI- Verify the Total of values under the column can be displayed in the Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "Total Records:" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338562
+  Scenario: Total - SPI- UI- Verify the Total of values under the column can be displayed in the Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter     | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter     | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+
+    @338563
+    Scenario: Mini-layout- Admin- Config- When we hover on any relational field Mini layout (having detailed info) will be displayed on UI
+      When I login to "As a Grantor" app as "Admin" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+      When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+      And I click on "Save and Continue" in the page details
+      And I pause execution for "8" seconds
+      When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+      And I click on "Save" in the page details
+      And I pause execution for "7" seconds
+      And I navigate to "Planning" tab
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"

@@ -1299,4 +1299,44 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrow, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isFalse();
+        }
+    }
+
+    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrow, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrow + "')] |" +
+                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrow + "'] | " +
+                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void asserIfPageDescriptionIsDisplayed(String usage, String pageinfo, String arrow, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(asserIfPageDescriptionIsDisplayedOnUI(pageinfo, arrow, tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(asserIfPageDescriptionIsDisplayedOnUI(pageinfo, arrow, tableid)).isFalse();
+        }
+    }
+
+    private boolean asserIfPageDescriptionIsDisplayedOnUI(String pageinfo, String arrow, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[contains(text(),'" + pageinfo + "')]/parent::div//*[@title='" + arrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

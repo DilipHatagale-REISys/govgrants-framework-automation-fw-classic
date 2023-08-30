@@ -455,4 +455,19 @@ public class FlexTableSteps {
     public void iSeeFilterIsDisplayed(String usage, String value) {
         flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
     }
+
+    @Then("^I (see|do not see) flex table header equals \"([^\"]*)\" inside table id \"([^\"]*)\"$")
+    public void iDoNotSeeFlexTableHeaderEqualsInsideTableId(String usage, String headernameOrArrow, String tableid) {
+        flexTablePage.assertIfHeaderNameIsDisplayed(usage, headernameOrArrow, tableid);
+    }
+
+    @Then("^I (see|do not see) page description is displayed \"([^\"]*)\" with \"([^\"]*)\" arrow inside table id \"([^\"]*)\"$")
+    public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String pageinfo, String arrow, String tableid) {
+        flexTablePage.asserIfPageDescriptionIsDisplayed(usage,pageinfo,arrow,tableid);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" pagination arrow inside table id \"([^\"]*)\"$")
+    public void iDoNotSeeArrowInsideTableId(String usage, String headernameOrArrow, String tableid) {
+        flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrow,tableid);
+    }
 }
