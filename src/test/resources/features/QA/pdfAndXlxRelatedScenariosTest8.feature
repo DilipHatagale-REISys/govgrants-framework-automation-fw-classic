@@ -1,4 +1,4 @@
-@allPdfAndXlxRelatedScenarios @regression-QA
+@allPdfAndXlxRelatedScenariosTest-8 @regression-QA
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all download pdf and xls based scenarios
   As a configuration manager i make different configurational changes for download pdf and xls related scenarios and will validate them.

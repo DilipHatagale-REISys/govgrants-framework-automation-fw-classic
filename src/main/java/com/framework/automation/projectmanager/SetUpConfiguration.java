@@ -1,7 +1,7 @@
 package com.framework.automation.projectmanager;
 
 import com.framework.automation.payloads.*;
-import com.testingblaze.register.EnvironmentFactory;
+import com.helperPackage.register.EnvironmentFactory;
 
 public class SetUpConfiguration {
     public static String defaultRetrieveEndPoint = EnvironmentFactory.getEnvironmentUrl()+"/services/apexrest/frameworkAPIRetrieve";

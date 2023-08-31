@@ -10659,7 +10659,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    When I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}"
     When I click on "Edit" icon for "{Framework_recordUsed:NewRecordForTheErrorMesaageDisplayed}" inside table
     When I navigate to "Overview" sub tab

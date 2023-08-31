@@ -1,11 +1,11 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.govgrants;
+import com.helperPackage.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.controller.TestingBlazeGlobal;
-import com.testingblaze.objects.Elements;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.controller.TestingBlazeGlobal;
+import com.helperPackage.objects.Elements;
+import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -3425,6 +3425,11 @@ public class PageLayoutPage extends GovGrantsManager {
                 break;
             case "BLOCK QUOTE":
                 if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//blockquote//p[text()='" + value + "']"))) {
+                    flag = true;
+                }
+                break;
+            case "DELETED TEXT":
+                if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//del[text()='" + value + "']"))) {
                     flag = true;
                 }
                 break;

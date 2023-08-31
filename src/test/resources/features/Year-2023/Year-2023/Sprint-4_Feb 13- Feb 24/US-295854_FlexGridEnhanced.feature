@@ -904,7 +904,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @297751 @dilip
   Scenario: To verify when sort direction of data type-standard field is set in ascending order and refreshes the page then records should be in ascending order for data type-standard field (PM)
@@ -959,7 +959,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I refresh the page
-    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @297826 @dilip
   Scenario: To verify when sort direction of data type-Text is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Text(Admin)
@@ -1020,7 +1020,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1273,7 +1273,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableIDForSPI---" flex table for "1" record
     And I navigate to back
     And I refresh the page
-    Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see "up" arrow is displayed inside "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @297851 @dilip
   Scenario: To verify when sort direction of data type-Lookup is set in ascending order and refreshes the page then records should be in ascending order for data type-Lookup (Admin)
@@ -1348,7 +1348,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1403,7 +1403,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1417,7 +1417,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,CloseoutLiquidationDays__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297866 @dilip
+  @297866 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Number is set in ascending order and refreshes the page then records should be in ascending order for data type-Number (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1454,7 +1454,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1470,7 +1470,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297870 @dilip
+  @297870 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1509,7 +1509,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1523,7 +1523,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetPeriodStartDate__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297873 @dilip
+  @297873 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1582,7 +1582,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297878 @dilip
+  @297878 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-date & time(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1639,7 +1639,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297882 @dilip
+  @297882 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-date & time is set in ascending order and refreshes the page then records should be in ascending order for data type-date & time(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1676,7 +1676,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1730,7 +1730,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1744,7 +1744,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297888 @dilip
+  @297888 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Percentage is set in ascending order and refreshes the page then records should be in ascending order for data type-Percentage(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -1879,7 +1879,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Project Period" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
-  @297908 @297909 @dilip
+  @297908 @297909 @dilip @Bug-344935 @wip
   Scenario Outline: To verify when sort direction of data type-Checkbox is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Checkbox(Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1897,7 +1897,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1952,7 +1952,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -1966,7 +1966,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | ADMIN | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,FinalFiscalReportCreated__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
       | PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,FinalFiscalReportCreated__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
-  @297913 @dilip
+  @297913 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Checkbox is set in ascending order and refreshes the page then records should be in ascending order for data type-Checkbox(SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2025,7 +2025,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297916 @dilip
+  @297916 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Email is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Email (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2082,7 +2082,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297919 @dilip
+  @297919 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Email is set in ascending order and refreshes the page then records should be in ascending order for data type-Email (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2121,7 +2121,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2156,7 +2156,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2173,7 +2173,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       #| PM    | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,TotalObligatedAmount__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
 
-  @297921 @dilip
+  @297921 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Currency (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2212,7 +2212,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | Flex Table:General                  | Enable Pagination   | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Table:General                  | Enable Page Size    | true           | ActiveGrantsGrid      |                           |                            |
       | Flex Grid:General                   | Display Field Names | <newFieldsApi> | ActiveGrantsGrid      |                           |                            |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -2226,7 +2226,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
       | PM   | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c,TotalObligatedAmount__c | Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,AmountAwardedToDate__c,Status__c |
 
 
-  @297929 @dilip
+  @297929 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Currency is set in ascending order and refreshes the page then records should be in ascending order for data type-Currency (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2285,7 +2285,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297932 @dilip
+  @297932 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-URL is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-URL (SPI)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2344,7 +2344,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
 
-  @297935 @dilip
+  @297935 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-URL is set in ascending order and refreshes the page then records should be in ascending order for data type-URL (spi)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -3113,8 +3113,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
 
   @298008 @dilip
@@ -3133,8 +3133,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @298009 @dilip
@@ -3152,8 +3152,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 1 of"
 
   @298010 @dilip
@@ -3171,8 +3171,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 1 of"
 
   @298011 @dilip
@@ -3190,9 +3190,9 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
-    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 1 of"
 
   @298013 @dilip
@@ -3211,8 +3211,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "10" seconds
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
 
   @298014 @dilip
@@ -3231,8 +3231,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "10" seconds
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
 
   @298015 @dilip
@@ -3252,8 +3252,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I pause execution for "10" seconds
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @298016 @dilip
@@ -3272,10 +3272,10 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "10" seconds
-    Then I do not see list contain "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableID---"
 
   @298017 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset Table then table records should set back to default value (PM)
@@ -3293,10 +3293,10 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "1" seconds
-    Then I do not see list contain "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableID---"
 
   @298018 @dilip
   Scenario: To verify when user searches something in quick search and clicks on Reset Table then table records should set back to default value (SPI)
@@ -3315,9 +3315,9 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
-    Then I do not see list contain "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @298019 @dilip
   Scenario: To verify when user changes page size then Click ‘Reset Table’ under the menu icon to refresh the table’s default values. ' message should display (Admin)
@@ -3612,8 +3612,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3632,8 +3632,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3652,8 +3652,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3673,8 +3673,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3693,8 +3693,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3713,8 +3713,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
       | Table has been reset. |
 
@@ -3734,8 +3734,8 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
-    And I click on menu inside "Grants - All"
-    And I select "Reset Table" from parallel lines dropdown of "Grants - All"
+    When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
+    When I click on "Reset Table" button inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     Then I can see the following message in table :
       | Table has been reset. |
 

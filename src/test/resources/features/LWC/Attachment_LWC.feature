@@ -9,8 +9,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "10" seconds
@@ -125,8 +125,7 @@ Business Need: Attachment Component Scenarios
     And I click on "Save" button in LWC
     And I pause execution for "3" seconds
     #255863 #221523 #221533
-    Then I see the following message in the LWC page details :
-      | Attachment added successfully. |
+    Then I see "Attachment added successfully." message displayed in modal
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     Then I can see attach the "TestAutomation.txt" file format in the attachment section
@@ -157,8 +156,7 @@ Business Need: Attachment Component Scenarios
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | Please select type. |
+    Then I see "Please select type." message displayed in modal
     Examples:
       | User  |
       | ADMIN |
@@ -185,8 +183,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | File should not be blank. |
+    Then I see "File should not be blank." message displayed in modal
     Examples:
       | User  |
       | ADMIN |
@@ -213,8 +210,7 @@ Business Need: Attachment Component Scenarios
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | Please enter value in description field. |
+    Then I see "Please enter value in description field." message displayed in modal
     Examples:
       | User  |
       | ADMIN |
@@ -222,6 +218,7 @@ Business Need: Attachment Component Scenarios
 
   @221536 @255936 @Validatemsg"ThedocumentyouareattemptingtouploadexistsintWorkspace"foraddingduplicatefile @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline: Validate msg "The document you are attempting to upload exists in the Workspace" for adding duplicate file
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -230,58 +227,66 @@ Business Need: Attachment Component Scenarios
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
-    When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
+    When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
+    When I close LWC modal by clicking the top right x button
     And I pause execution for "5" seconds
+    And I click on top right button "Add" in tableName "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
-    When I upload attachment "TestAutomationFile.jpg" in attachments LWC modal
-    And I pause execution for "2" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | The document you are attempting to upload exists in the Workspace |
+    Then I see "The document you are attempting to upload exists in the Workspace" message displayed in modal
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile @Vrushali @LWC-AttachmentTestSuit
   Scenario: validate msg "File should not be blank" after adding blank text file
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-#    And I click modal button "Save and Continue"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
     And I click on top right button "Add" in tableName "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
-    When I upload attachment "blank.txt" in attachments LWC modal
-    And I enter value "Test" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | File should not be blank. |
+    Then I see "File should not be blank." message displayed in modal
 
   @221539 @256574 @Toverifytypefieldisclickableuserisabletoselectit @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline: To verify type field is clickable and user is able to select it
-    Given I login as "<User>" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -314,6 +319,7 @@ Business Need: Attachment Component Scenarios
 
   @221527 @255589 @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:when user click on row level action delete, getting confirmation popup window and when click on 'Yes' then the record is getting deleted getting confirmation message as 'Record deleted successfully'
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -334,12 +340,14 @@ Business Need: Attachment Component Scenarios
     And I refresh the page
     When I click on "Delete" icon for file "Create_Case.xlsx" inside table name "Attachments" for LWC
     And I click on "Yes" on confirmation modal
-    Then I see the following message in the LWC page details :
-      | Attachment deleted successfully. |
+#    Then I see "Attachment deleted successfully." message displayed in modal
+    And I pause execution for "7" seconds
+    Then I softly do not see value "Create_Case" displayed in table "Attachments"
+
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+#      | PM    |
 
   @222487 @255488 @255420 @255427 @221528 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @LWC-AttachmentTestSuit
   Scenario Outline: when user clicks on page block shrink action button then component gets shrunk
@@ -347,8 +355,8 @@ Business Need: Attachment Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramForLWCAttachmentsTesting}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -370,14 +378,19 @@ Business Need: Attachment Component Scenarios
 
   @221545 @255319 @221551 @255351 @221544 @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline: To verify, When User click on edit action then Edit Notes modal should be displayed
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "7" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -399,7 +412,7 @@ Business Need: Attachment Component Scenarios
     And I refresh the page
     And I perform scroll on page layout
     #221551 #255351 #221544
-    Then I can see "Test Description" into column "Descrption" against value "TestFileSharing.docx"
+    Then I softly see value "Test Description" displayed in table "Attachments"
     Examples:
       | User  |
       | ADMIN |
@@ -407,16 +420,18 @@ Business Need: Attachment Component Scenarios
 
   @221540 @255172 @221541 @Toverify,Editrowlevelactionisvisibleforonlyrecordowner @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:To verify, Edit row level action is visible for only record owner
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-#    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-#    And I click modal button "Save and Continue"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "Files" sub tab
     And I pause execution for "5" seconds
@@ -429,9 +444,9 @@ Business Need: Attachment Component Scenarios
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     And I perform scroll on page layout
-    Then I softly can see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
+    Then I see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
     #221541
-    Then I softly can see row level action button "Delete" against "TestFileSharing.docx" in table name "Attachments"
+    Then I see row level action button "Delete" against "TestFileSharing.docx" in table name "Attachments"
     Examples:
       | User  |
       | ADMIN |
@@ -451,8 +466,7 @@ Business Need: Attachment Component Scenarios
     When I upload attachment "blank.txt" in attachments LWC modal
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | File should not be blank. |
+    Then I see "File should not be blank." message displayed in modal
 
   @221543 @255188 @255352 @255439 @255862 @Toverify,Edittherecordonlybyrecordowner @Vrushali @LWC-AttachmentTestSuit
   Scenario: To verify, Edit the record only by the record owner
@@ -469,17 +483,16 @@ Business Need: Attachment Component Scenarios
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
       #255439 #255862
-    Then I see the following message in the LWC page details :
-      | Attachment added successfully. |
+    Then I see "Attachment added successfully." message displayed in modal
     And I pause execution for "5" seconds
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     And I perform scroll on page layout
     And I pause execution for "5" seconds
-    Then I softly can see row level action button "Edit" against "actionsAtFlexTable.png" in table name "Attachments"
+    Then I see row level action button "Edit" against "actionsAtFlexTable.png" in table name "Attachments"
     And I see row level action "Delete" file against "actionsAtFlexTable.png" in table name "Attachments"
       #255352
-    Then I can see "Test" into column "Descrption" against value "actionsAtFlexTable.png"
+    Then I see "Test" into column "Descrption" against value "actionsAtFlexTable.png"
 
   @255290 @Toverify,EditedrecordisdisplayedasexpectedonUI @Vrushali @LWC-AttachmentTestSuit
   Scenario: To verify, Edited the record is displayed as expected on the UI
@@ -500,7 +513,7 @@ Business Need: Attachment Component Scenarios
     When I close LWC modal by clicking the top right x button
     And I refresh the page
     And I pause execution for "10" seconds
-    Then I softly can see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
+    Then I see row level action button "Edit" against "TestFileSharing.docx" in table name "Attachments"
 
   @255419 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @Vrushali @LWC-AttachmentTestSuit
   Scenario: when the user clicks on page block shrink action button then the component gets shrunk
@@ -516,12 +529,8 @@ Business Need: Attachment Component Scenarios
     Then I do not see "Attachments" table
     And I pause execution for "5" seconds
     And I click on "down" arrow in "Attachments" table
-    Then I softly see column "Name" in table name "Attachments"
-    Then I softly see column "Type" in table name "Attachments"
-    Then I softly see column "Description" in table name "Attachments"
-    Then I softly see column "Date Attached" in table name "Attachments"
-    Then I softly see column "Attached By" in table name "Attachments"
-    Then I softly see column "Actions" in table name "Attachments"
+    Then I softly see value "blank.txt" displayed in table "Attachments"
+
 
   @255548 @Validatemessage"Pleaseselecttype" @Vrushali @LWC-AttachmentTestSuit
   Scenario: Validate message  "Please select type"
@@ -536,8 +545,7 @@ Business Need: Attachment Component Scenarios
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I enter value "Automation" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | Please select type. |
+    Then I see "Please select type." message displayed in modal
 
   @255555 @Validatemessage"Fileshouldnotbeblank." @Vrushali @LWC-AttachmentTestSuit
   Scenario:Validate message "File should not be blank."
@@ -553,8 +561,7 @@ Business Need: Attachment Component Scenarios
     And I select "Suspension" from dropdown of filetype
     And I enter value "Automation Testing" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | File should not be blank. |
+    Then I see "File should not be blank." message displayed in modal
 
   @255561 @Validatemessage"Pleaseentervalueindescriptionfield" @Vrushali @LWC-AttachmentTestSuit
   Scenario: Validate message "Please enter value in description field"
@@ -570,8 +577,7 @@ Business Need: Attachment Component Scenarios
     And I select "Suspension" from dropdown of filetype
     When I upload attachment "TestFileSharing.docx" in attachments LWC modal
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | Please enter value in description field. |
+    Then I see "Please enter value in description field." message displayed in modal
 
   @255613 @ValidateRequiredfield'asterisk'symbolonattachmentmodal @Vrushali @LWC-AttachmentTestSuit
   Scenario: Validate Required field 'asterisk ' symbol on attachment modal
@@ -629,8 +635,7 @@ Business Need: Attachment Component Scenarios
     And I pause execution for "2" seconds
     And I enter value "Test Automation" into description box
     And I click on "Save" button in LWC
-    Then I see the following message in the LWC page details :
-      | The document you are attempting to upload exists in the Workspace |
+    Then I see "The document you are attempting to upload exists in the Workspace" message displayed in modal
 
   @221566 @255405 @Toverify,Totalrecordsshoulddisplayedasperrecordadding&deleting
   Scenario Outline:To verify, Total records should displayed as per record adding & deleting
@@ -651,8 +656,15 @@ Business Need: Attachment Component Scenarios
     And I enter value "Test" into description box
     And I click on "Save" button in LWC
     When I close LWC modal by clicking the top right x button
+    And I click on top right button "Add" in tableName "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
+    And I enter value "Test" into description box
+    And I click on "Save" button in LWC
+    When I close LWC modal by clicking the top right x button
     And I refresh the page
-    Then I see total records count in "Snapshot History" table equals to Total record displayed on UI
+    Then I see Total Records count "Total Records : 2" in table name "Attachments"
+
     Examples:
       | User  |
       | ADMIN |

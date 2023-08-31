@@ -1,9 +1,11 @@
 package com.framework.automation.projectmanager;
 
 
-import com.testingblaze.controller.UsersController;
-import com.testingblaze.register.EnvironmentFactory;
+import com.helperPackage.controller.UsersController;
+import com.helperPackage.misclib.Properties_Logs;
+import com.helperPackage.register.EnvironmentFactory;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -153,9 +155,9 @@ public class UsersAndURL implements UsersController {
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
         password.put("ADMIN", "Automation@2000");
-        password.put("EXE", "FrameworkAuto@2022");
+        password.put("EXE", "FrameworkAuto@2004");
         password.put("PM", "Automation@2001");
-        password.put("FO", "Automation@2023");
+        password.put("FO", "Automation@2003");
         password.put("SPI", "AUTOMATION@2002");
         password.put("PM1", "FrameworkAuto@2024");
         if (userType.toUpperCase() != null) {
@@ -164,4 +166,23 @@ public class UsersAndURL implements UsersController {
             return password.get("ADMIN");
         }
     }
+
+    public Map<String, String> getUserCredentialsForMailNotification(String userType) {
+        Map<String, String> credentials = new HashMap();
+        String userAndPassword;
+        String env = System.getProperty("env");
+        if (env == null || "".equalsIgnoreCase(env)) {
+            env = "QA";
+        }
+        try {
+            userAndPassword = (new Properties_Logs()).ReadPropertyFile("mail.properties", env.toUpperCase() + userType.toUpperCase());
+            credentials.put("username", userAndPassword.split(":")[0]);
+            credentials.put("password", userAndPassword.split(":")[1]);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Property file mail.properties is not present");
+        }
+        return credentials;
+    }
+
 }

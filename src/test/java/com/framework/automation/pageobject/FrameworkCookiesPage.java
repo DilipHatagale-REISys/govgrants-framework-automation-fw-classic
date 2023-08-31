@@ -1,10 +1,10 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.govgrants;
+import com.helperPackage.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.objects.Elements;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.objects.Elements;
+import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -55,7 +55,8 @@ public class FrameworkCookiesPage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//div/span[@class='pull-right table-pager ng-scope']//span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
                     " //div[@id='" + tableId + "']//div//span[@class='pull-right table-pager ng-scope']/span[@class='bold ng-binding' and contains(text(),'" + textContains + "')] |" +
                     " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo' and contains(text(),'" + textContains + "')] |" +
-                    " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo']//*[contains(text(),'" + textContains + "')]"))) {
+                    " //div[@id='" + tableId + "']//div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']//span[@ng-bind='pageInfo']//*[contains(text(),'" + textContains + "')] |" +
+                    " //div[@id='" + tableId + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[contains(text(),'" + textContains + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -250,6 +251,29 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding::panel[@table-meta-data='tableMetaData']//font[@style='vertical-align: inherit;' and contains(text(),'" + listViewName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void iClickOnCloseButtonWithHeader(String button, String tableHeader) {
+        I.amPerforming().click().on(ByUsing.xpath("//p[text()='" + tableHeader + "']/preceding-sibling::button[@aria-label='" + button + "']"));
+    }
+
+    public void displayProgramDetailsValueWithField(String usage, String field, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(valueDisplayedUderField(field, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(valueDisplayedUderField(field, value)).isFalse();
+        }
+    }
+
+    private Boolean valueDisplayedUderField(String field, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='fieldExpectedFunding__c']/dl//span[text()='" + field + "']/ancestor::dt/following-sibling::dd//span[contains(text(),'" + value + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

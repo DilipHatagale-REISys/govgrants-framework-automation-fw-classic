@@ -1,9 +1,9 @@
 package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.objects.Elements;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.objects.Elements;
+import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -32,7 +32,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         boolean flag = false;
         WebElement textAlligened = I.amPerforming().getElementReference().of(By.xpath("//div[@id='" + tableId + "']/div[@class='row ng-scope']/div/span[@ng-bind='totalRecords' and contains(text(),'" + text + "')] |" +
                 " //div[@id='" + tableId + "']/descendant::div[@class='table-pager col-md-4 col-sm-4 col-xs-4 ng-scope']/span[@ng-bind='pageInfo' and contains(text(),'" + text + "')] |" +
-                " //div[@id='" + tableId + "']/div[@class='row']/div/div/table/thead/tr/th/div/input[@aria-label='" + text + "']"));
+                " //div[@id='" + tableId + "']/div[@class='row']/div/div/table/thead/tr/th/div/input[@aria-label='" + text + "'] | //span[contains(text(),'" + text + "')] |" +
+                " //div[@id='" + tableId + "']/..//span[contains(text(),'" + text + "')]"));
         try {
             String rightLeftCentre = textAlligened.getCssValue("text-align");
             System.out.println("-------------" + textAlligened.getCssValue("text-align"));
@@ -190,8 +191,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 " //div[@id='" + tabeleId + "']/div/div/span/select[@id='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + buttonName + "'] |" +
-                "//div[@id='"+tabeleId+"']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
-                "//div[@id='"+tabeleId+"']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='"+buttonName+"']"));
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "']"));
     }
 
     public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {

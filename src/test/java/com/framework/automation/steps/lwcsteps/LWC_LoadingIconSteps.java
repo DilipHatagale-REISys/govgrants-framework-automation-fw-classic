@@ -1,8 +1,8 @@
 package com.framework.automation.steps.lwcsteps;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;

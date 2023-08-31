@@ -1,9 +1,9 @@
 package com.framework.automation.steps;
 
-import com.automation.rei.handlers.govgrants;
+import com.helperPackage.handlers.govgrants;
 import com.framework.automation.pageobject.FrameworkCookiesPage;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
@@ -87,12 +87,22 @@ public class FrameworkCookiesSteps {
 
     @And("I click on {string} from parallel lines dropdown of Menu {string}")
     public void iClickOnFromParallelLinesDropdownOf(String action, String tableId) {
-        frameworkCookiesPage.iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(action,tableId);
+        frameworkCookiesPage.iClickOnRefreshResetTableOrDownloadAsPDFinsideMenuIcon(action, tableId);
     }
 
     @Then("^I (see|do not see) list view \"([^\"]*)\" displayed inside table \"([^\"]*)\"$")
     public void iSeeListViewDisplayedInsideTable(String usage, String listViewName, String tableId) {
 
+    }
+
+    @And("I click on \"([^\"]*)\" button inside tabel header \"([^\"]*)\"$")
+    public void iClickOnButtonInsideTabelHeader(String button, String tableHeader) {
+        frameworkCookiesPage.iClickOnCloseButtonWithHeader(button, tableHeader);
+    }
+
+    @Then("^I (see|do not see) field \"([^\"]*)\" as \"([^\"]*)\" inside program information$")
+    public void iSeeFieldAsInsideProgramInformation(String usage,String field, String value) {
+frameworkCookiesPage.displayProgramDetailsValueWithField(usage, field, value);
     }
 }
 

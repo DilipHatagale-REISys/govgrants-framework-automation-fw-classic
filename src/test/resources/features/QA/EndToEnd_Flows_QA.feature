@@ -592,8 +592,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "AD-REI1-01"
-    When I click on "View" icon for "AD-REI1-01" inside table
+    When I perform quick search for "GT-REI1-00001"
+    When I click on "View" icon for "GT-REI1-00001" inside table
     When I navigate to "Subawards" sub tab
     When I click on "View" icon for "AD-REI1-01" inside table
     When I navigate to "Management" sub tab
@@ -959,8 +959,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "AD-REI1-01"
-    When I click on "View" icon for "AD-REI1-01" inside table
+    When I perform quick search for "GT-REI1-00001"
+    When I click on "View" icon for "GT-REI1-00001" inside table
     When I navigate to "Subawards" sub tab
     When I perform quick search for "AD-REI1-01" in "---program:-:subawardsTableId---" panel
     When I click on "View" icon for "AD-REI1-01" inside table
