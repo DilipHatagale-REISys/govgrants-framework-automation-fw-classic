@@ -164,7 +164,7 @@ Business Need: New API related scenarios temporary
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I pause execution for "180" seconds
     #Then I see "Logout" in current url
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed

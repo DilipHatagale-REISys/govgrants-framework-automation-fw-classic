@@ -470,4 +470,9 @@ public class FlexTableSteps {
     public void iDoNotSeeArrowInsideTableId(String usage, String headernameOrArrow, String tableid) {
         flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrow,tableid);
     }
+
+    @Then("^I (see|do not see) table id \"([^\"]*)\" flex table render in modal view$")
+    public void iSeeTableIdFlexTableRenderInModalView(String usage, String tableid) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableid);
+    }
 }

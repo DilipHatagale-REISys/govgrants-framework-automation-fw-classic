@@ -15,7 +15,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I do not see step progress bar is displayed
 
@@ -35,7 +35,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I do not see step progress bar is displayed
 
@@ -55,7 +55,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
@@ -108,7 +108,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on "fa fa-pencil" icon in flex table for first draft record
     And I pause execution for "60" seconds
     Then I see status in Progress-bar is "Created" and is "Blue"
 

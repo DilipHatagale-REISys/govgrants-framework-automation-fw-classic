@@ -2118,14 +2118,55 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
+  @338483
+  Scenario: Pagination - Admin- Config- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    Then I do not see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
+
+  @338485
+  Scenario: Pagination - PM- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    Then I do not see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
+
+  @338487
+  Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
+
   @338489
   Scenario: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -2135,10 +2176,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - PM- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -2148,10 +2191,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - SPI- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -4745,24 +4790,205 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
 
-    @338563
-    Scenario: Mini-layout- Admin- Config- When we hover on any relational field Mini layout (having detailed info) will be displayed on UI
-      When I login to "As a Grantor" app as "Admin" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-      And I click on "Save and Continue" in the page details
-      And I pause execution for "8" seconds
-      When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-      And I click on "Save" in the page details
-      And I pause execution for "7" seconds
-      And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+  @338566
+  Scenario: Flex table-Total Records count-Admin-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    When I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338567
+  Scenario: Flex table-Total Records count-PM-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    When I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338570
+  Scenario: Flex table-Total Records count-Admin-UI_To verify that on deleting record, Total Records count get changed i.e. decreased
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    And I select value inside table "---program:-:programTableDivId---" is "50"
+    When I click on "Delete" icon for "Automation Program For Test" inside table
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338571
+  Scenario: Flex table-Total Records count-PM-UI_To verify that on deleting record, Total Records count get changed i.e. decreased
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    And I select value inside table "---program:-:programTableDivId---" is "50"
+    When I click on "Delete" icon for "Automation Program For Test" inside table
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338573
+  Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338574
+  Scenario: Flex table-Auto Index Behavior-PM-UI_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338575
+  Scenario: Flex table-Auto Index Behavior-SPI-UI_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "1" to "5" Record Selection inside table id "toggleFlexTableGrantsList"
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338581
+  Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338583
+  Scenario: Flex table-Auto Index Behavior-PM-UI_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338584
+  Scenario: Flex table-Auto Index Behavior-SPI-UI_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338462
+  Scenario: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view

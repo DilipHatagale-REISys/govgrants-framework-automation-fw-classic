@@ -2766,7 +2766,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I refresh the page
@@ -2784,7 +2784,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I refresh the page
@@ -2821,7 +2821,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     And I click on "View" icon in "---program:-:DataTableEnhanceTableIDforContactsTable---" flex table for "1" record
     And I click modal button "Close"
@@ -2840,7 +2840,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record

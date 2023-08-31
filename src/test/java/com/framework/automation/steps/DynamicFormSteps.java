@@ -113,11 +113,7 @@ public class DynamicFormSteps {
 
     @And("I click on {string} icon in flex table for first draft record")
     public void iClickOnIconInFlexTableForFirstDraftRecord(String iconButton) {
-        if (iconButton.equalsIgnoreCase("View")) {
-            I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-eye']"));
-        } else if (iconButton.equalsIgnoreCase("Edit")) {
-            I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='fa fa-pencil']"));
-        }
+        I.amPerforming().click().on(ByUsing.xpath("//tr[@ng-repeat='row in tableData']/td/following::td[@class='actionColumn pdf-wrap-td ng-scope']/div/span//i[@class='" + iconButton + "']"));
     }
 
     @Then("I (do not see) \"([^\"]*)\" modal window is open$")

@@ -1339,4 +1339,23 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfTableRenderInModalWindow(String usage, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableid)).isFalse();
+        }
+    }
+
+    private boolean assertIfTableDisplayedInModal(String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }
