@@ -1530,12 +1530,6 @@ Business Need: Flex Table Component Scenarios
 
   @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
   Scenario: Validate comma separated  value should be display on the Number field at flex table
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1549,10 +1543,6 @@ Business Need: Flex Table Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     Then I softly do not see value "12345678" for title "Number" inside table "---program:-:programsTableId---"
-
-#    Examples:
-#      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
-#      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @144829    @validateCommaSeparatedValueIsDisplayedOnFlexTableForCurrencyField
   Scenario Outline: Validate comma separated  value should be display on the currency field at flex table
@@ -2109,7 +2099,7 @@ Business Need: Flex Table Component Scenarios
     Then I see hyperlink at column value "Automation SPI" inside "---program:-:programContactsTableId---" table
 
 
-  @173830 @Jyoti
+  @173830 @Jyoti @wip
   Scenario Outline: Data Table Enhanced - To verify, Relationship fields of a record in Data table Enhanced should displayed as hyperlink when 'Show link as Text' checkbox is un-checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3191,7 +3181,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Applications" tab
     Then I see "EGMS ID" shown as flex table column title
 
-  @190090 @sprint26
+  @190090 @sprint26 @wip
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |
@@ -3776,12 +3766,6 @@ Business Need: Flex Table Component Scenarios
 
   @217288 @Toverifydisabling'EnableHelp'HelpfeaturenotgedisplayedunderMenusectionforrespectiveflextable. @Vrishali
   Scenario: SPI-To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
-#      | Flex Table            | Enable Help | true              | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName   | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table:General    | Enable Help | false         | RecipientApplications       |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab

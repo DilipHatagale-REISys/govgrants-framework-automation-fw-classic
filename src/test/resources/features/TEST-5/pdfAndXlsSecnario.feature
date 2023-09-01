@@ -88,9 +88,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table            | PDF Render Type     | Block             | ApiGeneratedId:0 |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | PDF Render Type     | Block         | MonitoringScheduleGrantor   |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor   |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | PDF Render Type     | Block         | MonitoringScheduleGrantor |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -107,9 +107,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table            | PDF Render Type     | Block             | ApiGeneratedId:0 |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | PDF Render Type     | Table         | MonitoringScheduleGrantor   |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor   |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | PDF Render Type     | Table         | MonitoringScheduleGrantor |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true          | MonitoringScheduleGrantor |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -121,17 +121,15 @@ Business Need: All pdf and xls related scenario including component and complete
     #Then I see "Subaward ID" on page "1" of "govgrants" pdf file
 
   @49252    @showInPDFFieldAtParentFlexTable-gPlanning
-  Scenario Outline: validate Active status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
+  Scenario: validate Active status in downloaded pdf file after checking check box of show in pdf at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:0 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-      #| Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepTemplates |                           |                            |
-     # | Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | true          | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -144,22 +142,17 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     And I pause execution for "10" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
-    Examples:
-      | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                            |
-      | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c |
 
   @49254    @showInPDFFieldToVerifyFlexTableNotContainAnyListViewAtParentFlexTable-gPlanning
-  Scenario Outline: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
+  Scenario: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | false              | ApiGeneratedId:0 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-      #| Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | false             | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | false          | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepTemplates |                           |                            |
-    #  | Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | false         | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -173,26 +166,20 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "10" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
 
-    Examples:
-      | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                            |
-      | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c |
-
   @49256    @showInPDFFieldToVerifyFlexTableContainMoreThanOneListViewAtParentFlexTable-gPlanning
-  Scenario Outline: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
+  Scenario: validate Activated status in downloaded pdf file after checking check box of Is Master View Field at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Is Master View      | false              | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:1 |
-      #| Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:3 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:4 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Is Master View      | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:3 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true           | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
-      #| Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates |                           |                            |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | ProgramReviewStepTemplates | Name                      | FLV-3855                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepTemplates |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true          | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true          | ProgramReviewStepTemplates | Name                      | FLV-3007                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true          | ProgramReviewStepTemplates | Name                      | FLV-3855                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -206,25 +193,19 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Announcement" on page "1" of "govgrants" pdf file
 
-    Examples:
-      | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                                            |
-      | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c |
-
   @49234    @showInPDFFieldWithOneActiveListViewAndIsmasterViewCheckedAtChildFlexTable-gPlanning
   Scenario: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Active ?            | true               | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:1 |
-    #  | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:4 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Active ?            | true              | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:1 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Active ?            | false          | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
-      | Flex Grid:Flex Table List | Show in PDF         | false          | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
-    #  | Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepPanelTemplates |                           |                            |
-      | Flex Grid:Flex Table List | Is Master View      | true           | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepPanelTemplates |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Active ?            | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
+      | Flex Grid:Flex Table List | Show in PDF         | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
+      | Flex Grid:Flex Table List | Is Master View      | true          | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepPanelTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -240,25 +221,19 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "20" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                      | defaultFieldsApi                                                  |
-#      | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c |
-
   @49236    @showInPDFFieldWithMultipleActiveListViewAndShowInPDFNotCheckedAtChildFlexTable-gPlanning
-  Scenario Outline: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
+  Scenario: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | true               | ApiGeneratedId:0 |
-     # | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:4 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:5 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | true              | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | false          | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
-      | Flex Grid:Flex Table List | Show in PDF         | false          | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
-      | Flex Grid:Flex Table List | Is Master View      | false          | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
-      | Flex Grid:Flex Table List | Is Master View      | true           | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
-     # | Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepPanelTemplates |                           |                            |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepPanelTemplates |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
+      | Flex Grid:Flex Table List | Show in PDF         | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
+      | Flex Grid:Flex Table List | Is Master View      | false         | ProgramReviewStepPanelTemplates | Name                      | FLV-3856                   |
+      | Flex Grid:Flex Table List | Is Master View      | true          | ProgramReviewStepPanelTemplates | Name                      | FLV-3455                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepPanelTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -266,7 +241,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Setup tabs" sub tab
-    When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
+    #When I perform quick search for "1" in "ProgramReviewStepTemplatesFlexToggle" panel
     When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
@@ -274,24 +249,18 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Justification" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                      | defaultFieldsApi                                                  |
-#      | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c |
-
   @49238    @showInPDFFieldWithMultipleActiveListViewAndShowInPDFCheckedAtChildFlexTable-gPlanning
-  Scenario Outline: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
+  Scenario: validate being amended status in downloaded pdf file after making changes at config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      #| Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:4 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:5 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField                        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | false          | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3455                   |
-      | Flex Grid:Flex Table List | Is Master View      | false          | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3455                   |
-      | Flex Grid:Flex Table List | Is Master View      | true           | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3856                   |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3856                   |
-     # | Flex Grid:General         | Display Field Names | <newFieldsApi> | ProgramReviewStepPanelTemplatesFlexToggle |                           |                            |
-      | Flex Table:General        | Enable Export (PDF) | true           | ProgramReviewStepPanelTemplatesFlexToggle |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField                        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | false         | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3455                   |
+      | Flex Grid:Flex Table List | Is Master View      | false         | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3455                   |
+      | Flex Grid:Flex Table List | Is Master View      | true          | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3856                   |
+      | Flex Grid:Flex Table List | Show in PDF         | true          | ProgramReviewStepPanelTemplatesFlexToggle | Name                      | FLV-3856                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepPanelTemplatesFlexToggle |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -299,17 +268,13 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup tabs" sub tab
-    When I perform quick search for "first review" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "first review"
+    #When I perform quick search for "first review" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Description" on page "1" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi                                                      | defaultFieldsApi                                                  |
-#      | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c | Id,PanelName__c,Weight__c,MinimumNumberOfReviewers__c,Required__c |
 
   @49253   @showInPDFFieldWithFlexTableContainsOnlyOneListViewAtParentFlexTable-gPlanning
   Scenario: validate Activated status in downloaded xls file after making changes at config and validating it inside enhanced grid of programs-planning
@@ -374,10 +339,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup tabs" sub tab
-    When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "desc"
+    #When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Test Forms"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Description" in downloaded xls or csv file "govgrants"
 
   @49237   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDFAtChildFlexTable-gPlanning
@@ -399,10 +364,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup tabs" sub tab
-    When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "desc"
+    #When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Test Forms"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Description" in downloaded xls or csv file "govgrants"
 
   @49235   @isMasterViewFieldWithFlexTableContainMOreThanOneListViewInShowInPDFAtChildFlexTable-gPlanning
@@ -428,10 +393,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Setup tabs" sub tab
-    When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "desc"
+    #When I perform quick search for "desc" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Test Forms"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "Agency" in downloaded xls or csv file "govgrants"
 
   @49255   @isMasterViewFieldWithFlexTableDoesNotContainAnyListViewInShowInPDF-gPlanning
@@ -477,8 +442,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Budget Period #" on page "1" of "govgrants" pdf file
 
-
-  @56766    @downloadedPDFFileContainsFormDetailsOnGranteeApplication
+  @56766    @downloadedPDFFileContainsFormDetailsOnGranteeApplication @wip
   Scenario: validate pdf contains form details for grantee application
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantee"
@@ -491,7 +455,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Form" on page "5" of "govgrants" pdf file
 
-  @56524    @PDFShouldGetDownlodedWithThrowingAnyErrorAtGranteeApplicationView
+  @56524    @PDFShouldGetDownlodedWithThrowingAnyErrorAtGranteeApplicationView @wip
   Scenario: validate pdf file getting downloaded without any error and oppotunity overview text is present
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantee"
@@ -566,7 +530,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Organization" on page "1" of "govgrants" pdf file
 
-
   @59061    @downloadAsPDFShouldWorkProperlyAtProgramFlexTable @pass
   Scenario: Validate PDF is getting downloaded correctly at program flex table
     When I login to "As a Grantor" app as "Admin" user
@@ -579,17 +542,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
-
   @59186    @numberFieldShouldDisplayedInDownloadPDFFileAtProgramFlexTable
-  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
+  Scenario: validate value of Number Field should displayed correctly in downloaded pdf file
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-   #   | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -604,10 +564,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "1.00" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                                     | defaultFieldsApi                                                                 |
-#      | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
-
   @59974    @headersOfChildLevelRecordsShouldNotBeBeDisplayedInsidePDF
   Scenario: validate downloaded pdf file should not contain header of child level records after unchecking checkbox of show header panel at child table of enhanced grid
     Given I have "default" configuration as below:
@@ -616,31 +572,29 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Show Header Panel   | false         | TmpGrantorActiveAwardsGrid |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true          | TmpGrantorActiveAwardsGrid |                           |                            |
+      | Flex Table:General    | Show Header Panel   | false         | ProgramReviewStepTemplates |                           |                            |
+      | Flex Table:General    | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
-    Then I cannot see "Test Forms" on page "1" of "govgrants" pdf file
+    Then I cannot see "Review Steps" on page "1" of "govgrants" pdf file
 
   @59360    @AMPMShouldDisplayForDateTimeFieldInsidePDFFileAtEnhancedGrid
-  Scenario Outline: validate AM/PM should display inside downloaded pdf file for DateTime Field At enhanced grid
+  Scenario: validate AM/PM should display inside downloaded pdf file for DateTime Field At enhanced grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-     # | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true           | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -648,24 +602,20 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
-    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedReviewStepID---" by clicking "Edit" :
-      | Project Title | DateTime |
-      | Demo_Title    | 0        |
+    #When I perform quick search for "Automation Internal Announcement for Testing" in "flexGridEnhancedDivId" panel
+#    And I edit the following rows inline in flex table with id "---program:-:flexGridEnhancedReviewStepID---" by clicking "Edit" :
+#      | Project Title | DateTime |
+#      | Demo_Title    | 0        |
     And I refresh the page
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "flexGridEnhancedDivId" panel
+    When I navigate to "Setup tabs" sub tab
+   #When I perform quick search for "Automation Internal Announcement for Testing" in "flexGridEnhancedDivId" panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "PM" on page "28" of "govgrants" pdf file
+    Then I see "SME Review" on page "28" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                            | defaultFieldsApi                                                                                                                                                                                                                                          |
-#      | Name,ProjectTitle__c,DateTime__c,BudgetPeriodEndDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,TotalAdjustedAmount__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
-  @56480    @xlsFileShouldGetDownloadedProperlyForApplicatioBudgetCategoryFlexGrid
+  @56480    @xlsFileShouldGetDownloadedProperlyForApplicatioBudgetCategoryFlexGrid @wip
   Scenario: validating download as XLS is getting downloaded properly at Budget Details period grid
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantee"
@@ -695,7 +645,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on top right button "Associate" in flex table with id "ProgramFundingAccount"
     When I click on parallel lines menu bar with data target value "#toggleFlexTableSelectFundingAccounts"
     And I select "Download as CSV" from parallel lines dropdown of "Funding Accounts "
-    Then I see "Funding Accounts" in downloaded xls or csv file "govgrants"
+    Then I see "Automation PM" in downloaded xls or csv file "govgrants"
 
   @56838    @csvFileShouldGetDownloadedProperlyForDefaultApplicationReviewStep
   Scenario: validate download csv file should get downloaded properly with text containing default application review step
@@ -711,12 +661,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Roles" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRelatedAppReviewStepTemplatesNew"
     And I select "Download as CSV" from parallel lines dropdown of "Default Application Review Steps"
-    Then I see "Default Application Review Steps" in downloaded xls or csv file "govgrants"
+    Then I see "Review Steps" in downloaded xls or csv file "govgrants"
 
-  @56834    @csvFileShouldGetDownloadedProperlyForProgramServiceArea
+  @56834    @csvFileShouldGetDownloadedProperlyForProgramServiceArea @wip
   Scenario: validate download as csv file should get downloaded properly with text containing program service area
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -752,140 +702,108 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "My Late Tasks" in downloaded xls or csv file "govgrants"
 
   @56951   @lookupFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
-  Scenario Outline: validate look up  field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
+  Scenario: validate look up  field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:0 |
-   #   | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | MonitoringScheduleGrantorRiskAssessment |                           |                            |
-     # | Flex Grid:General     | Display Field Names       | <newFieldsApi> | MonitoringScheduleGrantorRiskAssessment |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true          | OrgRiskAssessment  |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I navigate to "Risk Management" content inside "Activities" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#toggleFGridRiskAssessmentGridView"
-    And I select "Download as XLS" from parallel lines dropdown of "Risk Management"
-    Then I see "UnitedHealth Group" in downloaded xls or csv file "govgrants"
-#    Examples:
-#      | newFieldsApi                                                                                                           | defaultFieldsApi                                                                                          |
-#      | id,Name,IssueDate__c,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c | id,Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c |
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#OrgRiskAssessmentFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Organization Risk Assessments - Active"
+    Then I see "Organization Risk Assessments - Active" in downloaded xls or csv file "govgrants"
 
   @56955   @dateFieldShouldDisplayedInDownloadedXLSFileForActiveGrantsRiskAssessment
-  Scenario Outline: validate date field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
+  Scenario: validate date field in downloaded xls file after making changes at config and validating it inside Active grants grid risk assessment grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:0 |
-     # | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | MonitoringScheduleGrantorRiskAssessment |                           |                            |
-     # | Flex Grid:General     | Display Field Names       | <newFieldsApi> | MonitoringScheduleGrantorRiskAssessment |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true          | OrgRiskAssessment  |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
-    When I navigate to "Risk Management" content inside "Activities" subheader on left panel
-    When I click on parallel lines menu bar with data target value "#toggleFGridRiskAssessmentGridView"
-    And I select "Download as XLS" from parallel lines dropdown of "Risk Management"
-    Then I see "05/24/2017" in downloaded xls or csv file "govgrants"
-#    Examples:
-#      | newFieldsApi                                                                                                           | defaultFieldsApi                                                                                          |
-#      | id,Name,IssueDate__c,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c | id,Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,TotalObligatedAmount__c,Status__c |
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    When I click on parallel lines menu bar with data target value "#OrgRiskAssessmentFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Organization Risk Assessments - Active"
+    Then I see "04/24/2022" in downloaded xls or csv file "govgrants"
 
   @78095    @verifyPicklistFieldValueIsShownInDownloadedPDFAtEnhancedGrid-gPlanning @enhancedGrid
-  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at EnhancedGrid - gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-   #   | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+  Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at EnhancedGrid - gPlanning
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Project Grants" on page "1" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+    Then I see "SME Review" on page "1" of "govgrants" pdf file
 
   @78097    @verifyPicklistFieldValueIsShownInDownloadedXLSAtEnhancedGrid-gPlanning @enhancedGrid
-  Scenario Outline: validate a picklist field value is shown in downloaded xls instead of picklist value API name at EnhancedGrid - gPlanning
+  Scenario: validate a picklist field value is shown in downloaded xls instead of picklist value API name at EnhancedGrid - gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-     # | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Export (XLS / CSV) | false              | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
-    Then I see "Project Grants" in downloaded xls or csv file "govgrants"
-
-#    Examples:
-#      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+    Then I see "SME Review" in downloaded xls or csv file "govgrants"
 
   @79169    @verifyPicklistFieldValueIsShownInDownloadedPDFAtProgramFlexTable @flexTable
-  Scenario Outline: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at flex table
+  Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-     # | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-      | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    #  | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
-      | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
+      #| Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Grant" on page "1" of "govgrants" pdf file
+    Then I see "Program Name" on page "1" of "govgrants" pdf file
 
   @79171    @verifyPicklistFieldValueIsShownInDownloadedXLSAtProgramFlexTable @flexTable
   Scenario: validate a picklist field value is shown in downloaded xls instead of picklist value API name at flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Table            | Enable Export (XLS / CSV) | true               | ApiGeneratedId:1 |
-      | Flex Table List       | Filter Clause             | <oldSoqlFilter>    | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+     # | Flex Table List       | Filter Clause             | <oldSoqlFilter>    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Export (XLS / CSV) | true            | Programs           |                           |                            |
-      | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | Programs           |                           |                            |
+    #  | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as XLS" from parallel lines dropdown of "Draft Programs"
-    Then I see "Grant" in downloaded xls or csv file "govgrants"
-
-#    Examples:
-#      | newFieldsApi                                                                                                                    | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
-#      | Name,ProgramName__c,ProgramType__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
+    And I select "Download as XLS" from parallel lines dropdown of "Internal Programs - Draft"
+    Then I see "Program Name" in downloaded xls or csv file "govgrants"
 
   @79176    @verifyPicklistFieldValueIsShownInDownloadedPDFAtHistoryTable-gPlanning @history
   Scenario: validate a picklist field value is shown in downloaded pdf instead of picklist value API name at history table
@@ -894,7 +812,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -927,7 +845,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantor State Program | Name                      | TAB-2623                   |
       | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -963,31 +881,29 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Grant" on page "1" of "govgrants" pdf file
+    Then I see "Program Name" on page "1" of "govgrants" pdf file
 
-   @79742    @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownInDownloadedPDFAtEnhancedGrid-gPlanning @enhancedGrid
-  Scenario Outline: validate if none is selected and saved in picklist from dropdown then blank value is shown in downloaded pdf - EnhancedGrid
+  @79742    @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownInDownloadedPDFAtEnhancedGrid-gPlanning @enhancedGrid
+  Scenario: validate if none is selected and saved in picklist from dropdown then blank value is shown in downloaded pdf - EnhancedGrid
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Is Master View      | true               | ApiGeneratedId:2 |
-      | Flex Table List           | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:3 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:0 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:1 |
+    #  | Flex Table List           | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General         | Display Field Names | <newFieldsApi>  | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Grid:Flex Table List | Show in PDF         | true            | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Is Master View      | true            | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Table List           | Filter Clause       | <newSoqlFilter> | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+ #     | Flex Table List           | Filter Clause       | <newSoqlFilter> | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I click on "Edit" icon for "test Program for automation DND" inside table
+    When I navigate to "Setup tabs" sub tab
+#    When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedReviewStepID---" panel
+#    When I click on "Edit" icon for "test Program for automation DND" inside table
     When I enter value "--None--" into field "GrantType__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
     When I navigate to "Overview" sub tab
@@ -996,10 +912,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     And I pause execution for "5" seconds
     Then I see "" on page "1" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   | newSoqlFilter                                                                                          | oldSoqlFilter                                    |
-#      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c='test Program for automation DND' | RecordType.Name='Grantor' and status__c='Active' |
 
   @77434    @validateDownloadedPDFContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning @flexTableEnhanced
   Scenario: validate Activated status in downloaded pdf file for enhanced data table -planning
@@ -1022,7 +934,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Contacts@1234567890!@#$%^&*()"
     And I download the file
     And I pause execution for "5" seconds
-    Then I see "Active" on page "1" of "govgrants" pdf file
+    Then I see "Name" on page "1" of "govgrants" pdf file
 
   @77472    @validateDownloadedXLSContentIfShowInPDFCheckboxIsCheckedAtFlexTableEnhanced-gPlanning @flexTableEnhanced
   Scenario: validate Activated status in downloaded xls file for enhanced data table -planning
@@ -1042,22 +954,20 @@ Business Need: All pdf and xls related scenario including component and complete
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Contacts@1234567890!@#$%^&*()"
-    Then I see "Active" in downloaded xls or csv file "govgrants"
+    Then I see "Name" in downloaded xls or csv file "govgrants"
 
   @79744    @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownInDownloadedXLSAtEnhancedGrid-gPlanning @enhancedGrid
-  Scenario Outline: validate if none is selected and saved in picklist from dropdown then blank value is shown in downloaded XLS - EnhancedGrid
+  Scenario: validate if none is selected and saved in picklist from dropdown then blank value is shown in downloaded XLS - EnhancedGrid
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:1 |
-      | Flex Grid:Flex Table List | Is Master View      | true               | ApiGeneratedId:2 |
-      | Flex Table List           | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:3 |
+      | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:1 |
+      | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:2 |
+  #    | Flex Table List           | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General         | Display Field Names | <newFieldsApi>  | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Grid:Flex Table List | Show in PDF         | true            | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Grid:Flex Table List | Is Master View      | true            | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Table List           | Filter Clause       | <newSoqlFilter> | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+   #   | Flex Table List           | Filter Clause       | <newSoqlFilter> | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1069,28 +979,21 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Edit" icon for "test Program for automation DND" inside table
     When I enter value "--None--" into field "GrantType__c"
     When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "" in downloaded xls or csv file "govgrants"
 
-#    Examples:
-#      | newFieldsApi                      | defaultFieldsApi                                                                                                                                                                                                                   | newSoqlFilter                                                                                          | oldSoqlFilter                                    |
-#      | ProjectTitle__c,Name,GrantType__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c='test Program for automation DND' | RecordType.Name='Grantor' and status__c='Active' |
-
-
   @77820    @validateDownloadedPDFContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
-  Scenario Outline: validate Activated status in downloaded pdf file for enhanced grid at sidebar - home phase
+  Scenario: validate Activated status in downloaded pdf file for enhanced grid at sidebar - home phase
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:Flex Table List | Show in PDF         | false              | ApiGeneratedId:0 |
-      | Flex Table                | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-    #  | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | configurationCategory     | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid:Flex Table List | Show in PDF         | false             | ApiGeneratedId:0 |
+      | Flex Table                | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF         | true           | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Table:General        | Enable Export (PDF) | true           | TmpMonitoringScheduleGrantor |                           |                            |
-    #  | Flex Grid:General         | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory     | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF         | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+      | Flex Table:General        | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
@@ -1101,10 +1004,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Active" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                                                                                                                                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Status__c,Name,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @77821    @validateDownloadedXLSContentAsStatusIsActiveUnderParentFlexTableForEnhancedGridAtSideBar-gHOME @sidebar
   Scenario: validate Activated status in downloaded xls file for enhanced grid at sidebar - home phase
     Given I have "default" configuration as below:
@@ -1112,9 +1011,9 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Grid:Flex Table List | Show in PDF               | false             | ApiGeneratedId:0 |
       | Flex Grid                 | Enable Export (xls / csv) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Show in PDF               | true          | TmpMonitoringScheduleGrantor | Name                      | FLV-2539                   |
-      | Flex Grid:General         | Enable Export (xls / csv) | true          | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory     | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Show in PDF               | true          | ProgramReviewStepTemplates | Name                      | FLV-2539                   |
+      | Flex Grid:General         | Enable Export (xls / csv) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
@@ -1159,7 +1058,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Contacts@1234567890!@#$%^&*()"
     Then I see "Active" in downloaded xls or csv file "govgrants"
 
-
   @83781    @validatePicklistFieldLabelAtFlexTableInDownloadedPDF-gPlanning @flexTable
   Scenario: validate label of 'Status_c' field inside downloaded PDF at program flex table
     Given I have "default" configuration as below:
@@ -1173,7 +1071,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Status" on page "1" of "govgrants" pdf file
@@ -1191,7 +1089,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "Status" in downloaded xls or csv file "govgrants"
 
   @83930    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout @smoke
@@ -1199,15 +1097,14 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
+    And I click toggle button to select "Closed and Archived Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Announcement Type" on page "1" of "govgrants" pdf file
-
 
   @84591   @verifyDateTimeFieldFormatForLocalAsISTUnderFieldHistoryTableUnderDownloadedPDF @history
   Scenario: validate the date and time format under field history table with respective to IST Local - under downloaded PDF
@@ -1219,7 +1116,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_US  | America/New_York |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     When I login to "As a Grantor" app as "Admin" user
     And I update the locale and timezone related changes:
       | locale | timeZone     |
@@ -1227,8 +1124,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I click on "Menu" in the page details
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
@@ -1248,7 +1145,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_US  | America/New_York |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     When I login to "As a Grantor" app as "Admin" user
     And I update the locale and timezone related changes:
       | locale | timeZone         |
@@ -1256,8 +1153,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -1276,7 +1173,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_US  | America/New_York |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     When I login to "As a Grantor" app as "Admin" user
     And I update the locale and timezone related changes:
       | locale | timeZone       |
@@ -1284,8 +1181,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:ProgramForLocalTesting}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:ProgramForLocalTesting}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -1301,11 +1198,11 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     When I login to "As a Grantor" app as "Admin" user
     When I navigate to "Planning" tab
     When I perform quick search for "Test Program specific for History"
-    When I click on "View Program Details" icon for "Test Program specific for History" inside table
+    When I click on "View" icon for "Test Program specific for History" inside table
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
@@ -1315,97 +1212,75 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "DateandTime" on page "1" of "govgrants" pdf file
 
   @91565    @numberFieldWithNoDecimalShouldDisplayedInDownloadPDFFileAtProgramFlexTable  @flexTable
-  Scenario Outline: validate value of Number Field should displayed correctly in downloaded pdf file
+  Scenario: validate value of Number Field should displayed correctly in downloaded pdf file
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-     # | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true           | Programs           |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "20.0000" on page "25" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-#      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
-
-
   @91691   @validateDollarSymbolAtCurrencyFieldTotalInPdfAtFlexTable-gPlanning
-  Scenario Outline:  validate dollar symbol in relational field is displayed at program flex table dowloaded pdf-programs
+  Scenario:  validate dollar symbol in relational field is displayed at program flex table dowloaded pdf-programs
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table List       | Show in PDF         | false              | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-    #  | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-      | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:4 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Show in PDF         | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+     # | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF         | true            | Programs           | Name                      | FLV-1837                   |
-      | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
-    #  | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
-      | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF         | true          | Programs           | Name                      | FLV-1837                   |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
+     # | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "$5,000" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                           | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                           | oldSoqlFilter                                                                                                             |
-#      | Name,ProgramName__c,Account__r.AnnualRevenue,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c like '%Created mode only%' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
-
   @91692   @validateDollarSymbolAtCurrencyFieldTotalInxlsAtFlexTable-gPlanning
-  Scenario Outline:  validate dollar symbol in relational field is displayed at program flex table downloaded xls-programs
+  Scenario:  validate dollar symbol in relational field is displayed at program flex table downloaded xls-programs
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-      | Flex Table List       | Show in PDF               | false              | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (xls / csv) | true               | ApiGeneratedId:1 |
-    #  | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:2 |
-      | Flex Table List       | Filter Clause             | <oldSoqlFilter>    | ApiGeneratedId:4 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Show in PDF               | false             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (xls / csv) | true              | ApiGeneratedId:1 |
+     # | Flex Table List       | Filter Clause             | <oldSoqlFilter>    | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show in PDF               | true            | Programs           | Name                      | FLV-1837                   |
-      | Flex Table:General    | Enable Export (xls / csv) | true            | Programs           |                           |                            |
-    #  | Flex Table:General    | Display Field Names       | <newFieldsApi>  | Programs           |                           |                            |
-      | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show in PDF               | true          | Programs           | Name                      | FLV-1837                   |
+      | Flex Table:General    | Enable Export (xls / csv) | true          | Programs           |                           |                            |
+   #  | Flex Table List       | Filter Clause             | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as CSV" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as CSV" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "$5,000" in downloaded xls or csv file "govgrants"
 
-#    Examples:
-#      | newFieldsApi                                           | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                           | oldSoqlFilter                                                                                                             |
-#      | Name,ProgramName__c,Account__r.AnnualRevenue,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c like '%Created mode only%' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
-
-
   @92065    @validateCurrencyFieldWithNoDecimalValueAtProgramFlexTableUnderDownloadedPDF @flexTable
-  Scenario Outline: validate if we enter decimal value in non-decimal currency field then non-decimal value should get saved and displayed correctly in flex table downloaded pdf
+  Scenario: validate if we enter decimal value in non-decimal currency field then non-decimal value should get saved and displayed correctly in flex table downloaded pdf
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
-      | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    #  | Flex Table List       | Filter Clause       | <oldSoqlFilter>    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-   #   | Flex Table:General    | Display Field Names | <newFieldsApi>  | Programs           |                           |                            |
-      | Flex Table:General    | Enable Export (PDF) | true            | Programs           |                           |                            |
-      | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | Programs           |                           |                            |
+    #  | Flex Table List       | Filter Clause       | <newSoqlFilter> | Programs           | Name                      | FLV-1837                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1418,14 +1293,10 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "$40,000" on page "1" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi                                  | defaultFieldsApi                                                                                                 | newSoqlFilter                                                                                                                                                                                    | oldSoqlFilter                                                                                                             |
-#      | Name,ProgramName__c,FundedAmount__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') and ProgramName__c = 'Test program for automation - Created mode only' | RecordType.Name = 'Internal Program' and Status__c IN ( 'Created','Change Requested','Submitted for Approval','Approved') |
 
   @70096    @verifyDownloadingOfTemplateFile @SheetJS
   Scenario: Validate Template file is getting downloaded or not on download button click inside download and upload wizard modal.
@@ -1448,7 +1319,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table List       | Show in PDF | false             | ApiGeneratedId:0 |
-    Given I seGiven I setup test configuration as below:
+    Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table List       | Show in PDF | true          | ActiveFundingOpportunities | Name                      | FLV-2399                   |
     When I login to "As a Grantor" app as "Admin" user
@@ -1468,7 +1339,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Grants" tab
     When I navigate to "Test Forms" content inside "Manage Grants, Awards & Amendments" subheader on left panel
     When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantorActiveAwards"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Test Forms" on page "1" of "govgrants" pdf file
@@ -1593,11 +1464,9 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
-   #   | Page Tabs Config      | Skip for Export | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2626                   |
-    #  | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantor State Program | Name                      | TAB-980                    |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -1620,7 +1489,6 @@ Business Need: All pdf and xls related scenario including component and complete
     And I download the file
     And I pause execution for "5" seconds
     Then I see "Loan" on page "5" of "govgrants" pdf file
-
 
   @105416    @validateDollarSymbolInDownloaedDFAtFlexTableEnhanced-gPlanning @flexTableEnhanced
   Scenario: validate dollar sign in downloaded pdf file for enhanced data table -planning
@@ -1683,14 +1551,13 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as PDF" from parallel lines dropdown of "Field History"
@@ -1727,14 +1594,13 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:programForFundedAmount}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
+    When I click on "View" icon for "{Framework_recordUsed:programForFundedAmount}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
     And I pause execution for "2" seconds
     Then I see "Test Page Block1" on page "1" of "govgrants" pdf file
-
 
   @116063    @verifyThatDollarSymbolIsDisplayedInsideXLSDownloadedForDataTableEnhanceProgramContacts
   Scenario: validate dollar symbol in enhanced data table displayed under downloaded XLS
@@ -1769,15 +1635,13 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "QA Team Announcement 1" on page "1" of "govgrants" pdf file
 
   @118934    @verifyMaskedValuesDisplayedInsidePDFByHidingValuesUsingHideCellJSONAtEnhancedGrid-EGrid @enhancedGrid
-  Scenario Outline: Verify masked values are displayed inside downloaded pdf by hiding field values using hide cell json-enhanced grid
+  Scenario: Verify masked values are displayed inside downloaded pdf by hiding field values using hide cell json-enhanced grid
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:0 |
-    #  | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                                               | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON      | govgrants_config:HideCellJsonForCurrencyFieldAtEnhancedGrid | TmpMonitoringScheduleGrantor | Name                      | FTC-1491                   |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi>                                              | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForCurrencyFieldAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-1491                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1791,19 +1655,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "*****" on page "28" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                                       | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,TotalAdjustedAmount__c,Status__c,TotalAwardObligatedAmount__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
-
   @118781 @verifyThatMultipleSectionsPresentAtUIShouldDisplayedInsideDownloadedPDFAtFormLayout
   Scenario:validate that  multiple sections present on UI should display inside downloaded pdf at form layout
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Demo_Title"
-    When I click on "View" icon for "Demo_Title" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I navigate to "Files" sub tab
     When I click on "View" icon of form "General Application Cover Page" program in flex table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -1860,12 +1719,13 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2623                   |
+      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2625                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -1875,50 +1735,21 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    And I pause execution for "3" seconds
-    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
-    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
-    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
-    And I enter value "Active" into field "fieldStatus__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation PM" into field "fieldName__c"
-    And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Allen PM" into field "fieldName__c"
-    And I enter value "Key POC" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
-    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
-    And I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
-    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
-    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the page
-    When I click on "Submit For Approval" in the page details
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
-    When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I select value "Automation PM" into field "s2id_autogen1"
-    And I select value "Automation-Reviewer GGPTEST5" into field "s2id_autogen3"
-    And I pause execution for "3" seconds
-    When I check "{SavedValue:savedValue}" boxes in flex table with id "---program:-:taskReassigneTableId---"
-    And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
-    Then I softly do not see value "{SavedValue:savedValue}" for title "Id" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "AUTOMATION-REVIEWER" user on "default" portal
-    And I navigate to "Home" tab
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePhasePendingTasks"
     And I select "Download as PDF" from parallel lines dropdown of "Pending Tasks (Assigned To Me)"
     And I download the file
@@ -1934,9 +1765,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    ##When I perform quick search for "Automation Internal Announcement for Testing" in "---program:-:flexGridEnhancedReviewStepID---" panel
     Then I see actions under "---program:-:enhancedGridTableId---" table are aligned and compared with "actionsAtEgrid.png"
-
 
   @80953   @VerifyFlexTableActionsAreAlignedProperly-gPlanning @flexTable
   Scenario: validate alignment of actions under flex table - Planning phase
@@ -1955,7 +1785,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "test send to owner 2"
     When I click on "View Program Details " icon for "test send to owner 2" inside table
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     Then I see actions are aligned at attachment
 
   @116105    @verifyWhiteSpaceIsNotPresentAtModalIfAnyFieldIsHiddenUsingHideExpressionJSON
@@ -1974,7 +1804,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Roles" sub tab
+    When I navigate to "Responsibilities" sub tab
     When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
     Then I see fields are displayed without white space in modal
 
@@ -1983,13 +1813,13 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
-    When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
-    When I navigate to "Attachments" sub tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Automation Internal Program for flow"
+    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I navigate to "Files" sub tab
     Then I see validate button is aligned at pannel header
 
-  @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow @pageLayout
+  @118698    @verifyThatMiniPageLayoutShouldDisplayCompletelyUnderModalWindow @pageLayout @wip
   Scenario: validate that mini page layout is displayed completely on hover at lookup field inside modal window
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -1997,13 +1827,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Roles" sub tab
+    When I navigate to "Responsibilities" sub tab
     When I click on "View" icon for "Nauman Shahid" inside table
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
     Then I see mini page layout displayed and compared with "captureMiniPageLayoutAtModal.png"
 
-
-  @130107    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAndDownloadedFromRecordLevelCollab
+  @130107    @verifyThatFileAttachedAtRecordLevelCommentIsDisplayedAndDownloadedFromRecordLevelCollab @wip
   Scenario: validate that file attached to any record level post is displayed and can be downloaded from record level
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2033,9 +1862,9 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I softly see "AttachmentTesting.pdf" inside flex table with id "---program:-:myFeedTableId---"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Files" sub tab
     When I perform quick search for "AttachmentTesting.pdf" in "---program:-:PlanningFilesFlexGridId---" panel
  #130107 file uploaded from home phase is displayed inside attachment tab - record detail
     Then I softly see value "AttachmentTesting.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
@@ -2054,49 +1883,37 @@ Business Need: All pdf and xls related scenario including component and complete
   @113190 @validateThatSPIUserCanDownloadFormDataTablePDFAtApplicationPhase
   Scenario: Verify that SPI user can download form data table pdf at application phase
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Test Automation Application DND"
-    When I click on "View" icon for "Test Automation Application DND" inside table
-    When I navigate to "Attachments" sub tab
+    When I perform quick search for "Automation Internal Program for flow"
+    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I navigate to "Files" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableFormEnhancedTable"
     And I select "Download as PDF" from parallel lines dropdown of "All Forms"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "General Application Form" on page "1" of "govgrants" pdf file
 
-
-
   @145541    @validateDecimalValueIsDisplayedOnFlexTableForNumberFieldInDownloadedPDF
-  Scenario Outline: Validate decimal value should be display on the Number field at flex table In Downloaded PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-   #   | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+  Scenario: Validate decimal value should be display on the Number field at flex table In Downloaded PDF
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as PDF" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     And I download the file
     And I pause execution for "5" seconds
     Then I softly see "12345678.00" on page "17" of "govgrants" pdf file
     Then I softly cannot see "12,345,678.00" on page "17" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
-#      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @145546    @validateDecimalValueIsDisplayedOnFlexGridEnhancedForNumberFieldInDownloadedPDF
   Scenario: Validate decimal value should be display on the Number field at flex grid enhanced In Downloaded PDF
@@ -2104,8 +1921,8 @@ Business Need: All pdf and xls related scenario including component and complete
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
     Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
@@ -2115,34 +1932,23 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I softly see "93.847" on page "1" of "govgrants" pdf file
 
-
   @145753    @validateDecimalValueIsDisplayedOnFlexTableForNumberFieldInDownloadedCSV
-  Scenario Outline: Validate decimal value should be display on the Number field at flex table In Downloaded CSV
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      #| Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     #| Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+  Scenario: Validate decimal value should be display on the Number field at flex table In Downloaded CSV
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I enter value "12345678" into field "Number__c"
     And I click on "Save" in the page details
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
+    When I perform quick search for "Automation Internal Program for Testing"
     Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
     When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Download as CSV" from parallel lines dropdown of "Draft Programs"
+    And I select "Download as CSV" from parallel lines dropdown of "Internal Programs - Draft"
     Then I softly see "12345678.00" in downloaded xls or csv file "govgrants"
-
-#    Examples:
-#      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
-#      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @145754 @validateDecimalValueIsDisplayedOnFlexGridEnhancedForNumberFieldInDownloadedXLS
   Scenario: Validate decimal value should be display on the Number field at flex grid enhanced In Downloaded XLS
@@ -2150,14 +1956,14 @@ Business Need: All pdf and xls related scenario including component and complete
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Export (xls / csv) | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Export (xls / csv) | true          | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (xls / csv) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "GT-First-001" in "---program:-:flexGridEnhancedTableId---" panel
     Then I softly see value "93.847" for title "Number" inside table "---program:-:programsTableId---"
@@ -2165,15 +1971,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I softly see "93.847" in downloaded xls or csv file "govgrants"
 
-
   @148351    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTableInsidePDF
-  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+  Scenario: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2187,18 +1986,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "12,344.0000" on page "30" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                    | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,Status__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @148353    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTableInsidePDF
-  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-     # | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+  Scenario: verify number field is displayed with 4 decimal places at enhanced grid parent table inside PDF
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2210,18 +1999,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "12,344.0000" in downloaded xls or csv file "govgrants"
 
-#    Examples:
-#      | newFieldsApi                                    | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,Status__c,NumberDecimal__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @148509  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTableInsidePDF
-  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table inside PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+  Scenario: verify number field is displayed with 4 decimal places at enhanced grid of child table inside PDF
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2229,25 +2008,15 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    #When I perform quick search for "Automation Internal Announcement for Testing" in "---program:-:flexGridEnhancedReviewStepID---" panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "2,323.0,000" on page "30" of "govgrants" pdf file
-#
-#    Examples:
-#      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
-#      | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @148510  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTableInsideXLS
-  Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table inside XLS
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+  Scenario: verify number field is displayed with 4 decimal places at enhanced grid of child table inside XLS
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2255,14 +2024,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I perform quick search for "Automation Program for Review Steps"
     When I click on "View" icon for "Automation Program for Review Steps" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    #When I perform quick search for "Automation Internal Announcement for Testing" in "---program:-:flexGridEnhancedReviewStepID---" panel
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     Then I see "2,323.0,000" in downloaded xls or csv file "govgrants"
-
-#    Examples:
-#      | newFieldsApi                                      | defaultFieldsApi                                                                                                                               |
-#      | Name,GrantAwardName__c,NumberDecimal__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @147028    @validateAttachmentDownloadAction
   Scenario: validate by click at Attachment download action a file is getting downloaded
@@ -2279,7 +2044,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     When I click on "Download" icon for "DynamicLayoutExport.pdf" inside table
     And I download the file
@@ -2301,7 +2066,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Attachments" sub tab
+    When I navigate to "Files" sub tab
     And I upload attachment "DynamicLayoutExport.pdf" from workspace
     And I click on hyperlink containing value "DynamicLayoutExport.pdf"
     And I download the file
@@ -2316,7 +2081,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active                 | true          | Grantor State Program | Name                      | TAB-2623                   |
       | Flex Table:General                  | Enable Export (XLS / CSV) | true          | History               |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -2347,7 +2112,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-027                    |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -2373,77 +2138,49 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "Field History" on page "1" of "govgrants" pdf file
 
-
   @150597    @verifyDisplayFieldsAndValuesInsideEnhancedGridChildFlexTableDownloadedPDF-gPlanning
-  Scenario Outline: validate given display fields and values are displayed on enhanced grid of programs-planning chid table pdf
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+  Scenario: validate given display fields and values are displayed on enhanced grid of programs-planning chid table pdf
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "Demo_Title"
-    When I click on "Edit" icon for "AD-GG PJ--00" inside table
-    When I enter value "122" into field "Amendments__c"
-    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Setup tabs" sub tab
+    #When I perform quick search for "Automation Internal Announcement for Testing" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
+    When I click on "Edit" icon for "Pre-Screen Review" inside table
+    When I enter value "Application completeness and correctness review Testing" into field "Description__c"
+    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
-    Then I softly see "122" on page "31" of "govgrants" pdf file
-    Then I softly see "Amendments" on page "31" of "govgrants" pdf file
-#
-#    Examples:
-#      | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                               |
-#      | Amendments__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c |
+    #Then I softly see "122" on page "31" of "govgrants" pdf file
+    Then I softly see "Application completeness and correctness review Testing" on page "31" of "govgrants" pdf file
 
   @150602    @verifyDisplayFieldsAndValuesInsideEnhancedGridChildFlexTableDownloadedXLS-gPlanning
-  Scenario Outline: validate given display fields and values are displayed on enhanced grid of programs-planning chid table XLS
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue       | filterId         |
-   #   | Flex Grid             | Display Field Names | <defaultFieldsChildApi> | ApiGeneratedId:0 |
-  #    | Flex Grid             | Display Field Names | <defaultFieldsApi>      | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue       | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-  #    | Flex Grid:General     | Display Field Names | <newFieldsChildApi> | TmpGrantorActiveAwardsGrid |                           |                            |
-  #    | Flex Grid:General     | Display Field Names | <newFieldsApi>      | TmpMonitoringScheduleGrantor        |                           |                            |
+  Scenario: validate given display fields and values are displayed on enhanced grid of programs-planning chid table XLS
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
-    When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedReviewStepID---" panel
-    When I expand nested table containing column value "Demo_Title"
-    When I click on "Edit" icon for "AD-GG PJ--00" inside table
-    When I enter value "122" into field "Amendments__c"
-    When I click on top right button "Save" in flex table with id "---program:-:flexGridEnhancedReviewStepID---"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Setup tabs" sub tab
+    #When I perform quick search for "Automation Internal Announcement for Testing" in "---program:-:flexGridEnhancedReviewStepID---" panel
+    When I expand nested table containing column value "1"
+    When I click on "Edit" icon for "Pre-Screen Review" inside table
+    When I enter value "Application completeness and correctness review Testing" into field "Description__c"
+    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Test Forms"
-    Then I softly see "122" in downloaded xls or csv file "govgrants"
-    Then I softly see "Amendments" in downloaded xls or csv file "govgrants"
-
-#    Examples:
-#      | newFieldsChildApi                                                                                                                                            | defaultFieldsChildApi                                                                                                                          | newFieldsApi                   | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | Amendments__c,Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | Name,GrantAwardName__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,Status__c,Agreement1__c,AmountDirectAssistance__c | ProjectTitle__c,Status__c,Name | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    And I download the file
+    And I pause execution for "5" seconds
+    #Then I softly see "122" on page "31" of "govgrants" pdf file
 
   @150693 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedInDownloadedXLSAtEnhancedGrid
-  Scenario Outline: validate that reference date field value is displayed as expected in downloaded xls at enhanced grid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-   #   | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+  Scenario: validate that reference date field value is displayed as expected in downloaded xls at enhanced grid
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2455,18 +2192,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "Scheduled Activities - Next 30 Days"
     Then I softly see "05/28/2021" in downloaded xls or csv file "govgrants"
 
-#    Examples:
-#      | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @150692 @verifyThatReferenceDateFieldValueIsDisplayedAsExpectedInDownloadedPDFAtEnhancedGrid
-  Scenario Outline: validate that reference date field value is displayed as expected in downloaded PDF at enhanced grid
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
+  Scenario: validate that reference date field value is displayed as expected in downloaded PDF at enhanced grid
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2480,24 +2207,19 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I softly see "122" on page "31" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                                                          | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ProjectTitle__c,Name,Status__c,Application__r.ChangeRequestDueDate__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @148214    @verifyApostropheIsShownInDownloadedPDFAtPageLayout
   Scenario: validate a apostrophe is shown in downloaded pdf at page layout
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementWithSpecialCharacter}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementWithSpecialCharacter}" inside table
+    And I click toggle button to select "Closed and Archived Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
     And I pause execution for "5" seconds
-    Then I softly see "{Framework_recordUsed:AnnouncementWithSpecialCharacter}" on page "1" of "govgrants" pdf file
-
+    Then I softly see "Automation Internal Announcement for Testing" on page "1" of "govgrants" pdf file
 
   @161001  @validateToProvideLocaleSupportInAdvanceFilterOfDataTableInISTTimeZoneForLessThanOrEqualToOperator. @abhishekS
   Scenario: validate that to provide local support in Advance filter of data table in IST Time zone for less than or equal to operator by login as admin user
@@ -2510,7 +2232,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
     When I enter advance filter values inside id "advfAppReviewList"
       | Project Period Start Date | Less than or Equal to | 1/3/2017 |
@@ -2527,7 +2249,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
     When I enter advance filter values inside id "advfAppReviewList"
       | Project Period Start Date | Greater than or Equal to | 1/3/2020 |
@@ -2544,7 +2266,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
     When I enter advance filter values inside id "advfAppReviewList"
       | Project Period Start Date | Less than | 1/3/2017 |
@@ -2561,22 +2283,20 @@ Business Need: All pdf and xls related scenario including component and complete
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I click toggle button to select "All Applications"
+    And I click toggle button to select "Applications - All"
     When I click on advance filter "#advfAppReviewList" of table id "---program:-:appReviewListTableId---"
     When I enter advance filter values inside id "advfAppReviewList"
       | Project Period Start Date | Greater than | 03/09/2018 |
     Then I see value "01/02/2019" for title "Project Period Start Date" inside table "---program:-:appReviewListTableId---"
 
   @68727 @VerifyCurrencyFieldIsAvailableOnTheTableItDisplaysDollerSignforPDF
-  Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
+  Scenario: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-   #   | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Grid:General     | Enable Export (PDF) | true           | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2591,20 +2311,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "$0.00" on page "1" of "govgrants" pdf file
 
-#    Examples:
-#      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @68726 @VerifyCurrencyFieldIsAvailableOnTheTableItDisplaysDollerSignforCSV
-  Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the CSV
+  Scenario: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the CSV
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
-  #    | Flex Grid             | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Export (XLS / CSV) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names       | <newFieldsApi> | TmpMonitoringScheduleGrantor |                           |                            |
-      | Flex Grid:General     | Enable Export (XLS / CSV) | true           | TmpMonitoringScheduleGrantor |                           |                            |
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (XLS / CSV) | true          | ProgramReviewStepTemplates |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2619,20 +2333,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "5" seconds
     Then I see "$0.00" in downloaded xls or csv file "govgrants"
 
-#    Examples:
-#      | newFieldsApi                            | defaultFieldsApi                                                                                                                                                                                                                   |
-#      | ExternalOrganization__r.testcurrency__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
-
   @168748 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForPDF
-  Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
+  Scenario: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the PDF
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-  #    | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Grid             | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Export (PDF) | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-  #    | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramRolesAndResponsibilities |                           |                            |
-      | Flex Grid:General     | Enable Export (PDF) | true           | ProgramRolesAndResponsibilities |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Export (PDF) | true          | ProgramRolesAndResponsibilities |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2645,16 +2353,12 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Roles" sub tab
+    When I navigate to "Responsibilities" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilities"
-    And I select "Download as PDF" from parallel lines dropdown of "Roles And Responsibilities"
+    And I select "Download as PDF" from parallel lines dropdown of "Approvers"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "$0" on page "1" of "govgrants" pdf file
-
-#    Examples:
-#      | newFieldsApi              | defaultFieldsApi                           |
-#      | Agency__r.testcurrency__c | Name1__c,BusinessRole__c,Responsibility__c |
 
   @172134 @tejal
   Scenario: Verify if User  added lookup field on parent  table  (Required to Save) & save the record then mandatory icon should display for lookup field saved data is display on PDF
@@ -2671,7 +2375,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
@@ -2693,20 +2397,14 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     And I pause execution for "2" seconds
     Then I see "Department of Transportation" in downloaded xls or csv file "govgrants"
 
   @171817 @tejal
-  Scenario Outline: Verify if User  added lookup field  (Required to Save)  on child table  & save the record then mandatory icon should display for lookup field saved data is display on XLS
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-     # | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-     # | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+  Scenario: Verify if User  added lookup field  (Required to Save)  on child table  & save the record then mandatory icon should display for lookup field saved data is display on XLS
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -2720,26 +2418,17 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     When I perform quick search for "GT-ITSGT-001" in "---program:-:enhancedGridTableId---" panel
     And I pause execution for "2" seconds
     When I expand nested table containing column value "GT-ITSGT-001"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as XLS" from parallel lines dropdown of "Test Forms"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
     And I pause execution for "2" seconds
     Then I see "Department of Transportation" in downloaded xls or csv file "govgrants"
-#    Examples:
-#      | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
-#      | Name,Account__c,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
   @171816 @tejal
-  Scenario Outline: Verify if User  added lookup field (Required to Save)  on child table   & save the record then mandatory icon should display for lookup field saved data is display on PDF
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-    #  | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-    #  | Flex Grid:General     | Display Field Names | <newFieldsApi> | TmpGrantorActiveAwardsGrid |                           |                            |
+  Scenario: Verify if User  added lookup field (Required to Save)  on child table   & save the record then mandatory icon should display for lookup field saved data is display on PDF
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -2758,10 +2447,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I pause execution for "2" seconds
     When I expand nested table containing column value "GT-ITSGT-001"
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepPanelTemplatesFlexToggle"
-    And I select "Download as PDF" from parallel lines dropdown of "Test Forms"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     And I download the file
     And I pause execution for "5" seconds
     Then I see "25Th Air Force" on page "28" of "govgrants" pdf file
-   # Examples:
-   #   | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                               |
-    #  | Name,Account__c,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
