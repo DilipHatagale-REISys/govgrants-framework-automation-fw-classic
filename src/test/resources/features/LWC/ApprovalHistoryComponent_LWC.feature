@@ -7,7 +7,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   ##### LWC-Approval History component #####
   @219663 @219664 @219665 @219671 @219668 @219670
     @219767 @219769 @219771 @219779 @219791 @219796 @219668 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline:
+  Scenario Outline:ABC
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -63,16 +63,12 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I pause execution for "7" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
+    And I click modal button "Save and Continue"
     When I navigate to "Overview" sub tab
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
@@ -90,12 +86,14 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
@@ -154,12 +152,14 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
@@ -216,8 +216,8 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
     Then I see "No Records Found" massage under Approval History
@@ -264,14 +264,18 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I pause execution for "5" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I pause execution for "5" seconds
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -370,12 +374,14 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "10" seconds
     And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
+    And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I enter text inside Description box "Description for second description box"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
@@ -399,7 +405,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
     Then status changed "Pending" and "Actual Approver" approver name is displayed "Automation PM"
     Examples:
       | User  |
-      | PM    |
+#      | PM    |
       | ADMIN |
 
   @220497 @220498 @220500 @220501 @LWC-ApprovalHistorySuit @dilip

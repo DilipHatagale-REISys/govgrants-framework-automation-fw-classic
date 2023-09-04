@@ -1,12 +1,12 @@
 package com.framework.automation.pageobject;
 
-import com.automation.rei.handlers.govgrants;
+import com.helperPackage.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.controller.TestingBlazeGlobal;
-import com.testingblaze.exception.TestingBlazeCustomException;
-import com.testingblaze.objects.Elements;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.controller.TestingBlazeGlobal;
+import com.helperPackage.exception.TestingBlazeCustomException;
+import com.helperPackage.objects.Elements;
+import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -1138,6 +1138,129 @@ public class FlexTablePage extends GovGrantsManager {
     public void assertFieldRelatedPageRecords(String id, String key) {
         By record = By.xpath("(//div[@id='" + id + "']//*[@title='First']//following-sibling::span[contains(@class,'ng-binding')])[1]");
         I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
+    }
+
+    public void assertFieldRelatedPageRecordsAvailable(String id, String key) {
+        By record = By.xpath("//div[@id='" + id + "']//*[contains(@class,'spacing bold-padded ng-binding')]");
+        I.amPerforming().propertiesFileOperationsTo().saveValue(key, I.amPerforming().actionToGet().text(record));
+    }
+
+    public void getHelpTextFromIcon(String iconId) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon']"));
+    }
+
+
+    public void assertMiniPagelayoutDisplayedOrNot(String usage, String displayType, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertMiniLayoutDisplayed(displayType, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertMiniLayoutDisplayed(displayType, value)).isFalse();
+        }
+    }
+
+
+    public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
+        }
+    }
+
+    public void assertSpecificItemsInsideListViewDropdown(String usage, String dropdownValue, String columnName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isValuePresentInsideDropDown(dropdownValue, columnName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isValuePresentInsideDropDown(dropdownValue, columnName)).isFalse();
+        }
+    }
+
+    private boolean assertAdvanceFilterDisplayed(String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + value + "']/div//button[contains(@class,'advf-button')]//span[@class='fa fa-filter'] |" +
+                    " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    private boolean assertMiniLayoutDisplayed(String displayType, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[@role='form']//div[@class='tooltipLabel' and text()='" + displayType + "']/following-sibling::div[@class='tooltipValue' and text()='" + value + "'] |" +
+                    "//div[@class='tooltipWrapper']/*[text()='" + displayType + "']/following-sibling::*[text()='" + value + "'] |" +
+                    "//*[@role='form']//div[@class='tooltipLabel' and text()='" + displayType + "']/following-sibling::div[@class='tooltipValue']/*[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfFlexTableIsDisplayed(String usage, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(flexTableIsDisplayed(tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(flexTableIsDisplayed(tableId)).isFalse();
+        }
+    }
+
+    private boolean flexTableIsDisplayed(String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath(" //a[contains(@data-target,'" + tableId + "')] | //div[@id='" + tableId + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void clickOnButtonAfterClickingAdvFilter(String fieldName) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + fieldName + "'] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + fieldName + "')] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='filter in filterDisplayList']//*[@aria-label='" + fieldName + "'] |" +
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x']"));
+    }
+
+    public void clickOnDopDownButtonAndSelectValue(String field, String dropdownValue) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + field + "']"));
+        I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + field + "']//option[text()='" + dropdownValue + "']"));
+    }
+
+    public void assertIfValueChange(String usage, String dropdownValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(dropdownValue)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(dropdownValue)).isFalse();
+        }
+    }
+
+    private boolean assertIfValueChangeWithColumnName(String dropdownValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='Operator']//option[@selected='selected' and text()='" + dropdownValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 
     public void handleDropdownInputForAdvanceFilter(String advanceFilterId, List rowvalues) {

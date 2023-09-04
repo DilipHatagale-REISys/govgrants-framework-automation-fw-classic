@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.SendEmail_Test8Page;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -71,4 +71,25 @@ public class SendEmail_Test8Steps {
         sendEmail_Test8Page.clickOnFileButton(fileName);
     }
 
+
+    @Then("^I (see|do not see) the text \"([^\"]*)\" in send email page$")
+    public void iSeeTheTextInSendEmailPage(String usage, String displayedText) {
+        sendEmail_Test8Page.assertTextDisplayedOrNot(usage, displayedText);
+    }
+
+
+    @And("I change style of all text to {string} inside CK editor")
+    public void iChangeStyleOfAllTextToInsideCKEditor(String styleName) {
+        sendEmail_Test8Page.selectAndClickAtIconToChangeTextFormattingInStyle(styleName);
+    }
+
+    @When("I close {string} modal by clicking on x top right button")
+    public void iCloseModalByClickingOnXTopRightButton(String modalName) {
+        sendEmail_Test8Page.clickOnXButtonOnModal(modalName);
+    }
+
+    @Then("I see text as {string} in reply email modal")
+    public void iSeeTextAsInReplyEmailModal(String value) {
+        sendEmail_Test8Page.assertFieldOnModal(value);
+    }
 }

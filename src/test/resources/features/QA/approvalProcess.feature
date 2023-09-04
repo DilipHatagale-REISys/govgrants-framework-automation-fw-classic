@@ -43,11 +43,13 @@ Business Need: Approval Process Component Scenarios
   @34307    @changeApproveOptionSequence-Programs @smoketest8
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory    | fieldName | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Sequence  | 1                 | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Sequence              | 1                 | ApiGeneratedId:1 |
+      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Sequence  | 5             | ADAC-0105          |
+      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Sequence              | 5             | ADAC-0105          |
+      | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0105          |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -76,7 +78,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
-      | Reject | Forward | Send Back | Approve |
+      | Reject | Forward | Send back | Approve |
 
   @34308    @mandatoryCommentsReqForApproveAction-Programs
   Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
@@ -152,7 +154,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    Then I can see the radio button "Approve" in the approval decision
+    Then I can see the radio button "Approved" in the approval decision
 
   @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
   Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
@@ -333,9 +335,9 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache | Approve Confirmation Title   |                   | ApiGeneratedId:0 |
       | Approval Process Steps Cache | Approve Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField       |
-      | Approval Process Steps Cache:General | Approve Confirmation Title   | Automation Approval             | Program_Manager_Approver |
-      | Approval Process Steps Cache:General | Approve Confirmation Message | Confirmation box for automation | Program_Manager_Approver |
+      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField |
+      | Approval Process Steps Cache:General | Approve Confirmation Title   | Automation Approval             | Step1              |
+      | Approval Process Steps Cache:General | Approve Confirmation Message | Confirmation box for automation | Step1              |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

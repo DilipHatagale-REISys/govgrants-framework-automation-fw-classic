@@ -2,9 +2,9 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.UsersAndURL;
-import com.testingblaze.controller.TestSetupController;
-import com.testingblaze.register.EnvironmentFactory;
-import com.testingblaze.report.CSS;
+import com.helperPackage.controller.TestSetupController;
+import com.helperPackage.register.EnvironmentFactory;
+import com.helperPackage.report.CSS;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

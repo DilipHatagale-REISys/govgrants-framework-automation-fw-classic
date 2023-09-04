@@ -1,9 +1,11 @@
 package com.framework.automation.projectmanager;
 
 
-import com.testingblaze.controller.UsersController;
-import com.testingblaze.register.EnvironmentFactory;
+import com.helperPackage.controller.UsersController;
+import com.helperPackage.misclib.Properties_Logs;
+import com.helperPackage.register.EnvironmentFactory;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -164,4 +166,23 @@ public class UsersAndURL implements UsersController {
             return password.get("ADMIN");
         }
     }
+
+    public Map<String, String> getUserCredentialsForMailNotification(String userType) {
+        Map<String, String> credentials = new HashMap();
+        String userAndPassword;
+        String env = System.getProperty("env");
+        if (env == null || "".equalsIgnoreCase(env)) {
+            env = "QA";
+        }
+        try {
+            userAndPassword = (new Properties_Logs()).ReadPropertyFile("mail.properties", env.toUpperCase() + userType.toUpperCase());
+            credentials.put("username", userAndPassword.split(":")[0]);
+            credentials.put("password", userAndPassword.split(":")[1]);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Property file mail.properties is not present");
+        }
+        return credentials;
+    }
+
 }

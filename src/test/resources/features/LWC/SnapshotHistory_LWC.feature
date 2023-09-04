@@ -5,12 +5,14 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223111 @223116 @223117 @223118 @223119 @223120 @ManuallygeneratedsnapshotisdisplayedonLWCcomponent  @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario: To verify, manually generated snapshot is displayed on the LWC component
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -27,12 +29,14 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223112 @223113 @223114 @223115 @224128 @224131 @224130 @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:user click on submit for approval button snapshot getting generated then refresh the Aura then generated snapshot name display as expected
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -65,12 +69,18 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223121 @223122 @whenuserclicksonpageblockshrinkactionbuttonthenthecomponentgetsshrunk @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:when the user clicks on page block shrink action button then the component gets shrunk
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click modal button "Save and Continue"
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     When I navigate to "History" sub tab
     And I pause execution for "5" seconds
@@ -89,14 +99,14 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223123 @TotalrecorddisplayasexpectedasontheUI @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:Total record display as expected as on the UI
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-#    When I perform quick search for "Automation Internal Program for Testing Purpose Only"
-#    When I click on "View" icon for "Automation Internal Program for Testing Purpose Only" inside table
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -108,7 +118,7 @@ Business Need: SnapshotHistory Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I see total records count in "Snapshot History" table equals to Total record displayed on UI
+    Then I see Total Records count "Total Records : 2" in table name "Snapshot History"
     Examples:
       | User  |
       | ADMIN |
@@ -116,13 +126,14 @@ Business Need: SnapshotHistory Component Scenarios
 
   @223125 @223126 @Whenuserlickongenaredsnapshotfileitwillbeopeninthenewtab @Vrushali @LWC-SnapshotHistoryTestSuit
   Scenario Outline:When user click on genared snapshot file it will be open in the new tab
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -150,8 +161,8 @@ Business Need: SnapshotHistory Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Program For Application"
-    When I click on "View" icon for "Program For Application" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
@@ -171,6 +182,7 @@ Business Need: SnapshotHistory Component Scenarios
 
   @278534 @278535 @278536 @278552 @278537
   Scenario:  user click on submit for approval button snapshot getting generated then refresh the Aura then generated snapshot name display as expected
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -315,7 +327,7 @@ Business Need: SnapshotHistory Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "5" seconds
-    Then I see total records count in "Snapshot History" table equals to Total record displayed on UI
+    Then I see Total Records count "Total Records : 2" in table name "Attachments"
 
   @278548 @278550 @278556 @Whenuserclickongeneratedsnapshotileitwillbeopeninnewtab
   Scenario: When user click on generated snapshot file it will be open in the new tab

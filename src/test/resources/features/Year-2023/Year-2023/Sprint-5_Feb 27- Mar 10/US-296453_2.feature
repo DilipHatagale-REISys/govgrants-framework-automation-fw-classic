@@ -18,6 +18,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                           | Field                |
@@ -43,6 +44,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                       | Field                |
@@ -68,6 +70,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                            | Field                |
@@ -93,6 +96,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                         | Field                |
@@ -118,6 +122,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                |
@@ -143,6 +148,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                |
@@ -168,6 +174,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                     | Field                |
@@ -193,6 +200,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                |
@@ -218,6 +226,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -243,6 +252,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                            | Field                |
@@ -268,6 +278,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                |
@@ -293,6 +304,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value             | Field                |
@@ -318,6 +330,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                         | Field                |
@@ -343,6 +356,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -368,6 +382,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                |
@@ -393,6 +408,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                |
@@ -418,6 +434,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -443,6 +460,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                |
@@ -468,6 +486,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -493,6 +512,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                         | Field                |
@@ -518,6 +538,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                  | Field                |
@@ -543,6 +564,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -568,6 +590,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                |
@@ -593,6 +616,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                |
@@ -618,6 +642,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                      | Field                |
@@ -643,6 +668,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                |
@@ -668,6 +694,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                     | Field                |
@@ -693,6 +720,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                |
@@ -718,6 +746,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                   | Field                |
@@ -743,6 +772,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                |
@@ -768,6 +798,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                |
@@ -793,6 +824,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                   | Field                |
@@ -818,6 +850,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -843,6 +876,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -868,6 +902,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                |
@@ -893,6 +928,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                        | Field                |
@@ -918,6 +954,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                              | Field                |
@@ -943,6 +980,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                |
@@ -968,6 +1006,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                |
@@ -993,6 +1032,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                |
@@ -1018,6 +1058,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                |
@@ -1043,6 +1084,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                |
@@ -1068,6 +1110,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                  | Field                |
@@ -1093,6 +1136,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                |
@@ -1118,6 +1162,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                          | Field                |
@@ -1143,6 +1188,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                |
@@ -1168,6 +1214,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                |
@@ -1193,6 +1240,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -1218,6 +1266,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                |
@@ -1243,6 +1292,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                |
@@ -1268,6 +1318,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                    | Field                |
@@ -1293,6 +1344,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                |
@@ -1318,6 +1370,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                |
@@ -1343,6 +1396,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                |
@@ -1368,6 +1422,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                |
@@ -1393,6 +1448,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                |
@@ -1418,6 +1474,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                |
@@ -1443,6 +1500,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                |
@@ -1468,6 +1526,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                |
@@ -1493,6 +1552,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                |
@@ -1518,6 +1578,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                |
@@ -1543,6 +1604,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                |
@@ -1568,6 +1630,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                |
@@ -1593,6 +1656,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                |
@@ -1618,6 +1682,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                       | Field                |
@@ -1643,6 +1708,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                |
@@ -1668,6 +1734,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                |
@@ -1693,6 +1760,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -1718,6 +1786,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                |
@@ -1743,6 +1812,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -1769,6 +1839,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                |
@@ -1794,6 +1865,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                |
@@ -1819,6 +1891,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |
@@ -1844,6 +1917,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -1869,6 +1943,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -1894,6 +1969,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |
@@ -1919,6 +1995,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -1944,6 +2021,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |
@@ -1969,6 +2047,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                |
@@ -1994,6 +2073,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                |
@@ -2019,6 +2099,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                |
@@ -2044,6 +2125,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -2069,6 +2151,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                |
@@ -2094,6 +2177,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                |
@@ -2119,6 +2203,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -2144,6 +2229,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |
@@ -2169,6 +2255,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |
@@ -2194,6 +2281,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -2219,6 +2307,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                |
@@ -2244,6 +2333,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -2269,6 +2359,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -2294,6 +2385,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -2319,6 +2411,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -2344,6 +2437,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -2369,6 +2463,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -2394,6 +2489,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                |
@@ -2419,6 +2515,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                              | Field                |
@@ -2444,6 +2541,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                |
@@ -2469,6 +2567,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                |
@@ -2494,6 +2593,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                |
@@ -2519,6 +2619,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                |
@@ -2544,6 +2645,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                |
@@ -2569,6 +2671,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                      | Field                |
@@ -2594,6 +2697,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                |
@@ -2619,6 +2723,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                |
@@ -2644,6 +2749,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                |
@@ -2669,6 +2775,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                |
@@ -2694,6 +2801,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                 | Field                |
@@ -2719,6 +2827,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -2744,6 +2853,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                |
@@ -2769,6 +2879,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                |
@@ -2794,6 +2905,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                |
@@ -2819,6 +2931,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -2844,6 +2957,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -2869,6 +2983,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -2894,6 +3009,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                |
@@ -2919,6 +3035,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                            | Field                |
@@ -2944,6 +3061,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                |
@@ -2969,6 +3087,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -2994,6 +3113,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                |
@@ -3019,6 +3139,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                |
@@ -3044,6 +3165,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -3069,6 +3191,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -3094,6 +3217,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                |
@@ -3119,6 +3243,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                |
@@ -3144,6 +3269,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                             | Field                |
@@ -3169,6 +3295,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                    | Field                |
@@ -3194,6 +3321,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                  | Field                |
@@ -3219,6 +3347,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                |
@@ -3244,6 +3373,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                |
@@ -3269,6 +3399,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -3294,6 +3425,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                     | Field                |
@@ -3319,6 +3451,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                |
@@ -3344,6 +3477,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                |
@@ -3369,6 +3503,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -3394,6 +3529,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                |
@@ -3419,6 +3555,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                |
@@ -3444,6 +3581,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -3469,6 +3607,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                |
@@ -3494,6 +3633,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                |
@@ -3519,6 +3659,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                |
@@ -3544,6 +3685,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -3569,6 +3711,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                   | Field                |
@@ -3594,6 +3737,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -3619,6 +3763,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                |
@@ -3644,6 +3789,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -3669,6 +3815,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                |
@@ -3694,6 +3841,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                |
@@ -3719,6 +3867,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -3744,6 +3893,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                |
@@ -3769,6 +3919,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -3794,6 +3945,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                       | Field                |
@@ -3819,6 +3971,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                  | Field                |
@@ -3844,6 +3997,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                     | Field                |
@@ -3869,6 +4023,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                 | Field                |
@@ -3894,6 +4049,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                |
@@ -3919,6 +4075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -3944,6 +4101,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                             | Field                |
@@ -3969,6 +4127,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                |
@@ -3994,6 +4153,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                |
@@ -4019,6 +4179,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                |
@@ -4044,6 +4205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                |
@@ -4069,6 +4231,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                |
@@ -4094,6 +4257,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -4119,6 +4283,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -4144,6 +4309,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -4169,6 +4335,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                          | Field                |
@@ -4194,6 +4361,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                 | Field                |
@@ -4219,6 +4387,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                        | Field                |
@@ -4244,6 +4413,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                         | Field                |
@@ -4269,6 +4439,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                |
@@ -4294,6 +4465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                            | Field                |
@@ -4319,6 +4491,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                             | Field                |
@@ -4344,6 +4517,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                |
@@ -4369,6 +4543,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                |
@@ -4394,6 +4569,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -4419,6 +4595,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -4444,6 +4621,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                         | Field                |
@@ -4469,6 +4647,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                      | Field                |
@@ -4494,6 +4673,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                |
@@ -4519,6 +4699,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                         | Field                |
@@ -4544,6 +4725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                       | Field                |
@@ -4569,6 +4751,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                           | Field                |
@@ -4594,6 +4777,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                | Field                |
@@ -4619,6 +4803,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                |
@@ -4644,6 +4829,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                           | Field                |
@@ -4669,6 +4855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                  | Field                |
@@ -4694,6 +4881,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                | Field                |
@@ -4719,6 +4907,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                     | Field                |
@@ -4744,6 +4933,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                            | Field                |
@@ -4769,6 +4959,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                            | Field                |
@@ -4794,6 +4985,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                |
@@ -4819,6 +5011,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                              | Field                |
@@ -4844,6 +5037,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                           | Field                |
@@ -4869,6 +5063,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -4894,6 +5089,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                |
@@ -4919,6 +5115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                |
@@ -4944,6 +5141,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                |
@@ -4969,6 +5167,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                |
@@ -4994,6 +5193,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                  | Field                |
@@ -5019,6 +5219,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                        | Field                |
@@ -5044,6 +5245,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                | Field                |
@@ -5069,6 +5271,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -5094,6 +5297,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -5119,6 +5323,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                |
@@ -5144,6 +5349,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                | Field                |
@@ -5169,6 +5375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                           | Field                |
@@ -5194,6 +5401,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -5219,6 +5427,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                  | Field                |
@@ -5244,6 +5453,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                         | Field                |
@@ -5269,6 +5479,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -5294,6 +5505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                             | Field                |
@@ -5319,6 +5531,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                |
@@ -5344,6 +5557,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -5369,6 +5583,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                          | Field                |
@@ -5394,6 +5609,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                              | Field                |
@@ -5419,6 +5635,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                     | Field                |
@@ -5444,6 +5661,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -5469,6 +5687,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                |
@@ -5494,6 +5713,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                |
@@ -5519,6 +5739,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                |
@@ -5544,6 +5765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                   | Field                |
@@ -5569,6 +5791,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                               | Field                |
@@ -5594,6 +5817,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                |
@@ -5619,6 +5843,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -5644,6 +5869,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                          | Field                |
@@ -5669,6 +5895,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -5694,6 +5921,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                |
@@ -5719,6 +5947,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                |
@@ -5744,6 +5973,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                |
@@ -5769,6 +5999,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                |
@@ -5794,6 +6025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                   | Field                |
@@ -5819,6 +6051,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -5844,6 +6077,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -5869,6 +6103,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -5894,6 +6129,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -5919,6 +6155,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -5944,6 +6181,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -5969,6 +6207,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                |
@@ -5994,6 +6233,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                            | Field                |
@@ -6019,6 +6259,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -6044,6 +6285,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                |
@@ -6069,6 +6311,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                |
@@ -6094,6 +6337,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                |
@@ -6119,6 +6363,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -6144,6 +6389,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -6169,6 +6415,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -6194,6 +6441,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -6219,6 +6467,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                |
@@ -6244,6 +6493,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                           | Field                |
@@ -6269,6 +6519,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                | Field                |
@@ -6294,6 +6545,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -6319,6 +6571,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -6344,6 +6597,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                    | Field                |
@@ -6369,6 +6623,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                        | Field                |
@@ -6394,6 +6649,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -6419,6 +6675,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -6444,6 +6701,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                    | Field                |
@@ -6469,6 +6727,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -6494,6 +6753,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                |
@@ -6519,6 +6779,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -6544,6 +6805,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                          | Field                |
@@ -6569,6 +6831,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -6594,6 +6857,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                           | Field                |
@@ -6619,6 +6883,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -6644,6 +6909,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -6669,6 +6935,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                | Field                |
@@ -6694,6 +6961,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                    | Field                |
@@ -6719,6 +6987,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -6744,6 +7013,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -6769,6 +7039,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                 | Field                |
@@ -6794,6 +7065,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                               | Field                |
@@ -6819,6 +7091,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -6844,6 +7117,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                             | Field                |
@@ -6869,6 +7143,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                      | Field                |
@@ -6894,6 +7169,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                |
@@ -6919,6 +7195,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                |
@@ -6944,6 +7221,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                      | Field                |
@@ -6969,6 +7247,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                   | Field                |
@@ -6994,6 +7273,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                     | Field                |
@@ -7019,6 +7299,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                            | Field                |
@@ -7044,6 +7325,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                  | Field                |
@@ -7069,6 +7351,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                             | Field                |
@@ -7094,6 +7377,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                |
@@ -7119,6 +7403,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                           | Field                |
@@ -7144,6 +7429,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7169,6 +7455,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                                                  | Field                |
@@ -7194,6 +7481,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                     | Field                |
@@ -7219,6 +7507,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -7244,6 +7533,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                |
@@ -7269,6 +7559,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                  | Field                |
@@ -7294,6 +7585,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                   | Field                |
@@ -7319,6 +7611,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                                                                                                                                                         | Field                |
@@ -7344,6 +7637,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                |
@@ -7369,6 +7663,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7394,6 +7689,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7419,6 +7715,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                 | Field                |
@@ -7444,6 +7741,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7469,6 +7767,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7494,6 +7793,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     And I enter value "<input id=x ng-focus=$event.composedPath()|orderBy:'(z=alert)(1)'>" into field "fieldAbbreviation__c"
     When I click on "Save" in the page details
@@ -7517,6 +7817,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7542,6 +7843,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                                                                          | Field                |
@@ -7567,6 +7869,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     And I enter value "<input ng-cut=$event.composedPath()|orderBy:'(y=alert)(1)'>" into field "fieldAbbreviation__c"
     When I click on "Save" in the page details
@@ -7590,6 +7893,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value              | Field                |
@@ -7615,6 +7919,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -7640,6 +7945,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                        | Field                |
@@ -7665,6 +7971,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -7690,6 +7997,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                  | Field                |
@@ -7715,6 +8023,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                              | Field                |
@@ -7740,6 +8049,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                |
@@ -7765,6 +8075,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                       | Field                |
@@ -7790,6 +8101,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                          | Field                |
@@ -7815,6 +8127,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                        | Field                |
@@ -7840,6 +8153,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                               | Field                |
@@ -7865,6 +8179,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                     | Field                |
@@ -7890,6 +8205,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                 | Field                |
@@ -7915,6 +8231,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                | Field                |
@@ -7940,6 +8257,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value               | Field                |
@@ -7965,6 +8283,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                         | Field                |
@@ -7990,6 +8309,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                        | Field                |
@@ -8015,6 +8335,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                        | Field                |
@@ -8040,6 +8361,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                              | Field                |
@@ -8065,6 +8387,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -8090,6 +8413,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                              | Field                |
@@ -8115,6 +8439,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -8140,6 +8465,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                | Field                |
@@ -8165,6 +8491,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                        | Field                |
@@ -8190,6 +8517,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                      | Field                |
@@ -8215,6 +8543,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                            | Field                |
@@ -8240,6 +8569,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                          | Field                |
@@ -8265,6 +8595,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                                           | Field                |
@@ -8290,6 +8621,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -8315,6 +8647,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -8340,6 +8673,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -8365,6 +8699,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                 | Field                |
@@ -8390,6 +8725,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -8415,6 +8751,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                       | Field                |
@@ -8440,6 +8777,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                               | Field                |
@@ -8465,6 +8803,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                |
@@ -8490,6 +8829,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                |
@@ -8515,6 +8855,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                      | Field                |
@@ -8540,6 +8881,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                    | Field                |
@@ -8565,6 +8907,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                |
@@ -8590,6 +8933,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                          | Field                |
@@ -8615,6 +8959,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                |
@@ -8640,6 +8985,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                |
@@ -8665,6 +9011,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                |
@@ -8690,6 +9037,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                   | Field                |
@@ -8715,6 +9063,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -8740,6 +9089,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                |
@@ -8765,6 +9115,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                       | Field                |
@@ -8790,6 +9141,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                               | Field                |
@@ -8815,6 +9167,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -8840,6 +9193,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                |
@@ -8865,6 +9219,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                           | Field                |
@@ -8890,6 +9245,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                        | Field                |
@@ -8915,6 +9271,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -8940,6 +9297,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                 | Field                |
@@ -8965,6 +9323,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                             | Field                |
@@ -8990,6 +9349,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9015,6 +9375,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                |
@@ -9040,6 +9401,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                             | Field                |
@@ -9065,6 +9427,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                            | Field                |
@@ -9090,6 +9453,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9115,6 +9479,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9140,6 +9505,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -9165,6 +9531,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -9190,6 +9557,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                             | Field                |
@@ -9215,6 +9583,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                             | Field                |
@@ -9240,6 +9609,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                            | Field                |
@@ -9265,6 +9635,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -9290,6 +9661,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                               | Field                |
@@ -9315,6 +9687,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                  | Field                |
@@ -9340,6 +9713,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9365,6 +9739,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9390,6 +9765,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9415,6 +9791,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9440,6 +9817,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9465,6 +9843,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                               | Field                |
@@ -9490,6 +9869,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                   | Field                |
@@ -9515,6 +9895,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                |
@@ -9540,6 +9921,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                |
@@ -9565,6 +9947,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                |
@@ -9590,6 +9973,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                        | Field                |
@@ -9615,6 +9999,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                |
@@ -9640,6 +10025,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                |
@@ -9665,6 +10051,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                                                                                           | Field                |
@@ -9690,6 +10077,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
     And I click on "Edit" icon in flex table for first draft record
     When I enter values into fields
       | Value                                                      | Field                |

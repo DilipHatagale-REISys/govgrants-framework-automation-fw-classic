@@ -17,6 +17,36 @@ Business Need: Sanity check for all Component Scenarios
     And I navigate to "Planning" tab
     Then I see "Funding Opportunities for Automation" displayed as chart title
 
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess
+  Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
+      | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
+    When I login as "Automation" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Draft Programs"
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    And I pause execution for "05" seconds
+    When I click on "Save" in the page details
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
+    And I navigate to "Planning" tab
+    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{Framework_recordUsed:programInSAModeCanBeApproved}"
+    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeCanBeApproved}" inside table
+    And I "Approve" in the approval decision
+    When I re-login to "As an Administrator" app as "Automation" user on "default" portal
+    And I navigate to "Operate" tab
+    When I navigate to "Email Logs" content inside "Logs" subheader on left panel
+    And I click toggle button to select "Queued Emails"
+    Then I see email is generated with template "Program_Approved_Email_Template"
+
   @35121    @colorCodeFieldAtCalenderConfig @calenderConfig
   Scenario: Changing color code at calender confiuration and validating the changed color at calender grantor-Home
     Given I have "default" configuration as below:
@@ -104,6 +134,7 @@ Business Need: Sanity check for all Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
+    And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:ProgramContactsNewTableId---"
     And I pause execution for "3" seconds

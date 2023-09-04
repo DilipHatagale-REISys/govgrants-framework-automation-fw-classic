@@ -4,9 +4,9 @@ import com.framework.automation.objects.IdBucket;
 import com.framework.automation.payloads.ApiUtilities;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.testingblaze.misclib.Properties_Logs;
-import com.testingblaze.register.EnvironmentFactory;
-import com.testingblaze.register.I;
+import com.helperPackage.misclib.Properties_Logs;
+import com.helperPackage.register.EnvironmentFactory;
+import com.helperPackage.register.I;
 import io.restassured.response.Response;
 
 import java.io.IOException;

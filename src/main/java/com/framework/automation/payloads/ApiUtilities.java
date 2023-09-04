@@ -4,7 +4,7 @@ import com.framework.automation.objects.IdBucket;
 import com.framework.automation.projectmanager.ProjectWebServices;
 import com.framework.automation.projectmanager.SetUpConfiguration;
 import com.google.gson.JsonObject;
-import com.testingblaze.register.I;
+import com.helperPackage.register.I;
 import io.restassured.response.Response;
 
 public class ApiUtilities {

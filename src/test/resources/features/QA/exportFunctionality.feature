@@ -137,7 +137,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Download as CSV" options is displayed
 
   @346758
-  Scenario Outline: Flex table-Export-Admin-UI-To verify that all the available records get displayed in downloaded PDF
+  Scenario: Flex table-Export-Admin-UI-To verify that all the available records get displayed in downloaded PDF
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |

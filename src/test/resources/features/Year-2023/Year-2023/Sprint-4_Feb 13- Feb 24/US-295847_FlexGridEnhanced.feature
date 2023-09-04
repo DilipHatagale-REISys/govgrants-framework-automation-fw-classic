@@ -43,7 +43,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I select value inside table "---program:-:SubawardTableIdForAdminPM---" is "20"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @296868 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (PM)
@@ -54,7 +54,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I select value inside table "---program:-:SubawardTableIdForAdminPM---" is "20"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 1 to 20 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @296869 @dilip
   Scenario: Phase Level-E-table- To verify when user changes the page size (Show entries) to 20, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to 20. (SPI)
@@ -87,7 +87,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I select value inside table "---program:-:SubawardTableIdForAdminPM---" is "All"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
-    Then I see table contains "Showing 1 to 24 of 24 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 1 to 32 of 32 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @296882
   Scenario: To verify when user changes the page size (Show entries) to All, click on row level view action and click on page back arrow then table should get open on the page size (Show entries) to All. (SPI)
@@ -173,7 +173,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
 
   @296904
   Scenario: To verify when user changes the page size (Show entries) to All and refreshes the page then table should get open on the page size (Show entries) to All. (PM)
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
@@ -297,7 +297,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Planning" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see table contains "Showing 1 to 33 of 33 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 1 to 24 of 24 records" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @296938
   Scenario: To verify when user changes the page size (Show entries) to All, click on the another phase and again click on the same phase where page size was changed to All then table should get open on the page size (Show entries) to All.(SPI)
@@ -1455,11 +1455,12 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select value inside table "---program:-:SubawardTableIdForSPIuser---" is "10"
+    And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:SubawardTableIdForSPIuser---"
     And I navigate to "Applications" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:SubawardTableIdForAdminPM---"
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForSPIuser---"
+    Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:SubawardTableIdForSPIuser---"
 
   @297144 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(Admin)
@@ -1472,7 +1473,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
     Then I see "---program:-:SubawardTableIdForAdminPM---" table contains "Page 2 of"
-    Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
+    Then I see table contains "Showing 11 to 20 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @297145 @dilip
   Scenario: Phase Level-E-table- To verify when Pagination is changed to next and page size is 10, user clicks on row level view action and click on page back arrow then table should restore page size and Pagination(PM)
@@ -1753,7 +1754,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:SubawardTableIdForSPIuser---"
     And I refresh the page
-    Then I see "up" arrow is displayed inside "Status" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:SubawardTableIdForSPIuser---"
 
   @297304 @dilip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Picklist is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
@@ -1789,11 +1790,11 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Applications" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see "up" arrow is displayed inside "Status" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:SubawardTableIdForSPIuser---"
 
     ########formula##########
 
-  @297387 @dilip
+  @297387 @dilip @Bug-344935 @wip
   Scenario: Phase Level-E-table- To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1804,7 +1805,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297390 @dilip
+  @297390 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1815,7 +1816,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297392 @dilip
+  @297392 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Formula (SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1826,7 +1827,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to back
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForSPIuser---"
 
-  @297399 @dilip
+  @297399 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1838,7 +1839,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297400 @dilip
+  @297400 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1850,7 +1851,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297402 @dilip
+  @297402 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1862,7 +1863,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForSPIuser---"
 
-  @297403 @dilip
+  @297403 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (Admin)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1872,7 +1873,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Budget Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297404 @dilip
+  @297404 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (PM)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1882,7 +1883,7 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I refresh the page
     Then I see "up" arrow is displayed inside "Project Period" in table "---program:-:SubawardTableIdForAdminPM---"
 
-  @297405 @dilip
+  @297405 @dilip @Bug-344935 @wip
   Scenario: To verify when sort direction of data type-Formula is set in ascending order and refreshes the page then records should be in ascending order for data type-Formula (SPI)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1895,103 +1896,186 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     ########------------Date-----------##########
 
   @297343 @dilip
-  Scenario: Phase Level-E-table- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: Phase Level-E-table- To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | Admin | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
   @297344 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (PM)
-    When I login to "As a Grantor" app as "PM" user
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
     And I navigate to back
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
-  @297345 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
-    Given I am on "SUBPORTAL" portal
+  @297345 @dilip @Bug-344935 @wip
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientsRelatedAwards2 | Name                      |                            |
+    Given I am on "<User>" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
     And I click on "View" icon in "---program:-:SubawardTableIdForSPIuser---" flex table for "1" record
     And I navigate to back
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Examples:
+      | User      | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | SUBPORTAL | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
   @297349 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I refresh the page
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | Admin | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
   @297351 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (PM)
-    When I login to "As a Grantor" app as "PM" user
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I refresh the page
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
-  @297352 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
-    Given I am on "SUBPORTAL" portal
+  @297352 @dilip @Bug-344935 @wip
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order and refreshes the page then records should be in ascending order for data type-Date (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientsRelatedAwards2 | Name                      |                            |
+    Given I am on "<User>" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
     And I refresh the page
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Examples:
+      | User      | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | SUBPORTAL | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
   @297355 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
-    When I login to "As a Grantor" app as "ADMIN" user
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(Admin)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I navigate to "Planning" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | Admin | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
   @297356 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
-    When I login to "As a Grantor" app as "PM" user
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(PM)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
     And I navigate to "Planning" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForAdminPM---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | PM   | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
 
-  @297358 @dilip
-  Scenario: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
-    Given I am on "SUBPORTAL" portal
+
+  @297358 @dilip @Bug-344935 @wip
+  Scenario Outline: To verify when sort direction of data type-Date is set in ascending order,click on the another phase and again click on the same phase where sort direction set as ascending order then records should be in ascending order(SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientsRelatedAwards2 | Name                      |                            |
+    Given I am on "<User>" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    And I select "Sort Ascending" order by clicking on arrow beside of "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    And I select "Sort Ascending" order by clicking on arrow beside of "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
     And I navigate to "Applications" tab
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
-    Then I see "up" arrow is displayed inside "Budget Period Start Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Then I see "up" arrow is displayed inside "Award Issue Date" in table "---program:-:SubawardTableIdForSPIuser---"
+    Examples:
+      | User      | newFieldsApi                                                                                                                                | defaultFieldsApi                                                                                                          |
+      | SUBPORTAL | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c,AwardIssueDate__c | Name,GrantAwardName__c,BudgetPeriod__r.SupportYear__c,BudgetStartEndDate__c,AmountAwarded__c,Status__c,AmendmentNumber__c |
+
 
 ###############reset table#################
 
@@ -2002,8 +2086,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select value inside table "---program:-:SubawardTableIdForAdminPM---" is "5"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:SubawardTableIdForAdminPM---"
 
   @297467 @dilip
@@ -2070,8 +2154,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:SubawardTableIdForAdminPM---"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:SubawardTableIdForAdminPM---"
 
   @297473 @dilip
@@ -2081,8 +2165,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:SubawardTableIdForAdminPM---"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForAdminPM---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForAdminPM---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:SubawardTableIdForAdminPM---"
 
   @297474 @dilip
@@ -2092,8 +2176,8 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:SubawardTableIdForSPIuser---"
-    And I click on menu inside "Subawards  - Active"
-    And I select "Reset Table" from parallel lines dropdown of "Subawards - Active"
+    When I click on "Menu" button inside table id "---program:-:SubawardTableIdForSPIuser---"
+    When I click on "Reset Table" button inside table id "---program:-:SubawardTableIdForSPIuser---"
     Then I do not see "up" arrow is displayed inside "EGMS ID" in table "---program:-:SubawardTableIdForSPIuser---"
 
   @297475 @dilip
@@ -2741,10 +2825,11 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Overview" sub tab
     And I click on "View" icon in "---program:-:DataTableEnhanceTableIDforContactsTable---" flex table for "1" record
     And I click modal button "Close"
+    And I click on "Close" button inside tabel header "DataTableEnhanceProgramContacts"
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
 
   @297578 @dilip
-  Scenario: To verify when user changes page size to 10, click on row level View action and click on close icon of modal then records should be resorted to page size to 10 (PM)
+  Scenario: To verify when user changes page size to 10, click on row level View action and navigate back then records should be resorted to page size to 10 (PM)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
@@ -2759,24 +2844,36 @@ Business Need: Test suite: User Story 295847: QA Only- Internal - Enhancement - 
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on "View" icon in "---program:-:SubawardTableIdForAdminPM---" flex table for "1" record
-    And I click modal button "Close"
+    And I navigate to back
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableID---"
 
   @297579 @dilip
   Scenario: To verify when user changes page size to 10, click on row level View action and click on close icon of modal then records should be resorted to page size to 10 (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
-    When I navigate to "Component testing " sub tab
+    When I navigate to "Component testing" sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I refresh the page
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:ScheduledActivitiesAllTableIDForSPI---"
 
   @297588 @dilip
   Scenario: Record level-E-table-To verify when user changes Sort direction to Ascending, click on row level View action and click on close icon of modal then records should be resorted in ascending  (SPI)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-3264                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab

@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.DynamicFormPage;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -107,7 +107,8 @@ public class DynamicFormSteps {
                 " //div[@class='container-fluid ng-scope']//span[text()='" + text + "'] |" +
                 " //div[@id='ActiveGrantsGrid_1FlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
                 " //div[@id='ActiveGrantsGridFlexToggle']/preceding-sibling::div/div//div/span[contains(text(),'" + text + "')] |" +
-                " //div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div/div//div//div/span[contains(text(),'" + text + "')]"));
+                " //div[@id='GrantorRelatedAwards2FlexToggle']/preceding-sibling::div/div//div//div/span[contains(text(),'" + text + "')] |" +
+                " //div[@id='ActiveGrantsGridFlexToggle']/ancestor::div[@class='col-md-12']//span[contains(text(),'" + text + "')]"));
     }
 
     @And("I click on {string} icon in flex table for first draft record")
