@@ -332,7 +332,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220071 @220072 @220101 @220102 @220123 @220124 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: validate status of program is changed to approved after getting approved by both the approvers and To verify that when record is submitted for approval and approver send it back to owner, then in Date column "Approval Request Recalled" text displayed
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -419,7 +419,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220497 @220498 @220500 @220501 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline:To verify that on selecting "Reject" status by approver, overall status changed to "Rejected", Assigned To, Actual Approver status will validate
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -463,7 +463,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220545 @LWC-ApprovalHistorySuit @dilip
   Scenario: Admin - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
-   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -531,7 +531,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220546 @LWC-ApprovalHistorySuit @dilip
   Scenario:PM - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
-   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -668,7 +668,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   PM - To verify that when approver send back the record to owner, then Status changed to "Sent Back" for respective approver row, also in comments column, "Send back" text displayed,
   Admin - To verify that while selecting approval decision actions, whatever comments added by approver displayed correctly under "Comments" column in Approval history table,
   PM - To verify that while selecting approval decision actions, whatever comments added by approver displayed correctly under "Comments" column in Approval history table
-  #  Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+  #  Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

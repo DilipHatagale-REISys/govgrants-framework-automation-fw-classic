@@ -475,4 +475,9 @@ public class FlexTableSteps {
     public void iSeeTableIdFlexTableRenderInModalView(String usage, String tableid) {
         flexTablePage.assertIfTableRenderInModalWindow(usage, tableid);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" help text displayed in table \"([^\"]*)\"$")
+    public void iSeeHelpTextDisplayedInTable(String usage, String headernameOrArrowOrValue, String tableid) {
+        flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrowOrValue,tableid);
+    }
 }

@@ -5,7 +5,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @256805 @256806 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (PM)
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -45,7 +45,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @256937 @256942 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when user clicks on save button on new contacts modal window (Admin) and PM
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -73,7 +73,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @257351 @257352 @257358 @257365 @257366 @257399 @257400 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when click on 'New' button (PM)
-   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -140,7 +140,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @257765 @257766 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on flex table when row grouping is applied and the page is refreshed in the edit page layout (Admin) and PM
-       # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+       # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -168,7 +168,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @257015 @257017 @256995 @256997 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when user clicks  on 'Associate' button on associate contacts modal window (Admin) and PM
-   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -215,7 +215,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @256660 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (Admin) or PM
-   # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+   # Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

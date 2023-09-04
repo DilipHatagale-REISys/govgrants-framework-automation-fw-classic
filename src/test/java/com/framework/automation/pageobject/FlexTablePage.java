@@ -1145,7 +1145,8 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
+                " //ul/li//span[text()='" + iconId + "']"));
     }
 
 
@@ -1300,20 +1301,21 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrow, String tableid) {
+    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrowOrValue, String tableid) {
         if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isFalse();
         }
     }
 
-    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrow, String tableid) {
+    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrowOrValue, String tableid) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrow + "')] |" +
-                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrow + "'] | " +
-                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrow + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrowOrValue + "')] |" +
+                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrowOrValue + "'] | " +
+                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrowOrValue + "'] |" +
+                    " //div[@id='" + tableid + "']/preceding-sibling::div//ul/li/*[@title='" + headernameOrArrowOrValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

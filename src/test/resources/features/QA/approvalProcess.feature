@@ -11,7 +11,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName   | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Hide Action | true          | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -50,7 +50,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Sequence              | 5             | ADAC-0105          |
       | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -88,7 +88,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -127,7 +127,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -165,7 +165,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName            | fieldNewValue                   | coreComponentField |
       | Approval Decision Action:General | Confirmation Title   | Automation Approval             | ADAC-0105          |
       | Approval Decision Action:General | Confirmation Message | Confirmation box for automation | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -205,7 +205,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField |
       | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -246,7 +246,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName      | fieldNewValue | coreComponentField       |
       | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -282,7 +282,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       |
       | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -422,7 +422,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Task Config:Task Action             | Complete On View? | true          | Approve Program       |                           |                            |
       | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantee State Program | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -465,7 +465,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                   | fieldNewValue                          | coreComponentField       |
       | Approval Process Steps Cache:General | Reject Confirmation Title   | Automation Reject                      | Program_Manager_Approver |
       | Approval Process Steps Cache:General | Reject Confirmation Message | Reject Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -512,7 +512,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Decision Action:General     | Comments Required             | false                                    | ADAC-0103                |
       | Approval Process Steps Cache:General | Reassign Confirmation Title   | Automation Reassign                      | Program_Manager_Approver |
       | Approval Process Steps Cache:General | Reassign Confirmation Message | Reassign Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -558,7 +558,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                          | fieldNewValue                                 | coreComponentField       |
       | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Automation Send to Owner                      | Program_Manager_Approver |
       | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Send to Owner Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -604,7 +604,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName            | fieldNewValue                 | coreComponentField |
       | Approval Decision Action:General | Confirmation Title   | Automation for Rejection      | ADAC-0106          |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Rejection | ADAC-0106          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -647,7 +647,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Decision Action:General | Comments Required    | false                       | ADAC-0103          |
       | Approval Decision Action:General | Confirmation Title   | Automation for Forward      | ADAC-0103          |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Forward | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -687,7 +687,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -736,7 +736,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName            | fieldNewValue                | coreComponentField |
       | Approval Decision Action:General | Confirmation Title   | Automation for Sendback      | ADAC-0104          |
       | Approval Decision Action:General | Confirmation Message | Test Automation for Sendback | ADAC-0104          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -776,7 +776,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName          | fieldNewValue | coreComponentField |
       | Task Config:Task Action | View Page Profiles | <newProfiles> | Approve Program    |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -824,7 +824,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
       | Approval Process Steps Cache:General | Approve Email Template | true                            | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantee State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -875,7 +875,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantee State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -920,7 +920,7 @@ Business Need: Approval Process Component Scenarios
    #   | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | true          | Program_Manager_Approver |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantee State Program    | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -965,7 +965,7 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantee State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1007,7 +1007,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Comments Required | true          | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1046,7 +1046,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1089,7 +1089,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1126,7 +1126,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0106          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1163,7 +1163,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1200,7 +1200,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0104          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1231,7 +1231,7 @@ Business Need: Approval Process Component Scenarios
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoke
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1349,7 +1349,7 @@ Business Need: Approval Process Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                  | name                                  |
       | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1397,7 +1397,7 @@ Business Need: Approval Process Component Scenarios
 #    And I update custom setting changes:
 #      | booleanValue | integerValue | id                 | description                  | name                                  |
 #      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-#    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1443,7 +1443,7 @@ Business Need: Approval Process Component Scenarios
 #    And I update custom setting changes:
 #      | booleanValue | integerValue | id                 | description                  | name                                  |
 #      | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-#    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1483,7 +1483,7 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
       | Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1519,7 +1519,7 @@ Business Need: Approval Process Component Scenarios
 
   @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1559,7 +1559,7 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Approval Decision comp | true          | Grantee State Program |                           |                            |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

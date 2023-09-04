@@ -3032,6 +3032,90 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I hovering mouse on help text "GrantsListtooltip" icon
     Then I see "Help text for Automation" shown as help text
 
+  @339453
+  Scenario: Help Config- SPI- UI- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Help" option is getting displayed under Menu in table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @339455
+  Scenario: Help Config- PM- UI- Verify if we are able to find help text under help option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    When I hovering mouse on help text "Help" icon
+    And I pause execution for "2" seconds
+    Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
+
+  @339458
+  Scenario: Help Config- PM- UI- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    When I hovering mouse on help text "Help" icon
+    Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
+
+    @339456
+      Scenario: Help Config- Admin- Config- Verify if we are able to find help text under help option.
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+        | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+        | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+        | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+      When I login to "As a Grantor" app as "Admin" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+      Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+
+
+  @339459
+      Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+        | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+        | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+        | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+      When I login to "As a Grantor" app as "Admin" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+      Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+
 ############################Test suite: FLex table 1 (Suite ID: 334517)#########################
 
   @336187
@@ -4974,20 +5058,49 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338462
   Scenario: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    And I pause execution for "10" seconds
-    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "5" seconds
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
-    And I enter text inside Description box "Description for second description box"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @336178
+  Scenario: LWC-Flex table-Admin-Config-To verify that user is able to render flex table on Modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @336180
+  Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"

@@ -4,7 +4,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @109932    @verifyProgramInActiveModeByLoginAsPMUser @ActivateProgramPath
   Scenario: validate status of program is changed to active after getting approved by both the approvers
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -51,7 +51,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @109392  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
   Scenario: validate announcement in created state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -110,7 +110,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
   Scenario: validate announcement in published state
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -216,7 +216,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @SendBackActivity
   Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -313,7 +313,7 @@ Business Need: Sanity check for all Component Scenarios
   Scenario: validate grant created ad activated by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
    #program Activation
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
