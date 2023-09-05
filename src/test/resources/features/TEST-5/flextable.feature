@@ -891,10 +891,10 @@ Business Need: Flex Table Component Scenarios
   @40128    @hideForProfileFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -905,10 +905,10 @@ Business Need: Flex Table Component Scenarios
   @40129    @hideForUserFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User | Internal      | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -919,11 +919,11 @@ Business Need: Flex Table Component Scenarios
   @40217    @hideOperatorFieldUsingANDOperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide Operator    | AND                  | ActiveFundingOpportunitiesAll | Name                      | New                        |
@@ -936,12 +936,12 @@ Business Need: Flex Table Component Scenarios
   @40219    @hideOperatorFieldUsingOROperatorAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide For Profile |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide Operator    | AND               | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide For User    | Internal             | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide For Profile | System Administrator | ActiveFundingOpportunitiesAll | Name                      | New                        |
       | Flex Table Action     | Hide Operator    | OR                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
@@ -954,10 +954,10 @@ Business Need: Flex Table Component Scenarios
   @40220    @hideExpressionJSONFieldAtActiveFundingOpprtunityFlexTableCreateAction-gAnnouncement @smoke
   Scenario: Hide create top level action for specific profile from configuration and validating it at under active funding opprtunities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                         | coreComponentField               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName            | fieldNewValue                                                         | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Hide Expression JSON | govgrants_config:ActiveFundingOpportunitiesAllFlexTableExpressionJson | ActiveFundingOpportunitiesAll | Name                      | Create                     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1130,8 +1130,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                               | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @84828    @verifyDateFieldFormatForLocalAsEDTUnderFlexTable-gPlanning
   Scenario Outline: validate the date field format under flex table with respective to EDT Local
@@ -1155,8 +1155,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                               | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @84830    @verifyDateFieldFormatForLocalAsISTUnderFlexTable-gPlanning
   Scenario Outline: validate the date field format under flex table with respective to IST Local
@@ -1180,8 +1180,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "1/7/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                               | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,StartDate__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
 
   @84704    @verifyDateAndTimeFieldFormatForLocalAsESTUnderFlexTable-gPlanning
@@ -1206,8 +1206,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "03/17/2021, 04:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @84714    @verifyDateAndTimeFieldFormatForLocalAsEDTUnderFlexTable-gPlanning
   Scenario Outline: validate the date and time  field format under flex table with respective to EDT Local
@@ -1231,8 +1231,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "03/17/2021, 05:36 PM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @84716    @verifyDateAndTimeFieldFormatForLocalAsISTUnderFlexTable-gPlanning
   Scenario Outline: validate the date and time  field format under flex table with respective to IST Local
@@ -1256,8 +1256,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "03/18/2021, 03:06 AM" for title "DateandTime" inside table "toggleFlexTablePrograms"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,DateandTime__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @106401    @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTable
   Scenario: validate date inside value input box field is inserted successfully at flex table
@@ -1567,8 +1567,8 @@ Business Need: Flex Table Component Scenarios
     Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                                  | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,FundedAmount__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @144830    @validateCommaSeparatedValueIsDisplayedOnFlexTableForPercentField
   Scenario Outline: Validate comma separated  value should be display on the Percent field at flex table
@@ -1596,8 +1596,8 @@ Business Need: Flex Table Component Scenarios
     Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                             | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Percent__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @145475    @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTable
   Scenario: validate Advance filter search with does not contain operator at flex table
@@ -1634,8 +1634,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                            | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @146548    @verifyPaginationIsDisplayedAtTopAndBottomOfFlexTable-gPlanning
   Scenario: validate pagination is displayed attop and bottom in flex table of programs-planning
@@ -1811,8 +1811,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
 
   @151627    @validateIsSearchWorkingForLongTextSearchedInFlexTableQuickSearchBox
@@ -1895,8 +1895,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @136016    @validateCommasAreDisplayedIn4DecimalValueOnFlexTableForPercentFieldTotal
   Scenario Outline: Validate commas are displayed in 4 decimal value at percent field at flex table total
@@ -1923,8 +1923,8 @@ Business Need: Flex Table Component Scenarios
     Then I see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
 
     Examples:
-      | newFieldsApi                             | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Percent__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @155301    @validateIfUserSearchRecordAtQuickSearchThenRecordCountIsDisplayedCorrectlyUnderFlexTableShowRecord
   Scenario: Validate if user search any record then total record count should display correctly under showing total records
@@ -2013,15 +2013,14 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Edit" icon for "TestAndru Testsymon" to save inside subtab
+    When I click on "Edit" icon for "Program Manager" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
     When I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
-    #Then I see "Program Manager" inside Application Budget flex table for specified record "TestAndru Testsymon"
+    #Then I see "Program Manager" inside Application Budget flex table for specified record "Program Manager"
     Then I see value "Program Manager" for title "Project Role" inside table "---program:-:programContactsTableId---"
-
 
   @159986    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsCloseModelAndRefreshGrid @abhishekS
   Scenario: validate flex table refresh behaviour-Close modal and refresh grid
@@ -2035,10 +2034,10 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Edit" icon for "TestAndru Testsymon" to save inside subtab
+    When I click on "Edit" icon for "Automation PM" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
     And I click modal button "Save"
     Then I see value "Program Manager" for title "Project Role" inside table "---program:-:programContactsTableId---"
@@ -2055,10 +2054,10 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "Edit" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "Edit" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Edit" icon for "TestAndru Testsymon" to save inside subtab
+    When I click on "Edit" icon for "Program Manager" to save inside subtab
     And I click on "Save" in the page details
     Then I see entire page is refreshing
 
@@ -2145,7 +2144,7 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                        |
       | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c,Application__r.ExternalOrganization__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,NumberofProjectAreas__c,Status__c,GrantAbbreviation__c,TotalAwardObligatedAmount__c |
 
-  @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout
+  @168747 @VerifyCurrencyReferenceFieldIsAvailableOnTheTableItDisplaysDollerSignForViewlayout @wip
   Scenario Outline: Data table -To verify,  if a currency reference field is available on the table it displays a dollar sign for the view layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2157,8 +2156,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -2179,8 +2178,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "Edit" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "Edit" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -2351,8 +2350,8 @@ Business Need: Flex Table Component Scenarios
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @217337 @NumberFieldInWrongFormatPMuser
   Scenario Outline: To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
@@ -2372,8 +2371,8 @@ Business Need: Flex Table Component Scenarios
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
     Examples:
-      | newFieldsApi                                 | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Number_Test__c,Status__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @176533 @ME-grid-Toverify,whenusermorethansingle-clickontoplevelactionbuttonthensingleconfirmationboxappearsonthelayout @wip
   Scenario: ME-grid - To verify, when user more than single -click on top level action button then single confirmation box appears on the layout
@@ -2478,8 +2477,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
@@ -2499,8 +2498,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -2668,8 +2667,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
@@ -2682,8 +2681,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see hyperlink at value "Test Automation Organization" inside "fieldAccountId" modal
@@ -2986,8 +2985,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     Then I see "Name" shown as flex table column title
@@ -2998,8 +2997,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1244"
-    When I click on "View" icon for "PG-A11-1244" inside table
+    When I perform quick search for "PG-A11-1253"
+    When I click on "View" icon for "PG-A11-1253" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "govgrantsuat@gmail.com.invalid" in "---program:-:programContactsTableId---" panel
     Then I see "Email" shown as flex table column title
