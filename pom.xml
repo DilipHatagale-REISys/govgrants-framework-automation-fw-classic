@@ -231,6 +231,18 @@
             <artifactId>testng</artifactId>
             <version>7.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.testing-blaze</groupId>
+            <artifactId>blaze-core</artifactId>
+            <version>1.4.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.testing-blaze</groupId>
+            <artifactId>blaze-core</artifactId>
+            <version>1.4.5</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
