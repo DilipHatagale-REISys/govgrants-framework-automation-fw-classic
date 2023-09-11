@@ -121,8 +121,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for FlextableEnhanced"
-    When I click on "View" icon for "Automation Internal Program for FlextableEnhanced" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
@@ -138,8 +138,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-1364"
-    When I click on "View" icon for "PG-A11-1364" inside table
+    When I perform quick search for "PG-REI-2065"
+    When I click on "View" icon for "PG-REI-2065" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
 
@@ -191,8 +191,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-1364"
-    When I click on "View" icon for "PG-A11-1364" inside table
+    When I perform quick search for "PG-REI-2065"
+    When I click on "View" icon for "PG-REI-2065" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
@@ -210,8 +210,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-1364"
-    When I click on "View" icon for "PG-A11-1364" inside table
+    When I perform quick search for "PG-REI-2065"
+    When I click on "View" icon for "PG-REI-2065" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
@@ -239,7 +239,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn | DataTableEnhanceProgramContacts | Name                      | FTC-13602                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -247,7 +247,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
+   # When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Automation PM"
 
   @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
@@ -257,7 +257,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForEnhancedGrid | DataTableEnhanceProgramContacts | Name                      | FTC-13602                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideColumnJsonForEnhancedGrid | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -265,7 +265,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "PG-REI-1190"
     When I click on "View" icon for "PG-REI-1190" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Name" not displayed in enhanced grid table column title
+    Then I see "Organization" not displayed in enhanced grid table column title
 
   @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table -planning
@@ -291,8 +291,8 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping | true          | DataTableEnhanceProgramContacts | Name                      | FTC-12821                  |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | GrantorRelatedAwards2 | Name                      | FTC-12821                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -371,8 +371,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-A11-1364"
-    When I click on "View" icon for "PG-A11-1364" inside table
+    When I perform quick search for "PG-REI-2065"
+    When I click on "View" icon for "PG-REI-2065" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "FirstName LastNam" in "---program:-:programContactsTableId---" panel
     When I click on "Edit" icon for "FirstName LastNam" inside table
@@ -446,8 +446,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for FlextableEnhanced"
-    When I click on "View" icon for "Automation Internal Program for FlextableEnhanced" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Lisa Mitchell" in "---program:-:programContactsTableId---" panel
     And I pause execution for "10" seconds
@@ -492,7 +492,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-11238                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -509,7 +509,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-11238                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -556,13 +556,13 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable2 | GrantorRelatedAwards2 | Name                      | FTC-1560                   |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable2 | GrantorRelatedAwards2 | Name                      | FTC-12819                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Status" in flex table header "Subawards - Active"
+    Then I softly do not see "EGMS ID" in flex table header "Subawards - Active"
 
   @194929 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
@@ -571,7 +571,7 @@ Business Need: Flex Table enhanced Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12391                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

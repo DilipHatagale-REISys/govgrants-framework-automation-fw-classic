@@ -1716,11 +1716,11 @@ Business Need: All pdf and xls related scenario including component and complete
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-2623                   |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2625                   |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2625                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"

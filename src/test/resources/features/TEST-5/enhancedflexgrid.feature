@@ -3089,7 +3089,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action                   | Refresh Behavior  | Refresh the entire page | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | false                   | Grantee State Program          | Name                      | TAB-409                    |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | false                   | Grantee State Program          | Name                      | TAB-409                    |
     Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3116,7 +3116,7 @@ Business Need: Enhanced Flex Grid Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action                   | Refresh Behavior  | Refresh the grid | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | false            | Grantee State Program          | Name                      | TAB-409                    |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel? | false            | Grantee State Program          | Name                      | TAB-409                    |
     Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

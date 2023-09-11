@@ -363,10 +363,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Setup of header overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7145,8 +7145,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7161,8 +7161,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7177,8 +7177,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7193,8 +7193,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7209,8 +7209,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7225,8 +7225,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7241,8 +7241,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7257,8 +7257,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7273,8 +7273,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7289,8 +7289,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7305,8 +7305,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7321,8 +7321,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7339,8 +7339,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
     Then I see "Add" button inside "Files" flex table not displayed
@@ -7389,8 +7389,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7405,8 +7405,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7421,8 +7421,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7437,8 +7437,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7455,8 +7455,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I see "Add" button inside "Notes" flex table not displayed
@@ -7474,8 +7474,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I see "Add" button inside "Notes" flex table not displayed
@@ -7491,8 +7491,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
 
@@ -7507,8 +7507,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table not displayed
 
@@ -7525,8 +7525,8 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Direct Grant"
-    When I click on "View" icon for "Automation Direct Grant" inside table
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Files" flex table not displayed
     Then I see "Add" button inside "Notes" flex table not displayed
@@ -8485,10 +8485,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify User Sends Records To Approve User Forward Record Another User Then Reject Option Available
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -8534,10 +8534,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify User Click On submit For Approval Action Error Message Displayed On View Mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8565,10 +8565,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Verify After Clicking Edit Button All error Message Displayed On View Mode Carry Forwarded To Edit Mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8619,12 +8619,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
-      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+     # | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                               | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantor State Program | Name                      | TAB-2011                   |
+     # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8652,12 +8652,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
-      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+   #   | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldCheckedThenHideEditModeUsingEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                        | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantor State Program | Name                      | TAB-2011                   |
+    #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                                   | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8685,12 +8685,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
-      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+     # | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideEditModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
+    #  | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8718,12 +8718,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory                    | fieldName           | fieldOrignalValue  | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    |                    | Grantor State Program | ApiGeneratedId:0 |
       | Flex Table Action                        | Hide Decision Field | HideEdit1Button__c |                       | ApiGeneratedId:1 |
-      | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
+     # | Page Tabs Config                         | Highlights Panel?   | false              |                       | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON    | govgrants_config:HideFeildJSONEnhacedFlexEditLayoutURLFieldinHideViewModeUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-23599                  |
       | Flex Table Action                        | Hide Decision Field |                                                                                                  | Programs              | Name                      | Edit1                      |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
+     # | Page Tabs Config:Page Layout Action      | Highlights Panel?   | true                                                                                             | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

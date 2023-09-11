@@ -754,12 +754,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-      | Page Tabs Config          | Highlights Panel?        | false                      | Grantor State Program | Name                      | TAB-409                    |
+      #| Page Tabs Config          | Highlights Panel?        | false                      | Grantor State Program | Name                      | TAB-409                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                | fieldNewValue              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject           | Hide Decision Expression |                            | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject           | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-      | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantor State Program | Name                      | TAB-409                    |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "10" seconds

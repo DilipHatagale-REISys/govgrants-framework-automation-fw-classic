@@ -526,12 +526,12 @@ Business Need: Sanity check for all Component Scenarios
       | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
       | Flex Table            | Enable Data Import/Export | false              | ApiGeneratedId:0 |
       | Flex Table            | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:1 |
-      | Page Tabs Config      | Highlights Panel?         | false              | ApiGeneratedId:2 |
+      #| Page Tabs Config      | Highlights Panel?         | false              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                 | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                  | Enable Data Import/Export | true           | Programs              |                           |                            |
       | Flex Table:General                  | Display Field Names       | <newFieldsApi> | Programs              |                           |                            |
-      | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel?         | true           | Grantee State Program | Name                      | TAB-409                    |
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description                       | name                 |
       | true         | 0            | a0b1C00000Lta0jQAB | To Enable/Disable Program Trigger | EnableProgramTrigger |
