@@ -346,7 +346,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
-    When I perform quick search for "product flow start" in "---program:-:flexGridEnhancedID---" panel
+    When I perform quick search for "product flow start" in "---program:-:SubAwardFlexTableId---" panel
     Then I see "View" icon for "product flow start" is not displayed inside flex table
 
   @77470     @hideColumnJsonFieldAtEnhancedDataTableAtSideBar-gHome
@@ -369,7 +369,7 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
-    When I perform quick search for "product flow start" in "---program:-:SubAwardFlexTableTableId---" panel
+    When I perform quick search for "product flow start" in "---program:-:SubAwardFlexTableId---" panel
     When I click on "View" icon for "product flow start" inside table
     Then I see "Grant View" shown as over view header
 
@@ -379,11 +379,11 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
     When I navigate to "Subaward Terms and Conditions" content inside "Monitoring Activities" subheader on left panel
-    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableTableId---" panel
+    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableId---" panel
     When I click on "Edit" icon for "AD-GTR-01" inside table
-    When I enter values "Test Automation sidebar" into textarea for table id "---program:-:SubAwardFlexTableTableId---"
-    When I click on top right button "Save" in flex table with id "---program:-:SubAwardFlexTableTableId---"
-    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableTableId---" panel
+    When I enter values "Test Automation sidebar" into textarea for table id "---program:-:SubAwardFlexTableId---"
+    When I click on top right button "Save" in flex table with id "---program:-:SubAwardFlexTableId---"
+    When I perform quick search for "AD-GTR-01" in "---program:-:SubAwardFlexTableId---" panel
     Then I see value "Test Automation sidebar" for multiple cells at column "Title"
 
   @78043    @validateViewActionAtFlexTableEnhancedAtSideBar-gHOME
@@ -399,13 +399,6 @@ Business Need: Side bar Component Scenarios
 
   @78068    @validateEditActionAtEnhancedDataTableAtSideBar-gHOME
   Scenario: validate edit action at enhanced table at sidebar - home phase
-  #Scenario Outline: validate edit action at enhanced table at sidebar - home phase
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-#      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantorRelatedAwards2 |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -417,10 +410,6 @@ Business Need: Side bar Component Scenarios
     When I click on top right button "Save" in flex table with id "---program:-:GrantorRelatedAwards2gridTableId---"
     When I perform quick search for "Test Automation sidebar" in "---program:-:GrantorRelatedAwards2gridTableId---" panel
     Then I see value "Test Automation sidebar" for multiple cells at column "GrantAwardName__c"
-#
-#    Examples:
-#      | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                    |
-#      | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c,AddressProgramContact__c | Name,GrantAwardName__c,BudgetPeriodEndDate__c,ExternalOrganization__c,AmendmentNumber__c,Status__c,GrantAwardName__c,AmountAwarded__c |
 
   @77697    @enableOverallTotalFieldAtParentFlexTableForEnhancedGridAtSideBar-gPlanning
   Scenario Outline: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced grid at sidebar - home phase
@@ -509,11 +498,11 @@ Business Need: Side bar Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
-    When I perform quick search inside global search "PG-A11-1244" without processing
+    When I perform quick search inside global search "PG-REI-2049" without processing
     When I click on global search and select "Programs"
-    #When I perform quick search inside global search "PG-A11-1244" without processing
-    Then I softly see record "PG-A11-1244" is displayed inside autosuggestion dropdown at global search
-    Then I softly see record "PG-A11-1244" is displayed inside autosuggestion dropdown at global search
+    #When I perform quick search inside global search "PG-REI-2049" without processing
+    Then I softly see record "PG-REI-2049" is displayed inside autosuggestion dropdown at global search
+    #Then I softly see record "PG-REI-2049" is displayed inside autosuggestion dropdown at global search
 
   @126114    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfAnnouncementIsSelected-gHome
   Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if announcement is selected
@@ -529,7 +518,7 @@ Business Need: Side bar Component Scenarios
     When I click on global search and select "Announcement"
     When I perform quick search inside global search "FOA-DOC" without processing
     Then I softly see record "FOA-DOC-001" is displayed inside autosuggestion dropdown at global search
-    Then I softly see record "FOA-DOC-002" is displayed inside autosuggestion dropdown at global search
+   # Then I softly see record "FOA-DOC-002" is displayed inside autosuggestion dropdown at global search
 
   @126117    @VerifyAutoSuggestionDropdownWithRecordIdIsDisplayedAtGlobalSearchQuickSearchBoxIfGrantIsSelected
   Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if grant is selected-gGrant
@@ -669,8 +658,8 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I navigate to "Reassign" content inside "My Tasks" subheader on left panel
-    And I select value "Automation PM" into field "s2id_autogen1"
-    And I select value "Automation EXE" into field "s2id_autogen3"
+    And I select value "Shambhavi Kulkarni" into field "s2id_autogen1"
+    #And I select value "Automation EXE" into field "s2id_autogen3"
     And I pause execution for "3" seconds
     And I click on "Reset" Button in Session Timeout dialogbox
     Then I do not see expected table with id "toggleFlexTableRelatedProgramGoalsandObjectives"

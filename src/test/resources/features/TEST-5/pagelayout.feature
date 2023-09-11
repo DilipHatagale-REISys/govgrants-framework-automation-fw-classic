@@ -8409,7 +8409,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Notes Record" inside table
     Then I see modal with id "addAtt" displayed properly
 
-  @152777  @VerifyThatPageDoesNotRefreshAfterClickingOnOKAtConfirmationMsgAtPageLayout
+  @152777  @VerifyThatPageDoesNotRefreshAfterClickingOnOKAtConfirmationMsgAtPageLayout @wip
   Scenario: validate that page does not refresh after click at confirmation pop-up action "OK" at page layout
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

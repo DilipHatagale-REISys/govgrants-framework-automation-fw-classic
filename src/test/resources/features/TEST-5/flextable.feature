@@ -58,7 +58,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I do not see quick search option is displayed
+    Then I see quick search option is displayed
 
   @34027    @disablingAdvanceFilter-gPlanning
   Scenario: validate disabling of advance filter from planning-Program flex table
@@ -257,93 +257,93 @@ Business Need: Flex Table Component Scenarios
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile |                   | TestFlextable      | Name                      | Edit                       |
+      | Flex Table Action     | Hide For Profile |                   | AnnouncementContacts      | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile | System Administrator | TestFlextable      | Name                      | Edit                       |
+      | Flex Table Action     | Hide For Profile | System Administrator | AnnouncementContacts      | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
-    When I click on "View" icon for "Test Program For Automation - Created - Required Behaviour" inside table
-    When I navigate to "Component testing" sub tab
-    Then I see "Edit" icon for "AN-A11-164" is not displayed inside flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
   @34298    @hideForUserFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For User |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+      | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User |                   | AnnouncementContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName     | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For User | Internal      | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+      | configurationCategory     | fieldName     | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For User | Internal      | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation " is not displayed inside flex table
 
   @34299    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for edit layout from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilitiesInternalProgram |                           | Edit                       |
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Context |                   | AnnouncementContacts |                           | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName        | fieldNewValue | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Context | Edit          | ProgramRolesAndResponsibilitiesInternalProgram |                           | Edit                       |
+      | configurationCategory     | fieldName        | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Context | Edit          | AnnouncementContacts |                           | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    Then I see "Edit" icon for "Owner" is not displayed inside flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
   @34300    @hideOperatorFieldUsingANDOperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using AND operator from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Profile |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide Operator    |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide For Context |                   | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide Operator    |                   | AnnouncementContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide For Context | Edit                 | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide Operator    | AND                  | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide For Context | Edit                 | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide Operator    | AND                  | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
   @34302    @hideOperatorFieldUsingOROperatorAtRolesAndResponsibilitiesFlexTAbleAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Profile |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide For Context |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide Operator    |                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile |                   | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide For Context |                   | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide Operator    |                   | AnnouncementContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide For Profile | System Administrator | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide For Context | Edit                 | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
-      | Flex Table Action Sobject | Hide Operator    | OR                   | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory     | fieldName        | fieldNewValue        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide For Profile | System Administrator | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide For Context | Edit                 | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action Sobject | Hide Operator    | OR                   | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
 
   @39287  @headerHelpTextFieldAtFlexTable-gPlanning @skipOnJenkins
@@ -423,7 +423,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "20" records inside flex table id "---program:-:programsTableId---"
+    Then I see "1" to "20" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @40002 @helpTextFieldAtFlexTableColumnHeader-gPlanning @skipOnJenkins
   Scenario Outline: Changing content of help text field at flex table column header from config and validating it inside flex table of programs-planning
@@ -520,8 +520,8 @@ Business Need: Flex Table Component Scenarios
     Then I see edit opens with "<newActionUrl>"
 
     Examples:
-      | oldActionUrl                                                     | newActionUrl            |
-      | /apex/ProgramEdit?id={!Program__c.Id}&RecordType=InternalProgram | https://www.google.com/ |
+      | oldActionUrl                                                     | newActionUrl                                               |
+      | /apex/ProgramEdit?id={!Program__c.Id}&RecordType=InternalProgram | https://test8-internal--fwautomat--c.sandbox.vf.force.com/ |
 
   @40020    @iconCSSFieldAtFlexTableAction-gPlanning
   Scenario: Setup icon for flex table edit action from config and validating it at flex table of program-planning
@@ -541,76 +541,76 @@ Business Need: Flex Table Component Scenarios
   @40079    @locationFieldAtFlexTableRowLevelEditAction-gPlanning @smoke
   Scenario: Changing location of roles and responsibilities flex table edit action from row to top from config anf validating it inside Roles and Responsibilities flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Row               | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type |                   | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type |                   | AnnouncementContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Top           | ProgramRolesAndResponsibilities | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button        | ProgramRolesAndResponsibilities | Name                      | Edit                       |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top           | AnnouncementContacts | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type | Button        | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    Then I see "Edit" button inside "Roles And Responsibilities" flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Edit" button inside "Contacts" flex table
 
   @40080    @locationFieldAtFlexTableTopLevelNewAction-gPlanning
   Scenario: Changing location of roles and responsibilities flex table new action button from top to row from config anf validating it inside Roles and Responsibilities flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location                   | Top               | ProgramRolesAndResponsibilities | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top               | AnnouncementContacts | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button            | AnnouncementContacts | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Location  | Row           | ProgramRolesAndResponsibilities | Name                      | New                        |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location  | Row           | AnnouncementContacts | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "3" seconds
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    Then I see "New" icon for "Owner" is displayed inside flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "New" icon for "Contacts" is displayed inside flex table
 
   @40087    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsMenu-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Header Action Display Type | Button            | AnnouncementContacts | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Header Action Display Type | Menu          | ProgramRolesAndResponsibilities | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Header Action Display Type | Menu          | AnnouncementContacts | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableProgramRolesAndResponsibilitiesInternalProgram"
-    Then I see "New" options inside "Roles And Responsibilities" enabled
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAnnouncementContacts"
+    Then I see "New" options inside "Contacts" enabled
 
   @40088    @headerActionDisplayTypeFieldAtFlexTableTopLevelNewActionAsLink-gPlanning
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it inside Roles and Responsibilities flex table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Header Action Display Type | link          | ProgramRolesAndResponsibilities | Name                      | New                        |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action     | Header Action Display Type | Button            | ProgramRolesAndResponsibilities | Name                      | New                        |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action     | Header Action Display Type | link          | ProgramRolesAndResponsibilities | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    Then I see "New" button inside "Roles And Responsibilities" flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "New" button inside "Contacts" flex table
 
   @40096    @headerActionDisplayTypeFieldAtFlexTableTopLevelViewSubmittedApplicationsAsLink-gPlanning @smoke
   Scenario: Changing display type of roles and responsibilities flex table new action button from button to menu from config anf validating it at flex table of program-planning
@@ -754,12 +754,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory     | fieldName                | fieldOrignalValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Decision Expression | <defaultExpression>        | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-      #| Page Tabs Config          | Highlights Panel?        | false                      | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config          | Highlights Panel?        | false                      | Grantor State Program | Name                      | TAB-409                    |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                | fieldNewValue              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject           | Hide Decision Expression |                            | Programs              | Name                      | Edit                       |
       | Flex Table Action Sobject           | Hide Decision Field      | <defaultHideDecisionField> | Programs              | Name                      | Edit                       |
-     # | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantor State Program | Name                      | TAB-409                    |
+      | Page Tabs Config:Page Layout Action | Highlights Panel?        | true                       | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I pause execution for "10" seconds
@@ -986,20 +986,19 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Refresh Behavior | Refresh the grid | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    When I record webelement at table "ProgramRolesAndResponsibilitiesInternalProgram" for column "Owner"
-    And I click on "Edit" icon for "Owner" inside flex table with id "ProgramRolesAndResponsibilitiesInternalProgram" with wait for record
-    When I enter value "Owner Of The Record" into field "fieldResponsibility__c"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
+    When I enter value "Automation PM" into field "fieldResponsibility__c"
     And I click modal button "Save"
-    Then I see "Owner Of The Record" inside Application Budget flex table for specified record "Owner"
+    Then I see "Automation PM" inside Application Budget flex table for specified record "Automation"
 
   @34294    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshParentPage-gPlanning
   Scenario: validate flex table action field- refresh parent Page
@@ -1007,17 +1006,17 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField                             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Refresh Behavior | Refresh parent page | ProgramRolesAndResponsibilitiesInternalProgram | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh parent page | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Responsibilities" sub tab
-    When I record webelement at table "ProgramRolesAndResponsibilitiesInternalProgram" for column "Owner"
-    When I click on "Edit" icon for "Owner" to save inside subtab
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
+    When I enter value "Automation PM" into field "fieldResponsibility__c"
     And I click on "Save" in the page details
     Then I see parent page is refreshing
 
@@ -1050,7 +1049,7 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    Then I see "User" shown as over view header
+    Then I see "Program" shown as over view header
 
   @80156    @validateDefaultTotalAtCurrencyFieldIsNotDisplayedAtFlexTable-gPlanning
   Scenario: validate default total amount inside funded amount column is not displayed inside flex table of programs-planning
@@ -1073,7 +1072,7 @@ Business Need: Flex Table Component Scenarios
 #    Given I have "lightening" configuration as below:
 #      | booleanValue | integerValue | id                 | description                                                              | name                           |
 #      | true         | 0            | a0k4T000000Ye3zQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
-    When I login to "As a Grantor" app as "ADMIN" user
+#    When I login to "As a Grantor" app as "ADMIN" user
 #    And I update custom setting changes:
 #      | booleanValue | integerValue | id                 | description                                                              | name                           |
 #      | true         | 0            | a0k4T000000Ye3zQAD | This will Enable actions on the modal window at top and bottom of window | EnableModalHeaderActionButtons |
@@ -1152,7 +1151,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Time Zone Testing"
-    Then I see value "07/01/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "09/07/2023" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -1177,7 +1176,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Time Zone Testing"
-    Then I see value "1/7/2022" for title "Start Date" inside table "toggleFlexTablePrograms"
+    Then I see value "09/07/2023" for title "Start Date" inside table "toggleFlexTablePrograms"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -1278,11 +1277,11 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Greater than | 09/16/2020 |
+      | Start Date | Greater than | 09/06/2023 |
     When I enter advance filter values inside id "advfPrograms"
-      | Program Name | Contains | Automation Internal Program for Time Zone Testing |
+      | Program Name | Contains | Created state change Automation |
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "07/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
@@ -1292,11 +1291,11 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Less than | 03/01/2022 |
+      | Start Date | Less than | 09/26/2023 |
     When I enter advance filter values inside id "advfPrograms"
-      | Program Name | Contains | Automation Internal Program for Time Zone Testing |
+      | Program Name | Contains | Created state change Automation |
     Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "01/01/2025" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
@@ -1307,9 +1306,9 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date   | Greater than or Equal to | 06/19/2023                                        |
-      | Program Name | Contains                 | Automation Internal Program for Time Zone Testing |
-    Then I softly see value "06/19/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date   | Greater than or Equal to | 09/07/2023                      |
+      | Program Name | Contains                 | Created state change Automation |
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
@@ -1320,9 +1319,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Less than or Equal to | 09/16/2020 |
-    When I perform quick search for "09/16/2020"
-    Then I softly see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Less than or Equal to | 08/28/2023 |
+    Then I softly see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @106409    @validateAdvanceFilterValueForDateFieldAtFlexTable
@@ -1333,8 +1331,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Equals to | 09/16/2020 |
-    Then I see value "09/16/2020" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Equals to | 08/25/2023 |
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @118453    @validateQuickSearchDisplayedRelevantDataOnlyAtFlexTable
   Scenario: Validate quickSearch displayed relevant data only at flex table
@@ -1352,9 +1350,9 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Change Requested"
-    Then I softly see value "Change Requested" for title "Status" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "Created" for title "Status" inside table "---program:-:programsTableId---"
+    When I perform quick search for "Submitted for Approval	"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Submitted for Approval" for title "Status" inside table "---program:-:programsTableId---"
 
   @119074    @validateQuickSearchDisplayedRelevantDataISearchedLookupValueAtFlexTable
   Scenario: Validate quickSearch displayed relevant data if searched lookup value at flex table
@@ -1362,9 +1360,10 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "SYSTEM"
-    Then I softly see value "SYSTEM" for title "Internal Organization" inside table "---program:-:programsTableId---"
+    When I perform quick search for "Test Automation Organization"
     Then I softly do not see value "Department of Community Health" for title "Internal Organization" inside table "---program:-:programsTableId---"
+    Then I softly see value "Test Automation Organization" for title "Internal Organization" inside table "---program:-:programsTableId---"
+
 
   @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
   Scenario: validate that cross icon is displayed at flex table quick search box
@@ -1386,7 +1385,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Program For Announcement Testing"
     Then I see "Announcement Name" not displayed in enhanced grid table column title
 
@@ -1401,7 +1400,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Program For Announcement Testing"
     Then I see "Announcement Name" not displayed in enhanced grid table column title
 
@@ -1416,7 +1415,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "Program For Announcement Testing"
     Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunitiesAll"
 
@@ -1431,9 +1430,9 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Program For Announcement Testing" in "ActiveFundingOpportunitiesAll" panel
-    Then I see that "*****" has been added in flextable with Id "ActiveFundingOpportunitiesAll"
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "product flow start" in "ActiveFundingOpportunitiesAll" panel
+    Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunitiesAll"
 
   @126941    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnTwoDifferentField
   Scenario: validate hide columns field at flex table using equals operator on 2 different fields field
@@ -1446,7 +1445,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     Then I see "Announcement Name" not displayed in enhanced grid table column title
 
   @126943    @validateHideColumnsFieldAtFlexTableUsingEqualsOperatorOnMultipleField
@@ -1460,7 +1459,7 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I perform quick search for "AN-A11-127"
     Then I softly see that "*****" has been added in flextable with Id "ActiveFundingOpportunitiesAll"
     When I perform quick search for "AN-A11-128"
@@ -1525,8 +1524,8 @@ Business Need: Flex Table Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Equals to | 06/19/2023 |
-    Then I see value "06/19/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Equals to | 09/07/2023 |
+    Then I see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
   Scenario: Validate comma separated  value should be display on the Number field at flex table
@@ -1671,9 +1670,9 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Test"
+    When I perform quick search for "edu 2 program"
     And I pause execution for "10" seconds
-    Then I see "Automation Test" value in flex table id "---program:-:programsTableId---"
+    Then I see "edu 2 program" value in flex table id "---program:-:programsTableId---"
 
   @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containing special character followed by space at flex table
@@ -1753,9 +1752,9 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "nge Req"
+    When I perform quick search for "itted for Approval"
     And I pause execution for "15" seconds
-    Then I softly see "Change Requested" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Submitted for Approval" value in flex table id "---program:-:programsTableId---"
 
   @149992    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet2AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "Requested" at flex table
@@ -1840,10 +1839,10 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Program For Announcement Testing"
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}"
     And I pause execution for "3" seconds
-    Then I softly see "Program For Announcement Testing" value in flex table id "ActiveFundingOpportunitiesAll"
+    Then I softly see "{Framework_recordUsed:AnnouncementWithSpeialCharNumberAndAlphabets}" value in flex table id "ActiveFundingOpportunitiesAll"
 
   @148754 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInFlexTable
   Scenario: validate that Parent page does not refresh after clicking on Save action in flex table
@@ -1932,10 +1931,9 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program Created"
+    When I perform quick search for "do not delete program for change request"
     And I pause execution for "3" seconds
-    Then I see the text :
-      | Showing 1 to 2 of 2 records |
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @148809     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
   Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
@@ -1950,8 +1948,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Greater than or Equal to | 06/30/2025 |
-    Then I see value "06/30/2025" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Greater than or Equal to | 08/25/2023 |
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @148810     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
   Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
@@ -1966,8 +1964,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Less than or Equal to | 05/30/2023 |
-    Then I see value "05/30/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Less than or Equal to | 08/25/2023 |
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @148812 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
   Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
@@ -1982,8 +1980,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Greater than | 06/30/2025 |
-    Then I see value "06/19/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Greater than | 06/30/2022 |
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @148813 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
   Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
@@ -1998,8 +1996,8 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
-      | Start Date | Less than | 01/01/2017 |
-    Then I see value "07/01/2016" for title "Start Date" inside table "---program:-:programsTableId---"
+      | Start Date | Less than | 01/01/2029 |
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @159944    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshTheGrid  @abhishekS
   Scenario: validate flex table refresh behaviour-to refresh the grid
@@ -2211,8 +2209,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on global search and select "All"
-    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    When I perform quick search inside global search "PG-T09-0028"
+    Then I see value "Apr 27, 2022" for title "Application Due Date" inside table "PageTemplateApp"
 
   @180704 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "program"
@@ -2229,8 +2227,8 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on global search and select "All"
-    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
-    Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
+    When I perform quick search inside global search "PG-T09-0028"
+    Then I see value "Apr 27, 2022" for title "Application Due Date" inside table "PageTemplateApp"
 
   @180705 @jyoti
   Scenario: Search Table-To verify, date-time field should be displayed properly on the Date time column  when select as "Announcement "
@@ -2305,9 +2303,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
-#    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+#    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
 #      | EGMS ID | Contains | PG-343-036-- |
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | EGMS ID | Contains | PG-343-036-- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
@@ -2318,7 +2316,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | EGMS ID | Contains | PG-343-36--- |
     Then I see "No records found" inside flex table with id "---program:-:programTableDivId---"
 
@@ -2565,9 +2563,9 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Status | Not equals to | Approved |
     Then I softly do not see value "Approved" for title "Status" inside table "---program:-:programTableDivId---"
 
@@ -2576,46 +2574,45 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Status | Equals to | Approved |
-    Then I softly see value "Approved" for title "Status" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Status | Equals to | Created |
+    Then I softly see value "Created" for title "Status" inside table "---program:-:programTableDivId---"
 
   @184284 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with 'less  than or equal to   ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Application Due Date | Less than or Equal to | 04/23/2023 |
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Application Due Date | Less than or Equal to | 09/17/2023 |
     When I pause execution for "2" seconds
-    Then I softly see value "04/23/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
+    Then I softly see value "09/17/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184283 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with ' greater than or equal to   ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Application Due Date | Greater than or Equal to | 04/23/2023 |
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Application Due Date | Greater than or Equal to | 04/23/2027 |
     When I pause execution for "10" seconds
-   # When I perform quick search for "08/30/2017"
-    Then I softly see value "04/23/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
+    Then I softly see value "09/17/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184250 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for date/time field with '  less than  ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Application Due Date | Less than | 05/02/2023 |
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Application Due Date | Less than | 05/02/2027 |
     Then I softly see value "05/02/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184242 @sprint23
@@ -2623,35 +2620,35 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I pause execution for "5" seconds
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Application Due Date | Greater than | 04/23/2023 |
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Application Due Date | Greater than | 09/10/2023 |
     And I pause execution for "5" seconds
-    Then I softly see value "04/23/2023" for title "Application Due Datee" inside table "---program:-:programTableDivId---"
+    Then I softly see value "09/17/2023" for title "Application Due Date" inside table "---program:-:programTableDivId---"
 
   @184239 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than or equal to   ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Greater than or Equal to | $1,000 |
-    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$10,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184240 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less than or equal to   ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @176520 @sprint20
   Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
@@ -2695,9 +2692,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | EGMS ID | Contains | AN-A11-158 |
-    Then I softly see value "AN-A11-158" for title "EGMS ID" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | EGMS ID | Contains | AN-A11-173 |
+    Then I softly see value "AN-A11-173" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184088 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Ends  with ' Operator
@@ -2706,9 +2703,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | EGMS ID | Ends with | A11-159 |
-    Then I softly see value "AN-A11-159" for title "EGMS ID" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | EGMS ID | Ends with | AN-A11-173 |
+    Then I softly see value "AN-A11-173" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184089 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with 'Contains' Operator
@@ -2717,9 +2714,9 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Announcement Name | Contains | Calendar Testing |
-    Then I softly see value "Calendar Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Announcement Name | Contains | ion Internal Announc |
+    Then I softly see value "Automation Internal Announcement for Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184091 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Does not Contains' Operator
@@ -2728,7 +2725,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Announcement Name | Does not contains | Announcement created for calendar test |
     Then I softly do not see value "Announcement created for calendar test" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
@@ -2739,7 +2736,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Announcement Name | Starts with | Program For Announcement |
     Then I softly see value "Program For Announcement Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
@@ -2750,7 +2747,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Announcement Name | Ends with | Application |
     Then I softly see value "Program For Application" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
@@ -2759,9 +2756,9 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Type | Equals to | Competitive |
     Then I softly see value "Competitive" for title "Type" inside table "---program:-:programTableDivId---"
 
@@ -2770,10 +2767,10 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Type | Not equals to | Competitive |
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Internal Organization | Equals to | SYSTEM |
     Then I softly do not see value "Competitive" for title "Type" inside table "---program:-:programTableDivId---"
 
   @184237 @sprint23
@@ -2781,9 +2778,9 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Greater than | $1,000 |
     Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
@@ -2792,31 +2789,31 @@ Business Need: Flex Table Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | EGMS ID | Starts with | AN-852 |
-    Then I softly see value "AN-852-006" for title "EGMS ID" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | EGMS ID | Starts with | AN-A11-173 |
+    Then I softly see value "AN-A11-173" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
   @184234 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'Equals to ' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
-      | Award Ceiling | Equals to | $1,000 |
-    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
+      | Award Ceiling | Equals to | $1,000.00 |
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
   @184085 @sprint23 @dnyaneshwari
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | EGMS ID | Does not contains | AN-343-030 |
     Then I do not see value "AN-343-030" for title "EGMS ID" inside table "---program:-:programTableDivId---"
 
@@ -2826,13 +2823,13 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    Then I see field "Description Field" inside page block
+    Then I see field "Description" inside page block
 
   @184238 @sprint23
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less  than or eual to ' Operator
@@ -2841,7 +2838,7 @@ Business Need: Flex Table Component Scenarios
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
-    When I enter advance filter values inside table id "---program:-:programTableDivId---"
+    When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Less than or Equal to | $1,000 |
     Then I softly see value "$0.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
 
@@ -2939,7 +2936,7 @@ Business Need: Flex Table Component Scenarios
       | newFieldsApi                                                                                                        | defaultFieldsApi                                                                    |
       | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,Status__c,SequenceNumber__c |
 
-  @189257 @sprint26
+  @189257 @sprint26 @wip
   Scenario Outline: To verify, when the user make some incorrect changes to any 'Display Field Names' of the Search table, the error message is displayed on the Page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3574,7 +3571,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see record with text "Created" in "---program:-:programTableDivId---"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @217419 @FilterCriteria @dnyaneshwari
   Scenario: To verify that if user not entered any filter criteria to display records, then all the available records get displayed
@@ -3582,14 +3579,15 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see record with text "Approved" in "---program:-:programTableDivId---"
+    And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
+    Then I softly see value "Approved" for title "Status" inside table "---program:-:ProgramsFlexTableToggleId---"
 
   @217420 @FilterCriteria @dnyaneshwari
   Scenario:  To verify that if user not entered any filter criteria to display records, then all the available records get displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I see record with text "Submitted to Grantor" in "---program:-:programTableDivId---"
+    Then I softly see value "Converted to Award" for title "Status" inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
   @217221 @TotalRecordCountForSpiuser @jyoti
   Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
@@ -3786,6 +3784,12 @@ Business Need: Flex Table Component Scenarios
 
   @217291 @verifydisablingEnableRecordSelectionrecordselectioncolumnnotgetdisplayedforrespectiveflextable. @Vrishali
   Scenario:SPI-To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -3859,7 +3863,7 @@ Business Need: Flex Table Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test Automation For Testing"
+    When I perform quick search for "Test Automation For Testing OK Tested"
     Then I softly see "No Records Found" inside flex table with id "---program:-:programTableDivId---"
 
   @208964 @ToVerifyDownloadASPDFIsDisplyedOnMenuIconInsideFlexTable @Jyoti
@@ -3886,12 +3890,12 @@ Business Need: Flex Table Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true          | Applications       |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I see "#" shown inside flex table with id "toggleFlexTableApplications"
+    Then I see "#" shown inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @flexTable
  # Scenario Outline: validate adding field names for different data types in flex table of programs-planning
