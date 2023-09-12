@@ -289,5 +289,5 @@ Business Need: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    And I click on "View" icon for "Automation Program For Test" inside table
     Then I see step progress bar is displayed
