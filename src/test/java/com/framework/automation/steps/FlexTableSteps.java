@@ -448,29 +448,14 @@ public class FlexTableSteps {
         flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
     }
 
-    @Then("^I (see|do not see) \"([^\"]*)\" button is enabled in flex table")
-    public void iSeeButtonIsEnabledInFlexTable(String usage, String button) {
-        flexTablePage.assertIfButtonEnabled(usage, button);
+    @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
+    public void iSeeValueForTheTitleInsideTable(String usage, String columnValue, String columnTitle, String flextableDivId) {
+        flexTablePage.assertFlextableValuesDisplayedOrNot(usage, columnValue, columnTitle, flextableDivId);
     }
 
-    @Then("^I (see|do not see) filter \"([^\"]*)\" is displayed$")
-    public void iSeeFilterIsDisplayed(String usage, String value) {
-        flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
-    }
-
-    @Then("^I (see|do not see) flex table header equals \"([^\"]*)\" inside table id \"([^\"]*)\"$")
-    public void iDoNotSeeFlexTableHeaderEqualsInsideTableId(String usage, String headernameOrArrow, String tableid) {
-        flexTablePage.assertIfHeaderNameIsDisplayed(usage, headernameOrArrow, tableid);
-    }
-
-    @Then("^I (see|do not see) page description is displayed \"([^\"]*)\" with \"([^\"]*)\" arrow inside table id \"([^\"]*)\"$")
-    public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String pageinfo, String arrow, String tableid) {
-        flexTablePage.asserIfPageDescriptionIsDisplayed(usage,pageinfo,arrow,tableid);
-    }
-
-    @Then("^I (see|do not see) \"([^\"]*)\" pagination arrow inside table id \"([^\"]*)\"$")
-    public void iDoNotSeeArrowInsideTableId(String usage, String headernameOrArrow, String tableid) {
-        flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrow,tableid);
+    @Then("^I (can see|can not see) \"([^\"]*)\" page block displayed$")
+    public void iSeeValuePageBlockDisplayed(String usage,String blockName) {
+        flexTablePage.assertValuePageBlockDisplayedOrNot(usage, blockName);
     }
 
     @Then("^I (see|do not see) table id \"([^\"]*)\" flex table render in modal view$")

@@ -5,7 +5,7 @@ Business Need: Attachment Component Scenarios
 
   @236868 @Verify,QuicksearchissupportedforTextfield  @Vrushali @LWC-CustomLookupTestSuit
   Scenario:Verify, Quick search is supported for the Text field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19,7 +19,7 @@ Business Need: Attachment Component Scenarios
 
   @236867 @Verify,QuicksearchisupportedforNumberfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Verify, Quick search is supported for the Number field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -33,7 +33,7 @@ Business Need: Attachment Component Scenarios
 
   @236869 @Verify,Quicksearchissupportedforpicklistfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Verify, Quick search is supported for the picklist field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -47,7 +47,7 @@ Business Need: Attachment Component Scenarios
 
   @236870 @236872 @Quicksearchissupportedforcheckboxfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the checkbox  field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -61,7 +61,7 @@ Business Need: Attachment Component Scenarios
 
   @236871 @QuicksearchissupportedTextareafield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the Text area  field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -75,7 +75,7 @@ Business Need: Attachment Component Scenarios
 
   @236873 @Quicksearchissupportedforphonefield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the phone  field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -89,7 +89,7 @@ Business Need: Attachment Component Scenarios
 
   @236874 @QuicksearchissupportedfortheEmailfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the Email  field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -103,7 +103,7 @@ Business Need: Attachment Component Scenarios
 
   @236875 @QuicksearchissupportedfortheURLfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the URL field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -117,7 +117,7 @@ Business Need: Attachment Component Scenarios
 
   @236876 @QuicksearchissupportedfortheLookupfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the Lookup field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -130,7 +130,7 @@ Business Need: Attachment Component Scenarios
 
   @236877 @Quicksearchissupportedforthepercentfield @Vrushali @LWC-CustomLookupTestSuit
   Scenario: Quick search is supported for the percent  field
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -143,7 +143,7 @@ Business Need: Attachment Component Scenarios
 
   @236878 @Partialkeywordissupportedinquicksearchbox
   Scenario: Partial keyword is supported in quick search box
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

@@ -5,7 +5,7 @@ Business Need: Attachment Component Scenarios
 
   @221532 @255614 @ValidateRequiredfieldasterisk'symbolonattachmentmodal @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:To verify asterisk symbol is visible for all mandatory fields such as Type,File,Description on UI with no space between word and symbol
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -26,7 +26,7 @@ Business Need: Attachment Component Scenarios
 
   @221534 @255886 @255891 @Toverifyuserisabletosave'.jpg'file @LWC-AttachmentTestSuit @Vrushali
   Scenario: To verify user is able to save '.jpg','.xlsx','.png' file
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -67,7 +67,7 @@ Business Need: Attachment Component Scenarios
 
   @255887 @255889 @255890 @Toverifyuserisabletosave'.pdf,.txt,.docx'file @LWC-AttachmentTestSuit @Vrushali
   Scenario:To verify user is able to save '.pdf,.txt,.docx' file
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -104,7 +104,7 @@ Business Need: Attachment Component Scenarios
 
   @221523 @255441 @255863 @221533 @255008 @222489 @Validatemessage_Attachmentaddedsuccessfully @LWC-AttachmentTestSuit @Vrushali
   Scenario Outline: To verify, admin User are able to add the attachment in the LWC Attachment page block
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -136,7 +136,7 @@ Business Need: Attachment Component Scenarios
 
   @221524 @255547 @Validatemessage"Pleaseselecttype" @vrushali @LWC-AttachmentTestSuit
   Scenario Outline: To verify, user is not able to save attachment if mandatory field 'Type' is not filled and getting error message as 'Please select Type'
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -164,7 +164,7 @@ Business Need: Attachment Component Scenarios
 
   @221525 @255556 @Validatemessage"Fileshouldnotbeblank" @vrushali @LWC-AttachmentTestSuit
   Scenario Outline: To verify, user is not able to save attachment if mandatory field 'File' is not filled and getting error message as 'File should not be blank'. (Admin)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -191,7 +191,7 @@ Business Need: Attachment Component Scenarios
 
   @221526 @255562 @Validatemessage"Pleaseentervalueindescriptionfield" @vrushali @LWC-AttachmentTestSuit
   Scenario Outline: To verify, user is not able to save attachment if mandatory field 'Description' is not filled and getting error message as 'Please enter value in description field'. (Admin)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -254,7 +254,7 @@ Business Need: Attachment Component Scenarios
   @255672 @validatemsg"Fileshouldnotbeblank"afteraddingblanktextfile @Vrushali @LWC-AttachmentTestSuit
   Scenario: validate msg "File should not be blank" after adding blank text file
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -320,7 +320,7 @@ Business Need: Attachment Component Scenarios
   @221527 @255589 @Vrushali @LWC-AttachmentTestSuit
   Scenario Outline:when user click on row level action delete, getting confirmation popup window and when click on 'Yes' then the record is getting deleted getting confirmation message as 'Record deleted successfully'
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -347,11 +347,11 @@ Business Need: Attachment Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-#      | PM    |
+      | PM    |
 
   @222487 @255488 @255420 @255427 @221528 @whenuserclicksonpageblockshrinkactionbuttonthencomponentgetsshrunk @LWC-AttachmentTestSuit
   Scenario Outline: when user clicks on page block shrink action button then component gets shrunk
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -639,7 +639,7 @@ Business Need: Attachment Component Scenarios
 
   @221566 @255405 @Toverify,Totalrecordsshoulddisplayedasperrecordadding&deleting
   Scenario Outline:To verify, Total records should displayed as per record adding & deleting
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -672,7 +672,7 @@ Business Need: Attachment Component Scenarios
 
   @221530 @Toverifyallfilesaregettingattachedfrom'Uploadfilefromworkspace'section
   Scenario: To verify all files are getting attached from 'Upload file from workspace' section
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -691,7 +691,7 @@ Business Need: Attachment Component Scenarios
 
   @221538
   Scenario: To verify only one file is getting attached even user clicked multiple times on attach button in upload file from workspace. (Admin)
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

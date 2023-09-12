@@ -951,11 +951,11 @@ Business Need: dynamic forms Component Scenarios
   @91796    @validateFormNameFieldAcceptsSpecialCharactersAtDynamicFormLayout
   Scenario: validate the form name with special characters is displayed at dynamic form view page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Capture Form          | Form Name | Dynamic Form      | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Capture Form          | Capture Package Name | Dynamic Form      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Capture Form:General  | Form Name | test~!@#$%^&*()_+{}][?/><. | CF-0000            |                           |                            |
+      | configurationCategory | fieldName            | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Form:General  | Capture Package Name | test~!@#$%^&*()_+{}][?/><. | CF-0000            | Capture Form              |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab

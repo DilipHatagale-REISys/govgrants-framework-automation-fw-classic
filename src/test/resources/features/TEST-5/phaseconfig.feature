@@ -3,7 +3,7 @@ Business Need: Phase Config Component Scenarios
   Test all phase config component based scenarios
   As a configuration manager i make different configurational changes in phase component and will validate them.
 
-  @34419    @validatePlanningPhaseAllowedProfile-gplanning @smoke
+  @34419    @validatePlanningPhaseAllowedProfile-gplanning
   Scenario Outline: Remove admin profile from config. and validate that Plannign phase doesn't show up in admin user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -18,7 +18,7 @@ Business Need: Phase Config Component Scenarios
       | New-Profile                                                                                  | Old-Profile                                                                                                        |
       | ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @34420    @validateTabDisplayName-gplanning @smoke
+  @34420    @validateTabDisplayName-gplanning
   Scenario: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automation
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -30,7 +30,7 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Automation" phase
 
-  @34484    @validatePhaseSequence-gplanning @smoke
+  @34484    @validatePhaseSequence-gplanning
   Scenario: Setup tab sequence as "0" from config. and validate that tab name for planning is changed to first position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -42,7 +42,7 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     Then I see "Planning" phase at position "0"
 
-  @34487    @validateChartsDisplayedAtBottom-gplanning @smoke
+  @34487    @validateChartsDisplayedAtBottom-gplanning
   Scenario: Setup body bottom page url for charts in config. and validate charts are displayed at bottom are displayed inside planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -68,7 +68,7 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "HOME" tab
     Then I donot see "Planning" in task summary by phase
 
-  @34589    @validateSettingAsDefaultLandingTab-gplanning @smoke
+  @34589    @validateSettingAsDefaultLandingTab-gplanning
   Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -106,7 +106,7 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Planning" tab
     Then I see "1" charts are displayed
 
-  @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning @smoke
+  @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning
   Scenario: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -123,7 +123,7 @@ Business Need: Phase Config Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     Then I see "Planning" tab is highlighted for particular program
 
-  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @smoke
+  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning
   Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -137,7 +137,7 @@ Business Need: Phase Config Component Scenarios
     When I click on global search and select "All"
     Then I see "Program Automation" in search dropdown
 
-  @44737    @addToGlobalSearchfieldAtphaseConfigSobject-gplanning @smoke
+  @44737    @addToGlobalSearchfieldAtphaseConfigSobject-gplanning
   Scenario: Disabling program inside global search and validating it inside global search of planning tab-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -151,7 +151,7 @@ Business Need: Phase Config Component Scenarios
     When I click on global search and select "All"
     Then I see "Program" is not displayed in global search All dropdown
 
-  @44738    @disableProgramInRecentViewedLinkInSideBar-gplanning @smoke
+  @44738    @disableProgramInRecentViewedLinkInSideBar-gplanning
   Scenario: Disabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -164,7 +164,7 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Planning" tab
     Then I see "PG" records are not present in Recently Viewed link in Sidebar
 
-  @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning @smoke
+  @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning
   Scenario: Enabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |

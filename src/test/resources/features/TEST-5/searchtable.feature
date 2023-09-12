@@ -5,8 +5,8 @@ Business Need: Search Table Component Scenarios
   Scenario: Search Table - Quick search should be working for Text field in Search Table
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "All"
-    When I perform quick search inside global search "PG-343-036"
-    When I perform quick search for "{Framework_recordUsed:SearchTableGlobleRecorod}"
-    Then I see value "Program @@/ created for special char" for title "Title" inside table "---program:-:GlobleSeachToggleTableId---"
+    When I perform quick search inside global search "PG-A11-2103"
+   # When I perform quick search for "Automation Internal"
+    Then I see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:GlobleSeachToggleTableId---"

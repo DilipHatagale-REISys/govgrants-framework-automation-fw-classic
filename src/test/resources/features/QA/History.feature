@@ -431,6 +431,8 @@ Business Need: history Component Scenarios
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldFundedAmount__c"
+    And I enter value "0" into field "fieldStartDate__c"
+    And I enter value "730" into field "fieldEndDate__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
     And I enter value "400000" into field "fieldFundedAmount__c"
@@ -572,7 +574,7 @@ Business Need: history Component Scenarios
   Scenario: validate custom fields on standard object are display inside field history table
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Internal" content inside "Organization" subheader on left panel
     When I click on "View" icon for "Test Automation Organization" inside table
     When I navigate to "Files" sub tab

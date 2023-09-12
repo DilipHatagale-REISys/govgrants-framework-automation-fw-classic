@@ -382,13 +382,13 @@ Business Need: Logged Issues Scenarios
 
   @56623    @hideForContextFieldAtRolesAndResponsibilitiesFlexTableTopLevelAction-gPlanning
   Scenario: Hide New top level action for from configuration and validating it at under roles and responibilities flex table- gPlanning
-    Given I have "default" configuration as below:
-      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON |                   | ProgramRolesAndResponsibilities | Name                      | New                        |
-    Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTableTop_NewAction | ProgramRolesAndResponsibilities | Name                      | New                        |
-    When I login as "Automation" user
+#    Given I have "default" configuration as below:
+#      | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action Sobject | Hide Expression JSON |                   | ProgramRolesAndResponsibilities | Name                      | New                        |
+#    Given I setup test configuration as below:
+#      | configurationCategory     | fieldName            | fieldNewValue                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:Hide_Expression_FlexTableTop_NewAction | ProgramRolesAndResponsibilities | Name                      | New                        |
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -399,64 +399,58 @@ Business Need: Logged Issues Scenarios
 
   @56624    @recordShouldOpensProperlyFoePendingTasksAssignedByMeSection
   Scenario: validate record of pending tasks assigned by me section should opens properly while logging as PM user
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
-    When I login as "Automation-PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "Creation" values from "Program_Field_Values.xlsx"
-    And I click on "Save and Close Modal" in the page details
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
-    And I pause execution for "3" seconds
-    When I click "Add" after selection of "Allen" in the table "---program:-:associateContactsTableId---"
-    And I pause execution for "3" seconds
-    And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
-    And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
-    And I enter value "Active" into field "fieldStatus__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Automation PM" into field "fieldName__c"
-    And I enter value "Program Approver" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Roles" sub tab
-    And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
-    And I enter value "Allen PM" into field "fieldName__c"
-    And I enter value "Key POC" into field "fieldBusinessRole__c"
-    And I click modal button "Save"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
-    When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
-    And I navigate to "Financials" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
-    When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:relatedFederalProgramTableId---"
-    When I click "Add" after selection of "90.404" in the table "---program:-:relatedFederalProgramSelectionTableId---"
-    And I navigate to "Log" sub tab
-    And I click on top right button "Associate" in flex table with id "---program:-:programServiceAreaTableId---"
-    And I pause execution for "4" seconds
-    When I click "Save" after selection of "PSA-0011" in the table "---program:-:programServiceAreaSelectionTableId---"
-    And I refresh the page
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "Automation-PM" user on "default" portal
-    And I navigate to "Planning" tab
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Start" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see the text containing :
-      | Description        |
-      | Attachment         |
+      | Description Field  |
       | System Information |
 
   @56625    @footerLinksShouldOpensProperlyAtGranteeHomePage
   Scenario: validate Terms and conditions footer links opens properly at grantee home page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on footer links "Terms and Conditions"
     When I switch to tab number "1"
     Then I see the text containing :
@@ -464,23 +458,23 @@ Business Need: Logged Issues Scenarios
 
   @56754    @textCountOnActiveKPIChartShouldBeOnlyOne
   Scenario: validate text COUNT coming only once at Active KPI chart on grantee planning page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Planning" tab
     Then I see "Count" for chart "KPI" comes only once
 
   @56757  @multipleTextShouldBeEnteredInsideDescription @check
   Scenario Outline: validate long text should displayed with scrll bar in sticky notes
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
     When I pause execution for "3" seconds
     When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
     When I click modal button "Save and Close"
-    And I pause execution for "60" seconds
+    And I pause execution for "20" seconds
     Then I see sticky Notes "Notes Title" contains text as "<descriptionValue>"
 
     Examples:
@@ -489,7 +483,7 @@ Business Need: Logged Issues Scenarios
 
   @56759    @closeOutRecordShouldOpensProperlyAtGtanteePage
   Scenario: Validate close out record should opens properly at grantee page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Closeout" tab
     When I perform quick search for "CL-0045"
@@ -502,35 +496,34 @@ Business Need: Logged Issues Scenarios
 
   @56763    @columnNameShouldComeForOnceInsideActiveGrantsGrid
   Scenario: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Monitoring" tab
     Then I see "Grantor Organization" in Monitoring Schedule For All Active Grant flex table header with id "toggleFGridMonitoringGranteeGridView" comes only once
 
   @56767    @errorMessageShouldComeWhileSavingWithoutEnteringAnyDetails
   Scenario: validate error message on saving roles and responisibilities modal without adding any information
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Roles" sub tab
-    When I click on top right button "New" in flex table with id "---program:-:programTableDivId---"
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Responsibilities" sub tab
+    When I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
     Then I see the text :
-      | is required to save. |
-      | Assigned to User     |
+      | Required Field Missing |
 
   @56773    @programRecordsSholdOpensProperlyInsidePlanTab
   Scenario: validate program record should opens properly inside plan sub tab At view deta9il page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I click on "View Program Details" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Plan" sub tab
     Then I see the text containing :
       | Goals Objectives |
@@ -538,17 +531,17 @@ Business Need: Logged Issues Scenarios
 
   @56779    @allChartsShouldDisplayProperlyOnPlanningPhase
   Scenario: validate charts are displaying properly on planning phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" charts displayed
 
   @56407    @associateButtonShouldDisplayForBudgetCategoryInFinancialTab
   Scenario: validate Associate button is displayed on budget category
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "PG-601-0066"
     When I click on "View Program Details" icon for "PG-601-0066" inside table
     When I navigate to "Financials" sub tab
@@ -556,28 +549,28 @@ Business Need: Logged Issues Scenarios
 
   @56408    @associateButtonShouldDisplayForProgramContactBlockInOverviewTab
   Scenario: validate Associate button is displayed on program contact page block
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Program Contacts" flex table
+    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
   @56410    @activeProgramsListViewBehaviourShouldBeAsEcpected
   Scenario: validate edit button should not be displayed for Active Program list view
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Active Programs"
-    When I perform quick search for "Data visibility program"
-    When I click on "View Program Details" icon for "Data visibility program" inside table
-    Then I see "Edit" icon for "Data visibility program" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
 
   @56416    @snapShotErrorMessageShouldPopulateProperlyAtGranteePage
   Scenario Outline: validate confirmation message for take snapshot is coming properly.
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
@@ -594,7 +587,7 @@ Business Need: Logged Issues Scenarios
 
   @56421    @dropdownValuesShouldDisplayProperlyForAnnouncementTypeField
   Scenario: validate values coming properly for Announcement Type DropDown At Opportunities Edit page details
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Opportunities" tab
     When I navigate to "Active" content inside "Activities" subheader on left panel
@@ -606,7 +599,7 @@ Business Need: Logged Issues Scenarios
 
   @56414    @globalSearchPopUpMessageShouldDisplayedProperly @check @wip
   Scenario Outline: validate global search alert pop up box display message properly on UI
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     When I perform quick search inside global search "e"
     And I see alert message "<message>"
@@ -620,7 +613,7 @@ Business Need: Logged Issues Scenarios
 
   @56397    @formsContentShouldNotBeMessedUp
   Scenario: Validate application form content should not displayed messed content on UI
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -654,7 +647,7 @@ Business Need: Logged Issues Scenarios
 
   @56615    @valuesShouldDisplayedUnderfieldDetailedBudgetingRequiredPicklist
   Scenario: validate expected values should displayed inside fieldDetailedBudgetingRequired picklist at announcement edit page
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
@@ -667,7 +660,7 @@ Business Need: Logged Issues Scenarios
 
   @56581    @editButtonShouldNotDisplayedForAwardInSubmitForApprovalStatus
   Scenario: validate edit button should not displayed on Page detail for award which is in submit for approval state
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantee"
     And I navigate to "Grants" tab
     And I click toggle button to select "Draft Grants"
@@ -680,9 +673,9 @@ Business Need: Logged Issues Scenarios
 
   @57265  @dateShouldDisplayeOnStickyNotesUnderMyWorkSpaceNotes @wip
   Scenario Outline: validate current date is displayed on sticky notes
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_Notes"
     When I delete specific Sticky Notes with title "Notes Title" on clicking "x"
     When I pause execution for "3" seconds
@@ -697,53 +690,70 @@ Business Need: Logged Issues Scenarios
 
   @57249    @PlanningPhaseShouldBeDisplayedInHighlightedMode
   Scenario: validate planning phase is displayed in highlighted Mode
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    And I click toggle button to select "Closed and Archived Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     When I click "program__c" lookup link
     Then I see "Planning" tab is highlighted for particular program
 
   @57156    @validateColorOfChevronBarForRejectedStatus
   Scenario: Validating rejected program status is in salmon color inside chevron staus bar
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
-    When I login as "Automation" user
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName | fieldNewValue | coreComponentField                                                               | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Program               | Status    | Created       | Test program for automation - SA mode only - Not approved - History Tab Scenario |                           |                            |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
-    When I click on "Edit" icon for "Test program for automation - SA mode only - Not approved - History Tab Scenario" inside table
-    When I click on "Save" in the page details
-    When I click on "Submit For Approval" in the page details
-    When I re-login as "Automation-PM" user on "default" portal
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Pending" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{Framework_recordUsed:programForHistoryTabScenarios}"
-    When I click on "Start" icon for "{Framework_recordUsed:programForHistoryTabScenarios}" inside table
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Disapprove" in the approval decision
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
 
   @57148    @validateGoveGrantLogoAndNameDisplayedProperly
   Scenario: validate govgrants logo and name is displayed properly on UI
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     Then I see govgrants logo "GovGrants Logo expanded" is displayed with name "Enterprise Grants Management System"
 
   @56840    @budgetCategoryShouldGetAddedProperly
   Scenario: validate budget category getting added properly
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I click on "View Program Details" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Financials" sub tab
     When I click on "Delete" icon for "SBC-A-209" inside table
     When I click on top right button "Associate" in flex table with id "ProgramBudgetCategory"
@@ -753,12 +763,12 @@ Business Need: Logged Issues Scenarios
 
   @56836    @programServiceAreaModalShouldGetClosesProperly
   Scenario: validate program service area modal getting closed after clicking on close icon on modal
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    When I click on "View Program Details" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Log" sub tab
     When I click on top right button "Associate" in flex table with id "RelatedProgramServiceAreas"
     When I close modal by clicking the top right x button
@@ -766,20 +776,20 @@ Business Need: Logged Issues Scenarios
 
   @56853    @lookupShouldWorkProperlyForPrimaryFundingOrganization
   Scenario: Validate lookup field is working properly at primary funding organization field
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForEmailNotify1}"
-    When I click on "Edit" icon for "{Framework_recordUsed:AnnouncementForEmailNotify1}" inside table
-    When I click search icon for "Awarding Federal Agency Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
-    Then I see "Active" status in lookup modal table
+    When I perform quick search for "Announcement For Calendar Testing"
+    When I click on "Edit" icon for "Announcement For Calendar Testing" inside table
+    When I click search icon for "Internal Organization Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
+    Then I see "Organization" status in lookup modal table
 
   @56945  @NotesShouldGetDeletedAfterClinkOnAcceptingDeleteConfirmation @wip
   Scenario Outline: validate Sticky Notes should get deleted properly after accepting action from delete confirmation popup
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_Notes"
     When I click on user notes content with icon name "plus"
     When I enter details as "<titleValue>""<descriptionValue>" on Add New Notes Modal for ""
@@ -795,28 +805,28 @@ Business Need: Logged Issues Scenarios
 
   @56849  @tableContainsOnlyProgramRelatedRecordsInsidePendingTasks
   Scenario: validate table inside pending tasks contains only program related records
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I navigate to "Planning" content inside "Task Summary By Phase" charts
     Then I see "PG" records are present in pending task table
 
   @56944  @pendingTaskContainSameNoOfRecordAsDisplayedInTaskSummaryByPhase
   Scenario: validate table inside pending tasks contains only program related records
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     Then I see task count for "Announcements" phase with the total records of flex table id "PhasePendingTasks"
 
   @56403    @queueLookUpModalShouldContainsExpectedUserList
   Scenario: Validate queue lookup modal contains expected queued related record at roles and responsibilities flex table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Draft Programs"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly}"
-    When I click on "View Program Details" icon for "{Framework_recordUsed:programInCreatedModeOnly}" inside table
-    When I navigate to "Roles" sub tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Responsibilities" sub tab
     When I click on top right button "New" in flex table with id "ProgramRolesAndResponsibilities"
     When I enter value "Queue" into field "fieldUserType__c"
     When I click search icon for "User Lookup (New Window)" lookup modal and swithing to frame "iframeCustomLookupModalId"
@@ -1022,7 +1032,7 @@ Business Need: Logged Issues Scenarios
     When I perform quick search for "BP-01" in "---program:-:inlineApplicationBudgetCategoryTableId---" panel
     Then I see that "BP-01" has been added in flextable with Id "---program:-:inlineApplicationBudgetCategoryTableId---"
 
-  @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications
+  @59287    @enablePaginationShouldWorkAtApplicationBudgetPeriods-gApplications @wip
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1043,7 +1053,7 @@ Business Need: Logged Issues Scenarios
     Then I see the text containing :
       | Page 2 |
 
-  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications @wip @changeInRequirement
+  @59130    @parentLevelLookupfieldOfApplicationBudgetPeriodsShouldBeInViewMode-gApplications @wip @changeInRequirement @wip
   Scenario: validate page navigation is working fine after enabling auto index and row grouping at ApplicationBudgetCategoryFlexTable
     When I login as "Automation" user
     When I setup my app as "As a Grantor"
@@ -2529,7 +2539,7 @@ Business Need: Logged Issues Scenarios
     And I pause execution for "2" seconds
     Then I see total amount row in flex table is not displayed
 
-  @91781    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTable-MEGrid @flexGrid
+  @91781    @validateHideColumnsFieldAtApplicationBudgetPeriodFlexTable-MEGrid @flexGrid @wip
   Scenario Outline: validate hide columns field at application budget period flex table - me grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2552,7 +2562,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                                                  |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c,TestField__c |
 
-  @81044    @VerifyDecimalPlacesInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @81044    @VerifyDecimalPlacesInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating decimal places inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2576,7 +2586,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @81043    @VerifyDecimalPlacesAreNotPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @81043    @VerifyDecimalPlacesAreNotPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating decimal places ar not present inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2600,7 +2610,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                                     |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,Application__r.AwardCeiling__c |
 
-  @91572    @VerifyDollarSignIsPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid
+  @91572    @VerifyDollarSignIsPresentInsideOverallTotalForCurrencyFieldAtMEGrid-gGrant @flexGrid @wip
   Scenario Outline: Validating dollar sign is present inside overall total for currency field at ME Grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3389,7 +3399,7 @@ Business Need: Logged Issues Scenarios
       | defaultFilterClauseForFLV2539                    | newFilterClauseForFLV2539                                                         |
       | RecordType.Name='Grantor' and status__c='Active' | RecordType.Name='Grantor' and status__c='Active' and ProjectTitle__c like 'Road%' |
 
-  @96610     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridParentTableAndIsAlignedCentrally-gPlanning @flexGrid
+  @96610     @VerifyTotalRecordCountDisplayedAtBottomOfMeGridParentTableAndIsAlignedCentrally-gPlanning @flexGrid @wip
   Scenario: validate total record count is displayed at bottom and is centrally aligned under me grid parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3936,7 +3946,7 @@ Business Need: Logged Issues Scenarios
     When I navigate to "History" sub tab
     Then I see table with header "Snapshot History" contains records "currentdate"
 
-  @103187    @validateCurrencyFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  @103187    @validateCurrencyFieldFormattingAtTotalDisplayedUnderMeGridParentTable @wip
   Scenario Outline: validating currency field formatting of total amount under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3967,7 +3977,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @103842    @validateCurrencyFieldFormattingAtValueDisplayedUnderCurrencyFieldMeGridParentTable
+  @103842    @validateCurrencyFieldFormattingAtValueDisplayedUnderCurrencyFieldMeGridParentTable @wip
   Scenario Outline: validating field formatting of currency field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3995,7 +4005,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                   |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,TestField__c |
 
-  @103910    @validateNumberFieldFormattingWithCommasAtMeGridParentTable
+  @103910    @validateNumberFieldFormattingWithCommasAtMeGridParentTable @wip
   Scenario Outline: validating formatting of number field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4023,7 +4033,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
 
-  @103906    @validateDecimalPlacesNotDisplayedUnderNumberFieldMeGridParentTable
+  @103906    @validateDecimalPlacesNotDisplayedUnderNumberFieldMeGridParentTable @wip
   Scenario Outline: validating decimal places not displayed at number field value under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4051,7 +4061,7 @@ Business Need: Logged Issues Scenarios
       | defaultFieldsApi                                                         | newFieldsApi                        |
       | Id,SupportYear__c,DateTime__c,BudgetStartDate__c,Notes__c,Application__c | Id,SupportYear__c,SequenceNumber__c |
 
-  @103197    @validateNumberFieldFormattingAtTotalDisplayedUnderMeGridParentTable
+  @103197    @validateNumberFieldFormattingAtTotalDisplayedUnderMeGridParentTable @wip
   Scenario Outline: validating number field formatting of total amount under me grid parent table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

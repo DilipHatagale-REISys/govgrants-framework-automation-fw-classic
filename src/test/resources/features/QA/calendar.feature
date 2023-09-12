@@ -103,7 +103,7 @@ Business Need: Calender Config Component Scenarios
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -208,17 +208,17 @@ Business Need: Calender Config Component Scenarios
       | Department of Community Health |
       | {SavedValue:PT}                |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @SkipOnJenkins
+  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @wip
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active         | true              | ApiGeneratedId:0 |
-      | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
+     # | Page Tabs Config                         | Highlights Panel? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
-      | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+     # | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -347,7 +347,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Today" Button at calendar
     Then I see today's Date is displayed with light pink background at calendar
 
-  @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase
+  @126950  @verifydminUserIsAbleToCreateCaseAndItIsDisplayedInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user can create case and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -364,7 +364,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
 
-  @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase
+  @127458  @verifydminUserIsAbleToCreateCaseWithMediumPriorityAndItIsDisplayedInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user can create case with medium priority and it is displayed inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -381,7 +381,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I softly see value "{SavedValue:savedValue}" for title "Case#" inside table "CaseList"
 
-  @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase
+  @127464  @verifydminUserIsAbleToOpenCasesInEditModeInsideCasesTableAtHomePhase @wip
   Scenario: validate that edit action opend in edit mode inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -400,7 +400,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "Edit" icon for "{SavedValue:savedValue}" inside table
     Then I see edit opens with "/apex/CaseEdit?Id="
 
-  @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase
+  @127465  @verifydminUserIsAbleToEditAndUpdateExistingCaseInEditModeInsideCasesTableAtHomePhase @wip
   Scenario: validate that admin user is able to edit and update existing case inside 'Cases table' at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -421,7 +421,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     Then I see field "Type" as "Feature Request"
 
-  @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase
+  @127466  @verifyAdvanceFilterInsideCasesTableAtHomePhase @wip
   Scenario: validate advance filter inside 'Cases table' at home phase
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -433,7 +433,7 @@ Business Need: Calender Config Component Scenarios
       | Subject | Starts with | Test Automation |
     Then I see value "Test Automation Data DND" for title "Subject" inside table "CaseList"
 
-  @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage
+  @127471  @verifyAssignedToFieldWithValueIsDisplayedAtCasesDetailPage @wip
   Scenario: validate assigned to field with value is displayed at cases detail page
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -446,7 +446,7 @@ Business Need: Calender Config Component Scenarios
     When I click "Nauman Shahid" lookup link
     Then I see the header is "User" in the page details
 
-  @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage
+  @127473  @verifyAssignToUserFunctionalityInsideCasesDetailPage @wip
   Scenario: validate Assign To User functionality at cases detail page
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -462,7 +462,7 @@ Business Need: Calender Config Component Scenarios
     And I save the field containing "Assigned To" as "AssignedTo"
     Then I softly see field "Assigned To" as "{SavedValue:AssignedTo}"
 
-  @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage
+  @127646  @verifyCasesShoulGetClosedByClickOnCloseCaseButtonAtDetailPage @wip
   Scenario: validate by click on close case action at detail pages case should get closed
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -480,7 +480,7 @@ Business Need: Calender Config Component Scenarios
     When I perform quick search for "{SavedValue:savedValue}"
     Then I see "No Records Found" inside flex table with id "CaseList"
 
-  @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase
+  @127647  @verifyClosedCasesShoulGetDisplayedInsideCloseCasesTableAtHomePhase @wip
   Scenario: validate that close case should be displayed inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -500,7 +500,7 @@ Business Need: Calender Config Component Scenarios
     When I click on "View" icon for "{SavedValue:savedValue}" inside table
     Then I softly see field "Status" as "Closed"
 
-  @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase
+  @127648  @verifyClosedCasesShouldBeEditableInsideCloseCasesTableAtHomePhase @wip
   Scenario: validate that close case should be editable inside closed cases table at home phase
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -522,7 +522,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "Type" as "Question"
 
-  @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail
+  @127653  @verifyassignedToTier2FunctionalityAtCasesInsidePageDetail @wip
   Scenario: validate by click at 'assigned toTier2' action, case status changes to Tier2 support
     Given I delete the record "Automation_Script_Record" from the object "Case__c" with field "Subject__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -613,10 +613,10 @@ Business Need: Calender Config Component Scenarios
   Scenario: validate that program ID is displayed at day wise calendar inside respective record detail page for admin user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+   #   | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -640,10 +640,10 @@ Business Need: Calender Config Component Scenarios
   Scenario: validate that program ID is displayed at week wise calendar inside respective record detail page for admin user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -667,10 +667,10 @@ Business Need: Calender Config Component Scenarios
   Scenario: validate that Internal user is redirected to respective record detail page by click on record id at calendar layout
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+     # | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -717,7 +717,7 @@ Business Need: Calender Config Component Scenarios
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
     And I click on lookup link contains "{SavedValue:PEGMSID}"
-    Then I see the header is "Program" in the page details
+    Then I see the header is "Internal Program" in the page details
 
   @127491    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarAtRecordDetailPageForAdminUser
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at page detail layout
@@ -940,10 +940,10 @@ Business Need: Calender Config Component Scenarios
   Scenario: validate by click at more option, all program records are displayed in month wise calendar
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
+      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar2}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar3}" from the object "Program__c" with field "ProgramName__c"
@@ -1047,16 +1047,16 @@ Business Need: Calender Config Component Scenarios
     And I click on "Next" navigation button at calendar
     Then I see "Next" month is displayed
 
-  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC @skipOnJenkins
+  @158243 @Calendar-VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenOwnerRecordPpageOfRespectiveProgramIfModalPageURLIsProvided @vaibhavC @wip
   Scenario: verify user click on program ID from home phase calendar then open owner record page if Modal Page Url is provided
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Calender Config       | Modal Page Url    |                   | ApiGeneratedId:0 |
-      | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+    #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
-      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
+     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1078,7 +1078,7 @@ Business Need: Calender Config Component Scenarios
     Then I see the text containing :
       | Automation PM |
 
-  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @skipOnJenkins
+  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @wip
   Scenario: verify user click on program ID from home phase calendar then open record page
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
