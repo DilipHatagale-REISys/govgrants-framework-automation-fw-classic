@@ -3083,38 +3083,38 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I hovering mouse on help text "Help" icon
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
 
-    @339456
-      Scenario: Help Config- Admin- Config- Verify if we are able to find help text under help option.
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-        | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
-        | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
-        | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
-      When I login to "As a Grantor" app as "Admin" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      When I click on "Menu" button inside table id "toggleFlexTablePrograms"
-      Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+  @339456
+  Scenario: Help Config- Admin- Config- Verify if we are able to find help text under help option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
 
   @339459
-      Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-        | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
-        | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
-        | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
-      When I login to "As a Grantor" app as "Admin" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      When I click on "Menu" button inside table id "toggleFlexTablePrograms"
-      Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+  Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
 ############################Test suite: FLex table 1 (Suite ID: 334517)#########################
 
@@ -4214,6 +4214,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
+    Then I do not see select check box enabled in flex table
     Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338507
@@ -5105,3 +5106,853 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @335979
+  Scenario: Flex table-Header-Admin-Config-To verify that text entered in a Header field, displayed as a Header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages" displayed as a Header on flex table
+
+  @336066
+  Scenario: Flex table-Header-PM-Config-To verify that text entered in a Header field, displayed as a Header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I navigate to "Applications" tab
+    Then I see Header field "Applications - All" displayed as a Header on flex table
+
+  @336067
+  Scenario: Flex table-Header-SPI-UI-To verify that text entered in Header field, displayed as a Header on flex table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see Header field "Grants - Active" displayed as a Header on flex table
+
+  @336072
+  Scenario: Flex table-Header-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @336074
+  Scenario: Flex table-Header-PM-UI-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @reverconfigMessage
+  Scenario: Flex table-Header-PM-UI-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+
+  @336076
+  Scenario: Flex table-Header help text-Admin-Config-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336077
+  Scenario: Flex table-Header help text-PM-UI-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336079
+  Scenario: Flex table-Header help text-SPI-UI-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true                     | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5                        | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  | Help text for Automation | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "GrantsListtooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336080
+  Scenario: Flex table-Header help text-Admin-Config-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text |               | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336081
+  Scenario: Flex table-Header help text-PM-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text |               | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336082
+  Scenario: Flex table-Header help text-SPI-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  |               | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336083
+  Scenario: Flex table-Header help text-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation@1234567890!@#$%^&* | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                                    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336085
+  Scenario: Flex table-Header help text-PM-UI-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation@1234567890!@#$%^&* | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                                    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336086
+  Scenario: Flex table-Header help text-SPI-UI-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true                                        | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5                                           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  | Help text for Automation@1234567890!@#$%^&* | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "GrantsListtooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336087
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text   | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336088
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text   | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336090
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true                   | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5                      | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336091
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336092
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336093
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction |               | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336094
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation            | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336095
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation            | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336096
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true                                | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5                                   | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336097
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336098
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336099
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336100
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336101
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336102
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336107
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336108
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336109
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336114
+  Scenario Outline:Flex table-Display fields-Admin-Config-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "toggleFlexTableAppReviewList"
+    Then I see "Application Due Date" in flex table header "toggleFlexTableAppReviewList"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336117
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "toggleFlexTableAppReviewList"
+    Then I see "Application Due Date" in flex table header "toggleFlexTableAppReviewList"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336119
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "Application Due Date" in flex table header "toggleFlexTablepopupflextable"
+
+    Examples:
+      | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @336124
+  Scenario: Flex table-Filter Criteria-Admin-Config-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @336125
+  Scenario: Flex table-Filter Criteria-PM-UI-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @336126
+  Scenario: Flex table-Filter Criteria-SPI-UI-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Starts with | Vrush |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Vrush Application" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336127
+  Scenario: Flex table-Filter Criteria-Admin-Config-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfPrograms"
+      | Status | Equals to | Created |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
+
+  @336128
+  Scenario: Flex table-Filter Criteria-PM-UI-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfPrograms"
+      | Status | Equals to | Created |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
+
+  @336129
+  Scenario: Flex table-Filter Criteria-SPI-UI-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Starts with | Vrush |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Vrush Application" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Equals to | Active |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Active" for title "Status" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336130
+  Scenario Outline: Flex table-Order By-Admin-Config-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+  EGMS ID,Program Name,Internal Organization,(Obsolate)Funder Type,Funded Amount,Start Date,Status,Last Modified By
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                 | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | FundedAmount__c | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336147
+  Scenario Outline: Flex table-Order By-PM-UI-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+  EGMS ID,Program Name,Internal Organization,(Obsolate)Funder Type,Funded Amount,Start Date,Status,Last Modified By
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336148
+  Scenario Outline: Flex table-Order By-SPI-UI-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+

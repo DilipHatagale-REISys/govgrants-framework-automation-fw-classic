@@ -65,8 +65,8 @@ public class FrameworkCookiesSteps {
     }
 
     @Then("^I (see|do not see|softly see|softly do not see) table contains \"([^\"]*)\" inside table id \"([^\"]*)\"$")
-    public void iSeeTableContainsInsideTableId(String usage, String showingEnties, String tableId) {
-        frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingEnties, tableId);
+    public void iSeeTableContainsInsideTableId(String usage, String showingTextValue, String tableId) {
+        frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingTextValue, tableId);
     }
 
     @Then("^I (see|do not see|softly see|softly do not see) user on \"([^\"]*)\" pagination page \"([^\"]*)\" table$")

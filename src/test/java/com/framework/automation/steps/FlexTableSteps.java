@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
+import com.framework.automation.pageobject.FrameworkCookiesPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.exception.TestingBlazeCustomException;
 import com.helperPackage.objects.Elements;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class FlexTableSteps {
     FlexTablePage flexTablePage;
+    FrameworkCookiesPage frameworkCookiesPage;
 
     public FlexTableSteps() {
         flexTablePage = new FlexTablePage();
@@ -472,12 +474,28 @@ public class FlexTableSteps {
     }
 
     @Then("^I (see|do not see) table id \"([^\"]*)\" flex table render in modal view$")
-    public void iSeeTableIdFlexTableRenderInModalView(String usage, String tableid) {
-        flexTablePage.assertIfTableRenderInModalWindow(usage, tableid);
+    public void iSeeTableIdFlexTableRenderInModalView(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" help text displayed in table \"([^\"]*)\"$")
     public void iSeeHelpTextDisplayedInTable(String usage, String headernameOrArrowOrValue, String tableid) {
         flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrowOrValue,tableid);
+    }
+
+    @Then("^I (see|do not see) Header field \"([^\"]*)\" displayed as a Header on flex table")
+    public void iSeeHeaderFieldDisplayedAsAHeaderOnFlexTable(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" displayed on flex table$")
+    public void iSeeDisplayedOnFlexTable(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+
+    @Then("^I (see|do not see|softly see|softly do not see) text \"([^\"]*)\" in header instruction field flex table id \"([^\"]*)\"$")
+    public void iSeeTextInHeaderInstructionFieldFlexTableId(String usage, String showingTextValue, String tableId) {
+        frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingTextValue, tableId);
     }
 }
