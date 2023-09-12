@@ -481,7 +481,7 @@ public class PhaseConfigPage extends GovGrantsManager {
      */
     private boolean isContrastColorIsDisplayedForCustomAppAsaGrantor(String contrastValue) {
         boolean flag = false;
-        List<Elements> list = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//body//span/link"));
+        List<Elements> list = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//body//span/link[contains(@href,'" + contrastValue + "')]"));
         int links = list.size();
         for (int i = 0; i < links; i++) {
             if (list.get(i).getAttributes("href").contains(contrastValue))

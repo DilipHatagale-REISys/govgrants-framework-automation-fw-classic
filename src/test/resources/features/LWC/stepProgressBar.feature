@@ -15,12 +15,9 @@ Business Need: StepProgressBar Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
     And I click on "Save and Continue" in the page details
     Then I softly see status in step Progress-bar is "Created" and is "blue"
-#    And I pause execution for "10" seconds
-#    Then I softly see status in step Progress-bar is "Created"
 
-
-  @284378
-  Scenario Outline: To verify when user sends program for peer review then 'Submitted for review' state displayed on step progress bar (Admin/PM)
+  @284386 @284378 @284389
+  Scenario Outline: To verify when user sends program for peer review then 'Submitted for review' state displayed, To verify when reviewer reviews the program then 'Reviewed' state state displayed,when user clicks on submit for approval then 'Submitted for Approval' state displayed on step progress bar (Admin/PM)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Block            | Is Active | false             | ApiGeneratedId:0 |
@@ -62,7 +59,7 @@ Business Need: StepProgressBar Scenarios
     Then I softly see status in step Progress-bar is "Submitted for Review" and is "blue"
     Examples:
       | User |
-#      | Admin |
+      | Admin |
       | PM   |
 
   @284386

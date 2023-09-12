@@ -79,7 +79,17 @@ public class FlexTable_AllComponentSteps {
     }
 
     @Then("^I (see|do not see) \"([^\"]*)\" options are available under Show Entries dropdown inside table id \"([^\"]*)\"$")
-    public void iSeeOptionsAreAvailableUnderShowEntriesDropdownInsideTableId(String usage,int values, String tableId) {
-        flexTable_AllComponentPage.assertShowEntriesDropdownIsDisplayed(usage,values,tableId);
+    public void iSeeOptionsAreAvailableUnderShowEntriesDropdownInsideTableId(String usage, int values, String tableId) {
+        flexTable_AllComponentPage.assertShowEntriesDropdownIsDisplayed(usage, values, tableId);
+    }
+
+    @Then("^I (see|do not see) hyperlink at value \"([^\"]*)\" inside \"([^\"]*)\" columnname for tableId \"([^\"]*)\"$")
+    public void iSeeHyperlinkAtValueInsideColumnnameForTableId(String usage, String value, String columnName, String tableId) {
+        flexTable_AllComponentPage.assertHyperlinkTextIsDisplayed(usage, value, columnName, tableId);
+    }
+
+    @When("I enter advance filter values inside table id {string}")
+    public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTable_AllComponentPage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
     }
 }

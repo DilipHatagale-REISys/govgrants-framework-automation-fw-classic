@@ -47,6 +47,13 @@ public class DynamicForm {
                                 String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__Name__c), value);
                 break;
+            case "CAPTURE PACKAGE NAME":
+                finalPayload = String.format(payloadForStringValue,
+                        String.valueOf(SObjectAPIs.GNT__CaptureForm__c),
+                        apiUtilities.getComponentCoreFieldId(
+                                String.valueOf(SObjectAPIs.GNT__CaptureForm__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Name__c), value);
+                break;
             case "HIDE PDF DOWNLOAD":
                 if (m.find() || (value.contains("true")) || (value.contains("false"))) {
                     finalPayload = String

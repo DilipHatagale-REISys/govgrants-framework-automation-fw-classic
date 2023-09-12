@@ -38,22 +38,16 @@ Business Need: customApp Component Scenarios
   Scenario: Custom App- To verify, to verify, on Sequence when user provide sequence as "2" then As a Grantor app should display at 2nd position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Custom App Config     | Sequence  | 1                 | ApiGeneratedId:0 |
+      | Custom App Config     | Sequence  | 2                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Sequence  | 1             | StateasGrantor     |
+      | Custom App Config:General | Sequence  | 2             | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
-    Then I see "As a Grantor" option of custom App is at position "1"
+    Then I see position "As a Grantor" option of custom app is at "2"
 
   @332487
   Scenario: Custom App- To verify,  when User add the Abbreviation as "GRNTR' then it should get saved.
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-#      | Custom App Config     | Abbreviation | GRNTR             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory     | fieldName    | fieldNewValue | coreComponentField |
-#      | Custom App Config:General | Abbreviation | GRNTR         | StateasGrantor     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
@@ -128,7 +122,7 @@ Business Need: customApp Component Scenarios
       | Custom App Config:General | Sequence  | 2             | StateasGrantee     |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
-    Then I see "As a Grantee" option of custom App is at position "2"
+    Then I see position "As a Grantee" option of custom app is at "3"
 
   @332510
   Scenario:Custom App- To verify,  when User add the Abbrevation as "GRNTE" then this should be saved
@@ -219,10 +213,10 @@ Business Need: customApp Component Scenarios
       | Custom App Config     | Sequence  | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
-      | Custom App Config:General | Sequence  | 3             | Admin              |
+      | Custom App Config:General | Sequence  | 1             | Admin              |
     When I login to "As a Grantor" app as "ADMIN" user
     When I click CustomApp select dropdown
-    Then I see "As Administrator" option of custom App is at position "3"
+    Then I see position "As Administrator" option of custom app is at "1"
 
   @332496
   Scenario: Custom App- To verify, when User add the Abbreviation as "ADM" then this should be saved.
@@ -281,12 +275,6 @@ Business Need: customApp Component Scenarios
 
   @332501
   Scenario: Custom App- To verify, when Default Theme Name is  "ColorContrast_Admin" should be saved on the  Custom App: Admin
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName          | fieldOrignalValue   | filterId         |
-#      | Custom App Config     | Default Theme Name | ColorContrast_Admin | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory     | fieldName          | fieldNewValue | coreComponentField |
-#      | Custom App Config:General | Default Theme Name |               | Admin              |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
     Then I see "ColorContrast_Admin" on complete page for custom App as a Grantor
@@ -309,7 +297,7 @@ Business Need: customApp Component Scenarios
   Scenario: Custom App- To verify, to verify, on Sequence when user provide sequence as "1" then As a Recipient app should display at 1st position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Custom App Config     | Sequence  | 1                 | ApiGeneratedId:0 |
+      | Custom App Config     | Sequence  | 4                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 1             | Recipient          |

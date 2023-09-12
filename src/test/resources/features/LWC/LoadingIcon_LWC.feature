@@ -6,7 +6,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @256805 @256806 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (PM)
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -46,7 +46,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @256937 @256942 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when user clicks on save button on new contacts modal window (Admin) and PM
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -74,7 +74,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @257351 @257352 @257358 @257365 @257366 @257399 @257400 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when click on 'New' button (PM)
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -141,7 +141,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @257765 @257766 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on flex table when row grouping is applied and the page is refreshed in the edit page layout (Admin) and PM
        # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -169,7 +169,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @257015 @257017 @256995 @256997 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on contacts flex table when user clicks  on 'Associate' button on associate contacts modal window (Admin) and PM
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -216,7 +216,7 @@ Business Need: Loading icon for all the operations Component Scenarios
   @256660 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify whether loading icon displayed on page layout in edit mode (Admin) or PM
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -261,7 +261,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @257769 @sprint-19 @us-250617 @dilip
   Scenario Outline: To verify while loading icon processing user should not be able to click anywhere on that table  (Admin) or PM
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -289,7 +289,7 @@ Business Need: Loading icon for all the operations Component Scenarios
     ########################User Story 266977: LWC - QA Only - Addition of Loading icon for all the operations pe#########
   @271477 @sprint-24 @us-266977 @dilip
   Scenario:Admin user clicks on Send Email  LWC then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -301,7 +301,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271526 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on Reply LWC then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -319,7 +319,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271480 @sprint-24 @us-266977 @dilip
   Scenario:Internal user clicks on Send Email LWC then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -343,7 +343,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271484 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on select file action  then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -357,7 +357,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271485 @sprint-24 @us-266977 @dilip
   Scenario:Internal user clicks on select file action then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -385,7 +385,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271488 @sprint-24 @us-266977 @dilip
   Scenario:Admin user clicks on RESET action  then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -400,7 +400,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271490 @sprint-24 @us-266977 @dilip
   Scenario: Internal  user clicks on RESET  action  then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -428,7 +428,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271493 @sprint-24 @us-266977 @dilip
   Scenario:Internal user clicks on upload files action then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -442,7 +442,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271494 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on upload files   action  then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -456,7 +456,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271497 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on Send  action  then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -471,7 +471,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271500 @sprint-24 @us-266977 @dilip
   Scenario: Internal user clicks on Send action then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -500,7 +500,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271515 @sprint-24 @us-266977 @dilip
   Scenario: Internal user clicks on Reply LWC then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -515,7 +515,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271516 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on Reply LWC then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -545,7 +545,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271524 @sprint-24 @us-266977 @dilip
   Scenario:Admin user clicks on View LWC then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -560,7 +560,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271525 @sprint-24 @us-266977 @dilip
   Scenario:Internal user clicks on View LWC then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -590,7 +590,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271546 @sprint-24 @us-266977 @dilip
   Scenario: Admin user clicks on select file action on reply modal   then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -606,7 +606,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271547 @sprint-24 @us-266977 @dilip
   Scenario: Send Email Loading icon -Internal  user clicks on select file action on reply modal   then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -638,7 +638,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271549
   Scenario: Send Email Loading icon-Internal user clicks on upload files action  on reply modal then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -656,7 +656,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271551
   Scenario: Send Email Loading icon-Admin user clicks on upload files action on reply moda then loading icon is displayed
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -692,7 +692,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271984
   Scenario:Approval History Loading icon-Admin user clicks on Send back action then loading icon is displayed,
-    When I login as "Admin" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -724,7 +724,7 @@ Business Need: Loading icon for all the operations Component Scenarios
 
   @271989
   Scenario: Approval History Loading icon-Internal  user clicks on Approve action then loading icon is displayed
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

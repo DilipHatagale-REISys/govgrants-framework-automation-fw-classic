@@ -7,13 +7,8 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   ##### LWC-Approval History component #####
   @219663 @219664 @219665 @219671 @219668 @219670
     @219767 @219769 @219771 @219779 @219791 @219796 @219668 @LWC-ApprovalHistorySuit @dilip
-  Scenario Outline:To verify that on clicking on Expand arrow button, Approval history table get expanded and all available records get displayed,
-  To verify that on clicking on Shrink arrow button, Approval history table get shrinks,
-  To verify that all column names displayed correctly as expected,
-  To verify that on page load/reload, by default approval history table should be expanded & not shrinked,
-  To verify that name of each column displayed correctly when user hover mouse over column names,
-  To verify that on clicking on Shrink arrow button, Approval history table get shrinks.
-    When I login as "<User>" user
+  Scenario Outline:ABC
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -65,8 +60,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @219816 @219817 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that when there is no any record to be displayed in Approval history table, then empty table with column header and "No records found" message displayed there
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -86,8 +80,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @219819 @220068 @219666 @219669 @219822 @220098 @LWC-ApprovalHistorySuit @dilip
   Scenario:Validate Approval Request Submitted,Submitted for approval.,Started values in column,To verify that Date and time format displayed correctly for each entry,To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -153,8 +146,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @219820 @220069 @219773 @219787 @219823 @220099 @LWC-ApprovalHistorySuit @dilip
   Scenario:Validate Approval Request Submitted,Submitted for approval.,Started values in column,To verify that Date and time format displayed correctly for each entry,To verify that respective assigned approver name displayed in "Assigned To" and "Actual Approver" columns when status changed to "Submitted for Approval".
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -232,7 +224,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220074 @220075 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that when record is submitted for approval but not approved, then Overall status value showed "Pending" in respective column. Also in Date column "Step 1 (Pending for first Approval) " text displayed
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -250,7 +242,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220080 @220081 @220083 @220084 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that once the record is approved, then "Approved" status displayed in Status and Comments columns for the respective approver row.
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -266,8 +258,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220114 @220115 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that when approver forwarded record to another user for approval, then status changed to "Re-assigned"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -314,7 +305,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @219672 @219794 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline:To verify that alignment of each column data is to the left side
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -333,7 +324,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   @220071 @220072 @220101 @220102 @220123 @220124 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: validate status of program is changed to approved after getting approved by both the approvers and To verify that when record is submitted for approval and approver send it back to owner, then in Date column "Approval Request Recalled" text displayed
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -376,8 +367,8 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @220127 @220128 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline:To verify that when approver forward record to another user, then in "Assigned To" column, respective Approver name and in "Actual Approver" column respective user name to whom record is forwarded is displayed
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -420,7 +411,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   @220497 @220498 @220500 @220501 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline:To verify that on selecting "Reject" status by approver, overall status changed to "Rejected", Assigned To, Actual Approver status will validate
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -464,7 +455,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   @220545 @LWC-ApprovalHistorySuit @dilip
   Scenario: Admin - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -532,7 +523,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   @220546 @LWC-ApprovalHistorySuit @dilip
   Scenario:PM - To verify that for the 4 step approval process, all details per rows get displayed correctly("Approved" status) in Approval history table for all 4 steps(different approvers)
    # Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "PM" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -599,7 +590,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
 
   @221086 @221087 @220120 @220121 @220117 @220118 @LWC-ApprovalHistorySuit @dilip
   Scenario Outline: To verify that records details of all 4 approval actions displayed correctly for financial officer(FO) user and executive user (EXE),To verify that on reassigning record, overall status changed to "Pending"(PM) and (Admin)
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -669,7 +660,7 @@ Business Need: ApprovalHistoryLWC Component Scenarios
   Admin - To verify that while selecting approval decision actions, whatever comments added by approver displayed correctly under "Comments" column in Approval history table,
   PM - To verify that while selecting approval decision actions, whatever comments added by approver displayed correctly under "Comments" column in Approval history table
   #  Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

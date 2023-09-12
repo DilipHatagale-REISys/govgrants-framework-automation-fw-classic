@@ -165,7 +165,8 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtDraftProgramFlexTable(String blockTitle) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//div[contains(@class,'panel-title')]//div[text()='" + blockTitle
                 + "']/../..//a[@id='Programstooltip']/span[contains(@class,'fa-info')] " +
-                "| //div//a[@title='" + blockTitle + "']/..//span[contains(@class,'fa-info')]"));
+                "| //div//a[@title='" + blockTitle + "']/..//span[contains(@class,'fa-info')]" +
+                "| //span[text()='" + blockTitle + "']/ancestor::a/following-sibling::span/helpicon[@help-text='flexTableConfig.HeaderDescription']"));
     }
 
     /**
@@ -1280,19 +1281,18 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().click().on(filterAction);
     }
 
-    public void assertIfButtonEnabled(String usage, String button) {
+    public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {
         if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfButtonEnabledMethod(button)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfButtonEnabledMethod(button)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isFalse();
         }
     }
 
-    private boolean assertIfButtonEnabledMethod(String button) {
+    private boolean assertFlextableValueDisplayed(String columnValue, String columnTitle, String flextableDivId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isEnabled(ByUsing.xpath("//div[@id='advfPrograms']//div[@class='form-group']//span/*[contains(@class,'" + button + "')] |" +
-                    " //div[@id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + button + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='ng-binding' and text()='" + columnTitle + "']/ancestor::div[@id='" + flextableDivId + "']/descendant::span[text()='" + columnValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1300,39 +1300,18 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrow, String tableid) {
-        if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isTrue();
-        } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrow, tableid)).isFalse();
+    public void assertValuePageBlockDisplayedOrNot(String usage, String blockName) {
+        if (usage.equalsIgnoreCase("can see")) {
+            I.amPerforming().assertionsTo().assertThat(assertValuePageBlockDisplayed(blockName)).isTrue();
+        } else if (usage.equalsIgnoreCase("can not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertValuePageBlockDisplayed(blockName)).isFalse();
         }
     }
 
-    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrow, String tableid) {
+    private boolean assertValuePageBlockDisplayed(String blockName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrow + "')] |" +
-                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrow + "'] | " +
-                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrow + "']"))) {
-                flag = true;
-            }
-        } catch (Exception e) {
-        }
-        return flag;
-    }
-
-    public void asserIfPageDescriptionIsDisplayed(String usage, String pageinfo, String arrow, String tableid) {
-        if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(asserIfPageDescriptionIsDisplayedOnUI(pageinfo, arrow, tableid)).isTrue();
-        } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(asserIfPageDescriptionIsDisplayedOnUI(pageinfo, arrow, tableid)).isFalse();
-        }
-    }
-
-    private boolean asserIfPageDescriptionIsDisplayedOnUI(String pageinfo, String arrow, String tableid) {
-        boolean flag = false;
-        try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[contains(text(),'" + pageinfo + "')]/parent::div//*[@title='" + arrow + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='myTabs']//h3[@class='panel-title']//a[text()='" + blockName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
