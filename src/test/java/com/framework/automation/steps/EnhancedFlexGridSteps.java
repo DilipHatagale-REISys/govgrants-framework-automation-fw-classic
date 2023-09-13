@@ -1,6 +1,9 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.EnhancedFlexGridPage;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -297,5 +300,17 @@ public class EnhancedFlexGridSteps {
     @Then("I see {string} column inside Enhanced grid id {string} of width {string}")
     public void iSeeColumnInsideEnhancedGridIdOfWidth(String columnName, String tableId, String width) {
         enhancedFlexGrid.assertColumnWidthOfEnhancedGridSpecificColumn(columnName, tableId, width);
+    }
+
+    @And("I hover mouse on link {string} at table")
+    public void iHoverMouseOnLinkAtTable(String field) {
+        I.amPerforming().waitFor().makeThreadSleep(3000);
+        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
+        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" as \"([^\"]*)\" value inside mini page layout$")
+    public void iSeeAsValueInsideMiniPageLayout(String usage, String displayType, String value) {
+        enhancedFlexGrid.assertTypeAndTextInsideMiniPageLayout(usage, displayType, value);
     }
 }

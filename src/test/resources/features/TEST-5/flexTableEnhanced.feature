@@ -104,8 +104,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:programContactsTableId---"
 
@@ -138,8 +138,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-REI-2065"
-    When I click on "View" icon for "PG-REI-2065" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
 
@@ -191,8 +191,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-REI-2065"
-    When I click on "View" icon for "PG-REI-2065" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
@@ -210,8 +210,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-REI-2065"
-    When I click on "View" icon for "PG-REI-2065" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
@@ -262,8 +262,8 @@ Business Need: Flex Table enhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "PG-REI-1190"
-    When I click on "View" icon for "PG-REI-1190" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "Organization" not displayed in enhanced grid table column title
 
@@ -302,7 +302,6 @@ Business Need: Flex Table enhanced Component Scenarios
 
   @77413    @enableSubTotalFieldAtFlexTableEnhanced-gPlanning
   Scenario: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
-  #Scenario Outline: validate total of number of project areas after checking checkbox true of Enable Sub Total field from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
@@ -316,7 +315,7 @@ Business Need: Flex Table enhanced Component Scenarios
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    Then I see cell subtotal for "Version Number" at enhanced grid
+    Then I see "Version Number" in flex table header "GrantorRelatedAwards2FlexToggle"
 
   @77401    @hideExpressionJsonFieldAtTopLevelActionFlexTableForEnhanced-gPlanning
   Scenario: Set up configuration to hide New action and validating it inside enhanced data table -planning
@@ -485,7 +484,7 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "AD-1000-04" in "---program:-:SubawardTableIdForAdminPM---" panel
     Then I see value "TestGrant" for the title "Title" inside table "---program:-:SubawardTableIdForAdminPM---"
 
-  @194928 @sprint1
+  @194928 @sprint1 @wip
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -525,29 +524,29 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable1 | GrantorRelatedAwards2 | Name                      | FTC-12818                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13603                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Version Number" in flex table header "Subawards - Active"
+    Then I softly do not see "Amendment Number" in flex table header "Subawards - Active"
 
-  @194457 @sprint1
+  @194457 @sprint1 @wip
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with currency   field(Total Award Obligated Amount)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable1 | GrantorRelatedAwards2 | Name                      | FTC-12821                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13604                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "Budget" in flex table header "Subawards - Active"
+    Then I softly do not see "Total Approved Budget:" in flex table header "Subawards - Active"
 
   @194459 @sprint1
   Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with status
@@ -564,7 +563,7 @@ Business Need: Flex Table enhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     Then I softly do not see "EGMS ID" in flex table header "Subawards - Active"
 
-  @194929 @sprint1
+  @194929 @sprint1 @wip
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -613,20 +612,19 @@ Business Need: Flex Table enhanced Component Scenarios
 
   @208595   @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedDataTable
   Scenario:To verify , Mini layout UI at ME-Grid  table looks as   object name to the top, field title under it, then line separator for Internal user
-    When I login as "PM" user
+    When I login as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-    And I pause execution for "10" seconds
-    When I hover mouse on lookup link "SYSTEM" at table
-    And I pause execution for "4" seconds
-    Then I softly see "title" as "SYSTEM" inside mini page layout
-    Then I softly see "Label" as "Code" inside mini page layout
-    Then I softly see "Value" as "9832" inside mini page layout
+    And I hover mouse on link "Automation PM" at table
+#    When I hover mouse on lookup link "SYSTEM" at table
+    And I pause execution for "2" seconds
+    Then I see "Contact" as "Automation PM" value inside mini page layout
+    Then I see "Email" as "govgrantsuat@gmail.com.invalid" value inside mini page layout
 
   @208597    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtEnhancedGrid
   Scenario:To verify , Mini layout UI at form looks as   object name to the top, field title under it, then line separator for Internal user

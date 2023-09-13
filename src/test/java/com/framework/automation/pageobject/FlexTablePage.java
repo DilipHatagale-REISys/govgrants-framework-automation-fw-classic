@@ -1318,4 +1318,47 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfTableRenderInModalWindow(String usage, String tableidOrDisplayedValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableidOrDisplayedValue)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableidOrDisplayedValue)).isFalse();
+        }
+    }
+
+    private boolean assertIfTableDisplayedInModal(String tableidOrDisplayedValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableidOrDisplayedValue + "'] |" +
+                    " //div[contains(@class,'header-title')]//*[contains(text(),'" + tableidOrDisplayedValue + "')] |" +
+                    " //span[@class='" + tableidOrDisplayedValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrowOrValue, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isFalse();
+        }
+    }
+
+    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrowOrValue, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@aria-label='Select Record'] | //div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrowOrValue + "')] |" +
+                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrowOrValue + "'] | " +
+                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrowOrValue + "'] |" +
+                    " //div[@id='" + tableid + "']/preceding-sibling::div//ul/li/*[@title='" + headernameOrArrowOrValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

@@ -1,7 +1,7 @@
 package com.framework.automation.pageobject;
 
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 
