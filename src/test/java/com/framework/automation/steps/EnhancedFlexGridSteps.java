@@ -6,11 +6,14 @@ import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
 
 public class EnhancedFlexGridSteps {
     EnhancedFlexGridPage enhancedFlexGrid;
+
+    private WebDriver driver;
 
     public EnhancedFlexGridSteps() {
         enhancedFlexGrid = new EnhancedFlexGridPage();
@@ -305,7 +308,6 @@ public class EnhancedFlexGridSteps {
     @And("I hover mouse on link {string} at table")
     public void iHoverMouseOnLinkAtTable(String field) {
         I.amPerforming().waitFor().makeThreadSleep(3000);
-        I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
         I.amPerforming().scroll().toMoveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='DataTableEnhanceProgramContactsFlexToggle']//div//table//tbody//td//*[contains(text(),'" + field + "')]")));
     }
 

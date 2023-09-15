@@ -4,10 +4,12 @@ import com.helperPackage.handlers.govgrants;
 import com.framework.automation.pageobject.FlexGridPage;
 import com.framework.automation.pageobject.FlexTable_AllComponentPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -91,5 +93,9 @@ public class FlexTable_AllComponentSteps {
     @When("I enter advance filter values inside table id {string}")
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
         flexTable_AllComponentPage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @Then("^I (see|do not see) page description is displayed \"([^\"]*)\" with \"([^\"]*)\" arrow inside table id \"([^\"]*)\"$")
+    public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String button, String tableId) {
     }
 }

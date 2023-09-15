@@ -634,17 +634,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335070
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index                | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size                | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index                | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size                | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -841,11 +841,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335124
   Scenario: Flex table-Page size-Admin-UI-To verify that user is able to change page size by clicking on Show Entries block
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "20"
-    Then I see table contains "Showing 1 to 20" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "10"
+    Then I see table contains "Showing 1 to 10" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "5"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
 
   @335126
   Scenario: Flex table-Page size-PM-UI-To verify that user is able to change page size by clicking on Show Entries block
@@ -865,6 +875,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335129
   Scenario: Flex table-Page size-Admin-UI-To verify that different page sizes are available in Show Entries block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3683,11 +3701,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338619
   Scenario: Records description- Admin- Config- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3705,8 +3725,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338620
   Scenario: Records description - PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -3748,11 +3769,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338623
   Scenario: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3767,11 +3790,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338624
   Scenario: Advance filter - PM- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3888,11 +3913,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338631
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Contains ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3910,11 +3937,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338633
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3927,11 +3956,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338634
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3944,11 +3975,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338635
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with  ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3964,8 +3997,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4012,11 +4046,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338641
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4029,11 +4065,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338643
   Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4046,11 +4084,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338644
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4063,11 +4103,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338645
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4080,11 +4122,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338648
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number  field with 'Equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4097,8 +4141,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338649
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -4114,11 +4159,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338650
   Scenario: Admin:-To verify,advanced filter should work for the Number field with 'Less than' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4131,11 +4178,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338652
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4148,11 +4197,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338653
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to  ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4414,7 +4465,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338526
@@ -5956,3 +6007,24 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
+  @setconfigforflextabel
+  Scenario: configuration set as per need if it is change during execution
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index          | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Export (PDF)        | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV)  | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)        | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV)  | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab

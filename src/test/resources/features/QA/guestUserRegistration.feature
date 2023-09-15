@@ -140,3 +140,4 @@ Business Need: guest user registration flow based Scenarios
     And I enter "Authorized_Representative_Info" values from "UserRegistrationOrganization.xlsx"
     When I click on "Save" in the page details
     Then I see the ReCaptcha input box
+    Then I see "Submit For Approval" button is not displayed

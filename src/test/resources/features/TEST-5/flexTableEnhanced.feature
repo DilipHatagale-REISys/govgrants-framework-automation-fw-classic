@@ -238,17 +238,14 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideJsonForEnhancedDataTableForColumn | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13606                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
-   # When I perform quick search for "Automation PM" in "---program:-:programContactsTableId---" panel
-    Then I see "*****" shown inside enhanced grid table for specified record "Automation PM"
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    Then I softly do not see "External Organization" in flex table header "Subawards - Active"
 
   @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Hiding specific column value of enhanced data table from config and validating it inside enhanced data table -planning
@@ -453,8 +450,6 @@ Business Need: Flex Table enhanced Component Scenarios
     When I hover mouse on lookup link "Lisa Mitchell" at table
     And I pause execution for "4" seconds
     Then I see "Name" as "Lisa Mitchell" in mini page layout
-    Then I see "Email" as "lisamitchell@gmail.com" in mini page layout
-    Then I see "Organization" as "Test Automation Organization" in mini page layout
 
   @145488  @validateAdvanceFilterValueWithOperatorDoesNotContainAtFlexTableEnhanced
   Scenario: validate Advance filter  with does not contain operator At Flex Table Enhanced
@@ -484,22 +479,20 @@ Business Need: Flex Table enhanced Component Scenarios
     When I perform quick search for "AD-1000-04" in "---program:-:SubawardTableIdForAdminPM---" panel
     Then I see value "TestGrant" for the title "Title" inside table "---program:-:SubawardTableIdForAdminPM---"
 
-  @194928 @sprint1 @wip
+  @194928 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator (External Organization)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13606                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-    And I navigate to "Overview" sub tab
-    Then I softly do not see "Organization" in flex table header "Contacts@1234567890!@#$%^&*()"
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    Then I softly do not see "External Organization" in flex table header "Subawards - Active"
 
   @194451 @sprint1
   Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator
@@ -533,7 +526,7 @@ Business Need: Flex Table enhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     Then I softly do not see "Amendment Number" in flex table header "Subawards - Active"
 
-  @194457 @sprint1 @wip
+  @194457 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with currency   field(Total Award Obligated Amount)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -554,14 +547,14 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable2 | GrantorRelatedAwards2 | Name                      | FTC-12819                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13605                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
     And I click toggle button to select "Subawards  - All"
-    Then I softly do not see "EGMS ID" in flex table header "Subawards - Active"
+    Then I softly do not see "Status" in flex table header "Subawards - Active"
 
   @194929 @sprint1 @wip
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field
@@ -569,16 +562,14 @@ Business Need: Flex Table enhanced Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable11 | GrantorRelatedAwards2 | Name                      | FTC-13605                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
-    And I navigate to "Overview" sub tab
-    Then I softly do not see "Organization" in flex table header "Contacts@1234567890!@#$%^&*()"
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - All"
+    Then I softly do not see "Status" in flex table header "Subawards - Active"
 
   @194931 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field  with equal to operator

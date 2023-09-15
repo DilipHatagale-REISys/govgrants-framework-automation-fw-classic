@@ -1294,7 +1294,9 @@ Business Need: Flex Table Component Scenarios
       | Start Date | Less than | 09/26/2023 |
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Created state change Automation |
+    And I pause execution for "5" seconds
     Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
+    And I pause execution for "5" seconds
     Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
     Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
 
@@ -1525,6 +1527,7 @@ Business Need: Flex Table Component Scenarios
     When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/07/2023 |
+    And I pause execution for "5" seconds
     Then I see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
 
   @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
