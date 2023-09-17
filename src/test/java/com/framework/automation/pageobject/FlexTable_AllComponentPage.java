@@ -253,4 +253,23 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         }
         I.amPerforming().click().on(filterAction);
     }
+
+    public void assertIfDescriptionButtonDisplayed(String usage, String description, String button, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDescriptionOrButtonIsDisplayed(description, button, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDescriptionOrButtonIsDisplayed(description, button, tableId));
+        }
+    }
+
+    private boolean isDescriptionOrButtonIsDisplayed(String description, String button, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

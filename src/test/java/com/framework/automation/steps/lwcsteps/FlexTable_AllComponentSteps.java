@@ -96,6 +96,7 @@ public class FlexTable_AllComponentSteps {
     }
 
     @Then("^I (see|do not see) page description is displayed \"([^\"]*)\" with \"([^\"]*)\" arrow inside table id \"([^\"]*)\"$")
-    public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String button, String tableId) {
+    public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String description, String button, String tableId) {
+        flexTable_AllComponentPage.assertIfDescriptionButtonDisplayed(usage, description, button, tableId);
     }
 }

@@ -1276,6 +1276,7 @@ public class FlexTablePage extends GovGrantsManager {
         if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
             I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
         } else {
+
             I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
         }
         I.amPerforming().click().on(filterAction);
