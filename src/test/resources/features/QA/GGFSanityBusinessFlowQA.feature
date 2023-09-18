@@ -51,14 +51,15 @@ Business Need: Sanity check for all Component Scenarios
 
   @109392  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
   Scenario: validate announcement in created state
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Announcement" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v_for_Ann" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "12" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -110,14 +111,15 @@ Business Need: Sanity check for all Component Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
   Scenario: validate announcement in published state
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Announcement" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v_for_Ann" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
@@ -312,16 +314,15 @@ Business Need: Sanity check for all Component Scenarios
   @110257  @ProgramActivationToGrantActivation
   Scenario: validate grant created ad activated by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-   #program Activation
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Announcement" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v_for_Ann" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -372,7 +373,7 @@ Business Need: Sanity check for all Component Scenarios
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
-    When I click on "Edit" in the page details
+#    When I click on "Edit" in the page details
     And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
