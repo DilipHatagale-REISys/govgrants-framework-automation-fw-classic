@@ -286,17 +286,6 @@ Business Need: Snapshot Config Component Scenarios
 
   @201395 @201406
   Scenario: Snapshot History-Admin-Config-Snapshot History-Admin-Config-To verify snapshot history when program is activated state
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName                       | fieldOrignalValue | filterId         |
-#      | Auto Snapshot         | Is Active                       | false             | ApiGeneratedId:0 |
-#      | Page Tabs Config      | Is Active                       | true              | ApiGeneratedId:2 |
-#      | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
-#    Given I setup test configuration as below:
-#      | configurationCategory               | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true          | Program__c            | Name                      | SAS-0008                   |
-#        #| Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0008                   |
-#      | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
-#      | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
