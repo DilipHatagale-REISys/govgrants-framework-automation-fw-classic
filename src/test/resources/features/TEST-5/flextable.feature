@@ -256,11 +256,11 @@ Business Need: Flex Table Component Scenarios
   @34297    @hideForProfileFieldAtRolesAndResponsibilitiesFlexTableAction-gPlanning @smoke
   Scenario: Hide edit row level action for specific profile from configuration and validating it at under roles and responibilities flex table- gPlanning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile |                   | AnnouncementContacts      | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile |                   | AnnouncementContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide For Profile | System Administrator | AnnouncementContacts      | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide For Profile | System Administrator | AnnouncementContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
