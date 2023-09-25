@@ -538,14 +538,14 @@ Business Need: Side bar Component Scenarios
 
   @128291    @VerifyRecordReassignToUserFromReassignTaskSectionIsDisplayedToPendingTaskTableByLoggedInAsReassignedUser
   Scenario: Validate record Reassigned to user from reassign task section is displayed to that user at pending task table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
-      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
-     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+#      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
+#     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -595,14 +595,14 @@ Business Need: Side bar Component Scenarios
 
   @128292    @VerifyRecordReassignToUserFromReassignTaskSectionShoulBeDisplayedAndApprovedByReassignedUser
   Scenario: Validate record Reassigned to user from reassign task section is approved by reassigned user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
-     # | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
-    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+#     # | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
+#    #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -666,14 +666,14 @@ Business Need: Side bar Component Scenarios
 
   @128294    @VerifyQuickSearchWorkingAtReassignedUser
   Scenario: Validate quick search working at reassigned user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
-     # | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
-      #| Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+#     # | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
+#      #| Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -716,14 +716,14 @@ Business Need: Side bar Component Scenarios
 
   @128334    @VerifyRecordReassignToUserFromReassignTaskSectionShoulBeDisplayedAndApprovedByReassignedUser
   Scenario: Validate record Reassigned to user from reassign task section is approved by reassigned user
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
-      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
-     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Tabs Config      | Is Active         | true              | ApiGeneratedId:0 |
+#      #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Is Active         | true          | Grantor State Program | Name                      | TAB-027                    |
+#     # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-409                    |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "Automation Internal Program for Approval and Snapshot scenarios 2" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
