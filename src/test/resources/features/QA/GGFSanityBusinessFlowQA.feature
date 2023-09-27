@@ -51,6 +51,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @109392  @verifyAnnouncementInCreatedMode @AnnouncementCreatedPath
   Scenario: validate announcement in created state
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Announcement" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -111,6 +112,7 @@ Business Need: Sanity check for all Component Scenarios
 
   @110214   @verifyAnnouncementInPublishedMode @AnnouncementPublishPath
   Scenario: validate announcement in published state
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Announcement" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user

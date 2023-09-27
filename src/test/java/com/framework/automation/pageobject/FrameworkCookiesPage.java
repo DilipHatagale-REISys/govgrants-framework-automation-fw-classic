@@ -281,4 +281,25 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfListViewItemDisplayed(String usage, String listViewName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewRelatedFieldDisplayed(listViewName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewRelatedFieldDisplayed(listViewName, tableId)).isFalse();
+        }
+    }
+
+    private Boolean listViewRelatedFieldDisplayed(String listViewName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(@data-target,'" + tableId + "')]/following-sibling::div[@id='" + listViewName + "'] |" +
+                    " //*[contains(@data-target,'" + tableId + "')]/following-sibling::div[@id='dropdownListView']//ul//li//*[@title='" + listViewName + "'] |" +
+                    " //*[contains(@data-target,'" + tableId + "')]//div[text()='" + listViewName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

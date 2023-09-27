@@ -483,4 +483,35 @@ public class FlexTableSteps {
     public void iSeeTextInHeaderInstructionFieldFlexTableId(String usage, String showingTextValue, String tableId) {
         frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingTextValue, tableId);
     }
+
+    @Then("^I (see|do not see) row level action button \"([^\"]*)\" rendered on flex table$")
+    public void iSeeRowLevelActionButtonRenderedOnFlexTable(String usage, String actionButton) {
+        flexTablePage.assertIfActionButtonIsDisplayedOrNotDisplayed(usage, actionButton);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" rendered on flex table$")
+    public void iSeeRenderedOnFlexTable(String usage, String actionButton) {
+        flexTablePage.assertIfActionButtonIsDisplayedOrNotDisplayed(usage, actionButton);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" as title for Actions inside flex table action$")
+    public void iSeeAsTitleForActionsInsideFlexTableAction(String usage, String changedActionName) {
+        flexTablePage.assertIfActionNameIsDisplayedOrNotDisplayed(usage, changedActionName);
+    }
+
+    @Then("^I (see|do not see) action name \"([^\"]*)\" itself get displayed on UI$")
+    public void iSeeActionNameItselfGetDisplayedOnUI(String usage, String changedActionName) {
+        flexTablePage.assertIfActionNameIsDisplayedOrNotDisplayed(usage, changedActionName);
+    }
+
+    @Then("^I (see|do not see) error message contains text \"([^\"]*)\" if wrong or invalid filter clause provide$")
+    public void iSeeErrorMessageContainsTextIfWrongOrInvalidFilterClauseprovide(String usage, String errorMessage) {
+        flexTablePage.assertIfErrorMessageDisplayed(usage,errorMessage);
+
+    }
+
+    @Then("^I (see|do not see) added list index \"([^\"]*)\" is \"([^\"]*)\" displayed in provided sequence$")
+    public void iSeeAddedListIndexIsDisplayedInProvidedSequence(String usage, String sequence, String value) {
+        flexTablePage.indexDisplayedInProvidedSequence(usage,sequence,value);
+    }
 }

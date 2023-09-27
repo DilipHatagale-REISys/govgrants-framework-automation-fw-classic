@@ -92,7 +92,7 @@ public class FrameworkCookiesSteps {
 
     @Then("^I (see|do not see) list view \"([^\"]*)\" displayed inside table \"([^\"]*)\"$")
     public void iSeeListViewDisplayedInsideTable(String usage, String listViewName, String tableId) {
-
+        frameworkCookiesPage.assertIfListViewItemDisplayed(usage,listViewName,tableId);
     }
 
     @And("I click on \"([^\"]*)\" button inside tabel header \"([^\"]*)\"$")
@@ -103,6 +103,11 @@ public class FrameworkCookiesSteps {
     @Then("^I (see|do not see) field \"([^\"]*)\" as \"([^\"]*)\" inside program information$")
     public void iSeeFieldAsInsideProgramInformation(String usage,String field, String value) {
 frameworkCookiesPage.displayProgramDetailsValueWithField(usage, field, value);
+    }
+
+    @Then("^I (see|do not see) default list view \"([^\"]*)\" displayed inside table \"([^\"]*)\"$")
+    public void iSeeDefaultListViewDisplayedInsideTable(String usage, String listViewName, String tableId) {
+        frameworkCookiesPage.assertIfListViewItemDisplayed(usage,listViewName,tableId);
     }
 }
 

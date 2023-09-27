@@ -1362,4 +1362,86 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfActionButtonIsDisplayedOrNotDisplayed(String usage, String actionButton) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayed(actionButton)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayed(actionButton)).isFalse();
+        }
+    }
+
+    private boolean assertIfActionButtonDisplayed(String actionButton) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[normalize-space(text()) = '" + actionButton + "'] | " +
+                    "//td[contains(@class,'actionColumn')]/div//*[@title='" + actionButton + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionNameIsDisplayedOrNotDisplayed(String usage, String changedActionName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionNameDisplayed(changedActionName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionNameDisplayed(changedActionName)).isFalse();
+        }
+    }
+
+    private boolean assertIfActionNameDisplayed(String changedActionName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfErrorMessageDisplayed(String usage, String errorMessage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isErrorMessageIsDisplayed(errorMessage));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isErrorMessageIsDisplayed(errorMessage));
+        }
+    }
+
+    private boolean isErrorMessageIsDisplayed(String errorMessage) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='error-alert']//*[contains(text(),'" + errorMessage + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void indexDisplayedInProvidedSequence(String usage, String sequence, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(sequenceIsDisplayed(sequence, value));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(sequenceIsDisplayed(sequence, value));
+        }
+    }
+
+    private boolean sequenceIsDisplayed(String sequence, String value) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//ul[@class='dropdown-menu dropdown-menu-left']//li//a/span[@class='ng-binding'])[" + sequence + "]"));
+            String abc = elementSequence.getText();
+            System.out.println(abc);
+            if (elementSequence.getText().equalsIgnoreCase(value)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

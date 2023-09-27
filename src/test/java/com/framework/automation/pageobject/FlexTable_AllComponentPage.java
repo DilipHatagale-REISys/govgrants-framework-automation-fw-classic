@@ -192,7 +192,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
-                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "']"));
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "'] |" +
+                " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "']"));
     }
 
     public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {

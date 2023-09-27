@@ -3597,10 +3597,10 @@ public class PageLayoutPage extends GovGrantsManager {
     }
 
     private boolean sortArrowDisplayedOrNot(String arrow, String columnName) {
-        boolean flag = true;
+        boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"))) {
-                flag = false;
+                flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
 
