@@ -684,7 +684,7 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @205100 @205101
   Scenario Outline: Field History- PM user - User should be able to perform export functionality 'Download as CSV' for selected record.
@@ -824,39 +824,39 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
-    @205783 @205784
-    Scenario Outline: Field History : PM user - To verify, User change the text area field value from edit layout then it should display changed and previous value in the new and old value column.
-      Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-      When I login to "As a Grantor" app as "<User>" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - Draft"
-      When I perform quick search for "Automation Internal Program for Testing"
-      When I click on "View" icon for "Automation Internal Program for Testing" inside table
-      When I navigate to "Overview" sub tab
-      And I click on "Edit" in the page details
-      And I enter value "Testing OK" into field "fieldAuthorization__c"
-      And I click on "Save" in the page details
-      And I pause execution for "5" seconds
-      And I save the field labeled "Authorization" as "OldText"
-      And I click on "Edit" in the page details
-      And I enter value "Testing Done" into field "fieldAuthorization__c"
-      And I click on "Save" in the page details
-      And I save the field labeled "Authorization" as "NewText"
-      And I refresh the page
-      When I navigate to "History" sub tab
-      Then I see "{SavedValue:OldText}" shown inside "Old Value" column in history table
-      Then I see "{SavedValue:NewText}" shown inside "New Value" column in history table
+  @205783 @205784
+  Scenario Outline: Field History : PM user - To verify, User change the text area field value from edit layout then it should display changed and previous value in the new and old value column.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    And I enter value "Testing OK" into field "fieldAuthorization__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "Authorization" as "OldText"
+    And I click on "Edit" in the page details
+    And I enter value "Testing Done" into field "fieldAuthorization__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "Authorization" as "NewText"
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I see "{SavedValue:OldText}" shown inside "Old Value" column in history table
+    Then I see "{SavedValue:NewText}" shown inside "New Value" column in history table
 
-      Examples:
-        | User  |
-        | ADMIN |
-       # | PM    |
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @205776 @205777
-    Scenario Outline: Field History : PM user - To verify, User change the lookup field value from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field History : PM user - To verify, User change the lookup field value from backend then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -882,10 +882,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205766 @205767
-    Scenario Outline:Field History : PM user - To verify, User change the phone field value from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline:Field History : PM user - To verify, User change the phone field value from backend then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -910,10 +910,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205770 @205771
-    Scenario Outline: Field History : PM user - To verify, User change the checkbox field value from edit layout then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field History : PM user - To verify, User change the checkbox field value from edit layout then it should display changed and previous value in the new and old value column.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -938,10 +938,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205572 @205584
-    Scenario Outline: Field History -PM user -To verify, User change the text field value from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field History -PM user -To verify, User change the text field value from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -965,37 +965,37 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
-   @205760 @205762
-     Scenario Outline: Field History : PM user - To verify, User change the date time field from backend then it should display changed and previous value in the new and old value column
-     When I login to "As a Grantor" app as "<User>" user
-     When I setup my app as "As a Grantor"
-     And I navigate to "Planning" tab
-     And I click toggle button to select "Internal Programs - Draft"
-     When I perform quick search for "Automation Internal Program for Testing"
-     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-     When I navigate to "Overview" sub tab
-     And I click on "Edit" in the page details
-     And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
-     And I click on "Save" in the page details
-     And I pause execution for "5" seconds
-     And I save the field labeled "Date and Time" as "OldDateAndTime"
-     And I click on "Edit" in the page details
-     And I enter value "08/27/2027 10:00 PM" into field "DateandTime__c"
-     And I click on "Save" in the page details
-     And I save the field labeled "Date and Time" as "NewDateAndTime"
-     And I refresh the page
-     When I navigate to "History" sub tab
-     Then I see "{SavedValue:NewDateAndTime}" shown inside "New Value" column in history table
-     Then I see "{SavedValue:OldDateAndTime}" shown inside "Old Value" column in history table
-     Examples:
-       | User  |
-       | ADMIN |
-       # | PM    |
+  @205760 @205762
+  Scenario Outline: Field History : PM user - To verify, User change the date time field from backend then it should display changed and previous value in the new and old value column
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "Date and Time" as "OldDateAndTime"
+    And I click on "Edit" in the page details
+    And I enter value "08/27/2027 10:00 PM" into field "DateandTime__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "Date and Time" as "NewDateAndTime"
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I see "{SavedValue:NewDateAndTime}" shown inside "New Value" column in history table
+    Then I see "{SavedValue:OldDateAndTime}" shown inside "Old Value" column in history table
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @205477 @205478
-    Scenario Outline: Field History : PM User -To verify, User change the negative value number field as a from backend then it should display in the new value column.
+  Scenario Outline: Field History : PM User -To verify, User change the negative value number field as a from backend then it should display in the new value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1019,10 +1019,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205637 @205636
-    Scenario Outline: Field History - PM user -To verify, User change the URL field from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field History - PM user -To verify, User change the URL field from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1046,10 +1046,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205546 @205547
-    Scenario Outline: Field History - PM user- To verify, User change the negative value for percent field from backend then it should display value inside bracket in the new value column.
+  Scenario Outline: Field History - PM user- To verify, User change the negative value for percent field from backend then it should display value inside bracket in the new value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1073,10 +1073,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205506 @205507
-    Scenario Outline: Field history: PM user-To verify, User change the percent field from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field history: PM user-To verify, User change the percent field from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1100,10 +1100,10 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @205561 @205552
-    Scenario Outline: Field History - Admin user -To verify, User change the picklist field value from backend then it should display changed and previous value in the new and old value column.
+  Scenario Outline: Field History - Admin user -To verify, User change the picklist field value from backend then it should display changed and previous value in the new and old value column.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1127,4 +1127,4 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
