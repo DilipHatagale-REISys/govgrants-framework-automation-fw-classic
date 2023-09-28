@@ -455,4 +455,9 @@ public class FlexTableSteps {
     public void iSeeValuePageBlockDisplayed(String usage,String blockName) {
         flexTablePage.assertValuePageBlockDisplayedOrNot(usage, blockName);
     }
+
+    @When("^I hovering mouse on page block help text icon inside table \"([^\"]*)\" with tooltip id \"([^\"]*)\"$")
+    public void getHelpTextAtPageBlock(String tableId, String toolTipId) {
+        flexTablePage.getHelpTextAtPageBlockOrInsideTable(tableId, toolTipId);
+    }
 }
