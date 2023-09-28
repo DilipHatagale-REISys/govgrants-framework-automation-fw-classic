@@ -178,7 +178,7 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     private boolean isOptionDisplayedUnderMenu(String option, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + option + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + option + "'] | //div[@id='" + tableId + "']//option[contains(text(),'" + option + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -253,4 +253,24 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         }
         I.amPerforming().click().on(filterAction);
     }
+
+    public void assertDisplayedOptionInPageBlock(String option, String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isDisplayedOptionInPageBlock(option));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isDisplayedOptionInPageBlock(option));
+        }
+    }
+
+    private boolean isDisplayedOptionInPageBlock(String option) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='History']//option[contains(text(),'" + option + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
 }

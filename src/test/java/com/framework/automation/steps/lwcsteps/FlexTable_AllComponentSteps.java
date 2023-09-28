@@ -92,4 +92,10 @@ public class FlexTable_AllComponentSteps {
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
         flexTable_AllComponentPage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" option is getting displayed inside page block")
+    public void iSeeOptionIsGettingDisplayedInsidePageBlock(String option, String usage) {
+        flexTable_AllComponentPage.assertDisplayedOptionInPageBlock(option, usage);
+    }
+
 }

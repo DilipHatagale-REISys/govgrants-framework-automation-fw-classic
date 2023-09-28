@@ -1318,4 +1318,8 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void getHelpTextAtPageBlockOrInsideTable(String tableId, String toolTipId) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[@id='" + tableId + "']//a[@id='" + toolTipId + "']//span[contains(@class,'fa-info')]"));
+    }
 }
