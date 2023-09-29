@@ -94,7 +94,6 @@ public class FlexTable_AllComponentSteps {
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
         flexTable_AllComponentPage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
     }
-
     @Then("^I (see|do not see) page description is displayed \"([^\"]*)\" with \"([^\"]*)\" arrow inside table id \"([^\"]*)\"$")
     public void iSeePageDescriptionIsDisplayedWithArrowInsideTableId(String usage, String description, String button, String tableId) {
         flexTable_AllComponentPage.assertIfDescriptionButtonDisplayed(usage, description, button, tableId);

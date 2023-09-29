@@ -287,12 +287,12 @@ public class AttachmentSteps {
 
     @And("I click on saved snap shot {string}")
     public void iClickOnSavedSnapShot(String fileName) {
-        I.amPerforming().click().on(ByUsing.xpath("//a[contains(text(),'" + fileName + "')]"));
+        I.amPerforming().click().on(ByUsing.xpath("//a[contains(text(),'" + fileName + "')] | //a//span[contains(text(),'" + fileName + "')]"));
     }
 
     @Then("I see generated snapshot {string} is displayed with {string}")
     public void iSeeGeneratedSnapshotIsDisplayedWith(String fileName, String columnName) {
-        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "']"));
+        I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']//ancestor::thead//following-sibling::tbody//descendant::a[contains(text(),'" + fileName + "')] | //span[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td[@data-label='Attachment Owner']//div[text()='" + fileName + "'] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//a//span[contains(text(),'" + fileName + "')] | //th[@title='" + columnName + "']//ancestor::thead//following-sibling::tbody//tr//td//span[contains(text(),'"+ fileName +"')] "));
     }
 
     @And("I click on {string} in modal")

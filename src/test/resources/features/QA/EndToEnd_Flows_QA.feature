@@ -2198,7 +2198,6 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
-    When I navigate to "History" sub tab
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel

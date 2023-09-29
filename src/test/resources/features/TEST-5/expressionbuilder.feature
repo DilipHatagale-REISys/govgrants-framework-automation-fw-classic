@@ -168,7 +168,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table Action     | Hide Expression JSON |                   | ActiveFundingOpportunitiesAll | Name                      | Create                     |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunitiesAll | Name                      | Create                     |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionBuilderJsonForInternalUserTypeInternalApplicantReviewer | ActiveFundingOpportunitiesAll | Name                      | New                        |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -691,8 +691,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Test program for automation-SA to C"
-    When I click on "View" icon for "Test program for automation-SA to C" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -2003,8 +2003,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInCreatedModeOnly2}"
-    When I click on "View" icon for "{Framework_recordUsed:programInCreatedModeOnly2}" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see "Information" page block displayed
 
   @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
@@ -3417,8 +3417,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
    # #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
@@ -3435,8 +3435,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
@@ -3453,8 +3453,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
@@ -3471,8 +3471,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
@@ -3489,8 +3489,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
@@ -3507,8 +3507,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
@@ -3525,8 +3525,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
@@ -3543,8 +3543,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
@@ -3561,8 +3561,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is not displayed inside flex table
@@ -3579,8 +3579,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "View" icon for "BP01" is displayed inside flex table
@@ -3597,8 +3597,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -3615,8 +3615,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is displayed inside flex table
@@ -3633,8 +3633,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -3651,8 +3651,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -3669,8 +3669,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -3687,8 +3687,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3706,8 +3706,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3725,8 +3725,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3744,8 +3744,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3763,8 +3763,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3782,8 +3782,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3801,8 +3801,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3820,8 +3820,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3839,8 +3839,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3858,8 +3858,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3877,8 +3877,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3896,8 +3896,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3915,8 +3915,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3934,8 +3934,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -3953,8 +3953,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -5972,8 +5972,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -5991,8 +5991,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6011,8 +6011,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6030,8 +6030,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6050,8 +6050,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6069,8 +6069,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6088,8 +6088,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6107,8 +6107,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6126,8 +6126,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6145,8 +6145,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6159,14 +6159,15 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandUserApp_Not_In | Grantor State Program | GNT__PageBlockTitle__c    | Contacts                   |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperandUserApp_Not_In | Grantor State Program | GNT__PageBlockTitle__c    | Submit For Approval        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    Then I see "Contacts@1234567890!@#$%^&*()" page block displayed
+    #Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
+    Then I see "Submit For Approval" button is not displayed
 
   @45314    @hide_expression_using_left_operand_profile_NOTIN
   Scenario: Hide Overview sub tab with left operand profile NOTIN -gPlanning
@@ -6176,7 +6177,7 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorNOTIN | Grantor State Program | Name                      | TAB-2624                   |
-    When I login as "Automation-EXE" user
+    When I login to "As a Grantor" app as "EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -6196,8 +6197,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -6214,8 +6215,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -6232,8 +6233,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -6250,8 +6251,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
@@ -6267,8 +6268,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
@@ -6284,8 +6285,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see no "New" button inside "Budget Periods" enhanced grid
 
@@ -6301,8 +6302,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6320,8 +6321,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6398,8 +6399,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see "Remaining Grant Amount" not displayed in enhanced grid table column title
 
@@ -6445,8 +6446,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Budget Periods"
@@ -6469,8 +6470,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     ##When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Budget Periods" is not displayed inside flex table
@@ -6488,8 +6489,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "Budget Periods" is not displayed inside flex table
@@ -6507,8 +6508,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6527,8 +6528,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6546,8 +6547,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "test Program for automation DND" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -6564,8 +6565,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -6584,8 +6585,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -6603,8 +6604,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
@@ -6621,8 +6622,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
@@ -6639,8 +6640,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see "Number of Awards" not displayed in enhanced grid table column title
 
@@ -6656,8 +6657,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6675,8 +6676,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     Then I see "Number of Awards" not displayed in enhanced grid table column title
 
@@ -6692,8 +6693,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6711,8 +6712,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6730,8 +6731,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6749,8 +6750,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
@@ -6767,8 +6768,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
@@ -6785,8 +6786,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
@@ -6803,8 +6804,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
@@ -6821,8 +6822,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Budget Periods"
@@ -6839,8 +6840,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications  - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6858,8 +6859,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "Budget Periods" inside table
@@ -6877,8 +6878,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6896,8 +6897,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6934,8 +6935,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6953,8 +6954,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6972,8 +6973,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -6991,8 +6992,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7010,8 +7011,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7029,8 +7030,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7048,8 +7049,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7067,8 +7068,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7086,8 +7087,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7105,8 +7106,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7124,8 +7125,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7143,8 +7144,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7162,8 +7163,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7181,8 +7182,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7200,8 +7201,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "Edit" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "Edit" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7452,8 +7453,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Test Demo"
@@ -7500,8 +7501,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -7518,8 +7519,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I see "Edit" icon for "BP01" is not displayed inside flex table
@@ -7592,8 +7593,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7607,8 +7608,8 @@ Business Need: Expression Builder Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Active            | false             | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionForLookupRelationalFieldInCreateMode | Grantor State Program | Name                      | PBD-17602                   |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                | Grantor State Program | Name                      | PBD-17602                   |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionForLookupRelationalFieldInCreateMode | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                | Grantor State Program | Name                      | PBD-17602                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -7639,8 +7640,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Budget" sub tab
    # When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
@@ -7663,8 +7664,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "MDH Test Application # 1" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "MDH Test Application # 1"
@@ -7687,8 +7688,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for flow"
-    When I click on "View" icon for "Automation Internal Program for flow" inside table
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "Test Demo"
@@ -7775,72 +7776,70 @@ Business Need: Expression Builder Component Scenarios
   @116532  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridParentTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid parent table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:1 |
-      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:2 |
-      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:3 |
-      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:4 |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Top                                                                         | ProgramReviewStepTemplates | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type | Button                                                                      | ProgramReviewStepTemplates | Name                      | View                       |
-      | Flex Table Action     | Location                   | Top                                                                         | ProgramReviewStepTemplates | Name                      | Preview                    |
-      | Flex Table Action     | Header Action Display Type | Button                                                                      | ProgramReviewStepTemplates | Name                      | Preview                    |
+      | configurationCategory | fieldName        | fieldNewValue                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-10962                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
-    Then I do not see "Actions" in enhanced flex grid header "Review Steps"
+    When I navigate to "Setup tabs" sub tab
+    Then I do not see "Description" in enhanced flex grid header "Review Steps"
 
   @117405  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridChildTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all other row level actions are hidden at enhanced grid child table
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action     | Hide Expression JSON       |                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
+#      | Flex Table Action     | Location                   | Row               | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+#      | Flex Table Action     | Header Action Display Type |                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName                  | fieldNewValue                                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
+#      | Flex Table Action     | Location                   | Top                                                                                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+#      | Flex Table Action     | Header Action Display Type | Button                                                                                | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON       |                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Row               | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type |                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue                                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGridChildTable | EnhanceAppBudCatGrantorFlexGrid | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Top                                                                                   | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
-      | Flex Table Action     | Header Action Display Type | Button                                                                                | EnhanceAppBudCatGrantorFlexGrid | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepPanelTemplates | Name                      | FTC-12052                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "PG-REI-2183"
+    When I click on "View" icon for "PG-REI-2183" inside table
+    When I navigate to "Setup tabs" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "BP01"
-    Then I do not see "Actions" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodstABLEiD1---"
+    When I expand nested table containing column value "Test"
+    Then I do not see "Required?" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @118109  @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all three row level actions are hidden using date time field value at enhanced grid parent table
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
-      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:2 |
-      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
-      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGrid            | ProgramReviewStepTemplates | Name                      | View                       |
-      | Flex Table Action     | Location                   | Top                                                                                    | ProgramReviewStepTemplates | Name                      | Preview                    |
-      | Flex Table Action     | Header Action Display Type | Button                                                                                 | ProgramReviewStepTemplates | Name                      | Preview                    |
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+#      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
+#      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
+#      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:2 |
+#      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:3 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName                  | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
+#      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGrid            | ProgramReviewStepTemplates | Name                      | View                       |
+#      | Flex Table Action     | Location                   | Top                                                                                    | ProgramReviewStepTemplates | Name                      | Preview                    |
+#      | Flex Table Action     | Header Action Display Type | Button                                                                                 | ProgramReviewStepTemplates | Name                      | Preview                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Overview" sub tab
+    When I navigate to "Setup tabs" sub tab
     Then I do not see "Actions" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
 
   @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid @egrid
