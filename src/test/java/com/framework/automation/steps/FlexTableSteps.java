@@ -514,4 +514,19 @@ public class FlexTableSteps {
     public void iSeeAddedListIndexIsDisplayedInProvidedSequence(String usage, String sequence, String value) {
         flexTablePage.indexDisplayedInProvidedSequence(usage,sequence,value);
     }
+
+    @Then("^I (see|do not see) sequence of \"([^\"]*)\" Actions is \"([^\"]*)\" on UI as per given sequence in flex table$")
+    public void iSeeSequenceOfActionsIsOnUIAsPerGivenSequenceInFlexTable(String usage, String value, String sequence) {
+        flexTablePage.sequenceDisplayedInProvidedSequence(usage,value,sequence);
+    }
+
+    @And("I hovering mouse on action \"([^\"]*)\" inside flex table$")
+    public void iHoveringMouseOnActionInsideFlexTable(String action) {
+        flexTablePage.hoverMouseOnAction(action);
+    }
+
+    @Then("^I (see|do not see) characters limit \"([^\"]*)\" for \"([^\"]*)\" attribute Button help text field$")
+    public void iSeeCharactersLimitForAttributeButtonHelpTextField(String usage, int charLimit, String attribute) {
+        flexTablePage.CountCharectorLimit(usage,charLimit,attribute);
+    }
 }

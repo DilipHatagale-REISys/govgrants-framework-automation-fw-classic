@@ -1395,7 +1395,7 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
-                    " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')]"))) {
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1438,6 +1438,54 @@ public class FlexTablePage extends GovGrantsManager {
             String abc = elementSequence.getText();
             System.out.println(abc);
             if (elementSequence.getText().equalsIgnoreCase(value)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void sequenceDisplayedInProvidedSequence(String usage, String value, String sequence) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(actionSequenceIsDisplayed(sequence, value));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(actionSequenceIsDisplayed(sequence, value));
+        }
+    }
+
+    private boolean actionSequenceIsDisplayed(String sequence, String value) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//td[contains(@class,'actionColumn')]/div//a[@class='tableLinks focusActionItem actionIcons'])[" + sequence + "]"));
+            String actionElement = elementSequence.getAttribute("title");
+            if (actionElement.equalsIgnoreCase(value)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void hoverMouseOnAction(String action) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "']"));
+    }
+
+    public void CountCharectorLimit(String usage, int charLimit, String attribute) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(charectorLimitIsExceededOrNot(charLimit, attribute));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(charectorLimitIsExceededOrNot(charLimit, attribute));
+        }
+    }
+
+    private boolean charectorLimitIsExceededOrNot(int charLimit, String attribute) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//td[contains(@class,'actionColumn')]/div//a[@class='tableLinks focusActionItem actionIcons'])[2]"));
+            String actionElement = elementSequence.getAttribute(attribute);
+            int stringLength = actionElement.length();
+            System.out.println("String length: " + stringLength);
+            if (actionElement.length() == charLimit) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

@@ -8050,10 +8050,436 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | <i class="fa fa-eye" ></i> | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     Then I see action name "View" itself get displayed on UI
+
+  @333977
+  Scenario: Flex table-Actions-Icon CSS-PM-UI-To verify that if user provided any wrong icon CSS in config, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333978
+  Scenario: Flex table-Actions-Icon CSS-SPI-UI-To verify that if user provided any wrong icon CSS in config, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333989
+  Scenario: Flex table-Actions-Sequence-Admin-Config-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333990
+  Scenario: Flex table-Actions-Sequence-PM-UI-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333991
+  Scenario: Flex table-Actions-Sequence-SPI-UI-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
+
+  @333992
+  Scenario: Flex table-Actions-Sequence-Admin-Config-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333993
+  Scenario: Flex table-Actions-Sequence-PM-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333994
+  Scenario: Flex table-Actions-Sequence-SPI-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
+
+  @333996
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @333998
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @333999
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @334000
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334001
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334003
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334004
+  Scenario: Flex table-Actions-Button help text-Admin-Config-To verify the maximum characters limit for Button help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | HiDilip                                        | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see characters limit "7" for "title" attribute Button help text field
+
+  @334005
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334006
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334008
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334009
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334010
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334013
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334014
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+  @334016
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+  @334017
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+    @334019
+    Scenario: Flex table-Actions-Action URL-Admin-Config-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+        | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+        | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+      When I login to "As a Grantor" app as "Admin" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Internal Programs - Draft"
+      Then I see action name "!@#$%%%^&*()" itself get displayed on UI
