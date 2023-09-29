@@ -375,12 +375,12 @@ Business Need: Approval Process Component Scenarios
 
   @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
-#    Given I have "default" configuration as below:
-#      | configurationCategory   | fieldName                          | fieldOrignalValue | filterId         |
-#      | Task Config:Task Action | Send Task Assignment Notification? | false             | ApiGeneratedId:0 |
-#    Given I setup test configuration as below:
-#      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
-#      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
+  #    Given I have "default" configuration as below:
+  #      | configurationCategory   | fieldName                          | fieldOrignalValue | filterId         |
+  #      | Task Config:Task Action | Send Task Assignment Notification? | false             | ApiGeneratedId:0 |
+  #    Given I setup test configuration as below:
+  #      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
+  #      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -917,7 +917,7 @@ Business Need: Approval Process Component Scenarios
       | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-   #   | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
+     #   | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | true          | Program_Manager_Approver |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantor State Program    | Name                      | TAB-1724                   |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
@@ -1447,14 +1447,14 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:PhasePendingTasksByTableId---" panel
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:PhasePendingTasksByTableId---"
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess 
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
-      #| Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
+        #| Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
       | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user

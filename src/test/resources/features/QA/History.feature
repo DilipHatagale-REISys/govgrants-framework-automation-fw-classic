@@ -14,7 +14,7 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
@@ -288,7 +288,7 @@ Business Need: history Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "History" sub tab
     When I select "Program" from dropdown inside page block
     And I select "Download as PDF" from parallel lines dropdown of "Field History"

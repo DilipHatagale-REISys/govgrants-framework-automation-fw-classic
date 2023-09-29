@@ -3587,4 +3587,24 @@ public class PageLayoutPage extends GovGrantsManager {
         By CrossButton = By.xpath("//a[contains(@aria-label,'" + NotesTitle + "')]/span[contains(@id,'close') or text='" + button + "']");
         I.amPerforming().click().on(CrossButton);
     }
+
+    public void assertUpOrDownArrowDisplayedOrNotDisplayed(String usage, String arrow, String columnName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(sortArrowDisplayedOrNot(arrow,columnName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(sortArrowDisplayedOrNot(arrow,columnName)).isTrue();
+        }
+    }
+
+    private boolean sortArrowDisplayedOrNot(String arrow, String columnName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
 }

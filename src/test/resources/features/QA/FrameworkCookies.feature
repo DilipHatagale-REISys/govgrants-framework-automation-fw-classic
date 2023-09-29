@@ -4788,7 +4788,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
     And I pause execution for "5" seconds
     Then I see "down" arrow is Displayed inside "Program Name" field
@@ -4823,7 +4823,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:programTableDivId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
@@ -4959,7 +4959,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on "Owner" column inside Internal Programs
     And I click on "up" arrow inside "Owner" field
     And I see "down" arrow is Displayed inside "Owner" field
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "Owner" field
 
@@ -5100,7 +5100,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on "Status" column inside Internal Programs
     And I click on "up" arrow inside "Status" field
     And I see "down" arrow is Displayed inside "Status" field
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Applications - All"
     Then I see "down" arrow is Displayed inside "Status" field
@@ -5215,7 +5215,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on "EGMS ID" column inside Internal Programs
     And I click on "up" arrow inside "EGMS ID" field
     And I see "down" arrow is Displayed inside "EGMS ID" field
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     Then I see "down" arrow is Displayed inside "EGMS ID" field
 
@@ -6927,7 +6927,7 @@ Business Need: FrameworkCookies Component Scenarios
     #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
     And I see the text containing :
       | Page 2 |
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Applications - All"
     #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
@@ -6955,7 +6955,7 @@ Business Need: FrameworkCookies Component Scenarios
     #And I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
     And I see the text containing :
       | Page 2 |
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Applications - All"
     #Then I see "---program:-:toggleFlexTablepopupflextableTableId---" table contains "Page 2 of2"
@@ -7198,7 +7198,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Grants - Active"
     And I see the text containing :
@@ -7318,7 +7318,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I click on page navigation arrow "---program:-:GrantsListTableId---" for table id "Next"
     And I see the text containing :
       | Page 2 |
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     And I click on back arrow
     And I click toggle button to select "Grants - Active"
     And I see the text containing :
@@ -7406,7 +7406,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     And I see the text containing :
@@ -7439,7 +7439,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -7470,7 +7470,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     And I see "---program:-:ScheduledActivitiesAllTableID---" table contains "Page 2 of"
@@ -7503,7 +7503,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -7536,7 +7536,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "Grants - All" flex table for "1" record
@@ -7568,7 +7568,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -7599,7 +7599,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -7631,7 +7631,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -7664,7 +7664,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
     And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
@@ -7691,7 +7691,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableIDForSPI---" for table id "Next"
     And I see "---program:-:ScheduledActivitiesAllTableIDForSPI---" table contains "Page 2 of"
@@ -7719,7 +7719,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7746,7 +7746,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Descending" order by clicking on arrow beside of "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I see "down" arrow is displayed inside "Grant Title" in table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7774,7 +7774,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
     And I see list contain "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7802,7 +7802,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7829,7 +7829,7 @@ Business Need: FrameworkCookies Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableIDForSPI---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableIDForSPI---"
@@ -7845,7 +7845,7 @@ Business Need: FrameworkCookies Component Scenarios
     And I navigate to "Planning" tab
     And I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "Edit" icon in flex table for first draft record
+    And I click on "fa fa-pencil" icon in flex table for first draft record
     And I click on back arrow
     Then I softly see "Internal Programs - Active" inside list view option of table "#toggleFlexTablePrograms"
     Examples:

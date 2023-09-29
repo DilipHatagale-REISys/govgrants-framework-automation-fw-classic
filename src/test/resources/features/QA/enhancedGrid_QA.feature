@@ -5,7 +5,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode. @Vrushali @Sprint-19
   Scenario Outline: To verify ,  When Internal User click on 'New' action button to create a new record in Enhanced Grid, a new record should show up in the grid in edit mode.
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -28,7 +28,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257614 @257611 @ToverifyAdminUserclickonnewactionandthenclickonRefreshbuttonfromPagelayoutthennewrecordshouldnotshowup @Vrushali @Sprint-19 @US-255921
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -49,7 +49,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257558 @257557 @InternalUserclickonnewactionthenclickonRefreshbuttonfrompageblockhamburgericonthennewrecordshouldnotshowup @Vrushali @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -73,7 +73,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly. @Vrushali @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -91,7 +91,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord. @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -108,7 +108,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord. @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -129,7 +129,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257474 @Toverify,Advancedfiltershouldbeworkingfornewlyaddedchildrecordintable @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, Advanced filter should be working for newly added child record in the table
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | false             | ApiGeneratedId:0 |
@@ -155,7 +155,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257472 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord. @Vrushali @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | false             | ApiGeneratedId:0 |
@@ -191,7 +191,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @206105 @206107 @DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline:Download as XLS should work for empty table currency,  Number &Percent  column should be available on the table
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -213,7 +213,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @206106 @206110 @DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @US-196926 @Sprint-5
   Scenario Outline: Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -538,7 +538,7 @@ Business Need: EnhancedGrid Component Scenarios
 
   @257523 @UsershouldbeabletoEditdetailstothenewlydisplayedrecord @vrishali @Sprint-19 @US-255921
   Scenario: User should be able to Edit details to the newly displayed record
-#    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

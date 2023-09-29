@@ -634,17 +634,17 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335070
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index                | false             | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size                | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index                | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size                | 5             | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -841,11 +841,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335124
   Scenario: Flex table-Page size-Admin-UI-To verify that user is able to change page size by clicking on Show Entries block
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "20"
-    Then I see table contains "Showing 1 to 20" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "10"
+    Then I see table contains "Showing 1 to 10" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    And I select value inside table "---program:-:toggleFlexTableIdForAdminPM---" is "5"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
 
   @335126
   Scenario: Flex table-Page size-PM-UI-To verify that user is able to change page size by clicking on Show Entries block
@@ -865,6 +875,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335129
   Scenario: Flex table-Page size-Admin-UI-To verify that different page sizes are available in Show Entries block
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1043,7 +1061,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334656
+  @334656 @wip @bug341819
   Scenario: Flex table-Quick Search-Admin-Config-To verify that on disabling Quick search, it not displayed on top of the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1056,7 +1074,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334657
+  @334657 @wip @bug341819
   Scenario: Flex table-Quick Search-PM-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1069,7 +1087,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334658
+  @334658 @wip @bug341819
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2118,14 +2136,55 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
 
+  @338483
+  Scenario: Pagination - Admin- Config- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Grants" tab
+    Then I do not see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
+
+  @338485
+  Scenario: Pagination - PM- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Grants" tab
+    Then I do not see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
+
+  @338487
+  Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | false         | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I do not see "---program:-:toggleFlexTablepopupflextableForSPIuser---" table contains "Page 1 of"
+
   @338489
   Scenario: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -2135,10 +2194,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - PM- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -2148,10 +2209,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - SPI- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -2987,6 +3050,90 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I hovering mouse on help text "GrantsListtooltip" icon
     Then I see "Help text for Automation" shown as help text
 
+  @339453
+  Scenario: Help Config- SPI- UI- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Help" option is getting displayed under Menu in table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @339455
+  Scenario: Help Config- PM- UI- Verify if we are able to find help text under help option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    When I hovering mouse on help text "Help" icon
+    And I pause execution for "2" seconds
+    Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
+
+  @339458
+  Scenario: Help Config- PM- UI- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    When I hovering mouse on help text "Help" icon
+    Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
+
+  @339456
+  Scenario: Help Config- Admin- Config- Verify if we are able to find help text under help option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+
+
+  @339459
+  Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | true                     | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+
 ############################Test suite: FLex table 1 (Suite ID: 334517)#########################
 
   @336187
@@ -3554,11 +3701,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338619
   Scenario: Records description- Admin- Config- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3576,8 +3725,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338620
   Scenario: Records description - PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -3619,11 +3769,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338623
   Scenario: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3638,11 +3790,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338624
   Scenario: Advance filter - PM- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3759,11 +3913,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338631
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Contains ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3781,11 +3937,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338633
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3798,11 +3956,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338634
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3815,11 +3975,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338635
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with  ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3835,8 +3997,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3883,11 +4046,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338641
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -3900,11 +4065,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338643
   Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -3917,11 +4084,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338644
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -3934,11 +4103,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338645
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -3951,11 +4122,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338648
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number  field with 'Equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -3968,8 +4141,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338649
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
@@ -3985,11 +4159,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338650
   Scenario: Admin:-To verify,advanced filter should work for the Number field with 'Less than' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4002,11 +4178,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338652
   Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Number field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4019,11 +4197,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @338653
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to  ' operator
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
@@ -4085,6 +4265,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
+    Then I do not see select check box enabled in flex table
     Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338507
@@ -4284,7 +4465,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
+    When I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338526
@@ -4745,24 +4926,3560 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
 
-    @338563
-    Scenario: Mini-layout- Admin- Config- When we hover on any relational field Mini layout (having detailed info) will be displayed on UI
+  @338566
+  Scenario: Flex table-Total Records count-Admin-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    When I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338567
+  Scenario: Flex table-Total Records count-PM-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "7" seconds
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    When I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338570
+  Scenario: Flex table-Total Records count-Admin-UI_To verify that on deleting record, Total Records count get changed i.e. decreased
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    And I select value inside table "---program:-:programTableDivId---" is "50"
+    When I click on "Delete" icon for "Automation Program For Test" inside table
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338571
+  Scenario: Flex table-Total Records count-PM-UI_To verify that on deleting record, Total Records count get changed i.e. decreased
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
+    And I select value inside table "---program:-:programTableDivId---" is "50"
+    When I click on "Delete" icon for "Automation Program For Test" inside table
+    Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+
+  @338573
+  Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338574
+  Scenario: Flex table-Auto Index Behavior-PM-UI_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @338575
+  Scenario: Flex table-Auto Index Behavior-SPI-UI_To verify that on selecting auto index behavior - All Rows, all available rows on table get indexed irresepective of computed rows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "1" to "5" Record Selection inside table id "toggleFlexTableGrantsList"
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338581
+  Scenario: Flex table-Auto Index Behavior-Admin-Config_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338583
+  Scenario: Flex table-Auto Index Behavior-PM-UI_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index       | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination       | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Record Selection | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size       | 10            | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338584
+  Scenario: Flex table-Auto Index Behavior-SPI-UI_To verify that on selecting auto index behavior - None, all available rows on table get indexed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "1" to "5" indexing inside table id "toggleFlexTableGrantsList"
+
+  @338462
+  Scenario: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @336178
+  Scenario: LWC-Flex table-Admin-Config-To verify that user is able to render flex table on Modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @336180
+  Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Modal
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save and Continue"
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+
+  @335979
+  Scenario: Flex table-Header-Admin-Config-To verify that text entered in a Header field, displayed as a Header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages" displayed as a Header on flex table
+
+  @336066
+  Scenario: Flex table-Header-PM-Config-To verify that text entered in a Header field, displayed as a Header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I navigate to "Applications" tab
+    Then I see Header field "Applications - All" displayed as a Header on flex table
+
+  @336067
+  Scenario: Flex table-Header-SPI-UI-To verify that text entered in Header field, displayed as a Header on flex table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see Header field "Grants - Active" displayed as a Header on flex table
+
+  @336072
+  Scenario: Flex table-Header-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @336074
+  Scenario: Flex table-Header-PM-UI-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @reverconfigMessage
+  Scenario: Flex table-Header-PM-UI-To verify that user is able to enter digits and sp. characters along with characters in Header field, and it get displayed as a header on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+
+  @336076
+  Scenario: Flex table-Header help text-Admin-Config-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336077
+  Scenario: Flex table-Header help text-PM-UI-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336079
+  Scenario: Flex table-Header help text-SPI-UI-To verify that on entering header help text, respective help text get displayed as a help text (i.e. on hovering mouse over help(i) icon)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true                     | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5                        | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  | Help text for Automation | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "GrantsListtooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation" shown as help text
+
+  @336080
+  Scenario: Flex table-Header help text-Admin-Config-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text |               | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336081
+  Scenario: Flex table-Header help text-PM-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text |               | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336082
+  Scenario: Flex table-Header help text-SPI-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  |               | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see "fa fa-info helpIcon" displayed on flex table
+
+  @336083
+  Scenario: Flex table-Header help text-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation@1234567890!@#$%^&* | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                                    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336085
+  Scenario: Flex table-Header help text-PM-UI-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                               | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation@1234567890!@#$%^&* | Programs             | Name                      |                            |
+      | Flex Table:General    | Header           | Messages                                    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I hovering mouse on help text "Programstooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336086
+  Scenario: Flex table-Header help text-SPI-UI-To verify that user is able to enter digits and sp. characters along with characters as a header help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text  | none              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue                               | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true                                        | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5                                           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Help Text  | Help text for Automation@1234567890!@#$%^&* | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I hovering mouse on help text "GrantsListtooltip" icon
+    And I pause execution for "5" seconds
+    Then I see "Help text for Automation@1234567890!@#$%^&*" shown as help text
+
+  @336087
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text   | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336088
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text   | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336090
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that entered text in header instruction field displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true                   | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5                      | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336091
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336092
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336093
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5             | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction |               | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336094
+  Scenario: Flex table-Header Instruction-Admin-Config-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation            | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336095
+  Scenario: Flex table-Header Instruction-PM-UI-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text   | Help text for Automation            | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336096
+  Scenario: Flex table-Header Instruction-SPI-UI-To verify that user is able to enter digits and sp. characters along with characters as a header instruction
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size  | 5                 | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index  | true                                | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size  | 5                                   | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Automation Header Text 7890!@#$%^&* | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see text "Automation Header Text 7890!@#$%^&*" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336097
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336098
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336099
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that all the provided display fields in config get displayed as a different columns of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336100
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336101
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336102
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336107
+  Scenario Outline: Flex table-Display fields-Admin-Config-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336108
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Created By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Actions" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336109
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that different data types fields displayed as a columns/fields on flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336114
+  Scenario Outline:Flex table-Display fields-Admin-Config-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "toggleFlexTableAppReviewList"
+    Then I see "Application Due Date" in flex table header "toggleFlexTableAppReviewList"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336117
+  Scenario Outline: Flex table-Display fields-PM-UI-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "toggleFlexTableAppReviewList"
+    Then I see "Application Due Date" in flex table header "toggleFlexTableAppReviewList"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336119
+  Scenario Outline: Flex table-Display fields-SPI-UI-To verify that reference field displayed as a column/field on flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    Then I see "Application Due Date" in flex table header "toggleFlexTablepopupflextable"
+
+    Examples:
+      | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @336124
+  Scenario: Flex table-Filter Criteria-Admin-Config-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @336125
+  Scenario: Flex table-Filter Criteria-PM-UI-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @336126
+  Scenario: Flex table-Filter Criteria-SPI-UI-To verify that data/records displayed on flex table are based on provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Starts with | Vrush |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Vrush Application" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336127
+  Scenario: Flex table-Filter Criteria-Admin-Config-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfPrograms"
+      | Status | Equals to | Created |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
+
+  @336128
+  Scenario: Flex table-Filter Criteria-PM-UI-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Automation Program For Test" for title "Program Name" inside table "toggleFlexTablePrograms"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfPrograms"
+      | Status | Equals to | Created |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTablePrograms"
+
+  @336129
+  Scenario: Flex table-Filter Criteria-SPI-UI-To verify the behavior of displayed records on flex table, after changing filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Starts with | Vrush |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Vrush Application" for title "Grant title" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    And I click on "Clear All" after click advance filter
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Equals to | Active |
+    And I click on "fa fa-plus" after click advance filter
+    Then I softly see value "Active" for title "Status" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336130
+  Scenario Outline: Flex table-Order By-Admin-Config-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                 | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | FundedAmount__c | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC             | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336147
+  Scenario Outline: Flex table-Order By-PM-UI-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                 | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | FundedAmount__c | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC             | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336148
+  Scenario Outline: Flex table-Order By-SPI-UI-To verify the records displayed (Ordered/arranged) in a flex table as per the Order by field.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC            | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @setconfigforflextabel
+  Scenario Outline: configuration set as per need if it is change during execution
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index          | true              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Export (PDF)        | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV)  | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)        | true          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV)  | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Examples:
+      | User  |
+      | Admin |
+      | Pm    |
+
+  @336149
+  Scenario Outline: Flex table-Order By-Admin-Config-To verify the order of records displayed in a flex table when user not provided any field in Order By field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            |                | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "up" arrow is Displayed inside "Funded Amount" field
+    Then I do not see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336150
+  Scenario Outline: Flex table-Order By-PM-UI-To verify the order of records displayed in a flex table when user not provided any field in Order By field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            |                | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see "up" arrow is Displayed inside "Funded Amount" field
+    Then I do not see "down" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336152
+  Scenario Outline: Flex table-Order By-SPI-UI-To verify the order of records displayed in a flex table when user not provided any field in Order By field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see "up" arrow is Displayed inside "Status" field
+    Then I do not see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336153
+  Scenario Outline: Flex table-Order By-Admin-Config-To verify the order of records displayed in a flex table when user provided more than one field in "Order By" field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>         | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                        | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | StartDate__c,Status__c | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC                    | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Start Date" field
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336154
+  Scenario Outline: Flex table-Order By-PM-UI-To verify the order of records displayed in a flex table when user provided more than one field in "Order By" field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>         | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                        | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | StartDate__c,Status__c | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC                    | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Start Date" field
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336155
+  Scenario Outline: Flex table-Order By-SPI-UI-To verify the order of records displayed in a flex table when user provided more than one field in "Order By" field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                           | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>            | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | ProjectTitle__c,Status__c | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | ASC                       | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "up" arrow is Displayed inside "Status" field
+    Then I see "up" arrow is Displayed inside "Grant Title" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336156
+  Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                                       | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336157
+  Scenario Outline: Flex table-Sort direction-PM-UI-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                                       | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336159
+  Scenario Outline: Flex table-Sort direction-SPI-UI-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336160
+  Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in descending order in a flex table, when user selected Sort direction "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | DESC                                  | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336161
+  Scenario Outline: Flex table-Sort direction-PM-UI-To verify the sorting of records i.e. it displayed in descending order in a flex table, when user selected Sort direction "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | DESC                                  | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "down" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336162
+  Scenario Outline: Flex table-Sort direction-SPI-UI-To verify the sorting of records i.e. it displayed in descending order in a flex table, when user selected Sort direction "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      | DESC           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "down" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336163
+  Scenario Outline: Flex table-Sort direction-Admin-Config-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                                       | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336164
+  Scenario Outline: Flex table-Sort direction-PM-UI-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>                        | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                                       | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Order By            | Announcement__r.ApplicationDueDate__c | AppReviewList      | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                                       | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is Displayed inside "Application Due Date" field
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336165
+  Scenario Outline: Flex table-Sort direction-SPI-UI-To verify the sorting of records i.e. it displayed in ascending order in a flex table, when user selected Sort direction "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+    ##################################Test suite: Flex Table ListView (Suite ID: 333776)###############################
+
+  @333779
+  Scenario: Flex table-List View-Is Active-Admin-Config-To verify that when Is active checkbox is checked, then respective list view get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333780
+  Scenario: Flex table-List View-Is Active-PM-UI-To verify that when Is active checkbox is checked, then respective list view get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333781
+  Scenario: Flex table-List View-Is Active-SPI-UI-To verify that when Is active checkbox is checked, then respective list view get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
+
+  @333782
+  Scenario: Flex table-List View-Is Active-Admin-Config-To verify that when Is active checkbox is Unchecked, then respective list view not get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333783
+  Scenario: Flex table-List View-Is Active-PM-UI-To verify that when Is active checkbox is Unchecked, then respective list view not get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333784
+  Scenario: Flex table-List View-Is Active-SPI-UI-To verify that when Is active checkbox is Unchecked, then respective list view not get rendered on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
+
+  @333788
+  Scenario: Flex table-ListView-Label-Admin-Config-To verify that if user not provided any Label for List view in config, then no any label displayed for respective list view on UI, also Null value not displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+    Then I do not see list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Then I do not see list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333789
+  Scenario: Flex table-ListView-Label-PM-UI-To verify that if user not provided any Label for List view in config, then no any label displayed for respective list view on UI, also Null value not displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableAppReviewList"
+    Then I do not see list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Then I do not see list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333790
+  Scenario: Flex table-ListView-Label-SPI-UI-To verify that if user not provided any Label for List view in config, then no any label displayed for respective list view on UI, also Null value not displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | false         | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | false         | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | false         | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see list view "dropdownListView" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+
+  @setconfigforlistview
+  Scenario: Flex table-ListView-Label-Admin-Config-To verify character limit for Label field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "1234567890" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333794
+  Scenario: Flex table-ListView-Label-Admin-Config-To verify only digits added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | 1234567890    | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "1234567890" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333797
+  Scenario: Flex table-ListView-Label-SPI-UI-To verify only digits added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Label          | 1234567890    | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see list view "1234567890" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+
+  @333791
+  Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify character limit for Label field charector limit 255
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName                                                                                                                                                                                                                                                       |
+      | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU |
+
+  @333792
+  Scenario Outline: Flex table-ListView-Label-PM-UI-To verify character limit for Label field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName                                                                                                                                                                                                                                                       |
+      | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU |
+
+  @333793
+  Scenario Outline: Flex table-ListView-Label-SPI-UI-To verify character limit for Label field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | labelName                                                                                                                                                                                                                                                       |
+      | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTU |
+
+  @333798
+  Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify alphanumeric values added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName           |
+      | ABCDefgh@1234567890 |
+
+  @333799
+  Scenario Outline: Flex table-ListView-Label-PM-UI-To verify alphanumeric values added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName           |
+      | ABCDefgh@1234567890 |
+
+  @333800
+  Scenario Outline: Flex table-ListView-Label-SPI-UI-To verify alphanumeric values added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | labelName           |
+      | ABCDefgh@1234567890 |
+
+  @333802
+  Scenario Outline: Flex table-ListView-Label-Admin-Config-To verify Sp.characters added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName       |
+      | ABCD!#$%^&*&()@ |
+
+  @333803
+  Scenario Outline: Flex table-ListView-Label-PM-UI-To verify Sp.characters added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue        | filterId         |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:0 |
+      | Flex Table List       | Active ?  | true                     | ApiGeneratedId:1 |
+      | Flex Table List       | Label     | Applications - Submitted | ApiGeneratedId:2 |
+      | Flex Table List       | Label     | Applications - All       | ApiGeneratedId:3 |
+      | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | labelName       |
+      | ABCD!#$%^&*&()@ |
+
+  @333805
+  Scenario Outline: Flex table-ListView-Label-SPI-UI-To verify Sp.characters added in Label field, get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?       | true              | ApiGeneratedId:0 |
+      | Flex Table            | Sort Direction |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Label          | <labelName>   | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true          | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true          | GrantsList         | Name                      | FLV-3450                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see list view "<labelName>" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+    Then I do not see list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | labelName       |
+      | ABCD!#$%^&*&()@ |
+
+  @333785
+  Scenario: Flex table-ListView-Label-Admin-Config-To verify that label of list view displayed correctly, same as that of provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333786
+  Scenario: Flex table-ListView-Label-PM-UI-To verify that label of list view displayed correctly, same as that of provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+    Then I see list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+
+  @333787
+  Scenario: Flex table-ListView-Label-SPI-UI-To verify that label of list view displayed correctly, same as that of provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Then I see list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+
+  @333806
+  Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed only those records which matches the given filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333808
+  Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed only those records which matches the given filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "pm" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333809
+  Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed only those records which matches the given filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Pending"
+    Then I softly see value "Draft" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333810
+  Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed all available records, when user not provided any filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause |
+      |              |
+
+  @333811
+  Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed all available records, when user not provided any filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause |
+      |              |
+
+  @333813
+  Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed all available records, when user not provided any filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Pending"
+    Then I softly see value "Draft" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause |
+      |              |
+
+  @333815
+  Scenario Outline: Flex table-ListView-Filter Clause-Admin-Config-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see error message contains text "Error creating table:unexpected token" if wrong or invalid filter clause provide
+
+    Examples:
+      | FilterClause                                              |
+      | RecordType.Name='Grantor' and Status__c='Created'DELETEME |
+
+  @333816
+  Scenario Outline: Flex table-ListView-Filter Clause-PM-UI-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see error message contains text "Error creating table:unexpected token" if wrong or invalid filter clause provide
+    Examples:
+      | FilterClause                                              |
+      | RecordType.Name='Grantor' and Status__c='Created'DELETEME |
+
+  @333817
+  Scenario Outline: Flex table-ListView-Filter Clause-SPI-UI-To verify that respective list view showed some wrong data/records, when user provided wrong or invalid filter clause
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see error message contains text "Error creating table:unexpected token" if wrong or invalid filter clause provide
+    Examples:
+      | FilterClause                                              |
+      | Status__c = 'Draft' and RecordType.Name='Grantor'DELETEME |
+
+  @333818
+  Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see default list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333819
+  Scenario Outline: Flex table-ListView-Default-PM-UI-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see default list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333820
+  Scenario Outline: Flex table-ListView-Default-SPI-UI-To verify that when user enable or tick the checkbox of "Default", then respective list view get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see default list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333821
+  Scenario Outline: Flex table-ListView-Default-Admin-Config-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333822
+  Scenario Outline: Flex table-ListView-Default-PM-UI-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333823
+  Scenario Outline: Flex table-ListView-Default-SPI-UI-To verify that when user disable or untick the checkbox of "Default", then respective list view not get displayed by default, when user logged in
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | false            | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see default list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333824 @wip
+  Scenario Outline: Flex table-ListView-IsMasterView-Admin-Config-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true           | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Is Master View | false          | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333825 @wip
+  Scenario Outline: Flex table-ListView-IsMasterView-PM-UI-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Is Master View | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I do not see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333826 @wip
+  Scenario Outline: Flex table-ListView-IsMasterView-SPI-UI-To verify that when user disable or untick the checkbox of "Is Master View", then respective list view not get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Is Master View | false          | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see default list view "Grants - Closed" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333827
+  Scenario Outline: Flex table-ListView-IsMasterView-Admin-Config-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see default list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333828
+  Scenario Outline: Flex table-ListView-IsMasterView-PM-UI-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    Then I see default list view "Applications - All" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333829
+  Scenario Outline: Flex table-ListView-IsMasterView-SPI-UI-To verify that when user enable or tick the checkbox of "Is Master View", then respective list view get displayed on page load
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see default list view "Grants - Active" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333830
+  Scenario Outline: Flex table-Actions-Sequence-Admin-Config-To verify that all the added list views get appeared in provided sequence, in dropdown of List view on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Sequence  |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause | <FilterClause> | AppReviewList      | Name                      | FLV-3807                   |
+#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2613                   |
+#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-2663                   |
+#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see added list index "1" is "Applications - Submitted" displayed in provided sequence
+    Then I see added list index "2" is "Applications - All" displayed in provided sequence
+    Then I see added list index "3" is "Applications - Draft" displayed in provided sequence
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333831
+  Scenario: Flex table-Actions-Sequence-PM-UI-To verify that all the added list views get appeared in provided sequence, in dropdown of List view on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Sequence  |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2613                   |
+#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-2663                   |
+#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableAppReviewList"
+    Then I see added list index "1" is "Applications - All" displayed in provided sequence
+    Then I see added list index "2" is "Applications - Submitted" displayed in provided sequence
+    Then I see added list index "3" is "Applications - Draft" displayed in provided sequence
+
+  @333833
+  Scenario: Flex table-Actions-Sequence-SPI-UI-To verify that all the added list views get appeared in provided sequence, in dropdown of List view on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table List       | Sequence  | 1             | GrantsList         | Name                      | FLV-3380                   |
+#      | Flex Table List       | Sequence  | 2             | GrantsList         | Name                      | FLV-3451                   |
+#      | Flex Table List       | Sequence  | 3             | GrantsList         | Name                      | FLV-3450                   |
+#      | Flex Table List       | Sequence  | 4             | GrantsList         | Name                      | FLV-3346                   |
+#      | Flex Table List       | Sequence  | 5             | GrantsList         | Name                      | FLV-3449                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "dropdownListView" button inside table id "toggleFlexTableGrantsList"
+    Then I see added list index "1" is "Grants - All" displayed in provided sequence
+    Then I see added list index "2" is "Grants - Pending" displayed in provided sequence
+    Then I see added list index "3" is "Grants - Active" displayed in provided sequence
+    Then I see added list index "4" is "Grants - Rejected" displayed in provided sequence
+    Then I see added list index "5" is "Grants - Closed" displayed in provided sequence
+
+  @333838 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Applications - Submitted" on page "1" of "GovGrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333839 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-PM-UI-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - All"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Applications - Submitted" on page "1" of "GovGrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333840 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-SPI-UI-To verify that if "Show in PDF" is disabled for a list view, then respective list view not get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants - Active"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Grants - Pending" on page "1" of "GovGrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333841 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-Admin-Config-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2613                   |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Submitted"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Applications - Submitted" on page "1" of "govgrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333842 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-PM-UI-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2613                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Submitted"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - Submitted"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Applications - Submitted" on page "1" of "govgrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333843 @pdftestcase
+  Scenario Outline: Flex table-Actions-Show in PDF-SPI-UI-To verify that if "Show in PDF" is enabled for a list view, then respective list view get displayed/showed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Show in PDF    | true           | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Pending"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants - Active"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Grants - Pending" on page "1" of "GovGrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333844
+  Scenario Outline: : Flex table-Actions-Admin-UI-To verify that user is able to switch between list views on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    And I click toggle button to select "Applications - Submitted"
+    Then I see default list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333845
+  Scenario Outline: Flex table-Actions-PM-UI-To verify that user is able to switch between list views on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    Then I see default list view "Applications - Draft" displayed inside table "toggleFlexTableAppReviewList"
+    And I click toggle button to select "Applications - Submitted"
+    Then I see default list view "Applications - Submitted" displayed inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333846
+  Scenario Outline: Flex table-Actions-SPI-UI-To verify that user is able to switch between list views on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true             | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true             | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Label          | Grants - Pending | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>   | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Pending"
+    Then I see default list view "Grants - Pending" displayed inside table "toggleFlexTableGrantsList"
+    And I click toggle button to select "Grants - All"
+    Then I see default list view "Grants - All" displayed inside table "toggleFlexTableGrantsList"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333847 @pdftestcase
+  Scenario Outline: Flex table-Actions-Admin-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded PDF or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - Draft"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Applications - Draft" on page "1" of "govgrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333848 @pdftestcase
+  Scenario Outline: Flex table-Actions-PM-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded PDF or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as PDF" from parallel lines dropdown of "Applications - Draft"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Applications - Draft" on page "1" of "govgrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333850 @pdftestcase
+  Scenario Outline: Flex table-Actions-SPI-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded PDF or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?       | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?      | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Show in PDF    | false          | GrantsList         | Name                      | FLV-3451                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
+    And I select "Download as PDF" from parallel lines dropdown of "Grants - Active"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Grants - All" on page "1" of "GovGrants" pdf file
+    Then I cannot see "Grants - All" on page "2" of "govgrants" pdf file
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+  @333851 @xlscsvtestcase
+  Scenario Outline: Flex table-Actions-Admin-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?                  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true                     | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as CSV" from parallel lines dropdown of "Applications - Draft"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Applications - Draft" in downloaded xls or csv file "govgrants"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333852 @xlscsvtestcase
+  Scenario Outline: Flex table-Actions-PM-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?                  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true                     | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableAppReviewList"
+    And I select "Download as CSV" from parallel lines dropdown of "Applications - Draft"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Applications - Draft" in downloaded xls or csv file "govgrants"
+    Examples:
+      | FilterClause                                      |
+      | RecordType.Name='Grantor' and Status__c='Created' |
+
+  @333853 @xlscsvtestcase
+  Scenario Outline: Flex table-Actions-SPI-UI-To verify that if user selected another list view not default or master, then check respective list view displayed in downloaded XLS/CSV or not
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Active ?                  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3346                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3380                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3449                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Active ?                  | true           | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Is Master View            | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Default ?                 | true           | GrantsList         | Name                      | FLV-3450                   |
+      | Flex Table List       | Filter Clause             | <FilterClause> | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table List       | Show in PDF               | false          | GrantsList         | Name                      | FLV-3451                   |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
+    And I select "Download as CSV" from parallel lines dropdown of "Grants - Active"
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I see "Grants - Active" in downloaded xls or csv file "govgrants"
+    Examples:
+      | FilterClause                                      |
+      | Status__c = 'Draft' and RecordType.Name='Grantor' |
+
+#####################Test suite: Flex Table Actions (Suite ID: 333778)#########################
+
+  @333958
+  Scenario: Flex table-Actions-Admin-Config-To verify that actions rendered on flex table
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Program for actions rendered on flex table"
+    Then I see "Actions" rendered on flex table
+    Then I see row level action button "Edit" rendered on flex table
+    Then I see row level action button "View" rendered on flex table
+    Then I see row level action button "Delete" rendered on flex table
+
+  @333961
+  Scenario: Flex table-Actions-PM-UI-To verify that actions rendered on flex table
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see "Actions" rendered on flex table
+    When I perform quick search for "Program for actions rendered on flex table"
+    Then I see row level action button "Edit" rendered on flex table
+    Then I see row level action button "View" rendered on flex table
+    Then I see row level action button "Delete" rendered on flex table
+
+  @333962
+  Scenario: Flex table-Actions-SPI-UI-To verify that actions rendered on flex table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    Then I see "Actions" rendered on flex table
+
+  @333964
+  Scenario: Flex table-Actions-Action name-Admin-UI-To verify that provided name in config, get displayed as respective action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see "Test Automation" as title for Actions inside flex table action
+
+  @333965
+  Scenario: Flex table-Actions-Action name-PM-UI-To verify that provided name in config, get displayed as respective action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see "Test Automation" as title for Actions inside flex table action
+
+  @333966
+  Scenario: Flex table-Actions-Action name-SPI-UI-To verify that provided name in config, get displayed as respective action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "Test Automation" as title for Actions inside flex table action
+
+  @333967
+  Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user provided any icon CSS in config, then it get displayed instead of action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | IconCssTest   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see "IconCssTest" as title for Actions inside flex table action
+
+  @333970
+  Scenario: Flex table-Actions-Icon CSS-PM-UI-To verify that if user provided any icon CSS in config, then it get displayed instead of action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | IconCssTest   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see "IconCssTest" as title for Actions inside flex table action
+
+  @333971
+  Scenario: Flex table-Actions-Icon CSS-SPI-UI-To verify that if user provided any icon CSS in config, then it get displayed instead of action name on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | IconCssTest   | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "IconCssTest" as title for Actions inside flex table action
+
+  @333972
+  Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user not provided any icon CSS in config, then action name itself get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333973
+  Scenario: Flex table-Actions-Icon CSS-PM-UI-To verify that if user not provided any icon CSS in config, then action name itself get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see action name "View" itself get displayed on UI
+
+
+  @333975
+  Scenario: Flex table-Actions-Icon CSS-SPI-UI-To verify that if user not provided any icon CSS in config, then action name itself get displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333976
+  Scenario: Flex table-Actions-Icon CSS-Admin-Config-To verify that if user provided any wrong icon CSS in config, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333977
+  Scenario: Flex table-Actions-Icon CSS-PM-UI-To verify that if user provided any wrong icon CSS in config, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333978
+  Scenario: Flex table-Actions-Icon CSS-SPI-UI-To verify that if user provided any wrong icon CSS in config, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "View" itself get displayed on UI
+
+  @333989
+  Scenario: Flex table-Actions-Sequence-Admin-Config-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333990
+  Scenario: Flex table-Actions-Sequence-PM-UI-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333991
+  Scenario: Flex table-Actions-Sequence-SPI-UI-To verify that actions displayed on UI as per given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
+
+  @333992
+  Scenario: Flex table-Actions-Sequence-Admin-Config-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333993
+  Scenario: Flex table-Actions-Sequence-PM-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+
+  @333994
+  Scenario: Flex table-Actions-Sequence-SPI-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
+
+  @333996
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @333998
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @333999
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that provided button help text get displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @334000
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334001
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334003
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I hovering mouse on action "" inside flex table
+    Then I see action name "" itself get displayed on UI
+
+  @334004
+  Scenario: Flex table-Actions-Button help text-Admin-Config-To verify the maximum characters limit for Button help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | HiDilip                                        | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Program for actions rendered on flex table"
+    And I pause execution for "5" seconds
+    Then I see characters limit "7" for "title" attribute Button help text field
+
+  @334005
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334006
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334008
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered alphanumeric values, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "Test1234" itself get displayed on UI
+
+  @334009
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334010
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334013
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered only digits, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "1234567890" itself get displayed on UI
+
+  @334014
+  Scenario: Flex table-Actions-Button Help Text-Admin-Config-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+  @334016
+  Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+  @334017
+  Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user entered only Sp.characters, then it get saved and displayed as a button help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+
+    @334019
+    Scenario: Flex table-Actions-Action URL-Admin-Config-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
+        | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+        | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
       When I login to "As a Grantor" app as "Admin" user
       When I setup my app as "As a Grantor"
       And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
       And I click toggle button to select "Internal Programs - Draft"
-      And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-      When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-      And I click on "Save and Continue" in the page details
-      And I pause execution for "8" seconds
-      When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-      And I click on "Save" in the page details
-      And I pause execution for "7" seconds
-      And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
+      Then I see action name "!@#$%%%^&*()" itself get displayed on UI

@@ -142,7 +142,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -183,7 +183,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description              | name                   |
       | true         | 0            | a0b1C00000M9ljTQAR | Session Enable DialogBox | SessionEnableDialogBox |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     When I perform quick search for "AP-755-198"
@@ -213,7 +213,7 @@ Business Need: New API related scenarios temporary
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    When I click on "View" icon for "General Application Cover Page    " inside flex table with id "FormEnhancedTable"
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 
@@ -246,7 +246,7 @@ Business Need: New API related scenarios temporary
     Given I have "lightening" configuration as below:
       | booleanValue | integerValue | id                 | description             | name                    |
       | false        | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
@@ -265,7 +265,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
@@ -280,7 +280,7 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I perform scroll on page layout
@@ -295,11 +295,10 @@ Business Need: New API related scenarios temporary
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description             | name                    |
       | true         | 0            | a0b1C00000M9lj4QAB | SessionEnableManagement | SessionEnableManagement |
-   When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     When I hovering mouse on help text icon inside "Test's September Program"
     When I pause execution for "200" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
-

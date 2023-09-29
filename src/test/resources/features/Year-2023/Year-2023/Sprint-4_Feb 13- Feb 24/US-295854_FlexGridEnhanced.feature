@@ -13,7 +13,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -33,7 +33,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -74,7 +74,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -94,7 +94,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -135,7 +135,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -154,7 +154,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I see "10" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -193,7 +193,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -212,7 +212,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "20"
     And I see "20" with page size dropdown at "---program:-:ScheduledActivitiesAllTableID---"
@@ -252,7 +252,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -273,7 +273,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -315,7 +315,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Last"
@@ -335,7 +335,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Last"
@@ -375,7 +375,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -397,7 +397,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -441,7 +441,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I see "ActiveGrantsGridFlexToggle" table contains "Page 1 of"
@@ -461,7 +461,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I see "ActiveGrantsGridFlexToggle" table contains "Page 1 of"
@@ -502,7 +502,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -522,7 +522,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -563,7 +563,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Last"
@@ -582,7 +582,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Last"
@@ -622,7 +622,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -643,7 +643,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -686,7 +686,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -708,7 +708,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -753,7 +753,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -771,7 +771,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -808,7 +808,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -827,7 +827,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -866,7 +866,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -883,7 +883,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     Then I see "up" arrow is displayed inside "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -918,7 +918,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -936,7 +936,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -973,7 +973,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1024,7 +1024,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Total Original Grant Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1049,7 +1049,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1069,7 +1069,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1110,7 +1110,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1130,7 +1130,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1171,7 +1171,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1189,7 +1189,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Status" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1226,7 +1226,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1246,7 +1246,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1287,7 +1287,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1305,7 +1305,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Internal Organization" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1352,7 +1352,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Closeout Liquidation Days" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1407,7 +1407,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Closeout Liquidation Days" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1458,7 +1458,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1513,7 +1513,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Current Budget Period Start Date" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1554,7 +1554,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1574,7 +1574,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1615,7 +1615,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1633,7 +1633,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1680,7 +1680,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Budget Redirection Threshold" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1734,7 +1734,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Budget Redirection Threshold" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1775,7 +1775,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1795,7 +1795,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1836,7 +1836,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1854,7 +1854,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Project Period" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1901,7 +1901,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Final Fiscal Report Created" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -1956,7 +1956,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -1997,7 +1997,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2017,7 +2017,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2058,7 +2058,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -2076,7 +2076,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -2125,7 +2125,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Total Obligated Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2160,7 +2160,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Total Obligated Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2216,7 +2216,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -2259,7 +2259,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -2277,7 +2277,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2318,7 +2318,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on "View" icon in "---program:-:ScheduledActivitiesAllTableID---" flex table for "1" record
@@ -2338,7 +2338,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I refresh the page
@@ -2375,7 +2375,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2396,7 +2396,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2439,7 +2439,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2458,7 +2458,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2497,7 +2497,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2519,7 +2519,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I select "Sort Ascending" order by clicking on arrow beside of "Awarded Amount" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2563,7 +2563,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2583,7 +2583,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2624,7 +2624,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2646,7 +2646,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2691,7 +2691,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2711,7 +2711,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -2752,7 +2752,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
@@ -2774,7 +2774,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
@@ -2819,7 +2819,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
@@ -2841,7 +2841,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
@@ -2886,7 +2886,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -2906,7 +2906,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -2941,7 +2941,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
@@ -2963,7 +2963,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
@@ -3007,7 +3007,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
@@ -3028,7 +3028,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
@@ -3091,7 +3091,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on menu inside "---program:-:ScheduledActivitiesAllTableID---"
@@ -3110,7 +3110,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3149,7 +3149,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3168,7 +3168,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3207,7 +3207,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "10" seconds
@@ -3227,7 +3227,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     And I pause execution for "10" seconds
@@ -3268,7 +3268,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -3289,7 +3289,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I quick search "GT-GA-00050" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -3331,7 +3331,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     Then I can see the following message in table :
@@ -3349,7 +3349,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     Then I can see the following message in table :
@@ -3386,7 +3386,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     Then I can see the following message in table :
@@ -3404,7 +3404,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     Then I can see the following message in table :
@@ -3441,7 +3441,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
@@ -3459,7 +3459,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
@@ -3496,7 +3496,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
@@ -3514,7 +3514,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     Then I can see the following message in table :
@@ -3551,7 +3551,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on "Reset Table" from parallel lines dropdown of Menu "Grants - All"
@@ -3570,7 +3570,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
     And I click on "Reset Table" from parallel lines dropdown of Menu "Grants - All"
@@ -3609,7 +3609,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click on page navigation arrow "---program:-:ScheduledActivitiesAllTableID---" for table id "Next"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3629,7 +3629,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3649,7 +3649,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3690,7 +3690,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3710,7 +3710,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
     When I click on "Menu" button inside table id "---program:-:ScheduledActivitiesAllTableID---"
@@ -3772,7 +3772,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
@@ -3792,7 +3792,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Active"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "20"
@@ -3812,7 +3812,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "10"
@@ -3833,7 +3833,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select value inside table "---program:-:ScheduledActivitiesAllTableID---" is "5"
@@ -3876,7 +3876,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -3896,7 +3896,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I select "Sort Ascending" order by clicking on arrow beside of "EGMS ID" in table "---program:-:ScheduledActivitiesAllTableID---"
@@ -3937,7 +3937,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"
@@ -3957,7 +3957,7 @@ Business Need: Test suite: User Story 295854: QA Only- Internal - Enhancement - 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Component testing " sub tab
     And I click toggle button to select "Grants - Draft"
     And I quick search "Testing Grant for Automation" inside table "---program:-:ScheduledActivitiesAllTableID---"

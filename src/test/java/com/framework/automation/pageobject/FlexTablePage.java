@@ -1276,6 +1276,7 @@ public class FlexTablePage extends GovGrantsManager {
         if (I.amPerforming().checkToSee().IsElementPresentQuick(inputField)) {
             I.amPerforming().textInput().in(inputField, rowvalues.get(2).toString());
         } else {
+
             I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
         }
         I.amPerforming().click().on(filterAction);
@@ -1319,7 +1320,176 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
-    public void getHelpTextAtPageBlockOrInsideTable(String tableId, String toolTipId) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//div[@id='" + tableId + "']//a[@id='" + toolTipId + "']//span[contains(@class,'fa-info')]"));
+    public void assertIfTableRenderInModalWindow(String usage, String tableidOrDisplayedValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableidOrDisplayedValue)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfTableDisplayedInModal(tableidOrDisplayedValue)).isFalse();
+        }
+    }
+
+    private boolean assertIfTableDisplayedInModal(String tableidOrDisplayedValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableidOrDisplayedValue + "'] |" +
+                    " //div[contains(@class,'header-title')]//*[contains(text(),'" + tableidOrDisplayedValue + "')] |" +
+                    " //span[@class='" + tableidOrDisplayedValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfHeaderNameIsDisplayed(String usage, String headernameOrArrowOrValue, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHeaderIsDisplayedNameEqual(headernameOrArrowOrValue, tableid)).isFalse();
+        }
+    }
+
+    private boolean assertIfHeaderIsDisplayedNameEqual(String headernameOrArrowOrValue, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//input[@aria-label='Select Record'] | //div[@id='" + tableid + "']//div/table/thead/tr/th/span/following-sibling::span[contains(normalize-space(.), '" + headernameOrArrowOrValue + "')] |" +
+                    " //div[@id='" + tableid + "']//div/table/thead/tr/th//input[@aria-label='" + headernameOrArrowOrValue + "'] | " +
+                    "//div[@id='" + tableid + "']/descendant::div[@class='row ng-scope']//div[contains(@ng-if,'EnablePagination')]/*[@ng-disabled='false' and @title='" + headernameOrArrowOrValue + "'] |" +
+                    " //div[@id='" + tableid + "']/preceding-sibling::div//ul/li/*[@title='" + headernameOrArrowOrValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionButtonIsDisplayedOrNotDisplayed(String usage, String actionButton) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayed(actionButton)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayed(actionButton)).isFalse();
+        }
+    }
+
+    private boolean assertIfActionButtonDisplayed(String actionButton) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[normalize-space(text()) = '" + actionButton + "'] | " +
+                    "//td[contains(@class,'actionColumn')]/div//*[@title='" + actionButton + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionNameIsDisplayedOrNotDisplayed(String usage, String changedActionName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionNameDisplayed(changedActionName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionNameDisplayed(changedActionName)).isFalse();
+        }
+    }
+
+    private boolean assertIfActionNameDisplayed(String changedActionName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfErrorMessageDisplayed(String usage, String errorMessage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isErrorMessageIsDisplayed(errorMessage));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isErrorMessageIsDisplayed(errorMessage));
+        }
+    }
+
+    private boolean isErrorMessageIsDisplayed(String errorMessage) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='error-alert']//*[contains(text(),'" + errorMessage + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void indexDisplayedInProvidedSequence(String usage, String sequence, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(sequenceIsDisplayed(sequence, value));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(sequenceIsDisplayed(sequence, value));
+        }
+    }
+
+    private boolean sequenceIsDisplayed(String sequence, String value) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//ul[@class='dropdown-menu dropdown-menu-left']//li//a/span[@class='ng-binding'])[" + sequence + "]"));
+            String abc = elementSequence.getText();
+            System.out.println(abc);
+            if (elementSequence.getText().equalsIgnoreCase(value)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void sequenceDisplayedInProvidedSequence(String usage, String value, String sequence) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(actionSequenceIsDisplayed(sequence, value));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(actionSequenceIsDisplayed(sequence, value));
+        }
+    }
+
+    private boolean actionSequenceIsDisplayed(String sequence, String value) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//td[contains(@class,'actionColumn')]/div//a[@class='tableLinks focusActionItem actionIcons'])[" + sequence + "]"));
+            String actionElement = elementSequence.getAttribute("title");
+            if (actionElement.equalsIgnoreCase(value)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void hoverMouseOnAction(String action) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "']"));
+    }
+
+    public void CountCharectorLimit(String usage, int charLimit, String attribute) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(charectorLimitIsExceededOrNot(charLimit, attribute));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(charectorLimitIsExceededOrNot(charLimit, attribute));
+        }
+    }
+
+    private boolean charectorLimitIsExceededOrNot(int charLimit, String attribute) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//td[contains(@class,'actionColumn')]/div//a[@class='tableLinks focusActionItem actionIcons'])[2]"));
+            String actionElement = elementSequence.getAttribute(attribute);
+            int stringLength = actionElement.length();
+            System.out.println("String length: " + stringLength);
+            if (actionElement.length() == charLimit) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
     }
 }

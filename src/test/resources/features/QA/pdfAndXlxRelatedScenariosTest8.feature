@@ -10,7 +10,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     #When I perform quick search for "Test program for automation - Created mode only"
-    And I click on "View" icon in flex table for first draft record
+    And I click on "fa fa-eye" icon in flex table for first draft record
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Contacts@1234567890!@#$%^&*()"

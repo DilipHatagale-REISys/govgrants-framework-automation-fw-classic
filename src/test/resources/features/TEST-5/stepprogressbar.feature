@@ -207,6 +207,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
@@ -264,6 +265,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
@@ -289,5 +291,5 @@ Business Need: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     When I perform quick search for "Automation Program For Test"
-    And I click on "View" icon for "Automation Program For Test" inside table
+    When I click on "View" icon for "Automation Program For Test" inside table
     Then I see step progress bar is displayed
