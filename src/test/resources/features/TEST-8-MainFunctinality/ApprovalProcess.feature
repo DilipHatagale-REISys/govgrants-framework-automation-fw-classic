@@ -3,43 +3,6 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34305    @hideApproveOption-Programs @smoketest8 @wip
-  Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName   | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Action | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName   | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Hide Action | true          | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    Then I cannot see the radio button "Approve" in the approval decision
-
   @34307    @changeApproveOptionSequence-Programs @smoketest8
   Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have "default" configuration as below:
@@ -50,7 +13,9 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Sequence              | 5             | ADAC-0105          |
       | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -80,45 +45,6 @@ Business Need: Approval Process Component Scenarios
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send back | Approve |
 
-  @34308    @mandatoryCommentsReqForApproveAction-Programs
-  Scenario: Setup comments requried as mandatory for approval from configuration and in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Comments Required | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Comments Required | true          | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
-    And I navigate to "Planning" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    When I select radio button "Approve" in the approval decision
-    And I submit the approval in the approval decision
-    Then I can see the message "Comments are Required." in the approval decision
-
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
     Given I have "default" configuration as below:
@@ -127,7 +53,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
       | Approval Decision Action:General | Action Label Override | Approved      | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -155,18 +83,29 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I can see the radio button "Approved" in the approval decision
-
-  @34309    @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
-  Scenario: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory    | fieldName          | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Confirmation Title |                   | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                   | coreComponentField |
-      | Approval Decision Action:General | Confirmation Title   | Automation Approval             | ADAC-0105          |
-      | Approval Decision Action:General | Confirmation Message | Confirmation box for automation | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+      | configurationCategory            | fieldName             | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Action Label Override | Approve       | ADAC-0105          |
+
+  @34309  @34314 @202383 @202386 @201946 @201948 @34308 @confirmationMessageBoxPopupForApproveApprovalDecisionAction-Programs
+  Scenario Outline: Setup confirmation message inside confirmation message box from configuration and validating it in pending tasks approval decision
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
+      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName            | fieldNewValue                        | coreComponentField |
+      | Approval Decision Action:General | Comments Required    | true                                 | ADAC-0105          |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                         | ADAC-0105          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to approve this program? | ADAC-0105          |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -185,17 +124,28 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
-    And I navigate to "Planning" tab
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Approve" in the approval decision
     When I select radio button "Approve" in the approval decision
+    And I submit the approval in the approval decision
+    #34308
+    Then I can see the message "Comments are Required." in the approval decision
+    #201946
+    Then I see comment box displayed as "Enter Your Comments"
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Confirmation box for automation" is displayed
+    Then I see confirmation box with body "Do you want to approve this program?" is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
 
   @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
   Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
@@ -205,7 +155,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField |
       | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -246,7 +198,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName      | fieldNewValue | coreComponentField       |
       | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -282,7 +236,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName            | fieldNewValue | coreComponentField       |
       | Approval Process Steps Cache:General | Email Field API Name | OwnerId       | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -328,51 +284,6 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @34314    @confirmationMessageBoxPopupForApprovalDecisionUsingApprovalCache-Programs @smoketest8
-  Scenario: Setup confirmation message inside confirmation message box from approval process step cache configuration and validating it in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Approve Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Approve Confirmation Message |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField |
-      | Approval Process Steps Cache:General | Approve Confirmation Title   | Automation Approval             | Step1              |
-      | Approval Process Steps Cache:General | Approve Confirmation Message | Confirmation box for automation | Step1              |
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Approve" in the approval decision
-    When I enter comment "Automation testing" in the approval decision
-    And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Confirmation box for automation" is displayed
-
   @34317    @taskAssignmentNotificationForProgramSubmissionThroughMail-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program submitted for approval
 #    Given I have "default" configuration as below:
@@ -381,6 +292,9 @@ Business Need: Approval Process Component Scenarios
 #    Given I setup test configuration as below:
 #      | configurationCategory   | fieldName                          | fieldNewValue | coreComponentField |
 #      | Task Config:Task Action | Send Task Assignment Notification? | true          | Approve Program    |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -422,7 +336,9 @@ Business Need: Approval Process Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Task Config:Task Action             | Complete On View? | true          | Approve Program       |                           |                            |
       | Page Tabs Config:Page Layout Action | Is Active         | false         | Grantor State Program | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -455,17 +371,19 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
 
-  @37348    @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoketest8
+  @37348 @37506 @202418 @202420 @201939 @201941  @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoketest8
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                   | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Reject Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Reject Confirmation Message |                   | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
+      | Approval Decision Action | Confirmation Title   |                   | ADAC-0106          | ApiGeneratedId:0 |
+      | Approval Decision Action | Confirmation Message |                   | ADAC-0106          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                   | fieldNewValue                          | coreComponentField       |
-      | Approval Process Steps Cache:General | Reject Confirmation Title   | Automation Reject                      | Program_Manager_Approver |
-      | Approval Process Steps Cache:General | Reject Confirmation Message | Reject Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory            | fieldName            | fieldNewValue                  | coreComponentField |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                   | ADAC-0106          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to Reject Program? | ADAC-0106          |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -485,10 +403,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -497,158 +411,28 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I select radio button "Reject" in the approval decision
+    #201939 #201941
+    Then I see comment box displayed as "Enter Your Comments"
     And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully disapproved" is displayed
+    Then I see confirmation box with body "Do you want to Reject Program?" is displayed
 
-  @37431    @reassignConfirmationMessageFieldAtApprovalProcess-Programs
-  Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                     | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Reassign Confirmation Title   |                   | ApiGeneratedId:1 |
-      | Approval Process Steps Cache | Reassign Confirmation Message |                   | ApiGeneratedId:2 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                     | fieldNewValue                            | coreComponentField       |
-      | Approval Decision Action:General     | Comments Required             | false                                    | ADAC-0103                |
-      | Approval Process Steps Cache:General | Reassign Confirmation Title   | Automation Reassign                      | Program_Manager_Approver |
-      | Approval Process Steps Cache:General | Reassign Confirmation Message | Reassign Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Forward" in the approval decision
-    And I select user "Automation PM" in the approval decision
-    And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully Re-Assigned" is displayed
-
-  @37433    @sendToOwnerConfirmationMessageFieldAtApprovalProcess-Programs
-  Scenario: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                                 | coreComponentField       |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Automation Send to Owner                      | Program_Manager_Approver |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Send to Owner Confirmation box for automation | Program_Manager_Approver |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Send back" in the approval decision
-    When I enter comment "Automation testing" in the approval decision
-    And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully sent to Owner. It may take few minutes to process record." is displayed
-
-  @37506    @confirmationMessageBoxPopupForRejectApprovalDecisionAction-Programs
-  Scenario: Setup confirmation message inside confirmation message box for reject approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
+  @37431 @37523 @41058 @202470 @202492 @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+  Scenario Outline: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                 | coreComponentField |
-      | Approval Decision Action:General | Confirmation Title   | Automation for Rejection      | ADAC-0106          |
-      | Approval Decision Action:General | Confirmation Message | Test Automation for Rejection | ADAC-0106          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Reject" in the approval decision
-    When I enter comment "Automation testing" in the approval decision
-    And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully disapproved" is displayed
-
-  @37523    @confirmationMessageBoxPopupForReassignApprovalDecisionAction-Programs
-  Scenario: Setup confirmation message inside confirmation message box for reassign approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Comments Required    | true              | ApiGeneratedId:0 |
       | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
       | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue               | coreComponentField |
-      | Approval Decision Action:General | Comments Required    | false                       | ADAC-0103          |
-      | Approval Decision Action:General | Confirmation Title   | Automation for Forward      | ADAC-0103          |
-      | Approval Decision Action:General | Confirmation Message | Test Automation for Forward | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+      | configurationCategory            | fieldName            | fieldNewValue                         | coreComponentField |
+      | Approval Decision Action:General | Comments Required    | true                                  | ADAC-0103          |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                          | ADAC-0103          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to reassign this program? | ADAC-0103          |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -665,19 +449,29 @@ Business Need: Approval Process Component Scenarios
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Forward" in the approval decision
     When I select radio button "Forward" in the approval decision
     And I select user "Automation PM" in the approval decision
+    And I submit the approval in the approval decision
+    #41058
+    Then I can see the message "Comments are Required." in the approval decision
+    And I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully Re-Assigned" is displayed
+    Then I see confirmation box with body "Do you want to reassign this program?" is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
 
   @37539    @commentsFieldAPINameFieldForApproveAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
@@ -687,7 +481,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -707,10 +503,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -726,17 +518,19 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @38847    @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoketest8
+  @38847 @202448 @202451 @37433  @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoketest8
   Scenario: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
       | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:0 |
       | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory            | fieldName            | fieldNewValue                | coreComponentField |
-      | Approval Decision Action:General | Confirmation Title   | Automation for Sendback      | ADAC-0104          |
-      | Approval Decision Action:General | Confirmation Message | Test Automation for Sendback | ADAC-0104          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory            | fieldName            | fieldNewValue                          | coreComponentField |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                           | ADAC-0104          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to send back this program? | ADAC-0104          |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -766,7 +560,7 @@ Business Need: Approval Process Component Scenarios
     When I select radio button "Send back" in the approval decision
     When I enter comment "Automation testing" in the approval decision
     And I submit the approval in the approval decision without processing
-    Then I see confirmation box with body "Successfully sent to Owner. It may take few minutes to process record." is displayed
+    Then I see confirmation box with body "Do you want to send back this program?" is displayed
 
   @37540    @viewPageProfileFieldForApprovalProcess-Programs @AutomationNotRequired @wip
   Scenario Outline: Changing user inside profile field inside task config from config validating it at program approval page
@@ -776,7 +570,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName          | fieldNewValue | coreComponentField |
       | Task Config:Task Action | View Page Profiles | <newProfiles> | Approve Program    |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -812,8 +608,8 @@ Business Need: Approval Process Component Scenarios
       | oldProfiles                                                                                                         | newProfiles                                                                                                     |
       | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @37645    @successEmailSentWithRejectTemplateToProgramOwner-Programs @smoketest8 @BugId_163309 @wip
-  Scenario: Setup email setting in configuration and validate that program owner receiving email with reject email template for program approval
+  @37645  @smoketest8 @BugId_163309 @wip
+  Scenario: Verify Approve Email Template field for approve action
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Approve Email Template | false             | ApiGeneratedId:0 |
@@ -821,10 +617,11 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName              | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Approval Process Steps Cache:General | Email Template Name    | Program Approved Email Template | Program Approved Email Template |                           |                            |
-      | Approval Process Steps Cache:General | Email Template Name    | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
       | Approval Process Steps Cache:General | Approve Email Template | true                            | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active              | false                           | Grantor State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -872,10 +669,11 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                | fieldName             | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Approval Process Steps Cache:General | Email Template Name   | Program Rejected Email Template | Program Rejected Email Template |                           |                            |
-      | Approval Process Steps Cache:General | Email Template Name   | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reject Email Template | ApiGeneratedId:1                | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active             | false                           | Grantor State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -917,10 +715,11 @@ Business Need: Approval Process Component Scenarios
       | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-   #   | Approval Process Steps Cache:General | Email Template Name       | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Reassigned Email Template | true          | Program_Manager_Approver |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantor State Program    | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -965,7 +764,9 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template |                           |                            |
       | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
       | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantor State Program           | Name                      | TAB-1724                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -999,45 +800,6 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @41058    @mandatoryCommentsReqForReassignAction-Programs
-  Scenario: Setup comments requried as mandatory for reassign from configuration and in pending tasks approval decision
-    Given I have "default" configuration as below:
-      | configurationCategory    | fieldName         | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Comments Required | false             | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory            | fieldName         | fieldNewValue | coreComponentField |
-      | Approval Decision Action:General | Comments Required | true          | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I select radio button "Forward" in the approval decision
-    And I submit the approval in the approval decision
-    Then I can see the message "Comments are Required." in the approval decision
-
   @41059    @commentsFieldAPINameFieldForReassignAction-Programs
   Scenario: Setup comments as FederalProgramCFDA__c inside comments field API field using Approval decision action config from config and validating it at program detail page
     Given I have "default" configuration as below:
@@ -1046,7 +808,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName               | fieldNewValue         | coreComponentField |
       | Approval Decision Action:General | Comments Field API Name | FederalProgramCFDA__c | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     And I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1089,7 +853,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0105          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1126,7 +892,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0106          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1163,7 +931,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0103          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1200,7 +970,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                       | coreComponentField |
       | Approval Decision Action:General | Hide Expression JSON | govgrants_config:HideExpressonJsonForApprovalAction | ADAC-0104          |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1231,7 +1003,9 @@ Business Need: Approval Process Component Scenarios
 
   @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoketest8
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1251,10 +1025,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
@@ -1349,7 +1119,9 @@ Business Need: Approval Process Component Scenarios
     And I update custom setting changes:
       | booleanValue | integerValue | id                 | description                  | name                                  |
       | false        | 0            | a0b1C00000OHJotQAH | Bottom approval decision box | SwitchApprovalDecisionComponentBottom |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1383,7 +1155,9 @@ Business Need: Approval Process Component Scenarios
 
   @148991    @verifySingleTaskIsGettingCreatedForUserInsideAssignedToMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned to me' table after record submission for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1416,7 +1190,9 @@ Business Need: Approval Process Component Scenarios
 
   @149007    @verifySingleTaskIsGettingCreatedForUserInsideAssignedByMeTableAfterRecordSubmittedForApproval-Programs
   Scenario: verify that single task is getting created for user inside 'assigned by me' table after record submission for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1436,10 +1212,6 @@ Business Need: Approval Process Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation PM | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     And I navigate to "Planning" tab
@@ -1447,16 +1219,17 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:PhasePendingTasksByTableId---" panel
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:PhasePendingTasksByTableId---"
 
-  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess 
+  @37667    @notifyAdditionalPeopleThroughEmailWithApproveTemplateToProgramOwner-Programs @approvalProcess
   Scenario: Setup email setting in configuration and validate that program owner receiving email for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
       | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField                                            |
-      #| Program                              | Status                   | Created       | Test program for automation -  SA mode only - Can be Approved |
-      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver                                      |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField       |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Program_Manager_Approver |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1492,7 +1265,9 @@ Business Need: Approval Process Component Scenarios
 
   @69960   @VerifyAssignedApproverUserInsideChevron @approvalProcess
   Scenario: Validating chevron contain Approver user and Initial submitter after submission of record to submit for approval
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1532,7 +1307,9 @@ Business Need: Approval Process Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Approval Decision comp | true          | Grantor State Program |                           |                            |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1560,3 +1337,378 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I cannot see the radio button "Approve" in the approval decision
+
+    ################ Approval Decision Action ########################
+
+  @201541 @201584 @201542 @201544 @201545 @201585 @201586 @201587
+  Scenario Outline:Approval Decision Action-Admin-Config-To verify Approve, Reject, Send Back, Forward option should present in Approval Decision box
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I can see the radio button "Approve" in the approval decision
+    Then I can see the radio button "Reject" in the approval decision
+    Then I can see the radio button "Forward" in the approval decision
+    Then I can see the radio button "Send back" in the approval decision
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @201546 @201547 @201548 @201549 @201588 @201589 @201590 @201591 @34305
+  Scenario Outline: Approval Decision Action-Admin-Config-To verify Approve option should not present in Approval Decision box
+    Given I have "default" configuration as below:
+      | configurationCategory    | fieldName   | fieldOrignalValue | coreComponentField | filterId         |
+      | Approval Decision Action | Hide Action | false             | ADAC-0105          | ApiGeneratedId:0 |
+      | Approval Decision Action | Hide Action | false             | ADAC-0106          | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Action | false             | ADAC-0103          | ApiGeneratedId:2 |
+      | Approval Decision Action | Hide Action | false             | ADAC-0104          | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory            | fieldName   | fieldNewValue | coreComponentField |
+      | Approval Decision Action:General | Hide Action | true          | ADAC-0105          |
+      | Approval Decision Action:General | Hide Action | true          | ADAC-0106          |
+      | Approval Decision Action:General | Hide Action | true          | ADAC-0103          |
+      | Approval Decision Action:General | Hide Action | true          | ADAC-0104          |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I cannot see the radio button "Approve" in the approval decision
+    Then I cannot see the radio button "Reject" in the approval decision
+    Then I cannot see the radio button "Forward" in the approval decision
+    Then I cannot see the radio button "Send back" in the approval decision
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @202385 @202390
+  Scenario Outline:Approval Decision Action-Admin-Config-To verify confirmatiom message should display on Approve
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I select radio button "Approve" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
+    Then I do not see alert popup box
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @202421 @202419
+  Scenario Outline:Approval Decision Action-Admin-Config-To verify confirmation message should not display on Disapproved
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I select radio button "Reject" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
+    Then I do not see alert popup box
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @202450 @202453
+  Scenario Outline: Approval Decision Action-Admin-config-To verify confirmation message should not display on sent back
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I select radio button "Send back" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
+    Then I do not see alert popup box
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @202471 @202493
+  Scenario Outline: Approval Decision Action-PM-UI-To verify confirmation message should not display on Reassign
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I select radio button "Forward" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
+    Then I do not see alert popup box
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @219929 @219930
+  Scenario Outline: Approval Decision Action-Admin-Config-To verify snapshot should generated on approval
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    And I pause execution for "5" seconds
+    Then I see take snap shot getting saved with "Submitted for Approval.pdf"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @219932 @219933
+  Scenario Outline: Approval Decision Action-Admin-Config-To verify snapshot should not generated on approval
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    And I refresh the page
+    When I navigate to "History" sub tab
+    And I pause execution for "5" seconds
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  ########################## Approval Process Step Cache ###################
+  @202629 @202630 @202636 @202637 @202767 @202769
+  Scenario Outline: Approver process Step Cache-Admin-Config-To verify program approver "Step 1"should present in approver table
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    When I navigate to "Responsibilities" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---"
+    When I click dropdown field "ProgramRole__c"
+    Then I see only the following ordered options in dropdown field "ProgramRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+    And I pause execution for "5" seconds
+    When I click dropdown field "AnnouncementRole__c"
+    Then I see only the following ordered options in dropdown field "AnnouncementRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+    And I pause execution for "5" seconds
+    When I click dropdown field "FDMRole__c"
+    Then I see only the following ordered options in dropdown field "FDMRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+    And I pause execution for "5" seconds
+    When I click dropdown field "AwardRole__c"
+    Then I see only the following ordered options in dropdown field "AwardRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+    And I pause execution for "5" seconds
+    When I click dropdown field "PostAwardMonitoringRole__c"
+    Then I see only the following ordered options in dropdown field "PostAwardMonitoringRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+    And I pause execution for "5" seconds
+    When I click dropdown field "CloseoutRole__c"
+    Then I see only the following ordered options in dropdown field "CloseoutRole__c" :
+      | Step 1 | Step 2 | Step 3 | Step 4 | NA |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
