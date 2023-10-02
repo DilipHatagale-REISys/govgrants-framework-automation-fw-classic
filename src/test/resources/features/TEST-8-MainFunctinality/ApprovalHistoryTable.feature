@@ -144,7 +144,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
     When I navigate to "History" sub tab
     Then I see "Approval History" page block displayed
     Then I see Overall Status is "Pending" and color background color is "Gray"
-    Then I see Overall Status is "Approval Request Submitted" and color background color is "Blue"+
+    Then I see Overall Status is "Approval Request Submitted" and color background color is "Blue"
 
     Examples:
       | User  |
