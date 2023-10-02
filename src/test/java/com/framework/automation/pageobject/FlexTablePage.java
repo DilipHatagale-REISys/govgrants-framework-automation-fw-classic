@@ -1395,7 +1395,9 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
-                    " //td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "']"))) {
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Edit']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1485,6 +1487,7 @@ public class FlexTablePage extends GovGrantsManager {
             String actionElement = elementSequence.getAttribute(attribute);
             int stringLength = actionElement.length();
             System.out.println("String length: " + stringLength);
+            System.out.println("String length: " + actionElement);
             if (actionElement.length() == charLimit) {
                 flag = true;
             }
