@@ -401,7 +401,7 @@ public class FlexTablePage extends GovGrantsManager {
      * click on select dropdown At page detail
      */
     public void clickSelectDropdownAtPageDetail(String fieldApiName) {
-        I.amPerforming().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select | //span[text()='" + fieldApiName + "']/../following-sibling::dd//select"));
+        I.amPerforming().click().on(By.xpath("//div[@id='" + fieldApiName + "']//select | //span[text()='" + fieldApiName + "']/../following-sibling::dd//select | //field[@field-name='" + fieldApiName + "']//select"));
     }
 
     /**

@@ -1,17 +1,17 @@
-@phasesConfig-component @regression-QA @phase
+@PhasesConfig-component @regression-QA @phase
 Business Need: Phase Config Component Scenarios
   Test all phase config component based scenarios
   As a configuration manager i make different configurational changes in phase component and will validate them.
 
   ############### UI ###############
-  @333604 @Vrushali
+  @333604 
   Scenario: Technical support - SPI- UI- Verify ‘Technical support’ is visible
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see option "Technical Support" on left panel
 
-  @333605 @333576 @Vrushali
+  @333605 @333576 
   Scenario Outline: Technical support - PM- UI- Verify ‘Technical support’ is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -22,14 +22,14 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333608 @Vrushali
+  @333608 
   Scenario: Recently Viewed - SPI- UI- Verify ‘Recently viewed’ is visible
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see option "Recently Viewed" on left panel
 
-  @333609 @333577 @Vrushali
+  @333609 @333577 
   Scenario Outline: Recently Viewed - PM- UI- Verify ‘Recent Items’ is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -40,14 +40,14 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333610 @Vrushali
+  @333610 
   Scenario: Sidebar search- SPI- UI- Verify Sidebar search menu is visible
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see option "Search" on left panel
 
-  @333612 @333579 @Vrushali
+  @333612 @333579 
   Scenario Outline: Sidebar search- PM- UI- Verify Sidebar search menu is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -58,14 +58,14 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333615 @Vrushali
+  @333615 
   Scenario: Sidebar- SPI- UI- Verify Sidebar "Tasks" menu is visible
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see option "Tasks" on left panel
 
-  @333616 @333581 @Vrushali
+  @333616 @333581 
   Scenario Outline: Sidebar- PM- UI- Verify Sidebar "Tasks" menu is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -76,7 +76,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333617 @Vrushali
+  @333617 
   Scenario: Sidebar- SPI- UI- Verify Sidebar BI &Analytics menu is visible
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue                                                  | filterId         |
@@ -106,7 +106,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333620 @333582 @Vrushali
+  @333620 @333582 
   Scenario Outline: Sidebar- PM- UI- Verify Sidebar Activity menu is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -171,7 +171,7 @@ Business Need: Phase Config Component Scenarios
       | New-Profile                                                                                                   | Old-Profile                                                                                                        |
       | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; System Administrator; TR1; TR2; TR3; VND; EBZ; IND | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND |
 
-  @333638 @Vrushali
+  @333638 
   Scenario Outline: Available for profiles- SPI- UI- Verify ‘Phase’ is visible on UI when logged in as SPI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -186,7 +186,7 @@ Business Need: Phase Config Component Scenarios
       | New-Profile                                                                                                        | Old-Profile                                                                                                        |
       | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ; IND |
 
-  @333637 @333591 @Vrushali
+  @333637 @333591 
   Scenario Outline:Available for profiles- PM,ADMIN- UI- Verify ‘Phase’ should not visible on UI when logged in as PM
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -202,7 +202,7 @@ Business Need: Phase Config Component Scenarios
       | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
       | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; PM; TR1; TR2; TR3; VND; EBZ                   | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
-  @333639 @333592 @Vrushali
+  @333639 @333592 
   Scenario Outline: Available for profiles- PM- UI- Verify ‘Phase’ is visible on UI when logged in as PM
     Given I have "default" configuration as below:
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
@@ -218,7 +218,7 @@ Business Need: Phase Config Component Scenarios
       | PM    | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
       | ADMIN | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ | ADT; CON; CTR; DA; DEV; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND; EBZ |
 
-  @333640 @333593 @Vrushali @doubtedconfig
+  @333640 @333593  @doubtedconfig
   Scenario Outline: Custom App Name - PM- UI - Verify ‘Phase’ should not be visible on UI when logged in as Grantor
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -236,7 +236,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333646 @333647 @333649 @333650 @Vrushali
+  @333646 @333647 @333649 @333650 
   Scenario Outline: Phase- PM- UI- Verify ‘Phase’ is visible on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -252,7 +252,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333648 @333651 @Vrushali
+  @333648 @333651 
   Scenario: Phase name- SPI- UI- Verify phase name displayed correctly on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -263,14 +263,14 @@ Business Need: Phase Config Component Scenarios
     Then I see "Monitoring" phase
     Then I see "Closeout" phase
 
-  @333606 @Vrushali
+  @333606 
   Scenario: Sidebar Links - SPI- UI- Verify ‘Useful Links’ is visible.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Home" tab
     Then I see option "Useful Links" on left panel
 
-  @333644 @333645  @Vrushali
+  @333644 @333645  
   Scenario Outline: Custom App Name - PM- UI- Verify ‘Phase’ is visible on UI when logged in as Grantor
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -287,7 +287,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333643 @333642 @Vrushali
+  @333643 @333642 
   Scenario Outline: Custom App Name - Admin- Config - Verify ‘Phase’ is visible on UI when logged in as Grantee
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantee"
@@ -304,7 +304,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333642 @333594 @Vrushali @doubtedconfig
+  @333642 @333594  @doubtedconfig
   Scenario Outline: Custom App Name - PM- UI - Verify ‘Phase’ is visible on UI when logged in as Grantee
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -322,7 +322,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333607 @333578 @Vrushali
+  @333607 @333578 
   Scenario Outline: Sidebar Links - PM- UI- Verify "Useful Links" is visible
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -333,7 +333,7 @@ Business Need: Phase Config Component Scenarios
       | PM    |
       | ADMIN |
 
-  @333625 @Vrushali
+  @333625 
   Scenario: Charts- PM- UI- Verify we can add charts up to value of ‘Total charts allowed per row’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                    | fieldOrignalValue | filterId         |
@@ -353,7 +353,7 @@ Business Need: Phase Config Component Scenarios
     Then I see single row contains single chart with width "941" or "1246"
    # Then I see single row contains two charts with width "464" or "592"
 
-  @333557 @333561 @Vrushali
+  @333557 @333561 
   Scenario Outline: Phase name- Admin- To verify 'Tab Icon CSS' should be added on the phases config page for respective 'Tab Display Label'
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue                            | filterId         |
@@ -402,5 +402,191 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User |
       | PM   |
-     # | ADMIN |
+     | ADMIN |
 
+  @34419    @validatePlanningPhaseAllowedProfile-gplanning
+  Scenario Outline: Remove admin profile from config. and validate that Plannign phase doesn't show up in admin user
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Phase Config          | Available for Profiles | <Old-Profile>     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Available for Profiles | <New-Profile> | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    Then I do not see "Planning" phase
+    Examples:
+      | New-Profile                                                                                  | Old-Profile                                                                                                        |
+      | ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EBZ; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
+
+  @34420    @validateTabDisplayName-gplanning
+  Scenario: Setup tab name as Automation from config. and validate that tab name for planning is changed to Automation
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Phase Config          | Tab Display Label | Planning          | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Tab Display Label | Automation    | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    Then I see "Automation" phase
+
+  @34484    @validatePhaseSequence-gplanning
+  Scenario: Setup tab sequence as "0" from config. and validate that tab name for planning is changed to first position
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Phase Config          | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Sequence  | 0             | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    Then I see "Planning" phase at position "0"
+
+  @34487    @validateChartsDisplayedAtBottom-gplanning
+  Scenario: Setup body bottom page url for charts in config. and validate charts are displayed at bottom are displayed inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Body Bottom Page URL |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                    | coreComponentField |
+      | Phase Config:General  | Body Bottom Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I charts are displayed at "Bottom"
+
+  @34587    @validateIsPlanningDisplayedInTaskSummary-gplanning
+  Scenario: Uncheck is Phase for planning in config. and validate Planning is not displayed in Task Summary on home page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Phase Config          | Is Phase  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Is Phase  | false         | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I donot see "Planning" in task summary by phase
+
+  @34589    @validateSettingAsDefaultLandingTab-gplanning
+  Scenario: Select planning as "Default landing tab" in config. and validate Planning is default landing page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Default Landing Tab? | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Default Landing Tab? | false         | GrantorHome        |
+      | Phase Config:General  | Default Landing Tab? | true          | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    Then I see "GrantorPlanning" in current url
+
+  @34590    @validateIconForTab-gplanning
+  Scenario: Set up tab icon css for planning tab in config. and validate book is displayed instead of planning tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Phase Config          | Tab Icon Css |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue               | coreComponentField |
+      | Phase Config:General  | Tab Icon Css | govgrants_config:TabIconCss | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    Then I see book icon as "Planning" tab
+
+  @34599    @validateTotalChartsInRow-gplanning
+  Scenario: Setup number of charts as "1" from config. and validate only two charts are displayed inside planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Total Charts Allowed | 3                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Total Charts Allowed | 1             | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" charts are displayed
+
+  @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning
+  Scenario: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Highlight Phase? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "Closed/Reject Announcements"
+    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
+    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    Then I see "Planning" tab is highlighted for particular program
+
+  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning
+  Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Global Search Label | Program           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Global Search Label | Program Automation | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on global search and select "All"
+    Then I see "Program Automation" in search dropdown
+
+  @44737    @addToGlobalSearchfieldAtphaseConfigSobject-gplanning
+  Scenario: Disabling program inside global search and validating it inside global search of planning tab-gPlanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on global search and select "All"
+    Then I see "Program" is not displayed in global search All dropdown
+
+  @44738    @disableProgramInRecentViewedLinkInSideBar-gplanning
+  Scenario: Disabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Recently Viewed? | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "PG" records are not present in Recently Viewed link in Sidebar
+
+  @56846    @enablingProgramInRecentViewedLinkInSideBar-gplanning
+  Scenario: Enabling the programs in Recent Viewed Link in Sidebar inside planning-gplanning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "PG" records are present in Recently Viewed link in Sidebar
+
+  @118446    @validateThatZeroIsDisplayedInLateTaskInsideTaskSummaryByDueDateChart    @wip @bugLogged
+  Scenario: Check zero is displayed for late task inside Task Summary by due date chart on home page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Phase Config          | Is Phase  | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField |
+      | Phase Config:General  | Is Phase  | true          | GrantorPlanning    |
+    When I login as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "HOME" tab
+    Then I see "0" at "Late" inside task summary by due date chart

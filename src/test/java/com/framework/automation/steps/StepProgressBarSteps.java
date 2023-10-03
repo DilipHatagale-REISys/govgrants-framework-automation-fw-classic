@@ -44,4 +44,14 @@ public class StepProgressBarSteps {
 	public void assertChavronStatusBarColor(String colorName, String status) {
 		stepProgressBarPage.assertExpectedColorOfChevronStatusBar(colorName, status);
 	}
+
+    @Then("I see {string} step is on step progress bar at {string} position")
+    public void iSeeStepIsOnStepProgressBarAtPosition(String step, String position) {
+		stepProgressBarPage.assertStepProgressBarStepsandPosition(step, position);
+    }
+
+	@Then("I see {string} step is diplayed on step progress bar")
+	public void iSeeStepIsDiplayedOnStepProgressBar(String step) {
+		stepProgressBarPage.assertStepProgressBarStep(step);
+	}
 }

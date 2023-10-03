@@ -1394,4 +1394,4 @@ Business Need: dnd Component Scenarios
 
     Examples:
       | DNDFilterClause1                                                               | dndCriteria                                                                                                                                                                                   |
-      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"!="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND   (NOT DND_Formula_Text__c Like '%{!searchVal}%') |
+      | {"objectField":"DND_Country__c","userField":"DNDCountries__c","operator":"!="} | (NOT DND_Email__c Like '%{!searchVal}%') AND (NOT DND_Country__c Like '%{​!searchVal}​%')  AND (NOT DND_Text2__c Like '%{!searchVal}%') AND   (NOT DND_Formula_Text__c Like '%{!searchVal}%') |3333333333333333333333333333333333333
