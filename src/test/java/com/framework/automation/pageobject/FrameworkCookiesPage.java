@@ -169,19 +169,20 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         return flag;
     }
 
-    public static void pageSizeShowAfterPageSetting(String usage, String showingEnties, String tableid) {
+    public static void pageSizeShowAfterPageSetting(String usage, String showingTextValue, String tableid) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(assertPageSize(showingEnties, tableid));
+            Assert.assertTrue(assertPageSize(showingTextValue, tableid));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(assertPageSize(showingEnties, tableid));
+            Assert.assertFalse(assertPageSize(showingTextValue, tableid));
         }
     }
 
-    private static boolean assertPageSize(String showingEnties, String tableid) {
+    private static boolean assertPageSize(String showingTextValue, String tableid) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingEnties + "')] |" +
-                    " //div[contains(@id,'" + tableid + "')]/div[@class='row ng-scope']/div[contains(@class,'showEntries mobshowEntries')]/span[contains(text(),'" + showingEnties + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@id,'" + tableid + "')]/div[@class='row displayFlexCenter']/div/span/span[contains(text(),'" + showingTextValue + "')] |" +
+                    " //div[contains(@id,'" + tableid + "')]/div[@class='row ng-scope']/div[contains(@class,'showEntries mobshowEntries')]/span[contains(text(),'" + showingTextValue + "')] |" +
+                    " //div[contains(@id,'" + tableid + "')]//div[text()='" + showingTextValue + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -274,6 +275,27 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='fieldExpectedFunding__c']/dl//span[text()='" + field + "']/ancestor::dt/following-sibling::dd//span[contains(text(),'" + value + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertIfListViewItemDisplayed(String usage, String listViewName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewRelatedFieldDisplayed(listViewName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(listViewRelatedFieldDisplayed(listViewName, tableId)).isFalse();
+        }
+    }
+
+    private Boolean listViewRelatedFieldDisplayed(String listViewName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[contains(@data-target,'" + tableId + "')]/following-sibling::div[@id='" + listViewName + "'] |" +
+                    " //*[contains(@data-target,'" + tableId + "')]/following-sibling::div[@id='dropdownListView']//ul//li//*[@title='" + listViewName + "'] |" +
+                    " //*[contains(@data-target,'" + tableId + "')]//div[text()='" + listViewName + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

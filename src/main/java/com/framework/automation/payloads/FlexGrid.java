@@ -145,6 +145,12 @@ public class FlexGrid {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__HeaderDescription__c), value);
                 break;
+            case "HEADER INSTRUCTION":
+                finalPayload = String.format(
+                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__SubHeaderText__c), value);
+                break;
             case "ENABLE PAGE SIZE":
                 finalPayload = String.format(
                         payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities

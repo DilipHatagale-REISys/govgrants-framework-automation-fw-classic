@@ -116,9 +116,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
             I.amPerforming().scroll().onPageToSpecificElement(completeTableRowOfEnhancedGrid);
         } catch (Exception e) {
         }
-        if (usage.equalsIgnoreCase("see")){
+        if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridRowsCountDisabled(text, tableId)).isTrue();
-        } else if (usage.equalsIgnoreCase("do not see")){
+        } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(isEnhancedFlexGridRowsCountDisabled(text, tableId)).isFalse();
         }
 
@@ -155,11 +155,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     /**
      * assert true if page size is enabled at bottom of enhanced grid
      */
-    public void assertEnhancedGridPageSizeEnabled(String usage,String text, String tableId) {
-        if (usage.equalsIgnoreCase("see")){
+    public void assertEnhancedGridPageSizeEnabled(String usage, String text, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(isEnhancedGridBottomElementEnabled(text, tableId)).isTrue();
-        }
-        else if(usage.equalsIgnoreCase("do no see")){
+        } else if (usage.equalsIgnoreCase("do no see")) {
             I.amPerforming().assertionsTo().assertThat(isEnhancedGridBottomElementEnabled(text, tableId)).isFalse();
         }
     }
@@ -581,10 +580,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if expected width of specified column is displayed for enhanced grid
      * @param columnName
      * @param tableId
      * @param width
+     * @return true if expected width of specified column is displayed for enhanced grid
      */
     public void assertColumnWidthOfEnhancedGridSpecificColumn(String columnName, String tableId, String width) {
         I.amPerforming().assertionsTo().assertThat(isExpectedWidthDisplayedAtColumnOfEnhancedGrid(columnName, tableId, width)).isTrue();
@@ -1542,9 +1541,9 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         TestingBlazeGlobal.setVariable("highlightElements", "off");
         WebElement getBorderBoxCSS = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='TmpActiveGrantsGridFlexToggle']//table[contains(@class,'gridTable')]//preceding-sibling::div[@class='tableScrollArrow leftTableScroll']"));
         I.amPerforming().scroll().toMoveToElement(getBorderBoxCSS);
-        I.amPerforming().actionToGet().attribute(getBorderBoxCSS,"style");
+        I.amPerforming().actionToGet().attribute(getBorderBoxCSS, "style");
         try {
-            if (I.amPerforming().actionToGet().attribute(getBorderBoxCSS,"style").contains("block")) {
+            if (I.amPerforming().actionToGet().attribute(getBorderBoxCSS, "style").contains("block")) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1572,10 +1571,10 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
     }
 
     /**
-     * @return true if expected width of specified column is displayed for enhanced grid
      * @param columnName
      * @param tableId
      * @param width
+     * @return true if expected width of specified column is displayed for enhanced grid
      */
     private Boolean isExpectedWidthDisplayedAtColumnOfEnhancedGrid(String columnName, String tableId, String width) {
         boolean flag = false;
@@ -1583,6 +1582,26 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
                 "//span[contains(text(),'" + columnName + "')]/ancestor::thead/following-sibling::tbody//td[@width='" + width + "']")));
         if (I.amPerforming().checkToSee().isDisplayed(columnWidth)) {
             flag = true;
+        }
+        return flag;
+    }
+
+    public void assertTypeAndTextInsideMiniPageLayout(String usage, String displayType, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(displayType, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfValueChangeWithColumnName(displayType, value)).isFalse();
+        }
+    }
+
+    private boolean assertIfValueChangeWithColumnName(String displayType, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'tooltipster-base tooltipster')]//div/*[text()='" + displayType + "']//following-sibling::*[text()='" + value + "'] |" +
+                    " //div[contains(@class,'tooltipster-base tooltipster')]//div/*[text()='" + displayType + "']/parent::div//*[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }

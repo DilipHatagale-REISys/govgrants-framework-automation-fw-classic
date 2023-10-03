@@ -1,8 +1,8 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.CustomAppPage;
-import com.testingblaze.actionsfactory.api.ByUsing;
-import com.testingblaze.register.I;
+import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.Then;
 
 public class CustomAppSteps {

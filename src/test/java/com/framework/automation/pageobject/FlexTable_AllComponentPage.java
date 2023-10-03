@@ -192,7 +192,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
-                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "']"));
+                "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "'] |" +
+                " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "']"));
     }
 
     public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {
@@ -254,23 +255,22 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         I.amPerforming().click().on(filterAction);
     }
 
-    public void assertDisplayedOptionInPageBlock(String option, String usage) {
+    public void assertIfDescriptionButtonDisplayed(String usage, String description, String button, String tableId) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(isDisplayedOptionInPageBlock(option));
+            Assert.assertTrue(isDescriptionOrButtonIsDisplayed(description, button, tableId));
         } else if (usage.equalsIgnoreCase("do not see")) {
-            Assert.assertFalse(isDisplayedOptionInPageBlock(option));
+            Assert.assertFalse(isDescriptionOrButtonIsDisplayed(description, button, tableId));
         }
     }
 
-    private boolean isDisplayedOptionInPageBlock(String option) {
+    private boolean isDescriptionOrButtonIsDisplayed(String description, String button, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='History']//option[contains(text(),'" + option + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
         }
         return flag;
     }
-
 }

@@ -1,6 +1,7 @@
 package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
+import com.framework.automation.pageobject.FrameworkCookiesPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.exception.TestingBlazeCustomException;
 import com.helperPackage.objects.Elements;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class FlexTableSteps {
     FlexTablePage flexTablePage;
+    FrameworkCookiesPage frameworkCookiesPage;
 
     public FlexTableSteps() {
         flexTablePage = new FlexTablePage();
@@ -456,8 +458,75 @@ public class FlexTableSteps {
         flexTablePage.assertValuePageBlockDisplayedOrNot(usage, blockName);
     }
 
-    @When("^I hovering mouse on page block help text icon inside table \"([^\"]*)\" with tooltip id \"([^\"]*)\"$")
-    public void getHelpTextAtPageBlock(String tableId, String toolTipId) {
-        flexTablePage.getHelpTextAtPageBlockOrInsideTable(tableId, toolTipId);
+    @Then("^I (see|do not see) table id \"([^\"]*)\" flex table render in modal view$")
+    public void iSeeTableIdFlexTableRenderInModalView(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" help text displayed in table \"([^\"]*)\"$")
+    public void iSeeHelpTextDisplayedInTable(String usage, String headernameOrArrowOrValue, String tableid) {
+        flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrowOrValue,tableid);
+    }
+
+    @Then("^I (see|do not see) Header field \"([^\"]*)\" displayed as a Header on flex table")
+    public void iSeeHeaderFieldDisplayedAsAHeaderOnFlexTable(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" displayed on flex table$")
+    public void iSeeDisplayedOnFlexTable(String usage, String tableidOrDisplayedValue) {
+        flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+
+    @Then("^I (see|do not see|softly see|softly do not see) text \"([^\"]*)\" in header instruction field flex table id \"([^\"]*)\"$")
+    public void iSeeTextInHeaderInstructionFieldFlexTableId(String usage, String showingTextValue, String tableId) {
+        frameworkCookiesPage.pageSizeShowAfterPageSetting(usage, showingTextValue, tableId);
+    }
+
+    @Then("^I (see|do not see) row level action button \"([^\"]*)\" rendered on flex table$")
+    public void iSeeRowLevelActionButtonRenderedOnFlexTable(String usage, String actionButton) {
+        flexTablePage.assertIfActionButtonIsDisplayedOrNotDisplayed(usage, actionButton);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" rendered on flex table$")
+    public void iSeeRenderedOnFlexTable(String usage, String actionButton) {
+        flexTablePage.assertIfActionButtonIsDisplayedOrNotDisplayed(usage, actionButton);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" as title for Actions inside flex table action$")
+    public void iSeeAsTitleForActionsInsideFlexTableAction(String usage, String changedActionName) {
+        flexTablePage.assertIfActionNameIsDisplayedOrNotDisplayed(usage, changedActionName);
+    }
+
+    @Then("^I (see|do not see) action name \"([^\"]*)\" itself get displayed on UI$")
+    public void iSeeActionNameItselfGetDisplayedOnUI(String usage, String changedActionName) {
+        flexTablePage.assertIfActionNameIsDisplayedOrNotDisplayed(usage, changedActionName);
+    }
+
+    @Then("^I (see|do not see) error message contains text \"([^\"]*)\" if wrong or invalid filter clause provide$")
+    public void iSeeErrorMessageContainsTextIfWrongOrInvalidFilterClauseprovide(String usage, String errorMessage) {
+        flexTablePage.assertIfErrorMessageDisplayed(usage,errorMessage);
+
+    }
+
+    @Then("^I (see|do not see) added list index \"([^\"]*)\" is \"([^\"]*)\" displayed in provided sequence$")
+    public void iSeeAddedListIndexIsDisplayedInProvidedSequence(String usage, String sequence, String value) {
+        flexTablePage.indexDisplayedInProvidedSequence(usage,sequence,value);
+    }
+
+    @Then("^I (see|do not see) sequence of \"([^\"]*)\" Actions is \"([^\"]*)\" on UI as per given sequence in flex table$")
+    public void iSeeSequenceOfActionsIsOnUIAsPerGivenSequenceInFlexTable(String usage, String value, String sequence) {
+        flexTablePage.sequenceDisplayedInProvidedSequence(usage,value,sequence);
+    }
+
+    @And("I hovering mouse on action \"([^\"]*)\" inside flex table$")
+    public void iHoveringMouseOnActionInsideFlexTable(String action) {
+        flexTablePage.hoverMouseOnAction(action);
+    }
+
+    @Then("^I (see|do not see) characters limit \"([^\"]*)\" for \"([^\"]*)\" attribute Button help text field$")
+    public void iSeeCharactersLimitForAttributeButtonHelpTextField(String usage, int charLimit, String attribute) {
+        flexTablePage.CountCharectorLimit(usage,charLimit,attribute);
     }
 }

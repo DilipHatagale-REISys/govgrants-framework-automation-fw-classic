@@ -205,8 +205,6 @@ public final class SideBar {
     }
 
     /**
-     * @return assert if accordion sub header is displayed
-     *
      * @param sideBarCategory
      * @param accordianSubHeaderDetail
      * @author ashwini.mahore

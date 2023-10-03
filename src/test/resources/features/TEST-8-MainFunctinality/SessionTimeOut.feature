@@ -213,7 +213,7 @@ Business Need: New API related scenarios temporary
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Attachments" sub tab
-    When I click on "View" icon for "General Application Cover Page	" inside flex table with id "FormEnhancedTable"
+    When I click on "View" icon for "General Application Cover Page    " inside flex table with id "FormEnhancedTable"
     When I pause execution for "120" seconds
     Then I softly see Session Timeout dialogue box with title "Session Expiration Warning" is displayed
 
@@ -302,4 +302,3 @@ Business Need: New API related scenarios temporary
     When I hovering mouse on help text icon inside "Test's September Program"
     When I pause execution for "200" seconds
     Then I see session timeout remainder as "01" countdown is shown in browser tab
-

@@ -855,10 +855,11 @@ public class PageLayoutSteps {
         I.amPerforming().click().on(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
     }
 
-    @Then("I see {string} arrow is Displayed inside {string} field")
-    public void iSeeArrowIsDisplayedInsideField(String arrow, String columnName) {
-        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
-        Assert.assertTrue(ArrowDisplayed);
+    @Then("^I (see|do not see) \"([^\"]*)\" arrow is Displayed inside \"([^\"]*)\" field$")
+    public void iSeeArrowIsDisplayedInsideField(String usage, String arrow, String columnName) {
+//        boolean ArrowDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"));
+//        Assert.assertTrue(ArrowDisplayed);
+pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName);
     }
 
     @And("I click on {string} column inside Internal Programs")public void iClickOnColumnInsideInternalPrograms(String columnValue) {
