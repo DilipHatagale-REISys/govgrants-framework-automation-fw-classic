@@ -163,4 +163,16 @@ public class StepProgressBarPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertStepProgressBarStepsandPosition(String step, String position) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//div//li[@class='progtrckr-done']//span[@tabindex='" + position + "']//span[contains(text(),'" + step + "')]")));
+    }
+
+    public void assertStepProgressBarStep(String step) {
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Submitted'] |" +
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Approved'] |" +
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Active'] |" +
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Closed']")));
+
+    }
 }

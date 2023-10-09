@@ -1,4 +1,4 @@
-@sidebar-component @regression-test5 @sidebar
+@SideBae-component @regression-QA @SideBar
 Business Need: Side bar Component Scenarios
   Test all sidebar component based scenarios
   As a configuration manager i make different configurational changes in side bar component and will validate them.

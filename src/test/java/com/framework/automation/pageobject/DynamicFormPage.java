@@ -304,6 +304,8 @@ public class DynamicFormPage extends GovGrantsManager {
                 return true;
             } else if (commentBoxType.equalsIgnoreCase("Rich Text Area") && I.amPerforming().checkToSee().isEnabled(By.xpath("//textarea[contains(@id,'RichTextArea')]"))) {
                 return true;
+            }else if (commentBoxType.equalsIgnoreCase("Enter Your Comments") && I.amPerforming().checkToSee().isEnabled(By.xpath("//textarea[@placeholder='Enter Your Comments']"))) {
+                return true;
             }
         } catch (Exception e) {
         }
