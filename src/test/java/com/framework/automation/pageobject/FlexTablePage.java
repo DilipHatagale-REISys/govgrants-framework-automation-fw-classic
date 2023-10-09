@@ -1495,4 +1495,105 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void validateIfConformationBoxIsDisplayedOrNot(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfConformationBoxIsDisplayedOrNot());
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfConformationBoxIsDisplayedOrNot());
+        }
+    }
+
+    private boolean assertIfConformationBoxIsDisplayedOrNot() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-content']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateConfirmationMessageCharectorLimit(String usage, int charLimit) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfCharLimitForConformationMessage(charLimit));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfCharLimitForConformationMessage(charLimit));
+        }
+    }
+
+    private boolean assertIfCharLimitForConformationMessage(int charLimit) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("//div[@class='modal-content']//div[@class='bootbox-body']"));
+            String actionElement = elementSequence.getText();
+            int stringLength = actionElement.length();
+            System.out.println("String length: " + stringLength);
+            System.out.println("String length: " + actionElement);
+            if (actionElement.length() == charLimit) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    public void validateModalWindowIsDisplayedOnSameWindow(String usage, String modalTitle) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfModalWindowDisplayedOrNot(modalTitle));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfModalWindowDisplayedOrNot(modalTitle));
+        }
+    }
+
+    private boolean assertIfModalWindowDisplayedOrNot(String modalTitle) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@class='modal-content ui-draggable-handle'] | //p[text()='" + modalTitle + "']/ancestor::div[@class='modal-content']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateIconCssIsDisplayedOrNot(String usage, String columnTitle, String iconTitle, String cssValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfIconCSSdisplayedOrNot(columnTitle, iconTitle, cssValue));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfIconCSSdisplayedOrNot(columnTitle, iconTitle, cssValue));
+        }
+    }
+
+    private boolean assertIfIconCSSdisplayedOrNot(String columnTitle, String iconTitle, String cssValue) {
+        boolean flag = false;
+        try {
+            if (isCSSIconForSpecificActionOfFlexTable(columnTitle, iconTitle, cssValue)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateStyleOrWidthOfModal(String usage, String styleValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfStyleOfModaldisplayedOrNot(styleValue));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfStyleOfModaldisplayedOrNot(styleValue));
+        }
+    }
+
+    private boolean assertIfStyleOfModaldisplayedOrNot(String styleValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'"+styleValue+"')"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

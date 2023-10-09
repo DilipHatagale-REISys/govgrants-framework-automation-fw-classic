@@ -454,7 +454,7 @@ public class FlexTableSteps {
     }
 
     @Then("^I (can see|can not see) \"([^\"]*)\" page block displayed$")
-    public void iSeeValuePageBlockDisplayed(String usage,String blockName) {
+    public void iSeeValuePageBlockDisplayed(String usage, String blockName) {
         flexTablePage.assertValuePageBlockDisplayedOrNot(usage, blockName);
     }
 
@@ -465,7 +465,7 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) \"([^\"]*)\" help text displayed in table \"([^\"]*)\"$")
     public void iSeeHelpTextDisplayedInTable(String usage, String headernameOrArrowOrValue, String tableid) {
-        flexTablePage.assertIfHeaderNameIsDisplayed(usage,headernameOrArrowOrValue,tableid);
+        flexTablePage.assertIfHeaderNameIsDisplayed(usage, headernameOrArrowOrValue, tableid);
     }
 
     @Then("^I (see|do not see) Header field \"([^\"]*)\" displayed as a Header on flex table")
@@ -506,18 +506,18 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) error message contains text \"([^\"]*)\" if wrong or invalid filter clause provide$")
     public void iSeeErrorMessageContainsTextIfWrongOrInvalidFilterClauseprovide(String usage, String errorMessage) {
-        flexTablePage.assertIfErrorMessageDisplayed(usage,errorMessage);
+        flexTablePage.assertIfErrorMessageDisplayed(usage, errorMessage);
 
     }
 
     @Then("^I (see|do not see) added list index \"([^\"]*)\" is \"([^\"]*)\" displayed in provided sequence$")
     public void iSeeAddedListIndexIsDisplayedInProvidedSequence(String usage, String sequence, String value) {
-        flexTablePage.indexDisplayedInProvidedSequence(usage,sequence,value);
+        flexTablePage.indexDisplayedInProvidedSequence(usage, sequence, value);
     }
 
     @Then("^I (see|do not see) sequence of \"([^\"]*)\" Actions is \"([^\"]*)\" on UI as per given sequence in flex table$")
     public void iSeeSequenceOfActionsIsOnUIAsPerGivenSequenceInFlexTable(String usage, String value, String sequence) {
-        flexTablePage.sequenceDisplayedInProvidedSequence(usage,value,sequence);
+        flexTablePage.sequenceDisplayedInProvidedSequence(usage, value, sequence);
     }
 
     @And("I hovering mouse on action \"([^\"]*)\" inside flex table$")
@@ -527,6 +527,38 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) characters limit \"([^\"]*)\" for \"([^\"]*)\" attribute Button help text field$")
     public void iSeeCharactersLimitForAttributeButtonHelpTextField(String usage, int charLimit, String attribute) {
-        flexTablePage.CountCharectorLimit(usage,charLimit,attribute);
+        flexTablePage.CountCharectorLimit(usage, charLimit, attribute);
     }
+
+    @Then("^I (see|do not see) Confirmation Message box displayed")
+    public void iSeeConfirmationMessageBoxDisplayed(String usage) {
+        flexTablePage.validateIfConformationBoxIsDisplayedOrNot(usage);
+    }
+
+    @Then("^I (see|do not see) characters limit \"([^\"]*)\" for Confirmation Message$")
+    public void iSeeCharactersLimitForConfirmationMessage(String usage, int charLimit) {
+        flexTablePage.validateConfirmationMessageCharectorLimit(usage, charLimit);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" modal window is open in same tab$")
+    public void iSeeModalWindowIsOpenInSameTab(String usage, String modalTitle) {
+        flexTablePage.validateModalWindowIsDisplayedOnSameWindow(usage, modalTitle);
+    }
+
+
+    @Then("^I (see|do not see) modal window is open in same tab with style \"([^\"]*)\"$")
+    public void iSeeModalWindowIsOpenInSameTabWithStyle(String usage, String styleValue) {
+        flexTablePage.validateStyleOrWidthOfModal(usage, styleValue);
+    }
+
+    @Then("^I (see|do not see) record \"([^\"]*)\" having action \"([^\"]*)\" contain icon css \"([^\"]*)\"$")
+    public void iSeeRecordHavingActionContainIconCss(String usage, String columnTitle, String iconTitle, String cssValue) {
+        flexTablePage.validateIconCssIsDisplayedOrNot(usage, columnTitle, iconTitle, cssValue);
+    }
+
+    @And("I hovering mouse on help text icon i inside column name {string} flex table")
+    public void iHoveringMouseOnHelpTextIconIInsideColumnNameFlexTable(String columnName) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//span[@title='" + columnName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"));
+    }
+
 }
