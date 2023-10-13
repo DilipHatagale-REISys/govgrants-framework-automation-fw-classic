@@ -1141,7 +1141,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User  | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-
   @334664
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
     Given I have "default" configuration as below:
@@ -1175,7 +1174,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-
   @334667
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Rich text area field
     Given I have "default" configuration as below:
@@ -1191,7 +1189,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-
 
   @334668
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Rich text area field
@@ -3722,8 +3719,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338620
+  @338620 @334559
   Scenario: Records description - PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+  |Flex table-Filter-PM-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3745,8 +3743,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338622
+  @338622 @334549 @334560
   Scenario: Records description - SPI- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+  |Flex table-Filter-SPI-To verify that user is able to filter records by using Text field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3830,8 +3829,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Greater than ' operator
+  @338626 @334568 @needtocheck
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
+  |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3844,14 +3844,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | Program date | Greater than | 25/08/2023 |
-    And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I refresh the page
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338627
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Less than ' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3871,7 +3870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338628
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Greater than or equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3891,7 +3890,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338630
-  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Less than or equal to' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3910,8 +3909,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338631
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Contains ' operator
+  @338631 @334547 @334558
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the text field with 'Contains' operator
+  |Flex table-Filter-Admin-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3935,7 +3935,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
   @338633
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3954,7 +3954,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338634
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3973,7 +3973,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338635
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3992,7 +3992,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338636
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist  field with 'Equal to  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4010,7 +4010,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338638
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4044,7 +4044,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338641
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than ' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Greater than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4063,7 +4063,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338643
-  Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than ' operator
+  Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4082,7 +4082,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338644
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4101,7 +4101,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338645
-  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to operator
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -4119,8 +4119,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338648
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number  field with 'Equal to' operator
+  @338648 @334561
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Number field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4195,7 +4195,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338653
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -12311,3 +12311,108 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
     Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
     Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
+
+  @334548
+  Scenario: Flex Table :PM:-To verify, To verify that user is able to filter records by using Text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+
+  @334562 @dataNotavailable
+  Scenario: Flex Table:Filter-PM-To verify that user is able to filter records by using Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Equals to | 5000 |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @334563
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Closeout Liquidation Days | Equals to | 60 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334564 @334566 @dataNotavailable
+  Scenario Outline: Flex table-Filter-"<User>"-UI-To verify that user is able to filter records by using Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter values in table id "advfActiveGrants"
+      | Subrecipient Match (%) | Equals to | 60 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334567 @dataNotavailable
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Subrecipient Match (%) | Equals to | 60 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GranteeMatch__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
