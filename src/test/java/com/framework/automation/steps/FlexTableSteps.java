@@ -422,6 +422,11 @@ public class FlexTableSteps {
         flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
     }
 
+    @Then("^I (see|do not see) Advance Filter \"([^\"]*)\" sub component is displayed inside table id \"([^\"]*)\" in flex table$")
+    public void iSeeAdvanceFilterSubcomponentIsDisplayedTableId(String usage, String columnName, String value) {
+        flexTablePage.assertAdvanceFilterSubcomponentIsDisplayed(usage, columnName, value);
+    }
+
     @Then("^I (see|do not see) dropdown value \"([^\"]*)\" under field name \"([^\"]*)\" inside flex table$")
     public void iSeeDropdownValueUnderFieldNameInsideFlexTable(String usage, String dropdownValue, String columnName) {
         flexTablePage.assertSpecificItemsInsideListViewDropdown(usage, dropdownValue, columnName);

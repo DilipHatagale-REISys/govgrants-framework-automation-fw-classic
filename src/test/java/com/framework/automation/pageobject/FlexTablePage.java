@@ -1158,12 +1158,19 @@ public class FlexTablePage extends GovGrantsManager {
         }
     }
 
-
     public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
         if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
+        }
+    }
+
+    public void assertAdvanceFilterSubcomponentIsDisplayed(String usage, String columnName, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(advanceFilterSubcomponentDisplayed(columnName, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(advanceFilterSubcomponentDisplayed(columnName, value)).isFalse();
         }
     }
 
@@ -1187,6 +1194,16 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
+    private boolean advanceFilterSubcomponentDisplayed(String columnName, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + value + "']//label[normalize-space(text())='" + columnName + "']//parent::div"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 
     public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
         boolean flag = false;
@@ -1589,7 +1606,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean assertIfStyleOfModaldisplayedOrNot(String styleValue) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'"+styleValue+"')"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

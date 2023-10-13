@@ -3394,7 +3394,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
-  @338600
+  @338600 @334544
   Scenario: Advanced Filter- Admin- Config -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3415,7 +3415,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Funded Amount" under field name "Column Name" inside flex table
     Then I see dropdown value "Abbreviation" under field name "Column Name" inside flex table
 
-  @338601
+  @338601 @334545
   Scenario: Advanced Filter- PM- UI -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3436,7 +3436,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Funded Amount" under field name "Column Name" inside flex table
     Then I see dropdown value "Abbreviation" under field name "Column Name" inside flex table
 
-  @338602
+  @338602 @334546
   Scenario: Advanced Filter- SPI- UI -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -12065,7 +12065,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
 
-
   @334502 @334505
   Scenario Outline:Flex table-Detail config-Help text-Admin-Config-To verify that when user entered any help text in any of the field on flex table, then on UI help icon (i) get displayed besides respective column name/header,
   Flex table-Detail config-Help text-Admin-UI-To verify that entered help text get displayed on mouse hover over the help icon on respective field
@@ -12210,3 +12209,105 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @334535 @334541
+  Scenario: Advanced Filter- Admin- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-Admin-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334536 @334542
+  Scenario: Advanced Filter- PM- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-PM-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334537 @334543
+  Scenario: Advanced Filter- SPI- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-SPI-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
+
+  @334538
+  Scenario: Advanced Filter- Admin- Config-To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334539
+  Scenario: Advanced Filter- PM- Config- To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334540
+  Scenario: Advanced Filter- SPI- Config- To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
