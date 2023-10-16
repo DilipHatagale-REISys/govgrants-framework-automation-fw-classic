@@ -422,6 +422,11 @@ public class FlexTableSteps {
         flexTablePage.assertIfAdvanceFilterIsDisplayed(usage, value);
     }
 
+    @Then("^I (see|do not see) Advance Filter \"([^\"]*)\" sub component is displayed inside table id \"([^\"]*)\" in flex table$")
+    public void iSeeAdvanceFilterSubcomponentIsDisplayedTableId(String usage, String columnName, String value) {
+        flexTablePage.assertAdvanceFilterSubcomponentIsDisplayed(usage, columnName, value);
+    }
+
     @Then("^I (see|do not see) dropdown value \"([^\"]*)\" under field name \"([^\"]*)\" inside flex table$")
     public void iSeeDropdownValueUnderFieldNameInsideFlexTable(String usage, String dropdownValue, String columnName) {
         flexTablePage.assertSpecificItemsInsideListViewDropdown(usage, dropdownValue, columnName);
@@ -441,7 +446,6 @@ public class FlexTableSteps {
     public void iSeeOperatorListChangeWithField(String usage, String dropdownValue) {
         flexTablePage.assertIfValueChange(usage, dropdownValue);
     }
-
 
     @When("I enter advance filter values in table id \"([^\"]*)\"$")
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
@@ -563,7 +567,7 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) filter \"([^\"]*)\" is displayed$")
     public void iSeeFilterIsDisplayed(String usage, String advanceFilterClass) {
-        flexTablePage.ValidateAdvanceFilterIsWorkOrNot(usage, advanceFilterClass);
+        flexTablePage.ValidateAdvanceFilterIsWorkOrNotInFlextable(usage, advanceFilterClass);
     }
 
     @Then("I see {string} as header of flex table")

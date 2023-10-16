@@ -344,7 +344,6 @@ public final class GovGrantsSteps {
     @Description("click on  Advance filter search icon")
     @When("^I click on advance filter \"([^\"]*)\" of table id \"([^\"]*)\"$")
     public void performClickOnAnvanceFilter(String dataTargetValue, String tableId) {
-
         ggObjects.performClickOnAdvanceFilterWithTableId(tableId, dataTargetValue);
     }
 
