@@ -15,8 +15,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "TPA01" shown as over view title in header "Program"
 
   @34047    @setUpPageInstructionText-gPlanning
@@ -31,8 +31,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Automation Instruction Text" shown as page instruction text
 
   @34049    @setUpHeaderOverRideField-gPlanning
@@ -90,8 +90,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @34069    @hideForProfile-gPlanning @smoke
@@ -106,41 +106,46 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @34043    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
-  Scenario: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
+  @34043 @200538 @200546    @HidePdfDownloadFromMenuForMainPageLayout-gPlanning
+  Scenario Outline: Disabling of PDF download option from configuration and validating it from menu dropdown inside program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout:General   | Hide Pdf Download | true          | Grantor State Program |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Menu" in the page details
     Then I do not see "Download as PDF" options is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @34046    @HideTakeSnapshotFromMenuForMainPageLayout-gPlanning
   Scenario: Disabling of Take snapshot option from configuration and validating it from menu dropdown inside program detail page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snapshot | false             | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snapshot | true          | Grantor State Program |                           |                            |
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Menu" in the page details
     Then I do not see "Take Snapshot" options is displayed
 
@@ -160,8 +165,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Submit For Approval" button in right header
     Then I see prompt For automation is displayed
 
@@ -177,8 +182,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Submit For Approval" button is not displayed at view detail page
 
   @35814    @labelChangeOfCancelButtonAtMainPageLayout-gPlanning
@@ -193,8 +198,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Cancel" button is displayed at edit detail page
 
@@ -210,8 +215,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Edit" in the page details
     Then I see "Auto Save" button is displayed at edit detail page
 
@@ -227,8 +232,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @34354    @sortOrderForFieldAtPageTab-gPlanning
@@ -243,8 +248,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Overview" shown at number "5" inside subtabs
 
   @34355    @headerInstructionTextFieldAtPageTab-gPlanning
@@ -259,8 +264,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Automation Header Text" shown as header instruction text
 
   @34357    @tabTitleFieldAtPagePageTab-gPlanning
@@ -275,8 +280,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I softly see "Automation Overview" sub tab is displayed at view detail page
 
   @34359    @tabIconFieldAtPageTab-gPlanning
@@ -291,8 +296,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see pencil icon as "Overview" sub tab
 
   @35949    @isActiveFieldAtPageTab-gPlanning @smoke
@@ -307,8 +312,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35955    @hideForUserAtPageTab-gPlanning @smoke
@@ -323,8 +328,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35956    @hideForProfileAtPageTab-gPlanning @smoke
@@ -339,8 +344,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35959    @hideDecisionFieldAtPageTab-gPlanning @smoke
@@ -355,24 +360,24 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35962    @highlightsPanelFeildAtPageTab-gPlanning
   Scenario: Setup of header overview page tab from config and validating it at program detail page
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId |
     #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see complete header overview tab is displayed at view detail page
 
   @35976    @hideExpressionJsonFieldAtPageTab-gPlanning @smoke
@@ -387,8 +392,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35979    @pageBlockTitleFieldAtPageBlock-gPlanning
@@ -403,8 +408,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Program Information Automation" page block displayed
 
   @35980    @isActiveFieldAtPageBlock-gPlanning @smoke
@@ -419,8 +424,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
@@ -435,8 +440,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Information" shown at number "5" inside detail page
 
   @35984    @headerInstructionTextFieldAtPageBlock-gPlanning
@@ -451,8 +456,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Header for Automation" shown as header instruction text for page block
 
   @36037    @hideForContextFieldAtPageBlock-gPlanning @smoke
@@ -467,8 +472,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
@@ -483,8 +488,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
@@ -503,8 +508,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @35958    @hideOperatorFieldUsingOROperatorAtPageTab-gPlanning
@@ -523,8 +528,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @36039    @hideForProfileAtPageBlock-gPlanning @smoke
@@ -539,8 +544,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
@@ -559,15 +564,15 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
-  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @wip @changeInDOMStructure
+  @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @changeInDOMStructure
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block:Page Block Detail | Total Fields per Row | 2                 | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block:Page Block Detail | Total Fields per Row | 3                 | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Total Fields per Row | 3             | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
@@ -575,8 +580,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Information" page block contains "3" elements
 
   @36041    @hideOperatorFieldUsingOROperatorAtPageBlock-gPlanning
@@ -595,8 +600,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
@@ -611,8 +616,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke @wip
@@ -629,8 +634,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see Roles And Responsibilities flex table inside page block
 
@@ -648,8 +653,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Plan" sub tab
     Then I see Monitoring Schedule For All Active Grants flex grid inside page block
 
@@ -709,8 +714,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see field "Budgeting Preference" inside page block
 
   @36099    @isActiveFieldAtPageBlockDetail-gPlanning @smoke
@@ -725,8 +730,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36100    @sortOrderFieldAtPageBlockDetail-gPlanning
@@ -741,8 +746,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" shown at number "1" inside "Information" page block detail
 
   @36101    @fieldLabelOverrideFieldAtPageBlockDetail-gPlanning
@@ -757,8 +762,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see field "Automation Title" inside page block
 
   @36106    @readOnlyFieldAtPageBlockDetail-gPlanning
@@ -773,8 +778,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36109    @hideForContextFieldAtPageBlockDetail-gPlanning @smoke
@@ -789,8 +794,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36110    @hideForUserFieldAtPageBlockDetail-gPlanning @smoke
@@ -805,8 +810,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36111    @hideForProfileFieldAtPageBlockDetail-gPlanning @smoke
@@ -821,8 +826,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36113    @hideOperatorFieldUsingANDOperatorAtPageBlockDetail-gPlanning
@@ -841,8 +846,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36114    @hideOperatorFieldUsingOROperatorAtPageBlockDetail-gPlanning
@@ -861,8 +866,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36126    @readOnlyForContextFieldAtPageBlockDetail-gPlanning
@@ -877,8 +882,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36127    @readOnlyForProfileFieldAtPageBlockDetail-gPlanning @smoke
@@ -893,8 +898,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36107    @requiredForSaveBehaviourAtPageBlockDetail-gPlanning @smoke
@@ -927,8 +932,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "AddAttachments" button inside attachments page block
     Then I see "AnnouncementArtifacts1:AnnouncementArtifacts2" inside Type selectbox
@@ -945,8 +950,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36115    @hideDecisionFieldAtPageBlockDetail-gPlanning @smoke
@@ -963,8 +968,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36129    @readOnlyForUserFieldAtPageDetail-gPlanning @smoke
@@ -979,8 +984,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36131    @readDecisionFieldAtPageBlockDetail-gPlanning @smoke
@@ -995,8 +1000,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @36136    @hideLabelFieldAtPageBlockDetail-gPlanning
@@ -1011,8 +1016,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36169    @lookUpHeaderTextFieldAtPageBlockDetail-gPlanning
@@ -1027,8 +1032,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see modal box with body "Organization Automation" is displayed
 
@@ -1044,8 +1049,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     Then I see "Code" in table header on lookup Modal
 
@@ -1063,8 +1068,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click search icon for look up field "Organization Lookup (New Window)" with clearing
     When I perform quick search for "Automation test organization" in "---program:-:AccountTableId---" panel
     Then I see "Created" status in lookup modal table
@@ -1103,8 +1108,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Test message for Automation" message inside confirmation box is displayed on click "Submit For Approval"
 
   @36198    @isActiveFieldAtPageLayoutAction-gPlanning @smoke
@@ -1119,8 +1124,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Edit" button is not displayed
 
   @36200    @editButtonActionOpensInOverLayWindowAtPageLayoutAction-gPlanning
@@ -1135,8 +1140,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Edit" in the page details
     Then I see Edit opens in overlay window with "Cancel" button
 
@@ -1178,8 +1183,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Create Campaign" button is displayed
 
   @36205    @displayAreaFieldForEditAtPageLayoutAction-gPlanning
@@ -1194,8 +1199,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Menu" in the page details
     Then I see Edit options inside Menu Dropdown
 
@@ -1213,11 +1218,11 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Edit" Button at position "0"
 
-  @35982    @helpTextFieldAtPageBlock-gPlanning
+  @35982 @201278 @201279   @helpTextFieldAtPageBlock-gPlanning
   Scenario Outline: Changing content of help text field at page block from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
@@ -1229,8 +1234,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1249,8 +1254,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -1269,8 +1274,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Information" page block displayed
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
@@ -1285,8 +1290,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @36134    @readOnlyExpressionJSONFieldAtPageBlockDetail-gPlanning @smoke
@@ -1301,8 +1306,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see that "fieldProgramName__c" rendered in view mode only
 
   @53094    @hideForContextFieldAtNotesAndAttachmentPageBlockForEditAction-gPlanning
@@ -1317,8 +1322,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
 
@@ -1334,8 +1339,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
 
@@ -1351,11 +1356,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
-
 
   @53098    @hideOperatorFieldUsingOROperatorAtNotesAndAttachmentPageBlockForEditAction-gPlanning
   Scenario: Hide edit row level action using OR operator from configuration and validating it at attachments table
@@ -1373,8 +1377,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
 
@@ -1394,8 +1398,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon is disabled inside "Files" page block
 
@@ -1411,8 +1415,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1432,8 +1436,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1453,8 +1457,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1478,8 +1482,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1503,8 +1507,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     Then I see "Edit" icon for "Check Edit Behaviour" is not displayed inside flex table
 
@@ -1562,8 +1566,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     Then I see "Save and Close" at bottom of Attachment Modal
@@ -1580,8 +1584,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Program Artifacts" inside table
     And I see "Save" at bottom of Attachment Modal
@@ -1599,8 +1603,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "   " into field "ProgramNameText__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1619,8 +1623,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "Test Program For Automation - Created - Required Behaviour" into field "fieldProgramName__c"
     When I enter value "" into field "fieldAccount__c"
     When I click on "Save" in the page details
@@ -1640,8 +1644,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "fieldNumber__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1660,8 +1664,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "--None--" into field "fieldKPIsRequired__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1680,8 +1684,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "No" into field "fieldKPIsRequired__c"
     When I enter value "" into field "fieldStartDate__c"
     When I click on "Save" in the page details
@@ -1701,8 +1705,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "" into field "fieldExpectedFunding__c"
     When I click on "Save" in the page details
@@ -1722,8 +1726,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "50000" into field "fieldExpectedFunding__c"
     When I enter value "" into field "fieldWebsiteAddress__c"
     When I click on "Save" in the page details
@@ -1743,8 +1747,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "www.google.com" into field "fieldWebsiteAddress__c"
     When I enter value "" into field "fieldProjectGoals__c"
     When I click on "Save" in the page details
@@ -1764,8 +1768,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "fieldPercent__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1784,8 +1788,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1804,8 +1808,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "fieldTime__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1824,8 +1828,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "fieldAuthorization__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -1838,8 +1842,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click "Automation ADMIN" lookup link
     Then I see "User" shown as over view header
@@ -1866,8 +1870,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see icon for "Link" is present in rich text area description field
 
@@ -1877,8 +1881,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -1891,8 +1895,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I pause execution for "3" seconds
     When I click on "Link" icon in rich text area editor menu options
@@ -1987,8 +1991,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "3" seconds
@@ -2010,8 +2014,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -2030,8 +2034,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "<requiredValue>" page block displayed
 
     Examples:
@@ -2365,8 +2369,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2383,8 +2387,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click search icon for lookup "Organization Lookup (New Window)"
     Then I see a lookup modal with width as "800px" is rendered
 
@@ -2430,8 +2434,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Title" is not displayed inside page block detail
 
   @102107    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -2446,8 +2450,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period End Date" is not displayed inside page block detail
 
   @102114    @verifyHideFieldJsonFieldByDisablingTitleFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -2462,8 +2466,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "ProgramName__c" is disabled
 
   @102115    @verifyHideFieldJsonFieldByDisablingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -2478,8 +2482,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "EndDate__c" is disabled
 
   @102248    @verifyIdDateTimeFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
@@ -2494,8 +2498,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see value "11/30/2022" of "Project Period End Date" field is not changed on page scroll
 
   @102251    @verifyIdDateFieldIsDisabledThenValueOfDateIsNotGettingChangedAfterPageScollInEditMode1
@@ -2510,8 +2514,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see value "10/15/2021 7:43 AM" of "Date &Time" field is not changed on page scroll
 
   @104377    @verifyThatUserIsAbleToSaveValueInURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @wip
@@ -2526,8 +2530,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I enter value "www.google.com" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2546,8 +2550,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2566,8 +2570,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -2586,8 +2590,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" to save inside subtab
     And I enter value "http://schools.utah.gov/eseastateinitiatives/schoolimprovement?mid=1384&tid=1" into field "Test_URL__c"
@@ -2605,8 +2609,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see bulb icon at header instruction is displayed
 
   @111900    @verifyBulbIconAtHeaderInstructionTextInsidePageLayoutForPMUser-gApplication
@@ -2630,8 +2634,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
   @112540   @validateRequiredForSubmitSymbolAtPageBlockDetailForDescriptionFieldForPMUser-gPlanning
@@ -2646,8 +2650,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see required for submit symbol as "fa-exclamation-triangle" at "fieldObjectives__c" field
 
   @112009  @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
@@ -2671,8 +2675,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "StartDate__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -2717,8 +2721,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2755,8 +2759,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see missing field badge on "Overview" tab
 
   @112562    @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
@@ -2771,8 +2775,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see missing field badge on "Overview" tab
 
   @112558    @verifyBadgesShownAtOverviewTabInEditModeIfRequiredForSubmitFieldIsBlankForPMUser-gPlanning
@@ -2787,8 +2791,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
@@ -2806,8 +2810,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see missing field badge on "Overview" tab
 
   @112363    @verifyThatAdminUserIsAbleToAccessChatterNativePage-gPlanning @wip
@@ -2850,8 +2854,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -2873,8 +2877,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -2916,8 +2920,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @114071    @verifyDisplayOfBadgesIfReqFieldProjectGoalIsHiddenByUsingHideFieldJSONOnPicklistFieldValueFromConfig
@@ -2926,8 +2930,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -2950,8 +2954,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -2974,8 +2978,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -2999,8 +3003,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3023,8 +3027,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3047,8 +3051,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3072,8 +3076,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3097,8 +3101,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3123,8 +3127,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3149,8 +3153,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3175,8 +3179,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3199,8 +3203,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3225,8 +3229,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3250,8 +3254,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3274,8 +3278,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3298,8 +3302,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3322,8 +3326,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3346,8 +3350,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3370,8 +3374,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3396,8 +3400,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3420,8 +3424,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3444,8 +3448,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3469,8 +3473,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3496,8 +3500,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3523,8 +3527,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3548,8 +3552,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3593,8 +3597,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -3629,8 +3633,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside "Test Page Block1"
     Then I see "<new_helpText>" shown as help text
 
@@ -3666,8 +3670,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see phase tab has "Very Dark Blue" background color
 
   @115665 @verifyThatVeryDarkBlueColorIsDisplayedAtPhasesTabForSPIUser-StateAsAGrantor
@@ -3691,8 +3695,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "--None--" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -3720,8 +3724,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3739,8 +3743,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3758,8 +3762,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
@@ -3777,8 +3781,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -4071,8 +4075,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -4106,8 +4110,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I softly see bulb icon at header instruction is displayed
     And I refresh the page
     Then I softly see "Automation Instruction Text" shown as page instruction text
@@ -4118,8 +4122,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "ProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4137,8 +4141,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -4156,8 +4160,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -4169,8 +4173,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     And I wait for "5" seconds
@@ -4182,8 +4186,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Files"
     And I wait for "5" seconds
@@ -4195,8 +4199,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Files"
     And I wait for "5" seconds
@@ -4208,8 +4212,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -4225,8 +4229,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I pause execution for "5" seconds
@@ -4238,8 +4242,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:contactsTableId---"
     And I wait for "5" seconds
@@ -4306,8 +4310,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Department of Community Health"
@@ -4321,8 +4325,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Program Approver" inside table
     And I pause execution for "3" seconds
@@ -4338,8 +4342,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Financials" sub tab
     When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedID---" panel
     When I hover mouse on lookup link "Child Development Centre" at table
@@ -4407,8 +4411,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Plan" sub tab
     When I hover mouse on lookup link "Nauman Shahid" at grid
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
@@ -4428,8 +4432,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
@@ -4446,8 +4450,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I click on "Save" in the page details
     Then I do not see missing field badge on "Overview" tab
 
@@ -4467,8 +4471,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @121226  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsHidden
@@ -4487,8 +4491,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see missing field badge on "Overview" tab
 
   @122001    @VerifyAtProgramCreationModalIfWeClickOnCancelButtonThenUserIsRedirectedToDraftProgramFlexTableWhenPageRedirectBehaviourIsSetToSaveAndContinue
@@ -4568,8 +4572,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "Department of Children health" into field "fieldAccount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -4579,8 +4583,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see "User" shown as over view header
@@ -4646,8 +4650,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click "Nauman Shahid" lookup link
     Then I see new tab is opened
@@ -4836,8 +4840,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE SUCCESS MSG DND |
 
@@ -4853,8 +4857,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE SUCCESS MSG DND |
 
@@ -4870,8 +4874,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Blue" color:
       | test is done for page layout |
 
@@ -4887,8 +4891,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Brown" color:
       | TEST PAGE ALERT MSG DND |
 
@@ -4906,8 +4910,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -4942,8 +4946,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4979,8 +4983,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Red" color:
       | TEST PAGE WARNING MSG DND |
 
@@ -4996,8 +5000,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE ERROR MSG DND |
 
@@ -5013,8 +5017,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5068,8 +5072,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE ERROR MSG DND |
 
@@ -5085,8 +5089,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
 
@@ -5102,8 +5106,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Blue" color:
       | TEST PAGE BLOCK INFORMATION MSG DND |
 
@@ -5119,8 +5123,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Brown" color:
       | TEST PAGE BLOCK ALERT MSG DND |
 
@@ -5136,8 +5140,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see the following messages in the page details contains:
       | TEST PAGE BLOCK WARNING MSG DND |
 
@@ -5153,8 +5157,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Purple" color:
       | TEST PAGE BLOCK ERROR MSG DND |
 
@@ -5170,8 +5174,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
@@ -5181,8 +5185,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I hover mouse on lookup link "Department of Community Health"
     And I pause execution for "3" seconds
@@ -5204,8 +5208,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     When I click on "View" icon for "Nauman Shahid" inside table
     When I hovering mouse on page block detail of label "Assigned to User" lookup field "Nauman Shahid"
@@ -5230,8 +5234,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
@@ -5241,8 +5245,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see help text is displayed at bottom
 
@@ -5260,8 +5264,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see below message at page detail in "Green" color:
       | TEST PAGE BLOCK SUCCESS MSG DND |
       | TEST PAGE SUCCESS MSG DND       |
@@ -5322,8 +5326,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I cannot see the following message in the page details :
       | TEST PAGE INFORMATION MSG DND |
 
@@ -5339,8 +5343,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see the following message in the page details :
       | TEST PAGE BLOCK INSTRUCTION MSG DND |
 
@@ -5356,8 +5360,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see the following page detail buttons :
       | Cancel |
       | Save   |
@@ -5374,8 +5378,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Description" field is rendered as rich text area
 
   @132858  @verifyMiniPageLayoutIsDisplayedAtEnhancedFlexEditLayout @skipOnJenkins @wip
@@ -5390,8 +5394,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     When I hover mouse on lookup link "Christine GGPTEST5" at table
@@ -5410,8 +5414,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see "40,000" text enter in field "fieldFundedAmount__c"
 
@@ -5427,8 +5431,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see expected table with id "toggleFlexTableProgramContacts"
 
@@ -5444,8 +5448,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see "11/30/2020" text enter in field "fieldStartDate__c"
 
@@ -5478,8 +5482,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
     Then I see "<helpText>" shown as help text
 
@@ -5499,8 +5503,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Christine GGPTEST5" in "toggleFlexTableProgramContacts" panel
     Then I see value "Christine GGPTEST5" for title "Full Name" inside table "toggleFlexTableProgramContacts"
@@ -5517,8 +5521,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @131795  @verifyCharacterCountDisplayedInsideCKEditorBoxAtRichTextAreaFieldInsideEditPageLayout
@@ -5533,8 +5537,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5557,8 +5561,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum testttttttttt rrrrrrrrrr" into field "cke_1_contents"
     When I pause execution for "20" seconds
     Then I see CK editor box color changed to "green"
@@ -5575,8 +5579,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5596,8 +5600,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5617,8 +5621,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -5638,8 +5642,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5661,8 +5665,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5684,8 +5688,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I enter value "Test" into field "cke_1_contents"
@@ -5862,8 +5866,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I enter value "Grant" into field "Type__c"
     When I click dropdown field "fieldProgramSubType__c"
@@ -5893,8 +5897,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     And I navigate to "Home" tab
     When I hover mouse on lookup link "PG-343-0058"
     And I pause execution for "3" seconds
@@ -5920,8 +5924,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "StartDate__c" is disabled
@@ -5938,8 +5942,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -5957,8 +5961,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "ProgramName__c" is disabled
@@ -5975,8 +5979,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "FundedAmount__c" is disabled
@@ -5993,8 +5997,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "StartDate__c" is disabled
 
   @133886    @verifyHideFieldJsonFieldByHidingDateTextAndPicklistFieldOnTheBasisOfPicklistFieldValueInEditMode
@@ -6009,8 +6013,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "StartDate__c" is disabled
@@ -6029,8 +6033,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "ProgramName__c" is disabled
 
   @133895    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6045,8 +6049,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "Type__c" is disabled
 
   @133896    @verifyHideFieldJsonFieldByHidingCurrencyFieldOnTheBasisOfDateFieldValueInEditMode
@@ -6061,8 +6065,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see field "FundedAmount__c" is disabled
 
   @134132    @verifyHideFieldJsonFieldByHidingPicklistFieldOnTheBasisOPicklistFieldValueOnModal @wip
@@ -6077,8 +6081,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6096,8 +6100,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6115,8 +6119,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6134,8 +6138,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6154,8 +6158,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Roles" sub tab
     And I click on "Edit" icon for "Nauman Shahid" inside flex table with id "toggleFlexTableProgramRolesAndResponsibilities"
     And I enter value "User" into field "UserType__c"
@@ -6175,8 +6179,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "CFDA_Data__c" is disabled
@@ -6193,8 +6197,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I softly see field "Type__c" is disabled
@@ -6230,8 +6234,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "Grant" into field "Type__c"
     And I enter value "Project Grants" into field "ProgramSubType__c"
     Then I see field "Account__c" is disabled
@@ -6242,8 +6246,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "BP-01" inside flex table with id "---program:-:budgetPeriodDetailsTableId---"
     And I switch to iframe with id "ProgramBudgetPeriodiframeContentId"
@@ -6316,8 +6320,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6343,8 +6347,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6370,8 +6374,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6397,8 +6401,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6424,8 +6428,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6451,8 +6455,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6478,8 +6482,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6505,8 +6509,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6532,8 +6536,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6559,8 +6563,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -6852,8 +6856,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145526    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserTypeAsInternalInEditMode
@@ -6868,8 +6872,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145528    @verifyHideFieldJsonFieldByHidingDateFieldUsingContextAsEditInEditMode
@@ -6884,8 +6888,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145533    @verifyHideFieldJsonFieldByHidingDateFieldUsingUserAppAsAGrantorInEditMode
@@ -6900,8 +6904,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145661    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_AdminInEditMode
@@ -6916,8 +6920,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145662    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=InternalInEditMode
@@ -6932,8 +6936,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145663    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_EditInEditMode
@@ -6948,8 +6952,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145664    @verifyHideExpressionJsonFieldByHidingTabUsingUserAppAsAGrantorInEditMode
@@ -6964,8 +6968,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145666    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserTypeAsInternalInEditMode
@@ -6980,8 +6984,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -6997,8 +7001,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -7014,8 +7018,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -7031,8 +7035,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -7048,8 +7052,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145836    @verifyHideExpressioJsonByHidingFieldsUsingPicklistFieldValueInEditMode
@@ -7064,8 +7068,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145839    @verifyHideExpressioJsonByHidingFieldsUsingUserOperatoreInEditMode
@@ -7080,8 +7084,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I see "Project Period Start Date" is not displayed inside page block detail
 
   @145844    @verifyHideExpressioJsonByHidingTabUsingUserOperatoreInEditMode
@@ -7096,8 +7100,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @145846    @verifyHideExpressioJsonByHidingPageBlockUsingPicklistFieldValueInEditMode
@@ -7112,8 +7116,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -7129,8 +7133,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
@@ -7352,8 +7356,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "Tax Credit" into field "Type__c"
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
@@ -7366,8 +7370,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "XYZ" into field "Authorization__c"
     When I click on "Save" in the page details
     Then I softly see field "Authorization" as "XYZ"
@@ -7580,8 +7584,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -7600,8 +7604,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "fieldProjectGoals__c"
     When I click on "Save" in the page details
     Given I have "default" configuration as below:
@@ -7627,8 +7631,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I enter value "12344" into field "Removenumber__c"
     And I click on "Save" in the page details
     Then I see field "Removenumber" as "12,344.0000"
@@ -7686,8 +7690,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I clear the value from field "Phone_Field__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -7707,8 +7711,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
     When I clear the value from field "phonetest__c"
@@ -7756,8 +7760,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I navigate to "Roles" sub tab
     When I click on "Edit" icon for "Owner" inside table
     When I clear the value from field "phonetest__c"
@@ -7772,8 +7776,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "123" into field "ProgramName__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7786,8 +7790,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "123" into field "ProgramName__c"
     And I refresh the page
     And I pause execution for "3" seconds
@@ -7813,8 +7817,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "" into field "ProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7825,8 +7829,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Number__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7839,8 +7843,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Number__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7852,8 +7856,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Number__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7864,8 +7868,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7878,8 +7882,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7891,8 +7895,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "fieldFundedAmount__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7903,8 +7907,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Percent__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7917,8 +7921,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Percent__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7930,8 +7934,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1" into field "Percent__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7942,8 +7946,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "www.google.com" into field "URL__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7956,8 +7960,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "www.google.com" into field "URL__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -7969,8 +7973,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "www.google.com" into field "URL__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -7981,8 +7985,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -7995,8 +7999,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8008,8 +8012,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "fieldProjectGoals__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8020,8 +8024,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "Authorization__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8034,8 +8038,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "Authorization__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8047,8 +8051,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test" into field "Authorization__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8105,8 +8109,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test@yopmail.com" into field "Email__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8125,8 +8129,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8144,8 +8148,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "test@yopmail.com" into field "Email_Test__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8162,8 +8166,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8182,8 +8186,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "9987" into field "Phone_Field__c"
     And I click on back arrow
     And I pause execution for "2" seconds
@@ -8201,8 +8205,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8219,8 +8223,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "9987" into field "Phone_Field__c"
     And I refresh the page
     And I pause execution for "2" seconds
@@ -8238,8 +8242,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "9987" into field "Phone_Field__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8249,8 +8253,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I enter value "http://www.example.com:8800/" into field "fieldURL__c"
     And I click on "Save" in the page details
@@ -8263,8 +8267,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click dropdown field "fieldIsProjectServiceAreaneeded__c"
     Then I see only the following ordered options in dropdown field "fieldIsProjectServiceAreaneeded__c" :
       | --None-- |
@@ -8283,8 +8287,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I click on "Save" in the page details
     And I pause execution for "4" seconds
     Then I see "programview" in current url
@@ -8382,8 +8386,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on top right button "Add" in notes and attachment with name "Notes"
     Then I see modal with id "addAtt" displayed properly
@@ -8484,10 +8488,10 @@ Business Need: Page Layout Component Scenarios
   @150747 @VerifyUserSendsRecordsToApproveUserForwardRecordAnotherUserThenRejectOptionAvailable @vaibhavC
   Scenario: Verify User Sends Records To Approve User Forward Record Another User Then Reject Option Available
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId |
       #| Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -8533,10 +8537,10 @@ Business Need: Page Layout Component Scenarios
   @159242 @VerifyUserClickOnSubmitForApprovalActionErroMessageDisplayedOnViewMode @vaibhavC @wip
   Scenario: Verify User Click On submit For Approval Action Error Message Displayed On View Mode
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId |
     #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -8564,10 +8568,10 @@ Business Need: Page Layout Component Scenarios
   @159299 @VerifyAfterClickingEditButtonAllerrorMessageDisplayedOnViewModeCarryForwardedToEditMode @vaibhavC @wip
   Scenario: Verify After Clicking Edit Button All error Message Displayed On View Mode Carry Forwarded To Edit Mode
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId |
     #  | Page Tabs Config      | Highlights Panel? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2011                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -8864,8 +8868,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I click on "Save" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -8887,8 +8891,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -8907,8 +8911,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I softly see the following message in the page details contains:
       | TEST PAGE BLOCK SUCCESS MSG DND |
     Then I softly see "null" is not displayed inside page block detail
@@ -8919,8 +8923,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -8938,8 +8942,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I do not see below checkbox options for field "TypesOfAssistance__c"
       | Select All |
@@ -8956,8 +8960,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "Test Program For Automation - Expression Builder 2" into field "fieldProgramName__c"
     When I enter value "242018" into field "FederalProgramCFDA__c"
@@ -9014,8 +9018,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see that "TypesOfAssistance__c" rendered in view mode only
 
@@ -9049,8 +9053,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see checkbox is displayed for field "fieldCFDA_Data__c"
 
@@ -9086,8 +9090,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly do not see link "GT-HRGr-001" inside Page block
 
@@ -9103,8 +9107,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
 
   @170112 @tejal @wip
@@ -9119,8 +9123,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -9136,8 +9140,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     Then I softly see field "Show Link as Text" as "GT-HRGr-001"
     Then I softly see link "GT-HRGr-001" inside Page block
 
@@ -9153,8 +9157,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9194,8 +9198,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldTypesOfAssistance__c"
       | Display 2 |
@@ -9233,8 +9237,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "60" seconds
     Then I select below checkbox options for field "fieldObjectives__c"
@@ -9278,8 +9282,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9287,14 +9291,14 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details :
       | Funded Amount : Number is too large. |
 
-  @205808 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
+  @205808 @218874 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStylefornumberfieldforinternaluser @jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for Number   field  for internal user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9308,8 +9312,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
@@ -9323,8 +9327,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9338,8 +9342,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9353,8 +9357,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9368,8 +9372,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
@@ -9383,8 +9387,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -9398,8 +9402,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9420,8 +9424,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9440,8 +9444,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9460,8 +9464,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9480,8 +9484,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9500,8 +9504,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9520,8 +9524,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldPercent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -9540,8 +9544,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I pause execution for "4" seconds
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
@@ -9561,8 +9565,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111" into field "fieldNumber__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
@@ -9575,8 +9579,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
@@ -9588,8 +9592,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I click on "Menu" in the page details
     And I select "Take Snapshot" from dropdown
     When I click alert button "OK"
@@ -9778,8 +9782,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -9795,8 +9799,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9812,8 +9816,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9829,8 +9833,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I perform quick search for "Automation Internal Program for Testing"
-    And I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I perform quick search for "Test Approver Table"
+    And I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
@@ -9846,8 +9850,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Automation" inside page block
 
@@ -9863,8 +9867,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9880,8 +9884,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Types Of Assistance" inside page block
 
@@ -9897,8 +9901,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select all" inside page block
 
@@ -9981,8 +9985,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -9998,8 +10002,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -10015,8 +10019,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see field "Types Of Assistance" inside page block
 
@@ -10032,8 +10036,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly cannot see field "Select All" inside page block
 
@@ -10044,8 +10048,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
     When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
@@ -10070,8 +10074,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10090,8 +10094,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "123456783456789456789045678945678" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10110,8 +10114,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1234567834567834567834567834567834567" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10130,8 +10134,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "13456789034567894567890234567" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10150,8 +10154,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1234567345673456734567345673456" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10170,8 +10174,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10190,8 +10194,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "145678967890673456784567894567896788" into field "Number__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10210,8 +10214,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "1123345678456785667456789765432765443" into field "Percent__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10230,8 +10234,8 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "4" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "123456789012345676785678567867897890" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
@@ -10243,8 +10247,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10257,8 +10261,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1111" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10271,8 +10275,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1234" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -10285,8 +10289,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10299,8 +10303,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10319,8 +10323,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "Title" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10340,8 +10344,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "Owner Organization" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10361,8 +10365,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldNumber__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10382,8 +10386,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldDateandTime__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10403,8 +10407,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldFundedAmount__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10424,8 +10428,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I select "Project Grants" from dropdown
     Then I see "fieldPercent__c" is not displayed inside page block detail
     And I click on "Save" in the page details
@@ -10446,8 +10450,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
@@ -10539,8 +10543,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10624,10 +10628,1196 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I enter value "1123" into field "Percent__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I do not see "Percent : Number is too large." error
+
+    ################# Page Layout - Negative Scenarios ##############
+  @218822 @218823
+  Scenario: Page layout-To verify, User is not select "None " from picklist field  when field is "required to save"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "--None--" into field "fieldType__c"
+    When I enter value "100" into field "fieldNumber__c"
+    Then I see the following message in the page details contains:
+      | This field is required |
+
+  @218832
+  Scenario: Page layout-To verify, User is not  enter numbers in URL field  if enter number field then error message should display
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I enter value "12345" into field "fieldURL__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | URL : Please enter valid URL value. |
+
+  @218869
+  Scenario: Page layout-To verify, User is not  edit the checkbox field in the view layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Save" in the page details
+    Then I softly see field "fieldCFDA_Data__c" is not editable
+
+  @218829
+  Scenario: Page layout-To verify, User is not  edit formula field
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Save" in the page details
+    Then I softly see field "Address__c" is not editable
+
+  @218838
+  Scenario Outline: Page layout-To verify,  when user not entered any help text  on field then help icon  not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-17545                  |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I hovering mouse on help text icon inside page block detail "Title"
+    Then I do not see help text icon is displayed for field "Program Code"
+
+    Examples:
+      | new_helpText | old_helpText                                              |
+      |              | Alphanumeric code which is unique for associated program. |
+
+ ###################### Export Functionality ########################
+  @200536 @200545 @219535 @219536
+  Scenario Outline: Page Layout Export Functionality-Admin-config-To verify download as PDF option should displayed for  pagelayout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I click on "Menu" in the page details
+    Then I see "Download as PDF" options is displayed
+    And I select "Download as PDF" from dropdown
+    And I download the file
+    Then I softly see "Information" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @200552 @219537
+  Scenario: Page Layout Export Functionality-SPI-UI-To verify download as PDF option should displayed for pagelayout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I click on "Menu" in the page details
+    Then I see "Download as PDF" options is displayed
+    And I select "Download as PDF" from dropdown
+    And I download the file
+    Then I softly see "Information" on page "1" of "govgrants" pdf file
+
+  @200553
+  Scenario: Page Layout Export Functionality-SPI-UI-To verify download as PDF option should not displayed for  flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide PDF Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide PDF Download | true          | Recipient ApplicationView |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+
+  @200470 @200477 @200475 @200513
+  Scenario Outline: Page Menu-Admin-config-To verify Take snapshot option should be displayed
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I click on "Menu" in the page details
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    And I pause execution for "5" seconds
+      #200475 #200513
+    Then I see take snap shot getting saved with "Snapshot History"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @200529 @200531
+  Scenario: Page Menu-SPI-UI-To verify Take snapshot option should be displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I click on "Menu" in the page details
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    And I pause execution for "5" seconds
+    #200531
+    Then I see take snap shot getting saved with "Snapshot History"
+
+  @200512 @200473
+  Scenario Outline: Page Menu-PM-UI-To verify take snapshot  option should not be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Menu" in the page details
+    And I pause execution for "5" seconds
+    Then I do not see "Take Snapshot" options is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @200530
+  Scenario: Page Menu-SPI-UI-To verify take snapshot  option should not be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I click on "Menu" in the page details
+    Then I do not see "Take Snapshot" options is displayed
+
+  @219857 @219858
+  Scenario Outline: Menu- Admin- Config- Verify Menu option appears on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @219859
+  Scenario: Menu- SPI-UI- Verify Menu option appears on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+
+    ################# Page Layout Action ###############
+
+  @200428 @200434
+  Scenario Outline: Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should displayed in view layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    #Then I see "Edit" button is not displayed
+    Then I see "Edit" button is displayed on top right of pagelayout
+    Then I see "Submit For Approval" button is displayed on top right of pagelayout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @200431 @200435
+  Scenario Outline: Page Layout Action-Admin-config-To verify page layout "Edit" and "Submit For Approval" actions should not displayed in view layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Submit For Approval        |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see "Edit" button is not displayed
+    Then I see "Submit For Approval" button is not displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @200439 @219883
+  Scenario: Page Layout Action-SPI-UI-To verify page layout "Edit" and "Submit Application" actions should displayed on view layout
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Edit" button is displayed on top right of pagelayout
+    Then I see "Submit Application" button is displayed on top right of pagelayout
+
+  @200441
+  Scenario: Page Layout Action-SPI-UI-To verify page layout "Edit" and "Submit Application" actions should not displayed on view layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active | false         | Recipient ApplicationView | Name                      | Edit                       |
+      | Page Layout Action    | Is Active | false         | Recipient ApplicationView | Name                      | Submit Application         |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Edit" button is not displayed
+    Then I see "Submit Application" button is not displayed
+
+  @219868 @219869 @219882 @219881
+  Scenario Outline: Page Layout Action-Admin-UI-To verify page layout "Cancel" and "Save" actions should displayed on edit layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    Then I see "Cancel" button is displayed on top right of pagelayout
+    Then I see "Save" button is displayed on top right of pagelayout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @219872 @219873
+  Scenario Outline: Page Layout Action-Admin-UI-To verify page layout "Cancel" and "Save" actions should not displayed on edit layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Cancel                     |
+      | Page Layout Action    | Is Active | false         | Grantor State Program | Name                      | Save                       |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
+    Then I see "Cancel" button is not displayed
+    Then I see "Save" button is not displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @219870
+  Scenario: Page Layout Action-SPI-UI-To verify page layout "Cancel" and "Save" actions should displayed on edit layout
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "Edit" icon for "New Application For Testing Only" inside table
+    Then I see "Cancel" button is displayed on top right of pagelayout
+    Then I see "Save" button is displayed on top right of pagelayout
+
+  @219875 @219876
+  Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit              | Grantor State Program | Name                      |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit                       |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see "Edit Automation" button is displayed on top right of pagelayout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @219877
+  Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit              | Recipient ApplicationView | Name                      |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Edit Automation" button is displayed on top right of pagelayout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit Automation   | Recipient ApplicationView | Name                      |                            |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit          | Recipient ApplicationView | Name                      | Edit                       |
+
+  @219878 @219879
+  Scenario Outline: Page Layout Action-- Admin- config- Verify text is displayed on hovering edit button
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Button Help Text | Edit              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Button Help Text | Edit The Record | Grantor State Program | Name                      | Edit                       |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see the text "Edit The Record" on hovering button
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @219880
+  Scenario: Page Layout Action-- SPI -UI- Verify text is displayed on hovering edit button
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Page Layout Action    | Button Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Button Help Text | Edit The Record | Recipient ApplicationView | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    #And I hover the mouse on button "Edit"
+    Then I see the text "Edit The Record" on hovering button
+
+#################### Page Blocks #############################
+  @200242 @200264
+  Scenario Outline:Page Blocks-Admin-config-To verify configured field displayed in page block  as Program Name,Type ,Primary Funding Organization
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I softly see "Title" inside page block detail
+    Then I softly see "Type" inside page block detail
+    Then I softly see "Primary Funding Organization" inside page block detail
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200265 @200243
+  Scenario Outline: Page Block-PM-UI-To verify created page block for record type fields should not displayed
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17696                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17596                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I softly cannot see field "Title" inside page block
+    Then I softly cannot see field "Type" inside page block
+    Then I softly cannot see field "Primary Funding Organization" inside page block
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200266 @200245
+  Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I softly see field "Project Period Start Date" inside page block
+    Then I softly see field "Number" inside page block
+    Then I softly see field "Project Period End Date" inside page block
+    Then I softly see field "Time" inside page block
+    Then I softly see field "Percent" inside page block
+    Then I softly see field "Funded Amount" inside page block
+    Then I softly see field "URL" inside page block
+    Then I softly see field "Date and Time" inside page block
+    Then I softly see field "Published Date" inside page block
+    Then I softly see field "TestPicklist" inside page block
+    Then I softly see field "Project Goals" inside page block
+    Then I softly see field "Program Type" inside page block
+    Then I softly see field "Primary Funder Type" inside page block
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200267 @200246
+  Scenario Outline: Page Block-PM-UI-To verify all fields should not displayed under pageblock.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId          |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:1  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:2  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:3  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:4  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:5  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:6  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:7  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:8  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:9  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:10 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:11 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:12 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17697                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23595                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17600                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23588                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23586                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17698                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23589                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23594                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23590                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23576                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23592                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-23618                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17520                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I softly cannot see field "Project Period Start Date" inside page block
+    Then I softly cannot see field "Number" inside page block
+    Then I softly cannot see field "Project Period End Date" inside page block
+    Then I softly cannot see field "Time" inside page block
+    Then I softly cannot see field "Percent" inside page block
+    Then I softly cannot see field "Funded Amount" inside page block
+    Then I softly cannot see field "URL" inside page block
+    Then I softly cannot see field "Date and Time" inside page block
+    Then I softly cannot see field "Published Date" inside page block
+    Then I softly cannot see field "TestPicklist" inside page block
+    Then I softly cannot see field "Project Goals" inside page block
+    Then I softly cannot see field "Program Type" inside page block
+    Then I softly cannot see field "Primary Funder Type" inside page block
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200249
+  Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly see field "Applicant Organization" inside page block
+    Then I softly see field "Address" inside page block
+    Then I softly see field "DUNS" inside page block
+    Then I softly see field "SAM Expiration Date" inside page block
+
+  @200250
+  Scenario: Page Block-SPI-UI-To verify configured fields should not displayed in page block  as Applicant Organization, Address, SAM Expiration Date, DUNS in Information Block
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+    #  | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20170                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20169                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20167                  |
+    #  | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20168                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly cannot see field "Applicant Organization" inside page block
+    Then I softly cannot see field "Address" inside page block
+    Then I softly cannot see field "DUNS" inside page block
+    #Then I softly cannot see field "SAM Expiration Date" inside page block
+
+  @200251
+  Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Opportunity ID, Opportunity Title, Funding Organization, Subaward Floor in Opportunity Overview
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly see field "Opportunity ID" inside page block
+    Then I softly see field "Opportunity Title" inside page block
+    Then I softly see field "Funding Organization" inside page block
+    Then I softly see field "Subaward Floor" inside page block
+
+  @200252
+  Scenario: Page Block-SPI-UI-To verify configured fields should not displayed in page block  as Opportunity ID, Opportunity Title, Funding Organization, Subaward Floor in Opportunity Overview
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20305                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19939                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20702                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19942                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly cannot see field "Opportunity ID" inside page block
+    Then I softly cannot see field "Opportunity Title" inside page block
+    Then I softly cannot see field "Funding Organization" inside page block
+    Then I softly cannot see field "Subaward Floor" inside page block
+
+  @201280
+  Scenario Outline: Help Text SPI- UI- Verify given header help text is getting displayed under 'i' icon.
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Recipient ApplicationView | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Recipient ApplicationView | GNT__PageBlockTitle__c    | Information                |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I hovering mouse on help text icon inside "Information"
+    Then I see "<new_helpText>" shown as help text
+    Examples:
+      | new_helpText             | old_helpText |
+      | Help Text for Automation |              |
+
+ ############################# Page Tab ######################################
+  @200225 @200229
+  Scenario Outline:Page Tab-Admin-config-To verify, Overview. Setup tabs, Responsibilities, Files, History, Collab tab should be display on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2686                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2628                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2622                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2623                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see "Overview" subtab is present in page details
+    Then I see "Setup tabs" subtab is present in page details
+    Then I see "Responsibilities" subtab is present in page details
+    Then I see "Files" subtab is present in page details
+    Then I see "History" subtab is present in page details
+    Then I see "Collab" subtab is present in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200226 @200232
+  Scenario Outline:Page Tab-Pm-UI-To verify,  Overview. Setup tabs, Responsibilities, Files, History, Collab tab should be display on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      #| Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2686                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2628                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2622                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2623                   |
+     # | Page Tabs Config:Page Layout Action | Is Active | false          | Grantor State Program | Name                      | TAB-2626                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I do not see "Overview" subtab is present in page details
+    Then I do not see "Setup tabs" subtab is present in page details
+    Then I do not see "Responsibilities" subtab is present in page details
+    Then I do not see "Files" subtab is present in page details
+    Then I do not see "History" subtab is present in page details
+   # Then I see "Collab" subtab is present in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200233
+  Scenario: Page Tab-SPI-UI-To verify, Overview, Budget, Proposal, Files, History tab should  display on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2733                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2854                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2732                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2734                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2845                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2852                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Overview" subtab is present in page details
+    Then I see "Budget" subtab is present in page details
+    Then I see "Proposal" subtab is present in page details
+    Then I see "Files" subtab is present in page details
+    Then I see "History" subtab is present in page details
+    Then I see "Collab" subtab is present in page details
+
+  @200237
+  Scenario: Page Tab-SPI-UI-To verify, Overview, Budget, Proposal, Files, History tab should not display on the page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2733                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2854                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2732                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2734                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2845                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I do not see "Overview" subtab is present in page details
+    Then I do not see "Budget" subtab is present in page details
+    Then I do not see "Proposal" subtab is present in page details
+    Then I do not see "Files" subtab is present in page details
+    Then I do not see "History" subtab is present in page details
+
+  @219886 @219887
+  Scenario Outline: Page Tab - Admin -Config - Verify page tab label should displayed properly with icon
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
+    Then I see "Files" subtab is present with icon "fa fa-file" in page details
+    Then I see "History" subtab is present with icon "fa fa-history" in page details
+    Then I see "Collab" subtab is present with icon "fa fa-wechat" in page details
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @219888
+  Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I see "Budget" subtab is present with icon "fa fa-usd" in page details
+    Then I see "Proposal" subtab is present with icon "glyphicon glyphicon-tasks" in page details
+    Then I see "Files" subtab is present with icon "fa fa-paperclip" in page details
+    Then I see "History" subtab is present with icon "fa fa-history" in page details
+    Then I see "Collab" subtab is present with icon "fa fa-wechat" in page details
+
+  @219889 @219890
+  Scenario Outline: Page Tab - Admin -Config - Verify page tab label should not displayed properly with icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2686                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2628                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2622                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2623                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Grantor State Program | Name                      | TAB-2626                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I do not see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I do not see "Responsibilities" subtab is present with icon "fa fa-star" in page details
+    Then I do not see "Files" subtab is present with icon "fa fa-file" in page details
+    Then I do not see "History" subtab is present with icon "fa fa-history" in page details
+    Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @219891
+  Scenario: Page Tab - SPI- UI - Verify page tab label should not displayed properly with icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:1 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:2 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2733                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2854                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2732                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2734                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2845                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I do not see "Budget" subtab is present with icon "fa fa-usd" in page details
+    Then I do not see "Proposal" subtab is present with icon "glyphicon glyphicon-tasks" in page details
+    Then I do not see "Files" subtab is present with icon "fa fa-paperclip" in page details
+    Then I do not see "History" subtab is present with icon "fa fa-history" in page details
+    Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
+
+  @219894 @219893
+  Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see sequence of "Overview" subtab is "1" on page layout
+    Then I see sequence of "Setup tabs" subtab is "2" on page layout
+    Then I see sequence of "Responsibilities" subtab is "3" on page layout
+    Then I see sequence of "Files" subtab is "4" on page layout
+    Then I see sequence of "History" subtab is "5" on page layout
+    Then I see sequence of "Collab" subtab is "6" on page layout
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @219895
+  Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see sequence of "Overview" subtab is "1" on page layout
+    Then I see sequence of "Budget" subtab is "2" on page layout
+    Then I see sequence of "Proposal" subtab is "3" on page layout
+    Then I see sequence of "Files" subtab is "4" on page layout
+    Then I see sequence of "History" subtab is "5" on page layout
+    Then I see sequence of "Collab" subtab is "6" on page layout
+
+  @219897
+  Scenario Outline: Page Tab - Admin -Config - Verify page tab should not displayed properly in given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Grantor State Program | Name                      | TAB-2624                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I do not see sequence of "Overview" subtab is "1" on page layout
+#      Then I do not see sequence of "Setup tabs" subtab is "2" on page layout
+#      Then I do not see sequence of "Responsibilities" subtab is "3" on page layout
+#      Then I do not see sequence of "Files" subtab is "4" on page layout
+#      Then I do not see sequence of "History" subtab is "5" on page layout
+#      Then I do not see sequence of "Collab" subtab is "6" on page layout
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @219899
+  Scenario: Page Tab - SPI- UI - Verify page tab should not displayed properly in given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient ApplicationView | Name                      | TAB-2733                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I do not see sequence of "Overview" subtab is "1" on page layout
+#    Then I do not see sequence of "Budget" subtab is "2" on page layout
+#    Then I do not see sequence of "Proposal" subtab is "3" on page layout
+#    Then I do not see sequence of "Files" subtab is "4" on page layout
+#    Then I do not see sequence of "History" subtab is "5" on page layout
+#    Then I do not see sequence of "Collab" subtab is "6" on page layout
+
+
+ ################################# Page Instruction #########################################
+  @200159 @200164
+  Scenario Outline: Page Instruction-Admin-config- To verify given page instruction should be displayed on page lauout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Grantor State Program |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    #And I click on "...view more" button
+    And I pause execution for "3" seconds
+    Then I see bulb icon at header instruction is displayed
+    Then I see "<new_helpText>" shown as page instruction text
+    Examples:
+      | User  | new_helpText    | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | ADMIN | Automation Text | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+   # |PM | Automation Text | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+
+  @200162 @200166
+  Scenario Outline: Page Instruction-Admin-config-To verify given page instruction should not be displayed on page lauout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Grantor State Program |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    #Then I see "<new_helpText>" shown as help text
+    Then I do not see bulb icon at header instruction is displayed
+
+    Examples:
+      | User  | new_helpText | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | ADMIN |              | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+   #   | PM    |              | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+
+  @200214
+  Scenario Outline: Page Instruction-SPI-UI-To verify given page instruction should be displayed on page layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly see bulb icon at header instruction is displayed
+    Then I see "<new_helpText>" shown as page instruction text
+    Examples:
+      | new_helpText    | old_helpText |
+      | Automation Text |              |
+
+  @200216
+  Scenario: Page Instruction-SPI-UI-To verify given page instruction should not  be displayed on page layout
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I do not see bulb icon at header instruction is displayed
+
+  @200218 @218220
+  Scenario Outline: Page Instruction-Admin-config-To  verify page instruction should accept the number & any special character
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Grantor State Program |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see "<new_helpText>" shown as help text
+    Then I see bulb icon at header instruction is displayed on pagelayout
+
+    Examples:
+      | User  | new_helpText         | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+      | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+   #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+
+  @200222
+  Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I softly see bulb icon at header instruction is displayed
+    Then I see "<new_helpText>" shown as page instruction text
+    Examples:
+      | new_helpText         | old_helpText |
+      | 0123456789!@#$%^&*() |              |
+
+    ########################## Page Header #####################################
+  @200123 @200127 @200138 @200140
+  Scenario Outline: Page Header-Admin-config-To verify page header should be displayed
+  Page Header-Admin-config-To verify fields should displayed in the page header
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2625                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I softly see field "Program" inside page header
+    Then I softly see field "EGMS ID" inside page header
+    Then I softly see field "Status" inside page header
+    Then I softly see field "Organization" inside page header
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200128 @200141 @200124 @200139
+  Scenario Outline: Page Header-Admin-config-To verify fields should not be displayed in the page header
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Grantor State Program | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17749                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17518                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17734                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I do not see field "EGMS ID" inside page header
+    Then I do not see field "Status" inside page header
+   # Then I do not see field "Organization" inside page header
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @200145 @200155
+  Scenario: Page header-SPI-UI-To verify page header should be diplayed
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20174                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20172                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-20171                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see field "EGMS ID" inside page header
+    Then I see field "Status" inside page header
+    Then I see field "Application Due Date" inside page header
+
+  @200154 @200156
+  Scenario: Page Header-SPI-UI-To verify page header should not be diplayed
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+      | Page Tabs Config                         | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20174                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20172                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20171                  |
+      | Page Tabs Config:Page Layout Action      | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2731                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I do not see field "EGMS ID" inside page header
+    Then I do not see field "Status" inside page header
+    Then I do not see field "Application Due Date" inside page header

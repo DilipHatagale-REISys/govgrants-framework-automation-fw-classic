@@ -1146,7 +1146,9 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
+                "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
+                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "']"));
     }
 
 
