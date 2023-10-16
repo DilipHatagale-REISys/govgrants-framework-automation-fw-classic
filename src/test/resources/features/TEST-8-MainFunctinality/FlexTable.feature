@@ -26,8 +26,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334981
+  @334981 @336206
   Scenario: Flex table-Page size-Admin-Config-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
+  Page size - Admin - Config - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:3 |
@@ -41,8 +42,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334984
+  @334984 @336208
   Scenario: Flex table-Page size-PM-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
+  Page size - PM - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
@@ -54,8 +56,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334985
+  @334985 @336232
   Scenario: Flex table-Page size-SPI-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
+  Page size - SPI - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
@@ -112,8 +115,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records:" text-allignment is "center" in table id "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334990
+  @334990 @336233
   Scenario: Flex table-Total Records count-Admin-Config-To verify that on disabling Total records count, value of total record count not displayed at bottom of flex table
+  Total Record count - Admin - Config - To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
@@ -127,8 +131,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334993
+  @334993 @336234
   Scenario: Flex table-Total Records count-PM-UI-To verify that on disabling Total records count, value of total record count not displayed at bottom of flex table
+  Total Record count - PM - UI - To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
@@ -140,8 +145,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334994
+  @334994 @336236
   Scenario: Flex table-Total Records count-SPI-UI-To verify that on disabling Total records count, value of total record count not displayed at bottom of flex table
+  Total Record count - SPI - UI - To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Page Size           | true              | ApiGeneratedId:1 |
@@ -203,8 +209,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335000
-  Scenario:Flex table-Pagination-Admin-Config-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table
+  @335000 @336242
+  Scenario:Flex table-Pagination-Admin-Config-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
+  Pagination - Admin - Config - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
@@ -218,8 +225,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
-  @335001
-  Scenario: Flex table-Pagination-PM-UI-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table
+  @335001 @366243
+  Scenario: Flex table-Pagination-PM-UI-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
+  Pagination - PM - UI - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
@@ -230,7 +238,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
-
 
   @335004
   Scenario: Flex table-Default page size-Admin-Config-To verify that number provided in "Default page size" field, that many records displayed on UI on a page.
@@ -1061,8 +1068,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334656 @wip @bug341819
+  @334656 @336248 @wip @bug341819
   Scenario: Flex table-Quick Search-Admin-Config-To verify that on disabling Quick search, it not displayed on top of the flex table
+  Quick Search - Admin - Config - To verify that on disabling 'Enable Quick Search' Quick search feature  not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
@@ -1074,8 +1082,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334657 @wip @bug341819
+  @334657 @336250 @wip @bug341819
   Scenario: Flex table-Quick Search-PM-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
+  Quick Search - PM - UI - To verify that on disabling 'Enable Quick Search' Quick search feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
@@ -1087,8 +1096,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334658 @wip @bug341819
+  @334658 @336251 @wip @bug341819
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
+  Quick Search - SPI - UI - To verify that on disabling 'Enable Quick Search' Quick search feature  not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
@@ -2157,8 +2167,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "---program:-:GrantsFlexTableIdForAdminAndPMuser---" table contains "Page 1 of"
 
-  @338487
-  Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
+  @338487 @366244
+  Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI,
+  Pagination - SPI - UI - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -3311,8 +3322,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "{SavedValue:totalPageCount}" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
     ######################Test suite: Advanced Filter (Suite ID: 338458)#########################
-  @338592
+  @338592 @336238
   Scenario: Advanced Filter- Admin- Config- Verify Filter option should not available on UI
+  Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3337,8 +3349,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338595
-  Scenario: Advanced Filter- PM- UI- Verify Filter option should not available on UI
+  @338595 @336239
+  Scenario: Advanced Filter- PM- UI- Verify Filter option should not available on UI,Advanced filter - PM - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3363,8 +3375,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338598
-  Scenario: Advanced Filter- SPI- UI- Verify Filter option should not available on UI
+  @338598 @336241
+  Scenario: Advanced Filter- SPI- UI- Verify Filter option should not available on UI,
+  Advanced filter - SPI - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4215,8 +4228,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     #########################Test suite: UI (Suite ID: 336192)###############################
 
-  @338494
-  Scenario:Auto Index - Admin- Config- Verify index column (#) should not display on UI
+  @338494 @336245
+  Scenario:Auto Index - Admin- Config- Verify index column (#) should not display on UI,
+  Enable Auto Index - Admin - Config - To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
@@ -4226,10 +4240,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I do not see flex table header equals "#" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338495
-  Scenario: Auto Index - PM- UI- Verify index column (#) should not display on UI
+  @338495 @336246
+  Scenario: Auto Index - PM- UI- Verify index column (#) should not display on UI,
+  Enable Auto Index - PM - UI - To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
@@ -4239,10 +4254,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I do not see flex table header equals "#" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338498
-  Scenario: Auto Index - SPI- UI- Verify index column (#) should not display on UI
+  @338498 @336247
+  Scenario: Auto Index - SPI- UI- Verify index column (#) should not display on UI,
+  Enable Auto Index - SPI - UI - To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:2 |
@@ -12214,7 +12230,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-<<<<<<< HEAD
     ###########################Test suite: Flex table functionality (Suite ID: 338455)###########################
 
   @338662
@@ -13703,7 +13718,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     #########################est suite: Negative Scenarios (Suite ID: 336191)##############################
 
   @336202
-  Scenario:
+  Scenario:Upload action - Admin - Config - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
@@ -13920,3 +13935,120 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @336202
+  Scenario:Upload action - Admin - Config - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "Upload" button inside "Internal Programs - Draft" flex table
+
+  @336203
+  Scenario:Upload action - PM - UI - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "Upload" button inside "Internal Programs - Draft" flex table
+
+  @336205
+  Scenario: Upload action - SPI - UI - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    Then I do not see "Upload" button inside "Grants - Active" flex table
+
+  @336252 @336258
+  Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+  Quick Search - Admin - UI - To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "Hello Negative testing" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I quick search "100.10,00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336253
+  Scenario: Quick Search - PM - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "Hello Negative testing" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336256
+  Scenario: Quick Search - SPI - UI - To verify that when user entered invalid data (record data which not exists in table) in search box, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Hello Negative testing" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336259
+  Scenario: Quick Search - PM - UI - To verify that when user entered any invalid number (i.e. 100.10,00 in this format) in search box, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "100.10,00" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336261
+  Scenario: Quick Search - Admin - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "2020/09/16/" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336262
+  Scenario: Quick Search - PM - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "2020/09/16/" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336263
+  Scenario: Quick Search - SPI - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "2020/09/16/" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336264
+  Scenario: Quick Search - Admin - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336265
+  Scenario: Quick Search - PM - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
