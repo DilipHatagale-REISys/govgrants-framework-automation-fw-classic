@@ -495,6 +495,7 @@ public final class GovGrantsAssertionObjects {
                 + " | //div[contains(@class,'alertMessages')]//div[contains(@class,'alertMessage')]//span[@class='ng-binding']" // Second variant of flex table messages
                 + " | //div[contains(@class,'alert-danger')]" // get the alert danger message...
                 + " | //div//span[contains(@class,'dynamic-msg-box-margin')]"
+                + "| //div//p[contains(@class,'requiredError Type__c')]"
         );
 
         List<String> desiredMessages = unsanitizedDesiredMessages

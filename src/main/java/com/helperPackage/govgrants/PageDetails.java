@@ -572,7 +572,7 @@ public final class PageDetails {
      *
      * @param value
      * @param isPost -to handle two different text-box as post and comment
-     * Note - If you want to select user from @mention autosuggestion then, provide exact name of user inside value like: @Automation PM
+     *               Note - If you want to select user from @mention autosuggestion then, provide exact name of user inside value like: @Automation PM
      * @author ashwini.mahore
      * @modifier ashwini.mahore -xpath modified as per change in dom structure
      * @modifier ashwini.mahore - added code to select value from @mention autosuggestion dropdown
@@ -595,7 +595,7 @@ public final class PageDetails {
             I.amPerforming().click().on(commentSection);
             I.amPerforming().textInput().in(commentSection, value);
             if (value.contains("@")) {
-                String value1 = value.replaceAll("@","");
+                String value1 = value.replaceAll("@", "");
                 I.amPerforming().click().on(ByUsing.xpath("//div[@class='mentions-autocomplete-list']//li[@data-display='" + value1 + "']"));
             }
             I.amPerforming().click().on(ByUsing.xpath("//div[contains(@class,'createCollabComment') and contains(@class,'active')]//input[@value='Comment']"));
@@ -743,7 +743,9 @@ public final class PageDetails {
      * @author ashwini.mahore
      */
     public void getHelpTextAtPageBlock(String blockTitle) {
-        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')]"));
+        I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')] |" +
+                "//div[@class='pull-right']//input[@value='" + blockTitle + "'] |" +
+                "//div[@id='headerButtonsPanel']//button[@title='" + blockTitle + "']"));
     }
 
     /**

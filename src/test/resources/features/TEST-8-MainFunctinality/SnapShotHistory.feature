@@ -695,16 +695,16 @@ Business Need: Snapshot Config Component Scenarios
   Scenario Outline: Snapshot History Table - Admin- Config - Verify Take Snapshot button should not present in Menu option
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snapshot | true              | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snapshot | false         | Grantor State Program | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true         | Grantor State Program | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I pause execution for "5" seconds
@@ -754,10 +754,10 @@ Business Need: Snapshot Config Component Scenarios
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should not present in Menu option
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snapshot | true              | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snapshot | false         | ApplicationView    | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true         | ApplicationView    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab

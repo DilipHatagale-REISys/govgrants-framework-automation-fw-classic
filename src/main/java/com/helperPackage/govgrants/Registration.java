@@ -48,7 +48,8 @@ public class Registration {
     public By getSignInLinkLocator(String linkText) {
         return By.xpath("//form//a[" + I.amPerforming().sanityOfXpathTo().equals("text()", linkText) + "]"
                 + " | "
-                + "//form//input[@type='submit' and " + I.amPerforming().sanityOfXpathTo().equals("@value", linkText) + "]");
+                + "//form//input[@type='submit' and " + I.amPerforming().sanityOfXpathTo().equals("@value", linkText) + "] |" +
+                "//div[@class='article articleBulbWrap']//div[contains(text(),'"+linkText+"')]");
     }
 
     public List<String> getSignInLinkNames() {

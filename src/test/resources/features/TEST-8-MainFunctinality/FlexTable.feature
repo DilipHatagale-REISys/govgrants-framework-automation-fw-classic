@@ -12214,7 +12214,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-<<<<<<< HEAD
     ###########################Test suite: Flex table functionality (Suite ID: 338455)###########################
 
   @338662
