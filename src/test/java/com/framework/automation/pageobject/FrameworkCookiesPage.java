@@ -136,10 +136,14 @@ public class FrameworkCookiesPage extends GovGrantsManager {
         }
     }
 
+    /*
+     * assert true if specific column and arrow is displayed for Flextable
+     */
     private static boolean arrowDisplayedInRelatedField(String arrow, String columnName, String tableid) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//span[text()='" + columnName + "']/parent::span/following::i[@class='ng-scope fa fa-long-arrow-" + arrow + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//span[text()='" + columnName + "']/parent::span/following::i[@class='ng-scope fa fa-long-arrow-" + arrow + "'] |" +
+                    " //div[@id='"+tableid+"']//thead//*[@title='"+columnName+"']/parent::span//span[contains(@class,'fa fa-arrow-"+arrow+"')]"))) {
                 flag = true;
             }
         } catch (Exception e) {

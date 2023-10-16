@@ -567,7 +567,21 @@ public class FlexTableSteps {
 
     @Then("^I (see|do not see) filter \"([^\"]*)\" is displayed$")
     public void iSeeFilterIsDisplayed(String usage, String advanceFilterClass) {
-        flexTablePage.ValidateAdvanceFilterIsWorkOrNot(usage, advanceFilterClass);
+        flexTablePage.ValidateAdvanceFilterIsWorkOrNotInFlextable(usage, advanceFilterClass);
     }
 
+    @Then("I see {string} as header of flex table")
+    public void iSeeAsHeaderOfFlexTable(String headerName) {
+        flexTablePage.assertHeaderNameDisplayed(headerName);
+    }
+
+    @Then("^I (see|do not see) header \"([^\"]*)\" in flex table id \"([^\"]*)\" get sorted in \"([^\"]*)\" order")
+    public void iSeeHeaderInFlexTableIdGetSortedInOrder(String usage, String headerName, String tableId, String index) {
+        flexTablePage.validateSequenceOfHeaderOfFlexTable(usage, headerName, tableId, index);
+    }
+
+    @Then("I do not see \"([^\"]*)\" button inside \"([^\"]*)\" flex table$")
+    public void iDoNotSeeButtonInsideFlexTable(String buttonName, String headerName) {
+        flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(buttonName, headerName);
+    }
 }
