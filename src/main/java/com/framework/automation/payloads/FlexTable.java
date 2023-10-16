@@ -401,6 +401,13 @@ public class FlexTable {
                         payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__OrderBy__c), value);
+                break;
+            case "SORT DIRECTION":
+                finalPayload = String.format(
+                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__Sort_Direction__c), value);
+                break;
         }
         System.out.println(finalPayload);
         return finalPayload;
