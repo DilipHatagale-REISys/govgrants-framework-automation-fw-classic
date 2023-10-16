@@ -1,15 +1,18 @@
 package com.framework.automation.pageobject;
 
+import com.helperPackage.controller.DeviceBucket;
 import com.helperPackage.handlers.govgrants;
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.controller.TestingBlazeGlobal;
 import com.helperPackage.objects.Elements;
+import com.helperPackage.objects.InstanceRecording;
 import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
 import java.time.YearMonth;
@@ -19,6 +22,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class PageLayoutPage extends GovGrantsManager {
+
 
     /******* "Variables and Locators" *****************/
     private final By overViewHeader, overViewTitle, headerInstructionText, headerOverviewTab,
@@ -1939,8 +1943,9 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private Boolean isExpectedNumberOfElementPresent(String titleName, int number) {
         boolean flag = false;
-        List<Elements> firstRowElements = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3//a[contains(text(),'" + titleName
-                + "')]/ancestor::div[@class='panel-heading']/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
+        List<Elements> firstRowElements = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3//a[text()='" + titleName
+                + "']/ancestor::div[@class='panel-heading']/following-sibling::div[contains(@id,'toggleBlock')]/div[1]/div"));
+        System.out.println("Size of 1st row= " + firstRowElements.size());
         if (firstRowElements.size() == number) {
             flag = true;
         } else {
@@ -3590,16 +3595,16 @@ public class PageLayoutPage extends GovGrantsManager {
 
     public void assertUpOrDownArrowDisplayedOrNotDisplayed(String usage, String arrow, String columnName) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(sortArrowDisplayedOrNot(arrow,columnName));
+            Assert.assertTrue(sortArrowDisplayedOrNot(arrow, columnName));
         } else if (usage.equalsIgnoreCase("softly see")) {
-            I.amPerforming().assertionsTo().assertThat(sortArrowDisplayedOrNot(arrow,columnName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(sortArrowDisplayedOrNot(arrow, columnName)).isTrue();
         }
     }
 
     private boolean sortArrowDisplayedOrNot(String arrow, String columnName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='"+ columnName +"']/following::span[@class='fa fa-arrow-"+ arrow +" ng-scope']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + columnName + "']/following::span[@class='fa fa-arrow-" + arrow + " ng-scope']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -3607,4 +3612,199 @@ public class PageLayoutPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertDisplayedHelpIconornot(String usage, String fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(helpIconDisplayedorNot(fieldName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(helpIconDisplayedorNot(fieldName)).isFalse();
+        }
+    }
+
+    private boolean helpIconDisplayedorNot(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    public void assertMenuOptionorNot(String usage, String menu) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(ismenuButtonDisplayedorNot(menu)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(ismenuButtonDisplayedorNot(menu)).isFalse();
+        }
+    }
+
+    private boolean ismenuButtonDisplayedorNot(String menu) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//a[@title='" + menu + "']//span[@class='fa fa-bars menuIcon']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    public void assertButtonIsDisplayedOnPageLayout(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedorNot(buttonName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isButtonDisplayedorNot(buttonName)).isFalse();
+        }
+    }
+
+    private boolean isButtonDisplayedorNot(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "'] |" +
+                    "//div[@class='pull-right']//a[@class='btn btnCompact' and contains(text(),'" + buttonName + "')] |" +
+                    "//div[@class='pull-right']//input[@value='" + buttonName + "'] |" +
+                    "//div[@id='headerButtonsPanel']//button//span[@class='hidden508 ng-binding' and contains(text(),'" + buttonName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    Actions actions;
+
+    public void assertHoverTheMouse(String buttonName) {
+        actions = new Actions(((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver());
+        actions.moveToElement(I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='headerButtonsPanel']//button[@title='" + buttonName + "']")));
+    }
+
+    public void assertHoverText(String usage, String buttonName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isHoverTextDisplayedOrNot(buttonName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isHoverTextDisplayedOrNot(buttonName)).isFalse();
+
+        }
+    }
+
+    private boolean isHoverTextDisplayedOrNot(String buttonName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='headerButtonsPanel']//*[@title='" + buttonName + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    public void assertSubtabDisplayed(String usage, String subTab) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubTabDisplayedOrNot(subTab)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubTabDisplayedOrNot(subTab)).isFalse();
+        }
+    }
+
+    private boolean isSubTabDisplayedOrNot(String subTab) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li//a[@name='" + subTab + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    public void assertSubtabWithIcon(String usage, String subTab, String icon) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubTabWithIconDisplayedOrNot(subTab, icon)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isSubTabWithIconDisplayedOrNot(subTab, icon)).isFalse();
+        }
+    }
+
+    private boolean isSubTabWithIconDisplayedOrNot(String subTab, String icon) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//li//a[@name='" + subTab + "']//span[@class='" + icon + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+    }
+
+    public void assertSubtabSequence(String usage, String subTab, String sequence) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(subTabSequence(subTab, sequence)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(subTabSequence(subTab, sequence)).isFalse();
+        }
+    }
+
+    private boolean subTabSequence(String subTab, String sequence) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//ul[@id='topTabsID']/li/a)[" + sequence + "]"));
+            String actionElement = elementSequence.getAttribute("name");
+            if (actionElement.equalsIgnoreCase(subTab)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertBulbIconAtHeaderInstructionDiplayedOrNot(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isBulbIconDisplayedOrNot());
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isBulbIconDisplayedOrNot());
+        }
+    }
+
+    private static boolean isBulbIconDisplayedOrNot() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'article')]//*[@class='bulbIcon']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertfieldHeader(String usage, String fieldName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isFileldDisplayedInHeaderOrNot(fieldName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFileldDisplayedInHeaderOrNot(fieldName)).isFalse();
+        }
+
+    }
+
+    private boolean isFileldDisplayedInHeaderOrNot(String fieldName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("(//div[@class='panel-body collapse in']//span[contains(text(),'" + fieldName + "')])[1] |" +
+                    "(//div[@class='overviewHeader']//span[contains(text(),'" + fieldName + "')])[1]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+
+        }
+        return flag;
+
+    }
+
 }

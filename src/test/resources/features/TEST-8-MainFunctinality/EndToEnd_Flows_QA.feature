@@ -1425,7 +1425,7 @@ Business Need: security review Scenarios
       | Is Key Contact | equals to | true |
     Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
 
-  @110210   @verifyAnnouncementInApprovedMode @flow
+  @vrush @110210   @verifyAnnouncementInApprovedMode @flow
   Scenario: validate announcement in approved state
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
