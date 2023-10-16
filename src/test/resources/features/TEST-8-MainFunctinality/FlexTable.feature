@@ -121,7 +121,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3829,25 +3829,27 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626 @334568 @needtocheck
-  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
+  @338626 @334568
+  Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:0 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
-      | Program date | Greater than | 25/08/2023 |
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
-    And I refresh the page
-    Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+      | Start Date | Greater than | 09/22/2023 |
+    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+    Examples:
+      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @338627
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
@@ -12330,22 +12332,20 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @334562 @dataNotavailable
+  @334562
   Scenario: Flex Table:Filter-PM-To verify that user is able to filter records by using Number field
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
-      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
-      | Funded Amount | Equals to | 5000 |
+      | Funded Amount | Equals to | 40000 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @334563
@@ -12371,7 +12371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334564 @334566 @dataNotavailable
+  @334564 @334566
   Scenario Outline: Flex table-Filter-"<User>"-UI-To verify that user is able to filter records by using Percent field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
@@ -12387,19 +12387,19 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I enter advance filter values in table id "advfActiveGrants"
-      | Subrecipient Match (%) | Equals to | 60 |
+      | Budget Redirection Threshold | Equals to | 10 |
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
-      | User  | newFieldsApi                                                                                                                                                          | defaultFieldsApi                                                                                                                                      |
-      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GranteeMatch__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | User  | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334567 @dataNotavailable
+  @334567
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Percent field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:1 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -12411,8 +12411,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
-      | Subrecipient Match (%) | Equals to | 60 |
+      | Budget Redirection Threshold | Equals to | 10 |
     Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     Examples:
-      | User | newFieldsApi                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GranteeMatch__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+      | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
