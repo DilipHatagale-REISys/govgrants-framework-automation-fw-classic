@@ -121,7 +121,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Records Count | false         | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Page Size           | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1141,7 +1141,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User  | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                                      |
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,GrantDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-
   @334664
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for long text field
     Given I have "default" configuration as below:
@@ -1175,7 +1174,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                  | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,GrantDescription__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-
   @334667
   Scenario Outline: Flex table-Quick Search-Admin-UI-To verify that user is able to search for Rich text area field
     Given I have "default" configuration as below:
@@ -1191,7 +1189,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
-
 
   @334668
   Scenario Outline: Flex table-Quick Search-PM-UI-To verify that user is able to search for Rich text area field
@@ -3018,7 +3015,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I hovering mouse on help text "ActiveGrantstooltip" icon
-    And I pause execution for "10" seconds
     Then I see "Help text for Automation" shown as help text
 
   @339450
@@ -3033,7 +3029,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I hovering mouse on help text "ActiveGrantstooltip" icon
-    And I pause execution for "10" seconds
     Then I see "Help text for Automation" shown as help text
 
   @339451
@@ -3394,7 +3389,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
-  @338600
+  @338600 @334544
   Scenario: Advanced Filter- Admin- Config -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3415,7 +3410,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Funded Amount" under field name "Column Name" inside flex table
     Then I see dropdown value "Abbreviation" under field name "Column Name" inside flex table
 
-  @338601
+  @338601 @334545
   Scenario: Advanced Filter- PM- UI -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3436,7 +3431,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see dropdown value "Funded Amount" under field name "Column Name" inside flex table
     Then I see dropdown value "Abbreviation" under field name "Column Name" inside flex table
 
-  @338602
+  @338602 @334546
   Scenario: Advanced Filter- SPI- UI -Verify all fields name displayed under column name dropdown
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3722,8 +3717,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338620
+  @338620 @334559
   Scenario: Records description - PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+  |Flex table-Filter-PM-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3745,8 +3741,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
-  @338622
+  @338622 @334549 @334560
   Scenario: Records description - SPI- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+  |Flex table-Filter-SPI-To verify that user is able to filter records by using Text field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3830,28 +3827,30 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Greater than ' operator
+  @338626 @334568
+  Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
+  |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:0 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
-      | Program date | Greater than | 25/08/2023 |
-    And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
-    And I refresh the page
-    Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+      | Start Date | Greater than | 09/22/2023 |
+    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+    Examples:
+      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @338627
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Less than ' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3871,7 +3870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338628
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the date field with 'Greater than or equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3891,7 +3890,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338630
-  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Less than or equal to' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3910,8 +3909,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338631
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Contains ' operator
+  @338631 @334547 @334558
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the text field with 'Contains' operator
+  |Flex table-Filter-Admin-To verify that user is able to filter records by using EGMS Id field|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3935,7 +3935,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "toggleFlexTablePrograms"
 
   @338633
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Does not contains' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3954,7 +3954,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338634
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Start with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -3973,7 +3973,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338635
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'End with' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3992,7 +3992,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338636
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist  field with 'Equal to  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Picklist field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4010,7 +4010,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338638
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the text field with 'Not equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -4044,7 +4044,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338641
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than ' operator
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Greater than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4063,7 +4063,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
   @338643
-  Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than ' operator
+  Scenario:Flex Table :Admin:-To verify, advanced filter should work for the Currency field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4082,7 +4082,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338644
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Currency field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4101,7 +4101,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338645
-  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to operator
+  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the Currency field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:2 |
@@ -4119,8 +4119,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338648
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number  field with 'Equal to' operator
+  @338648 @334561
+  Scenario: Flex Table :Admin:-To verify, advanced filter should work for the Number field with 'Equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4195,7 +4195,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
   @338653
-  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to  ' operator
+  Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -4252,7 +4252,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I do not see flex table header equals "#" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @338505
   Scenario: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
@@ -4266,7 +4266,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I do not see select check box enabled in flex table
-    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338507
   Scenario: Record Selection- PM- UI- Verify Record Selection Column should not display on UI
@@ -4279,7 +4279,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338508
   Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
@@ -4292,7 +4292,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I do not see flex table header equals "Select All Check Box" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
 
   @338509
   Scenario: Record Selection- Admin- Config- Verify correct Record Selection Column Header displays on UI
@@ -4305,7 +4306,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338511
   Scenario: Record Selection- PM- UI- Verify correct Record Selection Column Header displays on UI
@@ -4318,7 +4319,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
   @338513
   Scenario: Record Selection- SPI- UI- Verify correct Record Selection Column Header displays on UI
@@ -4331,7 +4332,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I see flex table header equals "Select All Check Box" inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
   @338514
   Scenario: Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI
@@ -5287,7 +5288,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "5" seconds
     Then I see "Help text for Automation" shown as help text
 
-  @336080
+  @336080 @336195
   Scenario: Flex table-Header help text-Admin-Config-To verify that when user not entered any header help text, then help icon not displayed on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5300,7 +5301,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "fa fa-info helpIcon" displayed on flex table
 
-  @336081
+  @336081 @336196
   Scenario: Flex table-Header help text-PM-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5313,7 +5314,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "fa fa-info helpIcon" displayed on flex table
 
-  @336082
+  @336082 @336197
   Scenario: Flex table-Header help text-SPI-UI-To verify that when user not entered any header help text, then help icon not displayed on flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -5430,8 +5431,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see text "Automation Header Text" in header instruction field flex table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @336091
+  @336091 @336199
   Scenario: Flex table-Header Instruction-Admin-Config-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+  Header Instruction - Admin - Config - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
       | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
@@ -5445,8 +5447,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @336092
+  @336092 @336200
   Scenario: Flex table-Header Instruction-PM-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+  Header Instruction - PM - UI - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
       | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
@@ -5460,8 +5463,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see text "Automation Header Text" in header instruction field flex table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @336093
+  @336093 @336201
   Scenario: Flex table-Header Instruction-SPI-UI-To verify that when user not enter any text in header instruction field then no any instruction displayed as a header instruction below Header of flex table.
+  Header Instruction - SPI - UI - To verify that if user not entered any header instruction in respective field in config, then no any header instruction text get displayed on UI above table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index  | true              | ApiGeneratedId:1 |
@@ -7919,14 +7923,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Name | Test Automation | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
     Then I see "Test Automation" as title for Actions inside flex table action
 
   @333965
@@ -7935,14 +7936,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Name | Test Automation | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | Test Automation | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
     Then I see "Test Automation" as title for Actions inside flex table action
 
   @333966
@@ -7965,12 +7963,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | IconCssTest   | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text |               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Icon CSS         | IconCssTest   | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see "IconCssTest" as title for Actions inside flex table action
 
   @333970
@@ -7979,12 +7978,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | IconCssTest   | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | IconCssTest   | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see "IconCssTest" as title for Actions inside flex table action
 
   @333971
@@ -8007,12 +8006,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  |               | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "View" itself get displayed on UI
 
   @333973
@@ -8021,12 +8020,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  |               | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  |               | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "View" itself get displayed on UI
 
 
@@ -8050,12 +8049,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName   | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Name | View                                           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Icon CSS    | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "View" itself get displayed on UI
 
   @333977
@@ -8064,12 +8064,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "pm" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "View" itself get displayed on UI
 
   @333978
@@ -8093,16 +8093,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
-      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 3                                              | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
     And I pause execution for "5" seconds
     Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
@@ -8115,20 +8115,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 1                                              | Programs           | Name                      | Edit                       |
-      | Flex Table Action     | Sequence  | 2                                              | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 3                                              | Programs           | Name                      | Delete                     |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 1                                              | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 2                                              | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
-    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
 
   @333991
   Scenario: Flex table-Actions-Sequence-SPI-UI-To verify that actions displayed on UI as per given sequence
@@ -8153,20 +8148,19 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
-    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
-    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
-    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
+    Then I see sequence of "Delete" Actions is "2" on UI as per given sequence in flex table
+    Then I see sequence of "Edit" Actions is "3" on UI as per given sequence in flex table
 
   @333993
   Scenario: Flex table-Actions-Sequence-PM-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
@@ -8175,20 +8169,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Edit                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | View                       |
-      | Flex Table Action     | Sequence  | 0                                              | Programs           | Name                      | Delete                     |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence  | 0                                              | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
-    Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
-    Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
-    Then I see sequence of "Delete" Actions is "3" on UI as per given sequence in flex table
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
 
   @333994
   Scenario: Flex table-Actions-Sequence-SPI-UI-To verify the sequence of actions displayed on UI, if user not provided sequence
@@ -8213,15 +8203,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
 
@@ -8232,15 +8220,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
       | Flex Table Action     | Sequence    | 1                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | Test Button Help Text                          | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test Button Help Text                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     And I hovering mouse on action "Test Button Help Text" inside flex table
     Then I see action name "Test Button Help Text" itself get displayed on UI
 
@@ -8267,17 +8253,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
-    And I hovering mouse on action "" inside flex table
-    Then I see action name "" itself get displayed on UI
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see action name "View" itself get displayed on UI
 
   @334001
   Scenario: Flex table-Actions-Button Help Text-PM-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
@@ -8285,17 +8268,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text |                                                | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
-    And I hovering mouse on action "" inside flex table
-    Then I see action name "" itself get displayed on UI
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see action name "View" itself get displayed on UI
 
   @334003
   Scenario: Flex table-Actions-Button Help Text-SPI-UI-To verify that if user not provided any button help text, then no any help text displayed on hovering mouse over the action name
@@ -8311,8 +8291,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    And I hovering mouse on action "" inside flex table
-    Then I see action name "" itself get displayed on UI
+    Then I see action name "View" itself get displayed on UI
 
   @334004
   Scenario: Flex table-Actions-Button help text-Admin-Config-To verify the maximum characters limit for Button help text field
@@ -8320,15 +8299,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | HiDilip                                        | Programs           | Name                      | View                       |
-    When I login to "As a Grantor" app as "Admin" user
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | HiDilip                                        | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence         | 1                                              | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence         | 2                                              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence         | 3                                              | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Program for actions rendered on flex table"
-    And I pause execution for "5" seconds
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see characters limit "7" for "title" attribute Button help text field
 
   @334005
@@ -8337,13 +8317,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "Test1234" itself get displayed on UI
 
   @334006
@@ -8352,13 +8332,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | Test1234                                       | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | Test1234                                       | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "Test1234" itself get displayed on UI
 
   @334008
@@ -8383,13 +8363,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "1234567890" itself get displayed on UI
 
   @334010
@@ -8398,13 +8378,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | 1234567890                                     | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | 1234567890                                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "1234567890" itself get displayed on UI
 
   @334013
@@ -8429,13 +8409,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "!@#$%%%^&*()" itself get displayed on UI
 
   @334016
@@ -8444,13 +8424,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
     Then I see action name "!@#$%%%^&*()" itself get displayed on UI
 
   @334017
@@ -8469,17 +8449,5473 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Grants - All"
     Then I see action name "!@#$%%%^&*()" itself get displayed on UI
 
-    @334019
-    Scenario: Flex table-Actions-Action URL-Admin-Config-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
-        | Flex Table Action     | Action Name | View              | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | Programs           | Name                      | View                       |
-        | Flex Table Action     | Button Help Text | !@#$%%%^&*()                                   | Programs           | Name                      | View                       |
-      When I login to "As a Grantor" app as "Admin" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - Draft"
-      Then I see action name "!@#$%%%^&*()" itself get displayed on UI
+  @334024
+  Scenario Outline: Flex table-Actions-Action URL-Admin-Config-To verify that if user provided Invalid action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                                       |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
+
+  @334027
+  Scenario Outline: Flex table-Actions-Action URL-PM-UI-To verify that if user provided Invalid action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                                       |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
+
+  @334028
+  Scenario Outline: Flex table-Actions-Action URL-SPI-UI-To verify that if user provided Invalid action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see page title "Service Not Available"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                         |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id}WrongURL |
+
+  @334029
+  Scenario Outline: Flex table-Actions-Action URL-Admin-Config-To verify that if user not provided any action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcements ~ As a Grantor"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} |                   |
+
+  @334030
+  Scenario Outline: Flex table-Actions-Action URL-PM-UI-To verify that if user not provided any action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcements ~ As a Grantor"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} |                   |
+
+  @334031
+  Scenario Outline: Flex table-Actions-Action URL-SPI-UI-To verify that if user not provided any action URL, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue |
+      | /apex/GrantView?id={!Grant__c.Id} |                   |
+
+
+  @334019
+  Scenario Outline: Actions-Action URL-Admin-Config-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334021
+  Scenario Outline: Flex table-Actions-Action URL-PM-UI-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334022
+  Scenario Outline: Flex table-Actions-Action URL-SPI-UI-To verify that if user provided valid action URL, then on clicking on respective action, it get navigated to added action URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334032
+  Scenario Outline: Flex table-Actions-Action URL Long-Admin-Config-To verify that if user not provided any action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334033
+  Scenario Outline: Flex table-Actions-Action URL Long-PM-UI-To verify that if user not provided any action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334034
+  Scenario Outline: LWC-Flex table-Actions-Action URL Long-SPI-UI-To verify that if user not provided any action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    And I pause execution for "15" seconds
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   |                       |
+
+  @334036
+  Scenario Outline: Flex table-Actions-Action URL Long-Admin-Config-To verify that if user provided Invalid action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       | /apex/AnnouncementView?id={!Announcement__c.Id}wrongURL |
+
+  @334038
+  Scenario Outline: Flex table-Actions-Action URL Long-PM-UI-To verify that if user provided Invalid action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size        | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table Action     | Action URL              | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior         | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long         | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                                   |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       | /apex/AnnouncementView?id={!Announcement__c.Id}wrongURL |
+
+  @334040
+  Scenario Outline: Flex table-Actions-Action URL Long-SPI-UI-To verify that if user provided Invalid action URL Long, then on clicking on respective action, it not get navigated to correct page/anywhere
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see page title "Service Not Available"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue                     |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id}wrongURL |
+
+  @334041
+  Scenario Outline: Flex table-Actions-Action URL Long-Admin-Config-To verify that if user provided valid action URL Long, then on clicking on respective action, it get navigated to respective URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size        | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table Action     | Action URL              | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior         | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long         | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334042
+  Scenario Outline: Flex table-Actions-Action URL Long-PM-UI-To verify that if user provided valid action URL Long, then on clicking on respective action, it get navigated to respective URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size        | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table Action     | Action URL              | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior         | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long         | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334044
+  Scenario Outline: Flex table-Actions-Action URL Long-SPI-UI-To verify that if user provided valid action URL Long, then on clicking on respective action, it get navigated to respective URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList                    | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList                    | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in same window                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334046
+  Scenario Outline: Flex table-Actions-Action Behavior-Admin-Config-To verify that on clicking on action, respective action URL get opened in same window, if Action behavior selected is "Open in Same window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size        | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table Action     | Action URL              | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior         | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long         | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue                           |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @304047
+  Scenario Outline: Flex table-Actions-Action Behavior-PM-UI-To verify that on clicking on action, respective action URL get opened in same window, if Action behavior selected is "Open in Same window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size        | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true                    | ActiveFundingOpportunitiesAll | Name                      |                            |
+      | Flex Table Action     | Action URL              | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior         | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long         | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334049
+  Scenario Outline: Flex table-Actions-Action Behavior-SPI-UI-To verify that on clicking on action, respective action URL get opened in same window, if Action behavior selected is "Open in Same window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size  | true                                           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true                                           | GrantsList         | Name                      |                            |
+      | Flex Table Action     | Icon CSS          | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text  |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL        | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior   | Open in same window                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334053
+  Scenario Outline: Flex table-Actions-Action Behavior-Admin-Config-To verify that on clicking on action, respective action URL get opened in New window, if Action behavior selected is "Open in New window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in new window      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see "Announcement View" in new tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334054
+  Scenario Outline: Flex table-Actions-Action Behavior-PM-UI-To verify that on clicking on action, respective action URL get opened in New window, if Action behavior selected is "Open in New window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in new window      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see "Announcement View" in new tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334055
+  Scenario Outline: Flex table-Actions-Action Behavior-SPI-UI-To verify that on clicking on action, respective action URL get opened in New window, if Action behavior selected is "Open in New window"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:1 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size  | true                                           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true                                           | GrantsList         | Name                      |                            |
+      | Flex Table Action     | Icon CSS          | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text  |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL        | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior   | Open in new window                             | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see "Grant View" in new tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334057
+  Scenario Outline: Flex table-Actions-Action Behavior-Admin-Config-To verify that on clicking on action, respective action URL get opened in Modal, if Action behavior selected is "Open in Overlay"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in overlay         | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see "Announcement View" opens in overLay window
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334058
+  Scenario Outline: Flex table-Actions-Action Behavior-PM-UI-To verify that on clicking on action, respective action URL get opened in Modal, if Action behavior selected is "Open in Overlay"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in overlay         | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see "Announcement View" opens in overLay window
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334059
+  Scenario Outline: Flex table-Actions-Action Behavior-SPI-UI-To verify that on clicking on action, respective action URL get opened in Modal, if Action behavior selected is "Open in Overlay"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in overlay                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see "Grant View" modal window is displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334060
+  Scenario Outline: Flex table-Actions-Action Behavior-Admin-Config-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "Open in Inline mode"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in inline mode     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334061
+  Scenario Outline: Flex table-Actions-Action Behavior-PM-UI-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "Open in Inline mode"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in inline mode     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334063
+  Scenario Outline: Flex table-Actions-Action Behavior-SPI-UI-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "Open in Inline mode"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | Open in inline mode                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334064
+  Scenario Outline: Flex table-Actions-Action Behavior-Admin-Config-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | none                    | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334065
+  Scenario Outline: Flex table-Actions-Action Behavior-PM-UI-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue           | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlNewValue>     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | none                    | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | actionUrlLongOldValue | actionUrlLongNewValue |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                       |                       |
+
+  @334067
+  Scenario Outline:Flex table-Actions-Action Behavior-SPI-UI-To verify that on clicking on action, respective action URL get opened in Inline mode, if Action behavior selected is "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue>     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long | <actionUrlLongOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS         | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                                                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | none                                           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL Long  | <actionUrlLongNewValue>                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    When I click on "View" icon for "security Review_Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlLongOldValue             | actionUrlNewValue | actionUrlLongNewValue             |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |                   | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334068
+  Scenario Outline:Flex table-Actions-Render Location-Admin-Config-To verify that on selecting Location "Top", respective action get rendered on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334069
+  Scenario Outline: Flex table-Actions-Render Location-PM-UI-To verify that on selecting Location "Top", respective action get rendered on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Then I see "New" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334070
+  Scenario Outline: Flex table-Actions-Render Location-SPI-UI-To verify that on selecting Location "Top", respective action get rendered on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "View" button inside "Grants - All" flex table
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334071
+  Scenario Outline: Flex table-Actions-Render Location-Admin-Config-To verify that on selecting Location "Row", respective action get rendered at row level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334072
+  Scenario Outline: Flex table-Actions-Render Location-PM-UI-To verify that on selecting Location "Row", respective action get rendered at row level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334073
+  Scenario Outline: Flex table-Actions-Render Location-SPI-UI-To verify that on selecting Location "Row", respective action get rendered at row level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    Then I see "View" row action Button at position "0"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334074
+  Scenario Outline: Flex table-Actions-Render Location-Admin-Config-To verify that on selecting Location "None", respective action not get rendered on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334075
+  Scenario Outline: Flex table-Actions-Render Location-PM-UI-To verify that on selecting Location "None", respective action not get rendered on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334076
+  Scenario Outline: Flex table-Actions-Render Location-SPI-UI-To verify that on selecting Location "None", respective action not get rendered on table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    Then I see "View" icon for "Vrush Announcement" is not displayed inside flex table
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334077
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Header action display type - "None", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I click on "Menu" button inside table id "toggleFlexTableActiveFundingOpportunitiesAll"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334078
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Header action display type - "None", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I click on "Menu" button inside table id "toggleFlexTableActiveFundingOpportunitiesAll"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334080
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Header action display type - "None", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I click on "Menu" button inside table id "toggleFlexTableGrantsList"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableGrantsList"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334081
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Header action display type - "Menu", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Menu                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I click on "Menu" button inside table id "toggleFlexTableActiveFundingOpportunitiesAll"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334082
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Header action display type - "Menu", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Menu                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I click on "Menu" button inside table id "toggleFlexTableActiveFundingOpportunitiesAll"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334084
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Header action display type - "Menu", respective action displayed under Menu section
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Menu                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I click on "Menu" button inside table id "toggleFlexTableGrantsList"
+    Then I see "View" option is getting displayed under Menu in table "toggleFlexTableGrantsList"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334085
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Header action display type - "Button", respective action displayed as a Button on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334086
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Header action display type - "Button", respective action displayed as a Button on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334087
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Header action display type - "Button", respective action displayed as a Button on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "View" button inside "Grants - All" flex table
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334088
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Header action display type - "Link", respective action displayed as a Link on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Link                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334089
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Header action display type - "Link", respective action displayed as a Link on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Link                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    Then I see "View" button inside "All Announcements" flex table
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334090
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Header action display type - "Link", respective action displayed as a Link on top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Top                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Link                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "View" button inside "Grants - All" flex table
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334091
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Render Location - "Row", Header action display type get unselected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334092
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Render Location - "Row", Header action display type get unselected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334093
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Render Location - "Row", Header action display type get unselected
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence   | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    Then I see "View" row action Button at position "0"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334095
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Render Location - "Row" and Header action display type - "None", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334096
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Render Location - "Row" and Header action display type - "None", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334097
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Render Location - "Row" and Header action display type - "None", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | None                | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "security Review_Application"
+    Then I see "View" row action Button at position "0"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334098
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Render Location - "Row" and Header action display type - "Button", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334100
+  Scenario Outline: Flex table-Actions-Header action display type-PM-UI-To verify that on selecting Render Location - "Row" and Header action display type - "Button", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 2                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    Then I see "View" row action Button at position "1"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334101
+  Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Render Location - "Row" and Header action display type - "Button", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334102
+  Scenario Outline: Flex table-Actions-Action behavior-Admin-Config-To verify that on selecting Display area - "Sidebar", respective action displayed on sidebar i.e. at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Sidebar             | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334103
+  Scenario Outline: Flex table-Actions-Action behavior-PM-UI-To verify that on selecting Display area - "Sidebar", respective action displayed on sidebar i.e. at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Sidebar             | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334104
+  Scenario Outline: Flex table-Actions-Action behavior-SPI-UI-To verify that on selecting Display area - "Sidebar", respective action displayed on sidebar i.e. at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS                   | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Sidebar                                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334105
+  Scenario Outline: Flex table-Actions-Action behavior-Admin-Config-To verify that on selecting Display area - "Page Header", respective action displayed on page header i.e. top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Page Header         | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334107
+  Scenario Outline: Flex table-Actions-Action behavior-PM-UI-To verify that on selecting Display area - "Page Header", respective action displayed on page header i.e. top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Page Header         | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334108
+  Scenario Outline: Flex table-Actions-Action behavior-SPI-UI-To verify that on selecting Display area - "Page Header", respective action displayed on page header i.e. top of the table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS                   | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Page Header                                    | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334109
+  Scenario Outline: Flex table-Actions-Action behavior-Admin-Config-To verify that on selecting Display area - "Both", respective action displayed at both the position i.e. at sidebar and on Page Header
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Both                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334111
+  Scenario Outline: Flex table-Actions-Action behavior-PM-UI-To verify that on selecting Display area - "Both", respective action displayed at both the position i.e. at sidebar and on Page Header
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Both                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334113
+  Scenario Outline: Flex table-Actions-Action behavior-SPI-UI-To verify that on selecting Display area - "Both", respective action displayed at both the position i.e. at sidebar and on Page Header
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue                                  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS                   | govgrants_config:FlexTableViewActionNewIconCss | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location                   | Row                                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue>                            | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                                         | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Display Area               | Both                                           | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334114
+  Scenario Outline: Flex table-Actions-Action behavior-Admin-Config-To verify that on selecting Display area - "None", respective action displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334115
+  Scenario Outline: Flex table-Actions-Action behavior-PM-UI-To verify that on selecting Display area - "None", respective action displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location        | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Display Area               | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334116
+  Scenario Outline: Flex table-Actions-Action behavior-SPI-UI-To verify that on selecting Display area - "None", respective action displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location        | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | GrantsList         | Name                      | View                       |
+#            | Flex Table Action     | Display Area               | None                                           | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334117
+  Scenario Outline: Flex table-Actions-Confirmation Box-Admin-Config-To verify that on enabling "Show Confirmation box" config, confirmation box get displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334118
+  Scenario Outline: Flex table-Actions-Confirmation Box-PM-UI-To verify that on enabling "Show Confirmation box" config, confirmation box get displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334119
+  Scenario Outline: Flex table-Actions-Confirmation Box-SPI-UI-To verify that on enabling "Show Confirmation box" config, confirmation box get displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334120
+  Scenario Outline: Flex table-Actions-Confirmation Box-Admin-Config-To verify that on disabling "Show Confirmation box" config, no any confirmation box displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I do not see Confirmation Message box displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334121
+  Scenario Outline: Flex table-Actions-Confirmation Box-PM-UI-To verify that on disabling "Show Confirmation box" config, no any confirmation box displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false                         | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I do not see Confirmation Message box displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334122
+  Scenario Outline: Flex table-Actions-Confirmation Box-SPI-UI-To verify that on disabling "Show Confirmation box" config, no any confirmation box displayed on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false                         | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I do not see Confirmation Message box displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334123
+  Scenario Outline: Flex table-Actions-Confirmation message-Admin-Config-To verify that whatever text entered in this field get displayed as a confirmation message on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I do not see Confirmation Message box displayed
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334125
+  Scenario Outline: Flex table-Actions-Confirmation message-PM-UI-To verify that whatever text entered in this field get displayed as a confirmation message on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I do not see Confirmation Message box displayed
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334128
+  Scenario Outline: Flex table-Actions-Confirmation message-SPI-UI-To verify that whatever text entered in this field get displayed as a confirmation message on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue                 | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                          | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Conformation Message Box Test | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window           | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "Conformation Message Box Test" is displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334129
+  Scenario Outline: Flex table-Actions-Confirmation message-Admin-Config-To verify that if no any text entered in this field, then no any confirmation message displayed on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334130
+  Scenario Outline: Flex table-Actions-Confirmation message-PM-UI-To verify that if no any text entered in this field, then no any confirmation message displayed on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334131
+  Scenario Outline: Flex table-Actions-Confirmation message-SPI-UI-To verify that if no any text entered in this field, then no any confirmation message displayed on UI, on clicking on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "" is displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334132
+  Scenario Outline: Flex table-Actions-Confirmation message-Admin-Config-To verify that if there is any limit to enter characters in Confirmation message
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see characters limit "5000" for Confirmation Message
+    Then I softly see confirmation box with body "<ConfirmationMessageText>" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGH |
+
+  @334133
+  Scenario Outline: Flex table-Actions-Confirmation message-PM-UI-To verify that if there is any limit to enter characters in Confirmation message
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see characters limit "5000" for Confirmation Message
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGH |
+
+  @334134
+  Scenario Outline: Flex table-Actions-Confirmation message-SPI-UI-To verify that if there is any limit to enter characters in Confirmation message
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window       | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see characters limit "5000" for Confirmation Message
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 | ConfirmationMessageText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} | ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGH |
+
+  @334135
+  Scenario Outline: Flex table-Actions-Confirmation message-Admin-Config-To verify that if user entered alphanumeric characters in Confirmation message, then it get displayed on UI, on respective action click
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "<ConfirmationMessageText>" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} | ABCDefgh@1234567890     |
+
+  @334137
+  Scenario Outline: Flex table-Actions-Confirmation message-PM-UI-To verify that if user entered alphanumeric characters in Confirmation message, then it get displayed on UI, on respective action click
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "<ConfirmationMessageText>" is displayed
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} | ABCDefgh@1234567890     |
+
+  @334138
+  Scenario Outline: Flex table-Actions-Confirmation message-SPI-UI-To verify that if user entered alphanumeric characters in Confirmation message, then it get displayed on UI, on respective action click
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | true                      | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I softly see confirmation box with body "<ConfirmationMessageText>" is displayed
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 | ConfirmationMessageText |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} | ABCDefgh@1234567890     |
+
+  @334139
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user selected Where to Open - "Same Window", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | SameWindow                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                        | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                         |
+
+  @334140
+  Scenario Outline: Flex table-Actions-Modal Config-PM-Config-To verify that if user selected Where to Open - "Same Window", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | SameWindow                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                        | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               | ConfirmationMessageText |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |                         |
+
+  @334141
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-Config-To verify that if user selected Where to Open - "Same Window", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue>       | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | <ConfirmationMessageText> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay           | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | SameWindow                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                        | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334149
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user selected Where to Open - "Modal", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | Modal               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334150
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user selected Where to Open - "Modal", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | Modal               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334152
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user selected Where to Open - "Modal", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | Modal               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334153
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user selected Where to Open - "None", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334155
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user selected Where to Open - "None", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334156
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user selected Where to Open - "None", then respective modal get opened in same window, on click on respective action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334157
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that modal width is same as that provided in Modal width config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 50%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334159
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that modal width is same as that provided in Modal width config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 50%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334160
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that modal width is same as that provided in Modal width config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 50%;"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334161
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user provided invalid modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -1                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334162
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user provided invalid modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -1                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334163
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user provided invalid modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -1                  | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334164
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify the correct format of modal width
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334165
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify the correct format of modal width
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334166
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify the correct format of modal width
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334167
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user provided negative value in modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -50                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334168
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user provided negative value in modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -50                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334169
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user provided negative value in modal width, then check the behavior
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | -60                 | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see modal window is open in same tab with style "width: 0%;"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334170
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that Title displayed on Modal is same as that provided in Modal Title config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test View           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334171
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that Title displayed on Modal is same as that provided in Modal Title config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test View           | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334172
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that Title displayed on Modal is same as that provided in Modal Title config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test View           | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334173
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user added alphanumeric values in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test1234            | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test1234" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334174
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user added alphanumeric values in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test1234            | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test1234" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334175
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user added alphanumeric values in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test1234            | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test1234" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334177
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user added only digits in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | 1234567890          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "1234567890" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334178
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user added only digits in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | 1234567890          | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "1234567890" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334179
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user added only digits in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | 1234567890          | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "1234567890" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334180
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user added Sp.characters in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test!@#$%^&*()_+    | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test!@#$%^&*()_+" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334181
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user added Sp.characters in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test!@#$%^&*()_+    | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test!@#$%^&*()_+" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334182
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user added Sp.characters in Modal title field, then same will displayed on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           | Test!@#$%^&*()_+    | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "Test!@#$%^&*()_+" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334183
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-Config-To verify that if user not entered any text in Modal title field, then Modal title will Action name and no Null value displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334184
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that if user not entered any text in Modal title field, then Modal title will be Action name and no Null value displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 50                  | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334185
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that if user not entered any text in Modal title field, then Modal title will be Action name and no Null value displayed there
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Where To Open ?       | None                | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Width           | 60                  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title           |                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    And I click on "View" icon in flex table for first draft record
+    Then I see "View" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334186
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in overlay     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    Then I see "Create Announcement" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334187
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location              | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL            | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL            | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Show Confirmation Box | false               | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior       | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    Then I see "Create Announcement" modal window is open in same tab
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334189
+  Scenario Outline: Flex table-Actions-Header action display type-Admin-Config-To verify that on selecting Render Location - "Row" and Header action display type - "Button", then respective action get displayed as a Link at each record level
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    Then I see "Edit" row action Button at position "0"
+    Then I see "View" row action Button at position "1"
+    Then I see "Delete" row action Button at position "2"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334190
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that View, Edit and Delete actions displayed on sidebar of the table i.e. to extreme right side and on clicking on it, respective actions get opened
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    Then I see "Edit" row action Button at position "0"
+    Then I see "View" row action Button at position "1"
+    Then I see "Delete" row action Button at position "2"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334191
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that View actions displayed on sidebar of the table i.e. to extreme right side and on clicking on it, respective actions get opened
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence    | 2                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location    | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL  | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    Then I see "View" row action Button at position "0"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see page title "Grant View"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334193
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-UI-To verify that View, Edit and Delete Icon CSS is displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    Then I see record "Test 11-Jul" having action "View" contain icon css "fa fa-eye"
+    Then I see record "Test 11-Jul" having action "Edit" contain icon css "fa fa-pencil"
+    Then I see record "Test 11-Jul" having action "Delete" contain icon css "fa fa-trash-o"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334194
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that View, Edit and Delete actions CSS is displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    Then I see record "Automation Internal Announcement for Testing" having action "View" contain icon css "fa fa-eye"
+    Then I see record "Automation Internal Announcement for Testing" having action "Edit" contain icon css "fa fa-pencil"
+    Then I see record "Automation Internal Announcement for Testing" having action "Delete" contain icon css "fa fa-trash-o"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334195
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that View actions CSS is displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence    | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location    | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL  | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    Then I see record "Vrush Application" having action "View" contain icon css "fa fa-eye"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334196
+  Scenario Outline: Flex table-Actions-Modal Config-Admin-UI-To verify that sequence of View, Edit and Delete actions are uniform in product
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    Then I see "Edit" row action Button at position "0"
+    Then I see "View" row action Button at position "1"
+    Then I see "Delete" row action Button at position "2"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    Then I see page title "Announcement View"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334197
+  Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that sequence of View, Edit and Delete actions are uniform in product
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | ActiveFundingOpportunitiesAll | Name                      | Edit                       |
+      | Flex Table Action     | Sequence                   | 2                   | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Sequence                   | 3                   | ActiveFundingOpportunitiesAll | Name                      | Delete                     |
+      | Flex Table Action     | Location                   | Row                 | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button              | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    Then I see "Edit" row action Button at position "0"
+    Then I see "View" row action Button at position "1"
+    Then I see "Delete" row action Button at position "2"
+    Examples:
+      | actionUrlOldValue                               | actionUrlNewValue                               |
+      | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
+
+  @334198
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that sequence of View, Edit and Delete actions are uniform in product
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence  |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                     | GrantsList         | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName   | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence    | 1                   | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Location    | Row                 | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action URL  | <actionUrlNewValue> | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Modal Title |                     | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Sequence    | 1                   | GrantsList         | Name                      | View                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    Then I see "View" row action Button at position "1"
+    Examples:
+      | actionUrlOldValue                 | actionUrlNewValue                 |
+      | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
+
+  @334502 @334505
+  Scenario Outline:Flex table-Detail config-Help text-Admin-Config-To verify that when user entered any help text in any of the field on flex table, then on UI help icon (i) get displayed besides respective column name/header,
+  Flex table-Detail config-Help text-Admin-UI-To verify that entered help text get displayed on mouse hover over the help icon on respective field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text           |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I pause execution for "2" seconds
+    And I hovering mouse on help text icon i inside column name "Award Ceiling" flex table
+    Then I see "Hello Automation" shown as help text
+    Examples:
+      | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @334503 @334506
+  Scenario Outline: Flex table-Detail config-Help text-PM-UI-To verify that when user entered any help text in any of the field on flex table, then on UI help icon (i) get displayed besides respective column name/header,Flex table-Detail config-Help text-PM-UI-To verify that entered help text get displayed on mouse hover over the help icon on respective field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text           |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
+    When I login to "As a Grantor" app as "pm" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I pause execution for "2" seconds
+    And I hovering mouse on help text icon i inside column name "Award Ceiling" flex table
+    Then I see "Hello Automation" shown as help text
+    Examples:
+      | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @334504 @334507
+  Scenario Outline: Flex table-Detail config-Help text-SPI-UI-To verify that when user entered any help text in any of the field on flex table, then on UI help icon (i) get displayed besides respective column name/header,Flex table-Detail config-Help text-SPI-UI-To verify that entered help text get displayed on mouse hover over the help icon on respective field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text           |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text           | Hello Automation | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>   | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I hovering mouse on help text icon i inside column name "Subaward Amount" flex table
+    Then I see "Hello Automation" shown as help text
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @334508 @334509 @334514 @334516
+  Scenario Outline: Flex table-Details config-Field Label Override-Admin-Config-To verify that text entered in "Field Label Override" field, get displayed as a Label of respective field on UI,
+  Flex table-Details config-Field Label Override-Admin-Config-To verify that if user entered text on new lines (added more than one lines) in "Field Label Override" field, then it get displayed as a Label of respective field on UI
+  Flex table-Details config-Field Label Override-PM-UI-To verify that if user entered text on new lines (added more than one lines) in "Field Label Override" field, then it get displayed as a Label of respective field on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text            |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text            |                 | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Field Label Override | Automation Test | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Automation Test" in flex table header "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | Users | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @334511 @334518
+  Scenario Outline: Flex table-Details config-Field Label Override-SPI-UI-To verify that text entered in "Field Label Override" field, get displayed as a Label of respective field on UI,
+  Flex table-Details config-Field Label Override-SPI-UI-To verify that if user entered text on new lines (added more than one lines) in "Field Label Override" field, then it get displayed as a Label of respective field on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text            |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text            |                 | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Automation Test | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Automation Test" in flex table header "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @334523 @334524
+  Scenario Outline: Flex table-Details config-Field Label Override-Admin-Config-To verify that if user not added any text in "Field label Override", then label provided from Setup-Object get displayed as a Label for respective field,Flex table-Details config-Field Label Override-PM-UI-To verify that if user not added any text in "Field label Override", then label provided from Setup-Object get displayed as a Label for respective field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text            |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text            |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "toggleFlexTableActiveFundingOpportunitiesAll"
+    Examples:
+      | Users | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @334525
+  Scenario Outline: Flex table-Details config-Field Label Override-SPI-UI-To verify that if user not added any text in "Field label Override", then label provided from Setup-Object get displayed as a Label for respective field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table List       | Help Text            |                    | ApiGeneratedId:0 |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text            |                | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "Total Awarded Amount" in flex table header "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+    ###########################Test suite: Flex table functionality (Suite ID: 338455)###########################
+
+  @338662
+  Scenario Outline: Header- Admin- config- Verify given header should be displayed for flex table.
+  Header- PM- UI- Verify given header should be displayed for flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages Test Automation" displayed as a Header on flex table
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338665
+  Scenario: Header- SPI- UI- Verify given header should be displayed for flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Messages Test Automation" displayed as a Header on flex table
+
+  @338666 @338667
+  Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon.Header instruction- PM- UI- Verify if given header help text is getting displayed under 'i' icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "Help text for Automation" shown as help text
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338669
+  Scenario: Header instruction- SPI- UI- Verify if given header help text is getting displayed under 'i' icon.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header           | Messages                 | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "Help text for Automation" shown as help text
+
+  @338672
+  Scenario: Is active- Admin- Config- Verify flex table should not be displayed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Announcements" tab
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see Header field "Contacts" displayed as a Header on flex table
+
+  @338670
+  Scenario:Is active- Admin- Config- Verify flex table should be displayed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Announcements" tab
+    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts" displayed as a Header on flex table
+
+  @338674
+  Scenario: Is active- PM- UI- Verify flex table should not be displayed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Announcements" tab
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see Header field "Contacts" displayed as a Header on flex table
+
+  @338673
+  Scenario: Is active- PM- UI- Verify flex table should be displayed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Announcements" tab
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts" displayed as a Header on flex table
+
+  @338679 @338680
+  Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table.Display Field Name -PM- UI- Verify if all fields from 'Display field names' are getting displayed under on flex Table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header              | Messages           | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header              | Messages       | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "To Address" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Email Subject" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Preview" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Attachment" in flex table header "toggleFlexTableCommunicationHistory"
+    Examples:
+      | Users | defaultFieldsApi                                                                                     | newFieldsApi                                                                                         |
+      | Admin | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c |
+      | PM    | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c |
+
+  @338682
+  Scenario Outline: Display Field Name -SPI- UI- Verify if all fields from 'Display field names' are getting displayed under on flex Table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header              | Messages           | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header              | Messages       | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "From Address" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "To Address" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Email Subject" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Preview" in flex table header "toggleFlexTableCommunicationHistory"
+    Then I see "Attachment" in flex table header "toggleFlexTableCommunicationHistory"
+    Examples:
+      | Users | defaultFieldsApi                                                                                     | newFieldsApi                                                                                         |
+      | SPI   | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c | Id,Subject,GNT__FromAddress__c,GNT__ToAddress__c,GNT__EmailSubject__c,Description,GNT__Attachment__c |
+
+  @338687 @338688
+  Scenario Outline: Flex table-Header-Admin-Config_To verify that user is able to enter alphanumeric values in Header field,
+  Flex table-Header-PM-UI_To verify that user is able to enter alphanumeric values in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Test1234" displayed as a Header on flex table
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338690
+  Scenario: Flex table-Header-SPI-UI_To verify that user is able to enter alphanumeric values in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Test1234" displayed as a Header on flex table
+
+  @338692 @338693
+  Scenario Outline: Flex table-Header-Admin-Config_To verify that user is able to enter digits only in Header field,
+  Flex table-Header-PM-UI_To verify that user is able to enter digits only in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "1234567890" displayed as a Header on flex table
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338694
+  Scenario: Flex table-Header-SPI-UI_To verify that user is able to enter digits only in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "1234567890" displayed as a Header on flex table
+
+  @338695 @338696
+  Scenario Outline: Flex table-Header-Admin-Config_To verify that user is able to enter Sp. characters with text in Header field
+  Flex table-Header-PM-UI_To verify that user is able to enter Sp. characters with text in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338697
+  Scenario: Flex table-Header-SPI-UI_To verify that user is able to enter Sp. characters with text in Header field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Messages          | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
+
+  @338698 @338700
+  Scenario Outline: Flex table-Header Instruction-Admin-Config_To verify that user is able to add alphanumeric values in Header Instruction field,Flex table-Header Instruction-PM-UI_To verify that user is able to add alphanumeric values in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338701
+  Scenario: Flex table-Header Instruction-SPI-UI_To verify that user is able to add alphanumeric values in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+
+  @338702 @338703
+  Scenario Outline: Flex table-Header Instruction-Admin-Config_To verify that user is able to add digits only in Header Instruction field,Flex table-Header Instruction-PM-UI_To verify that user is able to add digits only in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338704
+  Scenario: Flex table-Header Instruction-SPI-UI_To verify that user is able to add digits only in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+
+  @338706 @338707
+  Scenario Outline: Flex table-Header Instruction-Admin-Config_To verify that user is able to add Sp. characters with text in Header Instruction field,
+  Flex table-Header Instruction-PM-UI_To verify that user is able to add Sp. characters with text in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages        | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338708
+  Scenario: Flex table-Header Instruction-SPI-UI_To verify that user is able to add Sp. characters with text in Header Instruction field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue   | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages        | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
+
+  @338709 @338710
+  Scenario Outline: Flex table-Header Help Text-Admin-Config_To verify that user is able to enter alphanumeric values in Header help text field,
+  Flex table-Header Help Text-PM-UI_To verify that user is able to enter alphanumeric values in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages             | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "AlphanumericTest1234" shown as help text
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338711
+  Scenario: Flex table-Header Help Text-SPI-UI_To verify that user is able to enter alphanumeric values in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages             | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "AlphanumericTest1234" shown as help text
+
+  @338713 @338714
+  Scenario Outline: Flex table-Header Help Text-Admin-Config_To verify that user is able to enter digits only in Header help text field,Flex table-Header Help Text-PM-UI_To verify that user is able to enter digits only in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction |               | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text   | 12345678980   | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "12345678980" shown as help text
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338715
+  Scenario: Flex table-Header Help Text-SPI-UI_To verify that user is able to enter digits only in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header           | Messages      | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text | 12345678980   | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "12345678980" shown as help text
+
+  @338717 @338718
+  Scenario Outline: Flex table-Header Help Text-Admin-Config_To verify that user is able to enter Sp. characters with text in Header help text field,Flex table-Header Help Text-PM-UI_To verify that user is able to enter Sp. characters with text in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Flex Table            | Header             | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Instruction |                   | ApiGeneratedId:2 |
+      | Flex Table            | Header Help Text   | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header             | Messages         | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Instruction |                  | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text   | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "Test!@#$%^%^&*()" shown as help text
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @338719
+  Scenario: Flex table-Header Help Text-SPI-UI_To verify that user is able to enter Sp. characters with text in Header help text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header           | Messages          | ApiGeneratedId:1 |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header           | Messages         | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Header Help Text | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Collab" sub tab
+    When I hovering mouse on help text "Messages" icon
+    Then I see "Test!@#$%^%^&*()" shown as help text
+
+  @338721 @338722
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Name/Id i.e. standard field, Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Name/Id i.e. standard field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header              | Messages           | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header              | Messages       | CommunicationHistory | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList        | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "Owner" in flex table header "toggleFlexTableAppReviewList"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338724
+  Scenario Outline: Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Name/Id i.e. standard field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    Then I see "Owner" in flex table header "toggleFlexTablepopupflextable"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                               |
+      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+
+  @338725 @338726
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Text area
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Assistance Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                       |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,AssistanceType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,AssistanceType__c |
+
+  @338729 @338732 @338734 @338736
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Long Text area,Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Long Text area,
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Rich Text area,Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Rich Text area
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Description" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "TestRich" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                               |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Objectives__c,TestRich__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Objectives__c,TestRich__c |
+
+  @338740 @338741 @338744 @338746
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Number,Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Number,
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Currency,Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Currency
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Number" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                               |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c,FundedAmount__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number__c,FundedAmount__c |
+
+  @338748 @338749 @338751 @338752
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Percent,Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Percent
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Date
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Percentage" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Percentage__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Percentage__c |
+
+  @338757 @338758 @338760 @338762
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Date & Time,
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Date & Time
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Picklist
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Picklist
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Date and Time" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Award Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @338765 @338766
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Picklist (Multi-Select),Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Multi-Picklist
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Date and Time" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Award Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @338770 @338771 @338773 @338775 @338779 @338780
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Lookup
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Lookup,
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Formula,
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Formula
+  Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Checkbox
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Checkbox
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Primary Funding Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Project Period" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "State" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                                             |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,PrimaryFundingOrganization__c,ProjectPeriod__c,State__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,PrimaryFundingOrganization__c,ProjectPeriod__c,State__c |
+
+  @338783 @338784
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Email
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Email
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Email Test" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Email_Test__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Email_Test__c |
+
+  @338787 @338788
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type URL
+  Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type URL
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Website Address" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                       |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+
+  @338792
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered Reference field rendered correctly on table,
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338793
+  Scenario Outline: Flex table-Display fields-PM-UI_To verify that entered Reference field rendered correctly on table,
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338796
+  Scenario Outline: Flex table-OrderBy-Admin-Config_To verify that all records in table get sorted in a order which is provided in config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see header "EGMS ID" in flex table id "toggleFlexTableAppReviewList" get sorted in "1" order
+    Then I see header "Application Title" in flex table id "toggleFlexTableAppReviewList" get sorted in "2" order
+    Then I see header "Announcement Title" in flex table id "toggleFlexTableAppReviewList" get sorted in "3" order
+    Then I see header "Application Due Date" in flex table id "toggleFlexTableAppReviewList" get sorted in "4" order
+    Then I see header "Owner" in flex table id "toggleFlexTableAppReviewList" get sorted in "5" order
+    Then I see header "Submitted On" in flex table id "toggleFlexTableAppReviewList" get sorted in "6" order
+    Then I see header "Status" in flex table id "toggleFlexTableAppReviewList" get sorted in "7" order
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338797
+  Scenario Outline: Flex table-OrderBy-PM-UI_To verify that all records in table get sorted in a order which is provided in config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "Announcement Title" in flex table header "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I see header "EGMS ID" in flex table id "toggleFlexTableAppReviewList" get sorted in "1" order
+    Then I see header "Application Title" in flex table id "toggleFlexTableAppReviewList" get sorted in "2" order
+    Then I see header "Announcement Title" in flex table id "toggleFlexTableAppReviewList" get sorted in "3" order
+    Then I see header "Application Due Date" in flex table id "toggleFlexTableAppReviewList" get sorted in "4" order
+    Then I see header "Owner" in flex table id "toggleFlexTableAppReviewList" get sorted in "5" order
+    Then I see header "Submitted On" in flex table id "toggleFlexTableAppReviewList" get sorted in "6" order
+    Then I see header "Status" in flex table id "toggleFlexTableAppReviewList" get sorted in "7" order
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338799
+  Scenario Outline:Flex table-OrderBy-SPI-UI_To verify that all records in table get sorted in a order which is provided in config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see header "EGMS ID" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "1" order
+    Then I see header "Grant Title" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "2" order
+    Then I see header "Grantor Organization" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "3" order
+    Then I see header "Project Period" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "4" order
+    Then I see header "# of Subawards" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "5" order
+    Then I see header "Total Awarded Amount" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "6" order
+    Then I see header "Active Subaward" in flex table id "---program:-:grantsFlexTableIdForSPIuser---" get sorted in "7" order
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338800
+  Scenario Outline: Flex table-OrderBy-Admin-Config_To verify that the behavior or order of records, when user not provided OrderBy field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+#      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            |                | AppReviewList      |                           |                            |
+#      | Flex Table:General    | Sort Direction      | ASC            | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I do not see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338802
+  Scenario Outline: Flex table-OrderBy-PM-UI_To verify that the behavior or order of records, when user not provided OrderBy field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            |                | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I do not see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338803
+  Scenario Outline: Flex table-OrderBy-SPI-UI_To verify that the behavior or order of records, when user not provided OrderBy field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            |                | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I do not see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338804
+  Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that all available records of table are sorted in ascending direction, when Sort direction is selected "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      | ASC            | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338806
+  Scenario Outline: Flex table-Sort direction-PM-UI_To verify that Satus records of table are sorted in ascending direction, when Sort direction is selected "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      | ASC            | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338808
+  Scenario Outline: Flex table-Sort direction-SPI-UI_To verify that Status records of table are sorted in ascending direction, when Sort direction is selected "Asc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            |                | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      | ASC            | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338809
+  Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that Status records of table are sorted in descending direction, when Sort direction is selected "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      | DESC           | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "down" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338810
+  Scenario Outline: Flex table-Sort direction-PM-UI_To verify that status records of table are sorted in descending direction, when Sort direction is selected "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      | DESC           | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "down" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338812
+  Scenario Outline: Flex table-Sort direction-SPI-UI_To verify that status records of table are sorted in descending direction, when Sort direction is selected "Desc"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      | DESC           | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "down" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338813
+  Scenario Outline: Flex table-Sort direction-Admin-Config_To verify that status records of table are sorted in ascending direction, when Sort direction is selected "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338814
+  Scenario Outline: Flex table-Sort direction-PM-UI_To verify that status records of table are sorted in ascending direction, when Sort direction is selected "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    Then I see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338816
+  Scenario Outline: Flex table-Sort direction-SPI-UI_To verify that all available records of table are sorted in ascending direction, when Sort direction is selected "None"
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "up" arrow is displayed inside "Status" in table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338817
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            |                | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true           | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    And I click on "Column Name" after click advance filter
+    Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Announcement Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Due Date" under field name "Column Name" inside flex table
+    Then I see dropdown value "Owner" under field name "Column Name" inside flex table
+    Then I see dropdown value "Submitted On" under field name "Column Name" inside flex table
+    Then I see dropdown value "Status" under field name "Column Name" inside flex table
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338819
+  Scenario Outline: Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Order By            |                | AppReviewList      |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true           | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    And I click on "Column Name" after click advance filter
+    Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Announcement Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Due Date" under field name "Column Name" inside flex table
+    Then I see dropdown value "Owner" under field name "Column Name" inside flex table
+    Then I see dropdown value "Submitted On" under field name "Column Name" inside flex table
+    Then I see dropdown value "Status" under field name "Column Name" inside flex table
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338821
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all records displayed in table are filtered by provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    And I click on "Column Name" after click advance filter
+    Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
+    Then I see dropdown value "Grant Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Grantor Organization" under field name "Column Name" inside flex table
+    Then I see dropdown value "Project Period" under field name "Column Name" inside flex table
+    Then I see dropdown value "# of Subawards" under field name "Column Name" inside flex table
+    Then I see dropdown value "Total Awarded Amount" under field name "Column Name" inside flex table
+    Then I see dropdown value "Active Subaward" under field name "Column Name" inside flex table
+    Then I see dropdown value "Status" under field name "Column Name" inside flex table
+    Then I see dropdown value "Budget Redirection Threshold" under field name "Column Name" inside flex table
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338823 @338824
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all available records irrespective of any filter criteria displayed in table when user not provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                      | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                                                     | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true                                                                   | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true           | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Filter Criteria     |                | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    And I click on "Column Name" after click advance filter
+    Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Announcement Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Application Due Date" under field name "Column Name" inside flex table
+    Then I see dropdown value "Owner" under field name "Column Name" inside flex table
+    Then I see dropdown value "Submitted On" under field name "Column Name" inside flex table
+    Then I see dropdown value "Status" under field name "Column Name" inside flex table
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338825
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all available records irrespective of any filter criteria displayed in table when user not provided filter criteria
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                                                  | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c      | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     |                | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    And I click on "Column Name" after click advance filter
+    Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
+    Then I see dropdown value "Grant Title" under field name "Column Name" inside flex table
+    Then I see dropdown value "Grantor Organization" under field name "Column Name" inside flex table
+    Then I see dropdown value "Project Period" under field name "Column Name" inside flex table
+    Then I see dropdown value "# of Subawards" under field name "Column Name" inside flex table
+    Then I see dropdown value "Total Awarded Amount" under field name "Column Name" inside flex table
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338826 @338828
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user Equals to operator
+  Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user Equals to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                      | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                                                     | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true                                                                   | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                                         | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true                                                                   | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Status | Equals to | Created |
+    Then I softly see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338829
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user Equals to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                                                  | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c                                        | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Equals to | Active |
+    Then I softly see value "Active" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338831
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user Not Equals to operator
+  Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user Not Equals to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                      | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                                                     | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true                                                                   | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                                         | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true                                                                   | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Status | Not equals to | Created |
+    Then I do not see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338833
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user Not Equals to operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                                                  | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c                                        | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Not equals to | Active |
+    Then I do not see value "Active" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338835 @338836
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user IN operator
+  Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user IN operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                      | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                                                     | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true                                                                   | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                                         | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true                                                                   | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Status | Not equals to | Created |
+    Then I do not see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338837
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user IN operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                                                  | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c                                        | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Not equals to | Active |
+    Then I do not see value "Active" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338838 @338840
+  Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user NOT IN operator
+  Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user NOT IN operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                                      | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                                                     | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true                                                                   | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                                          | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                                         | AppReviewList      |                           |                            |
+      | Flex Table:General    | Enable Filter       | true                                                                   | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and Status__c not in ('Internally Reviewed') | AppReviewList      |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "toggleFlexTableAppReviewList"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Status | Not equals to | Created |
+    Then I do not see value "Created" for title "Status" inside table "toggleFlexTableAppReviewList"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
+      | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @338841
+  Scenario Outline: Flex table-Filter Criteria-SPI-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user NOT IN operator
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table:General    | Order By            |                                                  | ApiGeneratedId:1 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Order By            | Status__c                                        | GrantsList         |                           |                            |
+      | Flex Table:General    | Sort Direction      |                                                  | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "toggleFlexTableGrantsList"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Not equals to | Active |
+    Then I do not see value "Active" for title "Status" inside table "toggleFlexTableGrantsList"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @338728 @338733 @338737 @338743 @338747
+  Scenario Outline:Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Text area(EGMS ID)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Long Text area(Description)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Rich Text area(Project Description)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Number(Closeout Liquidation Days)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Currency(Total Awarded Amount)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Description" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Description" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Closeout Liquidation Days" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Total Awarded Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                                                                                                                                   |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,GrantDescription__c,ProjectDescription__c,CloseoutLiquidationDays__c,LatestAwardTotalAwardedAmount__c |
+
+  @338750 @338755 @338759 @338763
+  Scenario Outline: Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Percent(Budget Redirection Threshold)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Date(Project Period Start Date)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Date & Time(Date and Time)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Picklist(Status)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Lookup(Funding Organization)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Formula(Owner Name)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Checkbox(Final Fiscal Report Created)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period Start Date" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Date and Time" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Funding Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Owner Name" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Final Fiscal Report Created" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                                                                                                                 |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,ProjectPeriodStartDate__c,Date_and_Time__c,OwnerName__c,FinalFiscalReportCreated__c |
+
+  @338772 @338776 @338782 @338785 @338789
+  Scenario Outline: Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Lookup(Grant Monitor)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Formula(Owner Name)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Checkbox(Final Fiscal Report Created)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type Email(Email__c)
+  Flex table-Display fields-SPI-UI_To verify that entered field rendered correctly on table, of data type URL(URL)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue                                | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>                               | ApiGeneratedId:0 |
+      | Flex Table            | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                                   | GrantsList         |                           |                            |
+      | Flex Table:General    | Filter Criteria     | RecordType.Name='Grantor' and status__c='Active' | GrantsList         |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Grants" tab
+    Then I see "Grant Monitor" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Owner Name" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Final Fiscal Report Created" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Email" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "URL" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                                                                                                      |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,GrantMonitor__c,OwnerName__c,FinalFiscalReportCreated__c,Email__c,URL__c |
+
+    #########################est suite: Negative Scenarios (Suite ID: 336191)##############################
+
+  @336202
+  Scenario:
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Data Import/Export | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Data Import/Export | false         | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    Then I do not see "Upload" button inside "Internal Programs - Draft" flex table
+
+  @334535 @334541
+  Scenario: Advanced Filter- Admin- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-Admin-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334536 @334542
+  Scenario: Advanced Filter- PM- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-PM-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334537 @334543
+  Scenario: Advanced Filter- SPI- Config- Verify that on enabling Filter, advanced filter sub-component displayed at top of the flex table.
+  |Flex table-Filter-SPI-To verify that on clicking on Filter icon, respective fields of advanced filter (i.e. Column name, Operator, Values and Actions) are displayed on top of the table|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
+
+  @334538
+  Scenario: Advanced Filter- Admin- Config-To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334539
+  Scenario: Advanced Filter- PM- Config- To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfPrograms" in flex table
+
+  @334540
+  Scenario: Advanced Filter- SPI- Config- To verify that on disabling Filter, advanced filter sub-component not displayed at top of the flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | false         | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see Advance Filter "Column Name" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Operator" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Value" sub component is displayed inside table id "advfGrantsList" in flex table
+    Then I do not see Advance Filter "Action" sub component is displayed inside table id "advfGrantsList" in flex table
+
+  @334548
+  Scenario: Flex Table :PM:-To verify, To verify that user is able to filter records by using Text field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter              | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Automation |
+    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+
+  @334562
+  Scenario: Flex Table:Filter-PM-To verify that user is able to filter records by using Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Equals to | 40000 |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+
+  @334563
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Number field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Closeout Liquidation Days | Equals to | 60 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334564 @334566
+  Scenario Outline: Flex table-Filter-"<User>"-UI-To verify that user is able to filter records by using Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter values in table id "advfActiveGrants"
+      | Budget Redirection Threshold | Equals to | 10 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                         | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,BudgetRedirectionThreshhold__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334567
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Percent field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Budget Redirection Threshold | Equals to | 10 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |

@@ -1160,12 +1160,19 @@ public class FlexTablePage extends GovGrantsManager {
         }
     }
 
-
     public void assertIfAdvanceFilterIsDisplayed(String usage, String value) {
         if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
             I.amPerforming().assertionsTo().assertThat(assertAdvanceFilterDisplayed(value)).isFalse();
+        }
+    }
+
+    public void assertAdvanceFilterSubcomponentIsDisplayed(String usage, String columnName, String value) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(advanceFilterSubcomponentDisplayed(columnName, value)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(advanceFilterSubcomponentDisplayed(columnName, value)).isFalse();
         }
     }
 
@@ -1189,6 +1196,16 @@ public class FlexTablePage extends GovGrantsManager {
         return flag;
     }
 
+    private boolean advanceFilterSubcomponentDisplayed(String columnName, String value) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + value + "']//label[normalize-space(text())='" + columnName + "']//parent::div"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 
     public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
         boolean flag = false;
@@ -1397,7 +1414,9 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
-                    " //td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "']"))) {
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Edit']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1487,6 +1506,7 @@ public class FlexTablePage extends GovGrantsManager {
             String actionElement = elementSequence.getAttribute(attribute);
             int stringLength = actionElement.length();
             System.out.println("String length: " + stringLength);
+            System.out.println("String length: " + actionElement);
             if (actionElement.length() == charLimit) {
                 flag = true;
             }
@@ -1494,4 +1514,181 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void validateIfConformationBoxIsDisplayedOrNot(String usage) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfConformationBoxIsDisplayedOrNot());
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfConformationBoxIsDisplayedOrNot());
+        }
+    }
+
+    private boolean assertIfConformationBoxIsDisplayedOrNot() {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-content']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateConfirmationMessageCharectorLimit(String usage, int charLimit) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfCharLimitForConformationMessage(charLimit));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfCharLimitForConformationMessage(charLimit));
+        }
+    }
+
+    private boolean assertIfCharLimitForConformationMessage(int charLimit) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("//div[@class='modal-content']//div[@class='bootbox-body']"));
+            String actionElement = elementSequence.getText();
+            int stringLength = actionElement.length();
+            System.out.println("String length: " + stringLength);
+            System.out.println("String length: " + actionElement);
+            if (actionElement.length() == charLimit) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    public void validateModalWindowIsDisplayedOnSameWindow(String usage, String modalTitle) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfModalWindowDisplayedOrNot(modalTitle));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfModalWindowDisplayedOrNot(modalTitle));
+        }
+    }
+
+    private boolean assertIfModalWindowDisplayedOrNot(String modalTitle) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[text()='" + modalTitle + "']/ancestor::div[@class='modal-content ui-draggable-handle'] | //p[text()='" + modalTitle + "']/ancestor::div[@class='modal-content']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateIconCssIsDisplayedOrNot(String usage, String columnTitle, String iconTitle, String cssValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfIconCSSdisplayedOrNot(columnTitle, iconTitle, cssValue));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfIconCSSdisplayedOrNot(columnTitle, iconTitle, cssValue));
+        }
+    }
+
+    private boolean assertIfIconCSSdisplayedOrNot(String columnTitle, String iconTitle, String cssValue) {
+        boolean flag = false;
+        try {
+            if (isCSSIconForSpecificActionOfFlexTable(columnTitle, iconTitle, cssValue)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void validateStyleOrWidthOfModal(String usage, String styleValue) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfStyleOfModaldisplayedOrNot(styleValue));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfStyleOfModaldisplayedOrNot(styleValue));
+        }
+    }
+
+    private boolean assertIfStyleOfModaldisplayedOrNot(String styleValue) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void ValidateAdvanceFilterIsWorkOrNot(String usage, String advanceFilterClass) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfAdvanceFilterIsWorked(advanceFilterClass));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfAdvanceFilterIsWorked(advanceFilterClass));
+        }
+    }
+
+    private boolean assertIfAdvanceFilterIsWorked(String advanceFilterClass) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@ng-repeat='" + advanceFilterClass + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void ValidateAdvanceFilterIsWorkOrNotInFlextable(String usage, String advanceFilterClass) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfAdvanceFilterIsWorkedInFlexTable(advanceFilterClass));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfAdvanceFilterIsWorkedInFlexTable(advanceFilterClass));
+        }
+    }
+
+    private boolean assertIfAdvanceFilterIsWorkedInFlexTable(String advanceFilterClass) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@ng-repeat='" + advanceFilterClass + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    /**
+     * assert if header name is correctly displayed insider flex table detail pages
+     *
+     * @param headerName
+     */
+    public void assertHeaderNameDisplayed(String headerName) {
+//        I.amPerforming().scroll().onPageToSpecificElement(By.xpath(
+//                "//div[@class='panel-heading']//div[contains(@class,'panel-title')]/a[text()='" + headerName + "']"));
+        Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(getFlexGridPanels(headerName)));
+    }
+
+    public void validateSequenceOfHeaderOfFlexTable(String usage, String headerName, String tableId, String index) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(headerSequenceIsDisplayedInOrder(headerName, tableId, index));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(headerSequenceIsDisplayedInOrder(headerName, tableId, index));
+        }
+    }
+
+    private boolean headerSequenceIsDisplayedInOrder(String headerName, String tableId, String index) {
+        boolean flag = false;
+        try {
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//div[contains(@id,'"+tableId+"')]//table/thead/tr/th/a//span[@class='ng-binding'])[" + index + "]"));
+            String actionElement = elementSequence.getAttribute("title");
+            if (actionElement.equalsIgnoreCase(headerName)) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+
+    public void assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(String buttonName, String headerName){
+        Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
+    }
+
 }

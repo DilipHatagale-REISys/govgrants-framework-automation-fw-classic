@@ -7546,7 +7546,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @269348 @269349
   Scenario Outline:Record level-To verify when user searches any value in Quick search and refreshes the page then records should be restored to quick search results (Admin)
@@ -7577,7 +7577,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @269360 @269361
   Scenario Outline: Record level-To verify when user changes page size to 10 and refreshes the page then records should be resorted to page size to 10 (Admin)
@@ -7609,7 +7609,7 @@ Business Need: FrameworkCookies Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @269363 @269364
   Scenario Outline: Record level-To verify when user changes page size to 10, click on row level View action and click on page back arrow then records should be restored to page size to 10 (Admin)
