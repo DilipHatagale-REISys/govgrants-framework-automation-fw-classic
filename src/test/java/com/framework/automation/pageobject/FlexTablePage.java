@@ -1613,4 +1613,23 @@ public class FlexTablePage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void ValidateAdvanceFilterIsWorkOrNot(String usage, String advanceFilterClass) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(assertIfAdvanceFilterIsWorked(advanceFilterClass));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(assertIfAdvanceFilterIsWorked(advanceFilterClass));
+        }
+    }
+
+    private boolean assertIfAdvanceFilterIsWorked(String advanceFilterClass) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@ng-repeat='" + advanceFilterClass + "']"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

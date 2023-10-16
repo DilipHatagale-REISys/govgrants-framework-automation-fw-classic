@@ -447,7 +447,6 @@ public class FlexTableSteps {
         flexTablePage.assertIfValueChange(usage, dropdownValue);
     }
 
-
     @When("I enter advance filter values in table id \"([^\"]*)\"$")
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
         flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
@@ -564,6 +563,11 @@ public class FlexTableSteps {
     @And("I hovering mouse on help text icon i inside column name {string} flex table")
     public void iHoveringMouseOnHelpTextIconIInsideColumnNameFlexTable(String columnName) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//span[@title='" + columnName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"));
+    }
+
+    @Then("^I (see|do not see) filter \"([^\"]*)\" is displayed$")
+    public void iSeeFilterIsDisplayed(String usage, String advanceFilterClass) {
+        flexTablePage.ValidateAdvanceFilterIsWorkOrNot(usage, advanceFilterClass);
     }
 
 }
