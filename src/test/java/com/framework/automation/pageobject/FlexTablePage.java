@@ -1301,6 +1301,13 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().click().on(filterAction);
     }
 
+    public void handleDropdownAndLookupInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
+    }
+
     public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {
         if (usage.equalsIgnoreCase("see")) {
             I.amPerforming().assertionsTo().assertThat(assertFlextableValueDisplayed(columnValue, columnTitle, flextableDivId)).isTrue();
@@ -1676,7 +1683,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean headerSequenceIsDisplayedInOrder(String headerName, String tableId, String index) {
         boolean flag = false;
         try {
-            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//div[contains(@id,'"+tableId+"')]//table/thead/tr/th/a//span[@class='ng-binding'])[" + index + "]"));
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//div[contains(@id,'" + tableId + "')]//table/thead/tr/th/a//span[@class='ng-binding'])[" + index + "]"));
             String actionElement = elementSequence.getAttribute("title");
             if (actionElement.equalsIgnoreCase(headerName)) {
                 flag = true;
@@ -1687,7 +1694,7 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
 
-    public void assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(String buttonName, String headerName){
+    public void assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(String buttonName, String headerName) {
         Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
     }
 
