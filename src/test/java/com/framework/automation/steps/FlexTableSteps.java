@@ -4,6 +4,7 @@ import com.framework.automation.pageobject.FlexTablePage;
 import com.framework.automation.pageobject.FrameworkCookiesPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.exception.TestingBlazeCustomException;
+import com.helperPackage.handlers.govgrants;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
@@ -450,6 +451,18 @@ public class FlexTableSteps {
     @When("I enter advance filter values in table id \"([^\"]*)\"$")
     public void iEnterAdvanceFilterValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
         flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @When("I enter advance filter first two column values in table id \"([^\"]*)\"$")
+    public void iEnterAdvanceFilterlLookupValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTablePage.handleDropdownAndLookupInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @When("^I (select|select in modal) value \"([^\"]*)\" in field \"([^\"]*)\"$")
+    public void selectValue(String usage, String fieldValue, String fieldApiName) {
+        govgrants.perform().inputForms().inputFormDataByFieldApiName(fieldApiName, fieldValue, usage.contains("modal"));
+        I.amPerforming().click().on(By.xpath("//div[@id='select2-drop']//ul[contains(@class, 'select2-results')]//div"));
+        I.amPerforming().click().on(By.xpath("//div[@id='advfActiveGrants']//a[@title='Add Filter']/span"));
     }
 
     @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")

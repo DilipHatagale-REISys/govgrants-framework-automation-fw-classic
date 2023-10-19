@@ -3827,7 +3827,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626 @334568
+  @338626 @334568 @334569
   Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
@@ -3848,6 +3848,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
       | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @338627
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
@@ -13854,15 +13855,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334563
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Number field
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
@@ -13900,15 +13899,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334567
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Percent field
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | GrantsList         | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
@@ -13919,3 +13916,122 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334570
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Date field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Project Period End Date | Greater than | 07/06/2023 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                      | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodEndDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334573
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Date field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Date and Time | Less than or Equal to | 10/16/2023 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                         |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,ProjectPeriodStartDate__c,Date_and_Time__c,OwnerName__c,FinalFiscalReportCreated__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @334571 @334572
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Date & Time field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Date and Time | Less than or Equal to | 10/16/2023 |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334575 @334577
+  Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Formula field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter values in table id "advfActiveGrants"
+      | Project Period | Contains | 1/18/2023 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334578
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Formula field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Project Period | Contains | 1/18/2023 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334579 @334580
+  Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter first two column values in table id "advfActiveGrants"
+      | Budget Period | Equals to |
+    And I select value "BP-8834" in field "s2id_autogen1"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
