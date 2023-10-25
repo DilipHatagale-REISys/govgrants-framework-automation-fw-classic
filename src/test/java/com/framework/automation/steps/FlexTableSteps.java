@@ -617,4 +617,9 @@ public class FlexTableSteps {
         I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//span//button//*[@aria-label='Search']"));
 
     }
+
+    @Then("^I (see|do not see) pagination \"([^\"]*)\" arrow displayed inside table id \"([^\"]*)\"$")
+    public void iSeePaginationArrowDisplayedInsideTableId(String usage, String arrow, String tableId) {
+        flexTablePage.assertIfPagiNationArrowDisplyed_or_not(usage,arrow,tableId);
+    }
 }
