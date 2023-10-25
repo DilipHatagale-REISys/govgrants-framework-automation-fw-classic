@@ -400,7 +400,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "10" with page size dropdown at "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335030
   Scenario: Flex table-Auto Index Behavior-PM-UI-To verify that on selecting auto index behavior-All Rows, all the rows in flex table get indexes
@@ -428,8 +428,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "5" with page size dropdown at "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335040
+  @335040 @336285
   Scenario: Flex table-Auto Index Behavior-Admin-Config-To verify that on selecting auto index behavior-None, all the rows in flex table get indexes
+  Auto Index Behavior - Admin - Config - To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -438,13 +439,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Default Page Size | 10            | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335043
+  @335043 @336286
   Scenario: Flex table-Auto Index Behavior-PM-UI-To verify that on selecting auto index behavior-None, all the rows in flex table get indexes
+  Auto Index Behavior - PM - UI - To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -456,7 +459,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "1" to "10" indexing inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
 
   @335045
   Scenario: Flex table-Auto Index Behavior-SPI-UI-To verify that on selecting auto index behavior-None, all the rows in flex table get indexes
@@ -584,17 +587,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335063
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -603,17 +602,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335066
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Left          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -622,17 +617,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335068
   Scenario: Flex table-Record Selection Column Position-SPI-UI-To verify that on selecting Record selection column position - Left, Record selection column displayed to the left side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Left          | GrantsList         | Name                      |            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Left          | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -642,14 +633,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index                | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size                | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
-      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:4 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index                | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size                | 5             | Programs           | Name                      |                            |
       | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
       | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
@@ -660,17 +647,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335072
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | left              | ApiGeneratedId:3 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:1 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | Programs           | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | Programs           | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | Programs           | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Right         | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -679,73 +662,69 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @335075
   Scenario: Flex table-Record Selection Column Position-SPI-UI-To verify that on selecting Record selection column position - Right, Record selection column displayed to the right side of flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:4 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | Right         | GrantsList         | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Right         | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "== 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335076
+  @335076 @336292
   Scenario: Flex table-Record Selection Column Position-Admin-Config-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
+  Record selection column position - Admin - Config - To verify that when user selected 'None' option for 'Record selection column position' field, then Record selection column displayed on left side by default
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-      | Flex Table            | Record Selection Column Header   | Demo text         | ApiGeneratedId:0 |
-      | Flex Table            | Record Selection Column Position | None              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Record Selection Column Header   | Demo text     | Programs           | Name                      |                            |
-      | Flex Table:General    | Record Selection Column Position | None          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335080
+  @335080 @336294
   Scenario: Flex table-Record Selection Column Position-PM-UI-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
+  Record selection column position - PM - UI - To verify that when user selected 'None' option for 'Record selection column position' field, then Record selection column displayed on left side by default
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-      | Flex Table            | Record Selection Column Header   | Demo text         | ApiGeneratedId:0 |
-      | Flex Table            | Record Selection Column Position | None              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Record Selection Column Header   | Demo text     | Programs           | Name                      |                            |
-      | Flex Table:General    | Record Selection Column Position | None          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | none          | Programs           | Name                      | Record Selection           |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335085
+  @335085 @336295
   Scenario: Flex table-Record Selection Column Position-SPI-UI-To verify that on selecting Record selection column position - None, Record selection column displayed to the left side of flex table
+  Record selection column position - SPI - UI - To verify that when user selected 'None' option for 'Record selection column position' field, then Record selection column displayed on left side by default
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index       | false             | ApiGeneratedId:1 |
-      | Flex Table            | Default Page Size       | 5                 | ApiGeneratedId:2 |
-      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:3 |
-#      | Flex Table            | Record Selection Column Position | Left              | ApiGeneratedId:4 |
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index       | true          | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Default Page Size       | 5             | GrantsList         | Name                      |                            |
-      | Flex Table:General    | Enable Record Selection | true          | GrantsList         | Name                      |                            |
-#      | Flex Table:General    | Record Selection Column Position | None         | GrantsList         | Name                      |                            |
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | none          | GrantsList         | Name                      | Record Selection           |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335088
-  Scenario: Flex table-Disable Menu-Admin-Config-To verify that on disabling Menu, Menu option not displayed on UI for the flex table
+  @335088 @336281
+  Scenario: Flex table-Disable Menu-Admin-Config-To verify that on disabling Menu, Menu option not displayed on UI for the flex table,
+  Menu - Admin - Config - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -761,8 +740,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
-  @335089
+  @335089 @336282
   Scenario: Flex table-Disable Menu-PM-UI-To verify that on disabling Menu, Menu option not displayed on UI for the flex table
+  Menu - PM - UI - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -778,8 +758,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
-  @335090
+  @335090 @336283
   Scenario: Flex table-Disable Menu-SPI-UI-To verify that on disabling Menu, Menu option not displayed on UI for the flex table
+  Menu - SPI - UI - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Auto Index | false             | ApiGeneratedId:1 |
@@ -928,7 +909,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I select value inside table "---program:-:ProgramsFlexTableToggleId---" is "All"
-    Then I see table contains "Showing 1 to 99 of 99 records" inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @335139
   Scenario: Flex table-Page size-PM-UI-To verify that on selecting All page size, all available records displayed on a page
@@ -2269,8 +2250,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
     #############################Test suite: Export Functionality (Suite ID: 338453)#################################
 
-  @338981
-  Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is not visible on UI
+  @338981 @336300
+  Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is not visible on UI,
+  Download as XLS/CSV - Admin - Config - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
@@ -2283,8 +2265,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338982
-  Scenario: Download as PDF- PM - UI- Verify Download as PDF option is not visible on UI
+  @338982 @336297
+  Scenario: Download as PDF- PM - UI- Verify Download as PDF option is not visible on UI,Download as PDF - PM - UI - To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -2297,8 +2279,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338983
-  Scenario: Download as XLS/CSV -PM- UI- Verify Download as XLS/CSV option is not visible on UI
+  @338983 @336301
+  Scenario: Download as XLS/CSV -PM- UI- Verify Download as XLS/CSV option is not visible on UI,Download as XLS/CSV - PM - UI - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
@@ -2311,8 +2293,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I do not see "Download as CSV" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338984
-  Scenario: Download as PDF- SPI - UI- Verify Download as PDF option is not visible on UI
+  @338984 @336299
+  Scenario: Download as PDF- SPI - UI- Verify Download as PDF option is not visible on UI,Download as PDF - SPI - UI- To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -2409,8 +2391,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as CSV" option is getting displayed under Menu in table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338980
-  Scenario: Download as PDF- Admin- Config- Verify Download as PDF option is not visible on UI
+  @338980 @336396
+  Scenario: Download as PDF- Admin- Config- Verify Download as PDF option is not visible on UI,Download as PDF - Admin - Config - To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -2423,8 +2405,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I do not see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338985
-  Scenario: Download as XLS/CSV - SPI - UI- Verify Download as XLS/CSV option is not visible on UI
+  @338985 @336302
+  Scenario: Download as XLS/CSV - SPI - UI- Verify Download as XLS/CSV option is not visible on UI,Download as XLS/CSV - SPI - UI - To verify that on disabling 'Enable Export (XLS / CSV)' , Download as XLS/CSV link not displayed under Menu section on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
@@ -2637,6 +2619,58 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "# of Subawards" in downloaded xls or csv file "govgrants"
+
+  @336303
+  Scenario: Download as PDF - Admin - Config - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF)    | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | none          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)    | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I cannot see "EGMS ID" on page "1" of "govgrants" pdf file
+
+  @336304
+  Scenario: Download as PDF - PM - UI - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF)    | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | none          | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)    | true          | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I cannot see "EGMS ID" on page "1" of "govgrants" pdf file
+
+  @336305
+  Scenario: Download as PDF - SPI - UI - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (PDF)    | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export | none          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF)    | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Application Title" on page "1" of "govgrants" pdf file
 
   @339005
   Scenario: Download as PDF- PM- UI- Verify fields which are listed under Skip for export should not be visible in downloaded file
@@ -3056,6 +3090,22 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I hovering mouse on help text "GrantsListtooltip" icon
     Then I see "Help text for Automation" shown as help text
 
+  @336275
+  Scenario: Help - SPI - UI - To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Help      | false                    | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I do not see "Help" option is getting displayed under Menu in table "---program:-:grantsFlexTableIdForSPIuser---"
+
   @339453
   Scenario: Help Config- SPI- UI- Verify if we can find help option under menu.
     Given I have "default" configuration as below:
@@ -3086,9 +3136,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
-    When I hovering mouse on help text "Help" icon
-    And I pause execution for "2" seconds
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
+
+  @336274
+  Scenario: Help - PM - UI - To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | false                    | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I do not see "Help" help text displayed in table "toggleFlexTablePrograms"
 
   @339458
   Scenario: Help Config- PM- UI- Verify if we can find help option under menu.
@@ -3104,7 +3168,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
-    When I hovering mouse on help text "Help" icon
     Then I see "Help" help text displayed in table "toggleFlexTablePrograms"
 
   @339456
@@ -3123,6 +3186,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
+  @336273
+  Scenario: Help - Admin - Config - To verify that on disabling 'Enable Help' Help feature not get displayed under Menu section for respective flex table.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Help      | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | Help text for Automation | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Help      | false                    | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
+    Then I do not see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
 
   @339459
   Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
@@ -4270,8 +4348,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I do not see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338505
-  Scenario: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
+  @338505 @336276
+  Scenario: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI,
+  Record Selection - Admin - Config - To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
@@ -4282,10 +4361,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I do not see select check box enabled in flex table
-    Then I do not see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @338507
-  Scenario: Record Selection- PM- UI- Verify Record Selection Column should not display on UI
+  @338507 @336277
+  Scenario: Record Selection- PM- UI- Verify Record Selection Column should not display on UI,
+  Record Selection - PM - UI - To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
@@ -4295,10 +4374,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    Then I do not see "#" in flex table header "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I do not see select check box enabled in flex table
 
-  @338508
-  Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
+  @338508 @336278
+  Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI,
+  Record Selection - SPI - UI - To verify that on disabling 'Enable Record Selection' record selection column not get displayed for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:2 |
@@ -4308,8 +4388,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    Then I see "#" in flex table header "---program:-:toggleFlexTablepopupflextableForSPIuser---"
-
+    Then I do not see select check box enabled in flex table
 
   @338509
   Scenario: Record Selection- Admin- Config- Verify correct Record Selection Column Header displays on UI
@@ -5048,7 +5127,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "#" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338575
@@ -11358,8 +11437,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
 
-  @334172
-  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that Title displayed on Modal is same as that provided in Modal Title config
+  @334172 @336181
+  Scenario Outline: Flex table-Actions-Modal Config-SPI-UI-To verify that Title displayed on Modal is same as that provided in Modal Title config,
+  Flex table-SPI-UI-To verify that user is able to view rendered flex table on Modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Location              | Row                 | GrantsList         | Name                      | View                       |
@@ -13077,15 +13157,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table:General    | Order By            |                    | ApiGeneratedId:1 |
-#      | Flex Table:General    | Sort Direction      |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | AppReviewList      |                           |                            |
       | Flex Table:General    | Order By            |                | AppReviewList      |                           |                            |
-#      | Flex Table:General    | Sort Direction      | ASC            | AppReviewList      |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Applications" tab
-    Then I do not see "up" arrow is displayed inside "Status" in table "---program:-:toggleFlexTableIdForAdminPM---"
+    Then I do not see "up" arrow is displayed inside "Owner" in table "---program:-:toggleFlexTableIdForAdminPM---"
     Examples:
       | Users | defaultFieldsApi                                                                                                            | newFieldsApi                                                                                                                |
       | Admin | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
@@ -14029,12 +14107,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "2020/09/16/" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336263
+
+  @336263 @336266
   Scenario: Quick Search - SPI - UI - To verify that when user entered Date in wrong format, then 'No records found' message get displayed
+  Quick Search - SPI - UI - To verify that when user entered EGMS ID in wrong format, then 'No records found' message get displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I quick search "2020/09/16/" inside table "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+    And I quick search "AgPG-REI-2208" inside table "---program:-:grantsFlexTableIdForSPIuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
 
   @336264
@@ -14052,3 +14134,911 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+
+  @336267
+  Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
+
+  @336268
+  Scenario: Quick Search - PM - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
+
+  @336289
+  Scenario:Default page size - Admin - Config - To verify that when user not entered any number in 'Default page size' field, then all available records get displayed on single page and Show 'x' entries and pagination features not displayed for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10            | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "toggleFlexTablePrograms" is "All"
+    And I pause execution for "10" seconds
+    Then I do not see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @336290
+  Scenario: Default page size - PM - UI - To verify that when user not entered any number in 'Default page size' field, then all available records get displayed on single page and Show 'x' entries and pagination features not displayed for respective flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
+      | Flex Table            | Default Page Size          | 5                 | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10            | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I select value inside table "toggleFlexTablePrograms" is "All"
+    And I pause execution for "5" seconds
+    Then I do not see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+
+  @336306 @336307
+  Scenario Outline: Download as XLS/CSV - Admin - Config - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded XLS/CSV,
+  Download as XLS/CSV - PM - UI- To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded XLS/CSV
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names       | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Skip Fields For Export    | none               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names       | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Skip Fields For Export    | none           | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true           | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    And I download the file
+    Then I see "EGMS ID" in downloaded xls or csv file "govgrants"
+    Then I see "Grant Title" in downloaded xls or csv file "govgrants"
+    Then I see "Subrecipient Organization" in downloaded xls or csv file "govgrants"
+    Then I see "Project Period" in downloaded xls or csv file "govgrants"
+    Then I see "# of Subawards" in downloaded xls or csv file "govgrants"
+    Then I see "Subaward Amount" in downloaded xls or csv file "govgrants"
+    Then I see "Active Subaward" in downloaded xls or csv file "govgrants"
+    Then I see "Status" in downloaded xls or csv file "govgrants"
+    Then I see "Application ID" in downloaded xls or csv file "govgrants"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,ProjectDescription__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @336308
+  Scenario:Download as XLS/CSV - SPI - UI - To verify that when user not entered any fields in 'Skip fields for Export' field then all available fields get exported in downloaded XLS/CSV
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Skip Fields For Export    | none              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Skip Fields For Export    | none          | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I click on "Download as CSV" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    And I download the file
+    Then I see "Status" in downloaded xls or csv file "govgrants"
+    Then I see "Funding Opportunity Title" in downloaded xls or csv file "govgrants"
+    Then I see "Funding Organization" in downloaded xls or csv file "govgrants"
+
+  @336312
+  Scenario:Advanced Filter - Admin - UI - To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | EGMS ID | Contains | PG-T09-0049---- |
+    Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
+
+  @336313
+  Scenario:  Advanced Filter - PM - UI - To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | EGMS ID | Contains | PG-T09-0049---- |
+    Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
+
+  @336314
+  Scenario: Advanced Filter - SPI - UI - To verify that while filtering records by EGMS ID, if user entered invalid data in Value field for EGMS ID or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfpopupflextable" of table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I enter advance filter values in table id "advfpopupflextable"
+      | EGMS ID | Contains | PG-T09-0049---- |
+    Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+
+  @336316
+  Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than | 5000---- |
+    When I click on "fa fa-plus" after click advance filter
+    Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+
+  @336320
+  Scenario Outline: Advanced Filter - PM- UI - To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than | 5000---- |
+    Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+
+  @336322
+  Scenario Outline: Advanced Filter - SPI - UI - To verify that while filtering records by Number field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Closeout Liquidation Days | Equals to | 60---- |
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                         | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @336323
+  Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by Formula field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Email | Contains | testing@gamil--com |
+    Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                            |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c,Email__c |
+
+  @336324
+  Scenario Outline: Advanced Filter - PM - UI - To verify that while filtering records by Formula field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    When I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Email | Contains | testing@gamil--com |
+    Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | User | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                            |
+      | PM   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c,Email__c |
+
+  @336325
+  Scenario Outline: Advanced Filter - SPI - UI - To verify that while filtering records by Formula field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Owner Name | Contains | !@#@%^& |
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                                      | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,CloseoutLiquidationDays__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @336326
+  Scenario Outline: Advanced Filter - Admin - UI - To verify that while filtering records by reference field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:toggleFlexTableIdForAdminPM---"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Announcement Title | Contains | !@#@%^& |
+    Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @236328
+  Scenario Outline: Advanced Filter - PM - UI - To verify that while filtering records by reference field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:toggleFlexTableIdForAdminPM---"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Announcement Title | Contains | !@#@%^& |
+    Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @336329
+  Scenario Outline: Advanced Filter - SPI - UI - To verify that while filtering records by reference field, if user entered invalid data in Value field or in wrong format, then 'No records found' message get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Enable Filter       | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Filter       | true           | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfpopupflextable" of table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    When I enter advance filter values in table id "advfpopupflextable"
+      | Funding Opportunity Title | Contains | acdjdsahd1323 |
+    Then I see "No Records Found" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                               | defaultFieldsApi                                                                                                                                           |
+      | SPI  | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
+
+  @336335 @336337
+  Scenario Outline: Sort Direction - Admin - Config - To verify that on selecting None option for Sort direction, records on flex table get sorted by ascending order
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:3 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi>  | Programs           | Name                      |                            |
+      | Flex Grid:General     | Order By            | FundedAmount__c | Programs           | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                 | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "up" arrow is Displayed inside "Funded Amount" field
+    Examples:
+      | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336339
+  Scenario Outline:Sort Direction - SPI - UI - To verify that on selecting None option for Sort direction, then records on flex table get sorted by ascending order
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Order By            |                    | ApiGeneratedId:4 |
+      | Flex Table            | Sort Direction      |                    | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Order By            | Status__c      | GrantsList         | Name                      |                            |
+      | Flex Grid:General     | Sort Direction      |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "up" arrow is Displayed inside "Status" field
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336341
+  Scenario: Filter Criteria - Admin - Config - To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336343
+  Scenario: Filter Criteria - PM - UI - To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "1" to "5" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
+
+  @336344
+  Scenario: Filter Criteria - SPI - UI - To verify that if user not entered any filter criteria to display records, then all the available records get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
+      | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Default Page Size | 5             | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "1" to "5" indexing inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+
+  @336345
+  Scenario Outline: Hide Columns - Admin - Config - To verify that when user not entered any column names in 'Hide Columns' field, then no any column of flex table get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336346
+  Scenario Outline: Hide Columns - PM - UI - To verify that when user not entered any column names in 'Hide Columns' field, then on any column of flex table get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Program Name" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Internal Organization" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "(Obsolate)Funder Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Funded Amount" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Start Date" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Status" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Then I see "Last Modified By" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+
+  @336347
+  Scenario Outline: Hide Columns - SPI - UI - To verify that when user not entered any column names in 'Hide Columns' field, then on any column of flex table get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction  |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+      | Flex Table:General    | Header Instruction  |                | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "EGMS ID" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grant Title" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Grantor Organization" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Project Period" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "# of Subawards" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Active Subaward" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Status" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Budget Redirection Threshold" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Then I see "Actions" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336348 @336349
+  Scenario Outline:Detail config - Help text - Admin - config - To verify that when user not entered any data in Help text field then help icon not displayed beside respective field/column
+  Detail config - Help text - PM - UI - To verify that when user not entered any data in Help text field then help icon not displayed beside respective field/column
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Help Text           | none               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Help Text           |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I do not see helpIcon displayed beside "Award Ceiling" respective field or column
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336350
+  Scenario Outline: Detail config - Help text - SPI - UI - To verify that when user not entered any data in Help text field then help icon not displayed beside respective field/column
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Help Text           |                    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table List       | Help Text           |                | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see helpIcon displayed beside "Subaward Amount" respective field or column
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336351 @336352
+  Scenario Outline: Detail config - Field label override - Admin - config - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+  Detail config - Field label override - PM - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Field Label Override | Award Ceiling      | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336353
+  Scenario Outline: Detail config - Field label override - SPI - UI - To verify that when user not entered any data in Field label override field then respective field name from backend displayed as a label
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336354 @336356
+  Scenario Outline: Detail config - Hide column Json - Admin - config - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+  Detail config - Hide column Json - PM - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Column JSON    |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Hide Column JSON    | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336357
+  Scenario Outline: Detail config - Hide column Json - SPI - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Column JSON     |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Hide Column JSON     | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336358 @336360
+  Scenario Outline: Detail config - Hide Cell Json - Admin - config - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+  Detail config - Hide Cell Json - PM - UI - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON      |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Hide Cell JSON      | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336361
+  Scenario Outline: Detail config - Hide Cell Json - SPI - UI - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+      | Flex Table List       | Hide Cell JSON       |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Hide Cell JSON       | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336362 @336364
+  Scenario Outline: Detail config - Read Only column Json - Admin - config - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
+  Detail config - Read Only column Json - PM - UI - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table            | Display Field Names   |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names   | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Read Only Column JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336365
+  Scenario Outline: Detail config - Read Only column Json - SPI - UI - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names   | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override  | Subaward Amount    | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Column JSON |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names   | <newFieldsApi>   | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override  | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Read Only Column JSON | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336366 @336367
+  Scenario Outline: Detail config - Read Only cell Json - Admin - config - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
+  Detail config - Read Only cell Json - PM - UI - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Display Field Names |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336368
+  Scenario Outline: Detail config - Read Only cell Json - SPI - UI - To verify that when user applied any wrong Read only cell Json then respective field not get read only on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON  |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Read Only Cell JSON  | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336369 @336370
+  Scenario Outline: Action config - Button Help text - Admin - Config - To verify that when user not entered any button help text, then on hovering mouse over respective action no any help text get displayed
+  Action config - Button Help text - PM - UI - To verify that when user not entered any button help text, then on hovering mouse over respective action no any help text get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336371
+  Scenario Outline: Action config - Button Help text - SPI - UI - To verify that when user not entered any button help text, then on hovering mouse over respective action no any help text get displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336372 @336373
+  Scenario Outline: Action config - Action URL - Admin - Config - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+  Action config - Action URL - PM - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336374
+  Scenario Outline: Action config - Action URL - SPI - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336375 @336376
+  Scenario Outline: Action config - Action URL Long - Admin - Config - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+  Action config - Action URL Long - PM - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Cell JSON |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    Then I see "Award Ceiling" in flex table header "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---"
+    Examples:
+      | User  | defaultFieldsApi                                                                                             | newFieldsApi                                                                                                 |
+      | Admin | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+      | PM    | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c | Name,AnnouncementName__c,AnnouncementType__c,Organization__c,ApplicationDueDate__c,Status__c,AwardCeiling__c |
+
+  @336377
+  Scenario Outline: Action config - Action URL Long - SPI - UI - To verify that when user not provided any action URL, then on clicking on respective button, no any action get performed.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
+
+  @336378 @336380
+  Scenario Outline: Action config - Action behavior - Admin - Config - To verify that when user selects "None" option in Action behavior field, then respective page get opened in unexpected format
+  Action config - Action behavior - PM - UI  - To verify that when user selects "None" option in Action behavior field, then respective page get opened in unexpected format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL      | <actionUrlOldValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | Open in same window | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue       | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action URL       | <actionUrlNewValue> | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Action Behavior  | none                | ActiveFundingOpportunitiesAll | Name                      | View                       |
+      | Flex Table Action     | Button Help Text |                     | ActiveFundingOpportunitiesAll | Name                      | View                       |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    Then I see page title "Visualforce Error ~ Salesforce - Enterprise Edition"
+    Examples:
+      | User  | actionUrlOldValue                               | actionUrlNewValue                                       |
+      | Admin | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
+      | PM    | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id}WrongURL |
+
+  @336381
+  Scenario Outline: Action config - Action behavior - SPI - UI - To verify that when user selects "None" option in Action behavior field, then respective page get opened in unexpected format
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names  | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table List       | Field Label Override | Subaward Amount    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "Subaward Amount" in flex table header "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
+      | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |

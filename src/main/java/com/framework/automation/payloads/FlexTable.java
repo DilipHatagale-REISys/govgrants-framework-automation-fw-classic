@@ -330,6 +330,12 @@ public class FlexTable {
                                 .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
                         String.valueOf(SObjectAPIs.GNT__HeaderDescription__c), value);
                 break;
+            case "RECORD SELECTION COLUMN POSITION":
+                finalPayload = String.format(
+                        payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
+                                .getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), filterClause),
+                        String.valueOf(SObjectAPIs.GNT__RecordSelectionColumnPosition__c), value);
+                break;
             case "HEADER INSTRUCTION":
                 finalPayload = String.format(
                         payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableConfig__c), apiUtilities
