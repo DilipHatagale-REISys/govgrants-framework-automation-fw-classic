@@ -122,7 +122,7 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/thead/tr/th[contains(@ng-if,\"" + allignment + "\")]/div/input[@aria-label='" + text + "'] |" +
-                    " //div[@id='"+tableId+"']//th[contains(@ng-if,\"" + allignment + "\")]//input[@aria-label='"+text+"']"))) {
+                    " //div[@id='" + tableId + "']//th[contains(@ng-if,\"" + allignment + "\")]//input[@aria-label='" + text + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -268,7 +268,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     private boolean isDescriptionOrButtonIsDisplayed(String description, String button, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "'] |" +
+                    " //span[contains(text(),'" + description + "')]//ancestor::div[@id='" + tableId + "']//descendant::a[@ng-disabled='false' and @title='" + button + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

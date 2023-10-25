@@ -1407,7 +1407,6 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-
   @205029 @205030 @205049 @205050
   Scenario Outline: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI,
   Record Selection- PM- UI- Verify ‘Record Selection Column’ displays on UI
@@ -1515,6 +1514,247 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207568 @207569
+  Scenario Outline: Records description - Admin/PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
+    When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207584 @207585
+  Scenario Outline: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows),
+  Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207587 @207588
+  Scenario Outline: Page description- Admin- Config- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+  Page description - PM- UI- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207590 @207591
+  Scenario Outline: Page description- Admin- Config- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows),
+  Page description - PM- UI- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
+      | Project Role | equals to | Other |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207593 @207594
+  Scenario Outline: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+  Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207596 @207597
+  Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page,
+  Page description - PM- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+
+  @207599 @207600
+  Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+  Page description - PM- UI- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
+    Then I do not see pagination "Previous" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207602 @207603
+  Scenario Outline: Page description- Admin- Config- Verify we can directly jump on last page using this arrow,
+  Page description - PM- UI- Verify we can directly jump on last page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    Then I do not see pagination "Last" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207605 @207606
+  Scenario Outline: Page description- Admin/PM- Config- Verify we can directly jump on First page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
+    Then I do not see pagination "First" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |

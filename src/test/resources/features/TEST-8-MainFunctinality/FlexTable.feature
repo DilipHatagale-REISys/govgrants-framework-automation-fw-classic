@@ -14011,7 +14011,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-<<<<<<< HEAD
   @336202
   Scenario:Upload action - Admin - Config - To verify that on disabling 'Enable Data Import/Export' Upload button not displayed on UI.
     Given I have "default" configuration as below:
@@ -15040,11 +15039,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
-      | Project Period End Date | Greater than | 07/06/2023 |
-    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
-    Examples:
-      | User | newFieldsApi                                                                                                                                                      | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,ProjectPeriodEndDate__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
   @334573
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Date field

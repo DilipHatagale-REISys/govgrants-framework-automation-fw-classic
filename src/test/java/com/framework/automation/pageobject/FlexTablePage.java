@@ -1720,10 +1720,9 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
 
-
     public void assertIfSelectCheckBoxIsDisplayedInsideTableId(String usage, String selectallcheckbox, String tableId) {
         if (usage.equalsIgnoreCase("see")) {
-            Assert.assertTrue(selectAllCheckBox_Displayed_OrNot(selectallcheckbox,tableId));
+            Assert.assertTrue(selectAllCheckBox_Displayed_OrNot(selectallcheckbox, tableId));
         } else if (usage.equalsIgnoreCase("do not see")) {
             Assert.assertFalse(selectAllCheckBox_Displayed_OrNot(selectallcheckbox, tableId));
         }
@@ -1732,7 +1731,27 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean selectAllCheckBox_Displayed_OrNot(String selectallcheckbox, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='"+tableId+"']//input[@aria-label='"+selectallcheckbox+"']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//input[@aria-label='" + selectallcheckbox + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfPagiNationArrowDisplyed_or_not(String usage, String arrow, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(paginationArrowDisplayedInsideTable(arrow, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(paginationArrowDisplayedInsideTable(arrow, tableId));
+        }
+    }
+
+    private boolean paginationArrowDisplayedInsideTable(String arrow, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//descendant::*[@ng-disabled='false' and @title='" + arrow + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
