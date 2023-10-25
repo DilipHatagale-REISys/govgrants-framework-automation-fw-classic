@@ -1146,6 +1146,7 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
                 "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "']"));
@@ -1698,4 +1699,44 @@ public class FlexTablePage extends GovGrantsManager {
         Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
     }
 
+
+    public void assertIfHelpIconIsDisplayedBesideFieldOrColumn(String usage, String headerName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHelpIconDisplayedBesideHeaderName(headerName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHelpIconDisplayedBesideHeaderName(headerName)).isFalse();
+        }
+    }
+
+    private boolean assertIfHelpIconDisplayedBesideHeaderName(String headerName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@title='" + headerName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+
+    public void assertIfSelectCheckBoxIsDisplayedInsideTableId(String usage, String selectallcheckbox, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(selectAllCheckBox_Displayed_OrNot(selectallcheckbox,tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(selectAllCheckBox_Displayed_OrNot(selectallcheckbox, tableId));
+        }
+    }
+
+    private boolean selectAllCheckBox_Displayed_OrNot(String selectallcheckbox, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='"+tableId+"']//input[@aria-label='"+selectallcheckbox+"']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

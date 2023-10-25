@@ -8,6 +8,7 @@ import com.helperPackage.handlers.govgrants;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -495,6 +496,11 @@ public class FlexTableSteps {
         flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
     }
 
+    @Then("^I (see|do not see) helpIcon displayed beside \"([^\"]*)\" respective field or column$")
+    public void iDoNotSeeDisplayedBesideRespectiveFieldOrColumn(String usage, String headerName) {
+        flexTablePage.assertIfHelpIconIsDisplayedBesideFieldOrColumn(usage, headerName);
+    }
+
 
     @Then("^I (see|do not see|softly see|softly do not see) text \"([^\"]*)\" in header instruction field flex table id \"([^\"]*)\"$")
     public void iSeeTextInHeaderInstructionFieldFlexTableId(String usage, String showingTextValue, String tableId) {
@@ -596,5 +602,19 @@ public class FlexTableSteps {
     @Then("I do not see \"([^\"]*)\" button inside \"([^\"]*)\" flex table$")
     public void iDoNotSeeButtonInsideFlexTable(String buttonName, String headerName) {
         flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(buttonName, headerName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" displayed inside table id \"([^\"]*)\"$")
+    public void iSeeDisplayedInsideTableId(String usage, String selectallcheckbox, String tableId) {
+        flexTablePage.assertIfSelectCheckBoxIsDisplayedInsideTableId(usage, selectallcheckbox, tableId);
+    }
+
+    @When("I performed quick search \"([^\"]*)\" inside table id \"([^\"]*)\" on page block$")
+    public void iPerformedQuickSearchInsideTableIdOnPageBlock(String textValue, String tableId) {
+        WebElement web = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//input[@ng-model='quickSearchTerm']"));
+        web.clear();
+        web.sendKeys(textValue);
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//span//button//*[@aria-label='Search']"));
+
     }
 }
