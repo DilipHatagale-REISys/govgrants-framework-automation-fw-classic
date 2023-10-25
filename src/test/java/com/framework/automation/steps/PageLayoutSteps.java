@@ -897,4 +897,55 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
     public void iDeleteSpecificStickyNotesWithTitleOnClickingInNotes(String NotesTitle, String button) {
         pageLayoutPage.clickOnCrossButtonInNotesSection(NotesTitle, button);
     }
+
+    @Then("^I (see|do not see) help text icon is displayed for field \"([^\"]*)\"$")
+    public void iDoNotSeeHelpTextIconIsDisplayedForField(String usage,String fieldName) {
+        pageLayoutPage.assertDisplayedHelpIconornot(usage, fieldName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" icon is displayed on pagelayout$")
+    public void iSeeIconIsDisplayedOnPagelayout(String usage, String menu) {
+        pageLayoutPage.assertMenuOptionorNot(usage, menu);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" button is displayed on top right of pagelayout$")
+    public void iSeeButtonIsDisplayedOnTopRightOfPagelayout(String usage, String buttonName) {
+        pageLayoutPage.assertButtonIsDisplayedOnPageLayout(usage, buttonName);
+    }
+
+    @And("I hover the mouse on button \"([^\"]*)\"$")
+    public void iHoverTheMouseOnButton(String buttonName) {
+        pageLayoutPage.assertHoverTheMouse(buttonName);
+    }
+
+    @Then("^I (see|do not see) the text \"([^\"]*)\" on hovering button$")
+    public void iSeeTheTextOnHoveringButton(String usage, String buttonName) {
+        pageLayoutPage.assertHoverText(usage, buttonName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" subtab is present in page details$")
+    public void iSeeSubtabIsPresentInPageDetails(String usage, String subTab) {
+        pageLayoutPage.assertSubtabDisplayed(usage, subTab);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" subtab is present with icon \"([^\"]*)\" in page details$")
+    public void iSeeSubtabIsPresentWithIconInPageDetails(String usage, String subTab, String icon) {
+        pageLayoutPage.assertSubtabWithIcon(usage,subTab,icon);
+    }
+
+    @Then("^I (see|do not see) sequence of \"([^\"]*)\" subtab is \"([^\"]*)\" on page layout$")
+    public void iSeeSequenceOfSubtabIsOnPageLayout(String usage, String subTab, String sequence) {
+        pageLayoutPage.assertSubtabSequence(usage, subTab, sequence);
+    }
+
+    @Then("^I (see|do not see) bulb icon at header instruction is displayed on pagelayout$")
+    public void iDoNotSeeBulbIconAtHeaderInstructionIsDisplayed(String usage) {
+        pageLayoutPage.assertBulbIconAtHeaderInstructionDiplayedOrNot(usage);
+    }
+
+    @Then("^I (see|do not see|softly see) field \"([^\"]*)\" inside page header$")
+    public void iSoftlySeeFieldInsidePageHeader(String usage, String fieldName) {
+        pageLayoutPage.assertfieldHeader(usage, fieldName);
+    }
+
 }

@@ -1147,6 +1147,9 @@ public class FlexTablePage extends GovGrantsManager {
 
     public void getHelpTextFromIcon(String iconId) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
+                "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
+                "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "']"));
     }
 
 
@@ -1297,6 +1300,13 @@ public class FlexTablePage extends GovGrantsManager {
             I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
         }
         I.amPerforming().click().on(filterAction);
+    }
+
+    public void handleDropdownAndLookupInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
     }
 
     public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {

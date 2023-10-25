@@ -11,7 +11,7 @@ public enum SObjectAPIs {
     Program__c, GNT__ApprovalProcessStepCache__c, GNT__SobjectActionConfig__c, GNT__TaskAction__c, GNT__ProgressbarHeaderConfig__r, GNT__ChartConfig__c, GNT__ChartDetailConfig__c,
     GNT__ChartConfig__r, GNT__PageTemplate__c, GNT__PageBlockConfig__c, GNT__TabLayoutConfig__r, GNT__TabConfig__c, GNT__PageBlockDetailConfig__c, GNT__EmailTemplateConfig__c,
     GNT__DataTableDetailConfig__c, GNT__SObjectPhaseConfig__c, GNT__CustomApp__c, GNT__CalendarConfig__c, GNT__SobjectActionConfig__r, GNT__SObjectAutoSnapshot__c, GNT__CaptureForm__c, GNT__CaptureSection__c,
-    GNT__CaptureItem__c, GNT__NameTemplateSequence__c, GNT__MessageConfig__c, GNT__ErrorMessageConfig__c,
+    GNT__CaptureItem__c, GNT__NameTemplateSequence__c, GNT__MessageConfig__c, GNT__ErrorMessageConfig__c,GNT__PageLayoutButtonHelpTextConfig__c,
 
     //Fields
     GNT__Abbreviation__c, GNT__Active__c, GNT__AvailableForProfiles__c, GNT__DefaultThemeName__c, GNT__InternalUniqueID__c,
