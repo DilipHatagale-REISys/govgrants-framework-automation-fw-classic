@@ -116,8 +116,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
     Then I softly see "Test 2" on page "1" of "govgrants" pdf file
     Examples:
-      | User |
-      | PM   |
+      | User  |
+      | PM    |
       | ADMIN |
 
   @258164 @258165 @258375 @258381 @258382 @258384 @Toverifywhen'Ismasterview'istruefor'Test1'listviewandpageisrefreshedthenitwilllandon'Test1'listview(PM) @vrushali @sprint-19
@@ -1013,3 +1013,749 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I softly see "title" as "Department of Higher Education" inside mini page layout
     Then I softly see "Label" as "Code" inside mini page layout
     Then I softly see "Value" as "755" inside mini page layout
+
+  @204740 @204742
+  Scenario Outline: Is active- Admin- Config- Verify flex table should not be displayed,Is active- PM- UI- Verify flex table should not be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-6747                    |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @204739 @204741
+  Scenario Outline: Is active- Admin- Config- Verify flex table should be displayed, Is active- PM- UI- Verify flex table should be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-6747                    |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @204736
+  Scenario: Name- Admin- Config- Verify Flex table name displayed correctly on UI,
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
+      | Flex Table            | Header    | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @204737
+  Scenario: Name- PM- UI- Verify Flex table name displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
+      | Flex Table            | Header    | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:1 |
+      | Flex Table            | Is Active | true                          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Is Active | true                          | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+
+  @204738
+  Scenario: Name- SPI- UI- Verify Flex table name displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Contacts          | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Contacts      | AppContact         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application	" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts" displayed as a Header on flex table
+
+  @204743
+  Scenario: Is active- SPI- UI- Verify flex table should be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-8081                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Header field "Contacts" displayed as a Header on flex table
+
+  @204745 @204746
+  Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon,Header instruction- PM- UI- Verify if given header help text is getting displayed under 'i' icon
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Header Help Text | <defaultHelpText> | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header Help Text | <newHelpText> | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    When I hovering mouse on help text "Contacts@1234567890!@#$%^&*()" icon
+    Then I see "Help text for Automation" shown as help text
+    Examples:
+      | User  | defaultHelpText                                                                                         | newHelpText              |
+      | Admin | State or funding organization contacts for applicants to refer.Tgfhg!$#%^$&^(**)_(+_)134655898-00=;/.,] | Help text for Automation |
+      | PM    | State or funding organization contacts for applicants to refer.Tgfhg!$#%^$&^(**)_(+_)134655898-00=;/.,] | Help text for Automation |
+
+  @204748 @204749 @204751 @204752
+  Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table,Display Field Name -PM- UI- Verify if all fields from 'Display field names' are getting displayed under on flex Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue             | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi>            | ApiGeneratedId:1 |
+      | Flex Table            | Header              | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header              | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>                | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Project Role" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "Name" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "Email" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "Organization" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+    Then I see "BaseSalary" in flex table header "DataTableEnhanceProgramContactsFlexToggle"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @204991 @204992
+  Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI,
+  Page Size- PM- UI- Verify dropdown to select page size manually should not appear on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | false          | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @204988 @204989
+  Scenario Outline: Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually,Page Size- PM- UI- Verify dropdown appears on UI to select page size manually
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Entries" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @204994 @204995 @204997 @205005
+  Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’,
+  Default Page Size - PM- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’,
+  Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI,
+  Total Records Count- PM- UI- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
+      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205007 @205008
+  Scenario Outline: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI,
+  Total Records Count- PM- UI- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
+      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | false          | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I do not see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205013 @205014
+  Scenario Outline: Pagination - Admin- Config- Verify Pagination should not display on UI,
+  Pagination - PM- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+
+  @205010 @205011
+  Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI,Pagination - PM- UI- Verify ‘Pagination’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "---program:-:DataTableEnhanceTableIDforContactsTable---" table contains "Page 1 of"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205026 @205027
+  Scenario Outline: Auto Index - Admin- Config- Verify index column (#) should not display on UI,
+  Auto Index - PM- UI- Verify index column (#) should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | false          | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+
+  @205023 @205024
+  Scenario Outline: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#),Auto Index - PM- UI- Verify records are getting indexed under separate column (#)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "#" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "5" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205046 @205047
+  Scenario Outline: Record Selection- Admin- Config- Verify Record Selection Column should not display on UI,
+  Record Selection- PM- UI- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination       | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Record Selection | false              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names     | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | false          | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I do not see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205029 @205030 @205049 @205050
+  Scenario Outline: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI,
+  Record Selection- PM- UI- Verify ‘Record Selection Column’ displays on UI
+  Record Selection- Admin- Config- Verify correct Record Selection Column Header displays on UI,
+  Record Selection- PM- UI- Verify correct Record Selection Column Header displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names     | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Pagination       | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Record Selection | false              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index       | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names     | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index       | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Select All Check Box" displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205052 @205053
+  Scenario Outline: Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI,Record Selection- PM- UI- Verify Record Selection Column rendered on desired position on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names              | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Record Selection          | false              | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index                | true               | ApiGeneratedId:1 |
+      | Flex Table            | Record Selection Column Position | none               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names              | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Record Selection          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index                | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | none           | Programs                        | Name                      | Record Selection           |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207562 @207563
+  Scenario Outline: Test Case 205052: Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI,
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
+      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "10" with page size dropdown at "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I perform quick search for "Lisa"
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207565 @207566
+  Scenario Outline: Records description- Admin- Config- Verify when we get any quick search results description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records),
+  Records description - PM- UI- Verify when we get any quick search results description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index          | true               | ApiGeneratedId:3 |
+      | Flex Table            | Default Page Size          | 10                 | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Default Page Size          | 10             | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207568 @207569
+  Scenario Outline: Records description - Admin/PM- UI- Verify when we apply ‘Advance filter’ description of records displayed on UI should modify accordingly (eg. Showing 1 to 9 of 9 records)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see Advance Filter box is displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" in flex table
+    When I performed quick search "Lisa" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---" on page block
+    Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207584 @207585
+  Scenario Outline: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows),
+  Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207587 @207588
+  Scenario Outline: Page description- Admin- Config- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+  Page description - PM- UI- Verify when we get any quick search results Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207590 @207591
+  Scenario Outline: Page description- Admin- Config- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows),
+  Page description - PM- UI- Verify when we apply ‘Advance filter’ Page description displayed on UI should modify accordingly (eg. Page 1 of 5 with navigation arrows)
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    When I click on advance filter "#advfDataTableEnhanceProgramContacts" of table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I enter advance filter values in table id "advfDataTableEnhanceProgramContacts"
+      | Project Role | equals to | Other |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207593 @207594
+  Scenario Outline: Page description- Admin- Config- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+  Page description - PM- UI- Verify no of page description is displayed on UI (eg. Page 1 of 5 with navigation arrows) and we can toggle page using arrows
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Filter              | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Next"
+    Then I see page description is displayed "Page 2 of" with "First" arrow inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207596 @207597
+  Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Next arrow should get disabled on last page,
+  Page description - PM- UI- Verify we can toggle page using arrows Next arrow should get disabled on last page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+
+  @207599 @207600
+  Scenario Outline: Page description- Admin- Config- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+  Page description - PM- UI- Verify we can toggle page using arrows Previous arrow should get disabled on First page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
+    Then I do not see pagination "Previous" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207602 @207603
+  Scenario Outline: Page description- Admin- Config- Verify we can directly jump on last page using this arrow,
+  Page description - PM- UI- Verify we can directly jump on last page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "Last"
+    Then I do not see pagination "Last" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @207605 @207606
+  Scenario Outline: Page description- Admin/PM- Config- Verify we can directly jump on First page using this arrow
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Enable Pagination          | true           | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I select value inside table "---program:-:DataTableEnhanceTableIDforContactsTable---" is "5"
+    And I click on page navigation arrow "---program:-:DataTableEnhanceTableIDforContactsTable---" for table id "First"
+    Then I do not see pagination "First" arrow displayed inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | defaultFieldsApi                                                                    | newFieldsApi                                                                        |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |

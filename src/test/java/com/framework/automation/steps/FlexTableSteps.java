@@ -4,9 +4,11 @@ import com.framework.automation.pageobject.FlexTablePage;
 import com.framework.automation.pageobject.FrameworkCookiesPage;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.exception.TestingBlazeCustomException;
+import com.helperPackage.handlers.govgrants;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -452,6 +454,18 @@ public class FlexTableSteps {
         flexTablePage.handleDropdownInputForAdvanceFilter(advanceFilterId, rowValues);
     }
 
+    @When("I enter advance filter first two column values in table id \"([^\"]*)\"$")
+    public void iEnterAdvanceFilterlLookupValuesInsideTableId(String advanceFilterId, List<String> rowValues) {
+        flexTablePage.handleDropdownAndLookupInputForAdvanceFilter(advanceFilterId, rowValues);
+    }
+
+    @When("^I (select|select in modal) value \"([^\"]*)\" in field \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void selectValue(String usage, String fieldValue, String fieldApiName, String flextableId) {
+        govgrants.perform().inputForms().inputFormDataByFieldApiName(fieldApiName, fieldValue, usage.contains("modal"));
+        I.amPerforming().click().on(By.xpath("//div[@id='select2-drop']//ul[contains(@class, 'select2-results')]//div"));
+        I.amPerforming().click().on(By.xpath("//div[@id='"+flextableId+"']//a[@title='Add Filter']/span"));
+    }
+
     @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
     public void iSeeValueForTheTitleInsideTable(String usage, String columnValue, String columnTitle, String flextableDivId) {
         flexTablePage.assertFlextableValuesDisplayedOrNot(usage, columnValue, columnTitle, flextableDivId);
@@ -480,6 +494,11 @@ public class FlexTableSteps {
     @Then("^I (see|do not see) \"([^\"]*)\" displayed on flex table$")
     public void iSeeDisplayedOnFlexTable(String usage, String tableidOrDisplayedValue) {
         flexTablePage.assertIfTableRenderInModalWindow(usage, tableidOrDisplayedValue);
+    }
+
+    @Then("^I (see|do not see) helpIcon displayed beside \"([^\"]*)\" respective field or column$")
+    public void iDoNotSeeDisplayedBesideRespectiveFieldOrColumn(String usage, String headerName) {
+        flexTablePage.assertIfHelpIconIsDisplayedBesideFieldOrColumn(usage, headerName);
     }
 
 
@@ -583,5 +602,24 @@ public class FlexTableSteps {
     @Then("I do not see \"([^\"]*)\" button inside \"([^\"]*)\" flex table$")
     public void iDoNotSeeButtonInsideFlexTable(String buttonName, String headerName) {
         flexTablePage.assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(buttonName, headerName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" displayed inside table id \"([^\"]*)\"$")
+    public void iSeeDisplayedInsideTableId(String usage, String selectallcheckbox, String tableId) {
+        flexTablePage.assertIfSelectCheckBoxIsDisplayedInsideTableId(usage, selectallcheckbox, tableId);
+    }
+
+    @When("I performed quick search \"([^\"]*)\" inside table id \"([^\"]*)\" on page block$")
+    public void iPerformedQuickSearchInsideTableIdOnPageBlock(String textValue, String tableId) {
+        WebElement web = I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + tableId + "']//input[@ng-model='quickSearchTerm']"));
+        web.clear();
+        web.sendKeys(textValue);
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//span//button//*[@aria-label='Search']"));
+
+    }
+
+    @Then("^I (see|do not see) pagination \"([^\"]*)\" arrow displayed inside table id \"([^\"]*)\"$")
+    public void iSeePaginationArrowDisplayedInsideTableId(String usage, String arrow, String tableId) {
+        flexTablePage.assertIfPagiNationArrowDisplyed_or_not(usage,arrow,tableId);
     }
 }

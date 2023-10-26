@@ -114,7 +114,10 @@ public final class GovGrantsProductObjects {
      */
     public boolean isRecordPresentInTheFlexTable(String text, String tableId) {
         try {
-            return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "]"));
+            return I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@id='" + tableId + "']//*[" + I.amPerforming().sanityOfXpathTo().contains("text()", text) + "] | //div[@id='" + tableId + "']//*[contains(text(),'" + text + "')] | //div[@id='" + tableId + "']//*[contains(translate(., \n" +
+                    "                                      'ABCDEFGHIJKLMNOPQRSTUVWXYZ'," +
+                    "                                      'abcdefghijklmnopqrstuvwxyz')," +
+                    "                   '" + text + "')]"));
         } catch (Exception e) {
         }
         return false;

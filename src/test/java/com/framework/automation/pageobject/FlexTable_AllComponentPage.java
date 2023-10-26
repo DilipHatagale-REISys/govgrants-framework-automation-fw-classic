@@ -59,7 +59,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row ng-scope']//div//span[contains(text(),'" + text + "')] |" +
                     " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div/span/span//font[contains(text(),'" + text + "')] |" +
-                    " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div[@class='totalRecords col-md-4 col-sm-4 col-xs-4 ng-scope']/span[contains(text(),'" + text + "')]"))) {
+                    " //div[@id='" + tableId + "']/div[@class='row ng-scope']/div[@class='totalRecords col-md-4 col-sm-4 col-xs-4 ng-scope']/span[contains(text(),'" + text + "')] |" +
+                    " //div[@id='" + tableId + "']/div[@class='row displayFlexCenter ng-scope']//div//span[contains(text(),'" + text + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -120,7 +121,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     private boolean isColumnAllignedLeftRight(String text, String allignment, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/thead/tr/th[contains(@ng-if,\"" + allignment + "\")]/div/input[@aria-label='" + text + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/thead/tr/th[contains(@ng-if,\"" + allignment + "\")]/div/input[@aria-label='" + text + "'] |" +
+                    " //div[@id='" + tableId + "']//th[contains(@ng-if,\"" + allignment + "\")]//input[@aria-label='" + text + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -266,7 +268,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     private boolean isDescriptionOrButtonIsDisplayed(String description, String button, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div/*[contains(text(),'" + description + "')]/ancestor::div[@id='" + tableId + "']//div//*[@title='" + button + "'] |" +
+                    " //span[contains(text(),'" + description + "')]//ancestor::div[@id='" + tableId + "']//descendant::a[@ng-disabled='false' and @title='" + button + "']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

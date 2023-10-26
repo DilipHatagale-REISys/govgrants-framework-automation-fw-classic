@@ -1146,6 +1146,7 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void getHelpTextFromIcon(String iconId) {
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] | //*[@title='" + iconId + "']//following-sibling::*/*[@class='fa fa-info helpIcon'] | //*[text()='" + iconId + "']/parent::a//following-sibling::span//*[@class='fa fa-info helpIcon']"));
         I.amPerforming().scroll().toMoveToElement(By.xpath("//a[@id='" + iconId + "']/span[@class='fa fa-info helpIcon'] |" +
                 "//div[@id='headerButtonsPanel']//button[@title='" + iconId + "'] |" +
                 "//*[text()='" + iconId + "']/parent::button[@title='" + iconId + "']"));
@@ -1299,6 +1300,13 @@ public class FlexTablePage extends GovGrantsManager {
             I.amPerforming().dropDownSelection().from(dropDownSelector3).selectByVisibleText(rowvalues.get(2).toString());
         }
         I.amPerforming().click().on(filterAction);
+    }
+
+    public void handleDropdownAndLookupInputForAdvanceFilter(String advanceFilterId, List rowvalues) {
+        By dropDownSelector1 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Column')]/..//select");
+        By dropDownSelector2 = By.xpath("//div[@id='" + advanceFilterId + "']//label[contains(text(),'Operator')]/..//select");
+        I.amPerforming().dropDownSelection().from(dropDownSelector1).selectByVisibleText(rowvalues.get(0).toString());
+        I.amPerforming().dropDownSelection().from(dropDownSelector2).selectByVisibleText(rowvalues.get(1).toString());
     }
 
     public void assertFlextableValuesDisplayedOrNot(String usage, String columnValue, String columnTitle, String flextableDivId) {
@@ -1676,7 +1684,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean headerSequenceIsDisplayedInOrder(String headerName, String tableId, String index) {
         boolean flag = false;
         try {
-            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//div[contains(@id,'"+tableId+"')]//table/thead/tr/th/a//span[@class='ng-binding'])[" + index + "]"));
+            WebElement elementSequence = I.amPerforming().getElementReference().of(By.xpath("(//div[contains(@id,'" + tableId + "')]//table/thead/tr/th/a//span[@class='ng-binding'])[" + index + "]"));
             String actionElement = elementSequence.getAttribute("title");
             if (actionElement.equalsIgnoreCase(headerName)) {
                 flag = true;
@@ -1687,8 +1695,67 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
 
-    public void assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(String buttonName, String headerName){
+    public void assertActionButtonInsideFlexTableIsNotDisplayedInFlexTable(String buttonName, String headerName) {
         Assert.assertFalse(isActionButtonInsideTopOfFlexTableDisplayed(buttonName, headerName));
     }
 
+
+    public void assertIfHelpIconIsDisplayedBesideFieldOrColumn(String usage, String headerName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHelpIconDisplayedBesideHeaderName(headerName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfHelpIconDisplayedBesideHeaderName(headerName)).isFalse();
+        }
+    }
+
+    private boolean assertIfHelpIconDisplayedBesideHeaderName(String headerName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@title='" + headerName + "']/ancestor::a/following-sibling::span//*[@class='fa fa-info helpIcon']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfSelectCheckBoxIsDisplayedInsideTableId(String usage, String selectallcheckbox, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(selectAllCheckBox_Displayed_OrNot(selectallcheckbox, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(selectAllCheckBox_Displayed_OrNot(selectallcheckbox, tableId));
+        }
+    }
+
+    private boolean selectAllCheckBox_Displayed_OrNot(String selectallcheckbox, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//input[@aria-label='" + selectallcheckbox + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+
+    public void assertIfPagiNationArrowDisplyed_or_not(String usage, String arrow, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(paginationArrowDisplayedInsideTable(arrow, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(paginationArrowDisplayedInsideTable(arrow, tableId));
+        }
+    }
+
+    private boolean paginationArrowDisplayedInsideTable(String arrow, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//descendant::*[@ng-disabled='false' and @title='" + arrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }
