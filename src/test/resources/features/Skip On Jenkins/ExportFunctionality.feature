@@ -1140,7 +1140,7 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click alert button "OK"
     When I navigate to "History" sub tab
     And I refresh the page
-    And I pause execution for "5" seconds
+    When I pause execution for "5" seconds
     Then I see generated snapshot ".pdf" is displayed with "File Name"
 
     Examples:
