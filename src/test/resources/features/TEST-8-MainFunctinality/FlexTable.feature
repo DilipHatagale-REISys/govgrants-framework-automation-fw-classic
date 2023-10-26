@@ -15131,9 +15131,300 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I enter advance filter first two column values in table id "advfActiveGrants"
       | Budget Period | Equals to |
-    And I select value "BP-8834" in field "s2id_autogen1"
+    And I select value "BP-8834" in field "s2id_autogen1" in table id "advfActiveGrants"
     Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Examples:
       | User  | newFieldsApi                                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
       | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c,BudgetPeriod__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334581
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Lookup field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter first two column values in table id "advfGrantsList"
+      | Budget Period | Equals to |
+    And I select value "BP-8834" in field "s2id_autogen1" in table id "advfGrantsList"
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                           | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c,BudgetPeriod__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334582 @334583
+  Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Picklist field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Status | Equals to | Created |
+    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @334585
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Picklist field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Status | Equals to | Active |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                           | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,OwnerName__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334586 @334587
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Currency field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Funded Amount | Greater than or Equal to | 11 |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334588
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Currency field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Total Awarded Amount | Less than or Equal to | 10000 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                               | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,LatestAwardTotalAwardedAmount__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334589 @334590
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Checkbox field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Review Initiated | Not equals to | false |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                       |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,ReviewInitiated__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,ReviewInitiated__c |
+
+  @334591
+  Scenario Outline: Flex table-Filter-To verify that user is able to filter records by using Checkbox field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Budget Period Closeout Required? | Equals to | false |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334592 @334593
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Picklist(Multiselect) field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Types Of Assistance | Includes | Project Grants |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                          |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,TypesOfAssistance__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,TypesOfAssistance__c |
+
+  @334594
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Picklist(Multiselect) field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<Users>" user
+    When I navigate to "Applications" tab
+    When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
+    When I enter advance filter values in table id "advfpopupflextable"
+      | Application Sections for Revision | Includes | Budget: Focus Area |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablepopupflextable"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
+      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
+
+  @334596 @334597
+  Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Roll up summary field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter values in table id "advfActiveGrants"
+      | Subaward Amount | Greater than or Equal to | 1000 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                       | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334598
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Checkbox field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Subaward Amount | Greater than or Equal to | 1000 |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334600 @334601
+  Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Email field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Email Test | Contains | test |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Email_Test__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Email_Test__c |
+
+  @334603
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Email field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Email | Contains | dilip |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                       | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Email__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334604 @334606
+  Scenario Outline: Flex table-Quick Search-"<User>"-UI-To verify that user is able to search for URL field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | ActiveGrants       | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfActiveGrants" of table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I enter advance filter values in table id "advfActiveGrants"
+      | URL | Contains | www |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                 | defaultFieldsApi                                                                                                                                      |
+      | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+      | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
+
+  @334607
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using URL field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | URL | Contains | www |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |

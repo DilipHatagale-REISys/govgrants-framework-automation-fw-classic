@@ -459,11 +459,11 @@ public class FlexTableSteps {
         flexTablePage.handleDropdownAndLookupInputForAdvanceFilter(advanceFilterId, rowValues);
     }
 
-    @When("^I (select|select in modal) value \"([^\"]*)\" in field \"([^\"]*)\"$")
-    public void selectValue(String usage, String fieldValue, String fieldApiName) {
+    @When("^I (select|select in modal) value \"([^\"]*)\" in field \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void selectValue(String usage, String fieldValue, String fieldApiName, String flextableId) {
         govgrants.perform().inputForms().inputFormDataByFieldApiName(fieldApiName, fieldValue, usage.contains("modal"));
         I.amPerforming().click().on(By.xpath("//div[@id='select2-drop']//ul[contains(@class, 'select2-results')]//div"));
-        I.amPerforming().click().on(By.xpath("//div[@id='advfActiveGrants']//a[@title='Add Filter']/span"));
+        I.amPerforming().click().on(By.xpath("//div[@id='"+flextableId+"']//a[@title='Add Filter']/span"));
     }
 
     @Then("I (see|not see) value \"([^\"]*)\" for the title \"([^\"]*)\" inside table \"([^\"]*)\"$")
