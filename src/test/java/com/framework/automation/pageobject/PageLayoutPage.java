@@ -727,7 +727,8 @@ public class PageLayoutPage extends GovGrantsManager {
      * @return
      */
     public WebElement getPDFOptionForVerification(String options) {
-        return I.amPerforming().getElementReference().of(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li"));
+        return I.amPerforming().getElementReference().of(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li |" +
+                "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')]"));
     }
 
     /**

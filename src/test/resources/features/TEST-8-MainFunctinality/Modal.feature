@@ -11,8 +11,9 @@ Business Need: Modal Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     And I pause execution for "5" seconds
+    Then I see "Create Program" modal window is open in same tab
+
     Examples:
       | User  |
       | ADMIN |
       #| PM    |
-
