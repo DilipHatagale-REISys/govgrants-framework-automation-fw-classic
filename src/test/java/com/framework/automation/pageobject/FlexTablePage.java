@@ -1211,7 +1211,7 @@ public class FlexTablePage extends GovGrantsManager {
     public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "'] | //*[@field-name='" + columnName + "']//select//option[text()='Other']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1256,7 +1256,8 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + fieldName + "'] |" +
                 " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + fieldName + "')] |" +
                 " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='filter in filterDisplayList']//*[@aria-label='" + fieldName + "'] |" +
-                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x']"));
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x'] |" +
+                " //advancefilter//div//div/div//*[@aria-label='" + fieldName + "' or @field-name='" + fieldName + "']//select"));
     }
 
     public void clickOnDopDownButtonAndSelectValue(String field, String dropdownValue) {
