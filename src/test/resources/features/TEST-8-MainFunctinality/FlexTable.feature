@@ -3721,8 +3721,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338615
+  @338615 @334625
   Scenario: Advanced Filter- Admin- Config - Verify all filters can be removed using Clear All (×) button
+  |Flex table-Filter-Admin-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3735,15 +3736,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
-    And I click on "fa fa-plus" after click advance filter
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test2 |
-    And I click on "fa fa-plus" after click advance filter
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338616
+  @338616 @334626
   Scenario: Advanced Filter- PM- UI - Verify all filters can be removed using Clear All (×) button
+  |Flex table-Filter-PM-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3756,15 +3756,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
-    And I click on "fa fa-plus" after click advance filter
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test2 |
-    And I click on "fa fa-plus" after click advance filter
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338618
+  @338618 @334627
   Scenario: Advanced Filter- SPI- UI – Verify all filters can be removed using Clear All (×) button
+  |Flex table-Filter-SPI-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3777,10 +3776,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
       | EGMS ID | Contains | test1 |
-    And I click on "fa fa-plus" after click advance filter
     When I enter advance filter values in table id "advfGrantsList"
       | EGMS ID | Contains | test2 |
-    And I click on "fa fa-plus" after click advance filter
     And I click on "Clear All" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
@@ -3854,8 +3851,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338623
+  @338623 @334628
   Scenario: Advance filter - Admin- Config- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
+  |Flex table-Filter-Admin-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3870,13 +3868,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
-    And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @338624
-  Scenario: Advance filter - PM- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
+  @338624 @334629
+  Scenario: Advance filter -PM-UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
+  |Flex table-Filter-PM-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:1 |
@@ -3891,14 +3889,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
-    And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338625
+  @338625 @334630
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
+  |Flex table-Filter-SPI-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
@@ -3911,8 +3909,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
     When I enter advance filter values in table id "advfGrantsList"
       | EGMS ID | Contains | GT-REI1-00001 |
-    And I click on "fa fa-plus" after click advance filter
-    And I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to 1 of 1 records" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
     And I refresh the page
     Then I do not see filter "filter in filterDisplayList" is displayed
@@ -3941,7 +3937,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
       | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
-  @338627
+  @338627 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3981,7 +3977,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338630
+  @338630 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4286,7 +4282,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "fa fa-plus" after click advance filter
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
 
-  @338653
+  @338653 @334616
   Scenario: Flex Table :Admin:-To verify,  advanced filter should work for the Number field with 'Less than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -13567,7 +13563,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338831
+  @338831 @334616 @334617
   Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user Not Equals to operator
   Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user Not Equals to operator
     Given I have "default" configuration as below:
@@ -13663,7 +13659,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @338838 @338840
+  @338838 @338840 @334617 @334616
   Scenario Outline: Flex table-Filter Criteria-Admin-Config_To verify that all records displayed in table are filtered by provided filter criteria, where user NOT IN operator
   Flex table-Filter Criteria-PM-UI_To verify that all records displayed in table are filtered by provided filter criteria, where user NOT IN operator
     Given I have "default" configuration as below:
@@ -15040,7 +15036,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | defaultFieldsApi                                                                                                                                                         | newFieldsApi                                                                                                                                                             |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @334573
+  @334573 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Date field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15061,7 +15057,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                         |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c,ProjectPeriodStartDate__c,Date_and_Time__c,OwnerName__c,FinalFiscalReportCreated__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @334571 @334572
+  @334571 @334572 @334617
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by using Date & Time field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15099,7 +15095,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
       | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334578
+  @334578 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Formula field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15178,7 +15174,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | ADMIN |
       | PM    |
 
-  @334585
+  @334585 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Picklist field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15216,7 +15212,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
       | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
 
-  @334588
+  @334588 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Currency field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15292,7 +15288,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,TypesOfAssistance__c |
       | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,TypesOfAssistance__c |
 
-  @334594
+  @334594 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Picklist(Multiselect) field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
@@ -15334,7 +15330,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
       | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,OwnerName__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334598
+  @334598 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Checkbox field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15428,3 +15424,303 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | User | newFieldsApi                                                                                                                                     | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,URL__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334611 @334612
+  Scenario Outline:Flex table-Filter-"<Users>"-To verify that user is able to filter records by using reference field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:5 |
+      | Flex Table            | Header Instruction         |                    | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Header Instruction         |                | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | AppReviewList      | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    When I click on advance filter "#advfAppReviewList" of table id "---program:-:toggleFlexTableIdForAdminPM---"
+    When I enter advance filter values in table id "advfAppReviewList"
+      | Announcement Title | Contains | New |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:toggleFlexTableIdForAdminPM---"
+    Examples:
+      | Users | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                            |
+      | ADMIN | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+      | PM    | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.ApplicationDueDate__c,OwnerId,SubmittedOn__c,Status__c |
+
+  @334613
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using reference field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
+    When I enter advance filter values in table id "advfpopupflextable"
+      | Funding Opportunity Title | Contains | package |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablepopupflextable"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
+      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
+
+  @334619 @334620
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that user is able to filter records by applying multiple filters, on clicking on "Add filter" action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Auto |
+    When I enter advance filter first two column values in table id "advfPrograms"
+      | (Obsolate)Funder Type | Equals to |
+    Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334621
+  Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Checkbox field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Contains | Vrush |
+    When I enter advance filter first two column values in table id "advfGrantsList"
+      | Status | Equals to |
+    Then I see table contains "Showing 1 to" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334622 @334623
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that when applied filter not matched with any of the record details, then "No results found" message displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | ACBDE |
+    Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334624
+  Scenario Outline: Flex table-Filter-SPI-To verify that when applied filter not matched with any of the record details, then "No results found" message displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Contains | ACCBS |
+    Then I see "No Records Found" inside flex table with id "---program:-:grantsFlexTableIdForSPIuser---"
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334631 @334632 @Bug-ticket-374114
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Menu - Refresh link, applied filter get cleared
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Auto |
+    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
+    And I select "Refresh" from parallel lines dropdown of "Internal Programs - Draft"
+    Then I do not see filter "filter in filterDisplayList" is displayed
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334633 @Bug-ticket-374114
+  Scenario Outline: Flex table-Filter-SPI-To verify that on clicking on Menu - Refresh link, applied filter get cleared
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Contains | Vrush |
+    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
+    And I select "Refresh" from parallel lines dropdown of "Grants - Active"
+    Then I do not see filter "filter in filterDisplayList" is displayed
+    Examples:
+      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
+      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
+
+  @334636 @334637
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Filter icon, applied filter not get cleared
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Auto |
+    And I click on "fa fa-plus" after click advance filter
+    And I click on "fa fa-plus" after click advance filter
+    Then I see filter "filter in filterDisplayList" is displayed
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @334638
+  Scenario: Flex table-Filter-SPI-UI-To verify that on clicking on Filter icon, applied filter not get cleared
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Contains | Vrush |
+    And I click on "fa fa-plus" after click advance filter
+    And I click on "fa fa-plus" after click advance filter
+    Then I see filter "filter in filterDisplayList" is displayed
+
+  @334639 @334640
+  Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Remove filter clause action on filtered condition, applied filter get cleared
+  |Flex table-Filter-Admin-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | Program Name | Contains | Auto |
+    And I click on "Remove Filter Clause" after click advance filter
+    Then I do not see filter "filter in filterDisplayList" is displayed
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @334641
+  Scenario: Flex table-Filter-SPI-To verify that on clicking on Remove filter clause action on filtered condition, applied filter get cleared
+  |Flex table-Filter-SPI-To verify that user is able to clear the applied filters by clicking on "Clear All" action|
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Filter | true          | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
+    When I enter advance filter values in table id "advfGrantsList"
+      | Grant Title | Contains | Vrush |
+    And I click on "Remove Filter Clause" after click advance filter
+    Then I do not see filter "filter in filterDisplayList" is displayed
+
+  @339390 @339395 @needDilipConfirmation
+  Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the grid". for the Delete action
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the entire page | Programs           | Name                      | Delete                     |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid | Programs           | Name                      | Delete                     |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I wait for "20" seconds
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
+    Then I see entire page is refreshing
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @339397 @339409
+  Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I wait for "20" seconds
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    And I wait for "5" seconds
+    When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
+    Then I see entire page is refreshing
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |

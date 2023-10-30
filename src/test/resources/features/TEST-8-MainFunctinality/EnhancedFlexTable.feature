@@ -1551,7 +1551,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
       | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:0 |
       | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:1 |
-      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2
+      | Flex Table            | Enable Filter              | true               | ApiGeneratedId:2 |
       | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
