@@ -15724,3 +15724,60 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Users |
       | ADMIN |
       | PM    |
+
+  @334642 @334644
+  Scenario Outline:Flex table-Filter-"<Users>"-To verify that page size (i.e. Show entries), Total records count and Pagination behavior on filtered records
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Grid:General     | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:2 |
+      | Flex Table            | Header Instruction         |                    | ApiGeneratedId:3 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:4 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true           | Programs           | Name                      |                            |
+      | Flex Grid:General     | Display Field Names        | <newFieldsApi> | Programs           | Name                      |                            |
+      | Flex Table:General    | Header Instruction         |                | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I enter advance filter values in table id "advfPrograms"
+      | EGMS ID | Contains | PG |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
+    Then I see "Total Records:" page size inside table "toggleFlexTablePrograms"
+    Then I see "Entries" page size inside table "toggleFlexTablePrograms"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+
+  @334646
+  Scenario Outline: Flex table-Filter-SPI-To verify that page size, Total records count and Pagination behavior on filtered records
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Pagination          | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names        | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Enable Page Size           | true               | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true               | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination          | true           | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Display Field Names        | <newFieldsApi> | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Page Size           | true           | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true           | RecipientApplications | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    When I navigate to "Applications" tab
+    When I click on advance filter "#advfpopupflextable" of table id "toggleFlexTablepopupflextable"
+    When I enter advance filter values in table id "advfpopupflextable"
+      | EGMS ID | Contains | AP |
+    Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablepopupflextable"
+    Then I see "Total Records:" page size inside table "toggleFlexTablepopupflextable"
+    Then I see "Entries" page size inside table "toggleFlexTablepopupflextable"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
+      | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
