@@ -1425,7 +1425,8 @@ public class FlexTablePage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
                     " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')] |" +
                     " //td[contains(@class,'actionColumn')]/div//a[@title='Edit']/span[contains(text(),'" + changedActionName + "')] |" +
-                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')]"))) {
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //*[@class='actionColIconWrap']//span//a[contains(@title,'" + changedActionName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1497,7 +1498,7 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void hoverMouseOnAction(String action) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "'] | //*[@class='actionColIconWrap']//span//a[contains(@title,'" + action + "')]"));
     }
 
     public void CountCharectorLimit(String usage, int charLimit, String attribute) {
@@ -1617,7 +1618,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean assertIfStyleOfModaldisplayedOrNot(String styleValue) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1753,6 +1754,44 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//descendant::*[@ng-disabled='false' and @title='" + arrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionIsDisplayedOrNotDisplayedRespectedTable(String usage, String actionName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnTableDisplayedOrNot(actionName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnTableDisplayedOrNot(actionName, tableId)).isFalse();
+        }
+    }
+
+    private boolean actionOnTableDisplayedOrNot(String actionName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@class='actionColIconWrap']//span//a[contains(@title,'" + actionName + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertActionPositionOnUiInsideTable(String usage, String action, int intvalue, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action,intvalue, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action,intvalue, tableId)).isFalse();
+        }
+    }
+
+    private boolean actionOnrespectiveTableId(String action, int intvalue, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().getElementReference().of(ByUsing.xpath("(//div[@id='"+tableId+"']//*[@class='actionColIconWrap']//span//a)["+intvalue+"]")).getAttribute("title").equals(action)) {
                 flag = true;
             }
         } catch (Exception e) {

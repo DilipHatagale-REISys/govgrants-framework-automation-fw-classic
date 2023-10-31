@@ -2596,3 +2596,453 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     When I click on "Reset Table" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     Then I see "5" with page size dropdown at "---program:-:FlexTableEnhancedNotesId---"
+
+######################Test suite: Action Config (Suite ID: 205379)########################
+
+  @205382 @205384 @205388
+  Scenario Outline: Action- Admin- config- Verify action is rendered on UI,
+  Action- PM- UI- Verify action is rendered on UI
+  Action- Admin- config- Verify action name is displaying correctly,
+  Action- PM- UI- Verify action name is displaying correctlya
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see action name "View" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see action name "Edit" itself get displayed inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205386 @205390
+  Scenario: Action- SPI- UI- Verify action is rendered on UI,
+  Action- SPI- UI- Verify action name is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Button Help Text |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    Then I see "Actions" in flex table header "---program:-:FlexTableEnhancedNotesId---"
+    Then I see action name "Edit" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
+    Then I see action name "Delete" itself get displayed inside tableid "---program:-:FlexTableEnhancedNotesId---"
+
+  @205397
+  Scenario Outline: Action- Admin- config- Verify Button help text is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi>        | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table Action     | Button Help Text    | Test Button Help Text | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+    Examples:
+      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205399
+  Scenario: Action- SPI- UI- Verify Button help text is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Button Help Text |                   | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue         | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Button Help Text | Test Button Help Text | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    And I hovering mouse on action "Test Button Help Text" inside flex table
+    Then I see action name "Test Button Help Text" itself get displayed on UI
+
+  @205400 @205401 @255402 @255403 @205431 @205432
+  Scenario Outline: Action- Admin- Config- Verify Actions icons are rendered at expected positions,
+  Action- PM- UI- Verify Actions icons are rendered at expected positions,
+  Action- Admin- Config- Verify Actions should be rendered as action name,
+  Action- PM- UI- Verify Actions should be rendered as action name
+  Action- Admin- Config- Verify Actions are rendered at expected location
+  Action- PM- UI- Verify Actions are rendered at expected location
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence            | 0                  | ApiGeneratedId:1 |
+      | Flex Table            | Button Help Text    |                    | ApiGeneratedId:2 |
+      | Flex Table            | Location            |                    | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Button Help Text    |                | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Location            | Row            | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205404 @205405 @205433 @205439
+  Scenario: Action- SPI- UI- Verify Actions icons are rendered at expected positions,
+  Action- SPI- UI- Verify Actions should be rendered as action name,
+  Action- SPI- UI- Verify Actions are rendered at expected location,
+  Action- SPI- UI- Verify if actions displayed on UI are following given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Sequence         | 0                 | ApiGeneratedId:1 |
+      | Flex Table            | Button Help Text |                   | ApiGeneratedId:2 |
+      | Flex Table            | Location         |                   | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence         | 0             | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Button Help Text |               | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Location         | Row           | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
+
+  @205434 @205435
+  Scenario Outline: Action- Admin- Config- Verify action rendered as per expected ‘Header Action Display Type’,
+  Action- PM- UI- Verify action rendered as per expected ‘Header Action Display Type’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                     | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Action URL Long            | <actionUrlLongOldValue> | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Action Behavior            | Open in same window     | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type |                         | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row                     | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Action URL Long            | <actionUrlLongNewValue> | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Header Action Display Type | Button                  | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | actionUrlLongOldValue                             | actionUrlLongNewValue                             |
+      | Admin | /apex/ContactView?id={!KeyContacts__c.Contact__c} | /apex/ContactView?id={!KeyContacts__c.Contact__c} |
+      | PM    | /apex/ContactView?id={!KeyContacts__c.Contact__c} | /apex/ContactView?id={!KeyContacts__c.Contact__c} |
+
+  @205436
+  Scenario: Action- SPI- UI- Verify action rendered as per expected ‘Header Action Display Type’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row               | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | EditRecord        | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type |                   | RecipientGrantNotes | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Location                   | Row           | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type | Button        | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | EditRecord    | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    Then I see "Edit" row action Button at position "1" inside tableid "---program:-:FlexTableEnhancedNotesId---"
+
+  @205437 @205438
+  Scenario Outline: Action- Admin- Config- Verify if actions displayed on UI are following given sequence,
+  Action- PM- UI- Verify if actions displayed on UI are following given sequence
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table Action     | Sequence            | 0                  | ApiGeneratedId:1 |
+      | Flex Table Action     | Sequence            | 1                  | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table Action     | Sequence            | 0              | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Sequence            | 1              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    Then I see "View" row action Button at position "1" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Then I see "Edit" row action Button at position "2" inside tableid "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    Examples:
+      | Users | newFieldsApi                                                                        | defaultFieldsApi                                                                    |
+      | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+      | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
+
+  @205440 @205441
+  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
+  Action- PM- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | SameWindow    | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "Lisa Mitchell" inside table
+    Then I see no new tab is opened
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @205442
+  Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in same window’ action should be performed in same window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | SameWindow    | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Edit" icon for "Lisa Mitchell" inside table
+    Then I see no new tab is opened
+
+  @205456 @205457
+  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in new window’ action should be performed in new window
+  Action- PM- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewWindow     | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "Lisa Mitchell" inside table
+    Then I see new tab is opened
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @205458
+  Scenario: Action- SPI- UI- Verify when Action behavior is ‘Open in new window’ action should be performed in same window
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | NewWindow     | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Edit" icon for "Lisa Mitchell" inside table
+    Then I see no new tab is opened
+
+  @205459 @205492 @205493
+  Scenario Outline: Action- Admin- Config- Verify when Action behavior is ‘Open in overlay’ action should be performed in new small modal window appended in same page,
+  Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,Action- PM- UI - Verify ‘Modal title’ is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Modal Title     |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal           | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "Lisa Mitchell" inside table
+    Then I see "View" opens in overLay window
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @205462 @205463 @205489 @205490
+  Scenario Outline: Action- Admin- Config- Verify Confirmation window is getting displayed,
+  Action- PM- UI-  Verify Confirmation window is getting displayed,
+  Action- Admin- Config- Verify correct Confirmation message is getting displayed,
+  Action- PM- UI- Verify correct Confirmation message is getting displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | true          | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Confirmation Message  | Automation    | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "Lisa Mitchell" inside table
+    Then I see confirmation box with body "Automation" is displayed
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @205464 @205491
+  Scenario: Action- SPI- UI - Verify Confirmation window is getting displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Test Notes" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Delete" icon for "Test Notes" inside table without accept popup
+    Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
+
+  @205494
+  Scenario: Action- SPI- UI- Verify ‘Modal title’ is displaying correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior       | EditRecord        | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title           |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ?       |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Show Confirmation Box | false             | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  |                   | RecipientGrantNotes | Name                      | Edit                       |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue    | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior       | EditRecord       | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title           | Automation Title | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ?       | Modal            | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Show Confirmation Box | false            | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  |                  | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Edit" icon for "Lisa Mitchell" inside table
+    Then I see "Automation Title" opens in overLay window
+
+  @205495 @205496
+  Scenario Outline: Action- Admin- Config- Verify modal window size is as per Modal width
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Modal Title     |                   | DataTableEnhanceProgramContacts | Name                      | View                       |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Where To Open ? | Modal           | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Modal Title     | View            | DataTableEnhanceProgramContacts | Name                      | View                       |
+      | Flex Table Action     | Modal Width     | 50              | DataTableEnhanceProgramContacts | Name                      | View                       |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "View" icon for "Lisa Mitchell" inside table
+    And I pause execution for "5" seconds
+    Then I see modal window is open in same tab with style "50"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @205497
+  Scenario: Action- SPI- UI- Verify modal window size is as per Modal width
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? |                   | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title     |                   | RecipientGrantNotes | Name                      | Edit                       |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Action Behavior | OpenURL           | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Action Behavior | Open in overlay | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Where To Open ? | Modal           | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title     | View            | RecipientGrantNotes | Name                      | Edit                       |
+      | Flex Table Action     | Modal Width     | 50              | RecipientGrantNotes | Name                      | Edit                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Edit" icon for "Lisa Mitchell" inside table
+    And I pause execution for "5" seconds
+    Then I see modal window is open in same tab with style "50"
