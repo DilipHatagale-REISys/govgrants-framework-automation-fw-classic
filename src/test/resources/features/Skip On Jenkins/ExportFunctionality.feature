@@ -897,10 +897,10 @@ Business Need: All pdf and xls related scenario including component and complete
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    And I navigate to "Reviews" content inside "Application Reviews" subheader on left panel
-    When I click toggle button to select "Application Reviews - All"
-    And I perform quick search for "Test 32" in "---program:-:announcementListTableId---" panel
-    When I click on "View" icon for "Test 32" inside flex table with id "---program:-:announcementListTableId---"
+    And I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    When I click toggle button to select "All Funding Decision Memos (FDM)"
+    And I perform quick search for "Test 32" in "---program:-:fdmTableId---" panel
+    When I click on "View" icon for "Test 32" inside flex table with id "---program:-:fdmTableId---"
     When I navigate to "Overview" sub tab
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
@@ -1010,7 +1010,7 @@ Business Need: All pdf and xls related scenario including component and complete
          # | PM    |
 
   @346995 @346996 @347064 @347068 @347168 @347169 @347278 @347279
-    Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Desk reviews record.
+  Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Desk reviews record.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Monitoring" tab
@@ -1124,7 +1124,7 @@ Business Need: All pdf and xls related scenario including component and complete
       | ADMIN |
          # | PM    |
 
-  @347325 @347326
+  @347325 @347326 @347402 @347403
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the program record.
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1142,8 +1142,2686 @@ Business Need: All pdf and xls related scenario including component and complete
     And I refresh the page
     When I pause execution for "5" seconds
     Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347402 #347403
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
 
     Examples:
       | User  |
       | ADMIN |
       #| PM    |
+
+  @347327 @347328 @347404 @347405
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Announcement record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Announcement record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347404 #347405
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347331 @347332 @347408 @347409
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Application record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "PROGRAM CREATION"
+    When I click on "View" icon for "PROGRAM CREATION" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347408 #347409
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+
+    Examples:
+      | User  |
+      | ADMIN |
+     #| PM    |
+
+  @347333 @347335 @347411
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the FDM record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    When I click toggle button to select "All Funding Decision Memos (FDM)"
+    And I perform quick search for "Program For Announcement Testing" in "---program:-:fdmTableId---" panel
+    When I click on "View" icon for "Program For Announcement Testing" inside flex table with id "---program:-:fdmTableId---"
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347411 #347413
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @347336 @347338 @347415 @347416
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Grants record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Testing Grant for Automation"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347415 #347416
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347339 @347340 @347419 @347421
+  Scenario Outline:Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Subawards record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Subawards record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    When I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "product flow start" in "---program:-:GridGrantorRelatedAwards2TableId---" panel
+    When I click on "View" icon for "product flow start" inside flex table with id "---program:-:GridGrantorRelatedAwards2TableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347419 #347421
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347341 @347342 @347422 @347423
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Amendment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Amendment Requests" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Amendment Requests - Approved"
+    And I perform quick search for "CR-AD-adc-01-00" in "---program:-:GrantorAmendmentRequestsTableId---" panel
+    When I click on "View" icon for "CR-AD-adc-01-00" inside flex table with id "---program:-:GrantorAmendmentRequestsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347422 #347423
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347346 @347347 @347428 @347429
+  Scenario Outline:   Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Site visit record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Site visit record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visit Reports - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:manageSiteVisitTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:manageSiteVisitTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347428 #347429
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347348 @347349 @347431 @347432
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Desk reviews record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Desk reviews record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Review Reports - All"
+    And I perform quick search for "test flow 1" in "---program:-:LatestDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "test flow 1" inside flex table with id "---program:-:LatestDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347431 #347432
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347350 @347351 @347434 @347436
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Organization Risk Assessment record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Organization Risk Assessment record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0579" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0579" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347434 #347436
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347352 @343353 @347437 @347438
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Advance Payment Request record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Advance Payment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - Approved"
+    And I perform quick search for "PR-adc-00" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "PR-adc-00" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347437 #347438
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347354 @347355 @347439 @347441
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Reimbursement Payment Request record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Reimbursement Payment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - Approved"
+    And I perform quick search for "PR-1000-12" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-1000-12" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347439 #347441
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347357 @347358 @347443 @347445
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Closeout Request record.
+  Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Closeout Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Closeout" tab
+    When I navigate to "Project Period Closeouts" content inside "Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "Early Completion" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "Early Completion" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    #347443 #347445
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347364 @347365 @347451 @347453
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Announcement record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Announcement record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347451 #347453
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347369 @347371 @347456 @347457
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Application record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Application record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "PROGRAM CREATION"
+    When I click on "View" icon for "PROGRAM CREATION" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347456 #347457
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+     #| PM    |
+
+  @347372 @347373 @347458 @347460
+  Scenario Outline:Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the FDM record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the FDM record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    When I click toggle button to select "All Funding Decision Memos (FDM)"
+    And I perform quick search for "Program For Announcement Testing" in "---program:-:fdmTableId---" panel
+    When I click on "View" icon for "Program For Announcement Testing" inside flex table with id "---program:-:fdmTableId---"
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347458 #347460
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+     # | PM    |
+
+  @347374 @347376 @347461 @347462
+  Scenario Outline:Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Grants record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Grants record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Testing Grant for Automation"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347461 #347462
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347378 @347379 @347463 @347464
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Subawards record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Subawards record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    When I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "product flow start" in "---program:-:GridGrantorRelatedAwards2TableId---" panel
+    When I click on "View" icon for "product flow start" inside flex table with id "---program:-:GridGrantorRelatedAwards2TableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347463 #347464
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347380 @347381 @347466 @347467
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Amendment Request record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Amendment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Amendment Requests" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Amendment Requests - Approved"
+    And I perform quick search for "CR-AD-adc-01-00" in "---program:-:GrantorAmendmentRequestsTableId---" panel
+    When I click on "View" icon for "CR-AD-adc-01-00" inside flex table with id "---program:-:GrantorAmendmentRequestsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347466 #347467
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347384 @347386 @347473 @347474
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Site visit record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Site visit record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visit Reports - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:manageSiteVisitTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:manageSiteVisitTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347473 #347474
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347388 @347389 @347475 @347477
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Desk reviews record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Desk reviews record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Review Reports - All"
+    And I perform quick search for "test flow 1" in "---program:-:LatestDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "test flow 1" inside flex table with id "---program:-:LatestDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347475 #347477
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347390 @347392 @347478 @347479
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Organization Risk Assessment record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Organization Risk Assessment record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0579" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0579" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347478 #347479
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347393 @347393 @347482 @347484
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Advance Payment Request record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Advance Payment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - Approved"
+    And I perform quick search for "PR-adc-00" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "PR-adc-00" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347482 #347484
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347395 @347396 @347487 @347489
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Reimbursement Payment Request record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Reimbursement Payment Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - Approved"
+    And I perform quick search for "PR-1000-12" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-1000-12" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347487 #347489
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347397 @347399 @347491 @347492
+  Scenario Outline:Flex Layout_UI_PM_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Closeout Request record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the Closeout Request record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Closeout" tab
+    When I navigate to "Project Period Closeouts" content inside "Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "Early Completion" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "Early Completion" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347491 #347492
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+         # | PM    |
+
+  @347400 @347401 @347447 @347450
+  Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the program record.
+  Flex Layout_UI_Admin_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of the program record.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "do not delete program for change request"
+    When I click on "View" icon for "do not delete program for change request" inside table
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see new tab is opened
+    #347447 #347450
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @347494 @347495
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the program record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Grantor State Program | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantor State Program | Name                      | TAB-2624                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    And I pause execution for "5" seconds
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #| PM    |
+
+  @347496 @347499
+  Scenario Outline:Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Announcement record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField      | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Annoucement Profile-FOA | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Annoucement Profile-FOA | Name                      | TAB-2063                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347503 @347504
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | ApplicationView    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | ApplicationView    | Name                      | TAB-1823                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "PROGRAM CREATION"
+    When I click on "View" icon for "PROGRAM CREATION" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347505 @347507
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the FDM record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField          | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | FundingDecisionMemoTemplate | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | FundingDecisionMemoTemplate | Name                      | TAB-1849                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    When I click toggle button to select "All Funding Decision Memos (FDM)"
+    And I perform quick search for "Program For Announcement Testing" in "---program:-:fdmTableId---" panel
+    When I click on "View" icon for "Program For Announcement Testing" inside flex table with id "---program:-:fdmTableId---"
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Funding Decision Memo" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347509 @347511
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Grant              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grant              | Name                      | TAB-2113                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Testing Grant for Automation"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347514 @347520
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Awards             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Awards             | Name                      | TAB-1950                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    When I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "product flow start" in "---program:-:GridGrantorRelatedAwards2TableId---" panel
+    When I click on "View" icon for "product flow start" inside flex table with id "---program:-:GridGrantorRelatedAwards2TableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347527 @347535
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Amendment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField       | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Grantor Formal Amendment | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantor Formal Amendment | Name                      | TAB-2865                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Amendment Requests" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Amendment Requests - Approved"
+    And I perform quick search for "CR-AD-adc-01-00" in "---program:-:GrantorAmendmentRequestsTableId---" panel
+    When I click on "View" icon for "CR-AD-adc-01-00" inside flex table with id "---program:-:GrantorAmendmentRequestsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347539 @347545
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Grantor SiteVisit  | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantor SiteVisit  | Name                      | TAB-2021                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visit Reports - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:manageSiteVisitTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:manageSiteVisitTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347551 @347561
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Desk reviews record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField  | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Grantor Desk Review | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Grantor Desk Review | Name                      | TAB-3044                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Review Reports - All"
+    And I perform quick search for "test flow 1" in "---program:-:LatestDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "test flow 1" inside flex table with id "---program:-:LatestDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347569 @347571
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Organization Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | OrganizationRiskAssessmentView | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | OrganizationRiskAssessmentView | Name                      | TAB-2819                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0579" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0579" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347572 @347576
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Advance Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField     | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | PaymentRequestsAdvance | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | PaymentRequestsAdvance | Name                      | TAB-3084                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - Approved"
+    And I perform quick search for "PR-adc-00" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "PR-adc-00" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347578 @347580
+  Scenario Outline: Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField          | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | PaymentRequestReimbursement | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | PaymentRequestReimbursement | Name                      | TAB-2115                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - Approved"
+    And I perform quick search for "PR-1000-12" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-1000-12" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347584 @347589
+  Scenario Outline:Flex Layout_UI_Admin_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of the Closeout Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField     | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | GrantorCloseoutRequest | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | GrantorCloseoutRequest | Name                      | TAB-2710                   |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Closeout" tab
+    When I navigate to "Project Period Closeouts" content inside "Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "Early Completion" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "Early Completion" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+    #  | PM    |
+
+  @347639 @347641 @347678 @347679
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the program record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the program record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Grantor State Program | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347643 @347644 @347680 @347681
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Announcement record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Announcement record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Annoucement Profile-FOA |                           |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Annoucement Profile-FOA | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Test 11-Jul"
+    When I click on "View" icon for "Test 11-Jul" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347648 @347649 @347684 @347685
+  Scenario Outline:Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Application record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | ApplicationView    | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | ApplicationView    | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "PROGRAM CREATION"
+    When I click on "View" icon for "PROGRAM CREATION" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347651 @347652 @347686 @347687
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the FDM record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the FDM record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | FundingDecisionMemoTemplate | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | FundingDecisionMemoTemplate | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I navigate to "Funding Decision Memos (FDM)" content inside "Application Reviews" subheader on left panel
+    When I click toggle button to select "All Funding Decision Memos (FDM)"
+    And I perform quick search for "Program For Announcement Testing" in "---program:-:fdmTableId---" panel
+    When I click on "View" icon for "Program For Announcement Testing" inside flex table with id "---program:-:fdmTableId---"
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347653 @347654 @347688 @347689
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Grants record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Grant              | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grant              | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Testing Grant for Automation"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347655 @347657 @347690 @347691
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Subawards record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Awards             | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Awards             | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    When I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "product flow start" in "---program:-:GridGrantorRelatedAwards2TableId---" panel
+    When I click on "View" icon for "product flow start" inside flex table with id "---program:-:GridGrantorRelatedAwards2TableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347658 @347659 @347692 @347693
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Amendment Request record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Amendment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Grantor Formal Amendment | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor Formal Amendment | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    When I navigate to "Amendment Requests" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Amendment Requests - Approved"
+    And I perform quick search for "CR-AD-adc-01-00" in "---program:-:GrantorAmendmentRequestsTableId---" panel
+    When I click on "View" icon for "CR-AD-adc-01-00" inside flex table with id "---program:-:GrantorAmendmentRequestsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347663 @347664 @347696 @347698
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Site visit record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Grantor SiteVisit  | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor SiteVisit  | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visit Reports - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:manageSiteVisitTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:manageSiteVisitTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347666 @347667 @347699 @347700
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Desk reviews record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Desk reviews record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Grantor Desk Review | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor Desk Review | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Review Reports - All"
+    And I perform quick search for "test flow 1" in "---program:-:LatestDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "test flow 1" inside flex table with id "---program:-:LatestDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347669 @347670 @347701 @347702
+  Scenario Outline:   Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Organization Risk Assessment record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Organization Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | OrganizationRiskAssessmentView | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | OrganizationRiskAssessmentView | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0579" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0579" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347672 @347673 @347703 @347705
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Advance Payment Request record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Advance Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download       | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphotd | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | PaymentRequestsAdvnce | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | PaymentRequestsAdvnce | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - Approved"
+    And I perform quick search for "PR-adc-00" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "PR-adc-00" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347674 @347675 @347706 @347707
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Reimbursement Payment Request record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | PaymentRequestReimbursement | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | PaymentRequestReimbursement | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - Approved"
+    And I perform quick search for "PR-1000-12" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-1000-12" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347676 @347677 @347708 @347709
+  Scenario Outline: Flex Layout_Config_Admin_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of the Closeout Request record.
+  Flex Layout_Config_Admin_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of the Closeout Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | GrantorCloseoutRequest | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | GrantorCloseoutRequest | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Closeout" tab
+    When I navigate to "Project Period Closeouts" content inside "Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "Early Completion" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "Early Completion" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    Then I do not see "Download as PDF" options is displayed
+    Then I do not see "Take Snapshot" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @347710 @347724 @347817
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Pre-Application record.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of Pre-Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient Pre-Application | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Pre-Applications - Submitted"
+    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347724
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347817
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347711 @347725 @347818
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Application record.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of  Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient ApplicationView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347725
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347818
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347713 @347726 @347819
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Grants record.
+  Page Layout_UI_SPI_To verify user can see download as PDF on the page layout of Grants record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of  Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | RecipientGrant     | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+#      And I perform quick search for "Application test" in "---program:-:RecipientPreApplicationsTableId---" panel
+#      When I click on "View" icon for "Application test" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347726
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347819
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347714 @347727 @347820
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Subawards record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Subawards record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of  Subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | RecipientAwards    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "Autosnapshot grant 1" in "---program:-:RecipientsRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Autosnapshot grant 1" inside flex table with id "---program:-:RecipientsRelatedAwards2gridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347727
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347820
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347718 @347730 @347823
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Site visit record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Site visit record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of  Site  visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient Grantor SiteVisit | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visits - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:ApplicantSiteVisitReportsTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:ApplicantSiteVisitReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347730
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347823
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347719 @347731 @347824
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Desk reviews record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Desk reviews record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of  desk review record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient DeskReview | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Reviews - All"
+    And I perform quick search for "SV-0723" in "---program:-:ApplicantDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "SV-0723" inside flex table with id "---program:-:ApplicantDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347731
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347824
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347720 @347732 @347825
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Risk Assessment record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Risk Assessment record in menu option.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | OrganizationRiskAssessmentView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0580" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347732
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347825
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347721 @347733
+  Scenario:Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Advance Payment Request record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Advance Payment Request record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of Advance Payment Request record.
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName         | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Layout:General   | Hide Pdf Download | false         | GrantorCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - All"
+    And I perform quick search for "RA-0580" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347733
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347826
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347722 @347734 @347827
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Reimbursement Payment Request record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Reimbursement Payment Request record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestReimbursement | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - All"
+    And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347734
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347827
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+
+  @347723 @347735 @347828
+  Scenario: Flex Layout_UI_SPI_To verify user can see menu icon on the page layout of Closeout Request record.
+  Flex Layout_UI_SPI_To verify user can see download as PDF on the page layout of Closeout Request record in menu option.
+  Flex Layout_UI_SPI_To verify downloaded pdf contains all page tabs and page blocks which are enabled for export in config of Closeout Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | SubrecipientCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "CL-RG-001070-00000" in "---program:-:ProjectPeriodCloseoutGrantorTableId---" panel
+    When I click on "View" icon for "CL-RG-001070-00000" inside flex table with id "---program:-:ProjectPeriodCloseoutGrantorTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347735
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    #347828
+    Then I see "Overview" on page "1" of "govgrants" pdf file
+#************
+  @347791
+  Scenario: Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Pre-Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient Pre-Application | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Pre-Applications - Submitted"
+    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347792
+  Scenario: Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient ApplicationView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347793
+  Scenario: Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | RecipientGrant     | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347795
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | RecipientAwards    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "Autosnapshot grant 1" in "---program:-:RecipientsRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Autosnapshot grant 1" inside flex table with id "---program:-:RecipientsRelatedAwards2gridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347798
+  Scenario: Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient Grantor SiteVisit | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visits - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:ApplicantSiteVisitReportsTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:ApplicantSiteVisitReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347799
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Desk reviews record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | Recipient DeskReview | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Reviews - All"
+    And I perform quick search for "SV-0723" in "---program:-:ApplicantDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "SV-0723" inside flex table with id "---program:-:ApplicantDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347800
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | OrganizationRiskAssessmentView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0580" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347801
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Advance Payment Request record.
+    #    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+#      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName         | fieldNewValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Layout:General   | Hide Pdf Download | false         | GrantorCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - All"
+    And I perform quick search for "RA-0580" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347802
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | PaymentRequestReimbursement | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - All"
+    And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+  @347803
+  Scenario:Flex Layout_UI_SPI_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of Closeout  Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download | false         | SubrecipientCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "CL-RG-001070-00000" in "---program:-:ProjectPeriodCloseoutGrantorTableId---" panel
+    When I click on "View" icon for "CL-RG-001070-00000" inside flex table with id "---program:-:ProjectPeriodCloseoutGrantorTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    Then I see new tab is opened
+
+    #*********************************
+  @347858 @347872
+  Scenario: Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of Pre-Application record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Pre-Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Recipient Pre-Application | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Pre-Application | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Pre-Applications - Submitted"
+    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347858
+    Then I do not see "Download as PDF" options is displayed
+    #347872
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347859 @347873
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  Application record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Recipient ApplicationView | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347859
+    Then I do not see "Download as PDF" options is displayed
+    #347873
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347860 @347874
+  Scenario: Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  Grants record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | RecipientGrant     | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | RecipientGrant     | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347860
+    Then I do not see "Download as PDF" options is displayed
+    #347874
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347861 @347875
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  subaward record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Subawards  record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | RecipientAwards    | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | RecipientAwards    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "Autosnapshot grant 1" in "---program:-:RecipientsRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Autosnapshot grant 1" inside flex table with id "---program:-:RecipientsRelatedAwards2gridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347861
+    Then I do not see "Download as PDF" options is displayed
+    #347875
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347865 @347878
+  Scenario: Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  Site visit record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Recipient Grantor SiteVisit | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Grantor SiteVisit | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visits - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:ApplicantSiteVisitReportsTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:ApplicantSiteVisitReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347865
+    Then I do not see "Download as PDF" options is displayed
+    #347878
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347866 @347879
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  Desk reviews record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of desk reviews record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | Recipient DeskReview | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient DeskReview | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Reviews - All"
+    And I perform quick search for "SV-0723" in "---program:-:ApplicantDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "SV-0723" inside flex table with id "---program:-:ApplicantDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347866
+    Then I do not see "Download as PDF" options is displayed
+    #347879
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347867 @347881
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of  Risk Assessment record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | OrganizationRiskAssessmentView | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | OrganizationRiskAssessmentView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0580" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347867
+    Then I do not see "Download as PDF" options is displayed
+    #347881
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347868 @347882
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of Advance Payment Request record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Advance Payment Request record.
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+#      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+#      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Layout:General   | Hide Pdf Download      | true          |                    | Name                      |                            |
+#      | Page Layout:General   | Hide On Demand Snaphot | true          |                    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - All"
+    And I perform quick search for "RA-0580" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347868
+    Then I do not see "Download as PDF" options is displayed
+    #347882
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347870 @347883
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of Reimbursement Payment Request record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | PaymentRequestReimbursement | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | PaymentRequestReimbursement | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - All"
+    And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347870
+    Then I do not see "Download as PDF" options is displayed
+    #347883
+    Then I do not see "Take Snapshot" options is displayed
+
+  @347871 @347884
+  Scenario:Flex Layout_UI_SPI_To verify if Hide PDF Download is true then Download as PDF option is hidden in menu of Closeout Request record.
+  Flex Layout_UI_SPI_To verify if Hide On Demand Snapshot is true then Take snapshot option is hidden in menu of Closeout Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide Pdf Download      | false             | ApiGeneratedId:0 |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide Pdf Download      | true          | SubrecipientCloseoutRequest | Name                      |                            |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | SubrecipientCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "CL-RG-001070-00000" in "---program:-:ProjectPeriodCloseoutGrantorTableId---" panel
+    When I click on "View" icon for "CL-RG-001070-00000" inside flex table with id "---program:-:ProjectPeriodCloseoutGrantorTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347871
+    Then I do not see "Download as PDF" options is displayed
+    #347884
+    Then I do not see "Take Snapshot" options is displayed
+
+    ##******************
+  @347736 @347777 @347804
+  Scenario: Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Pre-Application record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Pre-Application record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Pre-Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient Pre-Application | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Pre-Applications - Submitted"
+    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347736
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347777
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347804
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347738 @347778 @347806
+  Scenario:  Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Application record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of  Application record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient ApplicationView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347738
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347778
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347806
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347739 @347781 @347807
+  Scenario:Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Grants record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Grants record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | RecipientGrant     | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347739
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347781
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347807
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347740 @347782 @347808
+  Scenario: Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Subawards record in menu option.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | RecipientAwards    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "Autosnapshot grant 1" in "---program:-:RecipientsRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Autosnapshot grant 1" inside flex table with id "---program:-:RecipientsRelatedAwards2gridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347740
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347782
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347808
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347743 @347785 @347811
+  Scenario:Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Site visit record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of  Site visit record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient Grantor SiteVisit | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visits - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:ApplicantSiteVisitReportsTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:ApplicantSiteVisitReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347743
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347785
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347811
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347744 @347786 @347812
+  Scenario: Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Desk reviews record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Desk reviews record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Desk reviews record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | Recipient DeskReview | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Reviews - All"
+    And I perform quick search for "SV-0723" in "---program:-:ApplicantDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "SV-0723" inside flex table with id "---program:-:ApplicantDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347744
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347786
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347812
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347745 @347787 @34813
+  Scenario:Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Risk Assessment record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Risk Assessment record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | OrganizationRiskAssessmentView | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0580" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347745
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347787
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347813
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347746 @347790 @347814
+  Scenario:Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Advance Payment Request record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Advance Payment Request record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Advance Payment Request record.
+    #    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+#      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Layout:General   | Hide On Demand Snaphot | false         |                    | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - All"
+    And I perform quick search for "RA-0580" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347746
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347790
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347814
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347747 @347788 @347815
+  Scenario: Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Reimbursement Payment Request record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Reimbursement  Payment record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | PaymentRequestReimbursement | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - All"
+    And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347747
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347788
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    #347815
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+  @347748 @347789 @347816
+  Scenario:Flex Layout_UI_SPI_To verify user can see Take a snapshot on the page layout of Closeout Request record in menu option.
+  Flex Layout_UI_SPI_To verify user clicks View Take Snapshot in menu option then snapshot get generated in the snapshot history table of Closeout record.
+  Flex Layout_UI_SPI_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of Closeout Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | false         | SubrecipientCloseoutRequest | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "CL-RG-001070-00000" in "---program:-:ProjectPeriodCloseoutGrantorTableId---" panel
+    When I click on "View" icon for "CL-RG-001070-00000" inside flex table with id "---program:-:ProjectPeriodCloseoutGrantorTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    #347748
+    Then I see "Take Snapshot" options is displayed
+    And I select "Take Snapshot" from dropdown
+    When I click alert button "OK"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    When I pause execution for "5" seconds
+    #347789
+    Then I see generated snapshot ".pdf" is displayed with "File Name"
+    And I click on saved snap shot "SnapShot"
+    And I download the file
+    Then I softly see following details in "govgrants" pdf file:
+      | Detail      | Page Number |
+      | Overview    | 1           |
+      | Information | 1           |
+
+    #*************
+  @347829
+  Scenario: Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Pre-Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Recipient Pre-Application | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient Pre-Application | Name                      | TAB-2730                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
+    And I click toggle button to select "Pre-Applications - Submitted"
+    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347830
+  Scenario: Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of  Application record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Recipient ApplicationView | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient ApplicationView | Name                      | TAB-2733                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347831
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of  Grants record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | RecipientGrant     | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | RecipientGrant     | Name                      | TAB-2698                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347832
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Subawards record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | RecipientAwards    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | RecipientAwards    | Name                      | TAB-2697                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    When I navigate to "Subawards" content inside "Grants, Subawards & Amendments" subheader on left panel
+    And I click toggle button to select "Subawards  - Active"
+    And I perform quick search for "Autosnapshot grant 1" in "---program:-:RecipientsRelatedAwards2gridTableId---" panel
+    When I click on "View" icon for "Autosnapshot grant 1" inside flex table with id "---program:-:RecipientsRelatedAwards2gridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347837
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Site visit record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField          | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Recipient Grantor SiteVisit | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient Grantor SiteVisit | Name                      | TAB-3008                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Site Visits" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Site Visits - In Progress"
+    And I perform quick search for "SV-0727" in "---program:-:ApplicantSiteVisitReportsTableId---" panel
+    When I click on "View" icon for "SV-0727" inside flex table with id "---program:-:ApplicantSiteVisitReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347838
+  Scenario: Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Desk review record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField   | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | Recipient DeskReview | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | Recipient DeskReview | Name                      | TAB-2941                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Desk Reviews" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Desk Reviews - All"
+    And I perform quick search for "SV-0723" in "---program:-:ApplicantDeskReviewReportsTableId---" panel
+    When I click on "View" icon for "SV-0723" inside flex table with id "---program:-:ApplicantDeskReviewReportsTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347839
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Risk Assessment record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | OrganizationRiskAssessmentView | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | OrganizationRiskAssessmentView | Name                      | TAB-2819                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Risk Assessments" content inside "Monitoring Activities" subheader on left panel
+    And I click toggle button to select "Organization Risk Assessments - Active"
+    And I perform quick search for "RA-0580" in "---program:-:OrgRiskAssessmentGridTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:OrgRiskAssessmentGridTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347840
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Advance Payment Request record.
+#     Given I have "default" configuration as below:
+#      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | filterId         |
+#      | Page Tabs Config      | Skip for Export | false             |                    | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Page Tabs Config:Page Layout Action | Skip for Export | true          |                    | Name                      | TAB-                       |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Advances" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Advances - All"
+    And I perform quick search for "RA-0580" in "---program:-:GrantorPaymentRequestAdvancesTableId---" panel
+    When I click on "View" icon for "RA-0580" inside flex table with id "---program:-:GrantorPaymentRequestAdvancesTableId---"
+    Then I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347841
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of Reimbursement Payment Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField          | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | PaymentRequestReimbursement | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | PaymentRequestReimbursement | Name                      | TAB-2115                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Reimbursements" content inside "Payments" subheader on left panel
+    And I click toggle button to select "Reimbursements - All"
+    And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
+    When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
+    And I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
+
+  @347842
+  Scenario:Flex Layout_UI_SPI_To verify downloaded pdf should not contain page tabs or page blocks which are hide for export in config of   Closeout  Request record.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField          | filterId         |
+      | Page Tabs Config      | Skip for Export | false             | SubrecipientCloseoutRequest | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName       | fieldNewValue | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Skip for Export | true          | SubrecipientCloseoutRequest | Name                      | TAB-3028                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    When I navigate to "Project Period Closeouts" content inside "Recipient Closeouts" subheader on left panel
+    And I click toggle button to select "Project Period Closeouts - All"
+    And I perform quick search for "CL-RG-001070-00000" in "---program:-:ProjectPeriodCloseoutGrantorTableId---" panel
+    When I click on "View" icon for "CL-RG-001070-00000" inside flex table with id "---program:-:ProjectPeriodCloseoutGrantorTableId---"
+    And I see "Menu" icon is displayed on pagelayout
+    When I click on "Menu" in the page details
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I cannot see "Overview" on page "1" of "govgrants" pdf file
