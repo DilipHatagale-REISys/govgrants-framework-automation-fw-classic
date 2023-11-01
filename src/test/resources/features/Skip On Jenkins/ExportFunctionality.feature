@@ -3799,7 +3799,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Reimbursements - All"
     And I perform quick search for "PR-asg1-00" in "---program:-:GrantorPRReimbursementFlexTableId---" panel
     When I click on "View" icon for "PR-asg1-00" inside flex table with id "---program:-:GrantorPRReimbursementFlexTableId---"
-    Then I see "Menu" icon is displayed on pagelayout
+    And I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
