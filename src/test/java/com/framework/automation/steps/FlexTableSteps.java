@@ -72,6 +72,7 @@ public class FlexTableSteps {
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")
     public void assertFlextableTitle(String titleName) {
+
         flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
     }
 

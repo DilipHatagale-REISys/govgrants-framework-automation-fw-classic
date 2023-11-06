@@ -3046,3 +3046,148 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "Lisa Mitchell" inside table
     And I pause execution for "5" seconds
     Then I see modal window is open in same tab with style "50"
+
+    #####################Test suite: Export functionality (Suite ID: 207538)#########################
+
+  @207543 @207544 @207546 @207547
+  Scenario Outline:Download as PDF- Admin- Config- Verify when we get any quick search results and click on download as PDF, we should see all records in PDF,
+  Download as PDF- PM- UI- Verify when we get any quick search results and click on download as PDF, we should not see all records in PDF
+  Download as PDF- Admin- Config- Verify when we get any quick search results and click on download as PDF, not only search result should be downloaded in PDF
+  Download as PDF- PM- UI- Verify when we get any quick search results and click on download as PDF,not only search result should be downloaded in PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I download the file
+    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+    Then I see "Automation PM" on page "1" of "govgrants" pdf file
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @207545 @207548
+  Scenario: Download as PDF- SPI- UI- Verify when we get any quick search results and click on download as PDF, we should see all records in PDF
+  Download as PDF - SPI- UI- Verify when we get any quick search results and click on download as PDF,not only search result should be downloaded in PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientGrantNotes | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    And I download the file
+    Then I see "Lisa Mitchell" on page "1" of "govgrants" pdf file
+
+  @207549 @207550 @207552 @207553
+  Scenario Outline: Download as XL / CSV- Admin- Config- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
+  Download as XL / CSV- PM- UI- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
+  Download as XL / CSV- Admin- Config- Verify when we get any quick search results and click on download as XL / CSV,not only search result should be downloaded in file
+  Download as XL / CSV- PM- UI- Verify when we get any quick search results and click on download as XL / CSV,not only search result should be downloaded in file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    When I perform quick search for "Lisa Mitchell" in "---program:-:DataTableEnhanceTableIDforContactsTable---" panel
+    When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I download the file
+    Then I see "Lisa Mitchell" in downloaded xls or csv file "govgrants"
+    Then I see "Automation PM" in downloaded xls or csv file "govgrants"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @207551 @207554
+  Scenario: Download as XL / CSV- SPI- UI- Verify when we get any quick search results and click on download as XL / CSV, we should see all records in file
+  Download as XL / CSV- SPI- UI- Verify when we get any quick search results and click on download as XL / CSV,not only search result should be downloaded in file
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | RecipientGrantNotes | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    And I download the file
+    Then I see "Lisa Mitchell" in downloaded xls or csv file "govgrants"
+
+  @207612 @207613
+  Scenario Outline: Total- Admin- Config- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | DataTableEnhanceProgramContacts | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "program for grand total enhance table"
+    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Menu" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    When I click on "Download as PDF" button inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
+    And I download the file
+    And I pause execution for "10" seconds
+    Then I see "$2,000.00" on page "1" of "govgrants" pdf file
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @207614
+  Scenario: Total - SPI- UI- Verify the Total of values under the column can be displayed in PDF file when we download as PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecipientGrantNotes | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    And I navigate to "Files" sub tab
+    When I perform quick search for "Notes three" in "---program:-:FlexTableEnhancedNotesId---" panel
+    When I click on "Menu" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
+    And I download the file
+    Then I see "4000" on page "1" of "govgrants" pdf file
