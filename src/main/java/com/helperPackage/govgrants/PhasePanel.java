@@ -209,7 +209,7 @@ public final class PhasePanel {
      * click on right header bars with data Target value
      */
     public void clickParallelMenuBarsWithDataTargetValue(String dataTargetValue) {
-        By parallelMenuBarswithDataTarget = By.xpath("//a[@data-target='" + dataTargetValue + "']/ancestor::div[contains(@class,'panel-heading')]//a[@title='Menu']");
+        By parallelMenuBarswithDataTarget = By.xpath("//a[@data-target='" + dataTargetValue + "']/ancestor::div[contains(@class,'panel-heading')]//a[@title='Menu'] | //a[@data-toggle='" + dataTargetValue + "']/ancestor::div[contains(@class,'panel-heading')]//a[@title='Menu']");
         I.amPerforming().click().on(parallelMenuBarswithDataTarget);
     }
 
@@ -278,7 +278,7 @@ public final class PhasePanel {
      */
     public void clickAnyRightPannelButton(String idOfPanelButton, String buttonName) {
         By rightPanelButton = By.xpath("//div[contains(@class,'header-buttons') and contains(@id,'"
-                + idOfPanelButton + "')]//*[text()='" + buttonName + "'] | //div[contains(@id,'" + idOfPanelButton + "')]//*[text()='"+ buttonName + "']");
+                + idOfPanelButton + "')]//*[text()='" + buttonName + "'] | //div[contains(@id,'" + idOfPanelButton + "')]//*[text()='" + buttonName + "']");
         I.amPerforming().click().on(rightPanelButton);
     }
 
@@ -291,9 +291,9 @@ public final class PhasePanel {
      */
     public WebElement getItemFromParallelMenuBars(String panelTitleName, String menuItemName) {
         By parallelMenuBarItem = By.xpath(
-                "//div[contains(@class, 'panel-heading') and descendant::*["+I.amPerforming().sanityOfXpathTo().equals("text()",panelTitleName)+" or @title='"
+                "//div[contains(@class, 'panel-heading') and descendant::*[" + I.amPerforming().sanityOfXpathTo().equals("text()", panelTitleName) + " or @title='"
                         + panelTitleName + "']]//*[contains(@class, 'dropdown-menu-right')]//li//*[@text()='"
-                        + menuItemName + "' or text()='" + menuItemName + "' or @title='" + menuItemName +  "']");
+                        + menuItemName + "' or text()='" + menuItemName + "' or @title='" + menuItemName + "']");
         return I.amPerforming().getElementReference().of(parallelMenuBarItem);
     }
 
@@ -317,12 +317,12 @@ public final class PhasePanel {
                 + "']/.." + "//div[@class='header-bars']//*[text()='" + menuItemName
                 + "']|//div//a[@title='" + panelTitleName
                 + "']/ancestor::div/following-sibling::div//li//span[contains(text(),'" + menuItemName
-                + "')] | //*[text()='"+panelTitleName+"']/preceding-sibling::span//*[@title='Menu' or contains(@class,'fa-bars')]/following-sibling::ul//a[text()='"
-                + menuItemName + "'] | //div//a[@title='"+panelTitleName+"']/ancestor::div/following-sibling::span//li//a[@title='"+ menuItemName+"']" +
+                + "')] | //*[text()='" + panelTitleName + "']/preceding-sibling::span//*[@title='Menu' or contains(@class,'fa-bars')]/following-sibling::ul//a[text()='"
+                + menuItemName + "'] | //div//a[@title='" + panelTitleName + "']/ancestor::div/following-sibling::span//li//a[@title='" + menuItemName + "']" +
                 "| //a[contains(@title,'" + panelTitleName + "')]/ancestor::div/div[@align='right']//li/a[@title='Download as PDF']");
         I.amPerforming().click().on(parallelMenuItem);
         try {
-                govgrants.perform().modal().acceptPopUpWithParameter("Yes");
+            govgrants.perform().modal().acceptPopUpWithParameter("Yes");
         } catch (Exception e) {
         }
     }
