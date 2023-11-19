@@ -325,9 +325,13 @@ Business Need: All pdf and xls related scenario including component and complete
     When I click on "Menu" button inside table id "child1MetaData"
     Then I do not see "Download as PDF" options is displayed
 
-  @346411 @346412 @346434 @346436
+  @346411 @346412 @346434 @346436 @346463 @346464 @346477 @346478 @346531 @346532 @346612 @346613
   Scenario Outline: E-grid-Parent_UI Export_"<User>"-To verify all available records should be displayed in the downloaded PDF
   |E-grid-Parent_UI Export_"<User>"_To verify respective header should get displayed in the downloaded PDF.|
+  |E-grid-Parent_UI Export_"<User>"-To verify that actions are not getting displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_"<User>"-To verify that Record selection column should not displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_"<User>"_To verify that all fields of different datatypes displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_"<User>"_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -351,14 +355,21 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" on page "1" of "govgrants" pdf file
     Then I see "Budget Category" on page "1" of "govgrants" pdf file
     Then I see "Awarded Budget" on page "1" of "govgrants" pdf file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+    Then I cannot see "#" on page "1" of "govgrants" pdf file
+    Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @346413 @346438
+  @346413 @346438 @346467 @346480 @346535 @346614
   Scenario: E-grid-Parent_UI Export_SPI_To verify all available records should be displayed in the downloaded PDF
   |E-grid-Parent_UI Export_SPI_To verify respective header should get displayed in the downloaded PDF|
+  |E-grid-Parent_UI Export_SPI_To verify that actions are not getting displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_SPI_To verify that Record selection column should not displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_SPI_To verify that all fields of different datatypes displayed in downloaded PDF.|
+  |E-grid-Parent_UI Export_SPI_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -381,10 +392,18 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" on page "1" of "govgrants" pdf file
     Then I see "Budget Category" on page "1" of "govgrants" pdf file
     Then I see "Awarded Budget" on page "1" of "govgrants" pdf file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+    Then I cannot see "#" on page "1" of "govgrants" pdf file
+    Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
 
-  @346414 @346415 @346439 @346442
+  @346414 @346415 @346439 @346442 @346468 @346469 @346481 @346482 @346537 @346540 @346547 @346548 @346615 @346616
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify all available records should be displayed in the downloaded PDF
   |E-grid-Child_UI Export "<User>"-To verify respective header should get displayed in the downloaded PDF.|
+  |E-grid-Child_UI Export_"<User>"_To verify that actions are not getting displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_"<User>"_To verify that Record selection column should not displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_"<User>"_To verify that all fields of different datatypes displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_"<User>"_To verify that format of currency field displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_"<User>"_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -410,14 +429,21 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" on page "1" of "govgrants" pdf file
     Then I see "Budget Category" on page "1" of "govgrants" pdf file
     Then I see "Awarded Budget" on page "1" of "govgrants" pdf file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+    Then I cannot see "#" on page "1" of "govgrants" pdf file
+    Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @346416 @346444
+  @346416 @346444 @346470 @346484 @346541 @346550 @346617
   Scenario: E-grid-Child_UI Export_SPI_To verify all available records should be displayed in the downloaded PDF
   |E-grid-Child_UI Export_SPI_To verify respective header should get displayed in the downloaded PDF.|
+  |E-grid-Child_UI Export_SPI_To verify that actions are not getting displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_SPI_To verify that Record selection column should not displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_SPI_To verify that all fields of different datatypes displayed in downloaded PDF.|
+  |E-grid-Child_UI Export_SPI_To verify that format of all different datatype/fields displayed same as what displayed on UI/page layout/table in downloaded PDF|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
@@ -441,10 +467,16 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" on page "1" of "govgrants" pdf file
     Then I see "Budget Category" on page "1" of "govgrants" pdf file
     Then I see "Awarded Budget" on page "1" of "govgrants" pdf file
+    Then I cannot see "Actions" on page "1" of "govgrants" pdf file
+    Then I cannot see "#" on page "1" of "govgrants" pdf file
+    Then I cannot see "checkbox" on page "1" of "govgrants" pdf file
 
-  @346417 @346418 @346426 @346428
+  @346417 @346418 @346426 @346428 @346471 @346472 @346485 @346486 @346596 @346597
   Scenario Outline: E-grid-Parent_UI Export_"<User>"-To verify all available records should be displayed in the downloaded XLS/CSV
   |E-grid-Parent_UI Export-"<User>"-To verify respective header should get displayed in the downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export-"<User>"-To verify that actions are not getting displayed in downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export_"<User>"_To verify that Record selection column should not displayed in downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export_"<User>"_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
@@ -468,14 +500,20 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Awarded Budget" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+    Then I cannot see "#" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @346419 @346430
+  @346419 @346430 @346473 @346487 @346599
   Scenario: E-grid-Parent_UI Export_SPI_To verify all available records should be displayed in the downloaded XLS/CSV.
   |E-grid-Parent_UI Export_SPI_-To verify respective header should get displayed in the downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export_SPI_To verify that actions are not getting displayed in downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export_SPI_To verify that Record selection column should not displayed in downloaded XLS/CSV.|
+  |E-grid-Parent_UI Export_SPI_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
@@ -498,10 +536,16 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Awarded Budget" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+    Then I cannot see "#" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
 
-  @346420 @346423 @346431 @346432
+  @346420 @346423 @346431 @346432 @346474 @346475 @346489 @346490 @346601 @346602
   Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify all available records should be displayed in the downloaded XLS/CSV
   |E-grid-Child_UI Export_"<User>"_To verify respective header should get displayed in the downloaded XLS/CSV|
+  |E-grid-Child_UI Export_"<User>"_To verify that actions are not getting displayed in downloaded XLS/CSV.|
+  |E-grid-Child_UI Export_"<User>"_To verify that Record selection column should not displayed in downloaded XLS/CSV.|
+  |E-grid-Child_UI Export_"<User>"_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
@@ -527,13 +571,19 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Awarded Budget" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+    Then I cannot see "#" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @346424 @346433
+  @346424 @346433 @346476 @346491 @346603
   Scenario: E-grid-Child_UI Export_SPI_To verify all available records should be displayed in the downloaded XLS/CSV.
+  |E-grid-Child_UI Export_SPI_To verify that actions are not getting displayed in downloaded XLS/CSV.|
+  |E-grid-Child_UI Export_SPI_To verify that Record selection column should not displayed in downloaded XLS/CSV.|
+  |E-grid-Child_UI Export_SPI_To verify that on clicking on Download as XLS link, and clicking on Yes button on confirmation box then XLS file get downloaded in a machine|
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
@@ -557,6 +607,9 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I see "#" in downloaded xls or csv file "govgrants"
     Then I see "Budget Category" in downloaded xls or csv file "govgrants"
     Then I see "Awarded Budget" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Actions" in downloaded xls or csv file "govgrants"
+    Then I cannot see "#" in downloaded xls or csv file "govgrants"
+    Then I cannot see "Checkbox" in downloaded xls or csv file "govgrants"
 
   @346445 @346446
   Scenario Outline: E-grid-Parent_UI Export_"<User>"-To verify when user not provided Label of List View in config then nothing get displayed as header in the downloaded PDF
@@ -751,3 +804,142 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
     Then I cannot see "Budget Category" in downloaded xls or csv file "govgrants"
+
+  @346543 @346544
+  Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that format of currency field displayed in downloaded PDF.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantBudgetPeriods | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | GrantBudgetPeriods | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I softly see "Fee Fund Requested" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  | newFieldsApi                                                                 | defaultFieldsApi                                         |
+      | ADMIN | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c |
+      | PM    | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c |
+
+  @346545
+  Scenario Outline: E-grid-Parent_UI Export_SPI_To verify that format of currency field displayed in downloaded PDF.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantBudgetPeriods    | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | RecGrantBudgetPeriods | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I see "Fee Fund Requested" on page "1" of "govgrants" pdf file
+    Examples:
+      | newFieldsApi                                                                 | defaultFieldsApi                                         |
+      | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c |
+
+  @346604 @346605
+  Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetPeriods |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I see new tab is opened
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346606
+  Scenario: E-grid-Parent_UI Export_SPI_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I see new tab is opened
+
+  @346608 @346610
+  Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    And I wait for "2" seconds
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see new tab is opened
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346611
+  Scenario: E-grid-Child_UI Export_SPI_To verify that when user click on Download as PDF link, respective PDF get opened in new tab
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see new tab is opened
