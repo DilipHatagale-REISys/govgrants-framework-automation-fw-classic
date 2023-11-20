@@ -943,3 +943,249 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
     And I download the file
     Then I see new tab is opened
+
+  @346622 @346624
+  Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify that Reference field displayed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantBudgetCategoryFlexTable | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | GrantBudgetCategoryFlexTable | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    And I wait for "2" seconds
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "Row Number" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                    | defaultFieldsApi                                                                                                                |
+      | ADMIN | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c,BudgetCategory__r.RowsNumber__c | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c |
+      | PM    | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c,BudgetCategory__r.RowsNumber__c | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c |
+
+  @346625
+  Scenario Outline: E-grid-Child_UI Export_SPI_To verify that Reference field displayed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | RecGrantBudgetCategoryFlexTable | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | RecGrantBudgetCategoryFlexTable | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "Row Number" on page "1" of "govgrants" pdf file
+    Examples:
+      | newFieldsApi                                                                                                                                                    | defaultFieldsApi                                                                                                                |
+      | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c,BudgetCategory__r.RowsNumber__c | ProjServiceAreaName__c,BudgetCategoryName__c,AwardedBudget__c,CashMatch__c,NonCashMatch__c,OtherLeverage__c,TotalProjectCost__c |
+
+  @346570 @346572
+  Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that footer of Downloaded PDF contains Page number
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetPeriods |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableId---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346573
+  Scenario: E-grid-Parent_UI Export_SPI_To verify that footer of Downloaded PDF contains and Page number
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetPeriods | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    When I click on "Menu" button inside table id "---program:-:GrantBudgetTableIdForSPIuser---"
+    And I select "Download as PDF" from parallel lines dropdown of "Grant Budget"
+    And I download the file
+    Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
+
+  @346574 @346576
+  Scenario Outline:E-grid-Child_UI Export_"<User>"_To verify that footer of Downloaded PDF contains one image and Page number
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    And I wait for "2" seconds
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346577
+  Scenario:E-grid-Child_UI Export_SPI_To verify that footer of Downloaded PDF contains Page number
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | RecGrantBudgetCategoryFlexTable | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I quick search "Testing Grant for Automation" inside table "---program:-:GrantsActiveTableIdForSPIuser---"
+    When I click on "View" icon for "Testing Grant for Automation" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2023-2024)"
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "Page 1 of 1" on page "1" of "govgrants" pdf file
+
+  @346559 @346560
+  Scenario Outline: E-grid-Parent_UI Export_"<Users>"_To verify that To verify that Overall total displayed in downloaded PDF.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Over All Total | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (PDF)   | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | Flex Table:General    | Enable Export (PDF)   | true          | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "do not delete program for change request"
+    When I click on "View" icon for "do not delete program for change request" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    Then I download the file
+    Then I see "3" on page "1" of "govgrants" pdf file
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @346565 @346567
+  Scenario Outline:E-grid-Child_UI Export_"<User>"_To verify that To verify that Overall total displayed in downloaded PDF.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (PDF) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (PDF) | true          | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2022-2023)"
+    And I wait for "2" seconds
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as PDF" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "$1,000.00" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346551 @346552
+  Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that Overall total displayed in downloaded XLS/CSV.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Over All Total     | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Over All Total     | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "do not delete program for change request"
+    When I click on "View" icon for "do not delete program for change request" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as XLS" from parallel lines dropdown of "Review Steps"
+    And I download the file
+    Then I see "3" in downloaded xls or csv file "govgrants"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @346556 @346557
+  Scenario Outline: E-grid-Child_UI Export_"<User>"_To verify that Overall total displayed in downloaded XLS/CSV.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Export (XLS / CSV) | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                 | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Export (XLS / CSV) | true          | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Budget" sub tab
+    And I expand nested table containing column value "Fiscal Year(2022-2023)"
+    And I wait for "2" seconds
+    When I click on "Menu" button inside table id "child1MetaData"
+    And I select "Download as XLS" from parallel lines dropdown of "GrantBudgetCategoryFlexTable"
+    And I download the file
+    Then I see "$1,000.00" in downloaded xls or csv file "govgrants"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
