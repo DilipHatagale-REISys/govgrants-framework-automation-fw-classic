@@ -1189,3 +1189,29 @@ Business Need: All pdf and xls related scenario including component and complete
       | User  |
       | ADMIN |
       | PM    |
+
+  @346618 @346620
+  Scenario Outline: E-grid-Parent_UI Export_"<User>"_To verify that Reference field displayed in downloaded PDF
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Enable Export (PDF) | true               | ApiGeneratedId:1 |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Export (PDF) | true           | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "do not delete program for change request"
+    When I click on "View" icon for "do not delete program for change request" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
+    And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
+    And I download the file
+    Then I see "Status" on page "1" of "govgrants" pdf file
+    Examples:
+      | User  | newFieldsApi                                                                                                                                                                                     | defaultFieldsApi                                                                                                                                                            |
+      | ADMIN | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c,Program__r.Status__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c |
+      | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c,Program__r.Status__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c,Organization__c,Announcement__c,AnnouncementId__c,Countofreviewers__c,Justification__c,RecallComment__c |
