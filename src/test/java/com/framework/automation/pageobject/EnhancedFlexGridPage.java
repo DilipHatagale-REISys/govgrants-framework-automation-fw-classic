@@ -1605,4 +1605,33 @@ public class EnhancedFlexGridPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertTextInsideTable(String usage, String text, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isexpectedTextDisplayedOrNot(text, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isexpectedTextDisplayedOrNot(text,tableId)).isFalse();
+        }
+    }
+
+    private boolean isexpectedTextDisplayedOrNot(String text, String tableId) {
+        boolean flag = false;
+        try {
+            ArrayList<String> obtainedList = new ArrayList<>();
+            List<Elements> rows_table = govgrants.perform().flexTable().getCompleteTableRow(tableId);
+            for (Elements we : rows_table) {
+                obtainedList.add(we.getText());
+            }
+            for (int row = 0; row < obtainedList.size(); row++) {
+                if (obtainedList.get(row).contains(text)) {
+                    flag = true;
+                    break;
+                } else {
+                    flag = false;
+                }
+            }
+
+        } catch (Exception e) {
+        }
+        return flag;    }
 }

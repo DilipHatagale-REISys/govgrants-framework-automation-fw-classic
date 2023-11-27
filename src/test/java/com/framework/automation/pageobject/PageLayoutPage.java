@@ -728,7 +728,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     public WebElement getPDFOptionForVerification(String options) {
         return I.amPerforming().getElementReference().of(By.xpath("//ul[@aria-labelledby='dropdownMenu1']//*[@title='" + options + "']/ancestor::li |" +
-                "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')]"));
+                "//ul[@aria-labelledby='dropdownMenu1']//li//span[contains(text(),'" + options + "')] |" +
+                "//span[@class='dropdown open']//li//span[contains(text(),'" + options + "')]"));
     }
 
     /**
@@ -3625,7 +3626,8 @@ public class PageLayoutPage extends GovGrantsManager {
     private boolean helpIconDisplayedorNot(String fieldName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon'] |" +
+                    "//*[@ng-bind='fieldLabel' and text()='" + fieldName + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon']"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

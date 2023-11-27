@@ -4394,15 +4394,15 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
 
-  @100446    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
-  Scenario: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
+  @100446 @206248    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Capture Form          | Hide Pdf Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Capture Form:General  | Hide Pdf Download | false         | CF-0000            |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4412,6 +4412,10 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Dynamic Form" inside table
     When I click on "Menu" in the page details
     Then I see "Download as PDF" options is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @100450    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormLayout
   Scenario: validating Download as pdf option is not displayed inside burger menu at dynamic form
@@ -5034,3 +5038,77 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see the following message in the page details :
       | Form saved successfully. |
+
+  @206251 @206252 @208717 @208718
+  Scenario Outline: Dynamic forms--Admin--UI--To verify download as XLS functionality for Dynamic forms
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Menu" button inside table id "---program:-:DynamicFormFlexToggleTableId---"
+    Then I see "Download as PDF" options is displayed
+    Then I see "Download as XLS" options is displayed
+    Then I see "Refresh" options is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #  | PM    |
+
+  @207773 @207774
+  Scenario Outline: Dynamic Form--Admin--UI--To verify functionality for Bulk CSV button in Dynamic Form section
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly can see top right button "Bulk CSV" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #  | PM    |
+
+  @207770 @207771
+  Scenario Outline:Dynamic Form--Admin--UI--To verify functionality for Bulk PDF button in Dynamic Form section
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly can see top right button "Bulk PDF" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
+    And I click on top right button "Bulk PDF" in flex table with id "---program:-:DynamicFormFlexToggleTableId---"
+    Then I see the following message in the page details contains:
+      | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #  | PM    |
+
+  @217737
+  Scenario Outline: Dynamics Form - Admin - Config - Verify on click of refresh form table should refresh with all forms
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Menu" button inside table id "---program:-:DynamicFormFlexToggleTableId---"
+    Then I see "Refresh" options is displayed
+    Then I see table is refreshing
+    Examples:
+      | User  |
+      | ADMIN |
+      #  | PM    |

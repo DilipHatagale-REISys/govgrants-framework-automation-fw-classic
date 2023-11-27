@@ -230,4 +230,88 @@ public class FormPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertFormDisplayed(String usage, String formId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormDisplayedOrNot(formId)).isTrue();
+            Assert.assertTrue(isFormDisplayedOrNot(formId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormDisplayedOrNot(formId)).isFalse();
+        }
+    }
+
+    private boolean isFormDisplayedOrNot(String formId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='textFieldWrapFlex']//div[@id='fieldName']//dd//span[(contains(text(),'" + formId + "'))]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public void assertConfirmMessageBoxDisplayed(String usage, String message) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isMessageInBoxDisplayedOrNot(message)).isTrue();
+            Assert.assertTrue(isMessageInBoxDisplayedOrNot(message));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isMessageInBoxDisplayedOrNot(message)).isFalse();
+        }
+    }
+
+    private boolean isMessageInBoxDisplayedOrNot(String message) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'modal-dialog')]//div[contains(@class, 'bootbox-body') and normalize-space(contains(text(),'" + message + "'))]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public void assertFormNameDisplayed(String usage, String formName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormNameDisplayedOrNot(formName)).isTrue();
+            Assert.assertTrue(isFormNameDisplayedOrNot(formName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormNameDisplayedOrNot(formName)).isFalse();
+        }
+    }
+
+    private boolean isFormNameDisplayedOrNot(String formName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='textFieldWrapFlex']//dd//span[(contains(text(),'" + formName + "'))]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
+
+    public void assertNameandSubmiteedOn(String usage, String name) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormNameandSubmittedOn(name)).isTrue();
+            Assert.assertTrue(isFormNameandSubmittedOn(name));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isFormNameandSubmittedOn(name)).isFalse();
+        }
+    }
+
+    private boolean isFormNameandSubmittedOn(String name) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='textFieldWrapFlex']//dd//span[(contains(text(),'" + name + "'))]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }
+        return flag;
+    }
 }

@@ -65,4 +65,24 @@ public class FormStep {
     public void iSeeFieldIsShownInPosition(String field, String number) {
         I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("(//div[@class='formUIWrap']//div//dl//dt//span[text()='"+field+"'])["+number+"]"), true);
     }
+
+    @Then("^I (see|do not see) Form Id \"([^\"]*)\" is displayed on form layout$")
+    public void iSeeFormIdIsDisplayedOnFormLayout(String usage, String formId) {
+        formPage.assertFormDisplayed(usage, formId);
+    }
+
+    @Then("^I (see|do not see) confirmation box with message \"([^\"]*)\" is displayed$")
+    public void iSeeConfirmationBoxWithMessageIsDisplayed(String usage,String message) {
+        formPage.assertConfirmMessageBoxDisplayed(usage, message);
+    }
+
+    @Then("^I (see|do not see) Form Name \"([^\"]*)\" is displayed on form layout$")
+    public void iSeeFormNameIsDisplayedOnFormLayout(String usage,String formName) {
+        formPage.assertFormNameDisplayed(usage, formName);
+    }
+
+    @Then("^I (see|do not see) Name or Submitted On \"([^\"]*)\" is displayed on form under Authorized Official Name or Authorized Representative")
+    public void iSeeNameOrSubmittedOnIsDisplayed(String usage,String Name) {
+        formPage.assertNameandSubmiteedOn(usage, Name);
+    }
 }

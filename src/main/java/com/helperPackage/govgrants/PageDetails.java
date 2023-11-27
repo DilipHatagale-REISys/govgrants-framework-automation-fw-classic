@@ -451,7 +451,8 @@ public final class PageDetails {
         if (fieldLabel.contains("'"))
             element = "//span[text()=\"" + fieldLabel + "\"]";
         else
-            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "']";
+            element = "//span[" + I.amPerforming().sanityOfXpathTo().equals("text()", fieldLabel) + "]|//div[@class='selectTitle']//label[contains(text(),'" + fieldLabel + "')] | //table[@id='" + fieldLabel + "'] |" +
+                    "//td[@class='groupTitle']//field[@field-name='Name']//span[@title='" + fieldLabel + "']";
 
         try {
             I.amPerforming().getElementReference().of(ByUsing.xpath(element));
@@ -745,7 +746,8 @@ public final class PageDetails {
     public void getHelpTextAtPageBlock(String blockTitle) {
         I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//h3//a[contains(text(),'" + blockTitle + "')]/..//span[contains(@class,'fa-info')] |" +
                 "//div[@class='pull-right']//input[@value='" + blockTitle + "'] |" +
-                "//div[@id='headerButtonsPanel']//button[@title='" + blockTitle + "']"));
+                "//div[@id='headerButtonsPanel']//button[@title='" + blockTitle + "'] |" +
+                "//dd/*[text()='" + blockTitle + "']/ancestor::dl//*[@class='fa fa-info helpIcon']"));
     }
 
     /**

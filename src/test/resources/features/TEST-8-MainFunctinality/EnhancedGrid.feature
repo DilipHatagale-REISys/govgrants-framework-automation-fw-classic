@@ -3708,8 +3708,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action                   | Refresh Behavior  | Refresh the entire page | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the entire page | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | false                   | Grantee State Program          | Name                      | TAB-409                    |
     Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -3735,8 +3735,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Table Action     | Refresh Behavior |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName         | fieldNewValue    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action                   | Refresh Behavior  | Refresh the grid | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue    | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Refresh Behavior | Refresh the grid | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | false            | Grantee State Program          | Name                      | TAB-409                    |
     Given I delete the record "Grant Created for default value testing" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -4057,7 +4057,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @170496 @tejal
+  @170496
   Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the View layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -4073,7 +4073,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
     Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
-  @170497 @tejal
+  @170497
   Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the Edit layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -4089,7 +4089,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "{Framework_recordUsed:AutomationPermanentGrant}" inside table
     Then I softly see field "Show Link as Text" as "$1,200,000.00"
 
-  @171798 @tejal
+  @171798
   Scenario: Verify if User edits a existing Id  row level lookup field (Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
@@ -4112,7 +4112,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "GT-FIN.1-001" inside table
     Then I softly see "ExternalOrganization__c" field is required
 
-  @171801 @tejal
+  @171801
   Scenario: Verify if User remove the data fromlookup field(Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
@@ -4136,7 +4136,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I enter value "biological technologies office" into field "ExternalOrganization__c"
     Then I softly see "ExternalOrganization__c" field is required
 
-  @171800 @tejal
+  @171800
   Scenario: Verify if User create a new  record on table  for  lookup field (Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName       | fieldOrignalValue | filterId         |
@@ -4157,7 +4157,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:appBudgetPeriodTableId---"
     Then I softly see "ExternalOrganization__c" field is required
 
-  @171870 @tejal
+  @171870
   Scenario Outline: Verify if User edits a row level lookup field on child table  (Required to Save) then mandatory icon should display
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4183,7 +4183,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @171871 @tejal
+  @171871
   Scenario Outline: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4209,7 +4209,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @172133 @172143 @tejal
+  @172133 @172143
   Scenario Outline: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
   |Verify if User edits the record  and simultaneously added new record  for  lookup field on child table (Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
@@ -4242,7 +4242,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @172150 @tejal
+  @172150
   Scenario: Verify If User edits a Row level lookup field on parent table  (field is not Required to Save) then mandatory icon should not  display for lookup field
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -4256,7 +4256,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "Edit" icon for "GT-ITSGT-001" inside table
     Then I softly do not see "ExternalOrganization__c" field is required
 
-  @172148 @tejal
+  @172148
   Scenario: Verify If User edits a Row level lookup field on child  table  (field is not Required to Save) then mandatory icon should not  display for lookup field
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -4272,7 +4272,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on "Edit" icon for "AD-ITSGT--00" inside flex table with id "EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I softly do not see "Account__c" field is required
 
-  @171805 @tejal
+  @171805
   Scenario Outline: Verify if User remove the data from child table lookup field(Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -4301,7 +4301,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @172144 @tejal
+  @172144
   Scenario Outline: Verify If User new record on child & parent  table  lookup fieldon child table  (Required to Save) then mandatory icon should display for lookup field
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName           | fieldOrignalValue  | filterId         |
@@ -5534,3 +5534,1621 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "GT-VT-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
     Then I see field "Cash Match" inside page block
+
+  ############# Table - Test suite: Table (Suite ID: 218427) ###########################
+  @218428 @218429
+  Scenario Outline: Table- Admin- Config- Verify Flex table name displayed correctly on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see "Review Steps" page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @218431 @218433
+  Scenario Outline: Is active- Admin- Config- Verify flex table should be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | Grantor State Program | Name                      | PB-7512                    |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Autosnapshot TD AN 4"
+    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see "Review Steps" page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218432 @218434
+  Scenario Outline:Is active- Admin- Config- Verify flex table should not be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | Grantor State Program | Name                      | PB-7512                    |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Autosnapshot TD AN 4"
+    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    When I navigate to "Setup" sub tab
+    Then I do not see "Review Steps" page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218437 @218438
+  Scenario Outline: Header instruction- Admin- Config- Verify if given header help text is getting displayed under 'i' icon
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Autosnapshot TD AN 4"
+    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see "Review Steps" page block displayed
+    When I hovering mouse on help text icon inside "Review Steps"
+    Then I see "The table below lists the application review steps associated with this announcement." shown as help text
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218440 @218441 @218443 @218444
+  Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField          | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | AnnouncementReviewTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Autosnapshot TD AN 4"
+    When I click on "View" icon for "Autosnapshot TD AN 4" inside table
+    When I navigate to "Setup" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I softly see "Step Order" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
+    Then I softly see "Step Name" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
+    Then I softly see "Description" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
+    Then I softly see "Step Weight (%)" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
+    Then I softly see "# of Panels" in flex table header "---program:-:AnnouncementReviewStepsGridTableId---"
+
+    Examples:
+      | User  | defaultFieldsApi                                                    | newFieldsApi                                                        |
+      | ADMIN | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
+     # | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
+
+
+  @218461 @218462 @352192 @352197
+  Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
+  Admin-Parent table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | true          | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Review Steps" page block displayed
+    Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218464 @218465
+  Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+     # | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | ProgramReviewStepTemplates | Name                      |                            |
+   #   | Flex Table:General    | Enable Page Size  | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | false         | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Review Steps" page block displayed
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218455 @218456
+  Scenario Outline: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218430 @218435
+  Scenario:Table- SPI- UI- Verify Flex table name displayed correctly on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | true          | RecipientGrant     | Name                      | PB-8091                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+
+  @218436
+  Scenario: Is active- SPI- UI- Verify flex table should not be displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Page Block            | Is Active | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Is Active | false         | RecipientGrant     | Name                      | PB-8091                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly do not see "Grant Budget" page block displayed
+
+  @218445 @218442
+  Scenario Outline: Display Field Names - SPI- UI- Verify if all fields from 'Display field names' are getting displayed on flex Table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | RecGrantBudgetCategoryFlexGrid |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    Then I softly see "Budget Period Title" in flex table header "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+    Then I softly see "Start Date" in flex table header "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+    Then I softly see "End Date" in flex table header "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+
+    Examples:
+      | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
+      | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
+
+  @218446 @218447
+  Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I see "Show" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218448 @352285
+  Scenario: Page Size- SPI- UI- Verify dropdown appears on UI to select page size manually
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @218449 @218450 @352425 @352427
+  Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
+  Admin-Parent Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218451 @352431
+  Scenario: Page Size- SPI- UI- Verify dropdown to select page size manually should not appear on UI
+  SPI-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @218452 @218453
+  Scenario Outline: Default Page Size- Admin- Config- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 5             | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I see "5" records inside enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218457
+  Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | true          | RecGrantBudgetCategoryFlexGrid |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    Then I see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+
+  @218460
+  Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | RecGrantBudgetCategoryFlexGrid |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    Then I do not see Total Records count "Total Records : " in table name "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @218458 @218459
+  Scenario Outline: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Total Records Count | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I do not see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @218454
+  Scenario: Default Page Size - SPI- UI- Verify default number of records displayed in flex table are as mentioned in ‘Default Page Size’
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 5             | EnhanceAppGrantorBudgetPeriods |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I see "5" records inside enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @218466 @352422
+  Scenario: Pagination - SPI- UI- Verify Pagination should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @218463 @352269
+  Scenario:Pagination - SPI- UI- Verify ‘Pagination’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+  @206017 @206018
+  Scenario Outline: Menu- Admin- Config- Verify Menu option should not appear on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I do not see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @206019
+  Scenario:Menu- SPI- UI- Verify Menu option should not appear on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | true          | RecGrantBudgetCategoryFlexGrid |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    Then I do not see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
+
+  @206014 @206015 @206013
+  Scenario Outline: Menu- Admin- Config- Verify Menu option appears on UI
+  Menu- Admin- Config- Verify admin can configure menu option on the parent or child flex grids
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | false         | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @205912 @205913
+  Scenario Outline: Default value- Admin- Config- Verify set default value for regular field will get populated while creating any new record in the grid
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Default Value |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Default Value | Testing Name  | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    When I enter value "5" into field "StepNumber__c"
+    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    When I perform quick search for "5" in "---program:-:ProgramReviewStepTemplatesgridTableId`---" panel
+    Then I see value "Testing Name" for multiple cells at column "Name"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @205918 @205919
+  Scenario Outline: Default value- Admin- Config- Verify the different default values can be set for different fields
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
+      | Flex Table List       | Default Value |                   | ApiGeneratedId:0 |
+      | Flex Table List       | Default Value |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Default Value | Testing Name  | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Default Value | 4             | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    When I enter value "5" into field "StepNumber__c"
+    When I click on top right button "Save" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+   # When I perform quick search for "5" in "---program:-:ProgramReviewStepTemplatesgridTableId`---" panel
+    Then I see value "Testing Name" for multiple cells at column "Name"
+    Then I see value "4" for multiple cells at column "NoOfCompletedReviews__c"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @206016
+  Scenario: Menu- SPI- UI- Verify Menu option appears on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
+      | Flex Table            | Disable Menu | false             | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName    | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Disable Menu | false         | RecGrantBudgetCategoryFlexGrid |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    Then I see "Menu" action is displayed at the "---program:-:RecGrantBudgetCategoryFlexGridTableId---" modal
+
+  @206020 @206021
+  Scenario Outline: PageMessageTimeOut- Admin- Config- Verify the message will be automatically closed after the set interval of time out
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    And I click on menu inside "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Review Steps"
+    And I pause execution for "15" seconds
+    Then I cannot see the following messages in the page details contains:
+      | Table has been reset. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @206022
+  Scenario:PageMessageTimeOut- SPI- UI- Verify the message will be automatically closed after the set interval of time out
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    And I click on menu inside "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+    And I select "Reset Table" from parallel lines dropdown of "Grant Budget"
+    And I pause execution for "15" seconds
+    Then I cannot see the following messages in the page details contains:
+      | Table has been reset. |
+
+##################### Test suite: Page size & Pagination (Suite ID: 352166) #######################
+  @352265 @352267
+  Scenario Outline: Admin-Child Table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | true          | GrantBudgetCategoryFlexTable | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @352274 @352275
+  Scenario Outline:Admin-Parent Table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Review Steps" page block displayed
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @352351 @352415
+  Scenario Outline:Admin-Parent Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
+      | Flex Table            | Enable Page Size  | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Default Page Size | 5             | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Page Size  | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Enable Pagination | false         | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Review Steps" page block displayed
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @352419 @352420
+  Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | GrantBudgetCategoryFlexTable | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @352429 @352430
+  Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | false         | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @352278 @352279
+  Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | GrantBudgetCategoryFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  ################### Test suite: Detail config (Suite ID: 296508) ###################
+  @296545 @296546
+  Scenario Outline:Admin_Parent table_Verified that label of column displayed in table, what have been provided in "Field label override" config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | Step Order        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test Automation | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296549 @296550
+  Scenario Outline: Admin_Child table_Verified that label of column displayed in table, what have been provided in "Field label override" config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | Form Name         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override | Test Automation | ProgramReviewStepPanelTemplates | Name                      | FTC-12049                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "1"
+    Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296559 @296560
+  Scenario Outline: Admin_Parent table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | Step Order        | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "Step Number" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296562 @296563
+  Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Field Label Override | Form Name         | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field Label Override |               | ProgramReviewStepPanelTemplates | Name                      | FTC-12049                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "1"
+    Then I see "Panel Name" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296594 @296595
+  Scenario Outline:Admin_Parent table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I hovering mouse on help text icon inside "Step Order" for flex table column
+    Then I see "This is the order in which the associated reviews will need to be completed." shown as help text
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296597 @296598
+  Scenario Outline: Admin_Child table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "1"
+    When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
+    Then I see "Scoring weight for this form in relation to all required panels in this review step. (% out of 100%)" shown as help text
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296610 @296611
+  Scenario Outline:Admin_Parent table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
+      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text |               | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I do not see help text icon is displayed for field "Step Order"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296613 @296614
+  Scenario Outline: Admin_Child table_Verified that when user not provided any text in Help text in detail config, then help icon not get displayed beside respective column name/field
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
+      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text |               | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "1"
+    Then I do not see help text icon is displayed for field "Form Weight (%)"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296617 @296623
+  Scenario Outline: Admin_Parent table_Verified that user is able to add all characters, Sp. Characters and digits in help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                                            | filterId         |
+      | Flex Table List       | Help Text | This is the order in which the associated reviews will need to be completed. | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | @#$%^&*()!<>1234567890 | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I hovering mouse on help text icon inside "Step Order" for flex table column
+    Then I see "@#$%^&*()!<>1234567890" shown as help text
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296627 @296628
+  Scenario Outline: Admin_Child table_Verified that user is able to add all characters, Sp. Characters and digits in help text
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName | fieldOrignalValue                                                                                    | filterId         |
+      | Flex Table List       | Help Text | Scoring weight for this form in relation to all required panels in this review step. (% out of 100%) | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName | fieldNewValue          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | @#$%^&*()!<>1234567890 | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "1"
+    When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
+    Then I see "@#$%^&*()!<>1234567890 " shown as help text
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296637 @296641
+  Scenario Outline:Admin_Parent table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I see field "Manual Test" inside page block
+    Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296644 @296645
+  Scenario Outline: Admin_Child table_Verified that user is able to apply Row grouping on different available fields/columns, by enabling Row grouping config:
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #Then I see field "Awarded Budget :" inside page block
+    Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296658 @296659
+  Scenario Outline: Admin_Parent table_Verified that user is able to apply row grouping on multiple fields/columns:
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | Flex Table List       | Enable Row Grouping | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296661 @296662
+  Scenario Outline:Admin_Child table_Verified that user is able to apply row grouping on multiple fields/columns:
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
+      | Flex Table List       | Enable Row Grouping | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11709                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #Then I see field "Awarded Budget :" inside page block
+    Then I softly see "Awarded Budget :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+    Then I softly see "Budget Category :" inside rows of enhanced grid id "---program:-:RecGrantBudgetCategoryFlexTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296688 @296689
+  Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      #| Flex Table List       | Sub Total Label       | Testing Sub Total | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-10960                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+   # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see over all total for "StepNumber__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296692 @296693
+  Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and Overall Total, Subtotal and Overall total get calculated and displayed correctly
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      #| Flex Table List       | Sub Total Label       |                   | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-13613                  |
+      #| Flex Table List       | Sub Total Label       | Testing Sub Total | GrantBudgetCategoryFlexTable | Name                      | FTC-10960                  |
+      | Flex Table List       | Enable Row Grouping   | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11709                  |
+      | Flex Table List       | Enable Over All Total | true          | GrantBudgetCategoryFlexTable | Name                      | FTC-11710                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I softly see "Grant Budget" page block displayed
+    When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    Then I softly see "Budget Category : " inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
+    Then I softly see "Budget Category : Equipment" inside rows of enhanced grid id "---program:-:GrantBudgetCategoryFlexTableFlexTableId---"
+    Then I see over all total for "AwardedBudget__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296695 @296698
+  Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
+   # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I softly see "Step Name : Reference Testing " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see over all total sum is not displayed for "NoOfCompletedReviews__c" inside "---program:-:ProgramReviewStepTemplatesTableId---" table
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296701 @296702
+  Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and enabling Sub Total and disabling Overall Total, only Subtotal of each group get calculated and displayed and Overall total not get calculated and displayed
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    ##Row grouping
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    ##subtotal
+    Then I softly see "Form Weight (%) : 25" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    ##disable overall total
+    Then I see over all total sum is not displayed for "MinimumNumberOfReviewers__c" inside "---program:-:ProgramReviewStepTemplatesgridTableId---" table
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296767 @296768
+  Scenario Outline: Admin_Parent table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I do not see " Step Name : Manual Test " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296948 @296950
+  Scenario Outline: Admin_Child table_Verified that after applying Row grouping, and disabling Sub Total and enabling Overall Total, then Subtotal not get calculated nor displayed and Overall total get calculated and displayed at last / end of each page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    ##Row grouping
+    Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    ##subtotal
+    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+      ##disable overall total
+    Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296953 @296957
+  Scenario Outline: Admin_Parent table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I do not see "Manual Test" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I do not see "Step Name : Reference Testing" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @296968 @296974
+  Scenario Outline: Admin_Child table_Verified that on enabling Overall Total, it get calculated and displayed on table even though Row grouping is disabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Over All Total | false         | ProgramReviewStepPanelTemplates | Name                      | FTC-12051                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    ##Row grouping
+    Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    ##subtotal
+    Then I do not see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+      ##disable overall total
+    Then I see over all total for "MinimumNumberOfReviewers__c" at enhanced grid
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297044 @297047
+  Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "Step Number" not displayed in enhanced grid table column title
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297067 @297069
+  Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column config, respective column on which grouping is enabled get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    Then I see "Form Weight (%)" not displayed in enhanced grid table column title
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297580 @297581
+  Scenario Outline: Admin_Parent table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepTemplates | Name                      | FTC-10972                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297583 @297584
+  Scenario Outline: Admin_Child table_Verified that on disabling Hide grouping column config, respective column on which grouping is enabled not get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table List       | Hide Grouping Column | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping  | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Grouping Column | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Row Grouping  | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    Then I see "Form Weight (%)" not displayed in enhanced grid table column title
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297589 @297592
+  Scenario Outline: Admin_Parent table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:3 |
+      | Flex Grid:General     | Default Page Size     | 5                 | ApiGeneratedId:4 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Row Grouping   | false         | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Grid:General     | Default Page Size     | 20            | ProgramReviewStepTemplates |                           |                            |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see " NoOfCompletedReviews :  --  " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    Then I see over all total for "NoOfCompletedReviews__c" at enhanced grid
+    Then I see "NoOfCompletedReviews" not displayed in enhanced grid table column title
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297595 @297597
+  Scenario Outline: Admin_Child table_Verified that on enabling Hide grouping column, Overall total and subtotal of respective column also get hidden
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total      | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:2 |
+      | Flex Table List       | Enable Row Grouping   | false             | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total      | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Over All Total | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Row Grouping   | true          | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    ##subtotal
+    Then I see "Form Weight (%) : 25" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    Then I see "Form Weight (%)" not displayed in enhanced grid table column title
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297601 @297602
+  Scenario Outline: Admin_Parent table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:2 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue    | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true             | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Enable Row Grouping | true             | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+      | Flex Table List       | Sub Total Label     | Testing SubTotal | ProgramReviewStepTemplates | Name                      | FTC-13612                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
+    Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+    #Sub Total Label Displayed
+    Then I see " Testing SubTotal - NoOfCompletedReviews : 3 " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @297605 @297606
+  Scenario Outline: Admin_Child table_Verified that when user provided subtotal label through config, then respective text get displayed as a prefix (Initially) to the subtotal label which comes from code
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table List       | Enable Sub Total    | false             | ApiGeneratedId:0 |
+      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:1 |
+      | Flex Table List       | Sub Total Label     |                   | ApiGeneratedId:5 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Sub Total    | true                   | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Enable Row Grouping | true                   | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+      | Flex Table List       | Sub Total Label     | Sub Total Testing Demo | ProgramReviewStepPanelTemplates | Name                      | FTC-12050                  |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    When I expand nested table containing column value "Manual Test"
+    Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+    #subtotal label displayed
+    Then I see "Sub Total Testing Demo - Form Weight (%) : 15" inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @206030
+  Scenario Outline: Hide logic- Admin- Config- Verify admin can enable parent hide logic
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionForParentHideLogic | ProgramReviewStepTemplates | Name                      | New                        |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                              | ProgramReviewStepTemplates | Name                      | New                        |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "New" button inside "Review Steps" flex table not displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
+
+  @206036 @206037
+  Scenario Outline: Hide logic- Admin- Config- Verify the expression created by users using expression builder will refer to parent business object, where enhanced grid/ table is configured
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON     |                   | ApiGeneratedId:0 |
+      | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                | fieldNewValue                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionForParentHideLogic | ProgramReviewStepTemplates | Name                      | Edit                        |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                              | ProgramReviewStepTemplates | Name                      | Edit                        |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "Edit" icon for "Test" is not displayed inside flex table
+    Examples:
+      | User  |
+      | ADMIN |
+      # | PM    |
