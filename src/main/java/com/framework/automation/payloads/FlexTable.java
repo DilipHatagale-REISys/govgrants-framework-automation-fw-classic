@@ -99,6 +99,13 @@ public class FlexTable {
                                         String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
                                 String.valueOf(SObjectAPIs.GNT__EnableSubTotal__c), value);
                 break;
+            case "SUB TOTAL LABEL":
+                finalPayload = String
+                        .format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),
+                                apiUtilities.getComponentCoreFieldId(
+                                        String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c), filterClause),
+                                String.valueOf(SObjectAPIs.GNT__SubTotalLabel__c), value);
+                break;
             case "STYLE ATTRIBUTE":
                 finalPayload = String
                         .format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__DataTableDetailConfig__c),

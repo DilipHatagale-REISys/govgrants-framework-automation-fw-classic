@@ -391,8 +391,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
@@ -409,8 +409,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
@@ -429,8 +429,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I enter value "0" into field "fieldFundedAmount__c"
     And I enter value "0" into field "fieldStartDate__c"
@@ -485,8 +485,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
@@ -499,8 +499,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
@@ -510,8 +510,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     Then I see expected table with id "---program:-:ApprovalTableId---"
 
@@ -547,8 +547,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "Edit" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "History" sub tab
     Then I softly see expected table with id "---program:-:snapshotHistoryTableId---"
     Then I softly see the text containing :
@@ -697,7 +697,7 @@ Business Need: history Component Scenarios
     When I navigate to "History" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableHistory"
     And I select "Download as CSV" from parallel lines dropdown of "Field History"
-    #And I download the file
+    And I download the file
     Then I see "Field History" in downloaded xls or csv file "govgrants"
 
     Examples:
@@ -833,8 +833,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Testing OK" into field "fieldAuthorization__c"
@@ -862,8 +862,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Automation Admin" into field "fieldAuthorizedSignatory__c"
@@ -891,8 +891,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "8456321479" into field "fieldPhone_Field__c"
@@ -919,8 +919,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Checked" into field "CFDA_Data__c"
@@ -946,8 +946,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "State" into field "InternalOrganization__c"
@@ -973,8 +973,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "09/27/2023 07:37 PM" into field "DateandTime__c"
@@ -1000,8 +1000,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-20" into field "Number__c"
@@ -1027,8 +1027,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "www.google.com" into field "URL__c"
@@ -1054,8 +1054,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "-78" into field "Percent__c"
@@ -1081,8 +1081,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "74" into field "Percent__c"
@@ -1108,8 +1108,8 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
     And I enter value "Project Grants" into field "Type__c"
@@ -1128,3 +1128,59 @@ Business Need: history Component Scenarios
       | User  |
       | ADMIN |
       | PM    |
+
+    @205445 @205468
+    Scenario Outline: Field history: PM user-To verify, User change the number field from backend then it should display changed and previous value in the new and old value column
+      When I login to "As a Grantor" app as "<User>" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Internal Programs - Draft"
+      When I perform quick search for "Demo Testing Program For Field History"
+      When I click on "View" icon for "Demo Testing Program For Field History" inside table
+      When I navigate to "Overview" sub tab
+      And I click on "Edit" in the page details
+      And I enter value "12" into field "fieldNumber__c"
+      And I click on "Save" in the page details
+      And I pause execution for "5" seconds
+      And I save the field labeled "Number" as "OldNumber"
+      And I click on "Edit" in the page details
+      And I enter value "20" into field "fieldNumber__c"
+      And I click on "Save" in the page details
+      And I save the field labeled "Number" as "NewNumber"
+      And I refresh the page
+      When I navigate to "History" sub tab
+      Then I see "{SavedValue:NewNumber}" shown inside "New Value" column in history table
+      Then I see "{SavedValue:OldNumber}" shown inside "Old Value" column in history table
+
+      Examples:
+        | User  |
+        | ADMIN |
+       # | PM    |
+
+  @205477 @205478
+  Scenario Outline: Field History : PM User -To verify, User change the negative value number field as a from backend then it should display in the new value column.
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Demo Testing Program For Field History"
+    When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    When I navigate to "Overview" sub tab
+    And I click on "Edit" in the page details
+    And I enter value "-12" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I save the field labeled "Number" as "OldNumber"
+    And I click on "Edit" in the page details
+    And I enter value "-50" into field "fieldNumber__c"
+    And I click on "Save" in the page details
+    And I save the field labeled "Number" as "NewNumber"
+    And I refresh the page
+    When I navigate to "History" sub tab
+    Then I see "{SavedValue:NewNumber}" shown inside "New Value" column in history table
+    Then I see "{SavedValue:OldNumber}" shown inside "Old Value" column in history table
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |

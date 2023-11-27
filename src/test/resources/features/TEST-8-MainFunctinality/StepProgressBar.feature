@@ -388,6 +388,39 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
+  @201459
+  Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see "Created" step is on step progress bar at "0" position
+    Then I see "Submitted" step is diplayed on step progress bar
+    Then I see "Converted to Award" step is diplayed on step progress bar
+
+  @201812
+  Scenario: IsCreated- SPI- UI- Verify user can view the last updated date, time and user name
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | IsCreated | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Detail | IsCreated | true          | External Application Progress Bar | Name                      | Created                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    When I hovering mouse on Status inside step progress bar "Created"
+    And I pause execution for "5" seconds
+    Then I see "By : Automation SPI" shown as help text
+
+  @201815
+  Scenario:
+
   ################# Step Progress Bar ######################
   @201445 @201446 @201454 @201455
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
@@ -513,29 +546,29 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN | Internal    |
       | PM    | Internal    |
 
-    @201439 @201440 @notcleared
-    Scenario Outline: sObject Name -Admin – Config- Verify if we can find step progress bar under expected object type
-      Given I have "default" configuration as below:
-        | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
-      Given I setup test configuration as below:
-        | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Step Progressbar Header Config Sobject | Render for User |               | PB-0108            |                           |                            |
-      When I login to "As a Grantor" app as "<User>" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on "View" icon in flex table for first draft record
-      And I click on back arrow
-      Then I do not see step progress bar is displayed
+  @201439 @201440 @notcleared
+  Scenario Outline: sObject Name -Admin – Config- Verify if we can find step progress bar under expected object type
+    Given I have "default" configuration as below:
+      | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
+    Given I setup test configuration as below:
+      | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Step Progressbar Header Config Sobject | Render for User |               | PB-0108            |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    And I click on back arrow
+    Then I do not see step progress bar is displayed
 
-      Examples:
-        | User  |
-        | ADMIN |
-        | PM    |
+    Examples:
+      | User  | defaultuser |
+      | ADMIN | Internal    |
+      | PM    | Internal    |
 
   @201442 @201443 @notcleared
-    Scenario Outline: Steps- Admin- Config- Verify all steps having same ‘Step Progress bar Header’ are getting displayed on UI
+  Scenario Outline: Steps- Admin- Config- Verify all steps having same ‘Step Progress bar Header’ are getting displayed on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -547,5 +580,6 @@ Business Need: Step Progress Bar Component Scenarios
       | User  |
       | ADMIN |
       | PM    |
+
 
 

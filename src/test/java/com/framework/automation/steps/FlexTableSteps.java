@@ -323,7 +323,8 @@ public class FlexTableSteps {
         boolean errorMessageDisplayed = I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@class='err-access-message' and contains(text(),'" + errorMessage + "')] " +
                 "| //span[@id='theErrorPage:theError' and contains(text(),'" + errorMessage + "')] " +
                 "| //div[@class='slds-text-longform']//h3[text()='" + errorMessage + "'] " +
-                "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'" + errorMessage + "')]"));
+                "| //li/span[@class='dynamic-msg-box-margin' and contains(text(),'" + errorMessage + "')] |" +
+                "//div//p[@class='requiredError Question1__c' and contains(text(),'"+ errorMessage + "')]"));
         Assert.assertTrue(errorMessageDisplayed);
     }
 

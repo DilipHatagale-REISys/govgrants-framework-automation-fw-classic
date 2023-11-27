@@ -694,11 +694,11 @@ Business Need: Snapshot Config Component Scenarios
   @217480 @217481
   Scenario Outline: Snapshot History Table - Admin- Config - Verify Take Snapshot button should not present in Menu option
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snaphot | false              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snaphot | true         | Grantor State Program | Name                      |                            |
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Grantor State Program | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -753,11 +753,11 @@ Business Need: Snapshot Config Component Scenarios
   @217482
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should not present in Menu option
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
-      | Page Layout           | Hide On Demand Snaphot | false              | ApiGeneratedId:0 |
+      | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
+      | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snaphot | true         | ApplicationView    | Name                      |                            |
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | ApplicationView    | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -770,8 +770,9 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409
+  @201409 @217476
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
+  Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Announcement For Flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Program For Flow" from the object "Program__c" with field "ProgramName__c"
@@ -911,3 +912,320 @@ Business Need: Snapshot Config Component Scenarios
       |      | Project Director/Manager | Checked        |
     When I click on "Submit Application" in the page details
     Then I softly see status in Progress-bar is "Submitted" and is "Green"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    Then I see generated snapshot "SnapShot" is displayed with "File Name"
+
+  @201434
+  Scenario:Auto Snapshot-SPI-UI-To verify Auto Snapshot functionality when is Active is checked
+    Given I have "default" configuration as below:
+      | configurationCategory             | fieldName                   | fieldOrignalValue | filterId         |
+      | Auto Snapshot                     | SnapShot File Name          |                   | ApiGeneratedId:0 |
+      | Auto Snapshot                     | Is Active                   | false             | ApiGeneratedId:1 |
+      | Page Tabs Config                  | Is Active                   | false             | ApiGeneratedId:2 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c            | Name                      | SAS-0011                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | true                             | Application__c            | Name                      | SAS-0011                   |
+      | Page Tabs Config:Page Layout Action | Is Active                   | true                             | Recipient ApplicationView | Name                      | TAB-2845                   |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c            |                           |                            |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Announcement For Flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Program For Flow" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "5" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+    #Announcement Creation
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    And I enter "OrgAnnCreation" values from "Field_Values_For_Flow.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
+    And I click modal button "Continue"
+    When I enter "AnnouncementFlow_2ndModal_v" values from "Field_Values_For_Flow.xlsx"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "ANNEGMSID"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+    When I click on "Edit" in the page details
+    And I enter "Announcement_Flow_Edition_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "6" seconds
+    And I click on "Edit" in the page details
+    And I enter value "Test" into field "Justification__c"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
+    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate Funding Accounts" modal by clicking the top right x button
+    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
+    And I refresh the page
+    And I pause execution for "5" seconds
+    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+      | Budget Period Name | Start Date | End Date |
+      | BP01               | 90         | 350      |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
+    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
+    And I click on "Publish" in the page details
+    Then I softly see status in Progress-bar is "Published" and is "green"
+    #Create Application
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
+    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:toggleFlexTablenyqaeTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    When I enter value "Automation Application" into field "fieldTitle__c"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Edit" in the page details
+    And I enter "Application_Flow_Eddition_v" values from "Field_Values_For_Flow.xlsx"
+    When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "APPEGMSID"
+    And I navigate to "Budget" sub tab
+    And I pause execution for "5" seconds
+    And I expand nested table containing column value "BP01"
+    And I edit the following rows inline in flex table with id "---program:-:appBudgetPeriodTableId---" by clicking "Edit" :
+      | Category Name | Budget |
+      | Construction  | 1000   |
+    And I pause execution for "5" seconds
+    And I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Given I enter "StandardAssurancesForm_v" values from "Field_Values_For_Flow.xlsx"
+    And I pause execution for "3" seconds
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Given I enter "ProgramApplicationForm_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
+    When I navigate to "Overview" sub tab
+    And I edit the following rows inline in flex table with id "flexGridAppContact" by clicking "Edit" :
+      | Name | Project Role             | Is Key Contact |
+      |      | Project Director/Manager | Checked        |
+    When I click on "Submit Application" in the page details
+    Then I softly see status in Progress-bar is "Submitted" and is "Green"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    Then I see take snap shot getting saved with "testAutomationSnapshot"
+
+  @201435
+  Scenario: Auto Snapshot-SPI-UI-To verify Auto Snapshot functionality when is Active is unchecked
+    Given I have "default" configuration as below:
+      | configurationCategory             | fieldName                   | fieldOrignalValue | filterId         |
+      | Auto Snapshot                     | SnapShot File Name          |                   | ApiGeneratedId:0 |
+      | Auto Snapshot                     | Is Active                   | false             | ApiGeneratedId:1 |
+      | Page Tabs Config                  | Is Active                   | false             | ApiGeneratedId:2 |
+      | Auto Snapshot On Approval:General | Approval Snapshot File Name |                   | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName                   | fieldNewValue                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Auto Snapshot:Sobject Auto Snapshot | SnapShot File Name          | testAutomationSnapshot           | Application__c            | Name                      | SAS-0011                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                   | false                            | Application__c            | Name                      | SAS-0011                   |
+      | Page Tabs Config:Page Layout Action | Is Active                   | true                             | Recipient ApplicationView | Name                      | TAB-2845                   |
+      | Auto Snapshot On Approval:General   | Approval Snapshot File Name | TestAutomationSnapshotOnApproval | Application__c            |                           |                            |
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Announcement For Flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Program For Flow" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
+    And I pause execution for "5" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I click on "Activate" in the page details
+    Then I softly see status in Progress-bar is "Active" and is "Green"
+    #Announcement Creation
+    And I navigate to "Announcements" tab
+    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+    And I enter "OrgAnnCreation" values from "Field_Values_For_Flow.xlsx"
+    And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
+    And I click modal button "Continue"
+    When I enter "AnnouncementFlow_2ndModal_v" values from "Field_Values_For_Flow.xlsx"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "ANNEGMSID"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
+    When I click on "Edit" in the page details
+    And I enter "Announcement_Flow_Edition_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    And I pause execution for "6" seconds
+    And I click on "Edit" in the page details
+    And I enter value "Test" into field "Justification__c"
+    And I click on "Save" in the page details
+    When I navigate to "Financials" sub tab
+    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
+    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+    When I close "Associate Funding Accounts" modal by clicking the top right x button
+    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
+    And I refresh the page
+    And I pause execution for "5" seconds
+    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+      | Budget Period Name | Start Date | End Date |
+      | BP01               | 90         | 350      |
+    And I click on "Submit For Approval" in the page details
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
+    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
+    And I click on "Publish" in the page details
+    Then I softly see status in Progress-bar is "Published" and is "green"
+    #Create Application
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
+    And I navigate to "Opportunities" tab
+    When I navigate to "Not Yet Qualified" content inside "Opportunities" subheader on left panel
+    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:toggleFlexTablenyqaeTableId---" panel
+    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:toggleFlexTablenyqaeTableId---"
+    When I click on "Qualify" in the page details
+    When I click on "Create Application" in the page details
+    When I enter value "Automation Application" into field "fieldTitle__c"
+    And I click modal button "Save and Continue"
+    When I click on "Save" in the page details
+    And I pause execution for "3" seconds
+    When I click on "Edit" in the page details
+    And I enter "Application_Flow_Eddition_v" values from "Field_Values_For_Flow.xlsx"
+    When I click on "Save" in the page details
+    And I save the field labeled "EGMS ID" as "APPEGMSID"
+    And I navigate to "Budget" sub tab
+    And I pause execution for "5" seconds
+    And I expand nested table containing column value "BP01"
+    And I edit the following rows inline in flex table with id "---program:-:appBudgetPeriodTableId---" by clicking "Edit" :
+      | Category Name | Budget |
+      | Construction  | 1000   |
+    And I pause execution for "5" seconds
+    And I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Given I enter "StandardAssurancesForm_v" values from "Field_Values_For_Flow.xlsx"
+    And I pause execution for "3" seconds
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Given I enter "ProgramApplicationForm_v" values from "Field_Values_For_Flow.xlsx"
+    And I click on "Save" in the page details
+    Given I click on "Back" in the page details
+    When I navigate to "Overview" sub tab
+    And I edit the following rows inline in flex table with id "flexGridAppContact" by clicking "Edit" :
+      | Name | Project Role             | Is Key Contact |
+      |      | Project Director/Manager | Checked        |
+    When I click on "Submit Application" in the page details
+    Then I softly see status in Progress-bar is "Submitted" and is "Green"
+    When I navigate to "History" sub tab
+    And I refresh the page
+    Then I see "No Records Found" inside flex table with id "---program:-:SnapShotHistorySPIUSERTableId---"

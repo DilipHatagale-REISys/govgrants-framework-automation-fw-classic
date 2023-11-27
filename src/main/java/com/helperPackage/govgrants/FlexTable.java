@@ -520,7 +520,8 @@ public final class FlexTable implements FlexTableComponent {
      */
     public List<Elements> getCompleteTableRow(String tableId) {
         By tableRow = By.xpath("//div[@id='" + tableId
-                + "']//div[contains(@class,'panel-body')]//div/table/tbody/tr | //div[@id='" + tableId + "']//div/table/tbody/tr ");
+                + "']//div[contains(@class,'panel-body')]//div/table/tbody/tr | //div[@id='" + tableId + "']//div/table/tbody/tr |" +
+                "//div[@id='"+ tableId +"']//div/table/tbody/tr//td//span[@class='pull-right ng-scope']");
         return I.amPerforming().getElementReference().forListOfElements().of(tableRow);
     }
 
