@@ -7151,4 +7151,4 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+       | PM    |
