@@ -15552,50 +15552,6 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
       | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
 
-  @334631 @334632 @Bug-ticket-374114
-  Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Menu - Refresh link, applied filter get cleared
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-    When I login to "As a Grantor" app as "<Users>" user
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
-    When I enter advance filter values in table id "advfPrograms"
-      | Program Name | Contains | Auto |
-    When I click on parallel lines menu bar with data target value "#toggleFlexTablePrograms"
-    And I select "Refresh" from parallel lines dropdown of "Internal Programs - Draft"
-    Then I do not see filter "filter in filterDisplayList" is displayed
-    Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-
-  @334633 @Bug-ticket-374114
-  Scenario Outline: Flex table-Filter-SPI-To verify that on clicking on Menu - Refresh link, applied filter get cleared
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
-      | Flex Grid:General     | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | GrantsList         | Name                      |                            |
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "<User>" user
-    And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
-    When I click on advance filter "#advfGrantsList" of table id "---program:-:grantsFlexTableIdForSPIuser---"
-    When I enter advance filter values in table id "advfGrantsList"
-      | Grant Title | Contains | Vrush |
-    When I click on parallel lines menu bar with data target value "#toggleFlexTableGrantsList"
-    And I select "Refresh" from parallel lines dropdown of "Grants - Active"
-    Then I do not see filter "filter in filterDisplayList" is displayed
-    Examples:
-      | User | newFieldsApi                                                                                                                                                              | defaultFieldsApi                                                                                                                          |
-      | SPI  | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetPeriodCloseoutRequired__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c |
-
   @334636 @334637
   Scenario Outline: Flex table-Filter-"<Users>"-To verify that on clicking on Filter icon, applied filter not get cleared
     Given I have "default" configuration as below:

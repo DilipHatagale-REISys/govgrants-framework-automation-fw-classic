@@ -190,11 +190,13 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
 
     public void clickOnMenuButton(String buttonName, String tabeleId) {
         I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span/a[@title='" + buttonName + "'] |" +
-                " //div[@id='" + tabeleId + "']/div/div/span/select[@id='" + buttonName + "'] |" +
+                "//div[@id='" + tabeleId + "']/div/div/span/select[@id='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/div/div/span/select[@aria-label='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + buttonName + "'] |" +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
+                "//div[@id='" + tabeleId + "']//div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "'] |" +
+                "//grid[@table-meta-data='" + tabeleId + "']//a[@data-toggle='dropdown']/ancestor::div[contains(@class,'panel-heading')]//a[@title='"+ buttonName + "'] |" +
                 " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "']"));
     }
 
