@@ -205,7 +205,8 @@ public class FlexTablePage extends GovGrantsManager {
     public void getHelpTextAtFlexTableSpecificColumn(String columnTitle) {
         I.amPerforming().scroll().toMoveToElement(By.xpath("//th//span[@title='" + columnTitle + "' or text()='" + columnTitle
                 + "']/../../following-sibling::span//span[contains(@class,'fa-info')]|//th//span[@title='"
-                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')]"));
+                + columnTitle + "' or text()='" + columnTitle + "']/..//span[contains(@class,'fa-info')] |" +
+                "//*[@ng-bind='fieldLabel' and text()='" + columnTitle + "']/parent::span/following-sibling::helpicon//*[@class='fa fa-info helpIcon']"));
     }
 
     /**

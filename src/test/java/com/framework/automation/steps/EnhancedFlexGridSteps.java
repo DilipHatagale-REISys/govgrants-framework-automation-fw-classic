@@ -315,4 +315,9 @@ public class EnhancedFlexGridSteps {
     public void iSeeAsValueInsideMiniPageLayout(String usage, String displayType, String value) {
         enhancedFlexGrid.assertTypeAndTextInsideMiniPageLayout(usage, displayType, value);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" inside rows of table id \"([^\"]*)\"")
+    public void iDoNotSeeInsideRowsOfTableId(String usage, String text, String tableId) {
+        enhancedFlexGrid.assertTextInsideTable(usage, text, tableId);
+    }
 }

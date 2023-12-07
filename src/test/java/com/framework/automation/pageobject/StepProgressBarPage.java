@@ -172,7 +172,9 @@ public class StepProgressBarPage extends GovGrantsManager {
         Assert.assertTrue(I.amPerforming().checkToSee().isDisplayed(By.xpath("//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Submitted'] |" +
                 "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Approved'] |" +
                 "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Active'] |" +
-                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Closed']")));
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Closed'] |" +
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @class='progressStatusText'] |" +
+                "//div//li[@class='progtrckr-todo']//span[contains(text(),'" + step + "') and @id='Converted']")));
 
     }
 }

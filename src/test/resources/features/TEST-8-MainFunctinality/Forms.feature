@@ -1,0 +1,955 @@
+@Forms-Component @regression-QA @Forms
+Business Need: Forms Scenarios flextable UI,Forms Interface
+  Test all SendEmail component based scenarios
+  As a configuration manager I make different configurational changes in Forms component and will validate them.
+
+  @206305 @206306
+  Scenario Outline: All forms- Admin- Config- Verify forms displays under All forms page block
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "All Forms " page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @206308 @206309
+  Scenario Outline: All forms- Admin- Config- Verify Actions like Preview, view, edit are available
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208996 @208997
+  Scenario Outline: All Forms - Admin- Config- Verify we can download form as PDF
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    When I click on "Menu" in the page details
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206307 @206310
+  Scenario: All forms- SPI- UI- Verify forms displays under All forms page block
+  All forms- SPI- UI- Verify Actions like Preview, view, edit are available
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "All Forms " page block displayed
+    Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
+
+  @206338 @206339 @208662 @208661 @206879 @206880
+  Scenario Outline: All forms- Admin- Config- Verify in View Form ID should get populated UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01341" is displayed on form layout
+    #208662 #208661
+    Then I see Form Name "Program Application Form" is displayed on form layout
+     #206879 #206880
+    Then I softly see field "fieldTEXTAREAQuestion1__c" is not editable
+    Then I softly see field "fieldTEXTAREAQuestion2__c" is not editable
+    Then I softly see field "fieldTEXTAREAQuestion3__c" is not editable
+    And I click on "Back" in the page details
+    And I pause execution for "4" seconds
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01342" is displayed on form layout
+    #208661 #208662
+    Then I see Form Name "Standard Assurances Form" is displayed on form layout
+    #206879
+    Then I softly see field "fieldAppplicationSubmitted__c" is not editable
+    Then I softly see field "fieldSubmittedOnForm__c" is not editable
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206340 @208663 @206881
+  Scenario: All forms- SPI- UI- Verify in View Form ID should get populated UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01313" is displayed on form layout
+    #208663
+    Then I see Form Name "Program Specific Application form" is displayed on form layout
+    #206881
+    Then I softly see field "fieldTEXTAREAQuestion1__c" is not editable
+    Then I softly see field "fieldTEXTAREAQuestion2__c" is not editable
+    Then I softly see field "fieldTEXTAREAQuestion3__c" is not editable
+    And I click on "Back" in the page details
+    And I pause execution for "4" seconds
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01314" is displayed on form layout
+    #208663
+    Then I see Form Name "Standard Assurances Form" is displayed on form layout
+    #206880
+    Then I softly see field "fieldAppplicationSubmitted__c" is not editable
+    Then I softly see field "fieldSubmittedOnForm__c" is not editable
+
+  @206341 @206342 @208664 @208665
+  Scenario Outline: All forms- Admin- Config- Verify in Edit Form ID should get populated UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01341" is displayed on form layout
+    #208664 #208665
+    Then I see Form Name "Program Specific Application form" is displayed on form layout
+    And I click on "Back" in the page details
+    And I pause execution for "4" seconds
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01342" is displayed on form layout
+    #208664 @208665
+    Then I see Form Name "Standard Assurances Form" is displayed on form layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206343 @208666
+  Scenario: All forms- SPI- UI- Verify in Edit Form ID should get populated UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01313" is displayed on form layout
+    #208666
+    Then I see Form Name "Program Specific Application form" is displayed on form layout
+    And I click on "Back" in the page details
+    And I pause execution for "4" seconds
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see Form Id "FN-01314" is displayed on form layout
+    #208666
+    Then I see Form Name "Standard Assurances Form" is displayed on form layout
+
+  @206344 @206345 @206347 @206348
+  Scenario Outline: All forms- Admin- Config- Verify all forms displays under dropdown
+  All forms- Admin- Config- Verify we can select forms from dropdown
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206346 @206349
+  Scenario: All forms- SPI- UI- Verify all forms displays under dropdown
+  All forms- SPI- UI- Verify we can select forms from dropdown
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
+
+  @206845 @206846
+  Scenario Outline: All forms- Admin- Config- Verify if we shuffle through forms from dropdown, we are getting confirmation message in Edit Layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206847
+  Scenario: All forms- SPI- UI- Verify if we shuffle through forms from dropdown, we are getting confirmation message, in edit form layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    Then I see confirmation box with message "Warning:If you Navigate away from this form without saving,your changes will be lost." is displayed
+
+  @206848 @206849
+  Scenario Outline: All forms- Admin- Config- Verify In "Edit" mode, while we are shuffling through forms, if we hit ‘Cancel’ button on confirmation message modal we should not redirect to new form
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    When I click alert button "Cancel"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206850
+  Scenario: All forms- SPI- UI- Verify in "Edit" mode, while we are shuffling through forms, if we hit ‘Cancel’ button on confirmation message modal we should not redirect to new form
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    When I click alert button "Cancel"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+
+  @206851 @206852
+  Scenario Outline:All forms- Admin- Config- Verify in "Edit" mode,  while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    When I click alert button "OK"
+    Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206853
+  Scenario: All forms- SPI- UI- Verify, in edit mode, while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I softly see dropdown with selected value as "Program Application Form" at form layout
+    When I select "Standard Assurances Form" from dropdown at forms
+    When I click alert button "OK"
+    Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
+
+  @206854 @206855 @206862 @206861
+  Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button success message should pop-up
+  All forms- PM- UI- Verify when we select Edit action, form should be open in edit mode
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I pause execution for "5" seconds
+         #206862  #206861
+    Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206856 @206863
+  Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button success message should pop-up
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    #206863
+    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Form saved successfully. |
+
+  @208998
+  Scenario: All Forms - SPI- UI- Verify we can download form as PDF
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Download as PDF" options is displayed
+    And I select "Download As PDF" from dropdown
+    And I download the file
+    Then I see "Program Specific Application Form" on page "1" of "govgrants" pdf file
+
+  @208803 @208804
+  Scenario Outline: All Forms - Admin- Config- Verify when we hover on (i) icon Help text should be displayed
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    When I hovering mouse on help text icon inside "Standard Assurances Form"
+    Then I see "Name that shows up on the User interface this is done because the Application and Pre-Application are using the same Templates and layouts and the Forms that show up on the Forms tab is currently showing up the names" shown as help text
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208805
+  Scenario: All Forms - SPI- UI- Verify when we hover on (i) icon Help text should be displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    When I hovering mouse on help text icon inside "Standard Assurances Form"
+    Then I see "Name that shows up on the User interface this is done because the Application and Pre-Application are using the same Templates and layouts and the Forms that show up on the Forms tab is currently showing up the names" shown as help text
+
+  @208658 @208659
+  Scenario Outline: All forms- Admin- Config- Verify in preview Form name should not populate on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Name "Program Application Form" is displayed on form layout
+    And I switch to parent tab
+    And I pause execution for "4" seconds
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208660
+  Scenario: All forms- SPI- UI- Verify in preview Form name should not populate on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Name "Program Application Form" is displayed on form layout
+    And I switch to parent tab
+    And I pause execution for "4" seconds
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Name "Standard Assurances Form" is displayed on form layout
+
+  @206336 @206335
+  Scenario Outline: All forms- PM- UI- Verify in preview Form ID should not populate on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Id "FN-01341" is displayed on form layout
+    And I switch to parent tab
+    And I pause execution for "4" seconds
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Id "FN-01342" is displayed on form layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206337
+  Scenario:All forms- SPI- UI- Verify in preview Form ID should not populate on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Id "FN-01342" is displayed on form layout
+    And I switch to parent tab
+    And I pause execution for "4" seconds
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Form Id "FN-01343" is displayed on form layout
+
+  @206857 @206858 @206332 @206333
+  Scenario Outline: All forms- Admin- Config- Verify the success message will be automatically closed after the set interval of time out
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Save" in the page details
+    And I pause execution for "30" seconds
+    Then I cannot see the following message in the page details :
+      | Form saved successfully. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206859 @206334
+  Scenario:All forms- SPI- UI- Verify the success message will be automatically closed after the set interval of time out
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Save" in the page details
+    And I pause execution for "30" seconds
+    Then I cannot see the following message in the page details :
+      | Form saved successfully. |
+
+  @208652 @208653
+  Scenario Outline: All forms- Admin- Config- Verify fields which are required for save denoted with (*)
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208654
+  Scenario: All forms- SPI- UI- Verify fields which are required for save denoted with (*)
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see asterisk mark at "1a. Describe the activities and/or services to be provided. (10 points)" field
+
+  @208655 @208656
+  Scenario Outline: All forms- Admin- Config- Verify fields which are required for save ‘This field is required’ line should display on form
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I clear the value from field "fieldQuestion1__c"
+    And I click on "Save" in the page details
+    Then I see error message contains text "This field is required"
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208657
+  Scenario:All forms- SPI- UI- Verify fields which are required for save ‘This field is required’ line should display on form
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I clear the value from field "fieldQuestion1__c"
+    And I click on "Save" in the page details
+    Then I see error message contains text "This field is required"
+
+  @206870 @206871
+  Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, form should open in view mode
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    When I click alert button "Yes"
+    Then I see page title "Applications: Program Specific Application form View ~ As a Grantor"
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206872
+  Scenario: All forms- SPI- UI- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, and opened into view mode.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    When I click alert button "Yes"
+    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+
+  @206873 @206874
+  Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "New Validate" in the page details
+    Then I see the following message in the page details :
+      | Form cannot be validated because data is missing in one or more fields that are required to submit. To view the fields that are required to submit, click the Edit button. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206875
+  Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "New Validate" in the page details
+    Then I see the following message in the page details :
+      | Form cannot be validated because data is missing in one or more fields that are required to submit. To view the fields that are required to submit, click the Edit button. |
+
+  @206876 @206877
+  Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if all required fields are filled success message should pop-up
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Test Application by Tejashree"
+    When I click on "View" icon for "Test Application by Tejashree" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "New Validate" in the page details
+    Then I see the following message in the page details :
+      | Form Validated Successfully. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206878
+  Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if all required fields are filled success message should pop-up
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Save" in the page details
+    And I click on "New Validate" in the page details
+    Then I see the following message in the page details :
+      | Form Validated Successfully. |
+
+  @208649 @208650
+  Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button, if data is missing in one or more fields which  are required to save error message should pop-up
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I clear the value from field "fieldQuestion1__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | 1a. Describe the activities and/or services to be provided. (10 points) is required to save. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208651
+  Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button, if data is missing in one or more fields which  are required to save error message should pop-up
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I clear the value from field "fieldQuestion1__c"
+    And I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | 1a. Describe the activities and/or services to be provided. (10 points) is required to save. |
+
+  @208676 @208677 @208667 @208668
+  Scenario Outline: All forms- Admin- Config- Verify in preview Name under Authorized Representative should not populate on UI
+  All forms- Admin- Config- Verify in preview Submitted on under Authorized Representative should not populate on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208678 @208669
+  Scenario: All forms- SPI- UI- Verify in preview Submitted on under Authorized Representative should not populate on UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Preview" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I do not see Name or Submitted On "Submitted On:" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I do not see Name or Submitted On "Name" is displayed on form under Authorized Official Name or Authorized Representative
+
+  @208679 @208680 @208671 @208670
+  Scenario Outline: All forms- Admin- Config- Verify in View Submitted on under Authorized Representative should get populated UI
+  All forms- PM- UI- Verify in View Name under Authorized Representative should get populated UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "SUBMITTEDON"
+    And I save the field labeled "Name" as "NAME"
+    Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208681 @208672
+  Scenario: All forms- SPI- UI- Verify in View Submitted on under Authorized Representative should get populated UI
+  All forms- SPI- UI- Verify in View Name under Authorized Representative should get populated UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "SUBMITTEDON"
+    And I save the field labeled "Name" as "NAME"
+    Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
+
+  @208682 @208683 @208673 @208674
+  Scenario Outline: All forms- Admin- Config- Verify in Edit Submitted on under Authorized Representative should get populated UI
+  All forms- PM- UI- Verify in Edit Name under Authorized Representative should get populated UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "SUBMITTEDON"
+    And I save the field labeled "Name" as "NAME"
+    Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @208684 @208675
+  Scenario: All forms- SPI- UI- Verify in Edit Submitted on under Authorized Representative should get populated UI
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "SUBMITTEDON"
+    And I save the field labeled "Name" as "NAME"
+    Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
+
+  @206318 @206319 @206324 @206325 @206321 @206322 @206327 @206328
+  Scenario Outline:Last modified- Admin- Config- Verify Last modified by name is captured
+  Last modified- Admin- Config- Verify Last modified Date and time is captured
+  Last modified- Admin- Config- Verify Last modified by name must be updated if form is modified by another user
+  Last modified- Admin- Config- Verify Last modified Date and time must be updated if form is modified
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "Created By" as "CREATEDBY"
+    Then I softly see field "{SavedValue:CREATEDBY}" inside page block
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
+    And I save the field labeled "Name" as "LASTMODIFIEDBY"
+    And I click on "Save" in the page details
+    And I click on "Back" in the page details
+    And I pause execution for "5" seconds
+    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206320 @206323 @206326 @206329
+  Scenario: Last modified- SPI- UI- Verify Last modified by name is captured
+  Last modified -SPI- UI- Verify Last modified Date and time is captured
+  Last modified -SPI -UI- Verify Last modified by name must be updated if form is modified by another user
+  Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "Created By" as "CREATEDBY"
+    Then I softly see field "{SavedValue:CREATEDBY}" inside page block
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
+    And I save the field labeled "Name" as "LASTMODIFIEDBY"
+    And I click on "Save" in the page details
+    And I click on "Back" in the page details
+    And I pause execution for "5" seconds
+    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
+
+  @206882 @206883
+  Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Back" in the page details
+    Then I softly see "All Forms " page block displayed
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206884
+  Scenario: All forms- SPI- UI- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
+  Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Back" in the page details
+    Then I softly see "All Forms " page block displayed
+
+  @206864
+  Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message should open
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206866
+  Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    Then I softly see confirmation box with body "Are you sure you want to cancel?" is displayed
+
+  @206867 @206868
+  Scenario Outline:All forms- Admin- Config- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    When I click alert button "No"
+    Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
+    Examples:
+      | User  |
+      | ADMIN |
+       # | PM    |
+
+  @206869
+  Scenario: All forms- SPI- UI- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Cancel" in the page details
+    When I click alert button "No"
+    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+

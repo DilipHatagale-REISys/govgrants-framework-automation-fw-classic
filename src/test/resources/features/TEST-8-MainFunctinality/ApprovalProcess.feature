@@ -657,7 +657,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
+    When I re-login to "As Administrator" app as "ADMIN" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
@@ -757,17 +757,17 @@ Business Need: Approval Process Component Scenarios
     And I click toggle button to select "Queued Emails"
     Then I see email is generated with template "Program_Approved_Email_Template"
 
-  @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs @wip
+  @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:1 |
-      | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:2 |
+      | configurationCategory        | fieldName           | fieldOrignalValue          | filterId         |
+      | Approval Process Steps Cache | Email Template Name | Program Approver Sent Back | ApiGeneratedId:0 |
+ #     | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                    | fieldNewValue                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Email Template Name          | Program Approved Email Template | Program Approved Email Template |                           |                            |
-      | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantor State Program           | Name                      | TAB-1724                   |
+      | configurationCategory              | fieldName           | fieldNewValue              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Email | Email Template Name | Program Approver Sent Back | Program_Manager_Approver |                           |                            |
+#      | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
+     # | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantor State Program           | Name                      | TAB-1724                   |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2409,7 +2409,7 @@ The EGMS Team
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automationpm@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2468,7 +2468,7 @@ The EGMS Team
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2530,10 +2530,10 @@ The EGMS Team
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Reject" in the approval decision
+    When I "Sent Back" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2561,3 +2561,327 @@ Thank you.
 
 The EGMS Team
 """
+
+  @203291
+  Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on approved record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203289
+  Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on approved record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203296
+  Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reject record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Reject" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203348
+  Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reject record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Reject" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203407
+  Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on reassign record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I "Forward" to user "Automation PM" in the approval decision
+    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203405
+  Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reassign record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I "Forward" to user "Automation PM" in the approval decision
+    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203571
+  Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on Send To Owner record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Reject" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+
+  @203681
+  Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on Send To Owner record
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Title" as "PROGRAMNAME"
+    And I save the field labeled "Created By" as "OWNER"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program |
+      | Automation EXE | Step 1  |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    When I "Sent Back" in the approval decision
+    And I pause execution for "5" seconds
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I pause execution for "10" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :

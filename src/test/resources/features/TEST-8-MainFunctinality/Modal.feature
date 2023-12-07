@@ -411,6 +411,8 @@ Business Need: Modal Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     Then I see "Save and Continue" at bottom of Attachment Modal
+    And I pause execution for "5" seconds
+    Then I see "Create Program" modal window is open in same tab
     Examples:
       | Users |
       | Admin |
