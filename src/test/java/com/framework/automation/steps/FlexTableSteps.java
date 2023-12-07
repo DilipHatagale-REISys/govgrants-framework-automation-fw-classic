@@ -2,6 +2,7 @@ package com.framework.automation.steps;
 
 import com.framework.automation.pageobject.FlexTablePage;
 import com.framework.automation.pageobject.FrameworkCookiesPage;
+import com.framework.automation.steps.govgrantsSteps.GovGrantsObjects;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.exception.TestingBlazeCustomException;
 import com.helperPackage.handlers.govgrants;
@@ -71,6 +72,7 @@ public class FlexTableSteps {
 
     @Then("^I see \"([^\"]*)\" shown as flex table title$")
     public void assertFlextableTitle(String titleName) {
+
         flexTablePage.assertCorrectFlexTableTitleDisplayed(titleName);
     }
 
@@ -623,4 +625,30 @@ public class FlexTableSteps {
     public void iSeePaginationArrowDisplayedInsideTableId(String usage, String arrow, String tableId) {
         flexTablePage.assertIfPagiNationArrowDisplyed_or_not(usage,arrow,tableId);
     }
+
+    @Then("^I (see|do not see) action name \"([^\"]*)\" itself get displayed inside tableid \"([^\"]*)\"$")
+    public void iSeeActionNameItselfGetDisplayedInsideTableid(String usage, String actionName, String tableId) {
+        flexTablePage.assertIfActionIsDisplayedOrNotDisplayedRespectedTable(usage, actionName, tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" row action Button at position \"([^\"]*)\" inside tableid \"([^\"]*)\"$")
+    public void iSeeRowActionButtonAtPositionInsideTableid(String usage, String action, int intvalue, String tableId) {
+        flexTablePage.assertActionPositionOnUiInsideTable(usage, action,intvalue, tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" icon inside table id \"([^\"]*)\"$")
+    public void iSeeIconInsideTableId(String usage, String actionName, String tableId) {
+        flexTablePage.assertIfActionInEnhanceTableIsDisplyed(usage,actionName,tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" with record name \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void iSeeWithRecordNameInTableId(String usage, String starValue, String name, String tableId) {
+        flexTablePage.assertIfStarValueDisplayedInRecordLevel(usage,starValue,name,tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" icon inside record subject as \"([^\"]*)\"$")
+    public void seeIconInsideRecordSubjectAs(String usage, String ActionIcon, String SubjectName) {
+        flexTablePage.assertIfActionDisplayedInRecordLevel(usage,ActionIcon,SubjectName);
+    }
+
 }
