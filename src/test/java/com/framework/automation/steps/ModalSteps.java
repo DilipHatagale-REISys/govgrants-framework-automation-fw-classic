@@ -43,4 +43,13 @@ public class ModalSteps {
         I.amPerforming().scroll().toMoveToElement(ByUsing.xpath("//*[text()='" + fieldName + "']/parent::span//a//span[@class='fa fa-info helpIcon']"));
     }
 
+    @Then("^I (see|do not see) \"([^\"]*)\" value column Number Of Personnel inside table id \"([^\"]*)\"$")
+    public void iSeeValueColumnNumberOfPersonnelInsideTableId(String usage, String value, String tableId) {
+        modalPage.assertIfValueIsDisplayedInsideTableInEnhancedTable(usage, value, tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" action with title \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void iSeeActionWithTitleInTableId(String usage, String action, String titlename, String tableid) {
+        modalPage.actionDisplayedOrNotInGivenTableWithTitle(usage,action,titlename,tableid);
+    }
 }

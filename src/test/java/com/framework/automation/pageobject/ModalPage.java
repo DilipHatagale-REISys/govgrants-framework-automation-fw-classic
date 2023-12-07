@@ -70,4 +70,42 @@ public class ModalPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfValueIsDisplayedInsideTableInEnhancedTable(String usage, String value, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(valueDisplayedInsideEnhanceTable(value, tableId));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(valueDisplayedInsideEnhanceTable(value, tableId));
+        }
+    }
+
+    private boolean valueDisplayedInsideEnhanceTable(String value, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//ancestor::td//following-sibling::td//*[text()='" + value + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void actionDisplayedOrNotInGivenTableWithTitle(String usage, String action, String titlename, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(actionsDisplayedWithTitle(action, titlename, tableid));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(actionsDisplayedWithTitle(action, titlename, tableid));
+        }
+    }
+
+    private boolean actionsDisplayedWithTitle(String action, String titlename, String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']//tbody//tr//td//*[@title='" + titlename + "']/ancestor::td//following-sibling::td//*[@title='" + action + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

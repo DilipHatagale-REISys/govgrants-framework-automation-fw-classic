@@ -1782,16 +1782,74 @@ public class FlexTablePage extends GovGrantsManager {
 
     public void assertActionPositionOnUiInsideTable(String usage, String action, int intvalue, String tableId) {
         if (usage.equalsIgnoreCase("see")) {
-            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action,intvalue, tableId)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action, intvalue, tableId)).isTrue();
         } else if (usage.equalsIgnoreCase("do not see")) {
-            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action,intvalue, tableId)).isFalse();
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action, intvalue, tableId)).isFalse();
         }
     }
 
     private boolean actionOnrespectiveTableId(String action, int intvalue, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().getElementReference().of(ByUsing.xpath("(//div[@id='"+tableId+"']//*[@class='actionColIconWrap']//span//a)["+intvalue+"]")).getAttribute("title").equals(action)) {
+            if (I.amPerforming().getElementReference().of(ByUsing.xpath("(//div[@id='" + tableId + "']//*[@class='actionColIconWrap']//span//a)[" + intvalue + "]")).getAttribute("title").equals(action)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionInEnhanceTableIsDisplyed(String usage, String actionName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(viewEditDeleteActionDisplayedOrNot(actionName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(viewEditDeleteActionDisplayedOrNot(actionName, tableId)).isFalse();
+        }
+    }
+
+    private boolean viewEditDeleteActionDisplayedOrNot(String actionName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//table//tbody//td//action//*[@title='" + actionName + "'] |" +
+                    " //div[@id='" + tableId + "']//table//tbody//td//*[@title='" + actionName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfStarValueDisplayedInRecordLevel(String usage, String starValue, String name, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(starValueInTableDisplayedOrNot(starValue, name, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(starValueInTableDisplayedOrNot(starValue, name, tableId)).isFalse();
+        }
+    }
+
+    private boolean starValueInTableDisplayedOrNot(String starValue, String name, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@ng-bind='fieldValue ' and text()='" + name + "']/ancestor::td//following-sibling::td//*[text()='" + starValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionDisplayedInRecordLevel(String usage, String actionIcon, String subjectName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(ifViewActionDisplayedRecordLevel(actionIcon, subjectName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(ifViewActionDisplayedRecordLevel(actionIcon, subjectName)).isFalse();
+        }
+    }
+
+    private boolean ifViewActionDisplayedRecordLevel(String actionIcon, String subjectName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@title='" + subjectName + "']//ancestor::td//following-sibling::td//*[@title='" + actionIcon + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

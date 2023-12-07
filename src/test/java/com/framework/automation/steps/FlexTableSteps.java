@@ -634,4 +634,20 @@ public class FlexTableSteps {
     public void iSeeRowActionButtonAtPositionInsideTableid(String usage, String action, int intvalue, String tableId) {
         flexTablePage.assertActionPositionOnUiInsideTable(usage, action,intvalue, tableId);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" icon inside table id \"([^\"]*)\"$")
+    public void iSeeIconInsideTableId(String usage, String actionName, String tableId) {
+        flexTablePage.assertIfActionInEnhanceTableIsDisplyed(usage,actionName,tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" with record name \"([^\"]*)\" in table id \"([^\"]*)\"$")
+    public void iSeeWithRecordNameInTableId(String usage, String starValue, String name, String tableId) {
+        flexTablePage.assertIfStarValueDisplayedInRecordLevel(usage,starValue,name,tableId);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" icon inside record subject as \"([^\"]*)\"$")
+    public void seeIconInsideRecordSubjectAs(String usage, String ActionIcon, String SubjectName) {
+        flexTablePage.assertIfActionDisplayedInRecordLevel(usage,ActionIcon,SubjectName);
+    }
+
 }
