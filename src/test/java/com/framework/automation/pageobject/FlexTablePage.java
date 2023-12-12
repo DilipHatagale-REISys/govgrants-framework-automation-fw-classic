@@ -1212,7 +1212,7 @@ public class FlexTablePage extends GovGrantsManager {
     public boolean isValuePresentInsideDropDown(String dropdownValue, String columnName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + columnName + "']/option[text()='" + dropdownValue + "'] | //*[@field-name='" + columnName + "']//select//option[text()='Other']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1257,7 +1257,8 @@ public class FlexTablePage extends GovGrantsManager {
         I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group']//select[@aria-label='" + fieldName + "'] |" +
                 " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='form-group']//span/*[contains(@class,'" + fieldName + "')] |" +
                 " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/span[@ng-repeat='filter in filterDisplayList']//*[@aria-label='" + fieldName + "'] |" +
-                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x']"));
+                " //div[@id='advfPrograms' or @id='advfGrantsList']//div[@class='row']/div/div/div/*[@title='" + fieldName + "']/span/*[@class='fa fa-times fa-2x'] |" +
+                " //advancefilter//div//div/div//*[@aria-label='" + fieldName + "' or @field-name='" + fieldName + "']//select"));
     }
 
     public void clickOnDopDownButtonAndSelectValue(String field, String dropdownValue) {
@@ -1425,7 +1426,8 @@ public class FlexTablePage extends GovGrantsManager {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + changedActionName + "'] |" +
                     " //td[contains(@class,'actionColumn')]/div//a[@title='View']/span[contains(text(),'" + changedActionName + "')] |" +
                     " //td[contains(@class,'actionColumn')]/div//a[@title='Edit']/span[contains(text(),'" + changedActionName + "')] |" +
-                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')]"))) {
+                    " //td[contains(@class,'actionColumn')]/div//a[@title='Delete']/span[contains(text(),'" + changedActionName + "')] |" +
+                    " //*[@class='actionColIconWrap']//span//a[contains(@title,'" + changedActionName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -1497,7 +1499,7 @@ public class FlexTablePage extends GovGrantsManager {
     }
 
     public void hoverMouseOnAction(String action) {
-        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "']"));
+        I.amPerforming().scroll().toMoveToElement(By.xpath("//td[contains(@class,'actionColumn')]/div//a[@title='" + action + "'] | //*[@class='actionColIconWrap']//span//a[contains(@title,'" + action + "')]"));
     }
 
     public void CountCharectorLimit(String usage, int charLimit, String attribute) {
@@ -1617,7 +1619,7 @@ public class FlexTablePage extends GovGrantsManager {
     private boolean assertIfStyleOfModaldisplayedOrNot(String styleValue) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='modal-dialog ui-draggable' and contains(@style,'" + styleValue + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -1753,6 +1755,102 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//descendant::*[@ng-disabled='false' and @title='" + arrow + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionIsDisplayedOrNotDisplayedRespectedTable(String usage, String actionName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnTableDisplayedOrNot(actionName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnTableDisplayedOrNot(actionName, tableId)).isFalse();
+        }
+    }
+
+    private boolean actionOnTableDisplayedOrNot(String actionName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@class='actionColIconWrap']//span//a[contains(@title,'" + actionName + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertActionPositionOnUiInsideTable(String usage, String action, int intvalue, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action, intvalue, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(actionOnrespectiveTableId(action, intvalue, tableId)).isFalse();
+        }
+    }
+
+    private boolean actionOnrespectiveTableId(String action, int intvalue, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().getElementReference().of(ByUsing.xpath("(//div[@id='" + tableId + "']//*[@class='actionColIconWrap']//span//a)[" + intvalue + "]")).getAttribute("title").equals(action)) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionInEnhanceTableIsDisplyed(String usage, String actionName, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(viewEditDeleteActionDisplayedOrNot(actionName, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(viewEditDeleteActionDisplayedOrNot(actionName, tableId)).isFalse();
+        }
+    }
+
+    private boolean viewEditDeleteActionDisplayedOrNot(String actionName, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//table//tbody//td//action//*[@title='" + actionName + "'] |" +
+                    " //div[@id='" + tableId + "']//table//tbody//td//*[@title='" + actionName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfStarValueDisplayedInRecordLevel(String usage, String starValue, String name, String tableId) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(starValueInTableDisplayedOrNot(starValue, name, tableId)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(starValueInTableDisplayedOrNot(starValue, name, tableId)).isFalse();
+        }
+    }
+
+    private boolean starValueInTableDisplayedOrNot(String starValue, String name, String tableId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//*[@ng-bind='fieldValue ' and text()='" + name + "']/ancestor::td//following-sibling::td//*[text()='" + starValue + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertIfActionDisplayedInRecordLevel(String usage, String actionIcon, String subjectName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(ifViewActionDisplayedRecordLevel(actionIcon, subjectName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(ifViewActionDisplayedRecordLevel(actionIcon, subjectName)).isFalse();
+        }
+    }
+
+    private boolean ifViewActionDisplayedRecordLevel(String actionIcon, String subjectName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[@title='" + subjectName + "']//ancestor::td//following-sibling::td//*[@title='" + actionIcon + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

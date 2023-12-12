@@ -254,6 +254,15 @@ public final class GovGrantsSteps {
         govgrants.perform().modal().acceptPopUp();
     }
 
+
+    @When("I click on \"([^\"]*)\" icon for \"([^\"]*)\" inside table without accept popup$")
+    public void iClickOnIconForInsideTableWithoutAcceptPopup(String actionIcon, String anyUniqueColumnValue) {
+        ggObjects.clickActionIconWithWaitAndSearch(
+                actionIcon,
+                anyUniqueColumnValue.split(",")
+        );
+    }
+
     @Description("Clicks on a series of action view icons inside a table$") // **
     @When("^I click on icons for column values inside table$")
     public void clickAnyActionIcons(List<Map<String, String>> table) {
