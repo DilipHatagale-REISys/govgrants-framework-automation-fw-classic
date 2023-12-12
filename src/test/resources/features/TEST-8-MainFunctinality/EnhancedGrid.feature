@@ -7138,8 +7138,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table Action     | Enable Parent Hide Logic | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                | fieldNewValue                                     | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionForParentHideLogic | ProgramReviewStepTemplates | Name                      | Edit                        |
-      | Flex Table Action     | Enable Parent Hide Logic | true                                              | ProgramReviewStepTemplates | Name                      | Edit                        |
+      | Flex Table Action     | Hide Expression JSON     | govgrants_config:HideExpressionForParentHideLogic | ProgramReviewStepTemplates | Name                      | Edit                       |
+      | Flex Table Action     | Enable Parent Hide Logic | true                                              | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7151,4 +7151,124 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-       | PM    |
+      | PM    |
+
+  @218467 @218468
+  Scenario Outline: Record Selection- Admin- Config- Verify ‘Record Selection Column’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see select check box enabled in flex table
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @218470 @218471
+  Scenario Outline:Record Selection- Admin- Config- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | ProgramReviewStepTemplates | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I do not see select check box enabled in flex table
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @218473 @218476 @218477 @218474
+  Scenario Outline: Record Selection- Admin- Config- Verify correct Record Selection Column select all checkbox displays on UI
+  Record Selection- Admin- Config- Verify Record Selection Column rendered on desired position on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | ProgramReviewStepTemplates | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Left          | ProgramReviewStepTemplates | Name                      | Record Selection           |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Setup tabs" sub tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramReviewStepTemplatesTableId---"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @218469
+  Scenario: Record Selection- SPI- UI- Verify ‘Record Selection Column’ displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I see select check box enabled in flex table
+
+  @218472
+  Scenario: Record Selection- SPI- UI- Verify Record Selection Column should not display on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName               | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection | false         | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I do not see select check box enabled in flex table
+
+    @218475 @218478
+    Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI
+      Given I have "default" configuration as below:
+        | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+        | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+        | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
+      Given I setup test configuration as below:
+        | configurationCategory | fieldName                        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+        | Flex Table:General    | Enable Record Selection          | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
+        | Flex Table:General    | Record Selection Column Position | Left          | RecGrantBudgetCategoryFlexGrid | Name                      | Record Selection           |
+      Given I am on "SUBPORTAL" portal
+      When I login to "Grants Portal" app as "SPI" user
+      And I navigate to "Grants" tab
+      And I click toggle button to select "Grants - Active"
+      When I perform quick search for "Autosnapshot grant 1"
+      When I click on "View" icon for "Autosnapshot grant 1" inside table
+      When I navigate to "Budget" sub tab
+      Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"

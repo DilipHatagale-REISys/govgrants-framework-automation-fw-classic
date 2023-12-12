@@ -1,4 +1,4 @@
-@DataTableEnhanced-component @regression-QA @DataTableEnhanced
+@EnhancedFlexTable-component @regression-QA @DataTableEnhanced
 Business Need: DataTableEnhanced Component Scenarios
   Test all DataTableEnhanced component based scenarios
   As a configuration manager i make different configurational changes in DataTableEnhanced component and will validate them.
