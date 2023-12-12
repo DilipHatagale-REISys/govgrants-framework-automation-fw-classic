@@ -45,6 +45,16 @@ public class PhaseConfig {
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
 					String.valueOf(SObjectAPIs.GNT__BodyBottomPageURL__c), value);
 			break;
+		case "Body Top Page URL":
+				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__BodyTopPageURL__c), value);
+				break;
+		case "Body Flex Table":
+				finalPayload = String.format(payloadForStringValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
+						apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
+						String.valueOf(SObjectAPIs.GNT__BodyFlexTable__c), value);
+				break;
 		case "IS PHASE":
 			finalPayload = String.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__PhaseConfig__c),
 					apiUtilities.getComponentCoreFieldId(String.valueOf(SObjectAPIs.GNT__PhaseConfig__c), filterClause),
