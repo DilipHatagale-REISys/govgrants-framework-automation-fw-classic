@@ -1,6 +1,8 @@
 package com.framework.automation.projectmanager;
 
+import com.helperPackage.handlers.govgrants;
 import com.framework.automation.objects.IdBucket;
+import com.framework.automation.payloads.Announcements;
 import com.framework.automation.payloads.ApiUtilities;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -8,24 +10,112 @@ import com.helperPackage.misclib.Properties_Logs;
 import com.helperPackage.register.EnvironmentFactory;
 import com.helperPackage.register.I;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBodyData;
+import org.apache.commons.lang.StringUtils;
 
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Map;
 
 public class ProjectWebServices {
+    private String jobID;
+    private String status;
     SetUpConfiguration configPostCall;
     Properties_Logs readProp = new Properties_Logs();
     ApiUtilities apiUtil;
-    private static String endPoint = EnvironmentFactory.getEnvironmentUrl();
+    protected static String endPoint = EnvironmentFactory.getEnvironmentUrl();
     private String defaultUpdateEndPoint = "/services/apexrest/frameworkAPIUpdate";
     public static String tokenString;
     public static ArrayList<IdBucket> storeAllIds;
     public static ProjectWebServices thisValue = null;
     public static String dynamicApi = "None";
+    Announcements projectApis = new Announcements();
 
     public ProjectWebServices() {
         setUpApiUtilAndSetupConfig();
+    }
+
+    public static String getIdOf(String objectName, String findMyId) {
+        String finalEndPoint = endPoint + "/services/apexrest/getRecordIds/v1";
+        JsonObject parent = new JsonObject();
+        JsonArray array = new JsonArray();
+        array.add(findMyId);
+        parent.add(objectName, array);
+
+        Response response = I.amPerforming().restHttp().postCall(parent, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+        Map<String, String> map = response.jsonPath().getMap("$");
+        return map.get(findMyId);
+
+    }
+
+    public static String getRecordTypeId(String objectName, String findMyId) {
+        String endpoint = endPoint + "/services/apexrest/getRecordTypeIds/v1";
+        JsonObject parent = new JsonObject();
+        parent.addProperty(objectName, findMyId);
+
+        Response response = I.amPerforming().restHttp().postCall(parent, null, endpoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+        Map<String, String> map = response.jsonPath().getMap("$");
+        return map.get(objectName);
+    }
+
+    public static Map<String, String> getMultipleIds(JsonObject jsonObject) {
+        String finalEndPoint = endPoint + "/services/apexrest/getRecordIds/v1";
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        assertStatusCode(response);
+        return response.jsonPath().getMap("$");
+    }
+    public static Response getRecordId(String recordName, String fieldName, String objectType, String outputFieldName) {
+        String finalEndPoint = endPoint + "/services/apexrest/productAutomationGetFieldValue?objectType=" + objectType
+                + "&fieldValue=" + recordName + "&fieldName=" + fieldName + "&outputFieldName=" + outputFieldName;
+        Response response = I.amPerforming().restHttp().getCall(finalEndPoint, "Authorization", "Bearer " + tokenString);
+        response.prettyPrint();
+        assertStatusCode(response);
+        return response;
+    }
+
+    public static Response getRecordId(String recordName, String fieldName, String objectType) {
+        String finalEndPoint = endPoint + "/services/apexrest/productAutomationGetFieldValue?objectType=" + objectType
+                + "&fieldValue=" + recordName + "&fieldName=" + fieldName;
+        Response response = I.amPerforming().restHttp().getCall(finalEndPoint, "Authorization", "Bearer " + tokenString);
+        response.prettyPrint();
+        assertStatusCode(response);
+        return response;
+    }
+
+    public Response automationBatchExecuteApi(String objectType, String recordName, String... objectName) {
+        String finalEndPoint, objectApiName = "";
+        Response response = null;
+        objectApiName = objectName[0];
+        finalEndPoint = endPoint + "/services/apexrest/productAutomationRunBatchJob?type=" + objectType + "&recordName="
+                + recordName;
+
+        response = I.amPerforming().restHttp().getCall(finalEndPoint, "Authorization", "Bearer " + tokenString);
+        assertStatusCode(response);
+
+        jobID = response.asString().replace("\"", "");
+        finalEndPoint = endPoint + "/services/apexrest/productAutomationGetBatchJobStatus?batchId=" + jobID;
+        I.amPerforming().waitFor().makeThreadSleep(20000);
+        long apiWaitTimer = (System.currentTimeMillis()) / 1000 + 120;
+        while (apiWaitTimer > System.currentTimeMillis() / 1000) {
+            response = I.amPerforming().restHttp().getCall(finalEndPoint, "Authorization", "Bearer " + tokenString);
+            assertStatusCode(response);
+            status = response.asString().replace("\"", "");
+            if (status.equalsIgnoreCase("Completed") || status.equalsIgnoreCase("Aborted")) {
+                System.out.println("Batch Status is :" + status);
+                break;
+            }
+            I.amPerforming().waitFor().makeThreadSleep(7000);
+        }
+
+        if (status.equalsIgnoreCase("Completed") && objectName.length == 1 && !objectApiName.equalsIgnoreCase("closeout"))  {
+            return getRecordId(recordName, "Title__c", objectApiName);
+        } else {
+            return response;
+        }
     }
 
     private String defaultEndPointGetToken() {
@@ -34,7 +124,7 @@ public class ProjectWebServices {
             defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=7608231485378593656&client_id=3MVG91ftikjGaMd8E01oyLzW0qhdCcSTnpVVwmMdo3H_C6vbhroOOpEF4C.54CXCiOi5SQFyN.a6Ze8NCAcSa&username=qa_automation@ggp.test5&password=Automation@12345678";
         }else
             if (EnvironmentFactory.getEnvironmentName().contains("QA")) {
-            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=C534061B026C5FBFF856CD31DBB1E722CD7D4D976F6154CA431A976E0C592927&client_id=3MVG9Iu66FKeHhIPe91yESdsJL200IDKuBwsrDV7WewsJy9p2d.Zhgw2ikOH2mpGFHDtoTBZ3c..nrgqTXz7R&username=automationadmin@ggp.test8.atm.fwautomat&password=Framework@2023";
+            defaultEndPointGetToken = "/services/oauth2/token?grant_type=password&client_secret=C534061B026C5FBFF856CD31DBB1E722CD7D4D976F6154CA431A976E0C592927&client_id=3MVG9Iu66FKeHhIPe91yESdsJL200IDKuBwsrDV7WewsJy9p2d.Zhgw2ikOH2mpGFHDtoTBZ3c..nrgqTXz7R&username=automationadmin@ggp.test8.atm.fwautomat&password=Framework@dec23";
         }
         return defaultEndPointGetToken;
     }
@@ -87,6 +177,14 @@ public class ProjectWebServices {
         jsonObject.addProperty("locale", locale);
         jsonObject.addProperty("timezone", timeZone);
         I.amPerforming().restHttp().putCall(jsonObject, null, finalEndPoint, null, null, tokenString);
+    }
+
+    private void publishAnnouncementPostCall(JsonObject jsonObject) {
+        String finalEndPoint = endPoint + "/services/apexrest/PublishAnnouncement";
+        Response response = I.amPerforming().restHttp().postCall(jsonObject, null,
+                finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        response.prettyPrint();
+        assertStatusCode(response);
     }
 
     /**
@@ -228,7 +326,23 @@ public class ProjectWebServices {
         System.out.println("Completed.");
         assertStatusCode(response);
     }
-
+    public void deletionApi(String recordName, String objectType) {
+        System.out.print("Making API call... ");
+        getAuthToken();
+        try {
+            recordName = URLEncoder.encode(recordName, StandardCharsets.UTF_8.toString());
+            objectType = URLEncoder.encode(objectType, StandardCharsets.UTF_8.toString());
+        } catch (Exception e) {
+        }
+        String finalEndPoint = endPoint + "/services/apexrest/productAutomationDeletionApi?objectType=" + objectType
+                + "&recordName=" + recordName;
+        Response response = I.amPerforming().restHttp().DeleteCall(null, null, finalEndPoint, "Authorization", "Bearer " + tokenString,
+                null);
+        System.out.println(finalEndPoint);
+        response.prettyPrint();
+        System.out.println("Completed. ");
+        assertStatusCode(response);
+    }
     /**
      * calls the api to access and update custom meta data config
      *
@@ -437,7 +551,9 @@ public class ProjectWebServices {
      *
      * @param response
      */
-    private void assertStatusCode(Response response) {
+    protected static void assertStatusCode(Response response) {
+        response.then().statusCode(200);
+        System.out.println("response code is " + response.getStatusCode());
         response.then().statusCode(200);
     }
 
@@ -655,4 +771,40 @@ public class ProjectWebServices {
         }
         return response;
     }
+
+    public void executeBatchFileApi(String programName, String announcementName,String objectType, String projectTitle, String status) {
+        System.out.print("Making API call to execute batch file");
+        String finalEndPoint = endPoint;
+        if(objectType.equalsIgnoreCase("Program")) {
+            recordCreationForProgram(projectTitle, status);
+        }
+    }
+    public void recordCreationForProgram (String projectTitle, String status) {
+        getAuthToken();
+        if (projectTitle.startsWith("Automation Runtime")) {
+            String newRecordTitle = projectTitle + I.amPerforming().addOnsTo().getStringRandomNumber();
+            I.amPerforming().propertiesFileOperationsTo().saveValue(projectTitle, newRecordTitle);
+            projectTitle = newRecordTitle;
+        }
+        JsonObject parent = new JsonObject();
+        JsonArray array = new JsonArray();
+        parent.addProperty("programName", projectTitle);
+        parent.addProperty("status", status);
+        String finalEndPoint = endPoint + "/services/apexrest/Program";
+        Response response = I.amPerforming().restHttp().postCall(parent, null, finalEndPoint, "Authorization", "Bearer " + tokenString, null);
+        response.prettyPrint();
+        System.out.println(finalEndPoint);
+        assertStatusCode(response);
+        String ProgramTitle = "Program";
+        I.amPerforming().propertiesFileOperationsTo().saveValue(ProgramTitle, StringUtils.substringBetween(response.prettyPrint(), "\"", "\""));
+        ProgramTitle = StringUtils.substringBetween(response.prettyPrint(), "\"", "\"");
+//System.out.println("Program Name: "+ProgramTitle);
+    }
+
+    public void publishAnnouncment(String annType, String annName, String filter) {
+        getAuthToken();
+        publishAnnouncementPostCall(projectApis.publishAnnPayload(annType, annName, filter));
+    }
+
+
 }

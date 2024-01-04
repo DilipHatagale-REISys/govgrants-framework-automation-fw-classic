@@ -617,7 +617,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468
+  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @Sanity
   Scenario Outline:Snapshot History Table -Admin- Config-To verify Date Taken should captured when user taken snapshot
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -643,7 +643,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     And I refresh the page
     And I pause execution for "10" seconds
-    #217461 #217462
+    #217461 #217462 #382790
     Then I see Total Records count "Total Records : 1" in table name "Snapshot History"
     #217464 #217465
     Then I see "Snapshot History" page block displayed
@@ -716,7 +716,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217469 @217463 @217199 @217457 @217473 @207366 @207362
+  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @Sanity
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

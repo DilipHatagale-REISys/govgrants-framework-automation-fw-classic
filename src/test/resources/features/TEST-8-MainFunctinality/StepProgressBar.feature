@@ -3,7 +3,44 @@ Business Need: Step Progress Bar Component Scenarios
   Test all step progress bar component based scenarios
   As a configuration manager i make different configurational changes in step progress bar component and will validate them.
 
-  @34347    @disablingRenderingOfProgressBarForCustomApp-gPlanning @smoke
+  @37328 @382833   @isCreatedFieldAtStepProgressBar-gPlanning
+  Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
+    Given I have "default" configuration as below:
+      | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
+      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      #| Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
+      | Step Progressbar Detail | IsCreated | false         | Program Progress Bar | Name                      | Submitted for Approval     |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "15" seconds
+    And I click on "Submit For Approval" in the page details
+    When I hovering mouse on Status inside step progress bar "Submitted for Approval"
+    And I pause execution for "5" seconds
+    Then I see "By : Automation PM" shown as help text
+    #Then I see "Date : 11/27/2018 1:15 AM" shown as help text
+
+  @34347    @disablingRenderingOfProgressBarForCustomApp-gPlanning @oldsmoke
   Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -43,7 +80,7 @@ Business Need: Step Progress Bar Component Scenarios
       | defaultuser |
       | Internal    |
 
-  @34349    @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning @smoke
+  @34349    @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning @oldsmoke
   Scenario Outline: validate after disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName      | fieldOrignalValue | filterId         |
@@ -63,7 +100,7 @@ Business Need: Step Progress Bar Component Scenarios
       | changedUser |
       | Internal    |
 
-  @34350    @sequenceChangeOfStatusStepInsideStepProgressBar-gPlanning @smoke
+  @34350    @sequenceChangeOfStatusStepInsideStepProgressBar-gPlanning @oldsmoke
   Scenario: validate after changin sequence of submit for approval status to zero and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -97,7 +134,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I pause execution for "10" seconds
     Then I see "Submitted for Approval" status shown at number "0" in step progress bar
 
-  @34351    @colorFieldOfStepProgressBar-gPlanning @smoke
+  @34351    @colorFieldOfStepProgressBar-gPlanning @oldsmoke
   Scenario: validate after changing color of created status to different and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -116,7 +153,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I pause execution for "10" seconds
     Then I see status in Progress-bar is "Created" and is "Blue"
 
-  @34593    @negativeFieldOfStepProgressBar-gPlanning @smoke
+  @34593    @negativeFieldOfStepProgressBar-gPlanning @oldsmoke
   Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName     | fieldOrignalValue | filterId |
@@ -245,43 +282,6 @@ Business Need: Step Progress Bar Component Scenarios
     When I perform quick search for "Created state change Automation"
     When I click on "View" icon for "Created state change Automation" inside table
     Then I see changed display name as "Automation" inside step progress bar
-
-  @37328    @isCreatedFieldAtStepProgressBar-gPlanning
-  Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
-    Given I have "default" configuration as below:
-      | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
-      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      #| Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
-      | Step Progressbar Detail | IsCreated | false         | Program Progress Bar | Name                      | Submitted for Approval     |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I navigate to "Overview" sub tab
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "15" seconds
-    And I click on "Submit For Approval" in the page details
-    When I hovering mouse on Status inside step progress bar "Submitted for Approval"
-    And I pause execution for "5" seconds
-    Then I see "By : Automation PM" shown as help text
-    #Then I see "Date : 11/27/2018 1:15 AM" shown as help text
 
   @151271    @validateStepProgressBarIsDisplayedAtPageLayoutForAdminUser
   Scenario: validate step progress bar is displayed at page layout for admin user
