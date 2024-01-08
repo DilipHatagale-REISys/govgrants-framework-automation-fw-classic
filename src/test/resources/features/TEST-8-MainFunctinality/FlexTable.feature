@@ -3241,8 +3241,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see flex table with id "toggleFlexTablepopupflextable" is displayed
 
-  @336174
-  Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Page layout - Page block
+  @336174 @382546 @smoke
+  Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Page layout - Page block,
+  Smoke TC - Admin - To verify that flex table should rendered properly on page layout
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3251,8 +3252,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
-  @336175
-  Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Page layout - Page block
+  @336175 @382547 @smoke
+  Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Page layout - Page block,
+  Smoke TC - PM - To verify that flex table should rendered properly on page layout
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3261,8 +3263,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
-  @336176
+  @336176 @382548 @smoke
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Page layout - Page block
+  Smoke TC - SPI - To verify that flex table should rendered properly on page layout
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -5217,7 +5220,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @336178
+  @336178 @382549 @smoke
   Scenario: LWC-Flex table-Admin-Config-To verify that user is able to render flex table on Modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -5231,10 +5234,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @336180
+  @336180 @382550 @smoke
   Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -5248,7 +5251,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
   @335979

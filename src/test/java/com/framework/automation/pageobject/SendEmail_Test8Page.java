@@ -129,7 +129,7 @@ public class SendEmail_Test8Page extends GovGrantsManager {
     private Boolean fileDisplayedInModal(String fileName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group ng-scope']/table[@class='table']/tbody/tr/td[contains(text(),'" + fileName + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='form-group ng-scope']/table[@class='table']/tbody/tr/td[contains(text(),'" + fileName + "')] | //label[contains(text(),'Attachments')]/parent::div//table/tbody/tr/td[contains(text(),'" + fileName + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -200,5 +200,9 @@ public class SendEmail_Test8Page extends GovGrantsManager {
 
     private boolean isFieldDisplayedOnModal(String value) {
         return I.amPerforming().getElementReference().of(By.xpath("//*[contains(text(),'reply the mail')]")).getText().contains(value);
+    }
+
+    public void clickOnSelectFilesButton(String button) {
+        I.amPerforming().click().on(ByUsing.xpath("//button[text()[contains(normalize-space(.), '" + button + "')]]"));
     }
 }
