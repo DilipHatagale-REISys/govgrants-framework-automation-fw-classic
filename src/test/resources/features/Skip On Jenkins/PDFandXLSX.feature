@@ -161,7 +161,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Application In Created State Only"
     When I click on "View" icon for "Application In Created State Only" inside table
-    When I navigate to "Overview" sub tab
+    And I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#AppContactFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Contacts"
     Then I see "Project Director/Manager" in downloaded xls or csv file "govgrants"

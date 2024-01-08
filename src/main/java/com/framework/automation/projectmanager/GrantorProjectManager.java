@@ -120,7 +120,6 @@ public class GrantorProjectManager extends ProjectManager {
             return false;
     }
 
-    @Description("To verify two different field values are equal or not")
     public void assertTwoFieldValues(String targetValue, String subTabName, boolean isSoftly) {
         if (isSoftly) {
             I.amPerforming().assertionsTo().assertThat(compareTwoFieldValues(targetValue, subTabName)).isTrue();

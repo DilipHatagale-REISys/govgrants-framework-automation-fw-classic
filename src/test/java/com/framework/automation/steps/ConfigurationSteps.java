@@ -2,6 +2,7 @@ package com.framework.automation.steps;
 
 import com.framework.automation.projectmanager.ConfigurationParameters;
 import com.framework.automation.projectmanager.ProjectWebServices;
+import com.helperPackage.register.I;
 import io.cucumber.java.en.*;
 
 import java.io.IOException;
@@ -109,5 +110,25 @@ public class ConfigurationSteps {
             projectAPI.updateCustomMetaDynamicFieldConfigData(parameters.get("id"), parameters.get("Name"), parameters.get("Type"));
             ProjectWebServices.dynamicApi = "CustomMetaDynamicFieldConfigData";
         }
+    }
+
+    @And("I execute batch file:")
+    public void batchExecutionAndRecordProcessing(List<Map<String, String>> grantsParameters) {
+        for (Map<String, String> parameters : grantsParameters) {
+            projectAPI.executeBatchFileApi(parameters.get("programName"), parameters.get("announcementName"), parameters.get("objectType"), parameters.get("projectTitle"), parameters.get("status"));
+        }
+    }
+
+    @Given("I published {string} type announcement having name {string} and properties {string}")
+    public void iPublishedTypeAnnouncementHavingNameAndProperties(String annType, String annName, String filter) {
+        String newAnnName = annName + I.amPerforming().addOnsTo().getRandomNumber();
+        I.amPerforming().propertiesFileOperationsTo().saveValue(annName, newAnnName);
+        annName = newAnnName;
+        projectAPI.publishAnnouncment(annType, annName, filter);
+    }
+
+    @Given("^I delete the record \"([^\"]*)\" from the object \"([^\"]*)\"$")
+    public void deleteTestData(String recordName, String objectType) {
+        projectAPI.deletionApi(recordName, objectType);
     }
 }
