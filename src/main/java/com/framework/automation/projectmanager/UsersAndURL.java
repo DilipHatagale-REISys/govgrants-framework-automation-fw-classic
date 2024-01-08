@@ -154,11 +154,11 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Framework@2023");
-        password.put("EXE", "Automation@3000");
-        password.put("PM", "Automation@2002");
+        password.put("ADMIN", "Framework@dec23");
+        password.put("EXE", "Framework@dec23");
+        password.put("PM", "Framework@dec23");
         password.put("FO", "FrameworkAuto@2003");
-        password.put("SPI", "FrameworkAuto@2003");
+        password.put("SPI", "FrameworkSpi@dec23");
         password.put("PM1", "FrameworkAuto@2024");
         if (userType.toUpperCase() != null) {
             return password.get(userType.toUpperCase());

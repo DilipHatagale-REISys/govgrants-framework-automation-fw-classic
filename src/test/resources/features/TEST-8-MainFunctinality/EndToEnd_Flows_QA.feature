@@ -154,8 +154,8 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Test"
+    When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title

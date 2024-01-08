@@ -92,4 +92,9 @@ public class SendEmail_Test8Steps {
     public void iSeeTextAsInReplyEmailModal(String value) {
         sendEmail_Test8Page.assertFieldOnModal(value);
     }
+
+    @And("I click on {string} button send email modal")
+    public void iClickOnButtonSendEmailModal(String button) {
+        sendEmail_Test8Page.clickOnSelectFilesButton(button);
+    }
 }

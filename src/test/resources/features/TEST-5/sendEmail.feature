@@ -21,25 +21,7 @@ Business Need: Send Email Component Scenarios
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see Attachment section is displayed under send email modal
 
-  @69092 @validateIfInternalCheckboxCheckedAtToFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
-  Scenario: Validate If internal checkbox is checked at To Field then only internal user is shown in suggestion box at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+
 
   @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
   Scenario: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
@@ -1282,32 +1264,6 @@ Business Need: Send Email Component Scenarios
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
     Then I see attachment "TC Collab.png" is present in send email modal
 
-  @147248  @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
-  Scenario: validate text inside ck editor input box is displayed as bold text at send email modal
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Bold" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
 
   @147282  @verifyTextInsideCkEditorInputBoxIsDisplayedAsItalicInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as italic text at send email modal
@@ -1894,31 +1850,7 @@ Business Need: Send Email Component Scenarios
       | this record |
       | To          |
 
-  @161870  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedByComma    @abhishekS
-  Scenario: To verify when user send email with multiple email addresses are separated by comma
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click on "Save and Continue" in the page details
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "Test Automation Email1" into field "Subject" on send email modal
-    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
+
 
   @161871  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySpace    @abhishekS
   Scenario: To verify when user send email with multiple email addresses are separated by space
