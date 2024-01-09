@@ -1307,7 +1307,10 @@ public class Announcements {
         invApp.addProperty("AllocatedAmount", 1000);
         invAppA.add(invApp);
         parent.add("InvitedApplicant", invAppA);
+<<<<<<< HEAD
+=======
 
+>>>>>>> 33a4b713581dfcfbcaf429736c38c63eba748832
         return parent;
     }
 

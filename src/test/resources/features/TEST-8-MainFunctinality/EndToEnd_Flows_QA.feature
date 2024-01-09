@@ -148,17 +148,25 @@ Business Need: security review Scenarios
     When I navigate to "Overview" sub tab
     Then I see expected table with id "AppContactFlexToggle"
 
-  @106311    @verifyThatFlexTableIsDisplayedAtRecordLevelByLoggedInAsAdminUser
-  Scenario: validate flex  table at record table is rendered properly by admin user
-    When I login to "As a Grantor" app as "PM" user
+  @106311 @382209 @382210 @Sanity
+  Scenario Outline: validate flex  table at record table is rendered properly by admin user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Test"
-    When I click on "View" icon for "Automation Program For Test" inside table
+    When I perform quick search for "Automation Internal Program for Testing"
+    Then I can see row level action button "Edit" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "View" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "Delete" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @106308    @verifyThatFlexTableIsDisplayedAtPhaseLevelByLoggedInAsAdminUser
   Scenario: validate flex table at phase level is rendered properly by admin user
@@ -189,7 +197,7 @@ Business Need: security review Scenarios
     When I navigate to "Responsibilities" sub tab
     Then I see "Description" shown as flex table column title
 
-  @106323    @verifyThatEnhancedGridIsDisplayedByLoginAsSPIUser 
+  @106323    @verifyThatEnhancedGridIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced grid IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -241,7 +249,7 @@ Business Need: security review Scenarios
     When I navigate to "Site Visits" content inside "Activities" subheader on left panel
     Then I see expected table with id "LatestSiteVisitReportsGridFlexToggle"
 
-  @106461    @verifyThatEnhancedDataTableIsDisplayedByLoginAsSPIUser 
+  @106461    @verifyThatEnhancedDataTableIsDisplayedByLoginAsSPIUser
   Scenario: validate enhanced data table IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -252,7 +260,7 @@ Business Need: security review Scenarios
     When I navigate to "Files" sub tab
     Then I see expected table with id "ApplicationChecklistsFlexToggle"
 
-  @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser 
+  @107248    @verifyThatDataTableIsDisplayedByLoginAsSPIUser
   Scenario: validate data table Is Displayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -286,7 +294,7 @@ Business Need: security review Scenarios
     And I navigate to "Grants" tab
     Then I see expected table with id "toggleFlexTableGrantsList"
 
-  @107331    @verifyThatMEIsDisplayedByLoginAsSPIUser 
+  @107331    @verifyThatMEIsDisplayedByLoginAsSPIUser
   Scenario: validate flex table IsDisplayed by logged in as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -323,7 +331,7 @@ Business Need: security review Scenarios
     When I navigate to "Applications" content inside "Applications" subheader on left panel
     Then I see expected table with id "toggleFlexTableRecipientApplications"
 
-  @107548   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenPreApplicationsTableOpened 
+  @107548   @verifyThatByLoginAsSPIUserAndByClickOnSidebarLinkThenPreApplicationsTableOpened
   Scenario: validate by logged in as SPI user and hit the sidebar link from pre-application then pre-applications table opened
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -425,7 +433,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I see expected table with id "toggleApprovalHistory"
 
-  @109256    @verifyThatSnapshotHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsSPIUser 
+  @109256    @verifyThatSnapshotHistoryFlexTableIsDisplayedAtRecordLevelByLoggedInAsSPIUser
   Scenario: validate snapshot history flex table  is rendered properly by SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -534,7 +542,7 @@ Business Need: security review Scenarios
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     Then I see expected table with id "toggleFlexTablePhasePendingTasksBy"
 
-  @109269    @verifyThatByLoginAsPMUserAndViewCompletedTaskAssignedByMeThenGrantShouldGetOpenInViewMode 
+  @109269    @verifyThatByLoginAsPMUserAndViewCompletedTaskAssignedByMeThenGrantShouldGetOpenInViewMode
   Scenario: validate by logged in as PM user and view completed task at grants phase from assigned by me table then respective record opens in view mode
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -580,7 +588,7 @@ Business Need: security review Scenarios
     When I navigate to "Advances" content inside "Payments" subheader on left panel
     Then I see expected table with id "toggleFlexTableGrantorPaymentRequestAdvances"
 
-  @config @109280    @verifyThatByLoginAsPMUserN2GGridDisplayed 
+  @config @109280    @verifyThatByLoginAsPMUserN2GGridDisplayed
   Scenario: validate by logged in as PM user N2G grid displayed
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField | filterId         |
@@ -712,7 +720,7 @@ Business Need: security review Scenarios
     And I pause execution for "3" seconds
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
-  @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser 
+  @109618    @verifySnapshotIsGettingGeneratedAndSavedInsideHistoryTabByLoginAsSPIUser
   Scenario: validate that if click on take a snapshot from menu then snapshot is getting generated inside history tab by login as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -783,10 +791,10 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
 
-  @83371   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationUsingSendBack @flow
-  Scenario: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
+  @83371 @381952 @381953  @Sanity
+  Scenario Outline: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -877,8 +885,12 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "4" at position "2" and column at position "5" contains text "Sent Back"
     Then I softly see column "Status" inside row "5" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "6" at position "2" and column at position "5" contains text "Started"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
-  @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly 
+  @110722    @verifyQuickSearchAtFlexGridEnhancedTableIsWorkingCorrectly
   Scenario: validate that quick search is working or not at flex grid enhanced table
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -893,7 +905,10 @@ Business Need: security review Scenarios
     When I perform quick search for "1000" in "---program:-:flexGridSubAwardBudgetCategoryID---" panel
     Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridSubAwardBudgetCategoryID---"
 
+  @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly
+=======
   @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly 
+>>>>>>> 33a4b713581dfcfbcaf429736c38c63eba748832
   Scenario: validate that quick search is working or not at flex table enhanced table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -929,7 +944,7 @@ Business Need: security review Scenarios
 
   @110209 @109392   @verifyAnnouncementInSubmittedForApprovalMode @flow
   Scenario: validate announcement in submitted for approval state
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
     And I execute batch file:
       | programName | announcementName | objectType | projectTitle               | status |
@@ -940,7 +955,7 @@ Business Need: security review Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
-    And I enter value "Automation Runtime Program" into field "fieldProgram__c"
+    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -968,7 +983,7 @@ Business Need: security review Scenarios
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
 
-  @110868    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser 
+  @110868    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser
   Scenario: validate that quick search is working or not at flex table enhanced table by login as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -980,7 +995,7 @@ Business Need: security review Scenarios
     When I perform quick search for "Project Director/Manager" in "---program:-:flexTableEnhancedAppContactId---" panel
     Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
 
-  @110866    @verifyQuickSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser 
+  @110866    @verifyQuickSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
   Scenario: validate that quick search is working or not at flex grid enhanced by login as SPI user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -993,7 +1008,7 @@ Business Need: security review Scenarios
     When I navigate to "Budget" sub tab
     Then I see value "Construction" for title "Budget Category" inside table "---program:-:RecipientAwardBudgetCategoryFlexGridgridTableId---"
 
-  @110745   @verifyAdvanceFilterAtFlexTableEnhancedTableIsWorkingCorrectly 
+  @110745   @verifyAdvanceFilterAtFlexTableEnhancedTableIsWorkingCorrectly
   Scenario: validate that advance filter is working or not at flex table enhanced table
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1093,7 +1108,7 @@ Business Need: security review Scenarios
     And I refresh the page
     Then I softly see status in Progress-bar is "Created" and is "Green"
 
-  @110725    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForPMUser 
+  @110725    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForPMUser
   Scenario: validate that advance search is working or not at flex grid enhanced by login as PM user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1111,8 +1126,8 @@ Business Need: security review Scenarios
 
   @110214 @110210   @verifyAnnouncementInPublishedMode @flow
   Scenario: validate announcement in published state
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-   # Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
     And I execute batch file:
       | programName | announcementName | objectType | projectTitle               | status |
       | NA          | NA               | Program    | Automation Runtime Program | Active |
@@ -1122,7 +1137,7 @@ Business Need: security review Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
-    And I enter value "Automation Runtime Program" into field "fieldProgram__c"
+    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -1180,6 +1195,109 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
     And I click on "Publish" in the page details
     Then I softly see status in Progress-bar is "Published" and is "green"
+
+  @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
+  Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
+#    Given I have "default" configuration as below:
+#      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+#      | Flex Table List       | Enable Row Grouping | false             | ApiGeneratedId:0 |
+#    Given I setup test configuration as below:
+#      | configurationCategory | fieldName           | fieldNewValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+#      | Flex Table List       | Enable Row Grouping | true          | TmpActiveGrantsGrid | Name                      | FTC-1497                   |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - All"
+    When I perform quick search for "Automation Application"
+    When I click on "View" icon for "Automation Application" inside table
+    When I navigate to "Subawards" sub tab
+    When I click on "View" icon for "Automation Application" inside table
+    When I navigate to "Budget" sub tab
+    When I click on advance filter "#advfRecipientAwardBudgetCategoryFlexTable" of table id "---program:-:flexGridRecipientAwardPaymentReqIdAwardBudget---"
+    When I enter advance filter values inside id "advfRecipientAwardBudgetCategoryFlexTable"
+      | Budget Category | contains | Construction |
+    Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridRecipientAwardPaymentReqIdAwardBudget---"
+
+  @110869    @verifyAdvanceSearchAtFlexTableEnhancedTableIsWorkingCorrectlyForSPIUser
+  Scenario: validate that advance search is working or not at flex table enhanced table by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "AP-A11-001"
+    When I click on "View" icon for "AP-A11-001" inside table
+    When I navigate to "Overview" sub tab
+    When I click on advance filter "#advfAppContact" of table id "---program:-:flexTableEnhancedAppContactId---"
+    When I enter advance filter values inside id "advfAppContact"
+      | Is Key Contact | equals to | true |
+    Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
+
+  @vrush @1102571  @verifyGrantCreatedAndActivateByPMUser @flow
+  Scenario: validate grant created ad activated by PM user
+#    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+#    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
+#    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
+#    And I execute batch file:
+#      | programName | announcementName | objectType | projectTitle               | status |
+#      | NA          | NA               | Program    | Automation Runtime Program | Active |
+#
+    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+   #    #Announcement Creation
+#    When I login to "As a Grantor" app as "PM" user
+#    When I setup my app as "As a Grantor"
+#    And I navigate to "Announcements" tab
+#    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
+#    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+#    #And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+#    And I enter value "PG-A11-2421" into field "fieldProgram__c"
+#    And I click modal button "Continue"
+#    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click modal button "Save and Continue"
+#    When I click on "Save" in the page details
+#    And I save the field labeled "EGMS ID" as "ANNEGMSID"
+#    Then I softly see status in Progress-bar is "Created" and is "Green"
+#    When I click on "Edit" in the page details
+#    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+#    And I click on "Save" in the page details
+#    And I pause execution for "3" seconds
+#    And I click on "Edit" in the page details
+#    And I enter value "Test" into field "Justification__c"
+#    And I click on "Save" in the page details
+#    When I navigate to "Financials" sub tab
+#    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
+#    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
+#    When I close "Associate Funding Accounts" modal by clicking the top right x button
+#    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
+#    And I refresh the page
+#    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
+#      | Budget Period Name | Start Date | End Date |
+#      | BP01               | 90         | 350      |
+#    And I click on "Submit For Approval" in the page details
+#    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+#    #1st Approval process for announcement
+#    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+#    And I navigate to "Home" tab
+#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+#    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+#    When I "Approve" in the approval decision
+#    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
+#        #2nd Approval process for announcement
+#    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+#    And I navigate to "Home" tab
+#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+#    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+#    When I "Approve" in the approval decision
+#    Then I softly see status in Progress-bar is "Approved" and is "Green"
+#    #Announcement Publish
+#    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+#    And I navigate to "Announcements" tab
+#    And I click toggle button to select "All Announcements"
+#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
+#    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
+#    And I click on "Publish" in the page details
+#    Then I softly see status in Progress-bar is "Published" and is "green"
 
   @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser 
   Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
@@ -1713,7 +1831,7 @@ Business Need: security review Scenarios
   @111198 @110218   @verifyAmendmentRequestAndPaymentRequestAndSiteVisitCreationByPMUser @flow
   Scenario: validate AmendmentRequest, Payment request and site visit closure by PM user
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
     And I execute batch file:
       | programName | announcementName | objectType | projectTitle               | status |
@@ -1724,7 +1842,7 @@ Business Need: security review Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
-    And I enter value "Automation Runtime Program" into field "fieldProgram__c"
+    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
@@ -2216,7 +2334,7 @@ Business Need: security review Scenarios
     And I click on "Accept And Close" in the page details
     Then I softly see status in Progress-bar is "Closed" and is "green"
 
-  @107315    @verifyThatMEIsDisplayedByLoginAsSPIUserAtRecordLevel 
+  @107315    @verifyThatMEIsDisplayedByLoginAsSPIUserAtRecordLevel
   Scenario: validate flex table IsDisplayed by logged in as SPI user at record level inside budget tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

@@ -3,8 +3,8 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34307    @changeApproveOptionSequence-Programs @smoketest8
-  Scenario: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
+  @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity
+  Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
       | Approval Decision Action | Sequence              | 1                 | ApiGeneratedId:1 |
@@ -16,7 +16,7 @@ Business Need: Approval Process Component Scenarios
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
@@ -41,9 +41,14 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
+    Then I can see row level action button "Start" against "{SavedValue:PEGMSID}" in flex table with id "---program:-:HomePendingTasksTableId---"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send back | Approve |
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
@@ -82,7 +87,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
-    Then I can see the radio button "Approved" in the approval decision
+    Then I can see the radio button "Approve" in the approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
       | Approval Decision Action | Action Label Override | Approve           | ApiGeneratedId:1 |
@@ -705,6 +710,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Reject" in the approval decision
+    Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I re-login to "As Administrator" app as "PM" user on "default" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
@@ -1717,7 +1723,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @203073 @203075
+  @203073 @203075 @381961 @381962 @Sanity
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Send To Owner
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -1764,7 +1770,7 @@ Business Need: Approval Process Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @203074 @203076
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Send To Owner
@@ -1807,7 +1813,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @202939 @202941
+  @202939 @202941 @381958 @381959 @Sanity
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reassign
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -1857,7 +1863,7 @@ Business Need: Approval Process Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @202940 @203067
   Scenario Outline:Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Reassign
@@ -2373,7 +2379,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203406
+  @203406 @381955 @381956 @Sanity
   Scenario:Approver process Step Cache-PM-Config-To verify email notification should received on reassign record
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"

@@ -2570,8 +2570,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
-    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
-    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I perform quick search for "Test 32_Preapplication" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     #347724
@@ -2621,8 +2621,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I click toggle button to select "Grants - Active"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
-#      And I perform quick search for "Application test" in "---program:-:RecipientPreApplicationsTableId---" panel
-#      When I click on "View" icon for "Application test" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+#      And I perform quick search for "Application test" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+#      When I click on "View" icon for "Application test" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     #347726
@@ -2826,8 +2826,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
-    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
-    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I perform quick search for "Test 32_Preapplication" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -3028,8 +3028,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
-    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
-    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I perform quick search for "Test 32_Preapplication" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     #347858
@@ -3276,8 +3276,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
-    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
-    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I perform quick search for "Test 32_Preapplication" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     Then I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     #347736
@@ -3631,8 +3631,8 @@ Business Need: All pdf and xls related scenario including component and complete
     And I navigate to "Applications" tab
     When I navigate to "Pre-Applications" content inside "Applications" subheader on left panel
     And I click toggle button to select "Pre-Applications - Submitted"
-    And I perform quick search for "Test 32_Preapplication" in "---program:-:RecipientPreApplicationsTableId---" panel
-    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---program:-:RecipientPreApplicationsTableId---"
+    And I perform quick search for "Test 32_Preapplication" in "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---" panel
+    When I click on "View" icon for "Test 32_Preapplication" inside flex table with id "---SPI-TableIDs:-:ApplicationsPreApplicationsTableId---"
     And I see "Menu" icon is displayed on pagelayout
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown

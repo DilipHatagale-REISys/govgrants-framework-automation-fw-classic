@@ -7003,6 +7003,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
+
     When I navigate to "Overview" sub tab
     Then I do not see "Information" page block displayed
 
