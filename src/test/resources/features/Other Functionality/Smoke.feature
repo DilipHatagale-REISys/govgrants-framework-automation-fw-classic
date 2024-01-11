@@ -582,7 +582,7 @@ Business Need: lwc smoke testing features
       | Admin |
       | PM    |
 
-  @382355 @382358 @382361
+  @382355 @382358 @382361 @382377
   Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
   Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
   Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
@@ -594,13 +594,20 @@ Business Need: lwc smoke testing features
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:CCField}" on send email modal
-    When I enter value "Test Automation Email1" into field "Subject" on send email modal
-    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
+    When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "dilip.hatagale@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:CCField}" on send email modal
+    When I enter value "Test Automation Email" into field "Subject" on send email modal
+    When I enter value "Test Automation Email" into field "Body Content" on send email modal
     When I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
       | Email Sent Successfully. |
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "120" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+  """
+  Sandbox: Test Automation Email
+  """
 
   @147248  @382362 @382363 @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
   Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
@@ -720,3 +727,92 @@ Business Need: lwc smoke testing features
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button send email modal
     Then I softly see "FilesLink" page block displayed
+
+  @382375 @382376
+  Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com,dilip.hatagale@reisystems.in,vrishali.raskar@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test case 382375 and 382376" into field "Subject" on send email modal
+    When I enter value "Test case 382375 and 382376" into field "Body Content" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com" into field "{testData:CcField}" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "120" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+  """
+  Sandbox: Test case 382375 and 382376
+  """
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382419 @382420
+  Scenario Outline:Sanity -TC-Admin/PM- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com,dilip.hatagale@reisystems.in,vrishali.raskar@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test case automation" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter Subject for Email. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382423
+  Scenario: Sanity -TC-SPI- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation Email" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter Subject for Email. |
+
+  @382428 @382429
+  Scenario Outline: Sanity-TC-Admin/PM- Verify that if the email is sent without email address, a pop-up is generated warning "Enter To Email Address.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Test Automation Email" into field "Subject" on send email modal
+    When I enter value "Test" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter To Email Address. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
