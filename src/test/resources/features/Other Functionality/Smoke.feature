@@ -808,7 +808,7 @@ Business Need: lwc smoke testing features
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test Automation Email" into field "Subject" on send email modal
     When I enter value "Test" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
+    And I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
       | Enter To Email Address. |
     Examples:
