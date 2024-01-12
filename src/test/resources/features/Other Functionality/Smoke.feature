@@ -805,7 +805,6 @@ Business Need: lwc smoke testing features
     When I perform quick search for "Automation Internal Program for send Email"
     When I click on "View" icon for "Automation Internal Program for send Email" inside table
     When I navigate to "Collab" sub tab
-    When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test Automation Email" into field "Subject" on send email modal
     When I enter value "Test" into field "Body Content" on send email modal

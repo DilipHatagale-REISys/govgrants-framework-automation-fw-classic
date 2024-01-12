@@ -1077,6 +1077,23 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
+  @382282 @382293 @Sanity
+  Scenario Outline: Sanity TC - Admin - To verify that user is able to see Quick search input field on table, when Quick search config is enabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
   @334658 @336251 @wip @bug341819
   Scenario: Flex table-Quick Search-SPI-UI-To verify that on disabling Quick search, it not displayed on top of the flex table
   Quick Search - SPI - UI - To verify that on disabling 'Enable Quick Search' Quick search feature  not displayed on UI for respective flex table
@@ -1091,8 +1108,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
+  @382296 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to see Quick search input field on table, when Quick search config is enabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @334659
+
+  @334659 @382396 @Sanity
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1100,7 +1130,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334660
+  @334660 @382397 @Sanity
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1108,7 +1138,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334661
+  @334661 @382399 @Sanity
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1853,7 +1883,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Automation Internal Program for flow" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     And I refresh the page
 
-  @334746
+  @334746 @382513 @382541 @Sanity
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1865,12 +1895,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Menu" action is displayed at the "---program:-:GrantsFlexTableIdForAdminAndPMuser---" modal
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as PDF" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
-  @334747
+  @334747 @382515 @382543 @Sanity
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1882,7 +1914,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     Then I see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Menu" action is displayed at the "---program:-:GrantsFlexTableIdForAdminAndPMuser---" modal
     When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    Then I see "Download as PDF" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     When I click on "Download as PDF" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
@@ -2011,7 +2045,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338469
+  @338469 @382444 @Sanity
   Scenario: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2023,7 +2057,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338471
+  @338471 @382445 @Sanity
   Scenario: Total Records Count- PM- UI- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2035,7 +2069,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338472
+  @338472 @382446 @Sanity
   Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2048,7 +2082,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338473
+  @338473 @382449 @Sanity
   Scenario: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2061,7 +2095,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338475
+  @338475 @382456 @Sanity
   Scenario: Total Records Count- PM- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2074,7 +2108,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338477
+  @338477 @382457 @Sanity
   Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3298,7 +3332,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Application Desk Reviews" content inside "Applications" subheader on left panel
     Then I see flex table with id "toggleFlexTableApplicationsSiteVisitReportsGrid" is displayed
 
-  @335216
+  @335216 @382206 @Sanity
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -3308,6 +3342,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
+    Then I softly can see top right button "New" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3320,7 +3355,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @335220
+  @335220 @382207 @Sanity
   Scenario: Flex table-Total records count-PM-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -3330,6 +3365,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
+    Then I softly can see top right button "New" in flex table with id "---program:-:programsTableId---"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -3403,7 +3439,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "{SavedValue:totalPageCount}" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
     ######################Test suite: Advanced Filter (Suite ID: 338458)#########################
-  @338592 @336238
+  @338592 @336238 @382432 @Sanity
   Scenario: Advanced Filter- Admin- Config- Verify Filter option should not available on UI
   Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -3417,7 +3453,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338590
+  @338590 @382402 @Sanity
   Scenario: Advanced Filter- Admin- Config- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3430,7 +3466,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338595 @336239
+  @338595 @336239 @382433 @Sanity
   Scenario: Advanced Filter- PM- UI- Verify Filter option should not available on UI,Advanced filter - PM - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3443,7 +3479,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338594
+  @338594 @382417 @Sanity
   Scenario: Advanced Filter- PM- UI- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3456,7 +3492,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338598 @336241
+  @338598 @336241 @382434 @Sanity
   Scenario: Advanced Filter- SPI- UI- Verify Filter option should not available on UI,
   Advanced filter - SPI - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -3470,7 +3506,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
-  @338596
+  @338596 @382418 @Sanity
   Scenario: Advanced Filter- SPI- UI- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3897,7 +3933,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338625 @334630
+  @338625 @334630 @382438 @Sanity
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
   |Flex table-Filter-SPI-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
@@ -3960,15 +3996,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338628
-  Scenario: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
+  @338628 @382436 @382437 @Sanity
+  Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Filter | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Filter | true          | Programs           | Name                      |                            |
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
@@ -3979,6 +4015,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I refresh the page
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @338630 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
@@ -5698,7 +5738,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336100
+  @336100 @382120 @Sanity
   Scenario Outline: Flex table-Display fields-Admin-Config-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5725,7 +5765,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @336101
+  @336101 @382121 @Sanity
   Scenario Outline: Flex table-Display fields-PM-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5752,7 +5792,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @336102
+  @336102 @382122 @Sanity
   Scenario Outline: Flex table-Display fields-SPI-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -11841,7 +11881,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
 
-  @334186
+  @334186 @382212 @Sanity
   Scenario Outline: Flex table-Actions-Modal Config-Admin-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11865,7 +11905,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
 
-  @334187
+  @334187 @382215 @Sanity
   Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -14131,7 +14171,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336267
+  @336267 @382249 @Sanity
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14139,11 +14179,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
     When I click on "View" icon for "Admin Program for Advance filter" inside table
+    Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
 
-  @336268
+  @336268 @382258 @Sanity
   Scenario: Quick Search - PM - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -14151,6 +14192,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
     When I click on "View" icon for "Admin Program for Advance filter" inside table
+    Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
@@ -15635,7 +15677,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @339390 @339395 @needDilipConfirmation
+  @339390 @339395 @needDilipConfirmation @382264 @Sanity
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the grid". for the Delete action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -15657,12 +15699,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
     Then I see entire page is refreshing
+    Then I see the following message in the page details :
+      | Record deleted successfully. |
+
     Examples:
       | Users |
       | ADMIN |
-      | PM    |
+     # | PM    |
 
-  @339397 @339409
+  @339397 @339409 @382265 @Sanity
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -15679,6 +15724,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I wait for "5" seconds
     When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
     Then I see entire page is refreshing
+    Then I see the following message in the page details :
+      | Record deleted successfully. |
+
+
     Examples:
       | Users |
       | ADMIN |
@@ -15740,3 +15789,26 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Examples:
       | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
       | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
+
+  @382219 @Sanity
+  Scenario: Sanity TC - Admin - To verify that user is able to edit existing record by clicking on Edit action
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "Edit" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly can see top right button "Save" in page detail
+
+  @382221 @Sanity
+  Scenario: Sanity TC - PM - To verify that user is able to edit existing record by clicking on Edit action
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "Edit" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly can see top right button "Save" in page detail
+

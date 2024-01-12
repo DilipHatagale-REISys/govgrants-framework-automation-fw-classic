@@ -122,7 +122,7 @@ Business Need: Internal org stability for Admin Pm and SPI users
     Then I see changed label as "Reviews" inside "Application Reviews" in side bar sub menu
     Examples:
       | Users |
-#      | Admin |
+      | Admin |
       | PM    |
 
   @GrantsPhaseorgStability @orgstability
