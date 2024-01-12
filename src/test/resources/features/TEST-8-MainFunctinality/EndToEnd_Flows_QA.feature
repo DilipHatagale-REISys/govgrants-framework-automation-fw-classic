@@ -906,9 +906,6 @@ Business Need: security review Scenarios
     Then I see value "Construction" for title "Budget Category" inside table "---program:-:flexGridSubAwardBudgetCategoryID---"
 
   @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly
-=======
-  @110743    @verifyQuickSearchAtFlexTableEnhancedTableIsWorkingCorrectly 
->>>>>>> 33a4b713581dfcfbcaf429736c38c63eba748832
   Scenario: validate that quick search is working or not at flex table enhanced table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user

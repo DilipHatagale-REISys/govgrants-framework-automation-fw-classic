@@ -166,5 +166,40 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Hello @Automation PM" in my feed section and share the post
-    Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "Hello @Automation PM" inside flex table with id "---SPI-TableIDs:-:CollabCommentTableId---"
 
+  @ApplicationRecordStabilitySPI
+  Scenario:Classic UI/UX org application level record stability
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Information" page block displayed
+    Then I see "Primary Place of Performance" page block displayed
+    Then I see "Opportunity Overview" page block displayed
+    Then I see "Application Overview" page block displayed
+    Then I see "Project Information" page block displayed
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationContactTableId---"
+    Then I see "Acknowledgement" page block displayed
+    Then I see "System Information" page block displayed
+    When I navigate to "Budget" sub tab
+   # Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationAppBudCatGrantorTableId---"
+    Then I see "Budget Narrative" page block displayed
+    When I navigate to "Proposal" sub tab
+    Then I see "Technical Proposal" page block displayed
+    When I navigate to "Files" sub tab
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationDocumenChecklistTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationAllFormsTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationFilesTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationNotesTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationAttachmentTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationSecondNotesTableId---"
+    When I navigate to "History" sub tab
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationSnapshotHistoryTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationApprovalHistoryTableId---"
+    When I navigate to "Collab" sub tab
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMyFeedTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMessageTableId---"
