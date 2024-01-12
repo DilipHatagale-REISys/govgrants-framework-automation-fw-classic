@@ -212,4 +212,48 @@ public class SmokeSanityPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void menuItemDisplayedOnceClickOnMenuButton(String usage, String optionName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(menuItemDisplayedOrNot(optionName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(menuItemDisplayedOrNot(optionName)).isFalse();
+        }
+    }
+
+    private boolean menuItemDisplayedOrNot(String optionName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[@class='dropdown-menu dropdown-menu-right']/li/a/span[text()='" + optionName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void attachFileFromSystem(String attachmentName) {
+        By attachmentChooseFilePath = By.xpath("//div//input[@id='file-upload-input-01' and @type='file']");
+        String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
+        I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
+    }
+
+    public void verifyIfRecordTypeAndRecordNameIsDisplayed(String usage, String recordType, String recordName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(recordNameWithRecordTypeDisplayed(recordType, recordName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(recordNameWithRecordTypeDisplayed(recordType, recordName)).isFalse();
+        }
+    }
+
+    private boolean recordNameWithRecordTypeDisplayed(String recordType, String recordName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + recordType + "']//following-sibling::span[@class='overview-title' and text()='" + recordName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

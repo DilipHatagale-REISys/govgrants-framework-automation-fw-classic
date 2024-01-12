@@ -345,7 +345,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346783
   Scenario: Flex table-Export-SPI-UI-To verify that if user not provided Header/Label of list view in config, then nothing get displayed as a Header (also null value not displayed) in downloaded PDF
@@ -376,7 +376,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346787 @346788
   Scenario Outline: Flex table-Export-Admin-UI-To verify that actions not get displayed in downloaded XLS/CSV
@@ -390,7 +390,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346789
   Scenario: Flex table-Export-SPI-UI-To verify that actions not get displayed in downloaded XLS/CSV
@@ -415,7 +415,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346792
   Scenario: Flex table-Export-SPI-UI-To verify that Record selection and Auto Index columns not displayed in downloaded PDF
@@ -441,7 +441,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346795
   Scenario: Flex table-Export-SPI-UI-To verify that Record selection and Auto Index columns not displayed in downloaded XLS/CSV
@@ -472,7 +472,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346891
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded PDF
@@ -508,7 +508,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346985
   Scenario: Flex table-Export-SPI-UI-To verify that respective Header get displayed in downloaded XLS/CSV
@@ -544,7 +544,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346960
   Scenario: Flex table-Export-SPI-UI-To verify that Overall total not displayed in downloaded PDF
@@ -580,7 +580,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346963
   Scenario: Flex table-Export-SPI-UI-To verify that Overall total not displayed in downloaded XLS/CSV
@@ -610,7 +610,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346953
   Scenario Outline: Flex table-Export-SPI-UI-To verify that format of Currency field displayed in downloaded PDF
@@ -652,7 +652,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346948 @346956
   Scenario: Flex table-Export-SPI-UI-To verify that all the fields of different data types displayed in downloaded PDF
@@ -693,7 +693,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346938
   Scenario: Flex table-Export-SPI-UI-To verify that all the fields which added in "Skip fields for Export" config, are not displayed in downloaded PDF
@@ -734,7 +734,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346941
   Scenario:Flex table-Export-SPI-UI-To verify that all the fields which added in "Skip fields for Export" config, are not displayed in downloaded XLS/CSV
@@ -819,7 +819,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
 #################### Test suite: Export_Page Layout (Suite ID: 346077)  ###############################################################
   @346970 @346972 @347007 @347008 @347201 @347203 @347206 @347209
@@ -844,7 +844,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @346971 @346973 @347009 @347010 @347099 @347104 @347211 @347216
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Announcement record.
@@ -867,7 +867,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @346977 @346978 @347018 @347019  @343117 @343118 @347230 @347231
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Application record.
@@ -914,7 +914,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @346982 @346983 @347027 @347030 @347126 @347130 @347245 @347250
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Grants record.
@@ -961,7 +961,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @346987 @346988 @347039 @347041 @347142 @347144 @347260 @347266
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Amendment Request record.
@@ -984,7 +984,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @346992 @346994 @347056 @347060 @347163 @347167 @347276 @347277
   Scenario Outline:Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Site visit record.
@@ -1007,7 +1007,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @346995 @346996 @347064 @347068 @347168 @347169 @347278 @347279
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Desk reviews record.
@@ -1030,7 +1030,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @346997 @346998 @347069 @347073 @347170 @347171 @347280 @347281
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Organization Risk Assessment record.
@@ -1053,7 +1053,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @346999 @347000 @347078 @347083 @347173 @347177 @347283 @347284
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Advance Payment Request record.
@@ -1076,7 +1076,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347001 @347003 @347088 @347091 @347182 @347188 @347285 @347286
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Reimbursement Payment Request record.
@@ -1099,7 +1099,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347003 @347005 @347092 @347093 @347192 @347195 @347287 @347288
   Scenario Outline: Flex Layout_UI_Admin_To verify user can see menu icon on the page layout of Closeout Request record.
@@ -1122,7 +1122,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347325 @347326 @347402 @347403
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the program record.
@@ -1246,7 +1246,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @347336 @347338 @347415 @347416
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Grants record.
@@ -1308,7 +1308,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347341 @347342 @347422 @347423
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Amendment Request record.
@@ -1338,7 +1338,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347346 @347347 @347428 @347429
   Scenario Outline:   Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Site visit record.
@@ -1369,7 +1369,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347348 @347349 @347431 @347432
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Desk reviews record.
@@ -1400,7 +1400,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347350 @347351 @347434 @347436
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Organization Risk Assessment record.
@@ -1431,7 +1431,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347352 @343353 @347437 @347438
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Advance Payment Request record.
@@ -1462,7 +1462,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347354 @347355 @347439 @347441
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Reimbursement Payment Request record.
@@ -1494,7 +1494,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347357 @347358 @347443 @347445
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Closeout Request record.
@@ -1525,7 +1525,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347364 @347365 @347451 @347453
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Announcement record.
@@ -1604,7 +1604,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @347374 @347376 @347461 @347462
   Scenario Outline:Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Grants record.
@@ -1657,7 +1657,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347380 @347381 @347466 @347467
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Amendment Request record.
@@ -1683,7 +1683,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347384 @347386 @347473 @347474
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Site visit record.
@@ -1709,7 +1709,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347388 @347389 @347475 @347477
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Desk reviews record.
@@ -1735,7 +1735,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347390 @347392 @347478 @347479
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Organization Risk Assessment record.
@@ -1761,7 +1761,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347393 @347393 @347482 @347484
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Advance Payment Request record.
@@ -1787,7 +1787,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347395 @347396 @347487 @347489
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Reimbursement Payment Request record.
@@ -1813,7 +1813,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347397 @347399 @347491 @347492
   Scenario Outline:Flex Layout_UI_PM_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Closeout Request record.
@@ -1839,7 +1839,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-         # | PM    |
+      | PM    |
 
   @347400 @347401 @347447 @347450
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the program record.
@@ -3845,7 +3845,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @347329 @347330
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Take Snapshot in menu option then snapshot get generated in the snapshot history table of the Pre-Application record.
@@ -3867,7 +3867,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @347367 @347368
   Scenario Outline: Flex Layout_UI_Admin_To verify user clicks Download as PDF in menu option then PDF gets open in new tab of the Pre-Application record.
@@ -3885,7 +3885,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @347406 @347407
   Scenario Outline: Flex Layout_UI_Admin_To verify generated snapshot pdf contains all page tabs and page blocks which are visible on UI of the Pre-Application record.
@@ -4122,7 +4122,7 @@ Business Need: All pdf and xls related scenario including component and complete
     Then I do not see "Download as PDF" options is displayed
     Then I do not see "Take Snapshot" options is displayed
 
-   @346338 @346339
+  @346338 @346339
   Scenario Outline: E-grid-Parent_Config Export_"<User>"_To verify user should get 'Download as PDF' option under Menu when Enable Export (PDF) is enabled in config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
