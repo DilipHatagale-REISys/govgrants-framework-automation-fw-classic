@@ -521,7 +521,3 @@ Business Need: lwc smoke testing features
       | Users |
       | Admin |
       | PM    |
-
-##########################Sanity#####################
-
-

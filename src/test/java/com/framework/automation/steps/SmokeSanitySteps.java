@@ -73,4 +73,19 @@ public class SmokeSanitySteps {
     public void iSeePanalIsDisplayed(String usage,String panalName) {
         smokeSanityPage.assertIfPanalBodyIsDisplayedWithPanalHeader(usage,panalName);
     }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" options displayed in page detail$")
+    public void iSeeOptionsDisplayedInPageDetail(String usage,String optionName) {
+        smokeSanityPage.menuItemDisplayedOnceClickOnMenuButton(usage,optionName);
+    }
+
+    @When("I attach file \"([^\"]*)\" in add file Modal$")
+    public void iAttachFileInAddFileModal(String attachmentName) {
+        smokeSanityPage.attachFileFromSystem(attachmentName);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" name displayed as \"([^\"]*)\"$")
+    public void iSeeNameDisplayedAs(String usage, String recordType, String recordName) {
+        smokeSanityPage.verifyIfRecordTypeAndRecordNameIsDisplayed(usage,recordType,recordName);
+    }
 }
