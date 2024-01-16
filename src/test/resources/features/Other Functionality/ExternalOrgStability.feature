@@ -203,3 +203,17 @@ Business Need: security review Scenarios
     When I navigate to "Collab" sub tab
     Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMyFeedTableId---"
     Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMessageTableId---"
+
+  @GrantRecordStabilitySPI
+  Scenario:Classic UI/UX org grant level record stability
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Grant for Automation"
+    When I click on "View" icon for "Grant for Automation" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see expected table with id "---SPI-TableIDs:-:GrantInformationBlockTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMessageTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMessageTableId---"
+    Then I softly see expected table with id "---SPI-TableIDs:-:ApplicationMessageTableId---"

@@ -139,7 +139,6 @@ public class UsersAndURL implements UsersController {
     private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();
         username.put("ADMIN", "automationadmin@ggp.test8.atm.fwautomat");
-        username.put("QADMIN", "frameworkq.testing@ggp.test8.frameworkq");
         username.put("EXE", "automationexe@ggp.test8.fwautomat");
         username.put("PM", "automationpm@ggp.test8.atm.fwautomat");
         username.put("FO", "automationfo@ggp.test8.atm.fwautomat");
@@ -155,11 +154,10 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Framework@dec23");
-        password.put("QADMIN", "qaorg@23");
+        password.put("ADMIN", "Admin@jan2024");
         password.put("EXE", "Framework@dec23");
         password.put("PM", "Framework@dec23");
-        password.put("FO", "FrameworkAuto@2003");
+        password.put("FO", "FrameworkFo@jan24");
         password.put("SPI", "FrameworkSpi@dec23");
         password.put("PM1", "FrameworkAuto@24");
         if (userType.toUpperCase() != null) {
