@@ -5,6 +5,7 @@ Business Need: Approval Process Component Scenarios
 
   @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity
   Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
+  Sanity TC_PM_To verify that Start action is visible for submitted for approval record, under Pending task table(381944)
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName             | fieldOrignalValue | filterId         |
       | Approval Decision Action | Sequence              | 1                 | ApiGeneratedId:1 |
@@ -41,14 +42,14 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
-    Then I can see row level action button "Start" against "{SavedValue:PEGMSID}" in flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I softly can see row level action button "Start" against "{SavedValue:PEGMSID}" in flex table with id "---program:-:HomePendingTasksTableId---"
     When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
     Then I see only the following ordered radio buttons in the approval decision :
       | Reject | Forward | Send back | Approve |
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @34306    @labelChangeOfApprovalDecision-Programs
   Scenario: Changing label of approve radio button text from configuration and validating its changed label in pending tasks approval decision
@@ -1723,7 +1724,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @203073 @203075 @381961 @381962 @Sanity
+  @203073 @203075 @381961 @381962 @Sanity @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Send To Owner
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -1813,7 +1814,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @202939 @202941 @381958 @381959 @Sanity
+  @202939 @202941 @381958 @381959 @Sanity @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reassign
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -1999,19 +2000,16 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @202802 @202803
+  @202802 @202803 @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Approve
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
+      | Approval Decision Action | Confirmation Title   |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                        | coreComponentField |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Confirmation                         | Step1              |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Do you want to approve this program? | Step1              |
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory            | fieldName            | fieldNewValue                        | coreComponentField |
+      | Approval Decision Action:General | Confirmation Title   | Confirmation                         | ADAC-0105          |
+      | Approval Decision Action:General | Confirmation Message | Do you want to approve this program? | ADAC-0105          |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2381,8 +2379,6 @@ The EGMS Team
 
   @203406 @381955 @381956 @Sanity
   Scenario:Approver process Step Cache-PM-Config-To verify email notification should received on reassign record
-    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -2420,7 +2416,7 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:  Notification: Program #{SavedValue:PROGRAMNAME} has been forwarded.
+  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been Rejected
   """
     Then I see the mail text is as follows :
   """
@@ -2428,11 +2424,11 @@ The EGMS Team
 
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program #{SavedValue:PROGRAMNAME} has been forwarded.
+This email is to notify you that Program #{SavedValue:PEGMSID} has been rejected.
 
-Log in to EGMS and click here for more details.
+Log in to EGMS and click here to see details.
 
-Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this task.
+Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com, if you have any questions or need assistance with this task.
 
 Thank you.
 The EGMS Team

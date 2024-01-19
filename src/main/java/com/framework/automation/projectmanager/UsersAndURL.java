@@ -155,7 +155,7 @@ public class UsersAndURL implements UsersController {
 
     private String getQAEnvironmentPassword(String userType) {
         Map<String, String> password = new HashMap<>();
-        password.put("ADMIN", "Framework@dec23");
+        password.put("ADMIN", "Admin@jan2024");
         password.put("QADMIN", "qaorg@23");
         password.put("EXE", "Framework@dec23");
         password.put("PM", "Framework@dec23");

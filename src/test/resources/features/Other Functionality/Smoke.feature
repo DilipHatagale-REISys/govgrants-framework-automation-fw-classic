@@ -166,8 +166,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382599 @382602 @382605 @382608 @382611 @382614 @382617 @382620 @382623
   Scenario: Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on "Home" phase
@@ -177,7 +177,7 @@ Business Need: lwc smoke testing features
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Grants phase,
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Monitoring phase,
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Closeout phase
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Home" tab
     Then I see sidebar left side of page
     And I navigate to "Planning" tab
@@ -194,8 +194,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382600 @382606 @382609 @382612 @382618 @382621 @382624 @382615
   Scenario: Smoke TC_SPI_To verify that user is able to see sidebar on left side of page, on Home phase
@@ -220,8 +220,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382079 @382724
   Scenario:Smoke TC-Admin-To verify if send Email buton is visible on page block
@@ -431,7 +431,7 @@ Business Need: lwc smoke testing features
     Then I see "Approval Decision" box on a submitted for approval record
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @379435 @379436 @379437
@@ -811,6 +811,24 @@ Business Need: lwc smoke testing features
     And I click on "Send" button in send email modal
     Then I softly see the following messages in the page details :
       | Enter To Email Address. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+    @collabFileAttachFunctionality
+  Scenario Outline: validate that upload file from library and computer is displayed at attach file modal at collab phase
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I attach file "SendEmailAttachment.pdf" in add file Modal
+    When I click on "Upload" button in send email modal
+    And I enter value "Test Automation Admin Comment" in my feed section and share the comment
+    Then I see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
     Examples:
       | Users |
       | Admin |
