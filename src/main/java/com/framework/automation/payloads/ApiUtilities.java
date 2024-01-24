@@ -195,6 +195,12 @@ public class ApiUtilities {
             case "NAME TEMPLATE":
                 filterClause = "GNT__InternalUniqueID__c=" + "'" + value + "'";
                 break;
+            case "EMAIL TEMPLATE":
+                filterClause = "GNT__SendToOwnerEmailTemplate__c=" + "'" + ComponentCoreFieldName + "'and" + " " + fieldName + "=" + "'" + value + "'";
+                break;
+            case "PROCESS DEFINITION":
+                filterClause = "Name=" + "'" + ComponentCoreFieldName + "' and" + " " + fieldName + "=" + "'" + value + "'";
+                break;
         }
         return filterClause;
     }

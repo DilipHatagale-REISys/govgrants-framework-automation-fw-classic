@@ -985,7 +985,7 @@ Business Need: Logged Issues Scenarios
     When I setup my app as "As a Sub-Recipient"
     Then I see page is in "VERY DARK DESATURATED CYAN" color
 
-  @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage @smoke
+  @58872    @hideExpressioJsonForEditTopLevelActionAtProgramDetailPage 
   Scenario: Hide edit button for Profile and System Admin using hide expression Json -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory      | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2983,7 +2983,7 @@ Business Need: Logged Issues Scenarios
     When I click on "Add Line Items" icon for "Indirect Cost Rate" inside table
     Then I see "Test View" icon for "Demo Line 1" is not displayed inside flex table
 
-  @94923 @hideCellJsonfieldAtEnhancedGridUsingRollupSummaryTypeField-gPlanning @smoke
+  @94923 @hideCellJsonfieldAtEnhancedGridUsingRollupSummaryTypeField-gPlanning 
   Scenario Outline: Hiding specific cell value using rollup summary field value and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3007,7 +3007,7 @@ Business Need: Logged Issues Scenarios
       | newFieldsApi                                                    | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,AmountAwardedThisBudgetPeriod__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @94924 @hideCellJsonfieldAtEnhancedGridForFormulaType-gPlanning @smoke
+  @94924 @hideCellJsonfieldAtEnhancedGridForFormulaType-gPlanning 
   Scenario Outline: Hiding specific cell value using formula field value and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3031,7 +3031,7 @@ Business Need: Logged Issues Scenarios
       | newFieldsApi                                        | defaultFieldsApi                                                                                                                                                                                                                   |
       | ProjectTitle__c,Name,Status__c,BuildUpGridNeeded__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @94925 @hideCellJsonfieldAtEnhancedGridChildTableUsingRollupSummaryTypeField-gPlanning @smoke
+  @94925 @hideCellJsonfieldAtEnhancedGridChildTableUsingRollupSummaryTypeField-gPlanning 
   Scenario Outline: Hiding specific cell value using rollup summary field value and validating it inside enhanced grid child table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3056,7 +3056,7 @@ Business Need: Logged Issues Scenarios
       | newFieldsApi                                                        | defaultFieldsApi                                                                                                                               |
       | Name,GrantAwardName__c,Status__c,ProjectAmountofBudgetCategories__c | Name,GrantAwardName__c,Agreement1__c,BudgetStartEndDate__c,TotalGrantAwardAmount__c,TotalObligateAmount__c,AmountDirectAssistance__c,Status__c |
 
-  @94929 @hideCellJsonfieldAtEnhancedGridChildTableUsingFormulaTypeField-gPlanning @smoke
+  @94929 @hideCellJsonfieldAtEnhancedGridChildTableUsingFormulaTypeField-gPlanning 
   Scenario Outline: Hiding specific cell value using formula field value and validating it inside enhanced grid child table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
