@@ -463,6 +463,12 @@ Business Need: history Component Scenarios
 
   @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active           | false              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | PB-6613                   | PBD-17605                  |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -476,16 +482,16 @@ Business Need: history Component Scenarios
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I click on "Edit" in the page details
-    And I enter value "$200,000.50" into field "fieldFundedAmount__c"
+    And I enter value "$200,000.50" into field "fieldExpectedFunding__c"
     And I click on "Save" in the page details
     And I click on "Edit" in the page details
-    And I enter value "$300,000.00" into field "fieldFundedAmount__c"
+    And I enter value "$300,000.55" into field "fieldExpectedFunding__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     When I navigate to "History" sub tab
     And I refresh the page
     Then I softly see "$200,000.50" shown inside "Old Value" column in history table
-    Then I softly see "$300,000.00" shown inside "New Value" column in history table
+    Then I softly see "$300,000.55" shown inside "New Value" column in history table
 
   @120103  @verifyCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the currency field format under field history table inside new value column

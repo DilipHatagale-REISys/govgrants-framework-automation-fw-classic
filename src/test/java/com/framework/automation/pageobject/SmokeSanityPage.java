@@ -300,4 +300,42 @@ public class SmokeSanityPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertIfUserNameDisplayedOnCollabPhase(String usage, String userName) {
+        if (usage.equalsIgnoreCase("see Username")) {
+            I.amPerforming().assertionsTo().assertThat(userNameOrEmailIdDisplayed(userName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see Username")) {
+            I.amPerforming().assertionsTo().assertThat(userNameOrEmailIdDisplayed(userName)).isFalse();
+        }
+    }
+
+    private boolean userNameOrEmailIdDisplayed(String userNameOrEmailId) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'profile')]//*[contains(text(),'" + userNameOrEmailId + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertIfSideBarLinkDisplayedOrNot(String usage, String linkName) {
+        if (usage.equalsIgnoreCase("see Username")) {
+            I.amPerforming().assertionsTo().assertThat(sidebarLinkDisplayedOrNotOnCollabPhase(linkName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see Username")) {
+            I.amPerforming().assertionsTo().assertThat(sidebarLinkDisplayedOrNotOnCollabPhase(linkName)).isFalse();
+        }
+    }
+
+    private boolean sidebarLinkDisplayedOrNotOnCollabPhase(String linkName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='CollabMenu']//ul//li//*[contains(text(),'" + linkName + "')]"))) {
+                flag = true;
+            }
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
 }

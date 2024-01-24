@@ -103,4 +103,19 @@ public class SmokeSanitySteps {
     public void iSeeInsideCommentAtCollab(String usage, String comment, String post) {
         smokeSanityPage.commentInsidePostDisplayedOrNot(usage,comment,post);
     }
+
+    @Then("^I (see Username|do not see Username) \"([^\"]*)\" is displayed Collab phase$")
+    public void iSeeUsernameIsDisplayedCollabPhase(String usage, String userNameOrEmailId) {
+        smokeSanityPage.assertIfUserNameDisplayedOnCollabPhase(usage, userNameOrEmailId);
+    }
+
+    @Then("^I (see emailid|do not see emailid) \"([^\"]*)\" is displayed Collab phase$")
+    public void iSeeEmailidIsDisplayedCollabPhase(String usage, String userNameOrEmailId) {
+        smokeSanityPage.assertIfUserNameDisplayedOnCollabPhase(usage, userNameOrEmailId);
+    }
+
+    @Then("^I (see|do not see) side bar links \"([^\"]*)\" is displayed on collab phase$")
+    public void iSeeSideBarLinksIsDisplayedOnCollabPhase(String usage, String linkName) {
+        smokeSanityPage.assertIfSideBarLinkDisplayedOrNot(usage,linkName);
+    }
 }

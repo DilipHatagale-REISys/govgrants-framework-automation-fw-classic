@@ -906,3 +906,75 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Automation PM Automation Admin" in my feed section and share the post
     Then I see "Automation PM Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @382125 @Sanity
+  Scenario: Sanity TC_Admin_To verify that, logged in user name & email id should be visible on Collab phase.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see Username "Automation Admin" is displayed Collab phase
+    Then I see emailid "automationadmin@yopmail.com" is displayed Collab phase
+
+
+  @382128 @Sanity
+  Scenario: Sanity TC_pm_To verify that, logged in user name & email id should be visible on Collab phase.
+    When I login to "As a Grantor" app as "pm" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see Username "Automation PM" is displayed Collab phase
+    Then I see emailid "automationpm@yopmail.com" is displayed Collab phase
+
+  @382130 @Sanity
+  Scenario: Sanity TC_SPI_To verify that, logged in user name & email id should be visible on Collab phase.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see Username "Automation SPI" is displayed Collab phase
+    Then I see emailid "automationspi@yopmail.com" is displayed Collab phase
+
+  @382132 @Sanity
+  Scenario: Sanity TC_Admin_To verify that, all side bar links should be visible on Collab phase.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see side bar links "My Feeds" is displayed on collab phase
+    Then I see side bar links "My Colleagues" is displayed on collab phase
+    Then I see side bar links "External Users" is displayed on collab phase
+    Then I see side bar links "My Groups" is displayed on collab phase
+    Then I see side bar links "Membership Requests" is displayed on collab phase
+    Then I see side bar links "My Content" is displayed on collab phase
+    Then I see "All Users" inside "My Feeds" menu at collab sidebar
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
+    Then I see "What I Follow(Internal)" inside "My Feeds" menu at collab sidebar
+    Then I see "What I Follow(External)" inside "My Feeds" menu at collab sidebar
+
+    @382135 @Sanity
+      Scenario: Sanity TC_PM_To verify that, all side bar links should be visible on Collab phase.
+      When I login to "As a Grantor" app as "PM" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Home" tab
+      And I navigate to "Collaboration (Collab)" tab
+      Then I see side bar links "My Feeds" is displayed on collab phase
+      Then I see side bar links "My Colleagues" is displayed on collab phase
+      Then I see side bar links "External Users" is displayed on collab phase
+      Then I see side bar links "My Groups" is displayed on collab phase
+      Then I see side bar links "Membership Requests" is displayed on collab phase
+      Then I see side bar links "My Content" is displayed on collab phase
+      Then I see "All Users" inside "My Feeds" menu at collab sidebar
+      Then I see "To Me" inside "My Feeds" menu at collab sidebar
+      Then I see "What I Follow(Internal)" inside "My Feeds" menu at collab sidebar
+      Then I see "What I Follow(External)" inside "My Feeds" menu at collab sidebar
+
+      @382136 @Sanity
+        Scenario: Sanity TC_SPI_To verify that, all side bar links should be visible on Collab phase.
+        Given I am on "SUBPORTAL" portal
+        When I login to "Grants Portal" app as "SPI" user
+        And I navigate to "Collaboration (Collab)" tab
+        Then I see side bar links "My Feeds" is displayed on collab phase
+        Then I see side bar links "My Colleagues" is displayed on collab phase
+        Then I see side bar links "My Groups" is displayed on collab phase
+        Then I see side bar links "My Content" is displayed on collab phase
+        Then I see "What I Follow" inside "My Feeds" menu at collab sidebar
