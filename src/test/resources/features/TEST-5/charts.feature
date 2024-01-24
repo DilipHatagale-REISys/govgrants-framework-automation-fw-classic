@@ -37,7 +37,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     When I select "Show All Data" from chart menu of chart "AnnouncementByAdminBureauUnit"
     Then I see "Funding Opportunity Automation" displayed in modal
 
-  @34977    @validateDisablingChartLegends-gPlannging @smoke
+  @34977    @validateDisablingChartLegends-gPlannging 
   Scenario: Disable chart legends for 'AnnouncementByAdminBureauUnit' chart in configuratin and validating inside planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -52,7 +52,7 @@ Business Need: Charts and Enhanced Charts Component Scenarios
     And I navigate to "Planning" tab
     Then I do not see chart legends are displayed for chart/enhanced Charts "AnnouncementByAdminBureauUnit"
 
-  @34981    @validateX-axisLabel-gPlannging @smoke
+  @34981    @validateX-axisLabel-gPlannging 
   Scenario: Change chart x-axis label for 'Funding Sources by Total Amount' chart in configuratin and validating inside planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue      | filterId         |

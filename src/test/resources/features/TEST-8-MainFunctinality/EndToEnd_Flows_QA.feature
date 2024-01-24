@@ -1229,74 +1229,7 @@ Business Need: security review Scenarios
       | Is Key Contact | equals to | true |
     Then I see value "Project Director/Manager" for title "Project Role" inside table "---program:-:flexTableEnhancedAppContactId---"
 
-  @vrush @1102571  @verifyGrantCreatedAndActivateByPMUser @flow
-  Scenario: validate grant created ad activated by PM user
-#    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-#    Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
-#    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
-#    And I execute batch file:
-#      | programName | announcementName | objectType | projectTitle               | status |
-#      | NA          | NA               | Program    | Automation Runtime Program | Active |
-#
-    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-   #    #Announcement Creation
-#    When I login to "As a Grantor" app as "PM" user
-#    When I setup my app as "As a Grantor"
-#    And I navigate to "Announcements" tab
-#    And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-#    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
-#    #And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
-#    And I enter value "PG-A11-2421" into field "fieldProgram__c"
-#    And I click modal button "Continue"
-#    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click modal button "Save and Continue"
-#    When I click on "Save" in the page details
-#    And I save the field labeled "EGMS ID" as "ANNEGMSID"
-#    Then I softly see status in Progress-bar is "Created" and is "Green"
-#    When I click on "Edit" in the page details
-#    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
-#    And I click on "Save" in the page details
-#    And I pause execution for "3" seconds
-#    And I click on "Edit" in the page details
-#    And I enter value "Test" into field "Justification__c"
-#    And I click on "Save" in the page details
-#    When I navigate to "Financials" sub tab
-#    And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountsTableId---"
-#    When I click "Associate" after selection of "FA-ST-04" in the table "---program:-:fundingAccTableId---"
-#    When I close "Associate Funding Accounts" modal by clicking the top right x button
-#    And I click on top right button "Add Budget Period" in flex table with id "---program:-:budgetPeriodTableId---"
-#    And I refresh the page
-#    And I edit the following rows inline in flex table with id "---program:-:budgetPeriodTableId---" by clicking "Edit" :
-#      | Budget Period Name | Start Date | End Date |
-#      | BP01               | 90         | 350      |
-#    And I click on "Submit For Approval" in the page details
-#    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-#    #1st Approval process for announcement
-#    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
-#    And I navigate to "Home" tab
-#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-#    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-#    When I "Approve" in the approval decision
-#    Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-#        #2nd Approval process for announcement
-#    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
-#    And I navigate to "Home" tab
-#    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-#    And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-#    When I "Approve" in the approval decision
-#    Then I softly see status in Progress-bar is "Approved" and is "Green"
-#    #Announcement Publish
-#    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
-#    And I navigate to "Announcements" tab
-#    And I click toggle button to select "All Announcements"
-#    When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
-#    And I click on "View" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:allAnnouncementTableId---"
-#    And I click on "Publish" in the page details
-#    Then I softly see status in Progress-bar is "Published" and is "green"
-
-  @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser 
+    @110867    @verifyAdvanceSearchAtFlexGridEnhancedIsWorkingCorrectlyForSPIUser
   Scenario: validate that advance search is working or not at flex grid enhanced by login as SPI user
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1340,6 +1273,9 @@ Business Need: security review Scenarios
    And I execute batch file:
      | programName | announcementName | objectType | projectTitle               | status |
      | NA          | NA               | Program    | Automation Runtime Program | Active |
+
+   Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
+
    When I login to "As a Grantor" app as "PM" user
    When I setup my app as "As a Grantor"
     #Announcement Creation

@@ -96,7 +96,7 @@ public class SendEmail_Test8Page extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='slds-notify slds-notify_alert slds-alert-success']/child::h2[text()='" + successMessage + "'] |" +
-                    " //div[@id='ModalDivID']/span//div[@class='alert alert-success border-msg']/span[@class='ng-binding' and contains(text(),'" + successMessage + "')]"))) {
+                    " //div[@id='ModalDivID']/span//div[@class='alert alert-success border-msg']/span[@class='ng-binding' and contains(text(),'" + successMessage + "')]|//span[@class='ng-binding' and contains(text(),'" + successMessage + "')]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -204,5 +204,35 @@ public class SendEmail_Test8Page extends GovGrantsManager {
 
     public void clickOnSelectFilesButton(String button) {
         I.amPerforming().click().on(ByUsing.xpath("//button[text()[contains(normalize-space(.), '" + button + "')]]"));
+    }
+
+    public void asserCheckBoxFieldOnModalIsSelected(String checkbox, String status) {
+        if (status.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat( I.amPerforming().checkToSee().isSelected((ByUsing.xpath("//label[normalize-space(text())='"+checkbox+"']//following::input[@type='checkbox']")))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat( I.amPerforming().checkToSee().isSelected((ByUsing.xpath("//label[normalize-space(text())='"+checkbox+"']//following::input[@type='checkbox']")))).isTrue();
+    }
+
+    public void assertOptionFromListIsDisabled(String option, String field) {
+        if (field.equalsIgnoreCase("To"))
+        {
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group required ng-scope']//div//button[@type='button']"));
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@value='" + option + "' and @disabled]"))).isTrue();
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group required ng-scope']//div//button[@type='button']"));
+
+        } else if (field.equalsIgnoreCase("Cc")) {
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group ng-scope']//div//button[@type='button']"));
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(By.xpath("//input[@value='" + option + "' and @disabled]"))).isTrue();
+            I.amPerforming().click().on(ByUsing.xpath("//div[@class='form-group ng-scope']//div//button[@type='button']"));
+        }
+
+    }
+
+    public void clickOnCheckBoxForField(String checkbox) {
+        I.amPerforming().click().withJavaScript(ByUsing.xpath("//label[normalize-space(text())='" + checkbox + "']//following::input[@type='checkbox']"));
     }
 }

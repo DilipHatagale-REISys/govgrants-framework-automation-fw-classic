@@ -38,7 +38,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Goals Objectives"
 
-  @34323    @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals @smoke @wip
+  @34323    @disableQuicksearchfromN2GFlexGrid-ProgramStrategicGoals  @wip
   Scenario: Disable quick search bar for Goal Objective flex grid in configuratin and validating inside planning-programs view icon - plan subtab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -108,7 +108,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Due Date" not displayed in enhanced grid table column title
 
-  @34332    @hideViewIconForPPMGVflexTable-Programs @smoke @doubted @wip
+  @34332    @hideViewIconForPPMGVflexTable-Programs  @doubted @wip
   Scenario: Hide view context from PPMGV view cofniguration and validate inside planning-programs view icon - plan subtab - Goal Objectives flex table
     Given I have "default" configuration as below:
       | configurationCategory              | fieldName        | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -502,7 +502,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see quick search option disabled for table "---program:-:programOutComesTableId--- "
 
-  @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning @smoke @wip
+  @50213    @disablingMenuIconForProgramOutcomesFlexTable-gPlanning  @wip
   Scenario: validate disabling of menu icon from program outcomes flex table-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -519,7 +519,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see Menu icon is disabled from planning flex table "Key Outcomes"
 
-  @50216    @enableTotalRowFieldAtProgramOutcomesFlexTable-gPlanning @smoke @wip
+  @50216    @enableTotalRowFieldAtProgramOutcomesFlexTable-gPlanning  @wip
   Scenario: validate enabling of total enable row in program outcomes flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -536,7 +536,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Total" inside rows of enhanced grid id "---program:-:programOutComesTableId---"
 
-  @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning @smoke @wip
+  @50217    @enableTotalRecordsCountFieldAtProgramOutcomesFlexTable-gPlanning  @wip
   Scenario: validate disbaling of total row count in flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -665,7 +665,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Plan" sub tab
     Then I see "Test Automation" shown inside flex table with id "---program:-:programOutComesTableId---"
 
-  @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning @smoke @wip
+  @50229    @displayFieldNameFieldWithAddingfieldNamesOfDifferentDataTypes-gPlanning  @wip
   Scenario Outline: validate adding field names for different data types in program outcomes flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -793,7 +793,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "AD-Grant--07" inside table
     Then I see "View" opens in overLay window
 
-  @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning @smoke @wip
+  @50342    @actionURLLongFieldAtActiveGrantsGridParentFlexTableFlexTableViewAction-gPlanning  @wip
   Scenario Outline: Changing action url of action url long field for view action from config and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
@@ -815,7 +815,7 @@ Business Need: Flex Grid Component Scenarios
       | oldActionUrl                      | newActionUrl            |
       | /apex/GrantView?id={!Grant__c.Id} | https://www.google.com/ |
 
-  @50343    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromRowToTop-gMonitoring @smoke @wip
+  @50343    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromRowToTop-gMonitoring  @wip
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from row to top from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -830,7 +830,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "View" button inside "Monitoring Schedule For All Active Grant" Nested Navigation grid
 
-  @50344    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromTopToRow-gMonitoring @smoke @wip
+  @50344    @locationFieldAtActiveGrantsGridParentFlexTableActionItemFromTopToRow-gMonitoring  @wip
   Scenario: Changing location of Monitoring Schedule For All Active Grant flex table view action from top to row from config anf validating it inside Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -845,7 +845,7 @@ Business Need: Flex Grid Component Scenarios
     When I perform quick search for "AD-Grant--07"
     Then I see "View" icon for "AD-Grant--07" is displayed inside flex table
 
-  @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring @smoke  @wip
+  @50345    @showConfirmationBoxFieldForActiveGrantsGridFlexTAbleViewAction-gMonitoring   @wip
   Scenario: Setup confirmation box for Monitoring Schedule For All Active Grant flex table view action configuration and validating it at Monitoring Schedule For All Active Grant flex table of program-gMonitoring
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -879,7 +879,7 @@ Business Need: Flex Grid Component Scenarios
     When I click on "View" icon for "AD-Grant--07" inside table with table id "---program:-:toggleFlexGridMonitoringTableId---" without processing
     Then I see confirmation box with body "Test Automation" is displayed
 
-  @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants @smoke @wip
+  @50347    @refreshBehaviourFieldAtGrantorBudgetPeriodFlexTableAsRefreshEntirePageForEditAction-gGrants  @wip
   Scenario: validate budget period details flex table action field- refresh entire page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -915,7 +915,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "Edit" icon for "---program:-:grantFinancialsTableId---" is at position "0" inside flex table
 
-  @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke @wip
+  @50352    @hideForProfileFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants  @wip
   Scenario: Hide view row level action for specific profile from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName        | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -931,7 +931,7 @@ Business Need: Flex Grid Component Scenarios
     When I navigate to "Financials" sub tab
     Then I see "View" icon for column value "Active" is not displayed at table "---program:-:grantFinancialsTableId---"
 
-  @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants @smoke @wip
+  @50353    @hideForUserFieldAtGrantorBudgetPeriodFlexTableViewAction-gGrants  @wip
   Scenario: Hide view row level action for specific User from configuration and validating it at under Grantor Budget Period flex table- gPlanning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue | coreComponentField  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1007,7 +1007,7 @@ Business Need: Flex Grid Component Scenarios
       | new_helpText             | old_helpText                                                                                                                                                             |
       | Help Text for Automation | The following table is a comprehensive list of all active grants.Â to view or edit a specific grant select the grant id hyperlink for the grant you would like to access |
 
-  @50367    @disblingQuickSearchFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke @wip
+  @50367    @disblingQuickSearchFieldAtActiveGrantsGridParentFlexTable-gMonitoring  @wip
   Scenario: validate disabling of quick search in ActiveGrantsGrid flex table at program-gMonitoring
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1020,7 +1020,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see quick search option disabled for table "---program:-:toggleFlexGridMonitoringTableId---"
 
-  @50370    @enableHelpFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke @wip
+  @50370    @enableHelpFieldAtActiveGrantsGridParentFlexTable-gMonitoring  @wip
   Scenario: validate enabling of help inside menu option in Monitoring schedule for all active grant flex table at Monitoring phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
@@ -1048,7 +1048,7 @@ Business Need: Flex Grid Component Scenarios
     Then I see the text containing :
       | Page 1 of |
 
-  @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke @wip
+  @50377    @disablingMenuFieldAtActiveGrantsGridParentFlexTable-gMonitoring  @wip
   Scenario: validate disabling of menu icon from Monitoring schedule for all active grant flex table at Monitoring phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
@@ -1074,7 +1074,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "#" in flex table header "---program:-:monitoringGridTableId---"
 
-  @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring @smoke @wip
+  @50380    @disablingEnableTotalRecordsCountFieldAtActiveGrantsGridParentFlexTable-gMonitoring  @wip
   Scenario: validate disbaling of total row count for Monitoring schedule for all active grant flex table at Monitoring phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -1202,7 +1202,7 @@ Business Need: Flex Grid Component Scenarios
     And I navigate to "Monitoring" tab
     Then I see "Automation N2G Grid" shown as inside "---program:-:toggleFlexGridMonitoringTableId---"
 
-  @50399    @filterClauseFieldAtActiveGrantsGridFlexTable-gMonitoring @smoke @wip
+  @50399    @filterClauseFieldAtActiveGrantsGridFlexTable-gMonitoring  @wip
   Scenario Outline: validate removing draft status category from ActiveGrantsGrid flex table of Monitoring Phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |

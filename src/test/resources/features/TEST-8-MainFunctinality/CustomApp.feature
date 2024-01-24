@@ -4,17 +4,21 @@ Business Need: customApp Component Scenarios
   As a configuration manager i make different configurational changes in customApp component and will validate them.
 
   ######## As a Grantor ###
-  @332481 @332482 @332484 @332534
-  Scenario: Custom App- To verify, for the Grantor user 'StateasGrantor' Label name is displayed.
+  @332481 @332482 @332484 @332534 @382715 @382716 @Sanity
+  Scenario Outline: Custom App- To verify, for the Grantor user 'StateasGrantor' Label name is displayed.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Custom App Config     | Label     | As a Grantor      | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Label     | As a Grantor  | StateasGrantor     |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @332491
   Scenario: Custom App- To verify, when Default Theme Name is "ColorContrast_Grantor" should be saved on the Custom App:grantor
@@ -52,7 +56,7 @@ Business Need: customApp Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
-  @332488
+  @332488 @382717 @382718 @Sanity
   Scenario Outline: Custom App- To verify, when URL is "/apex/PhaseView?t=GrantorHome" should be saved on Custom App:grantor
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -60,12 +64,13 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | StateasGrantor     |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     Then I see "As a Grantor" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
-      | defaultUrl                   |
-      | apex/PhaseView?t=GrantorHome |
+      | User  | defaultUrl                   |
+      | ADMIN | apex/PhaseView?t=GrantorHome |
+      | PM    | apex/PhaseView?t=GrantorHome |
 
   @332601
   Scenario Outline: when system administrator is not in available for profile then As a  grantor should not display to admin user
@@ -136,7 +141,7 @@ Business Need: customApp Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
 
-  @332511
+  @332511 @382719 @382720 @Sanity
   Scenario Outline: Custom App- To verify, when URL is "/apex/PhaseView?t=GranteeHome" should be saved on Custom App:grantee
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -144,12 +149,13 @@ Business Need: customApp Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | URL       | <defaultUrl>  | StateasGrantee     |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     Then I see "As a Grantee" inside CustomApp dropDown
     Then I see "Home" tab is highlighted for particular program
     Examples:
-      | defaultUrl                    |
-      | /apex/PhaseView?t=GranteeHome |
+      | User  | defaultUrl                    |
+      | ADMIN | /apex/PhaseView?t=GranteeHome |
+      | PM    | /apex/PhaseView?t=GranteeHome |
 
   @332512
   Scenario Outline: Custom App- To verify, for the Grantee user profile should be available for profiles mentioned in 'Available For Profiles' field.

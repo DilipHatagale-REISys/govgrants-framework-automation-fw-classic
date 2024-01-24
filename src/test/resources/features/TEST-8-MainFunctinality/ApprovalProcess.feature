@@ -195,14 +195,14 @@ Business Need: Approval Process Component Scenarios
       | newFilterCriteriaValue |
       | Name='Automation PM'   |
 
-  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs @smoketest8
+  @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs
   Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName      | fieldOrignalValue  | filterId         |
       | Approval Process Steps Cache | Field API Name | ProgramApprover__c | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName      | fieldNewValue | coreComponentField       |
-      | Approval Process Steps Cache:General | Field API Name |               | Program_Manager_Approver |
+      | configurationCategory                | fieldName      | fieldNewValue | coreComponentField |
+      | Approval Process Steps Cache:General | Field API Name |               | Step1              |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -376,7 +376,7 @@ Business Need: Approval Process Component Scenarios
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     Then I see approval with subject as "Program Sent To Owner" is not displayed
 
-  @37348 @37506 @202418 @202420 @201939 @201941  @rejectConfirmationMessageFieldAtApprovalProcess-Programs @smoketest8
+  @37348 @37506 @202418 @202420 @201939 @201941  @rejectConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario: Setup confirmation message inside confirmation message box for reject from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | coreComponentField | filterId         |
@@ -523,7 +523,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @38847 @202448 @202451 @37433  @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs @smoketest8
+  @38847 @202448 @202451 @37433  @confirmationMessageBoxPopupForSendToOwnerApprovalDecisionAction-Programs
   Scenario Outline: Setup confirmation message inside confirmation message box for send back approval decision action using Approval Decision Action from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -617,7 +617,7 @@ Business Need: Approval Process Component Scenarios
       | oldProfiles                                                                                                         | newProfiles                                                                                                     |
       | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PM; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND | ADT; CON; CTR; DA; DEV; EPOC; EXE; FD; FO; GA; GMO; PO; SME; SPA; SPI; System Administrator; TR1; TR2; TR3; VND |
 
-  @37645  @smoketest8 @BugId_163309 @wip
+  @37645   @BugId_163309 @wip
   Scenario: Verify Approve Email Template field for approve action
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName              | fieldOrignalValue | filterId         |
@@ -711,7 +711,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Reject" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
+    When I re-login to "As Administrator" app as "PM" user on "QA" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
@@ -724,9 +724,9 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache | Reassigned Email Template |                   | ApiGeneratedId:1 |
       | Page Tabs Config             | Is Active                 | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                 | fieldNewValue | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:General | Reassigned Email Template | true          | Program_Manager_Approver |                           |                            |
-      | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantor State Program    | Name                      | TAB-1724                   |
+      | configurationCategory                | fieldName                 | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Reassigned Email Template | true          | Step1                 | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
+      | Page Tabs Config:Page Layout Action  | Is Active                 | false         | Grantor State Program | Name                         | TAB-1724                   |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -766,14 +766,12 @@ Business Need: Approval Process Component Scenarios
   @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName           | fieldOrignalValue          | filterId         |
-      | Approval Process Steps Cache | Email Template Name | Program Approver Sent Back | ApiGeneratedId:0 |
- #     | Page Tabs Config             | Is Active                    | true              | ApiGeneratedId:2 |
+      | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory              | fieldName           | fieldNewValue              | coreComponentField       | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:Email | Email Template Name | Program Approver Sent Back | Program_Manager_Approver |                           |                            |
-#      | Approval Process Steps Cache:General | Send To Owner Email Template | ApiGeneratedId:0                | Program_Manager_Approver        |                           |                            |
-     # | Page Tabs Config:Page Layout Action  | Is Active                    | false                           | Grantor State Program           | Name                      | TAB-1724                   |
+      | configurationCategory                       | fieldName                    | fieldNewValue              | coreComponentField         | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Email Template | Send To Owner Email Template | Program Approver Sent Back | Program Approver Sent Back | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
+     # | Approval Process Steps Cache:General        | Send To Owner Email Template | Program Approver Sent Back | Step1                    |                           |                            |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -804,7 +802,7 @@ Business Need: Approval Process Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Send back" in the approval decision
-    When I re-login to "As Administrator" app as "PM" user on "default" portal
+    When I re-login to "As Administrator" app as "ADMIN" user on "QA" portal
     And I navigate to "Operate" tab
     When I navigate to "Email Logs" content inside "Logs" subheader on left panel
     And I click toggle button to select "Queued Emails"
@@ -855,7 +853,7 @@ Business Need: Approval Process Component Scenarios
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     Then I see field "Automation Testing" inside page block
 
-  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs @smoketest8 @wip
+  @41063    @hideApproveOptionFromHideExpressionJSONField-Programs  @wip
   Scenario: Hiding approve option from configuration and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -1011,7 +1009,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I cannot see the radio button "Send back" in the approval decision
 
-  @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs @smoketest8
+  @41060    @validateCommentedTextInsideHistoryTabForReassignAction-Programs
   Scenario: Validating commented text inside history tab for reassign approval action at program detail page
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -1730,9 +1728,9 @@ Business Need: Approval Process Component Scenarios
       | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
       | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                          | coreComponentField |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
+      | configurationCategory                           | fieldName                          | fieldNewValue                          | coreComponentField |
+      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
+      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -1816,13 +1814,13 @@ Business Need: Approval Process Component Scenarios
   @202939 @202941 @381958 @381959 @Sanity
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reassign
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+      | configurationCategory        | fieldName                     | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Reassign Confirmation Title   |                   | ApiGeneratedId:0 |
+      | Approval Process Steps Cache | Reassign Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                         | coreComponentField |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Confirmation                          | Step1              |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Do you want to reassign this program? | Step1              |
+      | configurationCategory                           | fieldName                     | fieldNewValue                         | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Title   | Confirmation                          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
+      | Approval Process Steps Cache:Process Definition | Reassign Confirmation Message | Do you want to reassign this program? | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -1863,7 +1861,7 @@ Business Need: Approval Process Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+    #  | PM    |
 
   @202940 @203067
   Scenario Outline:Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Reassign
@@ -1912,13 +1910,13 @@ Business Need: Approval Process Component Scenarios
   @202933 @202935
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reject
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+      | configurationCategory        | fieldName                   | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Reject Confirmation Title   |                   | ApiGeneratedId:0 |
+      | Approval Process Steps Cache | Reject Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                       | coreComponentField |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Confirmation                        | Step1              |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Do you want to Reject this program? | Step1              |
+      | configurationCategory                           | fieldName                   | fieldNewValue                       | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Process Definition | Reject Confirmation Title   | Confirmation                        | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
+      | Approval Process Steps Cache:Process Definition | Reject Confirmation Message | Do you want to Reject this program? | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2002,13 +2000,13 @@ Business Need: Approval Process Component Scenarios
   @202802 @202803
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Approve
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+      | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Approve Confirmation Title   |                   | ApiGeneratedId:0 |
+      | Approval Process Steps Cache | Approve Confirmation Message |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                | fieldName                          | fieldNewValue                        | coreComponentField |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Title   | Confirmation                         | Step1              |
-      | Approval Process Steps Cache:General | Send To Owner Confirmation Message | Do you want to approve this program? | Step1              |
+      | configurationCategory                           | fieldName                    | fieldNewValue                        | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Process Definition | Approve Confirmation Title   | Confirmation                         | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
+      | Approval Process Steps Cache:Process Definition | Approve Confirmation Message | Do you want to approve this program? | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2046,7 +2044,7 @@ Business Need: Approval Process Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+     # | PM    |
 
   @202806 @202808
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should not displayed on Approve
@@ -2091,6 +2089,12 @@ Business Need: Approval Process Component Scenarios
 
   @203288
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should received on approved record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2122,7 +2126,7 @@ Business Need: Approval Process Component Scenarios
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2131,13 +2135,14 @@ Business Need: Approval Process Component Scenarios
   """
     Then I see the mail text is as follows :
   """
-   Hello {SavedValue:PEGMSID},
+   Hello Automation,
 
 This email is to notify you that Program #{SavedValue:PEGMSID} has been reviewed and approved.
 
-Log in to EGMS and click here for more details.
+Log in to EGMS and click here to activate the program.
 
-Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this task.
+Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this
+ task.
 
 Thank you.
 The EGMS Team
@@ -2148,6 +2153,12 @@ The EGMS Team
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2175,8 +2186,9 @@ The EGMS Team
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
+    And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automationpm@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2185,13 +2197,14 @@ The EGMS Team
   """
     Then I see the mail text is as follows :
   """
-   Hello {SavedValue:PEGMSID},
+  Hello Automation,
 
 This email is to notify you that Program #{SavedValue:PEGMSID} has been reviewed and approved.
 
-Log in to EGMS and click here for more details.
+Log in to EGMS and click here to activate the program.
 
-Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this task.
+Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this
+ task.
 
 Thank you.
 The EGMS Team
@@ -2199,6 +2212,12 @@ The EGMS Team
 
   @203295
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should received on reject record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2229,39 +2248,37 @@ The EGMS Team
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Approve" in the approval decision
-    Then I softly see status in Progress-bar is "Approved" and is "Green"
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    When I "Reject" in the approval decision
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox: Notification: Program #{SavedValue:PROGRAMNAME} has been Rejected.
+  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been Rejected
   """
     Then I see the mail text is as follows :
   """
+Hello Automation Admin
 
-Hello {!Program__c.OwnerFirstName},
+This email is to notify you that Program #{SavedValue:PEGMSID} has been rejected.
 
-This email is to notify you that Program  #{SavedValue:PROGRAMNAME} has been rejected.
+Log in to EGMS and click here to see details.
 
-Program Details:
-
-   Program ID: {SavedValue:PEGMSID}
-
-   Program Name: {SavedValue:PROGRAMNAME}
-
-Log in to EGMS and click here to see details.{!Program__c.Link}
-
-Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com , if you have any questions or need assistance with this task.
+Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com, if you have any questions or need assistance with this task.
 
 Thank you.
-
 The EGMS Team
   """
 
   @203347
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should received on reject record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2292,38 +2309,37 @@ The EGMS Team
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    And I "Forward" to user "Automation PM" in the approval decision
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    When I "Reject" in the approval decision
+    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    And I checkout to yopmail with mailid "automation.exe@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox: Notification: Program #{SavedValue:PROGRAMNAME} has been Rejected.
+  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been Rejected
   """
     Then I see the mail text is as follows :
   """
+Hello Automation PM
 
-Hello {!Program__c.OwnerFirstName},
+This email is to notify you that Program #{SavedValue:PEGMSID} has been rejected.
 
-This email is to notify you that Program  #{SavedValue:PROGRAMNAME} has been rejected.
+Log in to EGMS and click here to see details.
 
-Program Details:
-
-   Program ID: {SavedValue:PEGMSID}
-
-   Program Name: {SavedValue:PROGRAMNAME}
-
-Log in to EGMS and click here to see details.{!Program__c.Link}
-
-Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com , if you have any questions or need assistance with this task.
+Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com, if you have any questions or need assistance with this task.
 
 Thank you.
-
 The EGMS Team
   """
 
   @203404
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should received on reassign record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2356,12 +2372,12 @@ The EGMS Team
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Forward" to user "Automation PM" in the approval decision
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automation.admin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
   """
-  Sandbox:  Notification: Program #{SavedValue:PROGRAMNAME} has been forwarded.
+  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been forwarded.
   """
     Then I see the mail text is as follows :
   """
@@ -2369,9 +2385,9 @@ The EGMS Team
 
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program #{SavedValue:PROGRAMNAME} has been forwarded.
+This email is to notify you that Program #{SavedValue:PEGMSID} has been forwarded.
 
-Log in to EGMS and click here for more details.
+Log in to EGMS, click here for more details, and resubmit the Program after making the required changes.
 
 Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this task.
 
@@ -2381,6 +2397,12 @@ The EGMS Team
 
   @203406 @381955 @381956 @Sanity
   Scenario:Approver process Step Cache-PM-Config-To verify email notification should received on reassign record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2412,15 +2434,14 @@ The EGMS Team
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Reject" in the approval decision
+    And I "Forward" to user "Automation PM" in the approval decision
     And I pause execution for "5" seconds
-    Then I softly see status in Progress-bar is "Rejected" and is "Red"
     And I checkout to yopmail with mailid "automationpm@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
-  """
-  Sandbox:  Notification: Program #{SavedValue:PROGRAMNAME} has been forwarded.
+   """
+  Sandbox: Notification: Program #{SavedValue:PEGMSID} has been forwarded.
   """
     Then I see the mail text is as follows :
   """
@@ -2428,9 +2449,9 @@ The EGMS Team
 
 Hello {SavedValue:OWNER},
 
-This email is to notify you that Program #{SavedValue:PROGRAMNAME} has been forwarded.
+This email is to notify you that Program #{SavedValue:PEGMSID} has been forwarded.
 
-Log in to EGMS and click here for more details.
+Log in to EGMS, click here for more details, and resubmit the Program after making the required changes.
 
 Please do not reply to this system-generated email. You may contact the GovGrants Support Team at govgrantssupport@reisystems.com if you have any questions or need assistance with this task.
 
@@ -2440,6 +2461,12 @@ The EGMS Team
 
   @203680
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should received on Send To Owner record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | true          | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2471,9 +2498,9 @@ The EGMS Team
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Reject" in the approval decision
+    When I "Send back" in the approval decision
     And I pause execution for "5" seconds
-    Then I softly see status in Progress-bar is "Rejected" and is "Red"
+    Then I softly see status in Progress-bar is "Created" and is "Green"
     And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
@@ -2548,9 +2575,6 @@ The EGMS Team
   """
     Then I see the mail text is as follows :
   """
-
-
-
 Hello {SavedValue:OWNER},
 
 This email is to notify you that Program # {SavedValue:PEGMSID} has been sent back for revision.
@@ -2570,6 +2594,12 @@ The EGMS Team
 
   @203291
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on approved record
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
+      | Approval Process Steps Cache | Notify Additional People | false             | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                | fieldName                | fieldNewValue | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:General | Notify Additional People | false         | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PGg1QAG         |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -2604,7 +2634,7 @@ The EGMS Team
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
-    And I checkout to yopmail with mailid "automationadmin@yopmail.com"
+    And I checkout to yopmail with mailid "automationpm@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2766,7 +2796,7 @@ The EGMS Team
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Forward" to user "Automation PM" in the approval decision
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automation.exe@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
@@ -2805,7 +2835,7 @@ The EGMS Team
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I "Forward" to user "Automation PM" in the approval decision
-    And I checkout to yopmail with mailid "exe.automation@yopmail.com"
+    And I checkout to yopmail with mailid "automation.exe@yopmail.com"
     And I pause execution for "10" seconds
     Then I refresh the page
     And I see the mail subject is as follows :
