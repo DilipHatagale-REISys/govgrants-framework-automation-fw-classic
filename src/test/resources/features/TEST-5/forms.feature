@@ -19,7 +19,7 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     Then I see Business Form section is not displayed
 
-  @35189    @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication @smoke
+  @35189    @hidingPreviewActionItemForUsersInsideBusinessForms-gApplication 
   Scenario: Validate disabling preview of business form action item from config and validating inside Application view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | coreComponentField | filterId         |
@@ -51,7 +51,7 @@ Business Need: Forms Component Scenarios
     When I navigate to "Attachments" sub tab
     Then I see "View" action item is not displayed inside business form
 
-  @35271    @changeLabelOfEditFormPageLayoutActionItem-gApplication @smoke
+  @35271    @changeLabelOfEditFormPageLayoutActionItem-gApplication 
   Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -85,7 +85,7 @@ Business Need: Forms Component Scenarios
     When I click on "View" icon of form "General Application Cover Page" program in flex table
     Then I see "Edit" of action item inside form page layout is not displayed
 
-  @37856    @headerFieldAtFormLayout-gApplication @smoke
+  @37856    @headerFieldAtFormLayout-gApplication 
   Scenario: Changing header name for particular form inside application phase from config and validating it at application form detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue  | filterId         |

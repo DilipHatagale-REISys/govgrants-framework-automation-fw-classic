@@ -53,6 +53,9 @@ public class SetUpConfiguration {
             case "APPROVAL PROCESS STEPS CACHE":
                 stringPayload = new ApprovalProcess().setApprovalProcessStepsCacheConfig(fieldLabel, value, filterClause);
                 break;
+            case "APPROVAL PROCESS STEP CACHE DETAIL":
+                stringPayload = new ApprovalProcess().setApprovalProcessStepsCacheConfig(fieldLabel, value, filterClause);
+                break;
             case "PROGRAM":
                 stringPayload = new Program().setProgramFieldConfig(fieldLabel, value, filterClause);
                 break;

@@ -97,4 +97,19 @@ public class SendEmail_Test8Steps {
     public void iClickOnButtonSendEmailModal(String button) {
         sendEmail_Test8Page.clickOnSelectFilesButton(button);
     }
+
+    @Then("I see checkbox for field \"([^\"]*)\" on modal is (not selected|selected)$")
+    public void iSeeCheckboxForFieldOnModalIsSelected(String checkbox, String status) {
+        sendEmail_Test8Page.asserCheckBoxFieldOnModalIsSelected(checkbox, status);
+    }
+
+    @Then("I see option {string} from field {string} is disabled")
+    public void iSeeOptionFromListIsDisabled(String option, String field) {
+        sendEmail_Test8Page.assertOptionFromListIsDisabled(option, field);
+    }
+
+    @And("I click on checkbox for field {string}")
+    public void iClickOnCheckboxForField(String checkbox) {
+        sendEmail_Test8Page.clickOnCheckBoxForField(checkbox);
+    }
 }

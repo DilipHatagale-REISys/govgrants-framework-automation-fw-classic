@@ -213,6 +213,13 @@ public class ApprovalProcess {
 									String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
 							String.valueOf(SObjectAPIs.GNT__NotifyAdditionalPeople__c), value);
 			break;
+			case "PROCESS DEFINITION NAME":
+				finalPayload = String
+						.format(payloadForIntValue, String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c),
+								apiUtilities.getComponentCoreFieldId(
+										String.valueOf(SObjectAPIs.GNT__ApprovalProcessStepCache__c), filterClause),
+								String.valueOf(SObjectAPIs.GNT__ProcessDefinitionName__c), value);
+				break;
 		}
 		System.out.println(finalPayload);
 		return finalPayload;
