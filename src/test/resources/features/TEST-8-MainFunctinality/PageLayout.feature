@@ -10998,7 +10998,7 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Grantor State Program | Name                      |                            |
+      | Page Layout Action    | Action Name | Edit              | Grantor State Program | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit                       |

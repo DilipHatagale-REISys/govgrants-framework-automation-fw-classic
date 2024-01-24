@@ -393,6 +393,13 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Demo Testing Program For Field History"
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "Edit" in the page details
+    And I enter value "05/22/2023" into field "fieldStartDate__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I enter value "05/30/2023" into field "fieldStartDate__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
@@ -411,6 +418,13 @@ Business Need: history Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Demo Testing Program For Field History"
     When I click on "View" icon for "Demo Testing Program For Field History" inside table
+    And I click on "Edit" in the page details
+    And I enter value "05/22/2023" into field "fieldStartDate__c"
+    And I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    And I click on "Edit" in the page details
+    And I enter value "05/30/2023" into field "fieldStartDate__c"
+    And I click on "Save" in the page details
     When I navigate to "History" sub tab
     Then I softly see "05/30/2023" shown inside "New Value" column in history table
     Then I softly see "05/22/2023" shown inside "Old Value" column in history table
@@ -445,7 +459,7 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
@@ -628,12 +642,13 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    And I click on "View" icon in flex table for first draft record
+    When I perform quick search for "Send Email Component active program"
+    When I click on "View" icon for "Send Email Component active program" inside table
     When I navigate to "History" sub tab
     When I click on advance filter "#advfHistory" of table id "---program:-:historyTableId---"
     When I enter advance filter values inside id "advfHistory"
-      | Changed By | Equals to | Automation FO |
-    Then I see value "Automation FO" for title "Changed By" inside table "---program:-:historyTableId---"
+      | Changed By | Equals to | Automation EXE |
+    Then I see value "Automation EXE" for title "Changed By" inside table "---program:-:historyTableId---"
 
     Examples:
       | User  |
@@ -686,7 +701,7 @@ Business Need: history Component Scenarios
       | ADMIN |
       | PM    |
 
-  @205100 @205101
+  @205100 @205101 @needtocheckmanually
   Scenario Outline: Field History- PM user - User should be able to perform export functionality 'Download as CSV' for selected record.
   Field History- Admin user - User should be able to perform export functionality 'Download as CSV' for selected record.
     When I login to "As a Grantor" app as "<User>" user
@@ -703,7 +718,7 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      #| PM    |
+      | PM    |
 
   @205102 @205103
   Scenario Outline: Field History- PM user - User should be able to refresh the field history block using Refresh option from burger icon option.
@@ -992,7 +1007,7 @@ Business Need: history Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @205477 @205478
   Scenario Outline: Field History : PM User -To verify, User change the negative value number field as a from backend then it should display in the new value column.

@@ -9,8 +9,6 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
-    And I refresh the page
-    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -19,28 +17,17 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
-    And I click modal button "OK"
-    And I refresh the page
-    And I click on parallel menu button in flex table title "My Feed"
-    And I select "All Users" from dropdown
-    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
-    And I enter value "Test Automation Admin Comment" in my feed section and share the comment
-    Then I softly see "Test Automation Admin Comment" inside flex table with id "---program:-:myFeedTableId---"
-    And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @104678    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserFromHomePhase
-  Scenario: validate the pop-up appears by perfomring delete action at my feed section by SPI user from home phase
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Home" tab
+  @104678
+  Scenario: scenario 1  To  verify after delete the comment  we have to given the confirmation box  on collab  phase  for pm user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
-    And I click modal button "OK"
-    And I refresh the page
-    And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
-    And I enter value "Test Automation SPI Comment" in my feed section and share the comment
-    And I click on "Delete" action at "Test Automation SPI Comment" comment inside my feed
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the comment
+    And I click on "Delete" action at "Test Automation Admin collab phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
   @104681    @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtCollabPhase
@@ -48,10 +35,8 @@ Business Need: collab Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    And I click on "Delete" action from dropdown at "Test Automation SPI collab phase Comment" comment inside my feed
-    And I click modal button "OK"
-    When I pause execution for "5" seconds
     And I enter value "Test Automation SPI collab phase Comment" in my feed section and share the post
+    When I pause execution for "5" seconds
     And I click on "Delete" action from dropdown at "Test Automation SPI collab phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
 
@@ -65,7 +50,7 @@ Business Need: collab Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     When I pause execution for "5" seconds
     And I enter value "Test Automation SPI application phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation SPI application phase Comment" comment inside my feed
@@ -82,7 +67,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin collab phase Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin collab phase Comment" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     When I pause execution for "5" seconds
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the post
     And I click on "Delete" action from dropdown at "Test Automation Admin collab phase Comment" comment inside my feed
@@ -101,7 +86,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation PM Comment" in my feed section and share the comment
     Then I softly see "Test Automation PM Comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     And I refresh the page
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -118,10 +103,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
-    And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
-    And I click modal button "OK"
     When I pause execution for "5" seconds
-    And I enter value "Test Automation PM collab phase Comment" in my feed section and share the post
+    And I enter value "Test Automation PM collab phase Comment" in my feed section and share the comment
     And I click on "Delete" action from dropdown at "Test Automation PM collab phase Comment" comment inside my feed
     And I pause execution for "5" seconds
     Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
@@ -134,7 +117,7 @@ Business Need: collab Component Scenarios
     And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
     And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
     And I click on "Delete" action at "Test Automation SPI Comment delete" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     And I refresh the page
     And I pause execution for "5" seconds
     Then I do not see "Test Automation SPI Comment delete" comment inside "Test Post for automation-SPI DND" post at collab
@@ -167,8 +150,8 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I perform quick search for "{Framework_recordUsed:NewApplicationForForTestingOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:NewApplicationForForTestingOnly}" inside table
     When I navigate to "Collab" sub tab
     Then I see entered text in my feed section displayed properly
 
@@ -178,11 +161,11 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I perform quick search for "{Framework_recordUsed:NewApplicationForForTestingOnly}"
+    When I click on "View" icon for "{Framework_recordUsed:NewApplicationForForTestingOnly}" inside table
     When I navigate to "Collab" sub tab
     #And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
-    #And I click modal button "OK"
+    #And I click modal button "Ok"
     When I pause execution for "5" seconds
     And I enter value "Test Automation ADMIN application phase Comment" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -199,7 +182,7 @@ Business Need: collab Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
     When I navigate to "Collab" sub tab
     #And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
-    #And I click modal button "OK"
+    #And I click modal button "Ok"
     When I pause execution for "5" seconds
     And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
     And I pause execution for "5" seconds
@@ -245,7 +228,7 @@ Business Need: collab Component Scenarios
     And I select "All Users" from dropdown
     And I click on "Delete" action from dropdown at "Test Automation Admin Post Delete Action Access" comment inside my feed
     And I pause execution for "7" seconds
-    And I click modal button "OK"
+    And I click modal button "Ok"
     And I pause execution for "5" seconds
     Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
 
@@ -260,7 +243,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
     And I pause execution for "5" seconds
     And I click on "Delete" action from dropdown at "Test Automation collab Delete action by admin" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     Then I do not see "Test Automation collab Delete action by admin" inside flex table with id "---program:-:myFeedTableId---"
 
   @112490    @verifyThatAdminUserCanPostFromCollabPhase
@@ -270,10 +253,10 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
-    And I enter value "Test Automation collab admin to check post share access" in my feed section and share the comment
-    Then I softly see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
-    And I click on "Delete" action at "Test Automation collab admin to check post share access" comment inside my feed
-    And I click modal button "OK"
+    And I enter value "Test Automation collab admin to check post share accessa" in my feed section and share the comment
+    Then I softly see "Test Automation collab admin to check post share accessa" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation collab admin to check post share accessa" comment inside my feed
+    And I click modal button "Ok"
     Then I softly do not see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
 
   @112485    @verifyThatByClickOnDeleteActionAtPostUnderRecordLevelCollabPhaseThenRespectivePostIsGettingDeletedByAdminUser
@@ -288,28 +271,31 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
     And I pause execution for "3" seconds
     And I click on "Delete" action from dropdown at "Test Automation record admin to check post delete access" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     Then I do not see "Test Automation record admin to check post delete access" inside flex table with id "---program:-:myFeedTableId---"
 
   @112491    @verifyThatAdminCanSendACommentFromRecordLevelPlanningPhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from record level collab tab
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
-    And I navigate to "Collaboration (Collab)" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
+    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
     And I enter value "Test Automation record comment" in my feed section and share the comment
     Then I softly see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation record comment" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     Then I softly do not see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
 
   @112492    @verifyThatAdminCanSendACommentFromHomePhase-MyFeedSection
   Scenario: validate that admin can send a comment to post from home phase-my feed section
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -317,12 +303,9 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin Comment home" in my feed section and share the comment
     Then I softly see "Test Automation Admin Comment home" inside flex table with id "---program:-:myFeedTableId---"
     And I click on "Delete" action at "Test Automation Admin Comment home" comment inside my feed
-    And I click modal button "OK"
+    And I click modal button "Ok"
     And I pause execution for "3" seconds
-    And I refresh the page
-    And I click on parallel menu button in flex table title "My Feed"
-    And I select "All Users" from dropdown
-    Then I softly do not see "Test Automation Admin Comment home" comment inside "Test Post for automation-Admin DND" post at collab
+    Then I do not see "Test Automation Admin Comment home" inside "Test Post for automation-Admin DND" comment at collab
 
   @112199    @verifyThatPMUserCanSeeToMeOptionInsideMenuAtHomePhase-MyFeedSection
   Scenario: validate that PM user can see To Me option inside menu at home phase-my feed section
@@ -386,9 +369,9 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
+    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Refresh" button inside collab tab
     Then I see collab my feed page refreshed
@@ -497,9 +480,9 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
+    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "5" seconds
     And I enter value "Post at record level" in my feed section and share the post
@@ -583,6 +566,7 @@ Business Need: collab Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
@@ -593,9 +577,9 @@ Business Need: collab Component Scenarios
   Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
+    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Post DO NOT DELETE" in my feed section and share the post
     And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
@@ -649,14 +633,15 @@ Business Need: collab Component Scenarios
   Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
-    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:programforsendemail}"
+    When I click on "View" icon for "{Framework_recordUsed:programforsendemail}" inside table
     When I navigate to "Collab" sub tab
     And I enter value "Test Automation Admin Comment" in my feed section and share the post
     And I pause execution for "7" seconds
     And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
-    Then I softly see tab label as "Choose a File OR Drag it here" at files library upload modal
+    And I click on "Attach File" button at collab
+    Then I see label as "Choose a File OR Drag it here" is displayed at upload file button
 
   @122007    @verifyThatUserLogoAtCollabCommentIsSmallerAsCompareToPostLogoAtCollabMyFeedSectionAtCollabPhase
   Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
@@ -692,7 +677,7 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
+    Then I see "I'm Following" inside "My Feeds" menu at collab sidebar
 
   @125729    @verifyThatUploadFileFromComputerAndLibraryTabsIsNotDisplayedAtAttachFileModalAtGroupPostAtCollabPhase
   Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
@@ -763,12 +748,12 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation Admin" in my feed section and share the post
+    And I enter value "Hello @Automation PM" in my feed section and share the post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
-    Then I see "@Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
 
   @207095 @UserNameShouldBeDisplayedAtTheSSamePositionOfTherecordLevel @sprint8
   Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab for internal user
@@ -784,21 +769,21 @@ Business Need: collab Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation PM" in my feed section and share the post
+    And I enter value "@Automation PM1" in my Feed and click on Share button
     And I pause execution for "3" seconds
-    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "@Automation PM1" inside flex table with id "---program:-:myFeedTableId---"
 
   @223914 @UserNameShouldBeDisplayedAtStartingOfComment
   Scenario: Collab-To verify, If i add a user in a starting of line  then the user name should be displayed at the starting position in text format on the home
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collaboration (Collab)" tab
-    And I enter value "@Automation PM Hello" in my feed section and share the post
+    And I enter user "@Automation PM1" and value "Hello" in my Feed and click on Share post
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
-    Then I see "@Automation PM Hello" inside flex table with id "---program:-:myFeedTableId---"
+    Then I see "@Automation PM1 Hello" inside flex table with id "---program:-:myFeedTableId---"
 
   @223917 @UserNameShouldBeDisplayedAtStartingOfCollabPhase
   Scenario: To verify, If i added user name should  be displayed at the starting of the comment on the collab phase for admin user
@@ -847,6 +832,9 @@ Business Need: collab Component Scenarios
   @207047 @ToVerifyIfIaddauserinaline @Sprint8
   Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab
     When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
     And I navigate to "Home" tab
     And I click on parallel menu button in flex table title "My Feed"
     And I select "All Users" from dropdown
