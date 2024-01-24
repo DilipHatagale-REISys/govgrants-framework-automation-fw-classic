@@ -6,8 +6,8 @@ Business Need: Library Files Component Scenarios
   @70260 @validateThatAccessGivenLibraryShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I see library/folder/file "Department of Community Health" is displayed under files library
@@ -15,8 +15,8 @@ Business Need: Library Files Component Scenarios
   @70261 @validateThatAccessGivenFolderShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given folder is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -25,8 +25,8 @@ Business Need: Library Files Component Scenarios
   @70262 @validateThatAccessGivenFileShouldDisplayOnUIForViewerProfileHomePhase
   Scenario: Verify that govgrant Viewer access given file is displayed under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -36,8 +36,8 @@ Business Need: Library Files Component Scenarios
   @70263 @validateThatDownloadDropdownOptionIsDisplayedAtFileForViewerProfileHomePhase
   Scenario: Verify that Dropdown Option as Download is Displayed at File under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -49,7 +49,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Viewer profile
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I see library/folder/file "Secretary of Health" is displayed under files library
@@ -58,7 +58,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that By click on library expand icon, multiple folders Should get displayed under home phase library by author
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -69,7 +69,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library by author
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -88,7 +88,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by author
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -110,17 +110,17 @@ Business Need: Library Files Component Scenarios
 
   @70305 @validateThatAccessGivenLibraryShouldDisplayOnUIForAdminProfileHomePhase
   Scenario: Verify that govgrant Viewer access given library is displayed under home phase library for Admin profile
-    When I login as "Automation" user
-    And I navigate to "HOME" tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I see library/folder/file "Department of Community Health" is displayed under files library
 
   @70307 @validateThatByClickOnAddNewFolderAFolderShouldGetAddedInLibraryByAdmin-HomePhase @reqChangeInMsg
   Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library by author
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -137,8 +137,8 @@ Business Need: Library Files Component Scenarios
 
   @70337 @validateThatByClickOnCancelButtonAModalWindowGetsClosed-HomePhase
   Scenario: Verify that Add new Folder Modal should get Closed when click on cancel button - Home phase
-    When I login as "Automation" user
-    And I navigate to "HOME" tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -149,8 +149,8 @@ Business Need: Library Files Component Scenarios
 
   @70306 @validateThatAdminCanSeeAllActionsAtLibrary-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
-    When I login as "Automation" user
-    And I navigate to "HOME" tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -160,8 +160,8 @@ Business Need: Library Files Component Scenarios
 
   @70546 @validateThatAdminCanSeeAllActionsAtFolder-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file, Delete folder, Rename Folder actions at Folder- Home phase
-    When I login as "Automation" user
-    And I navigate to "HOME" tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -174,8 +174,8 @@ Business Need: Library Files Component Scenarios
 
   @70547 @validateThatAdminCanSeeAllActionsAtFile-HomePhase
   Scenario: Verify that admin can see download, Edit, Delete actions at File - Home phase
-    When I login as "Automation" user
-    And I navigate to "HOME" tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -188,7 +188,7 @@ Business Need: Library Files Component Scenarios
   @70284 @validateThatAuthorCanSeeAllActionsAtLibrary-HomePhase
   Scenario: Verify that admin can see add new folder,upload file, download file actions- Home phase
     When I login as "Automation-EXE" user
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -198,9 +198,9 @@ Business Need: Library Files Component Scenarios
 
   @70354 @validateThatIfAttachmentNotUploadedThenUploadButtonIsDisabled-HomePhase
   Scenario: Verify that Upload button is disabled when user click on upload button without uploading Attachment - home phase library
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -209,9 +209,9 @@ Business Need: Library Files Component Scenarios
 
   @70358 @validateThatAddNewFolderOptionIsPresentAtExistingFolderDropDownMenuByAdmin-HomePhase
   Scenario: Verify that Add New Folder option is present at existing folder drop-down menu under home phase library - by admin
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -220,9 +220,9 @@ Business Need: Library Files Component Scenarios
 
   @70359 @validateThatByClickOnAddNewFolderAFolderShouldGetAddedInExistingFolderByAdmin-HomePhase @reqChangeInMsg
   Scenario: Verify that By click on Add New Folder, a folder should get added under home phase library - by admin
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -241,7 +241,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that the Delete folder option is available at library dropdown under home phase by author
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Secretary of Health"
@@ -258,9 +258,9 @@ Business Need: Library Files Component Scenarios
 
   @70361 @validateThatIfMultipleFoldersArePresentInFolderThenOnDeleteAnAlertMsgIsDisplayedInLibrary-HomePhase
   Scenario: Verify that if multiple folders are present in folder then on delete operation an alert message is displayed - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -273,7 +273,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that folder present under library can be deleted by author - Home phase
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Secretary of Health"
@@ -288,9 +288,9 @@ Business Need: Library Files Component Scenarios
 
   @70363 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtRenameFolderOperation-HomePhase
   Scenario: Verify that required fields validation msg appears below folder name field under Rename folder modal - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -303,9 +303,9 @@ Business Need: Library Files Component Scenarios
 
   @70364 @validateThatFolderNameIsNotGettingRenamedByClickOnCloseIconAtRenameFolderOperation-HomePhase
   Scenario: Verify that that the cross button works in rename folder modal - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -316,9 +316,9 @@ Business Need: Library Files Component Scenarios
 
   @70365 @validateThatAfterClickOnCancelButtonAtEditFolderModalTheFolderNameIsNotRenamed-HomePhase
   Scenario: Verify that by click on cancel button at edit folder modal , existing folder name is not changed - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -330,9 +330,9 @@ Business Need: Library Files Component Scenarios
 
   @70433 @validateThatFolderWithSameNameIsNotGettingCreatedUnderSameLibrary-AtHomePhase
   Scenario: Verify that if user create folder with name same as existing then an alert message is displayed - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -344,9 +344,9 @@ Business Need: Library Files Component Scenarios
 
   @70434 @validateDeletionOfFolderHavingFilesInItWithAdminUser-HomePhase
   Scenario: Verify that if folder is having files then user can't delete the folder - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -359,7 +359,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that an author can upload file in folder under home phase library
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -376,9 +376,9 @@ Business Need: Library Files Component Scenarios
 
   @70338 @validateThatAlertMessageIsDisplayedByClickOnSaveButtonIfFolderNameIsEmptyAtAddNewFolderOperation-HomePhase
   Scenario: Verify that required fields validation msg appears below folder name field under Add New folder modal - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -390,9 +390,9 @@ Business Need: Library Files Component Scenarios
 
   @70355 @validateThatLibraryNameIsDisplayedByDefaultInUploadFilePDFModalWindow-HomePhase
   Scenario: Verify that Library name is displayed by default in upload file PDF modal window - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -401,9 +401,9 @@ Business Need: Library Files Component Scenarios
 
   @71055 @validateThatFolderNameIsDisplayedByDefaultInUploadFilePDFModalWindow-HomePhase
   Scenario: Verify that folder name is displayed by default in upload file PDF modal window - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -415,7 +415,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that By click on edit file, a file name should get updated and shown under library - by author
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -438,9 +438,9 @@ Business Need: Library Files Component Scenarios
 
   @70410 @validateThatUserCanUploadFileFromFileList-HomePhase-FileList @NeedDeleteAPI
   Scenario: Verify that user can upload file from HomePhase - FileList table
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -462,9 +462,9 @@ Business Need: Library Files Component Scenarios
 
   @70411 @validateThatFileUploadedFromFileListIsDisplayedUnderRespectiveLibraryAtFilesLibraryTab-HomePhase-FileList
   Scenario: Verify thatfile uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -486,9 +486,9 @@ Business Need: Library Files Component Scenarios
 
   @70435 @validateThatByClickOnRenameFolderAnUpdatedFolderShouldGetShownInLibraryByAdmin-HomePhase
   Scenario: Verify that By click on Rename, an updated folder name should get displayed under home phase library by admin
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -510,9 +510,9 @@ Business Need: Library Files Component Scenarios
 
   @70436 @validateThatFolderCanBeDeletedFromLibraryByAdminIfItIsEmpty-HomePhase
   Scenario: Verify that folder present under library can be deleted by admin if it is empty - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -527,9 +527,9 @@ Business Need: Library Files Component Scenarios
 
   @70491 @validateThatIfFileIsAssociatedWithAnyRecordThenShouldNotBeDeleted-HomePhase
   Scenario: Verify that if file is associate with any record then user can't delete that file - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -541,9 +541,9 @@ Business Need: Library Files Component Scenarios
 
   @70495 @validateThatFileUploadedFromLibraryFilesIsDisplayedUnderFilesListTab-HomePhase-FileList @NeedDeleteAPI
   Scenario: Verify that file uploaded from LibraryFiles tab is displayed under files list tab - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -567,9 +567,9 @@ Business Need: Library Files Component Scenarios
 
   @70490 @validateThatUserCanUploadFileOfWithoutEnteringDescriptionInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file without entering description under upload file modal - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -586,9 +586,9 @@ Business Need: Library Files Component Scenarios
 
   @70493 @validateThatUserCanUploadFileOfTypeDocxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Doc.x under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -608,7 +608,7 @@ Business Need: Library Files Component Scenarios
 
   @70499 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseFilesListTab-RecordLevel @NeedDeleteAPI
   Scenario: Verify that file added from record level is displayed under home phase files list tab - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -625,7 +625,7 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "MultipleFileUploadCollabDND.png" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see value "MultipleFileUploadCollabDND.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "SendEmailAttachment.pdf" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -644,9 +644,9 @@ Business Need: Library Files Component Scenarios
 
   @70534 @validateThatUserCanUploadFileOfTypeXlsxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type Xlsx under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -667,9 +667,9 @@ Business Need: Library Files Component Scenarios
 
   @70535 @validateThatUserCanUploadFileOfTypeZipInLibrarAndFolder-HomePhase @reportedBug
   Scenario: Verify that user can upload file of type Zip under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -685,9 +685,9 @@ Business Need: Library Files Component Scenarios
 
   @70536 @validateThatUserCanUploadFileOfTypeTxtInLibrarAndFolder-HomePhase @reportedBug
   Scenario: Verify that user can upload file of type .txt under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -709,9 +709,9 @@ Business Need: Library Files Component Scenarios
 
   @70537 @validateThatUserCanUploadFileOfTypePDFInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pdf under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -729,9 +729,9 @@ Business Need: Library Files Component Scenarios
 
   @70538 @validateThatUserCanUploadFileOfTypePptxInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type pptx under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -751,9 +751,9 @@ Business Need: Library Files Component Scenarios
 
   @70539 @validateThatUserCanUploadFileOfTypeJPGInLibrarAndFolder-HomePhase
   Scenario: Verify that user can upload file of type jpg under library and folder - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -775,9 +775,9 @@ Business Need: Library Files Component Scenarios
 
   @70497 @validateByClickOnCloseIconAtEditFileModalOperationAModalIsGettingClosed-HomePhase
   Scenario: Verify that a modal is getting closed by lick on cross button under edit file modal - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "AdminCreatedFile.txt" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -788,9 +788,9 @@ Business Need: Library Files Component Scenarios
 
   @70498 @validateByClickOnCloseIconAtEditFileModalOperationAModalIsGettingClosed-HomePhase
   Scenario: Verify that a modal is getting closed by lick on cross button under edit file modal - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "AdminCreatedFile.txt" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -800,7 +800,7 @@ Business Need: Library Files Component Scenarios
 
   @70730 @validateThatUserCanDeleteFileFromPlanningFilesTableAtAttachmentTab-RecordLevel
   Scenario: Verify that user can delete file from planning Files table at attachment tab - Record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -824,7 +824,7 @@ Business Need: Library Files Component Scenarios
 
   @70731 @validateThatDescriptionAddedAtFileUploadModalIsDisplayedUnderPlanningFilesTableAtAttachmentTab-RecordLevel @NeedDeleteAPI
   Scenario: Verify that description added at upload file modal is shown under planning files table - Record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -849,9 +849,9 @@ Business Need: Library Files Component Scenarios
 
   @70356 @validateThatDescriptionFieldShouldAcceptMax255CharactersAtUploadFileModal-HomePhase @NeedDeleteAPI
   Scenario Outline: Verify that description field should accept 255 characters at upload file modal - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -876,9 +876,9 @@ Business Need: Library Files Component Scenarios
 
   @70488 @validateThatQuickSearchResultIsDisplayedAndHighlightedInYellowColor-HomePhase
   Scenario: Verify that quick search result is displayed and highlighted in yellow color under library files - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I refresh the page
     And I pause execution for "5" seconds
     When I click on "My_Workspace_File"
@@ -891,9 +891,9 @@ Business Need: Library Files Component Scenarios
 
   @71528 @validateThatQuickSearchResultCountIsDisplayed-HomePhase
   Scenario: Verify that quick search result count is displayed under library files - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I perform quick search for "ProgramRecordDoNotDelete.png" under files
@@ -901,7 +901,7 @@ Business Need: Library Files Component Scenarios
 
   @70732 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderPlanningFilesTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under planning files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -927,7 +927,7 @@ Business Need: Library Files Component Scenarios
 
   @70733 @validateThatFileExtensionOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that file extension of uploaded is displayed under planning files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -952,7 +952,7 @@ Business Need: Library Files Component Scenarios
 
   @70734 @validateThatFileNameOfUploadedFileIsDisplayedUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -977,7 +977,7 @@ Business Need: Library Files Component Scenarios
 
   @70735 @validateThatFileUploadedAtAnyRecordIsVisibleOnlyAtThatRecordAndNotAtOtherRecords-RecordLevel @NeedDeleteAPI
   Scenario: Verify that file name of uploaded is displayed under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1015,7 +1015,7 @@ Business Need: Library Files Component Scenarios
 
   @71583 @validateThatSelectedClassificationAtUploadModalIsDisplayedUnderFilesListTable-RecordLevel @NeedDeleteAPI
   Scenario: Verify that selected classification at upload modal is displayed under files list table at Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1031,7 +1031,7 @@ Business Need: Library Files Component Scenarios
     When I select Classification as "Medical Reports" at upload file modal
     When I click on "Upload" button in send email modal
     When I pause execution for "5" seconds
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:workSpaceFilesFlexTableId---" panel
@@ -1050,7 +1050,7 @@ Business Need: Library Files Component Scenarios
 
   @70737 @validateThatUserCanUploadDocxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .docx type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1075,7 +1075,7 @@ Business Need: Library Files Component Scenarios
 
   @70738 @validateThatUserCanUploadPDFTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .Pdf type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1101,8 +1101,8 @@ Business Need: Library Files Component Scenarios
   @70437 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForViewerProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Viewer profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -1114,7 +1114,7 @@ Business Need: Library Files Component Scenarios
   @70484 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForAuthorProfileHomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at File under home phase library for Author profile
     When I login as "Automation-EXE" user
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Secretary of Health"
@@ -1125,9 +1125,9 @@ Business Need: Library Files Component Scenarios
 
   @70486 @validateThatByClickOnRefreshButtonQuickSearchResultIsGettingRefreshed-HomePhase
   Scenario: Verify that by click on Refresh button quick search result disappears - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I perform quick search for "Test" under files library
@@ -1137,7 +1137,7 @@ Business Need: Library Files Component Scenarios
 
   @70736 @validateThatUserCanUploadXLSTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .xls type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1162,7 +1162,7 @@ Business Need: Library Files Component Scenarios
 
   @70739 @validateThatUserCanUploadjpgTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .jpg type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1187,7 +1187,7 @@ Business Need: Library Files Component Scenarios
 
   @70740 @validateThatUserCanUploadPngTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .png type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1212,7 +1212,7 @@ Business Need: Library Files Component Scenarios
 
   @70743 @validateThatRecordNameSearchedUsingQuickSearchShouldGetDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by entering text in quick search box, respective record is displayed under upload file modal - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1226,7 +1226,7 @@ Business Need: Library Files Component Scenarios
 
   @70744 @validateThatByClickOnLastArrowALastPageIsDisplayedUnderUploadFileModal-RecordLevel @needToUpdate
   Scenario: Verify that by click on Last navigation arrow , last page is displayed under upload file modal - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1242,7 +1242,7 @@ Business Need: Library Files Component Scenarios
 
   @70745 @validateThatByClickOnFirstArrowAFirstPageIsDisplayedUnderUploadFileModal-RecordLevel
   Scenario: Verify that by click on first navigation arrow , a first page is displayed under upload file modal - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1259,7 +1259,7 @@ Business Need: Library Files Component Scenarios
 
   @70746 @validateThatByClickOnPagesDropdownAndBySelecting2ndPageThenRecordsFrom2ndPageAreDisplayed-RecordLevel
   Scenario: Verify that by click on pages dropdown and selecting 2nd page then 2nd page record is displayed under upload file modal - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1273,7 +1273,7 @@ Business Need: Library Files Component Scenarios
 
   @70741 @validateThatUserCanUploadXlsxTypeFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that user can upload .xlsx type of file under planning files table as it is - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1298,25 +1298,25 @@ Business Need: Library Files Component Scenarios
 
   @70629 @validateThatUserCanSearchFilesInGlobalSearchUnderAllTable-HomePhase
   Scenario: Verify that if file name is searched in global search-All tables then, it is displayed in files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "SendEmailAttachment.png"
     Then I see value "SendEmailAttachment.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @70630 @validateThatUserCanSearchFilesInGlobalSearchUnderFilesTable-HomePhase
   Scenario: Verify that if file name is searched in global search-Files table then, it is displayed in files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "SendEmailAttachment.pdf"
     Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @70748 @validateThatUserCanViewFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that by click on View action at file under planning files table , a view file modal is displayed- Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1345,7 +1345,7 @@ Business Need: Library Files Component Scenarios
 
   @70749 @validateThatUserCanEditFileUnderPlanningFilesTable-HomePhase @NeedDeleteAPI
   Scenario: Verify that by click on Edit action at file under planning files table , a view file modal is displayed- Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1373,16 +1373,16 @@ Business Need: Library Files Component Scenarios
 
   @70631 @validateThatIfUserSearchedInvalidDataInFilesInGlobalSearchUnderFilesTableThen-HomePhase
   Scenario: Verify that if file name is searched in global search-Files table then, it is displayed in files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "SendEmailAttachment.pdf"
     Then I see value "SendEmailAttachment.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
 
   @81170 @validateLabelOfUploadFileFromComputerTabUnderPlanningFilesTable-RecordLevel
   Scenario: Verify that by click on Add file action at planning files table, first tab label displayed correctly - Planing Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1394,7 +1394,7 @@ Business Need: Library Files Component Scenarios
 
   @81171 @validateLabelOfUploadFileFromLibraryTabUnderPlanningFilesTable-RecordLevel
   Scenario: Verify that by click on Add file action at planning files table, second tab label displayed correctly - Planing Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1406,7 +1406,7 @@ Business Need: Library Files Component Scenarios
 
   @81172 @validateClassificationNameUnderSelectDropDownAtPlanningFilesTable-HomePhase-RecordLevel
   Scenario: Verify name of classification under select classification field dropdown at add file modal - Planing Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1418,7 +1418,7 @@ Business Need: Library Files Component Scenarios
 
   @81173 @validateUploadFileButtonNameAtPlanningFilesTable-RecordLevel
   Scenario: Verify upload file button name at add file modal - Planing Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1430,9 +1430,9 @@ Business Need: Library Files Component Scenarios
 
   @81208 @validateUploadFileButtonNameAtPlanningFilesTable-HomePhase
   Scenario: Verify upload file button name at add file modal - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -1441,8 +1441,8 @@ Business Need: Library Files Component Scenarios
   @81243 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtLibraryForSPIProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at library under home phase for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -1451,8 +1451,8 @@ Business Need: Library Files Component Scenarios
   @81309 @validateThatSetAsDefaultFolderDropdownOptionIsNotDisplayedAtFolderForSPIProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is not Displayed at folder under home phase library for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1468,8 +1468,8 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I do not see Default keyword "UnitedHealth Group" at library/folder inside "fileLibrary"
@@ -1483,8 +1483,8 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1499,7 +1499,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label                       | booleanValue | customMetaDataApiName    |
       | m031C000000XZWkQAO | DisableUploadFromLibraryTab | true         | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -1510,18 +1510,18 @@ Business Need: Library Files Component Scenarios
 
   @81333 @validateThatDefaultKeyWordIsDisplayedAtLibraryForGovGrantAdminProfile-HomePhase
   Scenario: Verify that default keyword is Displayed at Library under home phase library for GovGrant Admin profile
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I see Default keyword "UnitedHealth Group" at library/folder inside "fileLibrary"
 
   @81344 @validateThatDefaultKeyWordIsDisplayedAtFolderForGovGrantAdminProfile-HomePhase
   Scenario: Verify that default keyword is Displayed at folder under home phase library for GovGrant Admin profile
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1529,9 +1529,9 @@ Business Need: Library Files Component Scenarios
 
   @81359 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtLibraryGovGrantAdminProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is Displayed at library under home phase for GovGrant Admin profile
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -1539,7 +1539,7 @@ Business Need: Library Files Component Scenarios
 
   @81336 @validateIfFolderIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-RecordLevel
   Scenario: Verify if default folder is set then that folder name is displayed under select/change folder field at add file modal - Planing Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1551,9 +1551,9 @@ Business Need: Library Files Component Scenarios
 
   @81337 @validateIfFolderIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtAddFileModalUnderPlanningFilesTable-PhaseLevel
   Scenario: Verify if default folder is set then that folder name is displayed under select/change folder field at add file modal - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -1568,7 +1568,7 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -1585,8 +1585,8 @@ Business Need: Library Files Component Scenarios
       | id                 | label            | booleanValue | customMetaDataApiName    |
       | m031C000000XZWpQAO | ExternalProfiles | false        | GNT__KeyValueHolder__mdt |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -1594,9 +1594,9 @@ Business Need: Library Files Component Scenarios
 
   @81569 @validateThatSetAsDefaultFolderDropdownOptionIsDisplayedAtFoldersGovGrantAdminProfile-HomePhase
   Scenario: Verify that Dropdown Option as Set As Default Folder is Displayed at folder under home phase for GovGrant Admin profile
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -1605,9 +1605,9 @@ Business Need: Library Files Component Scenarios
 
   @81592 @validateThatAuthorCannotEditFileUploadedByOtherUser-HomePhase @needToUpdate
   Scenario: Verify that author cannot see the edit option at file uploaded by other users
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
@@ -1618,7 +1618,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that author cannot see the Delete option at file uploaded by other users
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -1630,7 +1630,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that author cannot see the Delete Folder option at file uploaded by other users
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -1641,7 +1641,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that author cannot see the rename Folder option at file uploaded by other users
     When I login as "Automation-EXE" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Secretary of Health"
@@ -1650,9 +1650,9 @@ Business Need: Library Files Component Scenarios
 
   @81745 @validateThatDefaultKeyWordIsDisplayedAtLibraryUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-HomePhase
   Scenario: Verify that default keyword is Displayed at library at select or change folder modal for GovGrant Admin profile - -HomePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -1661,7 +1661,7 @@ Business Need: Library Files Component Scenarios
 
   @81675 @validateThatDefaultKeyWordIsDisplayedAtLibraryUnderSelectChangeFolderModalWindowForGovGrantAdminProfile-RecordLevel
   Scenario: Verify that default keyword is Displayed at library at select or change folder modal for GovGrant Admin profile -Record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1680,7 +1680,7 @@ Business Need: Library Files Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1695,7 +1695,7 @@ Business Need: Library Files Component Scenarios
 
   @81512 @validateThatIfBlankFileUploadedFromRecordThenAlertMessageIsGettingDisplayed-RecordLevel
   Scenario: Verify that if blank doc file added from record level then alert message is displayed - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1718,7 +1718,7 @@ Business Need: Library Files Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Is Active | false         | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1732,7 +1732,7 @@ Business Need: Library Files Component Scenarios
     When I Select/Change Folder as "Library - Folder 2 DND" in add file modal
     When I click on "Save" button in send email modal
     When I pause execution for "3" seconds
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1750,7 +1750,7 @@ Business Need: Library Files Component Scenarios
     When I Select/Change Folder as "Library-Folder 1 DND" in add file modal
     When I click on "Save" button in send email modal
     When I pause execution for "4" seconds
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1759,7 +1759,7 @@ Business Need: Library Files Component Scenarios
 
   @82664 @validateThatibraryViewIsAvailableAtRecordLevelForAdminUser-RecordLevel
   Scenario: Verify that library view is available at record level for admin user - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I pause execution for "10" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1779,7 +1779,7 @@ Business Need: Library Files Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue           | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Action URL Long | <actionUrlLongNewValue> | PlanningFiles      | Name                      | Add Files                  |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1797,16 +1797,16 @@ Business Need: Library Files Component Scenarios
 
   @83048 @validateThatAssertLibraryIsDisplayedAtAdminUser-HomePhase
   Scenario: Verify that assert library is displayed at home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     Then I see library/folder/file "Asset Library" is displayed under files library
 
   @83055 @validateThatAssertLibraryIsNotDisplayedAtAddFileModalUnderSelectChangeFolder-gPlanning
   Scenario: Verify that assert library is not displayed at add file modal under select/Change folder - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -1845,9 +1845,9 @@ Business Need: Library Files Component Scenarios
 
   @83164 @validateThatAddFolderOptionAtAssetLibraryIsNotDisplayedForAllUsers-HomePhase
   Scenario: Verify that Add new folder option not available on asset library for all users
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -1857,9 +1857,9 @@ Business Need: Library Files Component Scenarios
 
   @83180 @validateThatAdminUserCanDeleteTheFilesFromAssetLibrary-HomePhase @reportedBug
   Scenario: Verify that admin user can delete the files from  asset library
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
@@ -1886,7 +1886,7 @@ Business Need: Library Files Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -1904,7 +1904,7 @@ Business Need: Library Files Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Filter Criteria | parentId= '{!ProgramId}' | ApplicationFiles   |                           |                            |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
@@ -1922,9 +1922,9 @@ Business Need: Library Files Component Scenarios
 
   @83170 @validateThatFileCanBeDragAndDropFromOneLibraryToOtherLibrary-gHome @reportedBug
   Scenario: Verify that file can be drag and droped from one library to another lbrary
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1937,9 +1937,9 @@ Business Need: Library Files Component Scenarios
 
   @83086 @validateThatFileCanBeDragAndDropFromAssertLibraryToOther-gHome @reportedBug
   Scenario: Verify that file can be drag from assert library and droped into another library
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1955,9 +1955,9 @@ Business Need: Library Files Component Scenarios
 
   @70288 @validateThatFileCanBeDragAndDropFromoneFolderToOtherFolderAtSameLibrary-gHome
   Scenario: Verify that file can be drag from one folder and droped into another folder in same library
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1971,9 +1971,9 @@ Business Need: Library Files Component Scenarios
 
   @101473 @validateThatUserCanAddFileWithSameNameUnderFolder-HomePhase
   Scenario: Verify that admin user can add file with same name under folder
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -1995,9 +1995,9 @@ Business Need: Library Files Component Scenarios
 
   @101476 @validateThatMultipleFilesWithSameNameAreDisplayedUnderOneFolder-HomePhase
   Scenario: Verify that admin user can add file with same name multiple times under same folder
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2025,9 +2025,9 @@ Business Need: Library Files Component Scenarios
 
   @101098 @validateThatShowOptionsSectionIsDisplayedIfCustomMetadAtBooleanValueIsTrueToSystemAdminUser-HomePhase
   Scenario: Verify show options section is displayed to admin user if custom metadat boolean value is set to true
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2044,8 +2044,8 @@ Business Need: Library Files Component Scenarios
       | id                 | customMetaDataFullName | booleanValue | customSettingApiName |
       | m031C000000XZY7QAO | ShowSharingPrivacy     | false        | KeyValueHolder__mdt  |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2055,9 +2055,9 @@ Business Need: Library Files Component Scenarios
 
   @101488 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-HomePhase
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2069,7 +2069,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that Upload button is disabled when user has not selected sharing options - home phase library
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -2083,7 +2083,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that sharing option is selected as blank then alert message is displayed below field - home phase library
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -2095,9 +2095,9 @@ Business Need: Library Files Component Scenarios
 
   @101499 @validateThatShowOptionsSectionIsDisplayedAtEditFileModalIfCustomMetadataAtBooleanValueIsTrue-HomePhase
   Scenario: Verify show options section is displayed at edit file modal if custom metadat boolean value is set to true
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -2108,9 +2108,9 @@ Business Need: Library Files Component Scenarios
 
   @101500 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-HomePhase @wip @functionalityDeprecated
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- home phase library
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
@@ -2137,7 +2137,7 @@ Business Need: Library Files Component Scenarios
 
   @101550 @validateThatShowOptionsSectionIsDisplayedWithAsteriskMarkAtUploadFileModalWindow-RecordLevel
   Scenario: Verify that show options section is displayed wih asterisk mark at upload file modal window - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2164,7 +2164,7 @@ Business Need: Library Files Component Scenarios
 
   @101556 @validateThatDefaultSharingOptionIsDisplayUnderEditFileModal-RecordLevel
   Scenario: Verify that default sharing option is displayed at edit file modal- record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2177,7 +2177,7 @@ Business Need: Library Files Component Scenarios
 
   @101557 @validateThatIfSharingOptionIsChangedFromEditFileModalThenItShouldDisplayAtRespectiveFileUnderEditFileModal-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that if sharing option is changed at any file then updated option is displayed at edit file modal- record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2194,7 +2194,7 @@ Business Need: Library Files Component Scenarios
 
   @101486 @validateThatUserCanUploadDuplicateFileWithSameNameFromRecord-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that use can upload same file which is already present inside record - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2237,7 +2237,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify show options section is displayed to pm user if custom metadat boolean value is set to true- home phase
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2247,9 +2247,9 @@ Business Need: Library Files Component Scenarios
 
   @101474 @validateThatUserCanAddFileWithSameNameUnderFolderIfSharingOptionIsEnabled-HomePhase @needToUpdate @wip
   Scenario: Verify that admin user can add file with same name under folder if sharing option is enabled - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -2281,7 +2281,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
       | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2307,7 +2307,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
       | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2336,7 +2336,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
       | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2362,7 +2362,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName       | fieldNewValue           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action            | Action URL Long | <actionUrlLongNewValue> | PlanningFiles         | Name                      | Add Files                  |
       | Page Block:Page Block Detail | Is Active       | false                   | Grantee State Program | GNT__PageBlockTitle__c    | Library View               |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2380,9 +2380,9 @@ Business Need: Library Files Component Scenarios
 
   @101477 @validateThanMultipleFilesWithSameNameCanBeUploadedIntoLibrary-HomePhase
   Scenario: Verify that multiple files with same name can be uploaded in one library - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I pause execution for "7" seconds
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
@@ -2405,7 +2405,7 @@ Business Need: Library Files Component Scenarios
 
   @101484 @validateThatMultipleFilesWithSameNameCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @functionalityDeprecated
   Scenario: Verify that multiple files with same name can be uploaded from upload file from library tab-  record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -2424,9 +2424,9 @@ Business Need: Library Files Component Scenarios
 
   @106620 @validateThatIfInvalidFileIsSearchedInGlobalSearchUnderFilesTableThenNoRecordFoundDisplayed-HomePhase
   Scenario: Verify that if invalid file name is searched in global search-Files table then, no record found is displayed in files table - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "teestDummyDataSearch"
     And I expand table with header "Planning Files"
@@ -2436,7 +2436,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that if invalid file name is searched in global search-Files table then, no record found is displayed in files table by login as PM user
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "teestDummyDataSearch"
     And I expand table with header "Planning Files"
@@ -2446,7 +2446,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that if record level file name is searched in global search-Files table then, it is displayed in files table by PM user
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "ProgramRecordDoNotDelete.png"
     Then I see value "ProgramRecordDoNotDelete.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
@@ -2455,7 +2455,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that if file name is searched in global search-All table then, it is displayed in files table by PM user
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "All"
     When I perform quick search inside global search "ProgramRecordDoNotDelete.png"
     Then I see value "ProgramRecordDoNotDelete.png" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
@@ -2464,7 +2464,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that if phase level file name is searched in global search-Files table then, it is displayed in files table by PM user
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on global search and select "Files"
     When I perform quick search inside global search "AssetLibraryTestData.pdf"
     Then I see value "AssetLibraryTestData.pdf" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
@@ -2483,9 +2483,9 @@ Business Need: Library Files Component Scenarios
 
   @116222 @validateThatByClickOnRefreshButtonPageIsGettingRefreshed-HomePhase
   Scenario: Verify that by click on Refresh button page is getting refreshed - Home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I perform quick search for "Test" under files library
@@ -2495,9 +2495,9 @@ Business Need: Library Files Component Scenarios
 
   @118593 @validateThatErrorMessageIsNotDisplayedInsideAddFileModal-HomePhase-FileList
   Scenario: Verify that file uploaded from FileList tab is displayed under selected folder/library at library files tab - Home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -2507,9 +2507,9 @@ Business Need: Library Files Component Scenarios
 
   @119851 @validateIfLibraryIsSetAsDefaultThenItsNameIsDisplayedAsPre-SelectedFolderAtUploadFileModalUnderPlanningFilesTableFromFiles_LibraryTab-PhaseLevel
   Scenario: Verify if default library is set then that folder name is displayed under select/change folder field at upload file modal from files_Library tab- home Phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -2519,7 +2519,7 @@ Business Need: Library Files Component Scenarios
   @118594 @validateThatErrorMessageIsNotDisplayedInsideSelectChangeFolderAtAddFileModal-ApplicationPhaseRecordLevel @wip @functionalityDeprecated
   Scenario: Verify that error message should not displayed at selectChange folder modal at file uploaded from record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3291,7 +3291,7 @@ Business Need: Library Files Component Scenarios
   @122494 @validateThatFileUploadedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file uploaded by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3340,7 +3340,7 @@ Business Need: Library Files Component Scenarios
   @122495 @validateThatFileEditedByExternalUserIsVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsVisibleToAnyoneWithRecordAccess
   Scenario: Verify that file edited by external user is visible to internal / Admin user if sharing option as "Visible to anyone With Record Access"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3490,7 +3490,7 @@ Business Need: Library Files Component Scenarios
   @122499 @validateThatFileUploadedByExternalUserIsNotVisibleToInternalAndAdminUserIfSharingOptionIsSelectedAsPrivateOnRecords @wip @functionalityDeprecated
   Scenario: Verify that file uploaded by external user is not visible to internal / Admin user if sharing option as "Private On Records"
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -3625,7 +3625,7 @@ Business Need: Library Files Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
@@ -3667,7 +3667,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "SharingAtCollabTest.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
@@ -3865,7 +3865,7 @@ Business Need: Library Files Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
@@ -3912,7 +3912,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTestUpdated1.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see value "SharingAtCollabTestUpdated1.png" for title "Title" inside table "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
@@ -3956,7 +3956,7 @@ Business Need: Library Files Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
@@ -3998,7 +3998,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
@@ -4042,7 +4042,7 @@ Business Need: Library Files Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Comment" action at "Test Post for sharing test DND" comment inside my feed
@@ -4084,7 +4084,7 @@ Business Need: Library Files Component Scenarios
     When I perform quick search for "SharingAtCollabTest.png" in "---program:-:ApplicationFilesFlexGridId---" panel
     Then I softly see "No Records Found" inside flex table with id "---program:-:ApplicationFilesFlexGridId---"
     When I re-login to "As a Grantor" app as "Automation-Admin" user on "default" portal
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I click on "Delete" action at "Home Phase sharing temporary comment" comment inside my feed
@@ -4104,7 +4104,7 @@ Business Need: Library Files Component Scenarios
 
   @130572 @validateThatIfSharingOptionIsNotSelectedThenUploadButtonIsDisabledAtRecordLevel @wip @functionalityDeprecated
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4121,7 +4121,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that Upload button is disabled when user has not selected sharing options at home phase for PM user
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Asset Library"
@@ -4227,7 +4227,7 @@ Business Need: Library Files Component Scenarios
 
   @129989 @validateMaximum5FilesCanBeUploadedMessageAtUploadFileMOodal-RecordLevel
   Scenario: Verify that maximum 5 files can be uploaded msg at upload file modal-  record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4240,10 +4240,10 @@ Business Need: Library Files Component Scenarios
 
   @129987 @validateThatMaximum5FilesCanBeUploadedIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @needToUpdate
   Scenario: Verify that maximum 5 files can be uploaded from upload file from library tab-  record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
  #129987 upload multiple file from home phase
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -4304,10 +4304,10 @@ Business Need: Library Files Component Scenarios
 
   @129988 @validateThatUserIsNotAbleToUploadMoreThan5FilesIntoLibraryFromUploadFileFromLibraryTab-RecordLevel @wip @needToUpdate
   Scenario: Verify that user is not able to upload more than 5 files from upload file from library tab-  record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
  #129988 upload multiple file from home phase
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -4375,7 +4375,7 @@ Business Need: Library Files Component Scenarios
   @136660 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtAddFileModalForSPIProfile-RecordLevel @needToUpdate
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4386,7 +4386,7 @@ Business Need: Library Files Component Scenarios
   @136661 @validateThatVisibleToInternalUsersWithRecordAccessIsNotDisplayedAtEditFileModalForSPIProfile-RecordLevel
   Scenario: Verify that 'visible to internal users with Record access' is not Displayed at edit file for SPI profile
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4401,7 +4401,7 @@ Business Need: Library Files Component Scenarios
 
   @148728 @validateCancelButtonWorkingAtEditFileModalAtRecordLevel
   Scenario: Verify modal gets closed by lick on cancel button under edit file modal at record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4424,7 +4424,7 @@ Business Need: Library Files Component Scenarios
 
   @148727 @validateCancelButtonWorkingAtAddFileModalAtRecordLevel
   Scenario: Verify modal gets closed by lick on cancel button under add file modal at record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4446,16 +4446,16 @@ Business Need: Library Files Component Scenarios
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
     When I login as "Automation-Admin" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     And I pause execution for "3" seconds
     When I click on "Menu" in the page details
     Then I see "To Me" option is displayed at collab menu
 
   @153235 @validateAdvanceFilterWorkingUsingContainsOperatorAtFilesListTable
   Scenario: Verify that advance filter is working using contains operator at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4466,9 +4466,9 @@ Business Need: Library Files Component Scenarios
 
   @153236 @validateAdvanceFilterWorkingUsingDoesNotContainsOperatorAtFilesListTable
   Scenario: Verify that advance filter is working using "does not contain" operator at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4479,9 +4479,9 @@ Business Need: Library Files Component Scenarios
 
   @153237 @validateAdvanceFilterWorkingUsingStartsWithOperatorAtFilesListTable
   Scenario: Verify that advance filter is working using "starts with" operator at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4493,9 +4493,9 @@ Business Need: Library Files Component Scenarios
 
   @153238 @validateAdvanceFilterWorkingUsingEndsWithOperatorAtFilesListTable
   Scenario: Verify that advance filter is working using "ends with" operator at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4507,9 +4507,9 @@ Business Need: Library Files Component Scenarios
 
   @155372 @validateAdvanceFilterWorkingUsingContainsOperatorForDescriptionFieldAtFilesListTable
   Scenario: Verify that advance filter is working using contains operator for description field at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4520,9 +4520,9 @@ Business Need: Library Files Component Scenarios
 
   @155373 @validateAdvanceFilterWorkingUsingContainsOperatorForFileTypeFieldAtFilesListTable
   Scenario: Verify that advance filter is working using contains operator for file type field at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4533,9 +4533,9 @@ Business Need: Library Files Component Scenarios
 
   @155374 @validateAdvanceFilterWorkingUsingContainsOperatorForExtensionFieldAtFilesListTable
   Scenario: Verify that advance filter is working using contains operator for Extension field at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4546,9 +4546,9 @@ Business Need: Library Files Component Scenarios
 
   @155375 @validateAdvanceFilterWorkingUsingContainsOperatorForClassificationFieldAtFilesListTable
   Scenario: Verify that advance filter is working using contains operator for Classification field at files list table - homePhase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on advance filter "#advfWorkSpaceFiles" of table id "---program:-:flexGridWorkSpaceFilesId---"
@@ -4559,9 +4559,9 @@ Business Need: Library Files Component Scenarios
 
   @155562 @validateThatShowOptionsSectionIsDisplayedForAdminUserWhileUploadingFileFromFilesListTab-HomePhase
   Scenario: Verify that show visibility options is displayed to admin user while uploading file from files list tab
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -4597,7 +4597,7 @@ Business Need: Library Files Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "Menu" in the page details
     And I select "All Users" from dropdown
     And I pause execution for "5" seconds
@@ -4614,7 +4614,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
@@ -4655,7 +4655,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
     When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
@@ -4694,7 +4694,7 @@ Business Need: Library Files Component Scenarios
   @155500 @validateThatShowOptionsSectionIsDisplayedAtFileUploadModalForExternalUserCollabTab-RecordLevel
   Scenario: Verify that show visibility options is displayed at add/upload file modal for EXTERNAL user at collab tab - Record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4706,8 +4706,8 @@ Business Need: Library Files Component Scenarios
   @155840 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromFilesLibraryTab-HomePhase
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from files library tab
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "UnitedHealth Group"
@@ -4718,7 +4718,7 @@ Business Need: Library Files Component Scenarios
   @148277 @validateThatShowOptionsSectionIsDisplayedForSPIUserWhileUploadingFileFromAttachmentTab-RecordLevel
   Scenario: Verify that show options select box is displayed to SPI user while uploading file from attachment tab - record level
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -4752,9 +4752,9 @@ Business Need: Library Files Component Scenarios
 
   @155568 @validateThatPrivateOnRecordSharingOptionIsNotDisplayedForAdminUserWhileUploadingFileFromFilesLibraryTab-HomePhase
   Scenario: Verify that private on record sharing option is not displayed to admin user while uploading file from files library tab
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -4763,9 +4763,9 @@ Business Need: Library Files Component Scenarios
 
   @149352 @validateThatPreviousAndNextNavigationButtonIsDisplayedAtFilesLibraryTab-HomePhase
   Scenario: Verify that Previous and Next navigation buttons are displayed at files library tab
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Asset Library"
@@ -4774,7 +4774,7 @@ Business Need: Library Files Component Scenarios
 
   @157354 @validateThatIfSharingOptionIsDisabledThenUploadButtonIsDisplayedAtRecordLevel
   Scenario: Verify that Upload button is displayed when visibility options is disabled for user at record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4866,7 +4866,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -4903,7 +4903,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
     And I pause execution for "3" seconds
@@ -4932,7 +4932,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
@@ -4955,7 +4955,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName                  | fieldNewValue                            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | Other; Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Collab                     |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5060,7 +5060,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5098,7 +5098,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
@@ -5131,7 +5131,7 @@ Business Need: Library Files Component Scenarios
     And I update custom global setting changes:
       | id                 | ownerId            | booleanValue               | customSettingApiName |
       | a0W1500000GOSXdEAP | 0051C000007caLkQAI | GNT__EnableChatter__c:true | GNT__GlobalConfig__c |
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Collab" tab
     And I enter value "Temp Post Automation" in my feed section and share the post
@@ -5229,7 +5229,7 @@ Business Need: Library Files Component Scenarios
 
   @157841 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationADMINUser
   Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by ADMIN user
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5243,7 +5243,7 @@ Business Need: Library Files Component Scenarios
   @157843 @validateDefaultVisibilityOptionIsSelectedAtUploadFileModalAtAttachmentTablByLoginAsAutomationSPIUser
   Scenario: Verify Upload default sharing option is selected at upload file modal - attachment tab by SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5254,7 +5254,7 @@ Business Need: Library Files Component Scenarios
 
   @157354 @validateAdminUserCanSeeUploadButtonActiveWithoutSharingOptionAndCanUploadFileFromRecord
   Scenario: Verify ADMIN user can upload file from record without selecting sharing option
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5287,7 +5287,7 @@ Business Need: Library Files Component Scenarios
       | configurationCategory        | fieldName                  | fieldNewValue                     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Attachment Classifications | Medical Reports; Clinical Budgets | ApplicationView    | GNT__PageBlockTitle__c    | Application Files          |
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5309,7 +5309,7 @@ Business Need: Library Files Component Scenarios
 
   @160557 @validateThatAdminUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that admin user can upload file from record level if visibility option is disabled and default option is selected
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5335,9 +5335,9 @@ Business Need: Library Files Component Scenarios
 
   @160586 @validateThatAdminUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @reportedBug
   Scenario: Verify that admin user can upload file from Home- files library if visibility option is disabled and default option is selected
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -5360,9 +5360,9 @@ Business Need: Library Files Component Scenarios
 
   @160587 @validateThatAdminUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that admin user can upload file from Home- files list if visibility option is disabled and default option is selected
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -5413,7 +5413,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that PM user can upload file from Home- files library if visibility option is disabled and default option is selected
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -5436,7 +5436,7 @@ Business Need: Library Files Component Scenarios
   Scenario: Verify that PM user can upload file from Home- files list if visibility option is disabled and default option is selected
     When I login as "Automation-PM" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -5460,7 +5460,7 @@ Business Need: Library Files Component Scenarios
   @160806 @validateThatSPIUserCanUploadFileFromRecordLevelIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from record level if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
+    When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I perform quick search for "Test Automation Application DND"
     When I click on "View" icon for "Test Automation Application DND" inside table
@@ -5483,8 +5483,8 @@ Business Need: Library Files Component Scenarios
   @160817 @validateThatSPIUserCanUploadFileFromHome-FilesLibraryIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from Home- files library if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -5506,8 +5506,8 @@ Business Need: Library Files Component Scenarios
   @160828 @validateThatSPIUserCanUploadFileFromHome-FilesListIfVisibilityOptionIsDisabledAndDefaultOptionIsSelected @NeedDeleteAPI
   Scenario: Verify that SPI user can upload file from Home- files list if visibility option is disabled and default option is selected
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_FileList"
     When I click on top right button "Add Files" in flex table with id "flexGridWorkSpaceFiles"
@@ -5579,8 +5579,8 @@ Business Need: Library Files Component Scenarios
   @157844 @validateThatUploadFileButtonIsActiveEvenIfVisibilityOptionIsDisabledForSPIUser
   Scenario: Verify that Upload button is active even if visibility option is disabled for SPI user
     Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "Automation-SPI" user
-    And I navigate to "HOME" tab
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "UnitedHealth Group"
@@ -5591,9 +5591,9 @@ Business Need: Library Files Component Scenarios
 
   @70432 @validateThatSpacesInFolderNameIsNotAcceptedWhileCreatingFolderUnderLibrary-AtHomePhase @libraryFiles
   Scenario: Verify that if user enter spaces in folder name then an alert message is displayed - home phase
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on dropdown at library/folder/file "Department of Community Health"
@@ -5605,7 +5605,7 @@ Business Need: Library Files Component Scenarios
 
   @70742 @validateThatFileUploadedFromRecordDetailIsDisplayedUnderHomePhaseLibraryFilesTabUnderRespectiveFolder-RecordLevel @NeedDeleteAPI @libraryFiles
   Scenario: Verify that file added from record level is displayed under respective folder under home phase library files tab - record level
-    When I login as "Automation" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Draft Programs"
@@ -5620,7 +5620,7 @@ Business Need: Library Files Component Scenarios
     When I pause execution for "5" seconds
     When I perform quick search for "TestAutomationFile.csv" in "---program:-:PlanningFilesFlexGridId---" panel
     Then I softly see value "TestAutomationFile.csv" for title "Title" inside table "---program:-:PlanningFilesFlexGridId---"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     When I click on "My_Workspace_File"
     When I click on "My_Workspace_Library"
     When I click on expand icon at library/folder "Department of Community Health"
