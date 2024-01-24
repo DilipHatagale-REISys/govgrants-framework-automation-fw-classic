@@ -1016,6 +1016,24 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
+  @382349
+  Scenario:Sanity TC-SPI-To verify that user can enter email Ids in ‘To’, ‘cc’ sections and also user will get suggestions while typing the emailds based on the existing emailIds in user’s email list.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+
   @382355 @382358 @382361 @382377 @Sanity
   Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
   Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
@@ -5932,7 +5950,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @183895 @sprint23
+  @1838951 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

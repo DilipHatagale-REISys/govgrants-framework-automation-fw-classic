@@ -1,5 +1,5 @@
 @smoke
-Business Need: lwc smoke testing features
+Business Need: smoke testing features
 
   @382657 @382660 @382663 @382666 @382669 @382672 @382675 @382712 @smoke
   Scenario: Smoke TC_Admin_To verify that user is able to see sidebar Global search on left side of page, on "Home" phase,
