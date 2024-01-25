@@ -1664,10 +1664,15 @@ Business Need: security review Scenarios
   @110500  @VerifyDirectGrantCreationAndSubAwardActivation @flow
   Scenario: Verify grant creation and grant, sub-award activation
     Given I delete the record "Automation Direct Grant" from the object "Grant__c" with field "ProjectTitle__c"
+    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
+    And I execute batch file:
+      | programName | announcementName | objectType | projectTitle               | status |
+      | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Grants" tab
     And I click on top right button "New" in flex table with id "---program:-:activeGrantsTableId---"
     And I enter "GrantCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
     And I enter "Grant_Edition_v" values from "Program_Field_Values_QA_org.xlsx"
     When I click modal button "Save and Continue"
@@ -1710,7 +1715,7 @@ Business Need: security review Scenarios
     And I click on "Submit for Approval" in the page details
     Then I softly see field "Status" as "Submitted for Approval"
  # Sub-Award approval by 1st approval
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
@@ -1719,14 +1724,21 @@ Business Need: security review Scenarios
     Then I softly see field "Status" as "Submitted for Approval"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
   # Sub-Award approval 2nd approval
+    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I navigate to "Grants" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
+    When I click on "Start" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
+    When I "Approve" in the approval decision
+    Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
+    # 3rd Approval
     When I re-login to "As a Grantor" app as "FO" user on "QA" portal
     When I navigate to "Grants" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:SUBAWARD_EGMSID}" in "---program:-:pendingTaskTableId---" panel
     When I click on "Start" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:pendingTaskTableId---" without waiting for record
     When I "Approve" in the approval decision
-    Then I softly see field "Status" as "Approved"
-    Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
+    Then I softly see status in Progress-bar is "Approved" and is "green"
     # Sub-Award sent to sub-recepient
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Grants" tab

@@ -2510,9 +2510,6 @@ The EGMS Team
   """
     Then I see the mail text is as follows :
   """
-
-
-
 Hello {SavedValue:OWNER},
 
 This email is to notify you that Program # {SavedValue:PEGMSID} has been sent back for revision.
