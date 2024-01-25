@@ -121,7 +121,7 @@ Business Need: customApp Component Scenarios
   Scenario: Custom App- To verify, to verify, on Sequence when user provide sequence as "2" then As a Grantee app should display at 2ndst position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Custom App Config     | Sequence  | 1                 | ApiGeneratedId:0 |
+      | Custom App Config     | Sequence  | 3                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue | coreComponentField |
       | Custom App Config:General | Sequence  | 2             | StateasGrantee     |

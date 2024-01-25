@@ -5,6 +5,7 @@ import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -250,6 +251,49 @@ public class SmokeSanityPage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//span[text()='" + recordType + "']//following-sibling::span[@class='overview-title' and text()='" + recordName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void enterTextInideFeedSectionAndClickOnShareButton(String value) {
+        By feedSection = ByUsing.xpath("//div/textarea[@class='mention-for-post']");
+        I.amPerforming().click().on(feedSection);
+        I.amPerforming().textInput().in(feedSection, value);
+        I.amPerforming().waitFor().makeThreadSleep(3000);
+        I.amPerforming().addOnsTo().getKeyBoard().keyPress(Keys.ENTER);
+        I.amPerforming().click().on(ByUsing.xpath("//div/input[@id='PostToFeedButton']"));
+    }
+
+    public void enterUserNameAndTextValueInsideMyFeedSection(String userName, String value, boolean isPost) {
+        if (isPost == true) {
+            By feedSection = ByUsing.xpath("//div/textarea[@class='mention-for-post']");
+            I.amPerforming().click().on(feedSection);
+            I.amPerforming().textInput().in(feedSection, userName);
+            I.amPerforming().waitFor().makeThreadSleep(3000);
+            if (userName.contains("@")) {
+                String[] value1 = userName.split("@");
+                I.amPerforming().click().on(ByUsing.xpath("//div[@class='mentions-autocomplete-list']//li[@data-display='" + value1[1] + "']"));
+            }
+            I.amPerforming().textInput().in(feedSection, value);
+            I.amPerforming().click().on(ByUsing.xpath("//div/input[@id='PostToFeedButton']"));
+        }
+    }
+
+    public void commentInsidePostDisplayedOrNot(String usage, String comment, String post) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(commentDisplayedOnCollabInsideRelatedPost(comment, post)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(commentDisplayedOnCollabInsideRelatedPost(comment, post)).isFalse();
+        }
+    }
+
+    private boolean commentDisplayedOnCollabInsideRelatedPost(String comment, String post) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + post + "']/parent::div[@class='pull-right firstColor media-body']//following-sibling::div[contains(@class,'collabComment')]//div[text()='" + comment + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

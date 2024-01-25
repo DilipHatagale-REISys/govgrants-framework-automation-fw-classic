@@ -88,4 +88,19 @@ public class SmokeSanitySteps {
     public void iSeeNameDisplayedAs(String usage, String recordType, String recordName) {
         smokeSanityPage.verifyIfRecordTypeAndRecordNameIsDisplayed(usage,recordType,recordName);
     }
+
+    @And("I enter value {string} in my Feed and click on Share button")
+    public void iEnterValueInMyFeedAndClickOnButton(String value) {
+        smokeSanityPage.enterTextInideFeedSectionAndClickOnShareButton(value);
+    }
+
+    @And("^I enter user \"([^\"]*)\" and value \"([^\"]*)\" in my Feed and click on Share (post|comment)$")
+    public void iEnterUserAndValueInMyFeedAndClickOnShareButton(String userName, String value, String sharingType) {
+        smokeSanityPage.enterUserNameAndTextValueInsideMyFeedSection(userName,value,sharingType.equalsIgnoreCase("post"));
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" inside \"([^\"]*)\" comment at collab$")
+    public void iSeeInsideCommentAtCollab(String usage, String comment, String post) {
+        smokeSanityPage.commentInsidePostDisplayedOrNot(usage,comment,post);
+    }
 }

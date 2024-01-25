@@ -4,33 +4,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
 
   ##########Test suite: Send Email UI/UX (Suite ID: 332319)##########
-  @332320 @dilip
+  @332320
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "To" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple To email addresses" is displayed related field "To" inside Send Email
 
-  @332321 @dilip
+  @332321
   Scenario: when PM user Hover on the  TO field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "To" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple To email addresses" is displayed related field "To" inside Send Email
 
-  @332322 @dilip
+  @332322
   Scenario: when External user Hover on the  TO field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -43,34 +43,34 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "To" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple To email addresses" is displayed related field "To" inside Send Email
 
-  @332323 @dilip
+  @332323
   Scenario: when Internal user Hover on the  CC field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Cc" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple Cc email addresses" is displayed related field "Cc" inside Send Email
 
-  @332324 @dilip
+  @332324
   Scenario: when  PM user Hover on the  CC field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Cc" inside Send Email Modal
     And I pause execution for "5" seconds
     Then I see help text "Use semicolon(;) to separate multiple Cc email addresses" is displayed related field "Cc" inside Send Email
 
-  @332325 @dilip
+  @332325
   Scenario: when External user Hover on the  cc field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -83,33 +83,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Cc" inside Send Email Modal
     Then I see help text "Use semicolon(;) to separate multiple Cc email addresses" is displayed related field "Cc" inside Send Email
 
-  @332326 @dilip
+  @332326
   Scenario: when  user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
-  @332327 @dilip
+  @332327
   Scenario: when  Internal user Hover on the Send Copy (Cc) to Me field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
-  @332328 @dilip
+  @332328
   Scenario: Send Email -UI - when External user Hover on the  Send Copy (Cc) to Me field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -122,33 +122,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
-  @332329 @dilip
+  @332329
   Scenario: Send Email -UI - when  Internal user Hover on the Subject field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Subject" inside Send Email Modal
     Then I see help text "Enter subject here" is displayed related field "Subject" inside Send Email
 
-  @332330 @dilip
+  @332330
   Scenario: Send Email -UI - when user Hover on the Subject field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Subject" inside Send Email Modal
     Then I see help text "Enter subject here" is displayed related field "Subject" inside Send Email
 
-  @332331 @dilip
+  @332331
   Scenario: Send Email -UI - when External user Hover on the Subject  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -161,33 +161,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Subject" inside Send Email Modal
     Then I see help text "Enter subject here" is displayed related field "Subject" inside Send Email
 
-  @332332 @dilip
+  @332332
   Scenario: Send Email -UI - when user Hover on the Body Content  field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
     Then I see help text "Enter email content here" is displayed related field "Body Content" inside Send Email
 
-  @332333 @dilip
+  @332333
   Scenario: Send Email -UI - when Internal user Hover on the Body Content  field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
     Then I see help text "Enter email content here" is displayed related field "Body Content" inside Send Email
 
-  @332334 @dilip
+  @332334
   Scenario: Send Email -UI - when External user Hover on the Body Content field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -200,33 +200,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Body Content" inside Send Email Modal
     Then I see help text "Enter email content here" is displayed related field "Body Content" inside Send Email
 
-  @332335 @dilip
+  @332335
   Scenario: Send Email -UI - when Internal user Hover on the Attachments field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
     Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
 
-  @332337 @dilip
+  @332337
   Scenario: Send Email -UI - when  user Hover on the Attachments field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
     Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
 
-  @332338 @dilip
+  @332338
   Scenario: Send Email -UI - when External user Hover on the Attachments field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -239,33 +239,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Attachments" inside Send Email Modal
     Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
 
-  @332339 @dilip
+  @332339
   Scenario: Send Email -UI - when  user Hover on the Select file field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
     Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
 
-  @332340 @dilip
+  @332340
   Scenario: Send Email -UI - when Internal  user Hover on the Select file field help icon and help text is displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
     Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
 
-  @332341 @dilip
+  @332341
   Scenario: Send Email -UI - when External user Hover on the  Select file  field help icon and help text is displayed
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -278,31 +278,31 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I hover mouse on text "Select Files" inside Send Email Modal
     Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
 
-  @332342 @dilip
+  @332342
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
 
-  @332343 @dilip
+  @332343
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for Internal user
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
 
-  @332344 @dilip
+  @332344
   Scenario: Send Email -UI - Required to save fields  (*)  is displayed for External user
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -315,14 +315,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see help text "*" is displayed related field "To" inside Send Email
 
     ##########Test suite: Send Email Attachments (Suite ID: 332777)#########
-  @332780 @dilip
+  @332780
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'internal'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -330,14 +330,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332781 @dilip
+  @332781 @382441 @Sanity
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'External'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -345,14 +345,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332784 @dilip
+  @332784
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'Group'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -360,14 +360,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332785 @dilip
+  @332785
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'internal'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -376,14 +376,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332786 @dilip
+  @332786
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'External'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -392,14 +392,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332787 @dilip
+  @332787
   Scenario: Send Email-To verify,Internal User send the email from TO & CC field as 'Group'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -408,14 +408,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332788 @dilip
+  @332788 @382439 @Sanity
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -424,14 +424,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332790 @dilip
+  @332790
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO (internal) field
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -440,7 +440,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332791 @dilip
+  @332791 @382442 @smoke
   Scenario: Send Email -To verify , When External user sends an Email with an Attachment  from TO (internal) field
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -456,14 +456,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332792 @dilip
+  @332792
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (External) field
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -472,14 +472,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332794 @dilip
+  @332794
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (External) field
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -488,14 +488,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332795 @dilip
+  @332795
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group) field
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -504,14 +504,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332796 @dilip
+  @332796
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -520,14 +520,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332798 @dilip
+  @332798
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Group) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -539,14 +539,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332799 @dilip
+  @332799
   Scenario: Send Email -To verify , When Internal  user sends an Email with an Attachment  from TO (Group)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Groups" value
@@ -558,14 +558,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332800 @dilip
+  @332800
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -577,14 +577,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332801 @dilip
+  @332801
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (Internal) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -596,14 +596,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332803 @dilip
+  @332803
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -615,14 +615,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332804 @dilip
+  @332804
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO (External) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -635,14 +635,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332805 @dilip
+  @332805
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -655,14 +655,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332806 @dilip
+  @332806
   Scenario: Send Email -To verify , When  Internal user sends an Email with an Attachment  from TO & CC (Internal) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -675,14 +675,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test SendEmailAttachment" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332807 @dilip
+  @332807
   Scenario: Send Email -To verify , When  user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -695,14 +695,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332808 @dilip
+  @332808
   Scenario: Send Email -To verify , When Internal user sends an Email with an Attachment  from TO & CC  (External) field then attached file is displayed on the View modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -715,14 +715,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332809 @dilip
+  @332809 @382756 @Sanity
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "dilip.hatagale@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test" in send email LWC
@@ -737,22 +737,16 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "actionsAtEnhancedDataTable.png" in Send Email Modal
     When I upload attachment "actionsAtMeGridTable.png" in Send Email Modal
     When I upload attachment "captureModalFields.png" in Send Email Modal
-
-#    When I upload attachment "CollabFileTemp.png" in Send Email Modal
-#    When I upload attachment "CollabFileVanish.png" in Send Email Modal
-#    When I upload attachment "miniPageLayoutImage.png" in Send Email Modal
-#    When I upload attachment "MultipleFileUploadCollabDND.png" in Send Email Modal
-#    When I upload attachment "MultipleFileUploadDND1.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332811 @dilip
+  @332811 @382757 @Sanity
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -769,48 +763,68 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "actionsAtEnhancedDataTable.png" in Send Email Modal
     When I upload attachment "actionsAtMeGridTable.png" in Send Email Modal
     When I upload attachment "captureModalFields.png" in Send Email Modal
-#
-#    When I upload attachment "CollabFileTemp.png" in Send Email Modal
-#    When I upload attachment "CollabFileVanish.png" in Send Email Modal
-#    When I upload attachment "miniPageLayoutImage.png" in Send Email Modal
-#    When I upload attachment "MultipleFileUploadCollabDND.png" in Send Email Modal
-#    When I upload attachment "MultipleFileUploadDND1.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332815 @dilip
+  @382758 @Sanity
+  Scenario: sanity TC-SPI-To verify if user is getting error message "File Size Exceeded Attachments Limits of 25MB" if the total file size is more than 25MB
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "dilip.hatagale@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I upload attachment "DuplicateFile.txt" in Send Email Modal
+    When I upload attachment "TestFileSharing.docx" in Send Email Modal
+    When I upload attachment "TestAutomationFile.pptx" in Send Email Modal
+    When I upload attachment "SendEmailMP4File.mp4" in Send Email Modal
+    When I upload attachment "SharingAtCollabTest.png" in Send Email Modal
+    When I upload attachment "actionsAtEgrid.png" in Send Email Modal
+    When I upload attachment "actionsAtAttachment.png" in Send Email Modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in Send Email Modal
+    When I upload attachment "actionsAtMeGridTable.png" in Send Email Modal
+    When I upload attachment "captureModalFields.png" in Send Email Modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+
+  @332815
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Attachment upto 1.5MB Limit Exceeded." error massage in attachment section
 
-  @332816 @dilip
+  @332816
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Attachment upto 1.5MB Limit Exceeded." error massage in attachment section
 
-  @332821 @dilip
+  @332821
   Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then " Insert links to file(s) from the record"' message is displayed on the LWC- reply email attachment section
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -824,14 +838,14 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Limit is Exceeded" error massage in attachment section
 
-  @332822 @dilip
+  @332822
   Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -845,33 +859,47 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
     Then I see "Single File Size Limit is Exceeded" error massage in attachment section
 
-  @332833 @dilip
+  @332833
   Scenario: Send Email -Attachment - To verify ,  user are remove the attachement from  sends email modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     And I click on X Action Button of "SendEmailAttachment.pdf" file
     Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332834 @dilip
+  @332834
   Scenario: Send Email -Attachment - To verify ,  Internal user are remove the attachement from  sends email modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     And I click on X Action Button of "SendEmailAttachment.pdf" file
     Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
+
+  @382774
+  Scenario: Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
+    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
+
+      ##########################Sanity#####################
 
   @69004 @validateDisplayOfAttachmentComponentInSendEmailModal
   Scenario: Enabling Attachment section from custom metadata config and validating display of attachments in send email modal
@@ -892,27 +920,33 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see Attachment section is displayed under send email modal
 
 
-
   @69094 @validateIfExternalCheckboxCheckedAtToFieldThenOnlyExternalUserIsShownInAutoSuggestionBox
-  Scenario: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
+  Scenario Outline: Validate If External checkbox is checked At To Field then only external user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
-    When I enter value "Automation" into field "{testData:ToField}" on send email modal
-    Then I see iconName "fa fa-phone" with user "Automation SPI" is displayed on send email modal
-    Then I see iconName "fa fa-phone" with user "Automation PK" is displayed on send email modal
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
 
   @69096 @validateIfGroupCheckboxCheckedAtToFieldThenOnlyUserGroupsIsShownInAutoSuggestionBox
   Scenario: Validate If Group checkbox is checked At To Field then only Group is shown in suggestion box at send email modal
@@ -955,19 +989,87 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
   @69215 @validateIfExternalCheckboxCheckedAtCCFieldThenOnlyExternalUserIsShownInAutoSuggestionBox @needToUpdate
-  Scenario: Validate If External checkbox is checked At CC Field then only external user is shown in suggestion box at send email modal
+  Scenario Outline: Validate If External checkbox is checked At CC Field then only external user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Is Active | true          | Grantor State Program | Name                      | TAB-2626                   |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation Email1" into field "Subject" on send email modal
+    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382349
+  Scenario:Sanity TC-SPI-To verify that user can enter email Ids in ‘To’, ‘cc’ sections and also user will get suggestions while typing the emailds based on the existing emailIds in user’s email list.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
+    Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
+
+  @382355 @382358 @382361 @382377 @Sanity
+  Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
+  Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
+  Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "dilip.hatagale@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:CCField}" on send email modal
+    When I enter value "Test Automation Email" into field "Subject" on send email modal
+    When I enter value "Test Automation Email" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "120" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+  """
+  Sandbox: Test Automation Email
+  """
+
+  @147248  @382362 @382363 @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal @Sanity
+  Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
+  Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -976,6 +1078,10 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | userName       |
       | Automation PM  |
       | Automation SPI |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
 
   @69216 @validateIfInternal+ExternalCheckboxCheckedAtCCFieldThenBothUserIsShownInAutoSuggestionBox @needToUpdate
   Scenario:Verify if Internal+External user checkbox is checked and search user in CC email then both Internal+External users is displayed in suggestion
@@ -1021,6 +1127,12 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
     When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
     When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Bold" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
+    And I close modal by clicking the top right x button
     When I enter value "Test attachment uploaded" into field "Subject" on send email modal
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
     When I click on "Send" button in send email modal
@@ -2136,7 +2248,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
 
 
   @147282  @verifyTextInsideCkEditorInputBoxIsDisplayedAsItalicInsideSendEmailModal
-  Scenario: validate text inside ck editor input box is displayed as italic text at send email modal
+  Scenario Outline: validate text inside ck editor input box is displayed as italic text at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:0 |
@@ -2161,6 +2273,201 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I change formatting of all text to "Italic" inside CK editor
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting" displayed in "Italic" format inside CK editor
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382364 @Sanity
+  Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting" into field "Body Content" on send email modal
+    And I change formatting of all text to "Bold" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
+    And I close modal by clicking the top right x button
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation" into field "Subject" on send email modal
+    When I enter value "Test Body formatting Italic" into field "Body Content" on send email modal
+    And I change formatting of all text to "Italic" inside CK editor
+    When I click on "Send" button in send email modal
+    Then I see "Test Body formatting Italic" displayed in "Italic" format inside CK editor
+
+  @332834 @382365 @382366 @Sanity
+  Scenario Outline: Sanity TC-Admin/PM-Verify that the user can attach file in the  Attachement section.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    Then I see "SendEmailAttachment.pdf" file is displayed in modal
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382367 @Sanity
+  Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    Then I see "SendEmailAttachment.pdf" file is displayed in modal
+
+  @382371 @382372 @Sanity
+  Scenario Outline:Sanity -TC-Admin-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button send email modal
+    Then I softly see "FilesLink" page block displayed
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382373 @Sanity
+  Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "Select Files" button send email modal
+    Then I softly see "FilesLink" page block displayed
+
+  @382375 @382376 @Sanity
+  Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com,dilip.hatagale@reisystems.in,vrishali.raskar@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test case 382375 and 382376" into field "Subject" on send email modal
+    When I enter value "Test case 382375 and 382376" into field "Body Content" on send email modal
+    When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com" into field "{testData:CcField}" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Email Sent Successfully. |
+    And I checkout to yopmail with mailid "Automationadminpm@yopmail.com"
+    And I pause execution for "120" seconds
+    Then I refresh the page
+    And I see the mail subject is as follows :
+  """
+  Sandbox: Test case 382375 and 382376
+  """
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382419 @382420 @Sanity
+  Scenario Outline:Sanity -TC-Admin/PM- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
+    When I enter value "Automationadminpm@yopmail.com,dilip.hatagale@reisystems.in,vrishali.raskar@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test case automation" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter Subject for Email. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382423 @Sanity
+  Scenario: Sanity -TC-SPI- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
+    When I enter value "Test Automation Email" into field "Body Content" on send email modal
+    When I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter Subject for Email. |
+
+  @382428 @382429 @Sanity
+  Scenario Outline: Sanity-TC-Admin/PM- Verify that if the email is sent without email address, a pop-up is generated warning "Enter To Email Address.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Automation Internal Program for send Email"
+    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Test Automation Email" into field "Subject" on send email modal
+    When I enter value "Test" into field "Body Content" on send email modal
+    And I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter To Email Address. |
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @collabFileAttachFunctionality @Sanity
+  Scenario Outline: validate that upload file from library and computer is displayed at attach file modal at collab phase
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    When I attach file "SendEmailAttachment.pdf" in add file Modal
+    When I click on "Upload" button in send email modal
+    And I enter value "Test Automation Admin Comment" in my feed section and share the comment
+    Then I see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
 
   @147285  @verifyTextInsideCkEditorInputBoxIsDisplayedAsUnderlineInsideSendEmailModal
   Scenario: validate text inside ck editor input box is displayed as underline text at send email modal
@@ -2719,7 +3026,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I softly see the text containing :
       | this record |
       | To          |
-
 
 
   @161871  @VerifyThatUserSendEmailWithMultipleEmailAddressesAreSeparatedBySpace    @abhishekS
@@ -5644,7 +5950,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @183895 @sprint23
+  @1838951 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an multiple Attachment  from TO & CC  (internal &External) field that attachment is dispalyed in the column on the messages page block
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5752,7 +6058,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I refresh the page
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @181341 @dnyaneshwari @sprint23
+  @181341 @sprint23
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO &  CC (Internal)   field that attachment is dispalyed in the column on the messages page block
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5781,7 +6087,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186124 @sprint24 @dnyaneshwari
+  @186124 @sprint24
   Scenario:Send Email -To verify , User should be able to "true" when select file is attached to "TO- External " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5811,7 +6117,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186685 @sprint24 @dnyaneshwari
+  @186685 @sprint24
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- group" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5842,7 +6148,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186684 @sprint24 @dnyaneshwari
+  @186684 @sprint24
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO- internal" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5877,7 +6183,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I perform quick search for "RE: send email select file attachment" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186681 @sprint24 @dnyaneshwari
+  @186681 @sprint24
   Scenario: Send Email -To verify , User should be able to see "false" when select file is does not attached to "TO-external" reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5909,7 +6215,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I pause execution for "5" seconds
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186677 @sprint24 @dnyaneshwari
+  @186677 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO- internal " reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5942,7 +6248,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true " for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186678 @sprint24 @dnyaneshwari
+  @186678 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- external " reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -5976,7 +6282,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186294 @sprint24 @dnyaneshwari
+  @186294 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- Internal " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6005,7 +6311,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186295 @sprint24 @dnyaneshwari
+  @186295 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- External " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6034,7 +6340,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186297 @sprint24 @dnyaneshwari
+  @186297 @sprint24
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Internal " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6061,7 +6367,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186298 @sprint24 @dnyaneshwari
+  @186298 @sprint24
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- External " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6088,7 +6394,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186300 @sprint24 @dnyaneshwari
+  @186300 @sprint24
   Scenario:Send Email -To verify , User should be able to see "false" when user did not select any attached to "TO- Group " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6117,7 +6423,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I refresh the page
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186296 @sprint24 @dnyaneshwari
+  @186296 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO & CC- group   " email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6148,7 +6454,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @186679 @sprint24 @dnyaneshwari
+  @186679 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" when select file is attached to "TO- group " reply email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6179,7 +6485,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @187614 @sprint24 @dnyaneshwari
+  @187614 @sprint24
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- internal " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6211,7 +6517,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @187627 @sprint26 @dnyaneshwari
+  @187627 @sprint26
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- group " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6243,7 +6549,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close modal by clicking the top right x button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @187630 @sprint26 @dnyaneshwari
+  @187630 @sprint26
   Scenario:Send Email -To verify , User should be able to see "true" mark when select file is attached to "TO & CC- external " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6277,7 +6583,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I close "Reply" modal by clicking on x top right button
     Then I softly see value "true" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @187635 @sprint26 @dnyaneshwari
+  @187635 @sprint26
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- internal " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6439,7 +6745,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @187636 @sprint26 @dnyaneshwari
+  @187636 @sprint26
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- external " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6472,7 +6778,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I perform quick search for "Test false Attachment" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @187639 @sprint26 @dnyaneshwari
+  @187639 @sprint26
   Scenario:Send Email -To verify , User should be able to see "false" mark when select file is attached to "TO & CC- group " reply  email
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6507,7 +6813,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I perform quick search for "reply for To group" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "false" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
 
-  @205452 @sprint6 @ToVerifySpelling @dnyaneshwari
+  @205452 @sprint6 @ToVerifySpelling
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6531,7 +6837,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see the following messages in the page details :
       | Email Sent Successfully. |
 
-  @205481 @sprint6 @ToVerifySpelling @dnyaneshwari
+  @205481 @sprint6 @ToVerifySpelling
   Scenario:Send Email -To verify,Spelling of 'Successfully' in confirmation message of Send Email modal is now corrected for internal user
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6555,7 +6861,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see the following messages in the page details :
       | Email Sent Successfully. |
 
-  @194897 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @194897 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: Send Email - To verify , User should not be able to see "Upload file modal" when type any text in " TO " field and press "Enter"
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6575,7 +6881,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @194912 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @194912 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: To verify , User should not be able to see "Upload file modal" when type any text in " TO & CC" field and press enter
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6596,7 +6902,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @194914 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @194914 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "CC" field and press enter
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6617,7 +6923,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @195096 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @195096 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario:  To verify , User should not be able to see "Upload file modal" when the user check "Internal" in the checkbox & type any text in "TO" field and press enter
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6638,7 +6944,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @195098 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @195098 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "Group" in the checkbox & type any text in "CC" field and press enter
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6659,7 +6965,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I press enter key
     Then I do not see "Upload" modal window is displayed
 
-  @195097 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1 @dnyaneshwari
+  @195097 @ToVerifyUserShouldNotSee"UploadFileModal"WhenTypeTextpressEnter @sprint1
   Scenario: To verify , User should not be able to see "Upload file modal" when the user check "External" in the checkbox & type any text in "CC" field and press enter
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -6778,7 +7084,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see text as "Please find below links to additional attachments other than those attached to this email. Click the filename to view the attachment" in reply email modal
     Then I see "SendEmailAttachment.pdf" as "Body Content" on send email modal
 
-  @Neeta @332845 @332847 @332849 @332850 @332852 @332853 @332855 @332856 @333064 @333062
+  @332845 @332847 @332849 @332850 @332852 @332853 @332855 @332856 @333064 @333062
   Scenario: Send Email Functionality
   |Send Email -"Send Copy (Cc) to Me" - To verify , checked checkbox for "Send Copy (Cc) to Me" on send modal|
   |Send Email -"Send Copy (Cc) to Me" - To verify ,Internal user  checked checkbox for "Send Copy (Cc) to Me" on send modal|
@@ -6822,7 +7128,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
-  @Neeta1 @332880 @332881
+  @332880 @332881
   Scenario: Send Email Functionality
   |Send Email -Verified when every fields kept empty then error message is displying when clicked on send button|
   |Send Email -Verified when internal user every fields kept empty then error message is displying when clicked on send button|
@@ -6844,7 +7150,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Enter To Email Address." message is displayed on Send Email Modal
 
-  @Neeta2 @332883 @333058 @332889
+  @332883 @333058 @332889 @Sanity
   Scenario: Send Email Functionality
   |Send Email -Verified when External user every fields kept empty then error message is displying when clicked on send button|
   |send email-User send email without filling subject field then error message should displayed on the modal|
@@ -6856,6 +7162,12 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
+    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I enter value "Test Automation Email" into field "Subject" on send email modal
+    When I enter value "Test" into field "Body Content" on send email modal
+    And I click on "Send" button in send email modal
+    Then I softly see the following messages in the page details :
+      | Enter To Email Address. |
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "Send" button in send email modal
     #332883 #333058
@@ -6865,7 +7177,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Enter To Email Address." message is displayed on Send Email Modal
 
-  @Neeta3 @333104 @333101 @333099 @333098 @333097 @333095 @333089 @333085 @333084 @333086 @333080 @333054 @333017
+  @333104 @333101 @333099 @333098 @333097 @333095 @333089 @333085 @333084 @333086 @333080 @333054 @333017
   Scenario: SE other
   |send email- Under Cc field dropdown should displayed for admin user|
   |Send email-User should be able to checked the internal picklist from TO field  for internal user|
@@ -6907,7 +7219,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I softly see field "Send Copy (Cc) to Me" inside page block
 
 
-  @Neeta4 @333066
+  @333066
   Scenario: SE other Scenarios
   |send email-User send email with Internal email ID's in TO &CC field|
     Given I login to "As a Grantor" app as "ADMIN" user
@@ -6927,7 +7239,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
 
-  @Neeta5 @333093 @333091 @333083 @333076 @333078 @#333076 @333074 @333060
+  @333093 @333091 @333083 @333076 @333078 @#333076 @333074 @333060
   Scenario: SE other Scenarios1
   |send email-When User check the checkbox for  the internal from dropdown then Group field is getting hidden   from TO field|
   |send email-When User check the checkbox for  the internal from dropdown then Group field is getting hidden   from TO field|
@@ -6959,7 +7271,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     #333060
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @Neeta6 @333082 @333081
+  @333082 @333081
   Scenario: SE other Scenarios2
   |send email-Admin User can see the select file  field on the send email modal |
   |send email- Admin User click on select file field then modal should open     |
@@ -6977,7 +7289,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     #333081
     Then I softly see "Select Files" page block displayed
 
-  @Neeta7 @332862 @332861 @332859 @332857
+  @332862 @332861 @332859 @332857
   Scenario: Send Email Functionality1
   |Send Email -"Send Copy (Cc) to Me" - To verify , External user checked checkbox for "Send Copy (Cc) to Me" on send modal|
   |Send Email -"Send Copy (Cc) to Me" - To verify ,External user  checked checkbox for "Send Copy (Cc) to Me" on View modal|
@@ -7015,7 +7327,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
-  @332793 @Neeta8
+  @332793
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (External) field
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

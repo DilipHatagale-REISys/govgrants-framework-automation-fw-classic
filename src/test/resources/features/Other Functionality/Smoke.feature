@@ -1,5 +1,5 @@
-@lwcsmoketest
-Business Need: lwc smoke testing features
+@smoke
+Business Need: smoke testing features
 
   @382657 @382660 @382663 @382666 @382669 @382672 @382675 @382712 @smoke
   Scenario: Smoke TC_Admin_To verify that user is able to see sidebar Global search on left side of page, on "Home" phase,
@@ -166,8 +166,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382599 @382602 @382605 @382608 @382611 @382614 @382617 @382620 @382623
   Scenario: Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on "Home" phase
@@ -177,7 +177,7 @@ Business Need: lwc smoke testing features
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Grants phase,
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Monitoring phase,
   Smoke TC_PM_To verify that user is able to see sidebar on left side of page, on Closeout phase
-    When I login to "As a Grantor" app as "Admin" user
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Home" tab
     Then I see sidebar left side of page
     And I navigate to "Planning" tab
@@ -194,8 +194,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382600 @382606 @382609 @382612 @382618 @382621 @382624 @382615
   Scenario: Smoke TC_SPI_To verify that user is able to see sidebar on left side of page, on Home phase
@@ -220,8 +220,8 @@ Business Need: lwc smoke testing features
     Then I see sidebar left side of page
     And I navigate to "Analytics" tab
     Then I see sidebar left side of page
-    And I navigate to "Collab" tab
-    Then I see sidebar left side of page
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "To Me" inside "My Feeds" menu at collab sidebar
 
   @382079 @382724
   Scenario:Smoke TC-Admin-To verify if send Email buton is visible on page block

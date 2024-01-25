@@ -55,7 +55,7 @@ Business Need: Forms Component Scenarios
   Scenario: Validate label change of edit action button at form page layout action from config and validating inside Application form view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Application Cover Page | Name                      | Edit Automation            |
+      | Page Layout Action    | Action Name | Edit              | Application Cover Page | Name                      | Edit                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField     | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Name | Edit Automation | Application Cover Page | Name                      | Edit                       |
