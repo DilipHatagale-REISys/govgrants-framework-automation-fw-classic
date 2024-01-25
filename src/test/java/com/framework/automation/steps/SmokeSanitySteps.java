@@ -118,4 +118,9 @@ public class SmokeSanitySteps {
     public void iSeeSideBarLinksIsDisplayedOnCollabPhase(String usage, String linkName) {
         smokeSanityPage.assertIfSideBarLinkDisplayedOrNot(usage,linkName);
     }
+
+    @Then("^I (see|do not see|softly see|softly do not see) \"([^\"]*)\" page block displayed in page details$")
+    public void iDoNotSeePageBlockDisplayedInPageDetails(String usage, String titleName) {
+        smokeSanityPage.assertPageBlockIsDisplayedOrNotDisplayedWithTextXpath(usage,titleName);
+    }
 }

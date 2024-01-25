@@ -175,8 +175,10 @@ Business Need: Page Layout Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Hide For Context |                   | ApiGeneratedId:0 |
+      | Page Layout Action    | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Hide For Context | view          | Grantor State Program | Name                      | Submit For Approval        |
       | Page Layout Action    | Hide For Context | view          | Grantor State Program | Name                      | Submit For Approval        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -426,7 +428,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @35981    @sortOrderFieldAtPageBlock-gPlanning
   Scenario: Changing sort order for Program information page block from config and validating it at program detail page
@@ -474,7 +476,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36038    @hideForUserFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block for internal user from config and validating it at program detail page
@@ -490,7 +492,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @35957    @hideOperatorFieldUsingANDOperatorAtPageTab-gPlanning
   Scenario: Hide overview for program view page from config using AND operator and validating it at program detail page
@@ -546,7 +548,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36040    @hideOperatorFieldUsingANDOperatorAtPageBlock-gPlanning
   Scenario: Hide program information for program view page from config using AND operator and validating it at program detail page
@@ -566,7 +568,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36036    @totalFieldsPerRowFieldAtPageBlock-gPlanning @changeInDOMStructure
   Scenario: Setup value for total fields per row page block from config and validating it at program detail page
@@ -602,7 +604,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36042    @hideDecisionFieldAtPageBlock-gPlanning @smoke
   Scenario: Hiding of program information page block from config and validating it at program detail page
@@ -618,7 +620,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36045    @flexTableNameFieldAtPageBlock-gPlanning @smoke @wip
   Scenario: Changing flex table rendering by changing name inside flex table name field at page block from config and validating it on program detail page
@@ -705,11 +707,13 @@ Business Need: Page Layout Component Scenarios
   @36094    @feildAPINAmeFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Changing field api name for page block detail from config and validating it on program detail page
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field API Name | ProgramName__c    | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field API Name       | ProgramName__c    | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Title             | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName      | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field API Name | BudgetingPreference__c | Grantor State Program | Name                      | PBD-17696                  |
+      | configurationCategory                    | fieldName            | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field API Name       | BudgetingPreference__c | Grantor State Program | Name                      | PBD-17696                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Budgeting Preference   | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -906,10 +910,13 @@ Business Need: Page Layout Component Scenarios
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-17604                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17604                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1153,6 +1160,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Action Behavior | Open in new window | Grantor State Program | Name                      | Edit                       |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1169,15 +1177,19 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}"
     When I click on "View" icon for "{SavedValue:PEGMSID}" inside table
     When I click on "Edit" in the page details
+    And I pause execution for "10" seconds
+    And I refresh the page
     Then I see new tab is opened
 
   @36204    @displayAreaFieldForCreateCampaignAtPageLayoutAction-gPlanning @smoke
   Scenario: Set up create campaign at page layout action from config and validating it at program detail page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName    | fieldOrignalValue | filterId         |
-      | Page Layout Action    | Display Area | Menu              | ApiGeneratedId:0 |
+      | Page Layout Action    | Is Active    | false             | ApiGeneratedId:0 |
+      | Page Layout Action    | Display Area | Menu              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active    | true          | Grantor State Program | Name                      | Create Campaign            |
       | Page Layout Action    | Display Area | Page Header   | Grantor State Program | Name                      | Create Campaign            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1276,7 +1288,7 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @36116    @hideExpressionJsonFieldAtPageBlockDetail-gPlanning @smoke
   Scenario: Disabling of program name page block detail from json config and validating it at program detail page
@@ -6987,7 +6999,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @145667    @verifyHideExpressionJsonFieldByHidingPageBlockUsingUserAppAsAGrantorInEditMode
   Scenario: Set up hide expression json value to Hide page block using user app state as Grantor in edit mode
@@ -7005,7 +7017,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
 
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @145668    @verifyHideExpressionJsonFieldByHidingPageBlockUsingContextAsEditInEditMode
   Scenario: Set up hide expression json value to Hide page block using using context as Edit in edit mode
@@ -7022,7 +7034,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @145669    @verifyHideExpressionJsonFieldByHidingPageBlockUsingProfileAdminInEditMode
   Scenario: Set up hide expression json value to Hide page block for Profile Admin in edit mode
@@ -7039,7 +7051,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @145672    @hide_expression_Overview_TabUsingFieldOperatorInEditMode
   Scenario: Hide OVERVIEW Tab using picklist field value in edit mode
@@ -7120,7 +7132,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @145847    @verifyHideExpressioJsonByHidingPageBlockUsingUserOperatorInEditMode
   Scenario: validate hide expression by hiding page block using user operator in edit mode
@@ -7137,7 +7149,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see "Information" page block displayed
+    Then I do not see "Information" page block displayed in page details
 
   @146387    @verifyHideExpressioJsonByHidingAddActionAtAttachmentUsingUserTypeOperator
   Scenario: validate hide the ADD action on attachment page block by using SObject hide logic as "user type"

@@ -4,6 +4,7 @@ import com.framework.automation.projectmanager.GovGrantsManager;
 import com.helperPackage.actionsfactory.api.ByUsing;
 import com.helperPackage.objects.Elements;
 import com.helperPackage.register.I;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -335,6 +336,29 @@ public class SmokeSanityPage extends GovGrantsManager {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
+        }
+        return flag;
+    }
+
+    public void assertPageBlockIsDisplayedOrNotDisplayedWithTextXpath(String usage, String titleName) {
+        if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isPageBlockTitleDisplayedWithTextXpath(titleName));
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            Assert.assertFalse(isPageBlockTitleDisplayedWithTextXpath(titleName));
+        } else if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockTitleDisplayedWithTextXpath(titleName)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockTitleDisplayedWithTextXpath(titleName)).isFalse();
+        }
+    }
+
+    private boolean isPageBlockTitleDisplayedWithTextXpath(String titleName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='panel-heading']/div/h3//span[text()='" + titleName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
         }
         return flag;
     }
