@@ -81,7 +81,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
         try {
 
             for (int i = startIndexing; i <= lastIndex; i++) {
-                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/tbody/tr/td[@class='ng-scope ng-binding' and contains(text(),'" + i + "')]"));
+                I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/div[@class='row']/div/div/table/tbody/tr/td[@class='ng-scope ng-binding' and contains(text(),'" + i + "')] |" +
+                        " //div[@id='" + tableId + "']//tbody/tr/td/span[text()='" + i + "']"));
             }
             flag = true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -196,7 +197,7 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']//div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "'] |" +
-                "//grid[@table-meta-data='" + tabeleId + "']//a[@data-toggle='dropdown']/ancestor::div[contains(@class,'panel-heading')]//a[@title='"+ buttonName + "'] |" +
+                "//grid[@table-meta-data='" + tabeleId + "']//a[@data-toggle='dropdown']/ancestor::div[contains(@class,'panel-heading')]//a[@title='" + buttonName + "'] |" +
                 " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "']"));
     }
 

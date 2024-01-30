@@ -2,12 +2,15 @@ package com.framework.automation.pageobject;
 
 import com.framework.automation.projectmanager.GovGrantsManager;
 import com.helperPackage.actionsfactory.api.ByUsing;
+import com.helperPackage.controller.DeviceBucket;
 import com.helperPackage.objects.Elements;
+import com.helperPackage.objects.InstanceRecording;
 import com.helperPackage.register.I;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import com.helperPackage.controller.DeviceBucket;
 
 import java.util.List;
 
@@ -30,6 +33,14 @@ public class SmokeSanityPage extends GovGrantsManager {
 
     public WebElement lookupFieldSearchIcon(String searchIcon) {
         return I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@id='" + searchIcon + "']//*[@class='fa fa-search']"));
+    }
+
+    public WebElement sidebarElementOnCollabPahse(String linkName) {
+        return I.amPerforming().getElementReference().of(ByUsing.xpath("//a[text()='My Feeds']/following-sibling::div[@class='collabSubMenuOptions']//a[text()='" + linkName + "'] | //div[@id='CollabMenu']//ul//li//*[contains(text(),'" + linkName + "')]"));
+    }
+
+    public WebElement buttonInsideCommentInPost(String button, String comment) {
+        return I.amPerforming().getElementReference().of(ByUsing.xpath("//div[@class='initialPost media-body']//div[contains(text(),'" + comment + "')]/ul//*[text()='" + button + "']"));
     }
 
     public WebElement modaltitlename(String windowTitle) {
@@ -361,5 +372,80 @@ public class SmokeSanityPage extends GovGrantsManager {
         } catch (Exception e) {
         }
         return flag;
+    }
+
+    public void asserIfLinkIsDisplayedEnabledOrNot(String linkName, String status) {
+        if (status.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(sidebarElementOnCollabPahse(linkName))).isFalse();
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isEnabled(sidebarElementOnCollabPahse(linkName))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(sidebarElementOnCollabPahse(linkName))).isTrue();
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isEnabled(sidebarElementOnCollabPahse(linkName))).isTrue();
+    }
+
+    public void assertIfButtonInsideCommentIsDisplayedAndEnabled(String usage, String button, String comment) {
+        if (usage.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(buttonInsideCommentInPost(button, comment))).isFalse();
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isEnabled(buttonInsideCommentInPost(button, comment))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(buttonInsideCommentInPost(button, comment))).isTrue();
+        I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isEnabled(buttonInsideCommentInPost(button, comment))).isTrue();
+    }
+
+    public void clickOnLikeCountInCollabPhase(String button, String comment) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[text()='" + comment + "']/parent::div[contains(@class,'media-body')]/following-sibling::div[@class='collabComment']//span[text()='" + button + "']"));
+    }
+
+    public void assertIfLikeListDisplayedUsername(String usage, String username) {
+        if (usage.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[@class='collabLikesList']/li//a[text()='" + username + "']"))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//ul[@class='collabLikesList']/li//a[text()='" + username + "']"))).isTrue();
+    }
+
+
+    public void assertIfEmailIdWithUserNameDisplayedOrNot(String usage, String username, String emailid) {
+        if (usage.contains("profile picture")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[text()='" + username + "']/parent::div//a[text()='" + emailid + "']/ancestor::div[contains(@class,'contentWrapper')]//img[contains(@class,'communityUsersImage')]"))).isTrue();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//p[text()='" + username + "']/parent::div//a[text()='" + emailid + "']"))).isTrue();
+    }
+
+    public void assertIfGroupNameAndMembercountIsDisplayed(String usage, String groupname, String membercount) {
+        if (usage.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + groupname + "']/ancestor::div[@class='groupsInfo']//span[contains(text(),'" + membercount + "')]"))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//*[text()='" + groupname + "']/ancestor::div[@class='groupsInfo']//span[contains(text(),'" + membercount + "')]"))).isTrue();
+    }
+
+    public void assertIfButtonIsDislayedOnTableId(String usage, String buttonname, String tableid) {
+        if (usage.contains("not")) {
+            try {
+                I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']/preceding-sibling::div//button[text()='" + buttonname + "']"))).isFalse();
+            } catch (Exception e) {
+                //handled excpeption for continued execution
+            }
+        } else
+            I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']/preceding-sibling::div//button[text()='" + buttonname + "']"))).isTrue();
     }
 }

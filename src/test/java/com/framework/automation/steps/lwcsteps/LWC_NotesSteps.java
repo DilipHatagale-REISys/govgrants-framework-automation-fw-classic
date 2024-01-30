@@ -65,6 +65,13 @@ public class LWC_NotesSteps extends GovGrantsManager {
         System.out.println("titleOfPage :" + titleOfPage);
     }
 
+    @Then("^I see title of current page is \"([^\"]*)\"$")
+    public void iSeeTitleOfCurrentPageIs(String titlename) {
+        String titleOfPage = ((InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();
+        System.out.println("title Of Page :" + titleOfPage);
+        Assert.assertEquals(titleOfPage,titlename);
+    }
+
     @Then("I see {string} webpage is loaded")
     public void iSeeWebpageIsLoaded(String expectedTitle) {
         String actualTitle = (((DeviceBucket) InstanceRecording.getInstance(DeviceBucket.class)).getDriver()).getTitle();

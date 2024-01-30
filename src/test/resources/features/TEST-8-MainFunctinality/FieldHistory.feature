@@ -720,7 +720,6 @@ Business Need: history Component Scenarios
     And I select "Download as CSV" from parallel lines dropdown of "Field History"
     And I download the file
     Then I see "Field History" in downloaded xls or csv file "govgrants"
-
     Examples:
       | User  |
       | ADMIN |
