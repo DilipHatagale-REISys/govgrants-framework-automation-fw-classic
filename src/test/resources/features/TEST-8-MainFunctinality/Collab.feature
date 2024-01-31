@@ -1374,7 +1374,7 @@ Business Need: collab Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Collaboration (Collab)" tab
-    When I navigate to "My Content" menu inside collab sidebar
+    And I navigate to "My Content" menu inside collab sidebar
     Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
 
