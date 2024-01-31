@@ -19736,3 +19736,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #      | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 #      | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 #
+  @382208 @Sanity
+  Scenario:Sanity TC - SPI - To verify that all top level actions are displayed on top of the parent table, which have been configured
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Budget" sub tab
+    Then I see "Test New" icon for "Budget Periods" is displayed inside flex table
+
