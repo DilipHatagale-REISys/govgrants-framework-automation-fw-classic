@@ -4508,12 +4508,36 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory   | fieldName            | fieldNewValue                                                                                                     | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail | Hide Expression JSON | govgrants_config:Hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient | Program Progress Bar | Name                      | Submitted for Approval     |
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "15" seconds
+
+
+#    When I login to "As a Grantor" app as "ADMIN" user
+#    When I setup my app as "As a Grantor"
+#    And I navigate to "Planning" tab
+#    And I click toggle button to select "Internal Programs - Draft"
+#    When I perform quick search for "Automation Internal Program for Testing"
+#    When I click on "View" icon for "Automation Internal Program for Testing" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48627    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin
@@ -4620,7 +4644,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send Back |
+      | Approve | Reject | Send back |
 
   @48637    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
@@ -6352,8 +6376,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue                                                                           | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group_at_top_level_action | DataTableEnhanceProgramContacts | Name                      | New                        |
+      | configurationCategory | fieldName            | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:Hide_Expression_EnhancedGrid_Multiple_AND_OR_group | DataTableEnhanceProgramContacts | Name                      | New                        |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

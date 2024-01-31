@@ -1,4 +1,4 @@
-@EndToEnd_Flows_QA-component @regression-QA @EndToEnd_Flows_QA
+@EndToEnd_Flows_QA-component @regression-QA @EndToEnd_Flows_QA @skiponjenkins
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
