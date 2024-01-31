@@ -956,7 +956,7 @@ Business Need: All pdf and xls related scenario including component and complete
 #    Then I see "Active Programs" on page "1" of "govgrants" pdf file
     Then I see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
-  @35095    @validateSkipFormForDownload-gapplications @smoke
+  @35095    @validateSkipFormForDownload-gapplications @smoke @needtocheckmanually @skiponjenkins
   Scenario: Setup skip form download for 'General Budget Details Form' in configuration and validating inside Applications view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |

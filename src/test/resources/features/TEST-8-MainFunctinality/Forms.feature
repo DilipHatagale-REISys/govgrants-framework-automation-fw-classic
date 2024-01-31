@@ -35,7 +35,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208996 @208997
   Scenario Outline: All Forms - Admin- Config- Verify we can download form as PDF
@@ -103,7 +103,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206340 @208663 @206881
   Scenario: All forms- SPI- UI- Verify in View Form ID should get populated UI
@@ -195,7 +195,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206346 @206349
   Scenario: All forms- SPI- UI- Verify all forms displays under dropdown
@@ -298,7 +298,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206853
   Scenario: All forms- SPI- UI- Verify, in edit mode, while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
@@ -335,7 +335,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206856 @206863
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button success message should pop-up
@@ -383,7 +383,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208805
   Scenario: All Forms - SPI- UI- Verify when we hover on (i) icon Help text should be displayed
@@ -416,7 +416,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208660
   Scenario: All forms- SPI- UI- Verify in preview Form name should not populate on UI
@@ -453,7 +453,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206337
   Scenario:All forms- SPI- UI- Verify in preview Form ID should not populate on UI
@@ -489,7 +489,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206859 @206334
   Scenario:All forms- SPI- UI- Verify the success message will be automatically closed after the set interval of time out
@@ -521,7 +521,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208654
   Scenario: All forms- SPI- UI- Verify fields which are required for save denoted with (*)
@@ -617,7 +617,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206875
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
@@ -753,7 +753,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208681 @208672
   Scenario: All forms- SPI- UI- Verify in View Submitted on under Authorized Representative should get populated UI
@@ -790,7 +790,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @208684 @208675
   Scenario: All forms- SPI- UI- Verify in Edit Submitted on under Authorized Representative should get populated UI
@@ -834,7 +834,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206320 @206323 @206326 @206329
   Scenario: Last modified- SPI- UI- Verify Last modified by name is captured
@@ -875,7 +875,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206884
   Scenario: All forms- SPI- UI- Verify if we hit ‘Back’ button, on View mode form we should redirect back to File tab
@@ -906,7 +906,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206866
   Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
@@ -937,7 +937,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206869
   Scenario: All forms- SPI- UI- Verify if we hit ‘No’ button on confirmation message modal, form should not get closed
@@ -991,3 +991,129 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTable"
     When I click on "Cancel" in the page details
     Then I see "FN-01389" shown as over view header
+
+  @381941 @381942 @Sanity
+  Scenario Outline:
+  |Sanity TC - Admin - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
+  |Sanity TC - PM - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    Then I see "Form Name" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Mandatory" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Percentage" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Last Modified By" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Last Modified Date" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Allow Edit?" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @381964 @Sanity
+  Scenario: Sanity TC - SPI - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    Then I see "Form Name" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Mandatory" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Percentage" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Last Modified By" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Last Modified Date" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+    Then I see "Allow Edit?" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
+
+  @381967 @381968 @Sanity
+  Scenario Outline:
+  |Sanity TC - Admin - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
+  |Sanity TC - PM - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see title of current page is "Applications: Standard Assurances Form Edit ~ As a Grantor"
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @381969 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
+
+  @381970 @Sanity
+  Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see title of current page is "Applications: Standard Assurances Form View ~ As a Grantor"
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @381972 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see title of currentpage is "Applications: Standard Assurances Form View ~ Grants Portal"
+
+  @381987 @381990 @Sanity
+  Scenario Outline:Sanity
+  |TC - Admin - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
+  |Sanity TC - PM - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Project Characteristics" page block displayed
+    Then I see "Need for Project" page block displayed
+    Then I see "Significance" page block displayed
+    Then I see "Project Goals" page block displayed
+    Then I see "Organization Capacity" page block displayed
+    Then I see "AwardFundingAccounts-SD1" page block displayed
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+@381994 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to see all page blocks in tab on Enhanced form as added in config
+  Given I am on "SUBPORTAL" portal
+  When I login to "Grants Portal" app as "SPI" user
+  And I navigate to "Applications" tab
+  And I click toggle button to select "Applications - All"
+  And I click on "View" icon in flex table for first draft record
+  When I navigate to "Files" sub tab
+  And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+  Then I see "Project Characteristics" page block displayed
+  Then I see "Need for Project" page block displayed
+  Then I see "Significance" page block displayed
+  Then I see "Project Goals" page block displayed
+  Then I see "Organization Capacity" page block displayed
+  Then I see "AwardFundingAccounts-SD1" page block displayed

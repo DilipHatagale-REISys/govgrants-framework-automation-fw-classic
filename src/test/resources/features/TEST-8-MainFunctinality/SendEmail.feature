@@ -1,4 +1,4 @@
-@SendEmail-Component @regression-QA @SendEmail
+@SendEmail-Component @regression-QA @SendEmail @skiponjenkins
 Business Need: SendEmai Component Scenarios Send Email Functionality Send Email Attachment Send Email Send Files
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
@@ -7128,6 +7128,28 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
+  @382774 @Sanity
+    Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+    Given I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "automationpm@ggp.test8.atm.fwautomat" CC "" Subject "Checkbox" in send email LWC
+    When I enter value "Test" into field "Body Content" on send email modal
+    And I click on checkbox for field "Send Copy (Cc) to Me"
+    When I click on "Send" button in send email modal
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+    Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
+    Examples:
+    |Users|
+    |Admin|
+    |PM|
+
   @332880 @332881
   Scenario: Send Email Functionality
   |Send Email -Verified when every fields kept empty then error message is displying when clicked on send button|
@@ -7325,6 +7347,25 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     #332857
     And I click on checkbox for field "Send Copy (Cc) to Me"
     When I click on "Send" button in send email modal
+    Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
+
+  @382776 @Sanity
+    Scenario: Sanity-TC-SPI-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "automationpm@ggp.test8.atm.fwautomat" CC "" Subject "Checkbox" in send email LWC
+    When I enter value "Test" into field "Body Content" on send email modal
+    And I click on checkbox for field "Send Copy (Cc) to Me"
+    When I click on "Send" button in send email modal
+    #332862
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
   @332793

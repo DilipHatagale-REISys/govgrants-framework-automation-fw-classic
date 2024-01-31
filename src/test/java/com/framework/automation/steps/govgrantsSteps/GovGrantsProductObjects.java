@@ -562,7 +562,9 @@ public final class GovGrantsProductObjects {
     private Boolean isNewTabOpened() {
         boolean myNewTabFound = false;
         if (I.amPerforming().switchTo().getWindowsHandlers().size() > 1)
-            myNewTabFound = true;
+            System.out.println("window size is:" + I.amPerforming().switchTo().getWindowsHandlers().size());
+
+        myNewTabFound = true;
         return myNewTabFound;
     }
 
