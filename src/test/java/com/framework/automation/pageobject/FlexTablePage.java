@@ -1404,7 +1404,8 @@ public class FlexTablePage extends GovGrantsManager {
         boolean flag = false;
         try {
             if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[normalize-space(text()) = '" + actionButton + "'] | " +
-                    "//td[contains(@class,'actionColumn')]/div//*[@title='" + actionButton + "']"))) {
+                    "//td[contains(@class,'actionColumn')]/div//*[@title='" + actionButton + "'] |" +
+                    "//td//div[@class='actionColIconWrap']//ancestor::a[@title='" + actionButton + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

@@ -55,9 +55,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
-  @89698    @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
-  Scenario: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
-    When I login to "As a Grantor" app as "ADMIN" user
+  @89698 @379346 @379357 @379347 @379358 @Sanity   @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario Outline: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -70,7 +70,12 @@ Business Need: dynamic forms Component Scenarios
       | Field   | Value |
       | Percent | 12.00 |
     When I click on "Save" in the page details
+    #379347
     Then I see for "Percent" field value is "12.00%" inside dynamic form
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
 
   @88124    @validateTitleOfFormAtDynamicFormLayout
   Scenario: validate the title of form at dynamic form view page
@@ -369,6 +374,9 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Validate" button is displayed
+    When I click on "Validate" button in right header
+    Then I see the following message in the page details :
+      | Validated successfully |
 
   @89934    @ValidateThatValidateButtonIsHiddenAtDynamicFormLayoutInViewMode
   Scenario: validate the validate button is hidden if Validation Button Visibility is set as Hide from config at dynamic form layout
@@ -3789,6 +3797,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    #
     Then I softly do not see "Section: Section 1" block is collapsed
     Then I softly do not see "Section: Section 4" block is collapsed
 
@@ -4035,9 +4044,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "Validate" button is displayed
 
-  @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
-  Scenario: validate that by click on cancel button a form is displayed in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+  @100107 @379350 @379361 @Sanity    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
+  Scenario Outline: validate that by click on cancel button a form is displayed in view mode
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4045,11 +4054,18 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    #379355
+    Then I softly can see top right button "Cancel" in page detail
+    Then I softly can see top right button "Save" in page detail
     And I pause execution for "7" seconds
     When I click on "Cancel" button in right header
     When I pause execution for "5" seconds
     Then I softly can see top right button "Edit" in page detail
     Then I softly can see top right button "Validate" in page detail
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
@@ -4394,7 +4410,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
 
-  @100446 @206248    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  @100446 @206248 @379252 @379363 @Sanity    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
   Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4481,7 +4497,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
-  @100460    @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
+  @100460  @379364 @379353 @Sanity  @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
@@ -4493,7 +4509,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ?   | Newtab                  | DynamicForm        | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4501,11 +4517,13 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
+    #379353
     Then I see "Menu" action is not displayed at the "Dynamic Form" modal
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
+      | User  | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | ADMIN | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
+      | PM    | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @100462    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormEditModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form edit modal window
@@ -4932,9 +4950,9 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Form Validated Successfully. |
 
-  @201251 @sprint3
-  Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
-    When I login to "As a Grantor" app as "ADMIN" user
+  @201251 @379344 @379345 @379349 @379360 @379356 @Sanity @sprint3
+  Scenario Outline:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4942,8 +4960,14 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    #379345 #379356
+    Then I see "Edit" button is displayed
+    Then I see "Validate" button is displayed
     When I pause execution for "2" seconds
     When I click on "Edit" button in right header
+    #379344
+    Then I see "Cancel" button is displayed
+    Then I see "Save" button is displayed
     When I enter values into "Section 1" page block
       | Field   | Value |
       | Percent | 20    |
@@ -4955,6 +4979,10 @@ Business Need: dynamic forms Component Scenarios
       | Percent | 20    |
     When I click on "Save" in the page details
     Then I softly see "Percent" inside "Section 1" at dynamic form
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @201252 @sprint3
   Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
@@ -5112,3 +5140,21 @@ Business Need: dynamic forms Component Scenarios
       | User  |
       | ADMIN |
       #  | PM    |
+
+  @379348  @Sanity
+  Scenario: Entering value into number field and click on save , a value is getting saved into number field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I switch to tab number "1"
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number | 12.00 |
+    When I click on "Cancel" in the page details
+    Then I see for "Number" field value is "12.00" inside dynamic form
+    Then I do not see for "Number" field value is "12.00" inside dynamic form

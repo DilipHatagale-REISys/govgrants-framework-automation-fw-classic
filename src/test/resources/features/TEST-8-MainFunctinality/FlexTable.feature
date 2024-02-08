@@ -5,28 +5,28 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   ############Test suite: Flex Table UI (Suite ID: 334515)############
 
-  @334978
+  @334978 @382479 @Sanity
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334979
+  @334979 @382480 @Sanity
   Scenario: Flex table-Page size-PM-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334980
+  @334980 @382483 @Sanity
   Scenario: Flex table-Page size-SPI-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334981 @336206
+  @334981 @336206 @382486 @Sanity
   Scenario: Flex table-Page size-Admin-Config-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - Admin - Config - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -42,7 +42,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334984 @336208
+  @334984 @336208 @382487 @Sanity
   Scenario: Flex table-Page size-PM-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - PM - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -56,7 +56,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334985 @336232
+  @334985 @336232 @382488 @Sanity
   Scenario: Flex table-Page size-SPI-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - SPI - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -162,7 +162,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "Total Records" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334995
+  @334995 @382489 @Sanity
   Scenario:Flex table-Pagination-Admin-Config-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -177,7 +177,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @334997
+  @334997 @382491 @Sanity
   Scenario: Flex table-Pagination-PM-UI-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -192,7 +192,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @334999
+  @334999 @382492 @Sanity
   Scenario: Flex table-Pagination-SPI-UI-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -209,7 +209,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335000 @336242
+  @335000 @336242 @382493 @Sanity
   Scenario:Flex table-Pagination-Admin-Config-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
   Pagination - Admin - Config - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -225,7 +225,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
-  @335001 @366243
+  @335001 @366243 @382495 @Sanity
   Scenario: Flex table-Pagination-PM-UI-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
   Pagination - PM - UI - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -480,7 +480,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335049
+  @335049 @382499 @Sanity
   Scenario: Flex table-Enable Record Selection-Admin-Config-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -499,7 +499,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335052
+  @335052 @382501 @Sanity
   Scenario: Flex table-Enable Record Selection-PM-UI-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -516,7 +516,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335054
+  @335054 @382502 @Sanity
   Scenario: Flex table-Enable Record Selection-SPI-UI-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -533,7 +533,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335055
+  @335055 @382508 @Sanity
   Scenario: Flex table-Disable Record Selection-Admin-Config-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -550,7 +550,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335059
+  @335059 @382509 @Sanity
   Scenario: Flex table-Disable Record Selection-PM-UI-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -567,7 +567,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335060
+  @335060 @382510 @Sanity
   Scenario: Flex table-Disable Record Selection-SPI-UI-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -810,7 +810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
-  @335120
+  @335120 @382517 @Sanity
   Scenario: Flex table-Enable Menu-SPI-UI-To verify that on enabling Menu, Menu option displayed on UI for the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1921,7 +1921,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
-  @334748
+  @334748 @382544 @Sanity
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1934,6 +1934,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as PDF" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
@@ -19743,6 +19744,63 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
-    When I navigate to "Budget" sub tab
-    Then I see "Test New" icon for "Budget Periods" is displayed inside flex table
+    And I navigate to "Budget" sub tab
+    Then I see "Test New" button inside "Budget Periods" flex table
 
+    @382211 @Sanity
+      Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
+      Given I am on "SUBPORTAL" portal
+      When I login to "Grants Portal" app as "SPI" user
+      And I navigate to "Applications" tab
+      When I perform quick search for "package release flow SK3_Application"
+      When I click on "View" icon for "package release flow SK3_Application" inside table
+      And I navigate to "Budget" sub tab
+      Then I see row level action button "Edit" rendered on flex table
+      Then I see row level action button "View" rendered on flex table
+      Then I see row level action button "Delete" rendered on flex table
+
+      @382216 @Sanity
+      Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
+        Given I am on "SUBPORTAL" portal
+        When I login to "Grants Portal" app as "SPI" user
+        And I navigate to "Applications" tab
+        When I perform quick search for "package release flow SK3_Application"
+        When I click on "View" icon for "package release flow SK3_Application" inside table
+        And I navigate to "Budget" sub tab
+        And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
+        And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
+        Then I softly see the following messages in the page details :
+          | Saved Successfully! |
+
+  @382240 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "Edit" icon for "New Application For Testing Only" inside table
+    Then I see title of current page is "  "
+
+    @382261 @Sanity
+    Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
+      Given I am on "SUBPORTAL" portal
+      When I login to "Grants Portal" app as "SPI" user
+      And I navigate to "Applications" tab
+      And I click toggle button to select "Applications - All"
+      When I perform quick search for "New Application For Testing Only"
+      When I click on "View" icon for "New Application For Testing Only" inside table
+      Then I see title of current page is "Application View "
+
+      @382496 @Sanity
+      Scenario: Sanity TC - SPI - To verify that user is not able to see Pagination at right bottom of the table, when Pagination config is disabled
+        Given I have "default" configuration as below:
+          | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+          | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+        Given I setup test configuration as below:
+          | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+          | Flex Table:General    | Enable Pagination | false         | GrantsList         | Name                      |                            |
+        Given I am on "SUBPORTAL" portal
+        When I login to "Grants Portal" app as "SPI" user
+        And I navigate to "Grants" tab
+        Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"

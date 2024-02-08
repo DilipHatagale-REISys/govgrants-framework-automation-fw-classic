@@ -471,8 +471,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
 
-  @77110    @enablePageSizeFieldAtEnhancedDataTable-gPlanning
-  Scenario: enabling of page size dropdown at bottom inside enhanced enhanced flex table planning
+  @77110  @379019  @enablePageSizeFieldAtEnhancedDataTable-gPlanning
+  Scenario Outline: enabling of page size dropdown at bottom inside enhanced enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size  | false             | ApiGeneratedId:0 |
@@ -481,7 +481,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Page Size  | true          | DataTableEnhanceProgramContacts |                           |                            |
       | Flex Grid:General     | Default Page Size | 5             | DataTableEnhanceProgramContacts |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -489,6 +489,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:programContactsTableId---"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @77112    @defaultPageSizeFieldAtEnhancedDataTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom of enhanced flex table planning
@@ -507,15 +511,15 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
-  @77113    @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
-  Scenario: validate disabling of total row count in enhanced flex table planning
+  @77113  @379018 @Sanity  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
+  Scenario Outline: validate disabling of total row count in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Total Records Count | false         | DataTableEnhanceProgramContacts |                           |                            |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -523,6 +527,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @77183    @disablingMenuFieldForAtEnhancedDataTable-gPlanning
   Scenario: validate disabling of burger menu icon in enhanced flex table planning
@@ -1214,7 +1222,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @204991 @204992
+  @204991 @204992 @379020 @Sanity
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI,
   Page Size- PM- UI- Verify dropdown to select page size manually should not appear on UI
     Given I have "default" configuration as below:
@@ -1321,7 +1329,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205013 @205014
+  @205013 @205014 @379022 @Sanity
   Scenario Outline: Pagination - Admin- Config- Verify Pagination should not display on UI,
   Pagination - PM- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
@@ -1346,7 +1354,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
 
-  @205010 @205011
+  @205010 @205011 @379021 @Sanity
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI,Pagination - PM- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
@@ -2117,7 +2125,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
-  @205078 @205080
+  @205078 @205080 @379015 @Sanity
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option should not available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option should not available on UI
     Given I have "default" configuration as below:
@@ -2141,7 +2149,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205077 @205079
+  @205077 @205079 @379014 @Sanity
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option available on UI
     Given I have "default" configuration as below:
@@ -3191,3 +3199,24 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Download as PDF" button inside table id "---program:-:FlexTableEnhancedNotesId---"
     And I download the file
     Then I see "4000" on page "1" of "govgrants" pdf file
+
+  @379017 @Sanity
+  Scenario Outline: To verify that user is able to see Total Records count at bottom of the table, when Total Records count config is enabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Total Records Count | true         | DataTableEnhanceProgramContacts |                           |                            |
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |

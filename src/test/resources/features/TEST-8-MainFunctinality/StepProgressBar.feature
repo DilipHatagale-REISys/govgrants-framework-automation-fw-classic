@@ -388,7 +388,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201459
+  @201459 @382795 @382799 @Sanity
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -422,7 +422,7 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario:
 
   ################# Step Progress Bar ######################
-  @201445 @201446 @201454 @201455
+  @201445 @201446 @201454 @201455 @382794 @Sanity
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
   Color Code Settings - PM- UI- Verify progress bar should should follow given color codes
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
@@ -487,7 +487,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201438
+  @201438 @382792 @Sanity
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
