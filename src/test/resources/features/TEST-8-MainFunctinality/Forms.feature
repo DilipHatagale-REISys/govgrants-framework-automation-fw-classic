@@ -37,7 +37,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @208996 @208997
+  @208996 @208997 @382041 @382042 @Sanity
   Scenario Outline: All Forms - Admin- Config- Verify we can download form as PDF
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -315,7 +315,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "OK"
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
 
-  @206854 @206855 @206862 @206861
+  @206854 @206855 @206862 @206861 @382014 @382015 @Sanity
   Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button success message should pop-up
   All forms- PM- UI- Verify when we select Edit action, form should be open in edit mode
     When I login to "As a Grantor" app as "<User>" user
@@ -337,7 +337,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206856 @206863
+  @206856 @206863 @382018 @Sanity
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button success message should pop-up
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -353,7 +353,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @208998
+  @208998 @382044 @Sanity
   Scenario: All Forms - SPI- UI- Verify we can download form as PDF
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -568,7 +568,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Save" in the page details
     Then I see error message contains text "This field is required"
 
-  @206870 @206871
+  @206870 @206871 @382030 @382032 @Sanity
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, form should open in view mode
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -578,6 +578,9 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "Application test" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    #382030 #382032
+    Then I see "Cancel" button is displayed
+    Then I see "Save" button is displayed
     And I click on "Cancel" in the page details
     When I click alert button "Yes"
     Then I see page title "Applications: Program Specific Application form View ~ As a Grantor"
@@ -586,7 +589,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206872
+  @206872 @382033 @Sanity
   Scenario: All forms- SPI- UI- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, and opened into view mode.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -596,11 +599,13 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Cancel" button is displayed
+    Then I see "Save" button is displayed
     And I click on "Cancel" in the page details
     When I click alert button "Yes"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @206873 @206874
+  @206873 @206874 @382025 @382026 @Sanity
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -610,6 +615,10 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "Application test" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Back" button is displayed
+    Then I see "Edit" button is displayed
+    Then I see "New Validate" button is displayed
+    Then I see "Validate" button is displayed
     And I click on "New Validate" in the page details
     Then I see the following message in the page details :
       | Form cannot be validated because data is missing in one or more fields that are required to submit. To view the fields that are required to submit, click the Edit button. |
@@ -619,7 +628,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206875
+  @206875 @382028 @Sanity
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -629,6 +638,11 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    #382028
+    Then I see "Back" button is displayed
+    Then I see "Edit" button is displayed
+    Then I see "New Validate" button is displayed
+    Then I see "Validate" button is displayed
     And I click on "New Validate" in the page details
     Then I see the following message in the page details :
       | Form cannot be validated because data is missing in one or more fields that are required to submit. To view the fields that are required to submit, click the Edit button. |
@@ -891,7 +905,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Back" in the page details
     Then I softly see "All Forms " page block displayed
 
-  @206864
+  @206864 @382020 @382021 @Sanity
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message should open
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -908,7 +922,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206866
+  @206866 @382022 @Sanity
   Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1079,9 +1093,9 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "View" icon in flex table for first draft record
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see title of currentpage is "Applications: Standard Assurances Form View ~ Grants Portal"
+    Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @381987 @381990 @Sanity
+  @381987 @381990 @381982 @381983 @Sanity
   Scenario Outline:Sanity
   |TC - Admin - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
   |Sanity TC - PM - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
@@ -1102,18 +1116,133 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-@381994 @Sanity
+  @381994 @381986 @Sanity
   Scenario: Sanity TC - SPI - To verify that user is able to see all page blocks in tab on Enhanced form as added in config
-  Given I am on "SUBPORTAL" portal
-  When I login to "Grants Portal" app as "SPI" user
-  And I navigate to "Applications" tab
-  And I click toggle button to select "Applications - All"
-  And I click on "View" icon in flex table for first draft record
-  When I navigate to "Files" sub tab
-  And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-  Then I see "Project Characteristics" page block displayed
-  Then I see "Need for Project" page block displayed
-  Then I see "Significance" page block displayed
-  Then I see "Project Goals" page block displayed
-  Then I see "Organization Capacity" page block displayed
-  Then I see "AwardFundingAccounts-SD1" page block displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Project Characteristics" page block displayed
+    Then I see "Need for Project" page block displayed
+    Then I see "Significance" page block displayed
+    Then I see "Project Goals" page block displayed
+    Then I see "Organization Capacity" page block displayed
+    Then I see "AwardFundingAccounts-SD1" page block displayed
+
+  @382001 @382003 @Sanity
+  Scenario Outline: Sanity TC - Admin - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Project Characteristics" page block displayed
+    Then I see field "fieldQuestion1__c" is disabled
+    Then I see field "fieldQuestion1__c" inside page block
+    Then I see field "fieldQuestion2__c" inside page block
+    Then I see field "fieldQuestion3__c" inside page block
+    Then I see field "fieldQuestion4__c" inside page block
+    Then I see field "fieldQuestion5__c" inside page block
+    Then I see field "fieldQuestion6__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion7__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion8__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion9__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion10__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion11__c" inside page block
+
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
+
+  @382004
+  Scenario:Sanity TC - SPI - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I click on "View" icon in flex table for first draft record
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    Then I see "Project Characteristics" page block displayed
+    Then I see field "fieldQuestion1__c" is disabled
+    Then I see field "fieldQuestion1__c" inside page block
+    Then I see field "fieldQuestion2__c" inside page block
+    Then I see field "fieldQuestion3__c" inside page block
+    Then I see field "fieldQuestion4__c" inside page block
+    Then I see field "fieldQuestion5__c" inside page block
+    Then I see field "fieldQuestion6__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion7__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion8__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion9__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion10__c" inside page block
+    Then I see field "fieldTEXTAREAQuestion11__c" inside page block
+
+  @382035 @382036 @Sanity
+  Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" in the page details
+    Then I see page title "Applications: Program Specific Application form Edit ~ As a Grantor"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @382037 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
+  Last modified - UI- Verify Last modified Date and time must be updated if form is modified
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Edit" in the page details
+    Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
+
+  @382038 @382039 @Sanity
+  Scenario Outline: Sanity TC - Admin - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Application test"
+    When I click on "View" icon for "Application test" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Validate" in the page details
+    Then I see the following message in the page details :
+      | Form validated successfully. |
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @382040 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - Draft"
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    When I navigate to "Files" sub tab
+    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    And I click on "Validate" in the page details
+    Then I see the following message in the page details :
+      | Form validated successfully. |

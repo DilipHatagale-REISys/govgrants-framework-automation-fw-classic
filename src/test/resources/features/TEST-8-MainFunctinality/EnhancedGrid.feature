@@ -3,7 +3,7 @@ Business Need: EnhancedGrid Component Scenarios
   Test all EnhancedGrid component based scenarios
   As a configuration manager i make different configurational changes in EnhancedGrid component and will validate them.
 
-  @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode. @Vrushali @Sprint-19
+  @257630 @257343 @Toverify,WhenInternalUserclickon'New'actionbuttontocreateanewrecordinEnhancedGrid,anewrecordshouldshowupingridineditmode.  @Sprint-19
   Scenario Outline: To verify ,  When Internal User click on 'New' action button to create a new record in Enhanced Grid, a new record should show up in the grid in edit mode.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -26,7 +26,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257614 @257611 @ToverifyAdminUserclickonnewactionandthenclickonRefreshbuttonfromPagelayoutthennewrecordshouldnotshowup @Vrushali @Sprint-19 @US-255921
+  @257614 @257611 @US-255921 @379174 @Sanity
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -39,6 +39,8 @@ Business Need: EnhancedGrid Component Scenarios
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
+    #379174
+    Then I see "New" button inside "---program:-:ProgramReviewStepTemplatesTableId---" flex table
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     And I refresh the page
     Then I softly see value "Pre-Screen Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -47,7 +49,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257558 @257557 @InternalUserclickonnewactionthenclickonRefreshbuttonfrompageblockhamburgericonthennewrecordshouldnotshowup @Vrushali @print-19 @US-255921
+  @257558 @257557 @print-19 @US-255921
   Scenario Outline: Internal User click on new action and then click on Refresh button from page  block hamburger icon then new record should not show up
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -71,7 +73,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly. @Vrushali @Sprint-19 @US-255921
+  @257555 @257452 @Toverify,InternalUsershouldseechildtableofsecondrecord(whichwasattoppreviously)linkedtosecondrecordonly.  @Sprint-19 @US-255921
   Scenario Outline: To verify, Internal User should see child table of the second record (which was at top previously) linked to second record only.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -89,7 +91,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord. @Vrushali @Sprint-19 @US-255921
+  @257386 @Toverify,Usershouldnotseeanychildtableattachedtothenewlycreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should  not see any child table attached to the newly created record.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -106,7 +108,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     Then I softly see "No Records Found" inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-  @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord. @Vrushali @Sprint-19 @US-255921
+  @257388 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord.  @Sprint-19 @US-255921
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -127,7 +129,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-  @257474 @Toverify,Advancedfiltershouldbeworkingfornewlyaddedchildrecordintable @Vrushali @Sprint-19 @US-255921
+  @257474 @379185  @Sanity @US-255921
   Scenario: To verify, Advanced filter should be working for newly added child record in the table
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -151,9 +153,10 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on advance filter "#advfProgramReviewStepTemplates" of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     When I enter advance filter values inside id "advfProgramReviewStepTemplates"
       | Step Name | contains | Test Review |
+    #379185
     Then I see value "Test Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257472 @Toverify,Usershouldbeabletoaddnewchildrecordinchildtablethatattachedtothenewlyreatedrecord. @Vrushali @Sprint-19 @US-255921
+  @257472 @379204 @379202 @379193 @Sanity
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -174,6 +177,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
     And I expand nested table containing column value "Test Review"
+    #379193
+    Then I see "New" button inside "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" flex table
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" by clicking "New" :
       | Form Name  | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Automation | 50              | 1                                         | Checked   |
@@ -182,10 +187,13 @@ Business Need: EnhancedGrid Component Scenarios
       | Form Name | Form Weight (%) | Minimum Number of Reviews per Application | Required? |
       | Testing   | 75              | 1                                         | Checked   |
     And I expand nested table containing column value "Test Review"
+    #379202
+    Then I see Advance Filter box is displayed inside table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---" in flex table
     When I click on advance filter "#advfProgramReviewStepPanelTemplates" of table id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
     When I enter advance filter values inside id "advfProgramReviewStepPanelTemplates"
       | Form Weight (%) | equals to | 75 |
     And I pause execution for "5" seconds
+    #379204
     Then I see value "75.00%" for title "Form Weight (%)" against the value "Testing" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
 
@@ -234,7 +242,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196926
+  @206112 @Toverifyfoexternaluser,DownloadasPDFshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196926
   Scenario: To verify for external user,Download as PDF should work for empty table currency,  Number &Percent  column should be available on the table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -251,7 +259,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Numbertest" on page "1" of "govgrants" pdf file
     Then I softly see "percenttest" on page "1" of "govgrants" pdf file
 
-  @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable @Vrushali @Sprint-5 @US-196296
+  @206113 @ToverifyfoExternaluser,DownloadasXLSshouldworkforemptytablecurrency,Number&Percentcolumnshouldbeavailableontable  @Sprint-5 @US-196296
   Scenario: To verify for External user,Download as XLS should work for empty table currency,Number &Percent  column should be available on the table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -267,7 +275,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see "Numbertest" in downloaded xls or csv file "govgrants"
     Then I see "percenttest" in downloaded xls or csv file "govgrants"
 
-  @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
+  @wip @257457 @257460 @257455 @257463 @257477 @dilip @Sprint-19 @US-255921
   @ToverifyUsershouldbeabletoDeletethenewlyaddedrecord @UsershouldbeseeconfirmationboxwhenclickonDeleteactiononthenewlyaddedrecord @UsershouldbeabletoEditdetailstothenewlydisplayedrecord
   @Usershouldbeabletoadddetailstothenewlyaddedrecordandclickonsaveactionthenrecordisgettingsaved @InpageblockdownloadPDFfornewlyaddedrecordinthetableshouldbedisplayed
   Scenario:To verify, User should be able to Delete the newly added  record
@@ -596,7 +604,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I download the file
     Then I see "Test Review" on page "2" of "govgrants" pdf file
 
-  @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
+  @wip @257553  @257551 @InternalUserShouldBeAbleToDeleteTheNewlyAddedRecord @@dilip @Sprint-19 @US-255921
   @InternalUserShouldBeSeeConfirmationBoxWhenClickOnDeleteActionOnTheNewlyAddedRecord
   Scenario: To verify, Internal User should be see confirmation box when click on Delete action on  the newly added  record
     When I login to "As a Grantor" app as "PM" user
@@ -624,7 +632,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257551
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
 
-  @35432    @disablingAdvanceFilterForEnhancedGrid-gPlanning @smoke
+  @35432 @379184   @Sanity @smoke
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -639,6 +647,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
+    #379184
     Then I see Advance Filter is disabled from table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
   @35433    @disablingMenuIconForEnhancedGrid-gPlanning @smoke
@@ -811,7 +820,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
 
-  @35439    @disblingQuickSearchForEnhancedGrid-gPlanning @smoke
+  @35439  @379181 @smoke @Sanity
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -828,7 +837,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437    @disablingEnableTotalRecordCountFieldForParentFlexTableAtEnhancedGrid-gPlanning @smoke
+  @35437 @379187 @379206 @Sanity @smoke
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -845,6 +854,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     And I expand nested table containing column value "BP01"
     And I pause execution for "5" seconds
+    #379187 #379206
     Then I do not see "Total Records" count in enhanced grid "---program:-:EnhanceAppBudCateGrantorTableId---"
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
@@ -941,7 +951,7 @@ Business Need: EnhancedGrid Component Scenarios
       | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
-  @35435    @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke
+  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @Sanity
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1021,7 +1031,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:appBudgetPeriodTableId---"
 
-  @41304    @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning
+  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @Sanity
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1036,6 +1046,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
+    #379171
     And I expand nested table containing column value "BP01"
     Then I see "10" records inside enhanced grid id "---program:-:appBudgetPeriodTableId---"
 
@@ -1473,7 +1484,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
 
-  @44993    @disableFilterForChildFlexTableAtEnhancedGrid-gPlanning
+  @44993  @379203  @Sanity
   Scenario: Disabling the Advance Filter at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1489,7 +1500,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-    #When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "BP01"
+    #379203
     Then I see Advance Filter is disabled from table "---program:-:appBudgetPeriodTableId---" with data target value "#advfEnhanceAppGrantorBudgetPeriods"
 
   @44994    @disableMenuFieldForChildFlexTableAtEnhancedGrid-gPlanning @smoke
@@ -1551,7 +1563,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
     Then I see "Download as XLS" options inside "Budget Categories" disabled
 
-  @44996    @disablingQuickSearchForChildFlextTableEnhancedGrid-gPlanning
+  @44996  @379200 @Sanity
   Scenario: validate disabling of Quick Search field at Child Flex Table for Enhanced Grid - Planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1568,9 +1580,10 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
+    #379200
     Then I see quick search option disabled from enhanced grid for child flex table "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44997    @enableTotalRecordCountForChildFlexTableForEnhancedGrid-gPlanning @smoke
+  @44997 @379205   @Sanity @smoke
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1581,6 +1594,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I expand nested table containing column value "BP01"
+    #379205
     Then I see "Total Records" for Child Flex table "---program:-:EnhanceAppBudCateGrantorTableId---" count in enhanced grid
 
   @44998    @enableAutoIndexForChildFlexTableOnEnhancedGrid-gPlanning
@@ -1615,7 +1629,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see select check box enabled for child flex table in enhanced flex grid
 
-  @45096    @OpenNewTabAtParentFlexTableForViewAction-gPlanning
+  @45096 @379178  @Sanity
   Scenario: validate open new tab for view at parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1632,16 +1646,19 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "View" icon for "BP01" inside table
+    #379178
     Then I see new tab is opened
 
-  @45097    @viewActionOpenInNewWindowAtParentFlexTableForEnhancedGrid-gPlanning
+  @45097  @379180 @379182  @Sanity
   Scenario: validate enhanced grid view action open in new window for parent flex table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | SameWindow        | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?     | SameWindow        | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | Flex Table  Action    | Enable Quick Search | true              | ApiGeneratedId:1               |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | NewWindow     | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?     | NewWindow     | EnhanceAppGrantorBudgetPeriods | Name                      | View                       |
+      | Flex Table:General    | Enable Quick Search | true          | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1649,11 +1666,14 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    #379180
+    Then I see "quick-search" is displayed on table id "---program:-:flexGridEnhancedTableId---"
+    When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
+    #379182
     When I click on "View" icon for "BP01" inside table
     Then I see new tab is opened
 
-  @45098    @viewActionOpenInNewTabAtChildFlexTableForEnhancedGrid-gPlanning
+  @45098  @379197 @Sanity
   Scenario: validate enhanced grid view action open in new tab for child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1672,6 +1692,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     And I pause execution for "2" seconds
     When I click on "View" icon for "Equipment" inside table
+    #379197
     Then I see new tab is opened
 
   @45099    @viewActionOpenInNewWindowAtChildFlexTableForEnhancedGrid-gPlanning
@@ -1716,7 +1737,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see no new tab is opened
 
-  @45276    @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke
+  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @Sanity
   Scenario: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1728,6 +1749,7 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     When I expand nested table containing column value "BP01"
    # Then I see "<fieldDisplayNames>" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
+    #379173
     Then I see columnName "Category Name" is Displayed on "Budget Categories" table
     Then I see columnName "Budget" is Displayed on "Budget Categories" table
     Then I see columnName "Cash Match" is Displayed on "Budget Categories" table
@@ -2523,7 +2545,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "BP01" inside table
     Then I see "Automation Title" opens in overLay window
 
-  @80047    @verifyModalTitleFieldForEnhancedGridTopLevelPreviewAction-gPlanning
+  @80047  @379176  @verifyModalTitleFieldForEnhancedGridTopLevelPreviewAction-gPlanning
   Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2539,6 +2561,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
     When I click on top right button "Test New" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
+    #379176
     Then I see "Automation Title" opens in overLay window
 
   @80071    @verifyDisplayFieldValueAtInternalOrganizationAtEnhancedGrid-gPlanning @doubted
@@ -2656,7 +2679,7 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
 
-  @82800    @validateQuickSearchBoxIsDisabledIfAnyRecordIsInInlineModeUnderEnhancedGrid-gPlanning
+  @82800 @379175  @Sanity
   Scenario: To verify Quick Search disables on inline edit action-e grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2665,7 +2688,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
+    #379175
+    Then I softly can see row level action button "Edit" against "BP01" in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I click on "Edit" icon for "BP01" inside table
     Then I see quick search box is disabled in flex table with id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
@@ -2985,7 +3009,7 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
       | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
 
-  @87763   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted @wip
+  @87763 @doubted @wip
   Scenario Outline: validate lookup field is in view mode after checking the Enable Edit Display Field from config at e-grid child table- gplanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue  | filterId         |
@@ -3094,14 +3118,16 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
-  @106419   @validateAdvanceFilterValueForDateFieldWithOperatorStartWithAtEnhancedGrid
+  @106419 @379183 @Sanity
   Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Grid             | Enable Filter       | true               | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | Flex Table:General    | Enable Filter       | true           | EnhanceAppGrantorBudgetPeriods | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3109,6 +3135,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
+    Then I see Advance Filter box is displayed inside table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" in flex table
     When I click on advance filter "#advfEnhanceAppGrantorBudgetPeriods" of table id "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     When I enter advance filter values inside id "advfEnhanceAppGrantorBudgetPeriods"
       | Project Period | starts with | 10/1/2016 |
@@ -3476,7 +3503,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see "Fee Fund Requested" column inside Enhanced grid id "EnhanceAppGrantorBudgetPeriodsFlexToggle" of width "50%"
 
-  @151174 @verifyEnhanceAppGrantorBudgetPeriodsValueDoNotDisapperWhenUserEditRecordAndSaveAgainOnFormLayout
+  @wip @151174 @verifyEnhanceAppGrantorBudgetPeriodsValueDoNotDisapperWhenUserEditRecordAndSaveAgainOnFormLayout
   Scenario:validate that enhanced data table values do not disappear when the user edit a record on forms
     Given I delete the record "{Framework_recordUsed:GrantTempRecordInActiveState}" from the object "Grant__c" with field "ProjectTitle__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -3499,7 +3526,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see the following messages in the page details :
       | Saved Successfully! |
 
-  @151183 @verifyEnhanceAppGrantorBudgetPeriodsValueDoNotDisapperWhenUserEditPicklistFieldValueRecordAndSaveAgainOnFormLayout
+  @wip  @151183 @verifyEnhanceAppGrantorBudgetPeriodsValueDoNotDisapperWhenUserEditPicklistFieldValueRecordAndSaveAgainOnFormLayout
   Scenario Outline:validate that enhanced data table values do not disappear when the user edit picklist field value from record on forms
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -3577,7 +3604,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see pagination is displayed at the top and bottom right of table "AwardBudgetCategoryFlexTableFlexToggle"
 
-  @153948    @validateTotalRecordCountAndShowingRecordIfPerformedQuickSearchAtEnhancedGrid
+  @153948  @379186
   Scenario: validate total row count and showing record is displayed if performed quick search at enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3593,6 +3620,8 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
+    #379186
+    Then I see "Total Records" page size inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Then I softly see the text :
       | Showing 1 to 1 of 1 records |
 
@@ -4599,7 +4628,7 @@ Business Need: EnhancedGrid Component Scenarios
       | End Date | greater than | 10/31/2024 |
     Then I softly see value "12/31/2024" for title "End Date" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
-  @181526 @sprint24 @userstory_179175 @skipOnJenkins
+  @skipOnJenkins @181526 @sprint24 @userstory_179175
   Scenario: Data table Enhanced-To verify, Downloaded XLS  picklist column should not displayWhen Hide column at picklist field   with user type , profile & context operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -4619,7 +4648,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click alert button "Yes"
     Then I softly do not see "Fee Fund Requested" in flex table header "---program:-:EnhanceAppGrantorBudgetPeriodsId---"
 
-  @181517 @sprint24 @userstory_179175 @skipOnJenkins
+  @skipOnJenkins @181517 @sprint24 @userstory_179175
   Scenario: Data table Enhanced-To verify, In Downloaded XLS  Number column should not display  When Hide column at Number  field   with    user type &  profile  operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5447,7 +5476,7 @@ Business Need: EnhancedGrid Component Scenarios
 #      | newFieldsApi                                                                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
 #      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,Test_num__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @192952 @sprint1
+  @192952 @379194 @379196 @379201 @Sanity @sprint1
   Scenario: Data table Enhanced-To verify , currency field should accept the negative value
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5466,7 +5495,11 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "10" seconds
     When I perform quick search for "Construction" in "---program:-:EnhanceAppBudCateGrantorTableId---" panel
     And I pause execution for "5" seconds
+    #379194 #379201
+    Then I softly can see row level action button "Edit" against "Construction" in flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     And I click on "Edit" icon for "Construction" inside flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
+    #379196
+    Then I see "NonCashMatch__c" field is editable inside enhanced grid
     And I enter value "-91304" into field "NonCashMatch__c"
     #And I click on top right button "Save" in flex table with id "---program:-:EnhanceAppBudCateGrantorTableId---"
     And I click on "Save" in the page details
@@ -5639,10 +5672,10 @@ Business Need: EnhancedGrid Component Scenarios
     Examples:
       | User  | defaultFieldsApi                                                    | newFieldsApi                                                        |
       | ADMIN | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
-     # | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
+      | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
 
 
-  @218461 @218462 @352192 @352197
+  @218461 @218462 @352192 @352197 @379190 @Sanity
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
   Admin-Parent table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
@@ -5663,6 +5696,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Review Steps" page block displayed
+      # 379190
     Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -5670,7 +5704,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @218464 @218465
+  @218464 @218465 @379191 @Sanity
   Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -5690,6 +5724,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup tabs" sub tab
     #Then I softly see "Review Steps" page block displayed
+      # 379191
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -5777,7 +5812,7 @@ Business Need: EnhancedGrid Component Scenarios
       | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
       | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
 
-  @218446 @218447
+  @218446 @218447 @379188 @Sanity
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5793,6 +5828,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
+    #379188
     Then I see "Show" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -5818,7 +5854,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218449 @218450 @352425 @352427
+  @218449 @218450 @352425 @352427 @379189 @Sanity
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
   Admin-Parent Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
@@ -5835,6 +5871,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup tabs" sub tab
     Then I softly see "Review Steps" page block displayed
+    #379189
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -6174,7 +6211,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Table has been reset. |
 
 ##################### Test suite: Page size & Pagination (Suite ID: 352166) #######################
-  @352265 @352267
+  @352265 @352267 @379209 @Sanity
   Scenario Outline: Admin-Child Table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6191,6 +6228,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #379209
     Then I see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
@@ -6248,7 +6286,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352419 @352420
+  @352419 @352420 @379210 @Sanity
   Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6265,6 +6303,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #379210
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
     Examples:
@@ -6272,7 +6311,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352429 @352430
+  @352429 @352430 @379208 @Sanity
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6289,13 +6328,14 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #379208
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
       | User  |
       | ADMIN |
       # | PM    |
 
-  @352278 @352279
+  @352278 @352279 @379207 @Sanity
   Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6312,6 +6352,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I softly see "Grant Budget" page block displayed
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
+    #379207
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:RecGrantBudgetCategoryFlexTableId---"
     Examples:
       | User  |
@@ -6386,7 +6427,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @296562 @296563
+  @296562 @296563 @379172 @Sanity
   Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6402,12 +6443,13 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Setup tabs" sub tab
     When I expand nested table containing column value "1"
+    #379172
     Then I see "Panel Name" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
     Examples:
       | User  |
       | ADMIN |
-      # | PM    |
+      | PM    |
 
   @296594 @296595
   Scenario Outline:Admin_Parent table_Verified that help text provided in detail config, get displayed on hovering over help icon beside respective column name/field
@@ -7254,21 +7296,41 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I do not see select check box enabled in flex table
 
-    @218475 @218478
-    Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
-        | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
-        | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName                        | fieldNewValue | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-        | Flex Table:General    | Enable Record Selection          | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
-        | Flex Table:General    | Record Selection Column Position | Left          | RecGrantBudgetCategoryFlexGrid | Name                      | Record Selection           |
-      Given I am on "SUBPORTAL" portal
-      When I login to "Grants Portal" app as "SPI" user
-      And I navigate to "Grants" tab
-      And I click toggle button to select "Grants - Active"
-      When I perform quick search for "Autosnapshot grant 1"
-      When I click on "View" icon for "Autosnapshot grant 1" inside table
-      When I navigate to "Budget" sub tab
-      Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+  @218475 @218478
+  Scenario: Record Selection- SPI- Config- Verify correct Record Selection Column select all checkbox displays on UI
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName                        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Record Selection          | false             | ApiGeneratedId:3 |
+      | Flex Table            | Record Selection Column Position | none              | ApiGeneratedId:4 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName                        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Record Selection          | true          | RecGrantBudgetCategoryFlexGrid | Name                      |                            |
+      | Flex Table:General    | Record Selection Column Position | Left          | RecGrantBudgetCategoryFlexGrid | Name                      | Record Selection           |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    And I click toggle button to select "Grants - Active"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    When I navigate to "Budget" sub tab
+    Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
+
+  @379199  @Sanity
+  Scenario: To verify that user is able to see Quick search input field on child table, when Quick search config is enabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Quick Search | true         | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Program For Application"
+    When I click on "View" icon for "Program For Application" inside table
+    When I navigate to "Budget" sub tab
+    #When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
+    When I expand nested table containing column value "BP01"
+    #379200
+    Then I see "quick-search" is displayed on table id "---program:-:EnhanceAppBudCateGrantorTableId---"

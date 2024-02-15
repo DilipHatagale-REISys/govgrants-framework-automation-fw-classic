@@ -36,4 +36,9 @@ public class ApprovalProcessSteps {
     public void iSeeReassignedSelectBoxAIsAlignedProperly() {
         approvalProcesPage.assertReassignedSelectBoxIsAlignedProperly();
     }
+
+    @Then("I see {string} action button for {string} inside flex table id {string}")
+    public void iSeeActionButtonForInsideFlexTableId(String usage, String button, String recordid, String tableid) {
+        approvalProcesPage.assertActionButtonForInsideTable(usage, button, recordid, tableid);
+    }
 }
