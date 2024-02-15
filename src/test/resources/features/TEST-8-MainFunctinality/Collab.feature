@@ -1378,3 +1378,940 @@ Business Need: collab Component Scenarios
     Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
 
+  @204362
+  Scenario: Collab Phase - PM User - To verify,  the quick search functionality by entering the text in quick search text box.
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    When I perform quick search for "Automation PM"
+    Then I see "Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204366
+  Scenario: Collab Phase - PM User -To verify the quick search functionality without entering any text in quick search text box.
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    When I perform quick search for ""
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204406 @204559
+  Scenario: Collab Phase - PM User -To verify, user should able to see all posts on click of Post icon.
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "Automation SPI" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204413 @204560
+  Scenario: Collab Phase - PM User -To verify, user should able to mention peoples in comment box by entering name after '@' symbol.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hi @Automation PM" in my feed section and share the post
+    Then I see "Hi @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @218748 @218750
+  Scenario: validate the delete action at comment section at my feed section by SPI user from home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    And I click on "Comment" action at "Test Post for automation-SPI DND" comment inside my feed
+    And I enter value "Test Automation SPI Comment delete" in my feed section and share the comment
+    And I click on "Delete" action at "Test Automation SPI Comment delete" comment inside my feed
+    And I click modal button "OK"
+    And I refresh the page
+    And I pause execution for "5" seconds
+    Then I do not see "Test Automation SPI Comment delete" comment inside "Test Post for automation-SPI DND" post at collab
+
+  @218751 @218754
+  Scenario: validate text wrap and alignment at my feed section by SPI user at application phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordWithCreatedStatus}" inside table
+    When I navigate to "Collab" sub tab
+    Then I see entered text in my feed section displayed properly
+
+  @204613 @204563
+  Scenario: validate text wrap and alignment at my feed section by PM user at application phase
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    Then I see entered text in my feed section displayed properly
+
+  @204614 @204566
+  Scenario: validate text wrap and alignment at my feed section by admin user at application phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    Then I see entered text in my feed section displayed properly
+
+  @204630 @204638
+  Scenario: validate the pop-up appears by performing delete action at my feed section by admin user at application phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I pause execution for "5" seconds
+    And I enter value "Test Automation ADMIN application phase Comment" in my feed section and share the post
+    And I pause execution for "3" seconds
+    And I click on "Delete" action from dropdown at "Test Automation ADMIN application phase Comment" comment inside my feed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
+
+  @204642 @204568
+  Scenario: validate the pop-up appears by performing delete action at my feed section by PM user at application phase
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationRecordAwardStatusForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    When I pause execution for "5" seconds
+    And I enter value "Test Automation PM application phase Comment" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I click on "Delete" action from dropdown at "Test Automation PM application phase Comment" comment inside my feed
+    Then I see confirmation box with body "Are you sure you want to delete this post and its comments?" is displayed
+
+  @204650
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as ADMIN user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @204658
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as pm user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @204659
+  Scenario: validate that by click on refresh icon, a loading icon appears at collab tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @204661 @204663 @204576
+  Scenario: validate the delete action at post present under home phase -  my feed section by admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I refresh the page
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation Admin Post Delete Action Access" in my feed section and share the post
+    When I pause execution for "10" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Delete" action from dropdown at "Test Automation Admin Post Delete Action Access" comment inside my feed
+    And I pause execution for "7" seconds
+    And I click modal button "OK"
+    And I pause execution for "5" seconds
+    Then I do not see "Test Automation Admin Post Delete Action Access" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204664 @204578
+  Scenario: validate the delete action at post present under collab phase-my feed section by admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I refresh the page
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation collab Delete action by admin" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I click on "Delete" action from dropdown at "Test Automation collab Delete action by admin" comment inside my feed
+    And I click modal button "OK"
+    Then I do not see "Test Automation collab Delete action by admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204666
+  Scenario: validate that a post can be shared from collab phase-my feed section by admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation collab admin to check post share access" in my feed section and share the comment
+    Then I softly see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation collab admin to check post share access" comment inside my feed
+    And I click modal button "OK"
+    Then I softly do not see "Test Automation collab admin to check post share access" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204668
+  Scenario: validate that delete action at post present at record detail collab phase by admin user from application phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Test Automation record admin to check post delete access" in my feed section and share the post
+    And I pause execution for "3" seconds
+    And I click on "Delete" action from dropdown at "Test Automation record admin to check post delete access" comment inside my feed
+    And I click modal button "OK"
+    Then I do not see "Test Automation record admin to check post delete access" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204669 @204580
+  Scenario: validate that admin can send a comment to post from record level collab tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I enter value "Test Automation record comment" in my feed section and share the comment
+    Then I softly see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation record comment" comment inside my feed
+    And I click modal button "OK"
+    Then I softly do not see "Test Automation record comment" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204671 @204674
+  Scenario: validate that admin can send a comment to post from home phase-my feed section
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Test Automation Admin Comment home" in my feed section and share the comment
+    Then I softly see "Test Automation Admin Comment home" inside flex table with id "---program:-:myFeedTableId---"
+    And I click on "Delete" action at "Test Automation Admin Comment home" comment inside my feed
+    And I click modal button "OK"
+    And I pause execution for "3" seconds
+    And I refresh the page
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I softly do not see "Test Automation Admin Comment home" comment inside "Test Post for automation-Admin DND" post at collab
+
+  @204675
+  Scenario: validate that PM user can see To Me option inside menu at home phase-my feed section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    Then I see "To Me" option is displayed at collab menu
+
+  @204677
+  Scenario: validate that PM user can see all users option inside menu at home phase-my feed section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    Then I see "All Users" option is displayed at collab menu
+
+  @204678
+  Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section
+
+  @204679
+  Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section
+
+  @204680
+  Scenario: validate that by click on All users menu then, all users post/comment are displayed to PM user at home phase-my feed section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208148
+  Scenario: validate that if pm user tries to mention external user in post then mention auto complete list is not displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation SPI" in the post at collab
+    And I pause execution for "7" seconds
+    Then I do not see mention auto complete list is displayed at collab post
+
+  @208149
+  Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation SPI" in the comment at collab
+    Then I do not see mention auto complete list is displayed at collab comment
+
+  @208151 @204583
+  Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Refresh" button inside collab tab
+    Then I see collab my feed page refreshed
+
+  @208152
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on refresh button at collab
+    And I pause execution for "5" seconds
+    Then I see collab my feed page refreshed
+
+  @208158
+  Scenario: validate that only my feed section is displayed to SPI user at home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu bar is not displayed at my feed
+
+  @208159
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @208160
+  Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as PM user
+    When I login as "PM1" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "To Me" from dropdown
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208163 @208164
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I pause execution for "10" seconds
+    Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @208166 @208168
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I pause execution for "5" seconds
+    Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @208169
+  Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page
+
+  @208177
+  Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page
+
+  @208178 @208179
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    And I pause execution for "5" seconds
+    Then I see mention auto complete list is displayed at collab comment
+
+  @208095 @208099 @208146 @208153 @208157 @204591
+  Scenario: My feed section for external user
+  |My Feed - External user - To verify , user should be able to see the my feed on right hand side of home page.|
+  |My Feed - Externals user - To verify , user should be able to refresh the my feed on click of refresh icon available besides my feed.|
+  |My Feed - External user - To verify , user should be able to see comments posted by all users.|
+  |My Feed - External user - To verify , user should be able to see comments liked by which user on my feed.|
+  |My Feed - External user - To verify , user should be able to see comments posted by another user on my feed.|
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test @Automation PM" comment inside my feed
+    And I pause execution for "5" seconds
+    And I enter value "Test Automation @Automation PM" in my feed section and share the comment
+    Then I softly see "Test Automation @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208117
+  Scenario: My Feed - PM user - To verify , user should be able to apply filters for 'To me' from burger icon available besides my feed. |  |
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "To Me" from dropdown
+
+  @208134 @204592
+  Scenario: My Feed - Admin user - To verify , user should be able to apply filters for 'To me' from burger icon available besides my feed.
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "To Me" from dropdown
+
+  @208091 @208090 @204681 @204609 @204611 @204612 @204635 @204613 @204614 @208145 @204633 @208144 @208156 @208108 @208111 @204635 @204639 @208097 @208098
+  Scenario: To verify, user should be able to enter text with different combinations in my feed
+  |My Feed - PM user - To verify , user should be able to see the my feed on right hand side of home page.|
+  |My Feed - Admin user - To verify , user should be able to see the my feed on right hand side of home page.|
+  |To verify, user should be able to verify the my feed functionality available on home page.|
+  |To verify, user should able to mention people in my feed after entering @ symbol.|
+  |To verify,  the quick search functionality by entering the text in quick search text box.|
+  |To verify the quick search functionality without entering any text in quick search text box|
+  |To verify,  user should able to share comment by entering comment and mentioning people.|
+  |My Feed - Admin user - To verify , user should be able to see comments posted by another user on my feed.|
+  |My Feed - Admin user - To verify , user should be able to see comments posted by all users by applying 'All Users' filter.|
+  |My Feed - PM user - To verify , user should be able to apply filters for 'All user' from burger icon available besides my feed.|
+  |My Feed - Admin user - To verify , user should be able to apply filters for 'All user' from burger icon available besides my feed.|
+  |My Feed - PM user - To verify , user should be able to see comments posted by all users by applying 'All Users' filter.|
+  |To verify , user should be able to delete comment by click on delete dropdown|
+  |To verify, user should able to see the confirm message  box on click of delete comment button from delete dropdown.|
+  |To verify, user should be able to refresh the quick search by clicking on refresh icon.|
+  |My Feed - PM user - To verify , user should be able to refresh the my feed on click of refresh icon available besides my feed.|
+  |My Feed - Admin user - To verify , user should be able to refresh the my feed on click of refresh icon available besides my feed.|
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    #208091 #208090 #204681 #204609 #204611 #204612 #204613 #204614 #208145 #208144 #208108 #208111
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    When I perform quick search for "Test @Automation PM"
+    When I perform quick search for ""
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test @Automation PM" comment inside my feed
+    And I pause execution for "5" seconds
+    And I enter value "Test Automation @Automation PM" in my feed section and share the comment
+    Then I softly see "Test Automation @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    #204633 #204635 #204639 #208097
+    And I click on "Delete" action at "Test Automation @Automation PM" comment inside my feed
+    Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
+
+  @208180
+  Scenario: validate that PM user can see all users option inside menu at home phase-my feed section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    Then I see "All Users" option is displayed at collab menu
+
+  @208181 @204598
+  Scenario: validate that SPI user can see To Me option inside menu at home phase-my feed section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section
+
+  @208182
+  Scenario: validate that SPI user can see all users option inside menu at home phase-my feed section
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section
+
+  @208184 @204606
+  Scenario: validate that by click on All users menu then, all users post/comment are displayed to PM user at home phase-my feed section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208185
+  Scenario: validate that if pm user tries to mention external user in post then mention auto complete list is not displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation SPI" in the post at collab
+    And I pause execution for "7" seconds
+    Then I do not see mention auto complete list is displayed at collab post
+
+  @208186
+  Scenario: validate that if pm user tries to mention external user in comment then mention auto complete list is not displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation SPI" in the comment at collab
+    Then I do not see mention auto complete list is displayed at collab comment
+
+  @208189 @204615
+  Scenario: validate that by click on refresh icon, a loading icon appears at record level collab tab by login as ADMIN user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Refresh" button inside collab tab
+    Then I see collab my feed page refreshed
+
+  @208190 @205302
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as ADMIN user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on refresh button at collab
+    And I pause execution for "5" seconds
+    Then I see collab my feed page refreshed
+
+  @208191 @208192
+  Scenario: validate that only my feed section is displayed to SPI user at home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu bar is not displayed at my feed
+
+  @208193
+  Scenario: validate that by click on refresh icon, a loading icon appears at home level collab tab by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    And I click on refresh button at collab
+    Then I see collab my feed page refreshed
+
+  @208194 @205306
+  Scenario: validate that No feed available is displayed at my feed-to me only section at collab phase by login as PM user
+    When I login as "PM1" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "To Me" from dropdown
+    Then I see "Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208196 @208197
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I pause execution for "10" seconds
+    Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @208198 @208199
+  Scenario: validate that name of users who like the post is displayed at my feed-to me only section by login as PM user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "You and Automation PM like this." in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I pause execution for "5" seconds
+    Then I see "You and Automation PM like this." inside flex table with id "---program:-:myFeedTableId---"
+
+  @208200
+  Scenario: validate that govgrants logo is displayed at collab phase by login as admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page
+
+  @208201
+  Scenario: validate that govgrants logo is displayed at collab phase by login as SPI user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see navigation logo on page
+
+  @208202 @205308
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    And I pause execution for "5" seconds
+    Then I see mention auto complete list is displayed at collab comment
+
+  @208203 @205309
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at collab phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I refresh the page
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    Then I see mention auto complete list is displayed at collab comment
+
+  @208204 @208426
+  Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed at record level collab phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I pause execution for "5" seconds
+    And I enter value "Post at record level" in my feed section and share the post
+    And I click on "Comment" action at "Post at record level" comment inside my feed
+    And I enter value "Hello @Automation" in the comment at collab
+    And I pause execution for "10" seconds
+    Then I see mention auto complete list is displayed at collab comment
+
+  @208427
+  Scenario: validate that burger menu icon is not displayed at my feed section by login as external user - home phase
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Home" tab
+    Then I see Menu Icon is not displayed at my feed section
+
+  @208428 @205310
+  Scenario: validate that pop-up appears by perfomring delete action at my feed section by SPI user from home phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I enter value "@Simon PM" in my feed section and share the comment
+    Then I see "@Simon PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208429
+  Scenario: validate that cross icon is displayed at collab phase quick search box
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabFeeds"
+
+  @208430
+  Scenario: validate that cross icon is displayed at collab phase - my colleagues quick search box
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Colleagues" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabColleagues"
+
+  @208431
+  Scenario: validate that cross icon is displayed at collab phase - external users quick search box
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "External Users" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabCommunityUsers"
+
+  @208432
+  Scenario: validate that cross icon is displayed at collab phase - external users quick search box
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "External Users" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabCommunityUsers"
+
+  @208433
+  Scenario: validate that cross icon is displayed at collab phase - my group quick search box
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Groups" menu inside collab sidebar
+    When I perform quick search for "text"
+    Then I see cross icon is displayed at search box at "CollabGroups"
+
+  @208434
+  Scenario: validate flex grid displayed at collab phase my content tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    When I navigate to "My Content" menu inside collab sidebar
+    Then I see expected table with id "WorkSpaceFilesFlexToggle"
+
+  @208435 @205311
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Automation Admin Comment" in my feed section and share the post
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I see user logo at comment "Test Automation Admin Comment" is small in size inside my feed home
+
+  @204362
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at record level collab tab
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly see tab label as "Upload File from Library" at files library upload modal
+
+  @204366
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at collab phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I see "Add Files" opens in overLay window
+
+  @204383 @204388
+  Scenario: validate that add file modal displayed by click on Attach File button at my feed - Home phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "5" seconds
+    Then I see "Add Files" opens in overLay window
+
+  @204406 @204407
+  Scenario: validate that upload file from library and computer is not displayed at attach file modal at home phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see tab label as "Upload File" at files library upload modal
+    Then I softly do not see tab label as "Upload File" at files library upload modal
+
+  @204413 @204418
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section record level
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}"
+    When I click on "View" icon for "{Framework_recordUsed:programInTestingPurposeOnlyAdminDraft}" inside table
+    When I navigate to "Collab" sub tab
+    And I enter value "Test Automation Admin Comment" in my feed section and share the post
+    And I pause execution for "7" seconds
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I softly see tab label as "Choose a File OR Drag it here" at files library upload modal
+
+  @204423
+  Scenario: validate that user logo at comment section is small in size at collab - my feed section at collab phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Automation PM Comment" in my feed section and share the post
+    And I click on "Comment" action at "Test Automation Admin Comment" comment inside my feed
+    Then I see user logo at comment "Test Automation PM Comment" is small in size inside my feed collab
+
+  @204429
+  Scenario: validate that upload file from library and computer is displayed at attach file modal at home phase posts but posted from record
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Post DO NOT DELETE" in my feed section and share the post
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Post DO NOT DELETE" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly see tab label as "Choose a File OR Drag it here" at files library upload modal
+
+  @204442
+  Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
+
+  @204443
+  Scenario: validate that "I'm Following" submenu is not displayed inside collab sidebar for PM user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I do not see "I'm Following" inside "My Feeds" menu at collab sidebar
+
+  @204453
+  Scenario: validate that upload file from library and computer is not displayed at attach file modal at group post on collab phase
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test Post for automation-Admin DND" in my feed section and share the post
+    And I click on "Comment" action at "Test Post for automation-Admin DND" comment inside my feed
+    And I click on "Attach File" button at collab
+    And I pause execution for "3" seconds
+    Then I softly do not see tab label as "Upload File from Computer" at files library upload modal
+    Then I softly do not see tab label as "Upload File from Library" at files library upload modal
+
+  @204455
+  Scenario: Collab - To verify, on Collab phase if the user clicks on 'Share' button without entering any text in the Comment/Post-box, the alert message should display "A comment is required"
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I click on button "Share" under collab for comment box
+    Then I see alert message "A comment is required"
+
+  @204457
+  Scenario: Collab-To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  record level collab
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204459 @204508
+  Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204511 @204523
+  Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the home level collab  for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation FO" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I see "@Automation FO" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204532
+  Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the home level collab for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation PM" in my feed section and share the post
+    Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204535 @204555
+  Scenario: To verify, If i add a user in a line then the user name should be displayed at the same position in text format on the  home level collab for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation Admin" in my feed section and share the post
+    And I pause execution for "5" seconds
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    Then I see "@Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204556
+  Scenario: Collab-To verify, If i add a user in a middle of line  then the user name should be displayed at the same position in text format on the record level collab for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Hello @Automation PM" inside "Post" in My Feed
+    And I select "My Followers" from dropdown in My Feed and Share Post
+    Then I see "Hello @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @204557
+  Scenario: Collab-To verify, If i add a user in a line then that user name should be displayed at the starting of the comment on the record  level collab for internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "@Automation PM" in my feed section and share the post
+    And I pause execution for "3" seconds
+    Then I see "@Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+
+  @208090 @208108 @208144 @208097 @208154
+  Scenario: Scenario for My feed section for PM user
+  |My Feed - PM user - To verify , user should be able to see the my feed on right hand side of home page. |
+  |My Feed - PM user - To verify , user should be able to apply filters for 'All user' from burger icon available besides my feed.|
+  |My Feed - PM user - To verify , user should be able to see comments posted by all users by applying 'All Users' filter.|
+  |My Feed - PM user - To verify , user should be able to see comments posted by another user on my feed.|
+  |My Feed - PM user - To verify , user should be able to refresh the my feed on click of refresh icon available besides my feed|
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Home" tab
+    And I navigate to "Collaboration (Collab)" tab
+    And I enter value "Test @Automation PM" in my feed section and share the post
+    And I pause execution for "5" seconds
+    Then I see "Test @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+    And I navigate to "Home" tab
+    And I click on parallel menu button in flex table title "My Feed"
+    And I select "All Users" from dropdown
+    And I click on "Comment" action at "Test @Automation PM" comment inside my feed
+    And I pause execution for "5" seconds
+    And I enter value "Test Automation @Automation PM" in my feed section and share the comment
+    Then I softly see "Test Automation @Automation PM" inside flex table with id "---program:-:myFeedTableId---"
+

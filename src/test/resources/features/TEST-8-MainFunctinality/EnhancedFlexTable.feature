@@ -437,7 +437,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
-  @76932    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke
+  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -763,7 +763,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "FirstName LastNam" inside table
     Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
-  @106413  @validateDateCanBeEnteredSuccessfulyInsideAdvanceFilterValueInputBoxAtFlexTableEnhanced
+  @106413 @379016 @Sanity
   Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -2607,7 +2607,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ######################Test suite: Action Config (Suite ID: 205379)########################
 
-  @205382 @205384 @205388
+  @205382 @205384 @205388 @379006 @Sanity
   Scenario Outline: Action- Admin- config- Verify action is rendered on UI,
   Action- PM- UI- Verify action is rendered on UI
   Action- Admin- config- Verify action name is displaying correctly,
@@ -3207,7 +3207,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Total Records Count | true         | DataTableEnhanceProgramContacts |                           |                            |
+      | Flex Grid:General     | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3220,3 +3220,90 @@ Business Need: DataTableEnhanced Component Scenarios
       | User  |
       | ADMIN |
       | PM    |
+
+  @379005 @Sanity
+  Scenario Outline: To verify that all top level actions are displayed on top of the table, which have been configured
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Overview" sub tab
+    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379007
+  Scenario Outline: To verify that user is able to create new record by clicking on New action
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
+    When I enter "Contacts" values from "Program_Field_Values_QA_org.xlsx"
+    And I click modal button "Save"
+
+    Examples:
+      | User  |
+      | ADMIN |
+      #  | PM    |
+
+  @379011 @379013 @379009 @smoke @Sanity
+  Scenario: validate disabling of quick search from enhanced flex table planning
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
+      | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Quick Search | true          | DataTableEnhanceProgramContacts |                           |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I performed quick search "Iron America" inside table id "---program:-:programContactsTableId---" on page block
+    Then I see value "Iron America" for title "Name" against the value "Grants Administrator" inside table "---program:-:programContactsTableId---"
+    When I click on "View" icon for "Iron America" inside table
+    #379009
+    Then I see new tab is opened
+
+  @379010 @Sanity
+  Scenario:To verify that user is able to delete record by clicking on Delete action
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Remove" icon for "12 21" inside table without accept popup
+    Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
+
+  @379008 @Sanity
+  Scenario: To verify that user is able to edit existing record by clicking on Edit action
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Overview" sub tab
+    When I click on "Edit" icon for "12 21" inside table without accept popup
+    And I enter value "Program Manager" into field "ProjectRole__c"
+    And I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
+    Then I see the following message in the page details :
+      | Saved Successfully! |

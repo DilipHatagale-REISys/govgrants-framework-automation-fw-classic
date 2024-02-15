@@ -3,7 +3,7 @@ Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
 
-  @201270 @201271 @201272
+  @201270 @201271 @201272 @382218 @382223 @382247 @382248 @Sanity
   Scenario Outline:Modal- Admin- Config- Verify Pop-up window (modal window) should open,
   Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,
   Action- PM- UI - Verify ‘Modal title’ is displaying correctly
@@ -34,7 +34,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @201273
+  @201273 @382224 @382251 @382269 @Sanity
   Scenario: Action- SPI- UI- Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -53,6 +53,8 @@ Business Need: Modal Component Scenarios
     When I perform quick search for "security Review_Application"
     When I click on "View" icon for "security Review_Application" inside table
     Then I see "Automation Title" opens in overLay window
+    Then I see "Grant Information" page block displayed
+    Then I see "Grant Description" page block displayed
 
   @201274 @201275
   Scenario Outline: Action- Admin- Config- Verify modal window size is as per Modal width,
@@ -101,7 +103,7 @@ Business Need: Modal Component Scenarios
     Then I see "Automation Title" opens in overLay window
     Then I see modal window is open in same tab with style "width: 1000"
 
-  @201295 @201296
+  @201295 @201296 @382225 @382227 @Sanity
   Scenario Outline: Modal- Admin- Config- Verify if admin can add action buttons in modal window for view mode at the top and Bottom of the page,
   Modal- PM- UI- Verify if action buttons displays in modal window for view mode at the top and Bottom of the page
     Given I have "default" configuration as below:
@@ -244,15 +246,17 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207449 @207450
+  @207449 @207450 @382298 @382299 @Sanity
   Scenario Outline: Modal- Admin- Config- Verify all fields where Required behavior under Page Block Details Config is ‘Required to save’ should have (*) on modal,
   Modal- PM- UI- Verify all fields where Required behavior under Page Block Details Config is ‘Required to save’ should have (*) on modal
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName           | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior   | Required for Save | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Required for Submit |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program Create | Name                      | PBD-19308                  |
+      | configurationCategory                    | fieldName           | fieldNewValue      | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior   | Required for Save  | Grantor State Program Create | Name                      | PBD-19308                  |
+      | Page Block Config:Page Block Rule Detail | Required for Submit | Required to Submit | Grantor State Program Create | Name                      | PBD-19311                  |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -306,7 +310,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207455
+  @207455 @382234 @382237 @382241 @382242 @Sanity
   Scenario Outline: Modal- Admin/PM- Config- Verify if any required field is empty then error massage should display
     Given I delete the record "Automation Program 1234" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
@@ -341,7 +345,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207461 @207462
+  @207461 @207462 @382263 @382266 @382287 @382288  @382285 @382284 @Sanity
   Scenario Outline: Modal- Admin/PM- Config- Verify when we hover on (i) icon on modal Help text should be displayed
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
@@ -417,3 +421,95 @@ Business Need: Modal Component Scenarios
       | Users |
       | Admin |
       | PM    |
+
+  @382294 @382295 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Page Block Detail- Admin- To verify 'Field Label Override' displays on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program Create | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Website Name  | Grantor State Program Create | Name                      | PBD-19311                  |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I see field "Website Name" inside page block
+    Examples:
+      | Users |
+      | Admin |
+      | PM    |
+
+  @382320 @382321 @Sanity
+  Scenario Outline:Sanity Testing- Modal- Admin- To verify user is able to add table in the modal
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
+    Examples:
+      | Users |
+     # | Admin |
+      | PM    |
+
+  @382276 @382277 @Sanity
+  Scenario Outline:Sanity Testing- Modal- Page Block- Admin- To verify help text displays after field label in the page block if provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField           | filterId         |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Grantor State Program Create | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Grantor State Program Create | GNT__PageBlockTitle__c    | Information                |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I hovering mouse on help text icon inside "Information"
+    Then I see "<new_helpText>" shown as help text
+    Examples:
+      | Users | new_helpText             | old_helpText |
+      | ADMIN | Help Text for Automation |              |
+      | PM    | Help Text for Automation |              |
+
+  @382229 @382231 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Admin- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Grantor State Program Create |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I see "<new_helpText>" shown as help text
+    Examples:
+      | Users | new_helpText             | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+      | ADMIN | Help Text for Automation | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office. Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers.Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’.Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+      | PM    | Help Text for Automation | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office. Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers.Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’.Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+
+  @382252 @382253 @Sanity
+  Scenario Outline:Sanity Testing- Modal- Page Tab- Admin- To verify Header Instruction Text displays in the modal if provided in the config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Page Tabs Config      | Header Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory               | fieldName               | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Header Instruction Text | <new_helpText> | Grantor State Program Create | Name                      | TAB-2668                   |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I see "<new_helpText>" shown as header instruction text
+    Examples:
+      | Users | new_helpText           | old_helpText |
+      | ADMIN | Automation Header Text |              |
+      | PM    | Automation Header Text |              |

@@ -7383,3 +7383,2142 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+
+  @332910 @332967
+  Scenario: Send email -TO field should displayed as expected for admin user.
+  | Send email -Body Content field should displayed as expected for admin user. |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I softly see field "To" inside page block
+    Then I softly see field "Body Content" inside page block
+
+  @333103
+  Scenario: Send email- CC field should displayed as expected.
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I softly see field "Cc" inside page block
+
+  @332912 @332969
+  Scenario:Send email- User can see the subject field on the send email modal.
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I softly see field "Subject" inside page block
+
+  @332914 @332972
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC-External" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached to Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached to Cc External" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached to Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached to Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "umang.parekh@reisystems.in" for title "To Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @332929 @332994
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC-External" email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached to Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached to Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332389 @332390 @332391
+  Scenario: Send Email -"Send Copy (Cc) to Me" - To verify , checked checkbox for "Send Copy (Cc) to Me" on send modal
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "automationpm@ggp.test8.atm.fwautomat" CC "" Subject "Checkbox" in send email LWC
+    When I enter value "Test" into field "Body Content" on send email modal
+    #332391
+    And I click on checkbox for field "Send Copy (Cc) to Me"
+    When I click on "Send" button in send email modal
+    #332389
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+    #332390
+    Then I see checkbox is selected for field "Send Copy (Cc) to Me" on send email
+
+  @332833
+  Scenario: Send Email -Attachment - To verify ,  user are remove the attachement from  sends email modal
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    And I click on X Action Button of "SendEmailAttachment.pdf" file
+    Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
+
+  @332815
+  Scenario: Send Email -To verify , when user try to add file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    When I upload attachment "File.pdf" in Send Email Modal
+    Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
+
+  @332816 @333015
+  Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I pause execution for "10" seconds
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "EmailFile.pdf" in Send Email Modal
+    Then I see "Single File Size Attachment upto 1.5MB Limit Exceeded." error massage in attachment section
+
+  @332924 @332991
+  Scenario: Send email- User should be able to see "true" when select file is attached to "TO-External"   email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332821
+  Scenario: Send Email -To verify , when Internal user try to add more then 1.5mb file then " Insert links to file(s) from the record"' message is displayed on the LWC- reply email attachment section
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test for To External Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "ImportantFile.pdf" in Send Email Modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @332822 @333011
+  Scenario: Send Email -To verify , when user try to add more then 1.5mb file then "Single File Size Limit is Exceeded' message is displayed on the LWC- reply email attachment section
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test for To External Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I select value inside table "---program:-:communicationHistoryTableId---" is "All"
+    And I click on "Reply" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "File.pdf" in Send Email Modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @332923 @332989
+  Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Internal "   email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332926 @332993
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332931 @332995
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group " email
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332916 @332973
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332925 @332992
+  Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Group " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @332933 @332997
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "Reply LWC" icon for "Test for False when file not attached To Internal" is displayed inside flex table
+
+  @332917 @332974
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "Test for False when file not attached To Internal" for title "Email Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332918 @332977
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To External" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "Test for False when file not attached To External" for title "Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332919 @332979
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332920 @332980
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Cc Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "View LWC" icon for "Test for False when file not attached To Cc Internal" is displayed inside flex table
+
+  @332921 @332982
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc External" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332922 @332984
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "View" icon for "Test for False when file not attached To Cc Groups" is displayed inside flex table
+
+  @332342
+  Scenario: Send Email - Required to save fields  (*)  is displayed for admin user
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see help text "*" is displayed related field "To" inside Send Email
+
+  @333052 @332344
+  Scenario: Send Email - Required to save fields  (*)  is displayed for External user
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see help text "*" is displayed related field "To" inside Send Email
+
+  @332956 @332341
+  Scenario: Send Email - when External user Hover on the  Select file  field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Select Files" inside Send Email Modal
+    Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
+
+  @332944 @333005
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "Reply" icon for "Test for False when file not attached To Cc Internal" is displayed inside flex table
+
+  @332947 @333008
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332949 @333009
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" email
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332908
+  Scenario: Send Email -"Send Copy (Cc) to Me" - To verify , checked checkbox for "Send Copy (Cc) to Me" on send modal
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "automationpm@ggp.test8.atm.fwautomat" CC "" Subject "Checkbox" in send email LWC
+    When I enter value "Test" into field "Body Content" on send email modal
+    And I click on checkbox for field "Send Copy (Cc) to Me"
+    When I click on "Send" button in send email modal
+    Then I see "Email Sent Successfully." message is displayed on Send Email Modal
+    Then I see checkbox is selected for field "Send Copy (Cc) to Me" on send email
+
+  @332343 @333049
+  Scenario: Send Email - Required to save fields  (*)  is displayed for Internal user
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see help text "*" is displayed related field "To" inside Send Email
+
+  @332337 @332951
+  Scenario: Send Email - when user Hover on the Attachments field help icon and help text is displayed.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Attachments" inside Send Email Modal
+    Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
+
+  @332334
+  Scenario: Send Email - when External user Hover on the Body Content field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Body Content" inside Send Email Modal
+    Then I see help text "Enter email content here" is displayed related field "Body Content" inside Send Email
+
+  @332952 @332338
+  Scenario: Send Email - when External user Hover on the Attachments field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Attachments" inside Send Email Modal
+    Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
+
+  @332339 @333036
+  Scenario: Send Email - when  user Hover on the Select file field help icon and help text is displayed
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Select Files" inside Send Email Modal
+    Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
+
+  @332335
+  Scenario: Send Email - when Internal user Hover on the Attachments field help icon and help text is displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Attachments" inside Send Email Modal
+    Then I see help text "File Attachment" is displayed related field "Attachments" inside Send Email
+
+  @332340 @332954
+  Scenario: Send Email - when Internal  user Hover on the Select file field help icon and help text is displayed
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Select Files" inside Send Email Modal
+    Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
+
+  @332936 @332999
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332938 @333001
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332908
+  Scenario: Send email- when we attach the single file at Select Files field   then files are visible to sender and receiver.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @333046
+  Scenario: Send email-To verify ,when select file  is added and   body content is not available then correct spacing display.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh @ reisystems.in" CC "" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    Then I see the following message in the page details :
+      | You Have Entered Invalid To Email Id. |
+
+  @333048 @332841
+  Scenario: Send email-To verify ,when attachment is added and   body content is not available then correct spacing display.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "" CC "umang.parekh @ reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    Then I see the following message in the page details :
+      | You Have Entered Invalid CC Email Id. |
+
+  @333037 @332840
+  Scenario: Send email- To verify , if body content is not available then correct spacing display.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh @ reisystems.in" CC "" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    Then I see the following message in the page details :
+      | You Have Entered Invalid To Email Id. |
+
+  @333038
+  Scenario: Send email- To verify ,in TO field select as  'Group'& in CC field select as 'internal'  and body content is not available then correct spacing display.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "" CC "umang.parekh @ reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    Then I see the following message in the page details :
+      | You Have Entered Invalid CC Email Id. |
+
+  @333039 @332835
+  Scenario: Send email- To verify ,in TO/CC field 'External' is selected   and body content is not available then correct spacing display.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I click on "Send" button in send email modal
+    Then I see the following message in the page details :
+      | Enter To Email Address.  |
+      | Enter Subject for Email. |
+
+  @332347 @332351
+  Scenario: Send Email -Select File - To verify , When  user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Automation Testing" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Automation Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "umang.parekh@reisystems.in" for title "To Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @332349
+  Scenario: Send Email -Select File - To verify , When  user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Automation Testing" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Automation Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "Automation Testing" for title "Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332352
+  Scenario: Send Email Select File, When Internal user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332353 @332357
+  Scenario: Send Email -Select File - To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332354
+  Scenario: Send Email -Select File - To verify , When External user sends an Email with an file  from TO field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332355 @332356
+  Scenario: Send Email -Select File - To verify , When Internal user sends an Email with an Multiple file from TO (Internal) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332346 @332350
+  Scenario: Send Email -Select File, When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Automation Testing" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Automation Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "Automation Testing" for title "Email Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332348
+  Scenario: Send Email - To verify , When  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Automation Testing" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Automation Testing" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @332365 @332366 @332358 @332360 @332361 @332362 @332363 @332364 @332367 @332368
+  Scenario: Send email Body Content field should displayed as expected for admin user.
+  | Send email TO field should displayed as expected for admin user. |
+  | Send email Subject field should displayed as expected for admin user. |
+  | Send email CC field should displayed as expected for admin user. |
+  | Send Email Button should displayed as expected for admin user. |
+  | Send Email LWC Button should displayed as expected for admin user. |
+  | Send email Select Files Button should displayed as expected for admin user. |
+  | Send email Send Button should displayed as expected for admin user. |
+  | Send email- User should be able to see "true" when select file is attached to "CC- External " email. |
+  | Send email- User should be able to see value for title Subject. |
+    When I login to "As a Grantor" app as "Admin" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    #332366
+    Then I softly can see top right button "Send Email" in page detail
+    #332365
+    Then I softly can see top right button "Send Email LWC" in page detail
+    #332358
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I softly see field "Body Content" inside page block
+    #332360
+    Then I softly can see bottom button "Select Files" in page detail
+    #332361
+    Then I softly see field "Subject" inside page block
+    #332362
+    Then I softly see field "Cc" inside page block
+    #332363
+    Then I softly see field "To" inside page block
+    #332364
+    Then I softly can see bottom button "Send" in page detail
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Testing" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Testing" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Testing" in "---program:-:communicationHistoryTableId---" panel
+    #332367
+    Then I softly see value "Testing" for title "Subject" inside table "---program:-:communicationHistoryTableId---"
+    #332368
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332369 @332370
+  Scenario: Send Email When Internal user sends an Email with file from CC (Internal/External) field then attached file is displayed on the View modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached to Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached to Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "Test for True when file attached to Cc External" for title "Email Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332372
+  Scenario: Send Email To verify When user sends an Email with an file  from TO & CC (Internal/External) field then attached file is displayed on Send modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332373
+  Scenario: Send Email To verify When  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    And I click on X Action Button of "SendEmailAttachment.pdf" file
+    Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
+
+  @332374 @332388
+  Scenario: Send Email Select File, When internal  user sends an Email with an  multiple file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332375
+  Scenario: Send Email -Select File - To verify , When internal  user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    When I upload attachment "File.pdf" in Send Email Modal
+    Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
+
+  @332376
+  Scenario: Send Email To verify, When user sends an Email with an  file  from TO & CC (External) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332377
+  Scenario: Send Email To verify, When Internal user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I pause execution for "10" seconds
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "EmailFile.pdf" in Send Email Modal
+    Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
+
+  @332378
+  Scenario: Send Email Select File, When user sends an Email with an Multiple  file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test for To External Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I click on "Reply" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "ImportantFile.pdf" in Send Email Modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @332379 @332387
+  Scenario: Send Email Select File, When user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332380
+  Scenario: Send Email When Internal user sends an Email with an file  from TO & CC  (Group) field then attached file is displayed on the View & Send  modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "diliphatagale@yopmail.com" Subject "Test for To External Cc External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    And I select value inside table "---program:-:communicationHistoryTableId---" is "All"
+    And I click on "Reply" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "Maketodayfilematter.pdf" in Send Email Modal
+    Then I see "Single File Size Limit is Exceeded" error massage in attachment section
+
+  @332381 @332386
+  Scenario: Send Email When  user sends an Email with an file  from TO (Internal) field then attached file is displayed on the View & Send modal.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "Reply" icon for "Test for True when file attached To External" is displayed inside flex table
+
+  @332382 @332385
+  Scenario: Send Email To verify, On reply modal user are attached the file.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "View" icon for "Test for True when file attached To Cc Groups" is displayed inside flex table
+
+  @332383
+  Scenario: Send Email -Select File - To verify, On reply modal user are attached the multiple  file.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "umang.parekh@reisystems.in" for title "To" inside table "---program:-:communicationHistoryTableId---"
+
+  @332384
+  Scenario: Send Email On reply modal Internal user are attached to file.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @332346 @332347 @332348
+  Scenario Outline: To verify, Admin User try to attach the file more than 10 then  errror message is getting dispalyed
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "TestFileSharing.docx" in send email LWC modal
+    When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
+    When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    When I upload attachment "actionsAtEgrid.png" in send email LWC modal
+    When I upload attachment "actionsAtAttachment.png" in send email LWC modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in send email LWC modal
+    When I upload attachment "actionsAtMeGridTable.png" in send email LWC modal
+    When I upload attachment "captureModalFields.png" in send email LWC modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @332349 @332350
+  Scenario:To verify,External User try to attach the file more than 10 then  errror message is getting dispalyed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "TestFileSharing.docx" in send email LWC modal
+    When I upload attachment "TestAutomationFile.pptx" in send email LWC modal
+    When I upload attachment "SendEmailMP4File.mp4" in send email LWC modal
+    When I upload attachment "SharingAtCollabTest.png" in send email LWC modal
+    When I upload attachment "actionsAtEgrid.png" in send email LWC modal
+    When I upload attachment "actionsAtAttachment.png" in send email LWC modal
+    When I upload attachment "actionsAtEnhancedDataTable.png" in send email LWC modal
+    When I upload attachment "actionsAtMeGridTable.png" in send email LWC modal
+    When I upload attachment "captureModalFields.png" in send email LWC modal
+    Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
+
+  @332351 @332352
+  Scenario Outline: To verify, Admin User can not add the duplicate file if user can try then "File with this name already exist.' error message is displayed
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I upload attachment "DuplicateFile.txt" in send email LWC modal
+    Then I see "File with this name already exist." error massage in attachment section
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @332353 @332354
+  Scenario Outline: To verify, Internal user can Download file by clicking on download action button in the Attachments table in front of the attached file on send email Reply  modal
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "25" seconds
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com,automationfo@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "25" seconds
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @332355 @332356 @332357 @332358
+  Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email reply modal
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "10" seconds
+    Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    And I close LWC modal window
+    #332355 #332356
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    And I close LWC modal window
+    And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    #332357
+    Then I click on "× button on Reply modal" Action Button in front of "SendEmailAttachment.pdf" file
+    #332358
+    Then I can not see "SendEmailAttachment.pdf" file Send Email modal
+
+  @332360
+  Scenario: To verify, Internal  User should not be able to see Attachment button when select file is not getting attached  to  send email  modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "10" seconds
+    When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    When I click on "Send" button in send email modal
+    And I pause execution for "10" seconds
+    Then I can not see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    And I close LWC modal window
+
+  @332361 @332362
+  Scenario: To verify, Internal User should be able to see Attachment button when select file is attached  to  reply email modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
+    When I upload attachment "SendEmailAttachment.pdf" in send email modal
+    Then I see Attachment section is displayed under "Reply" modal
+    When I click on "×" icon at "Reply" modal after Email Sent Successfully
+
+  @332363 @332364 @332365 @332366 @332367 @332368 @332369 @332370 @332372 @332373 @332374 @332375 @332376 @332377 @332378 @332379 @332380 @332381 @332382 @332383 @332384 @332385 @332386 @332387 @332388 @332389
+  Scenario: Verify Send Email LWC Modal for ADMIN user and verify Body Content buttons
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    #332363
+    Then I see User should be able to checked the "Internal" & "External" picklist from "Cc"  field
+    #332364 #332365
+    Then I see checkbox is enabled for "Internal" and "External" picklist from "Cc" field
+    #332366 #332367
+    And I pause execution for "10" seconds
+    Then I see User should be able to checked the "Internal" & "External" picklist from "To"  field
+    #332368
+    Then I see the "Subject" field on the send email modal
+    #332369
+    Then I see the "Body Content" field on the send email modal
+    #332370 #332372 #332373
+    Then I see "Strikethrough" is displayed under "Body Content" and enabled
+    #332374
+    Then I see "Italic" is displayed under "Body Content" and enabled
+    #332375 #332376
+    Then I see "Bold" is displayed under "Body Content" and enabled
+    #332377
+    Then I see "Underline" is displayed under "Body Content" and enabled
+    #332378
+    Then I see "Numbered list" is displayed under "Body Content" and enabled
+    #332379
+    Then I see "Bulleted list" is displayed under "Body Content" and enabled
+    #332380 #332381 #332382
+    Then I see "Indent" is displayed under "Body Content" and enabled
+    #332383
+    Then I see "Center align text" is displayed under "Body Content" and enabled
+    #332384
+    Then I see "Left align text" is displayed under "Body Content" and enabled
+    #332385
+    Then I see "Right align text" is displayed under "Body Content" and enabled
+    #332386 #332387
+    Then I see the "Select Files" field on the send email modal
+    #332388 #332389
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see modal contain "FilesLink" is displayed
+
+  @332390 @332391 @333018
+  Scenario: Verify Send Email LWC Modal for ADMIN checkbox selected
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    #332390
+    Then I see the "Send Copy (Cc) to Me" field on the send email modal
+    #332391
+    Then I see the "Reset" field on the send email modal
+    #333018
+    And I click on "Select Files" button in Email LWC Modal
+    Then I see modal contain "FilesLink" is displayed
+    Then I see the "checkbox" and is enabled
+    And I see the "checkbox" and is enabled and I click on "1" checkbox
+    And I see the "checkbox" and is enabled and I click on "2" checkbox
+    And I see the "checkbox" and is enabled and I click on "3" checkbox
+    And I pause execution for "3" seconds
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+    Then I see the "checkbox" is selected as per row no "1" checkbox
+
+  @333019 @333022 @333023 @333024
+  Scenario Outline: check the checkbox for the internal from dropdown then Group field is getting hidden from TO field
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Then I pause execution for "2" seconds
+    #333019 #333022
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "To" field dropdown is displayed with "Groups" value
+    #333023
+    When I see and check "Cc" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    #333024
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @333025
+  Scenario:When User check the checkbox for  the internal from dropdown then Group field is getting hidden from TO field
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "To" field dropdown is displayed with "Groups" value
+
+  @333026
+  Scenario: When User check the checkbox for  the group  from dropdown then internal &External  field is getting hidden from CC field
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    Then I see and check "To" field dropdown is displayed with "Internal" value
+    Then I pause execution for "2" seconds
+    Then I see and check "Cc" field dropdown is displayed with "Internal" value
+    Then I see and check "Cc" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
+    Then I see and check "Cc" field dropdown is displayed with "Groups" value
+
+  @333027
+  Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Internal "   email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @333029
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Internal" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @333030
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group " email
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @333031
+  Scenario: Send email- User should be able to see "true" when select file is attached to "CC- Group" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @333032
+  Scenario: Send email- User should be able to see "true" when select file is attached to "TO- Group " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "True" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"
+
+  @333033
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "Reply LWC" icon for "Test for False when file not attached To Internal" is displayed inside flex table
+
+  @333035
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Internal " reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "Test for False when file not attached To Internal" for title "Email Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @333036
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- External" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To External" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To External" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I softly see value "Test for False when file not attached To External" for title "Subject" inside table "---program:-:communicationHistoryTableId---"
+
+  @332852 @332793
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "TO- Group" reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332797
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " reply  email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for False when file not attached To Cc Internal" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "View LWC" icon for "Test for False when file not attached To Cc Internal" is displayed inside flex table
+
+  @332802
+  Scenario: Send Email - when External user Hover on the  Select file  field help icon and help text is displayed
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I hover mouse on text "Select Files" inside Send Email Modal
+    Then I see help text "Open files table to add links" is displayed related field "Select Files" inside Send Email
+
+  @332813
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Internal " email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Internal" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Internal" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Internal" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+    Then I see "Reply" icon for "Test for False when file not attached To Cc Internal" is displayed inside flex table
+
+  @332818
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- External" email.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "External" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc External" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc External" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332820
+  Scenario Outline: To verify, If Admin and PM try to download attach file then It will open in the new tab
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Automation Internal Program for Testing"
+    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "20" seconds
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal
+    Then I can see download button in front of "SendEmailAttachment.pdf" file on send email reply modal is Enabled
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @332835
+  Scenario:  To verify, If External  User try to download attach file then It will open in the new tab
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I pause execution for "5" seconds
+    When I upload attachment "SendEmailAttachment.pdf" in send email LWC modal
+    When I fill the details in field To "automation.exe@yopmail.com" CC "automationadmin@yopmail.com" Subject "Subject" in send email LWC
+    And I pause execution for "5" seconds
+    And I click on "Send" button in Email LWC Modal
+    And I pause execution for "20" seconds
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+
+  @332836
+  Scenario: Send email- User should be able to see "false" when  file is not  attached to "CC- Group" email
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To Cc Groups" in send email LWC
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for False when file not attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "False" for title "Attachment" inside table "---program:-:communicationHistoryTableId---"
+
+  @332837
+  Scenario: To verify , When Internal  user sends an Email with an file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @332838
+  Scenario: To verify , When Internal   user sends an Email with an file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @332840
+  Scenario: To verify , When Internal user sends an Email with an file  from TO (Group) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "Groups" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Select file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Select file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+
+  @332841
+  Scenario: To verify , When   user sends an Email with an Multiple file  from TO (Internal/External) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on "To" field dropdown and select "Internal" and "External" value from dropdown
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @333068
+  Scenario: To verify , When Internal   user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @333070
+  Scenario: To verify , When  user sends an Email with an  multiple file  from TO (External) field then attached file is displayed on the View & Send  modal
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I pause execution for "24" seconds
+    And I click inside "Primary Funding Organization" and select "Health and Human Services" from table in Create Program modal
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org_LWC.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "10" seconds
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I see and check "To" field dropdown is displayed with "External" value
+    And I see and check "To" field dropdown is displayed with "External" value
+    When I fill the details in field To "automationfo@yopmail.com" CC "automationpm@yopmail.com" Subject "Email with an Multiple file" in send email LWC
+    And I enter the value "Links to additional attachment (Please find below links to additional attachments other than those attached to this email. Click the file name to view the attachment) " inside body content
+    And I click on "Select Files" button in Email LWC Modal
+    And I select checkbox "SendEmailAttachment.pdf" inside Send Email LWC
+    And I select checkbox "actionsAtEgrid.png" inside Send Email LWC
+    And I select checkbox "DuplicateFile.txt" inside Send Email LWC
+    And I click on "Add To Email" inside Send Email LWC
+    Then I see "File Link Added Successfully." message is displayed on send email modal
+    And I click on "Send" button in Email LWC Modal
+    Then I see "Email Sent Successfully." message is displayed on send email modal
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+    And I close LWC modal window
+    And I click on "View LWC" icon for "Email with an Multiple file" inside flex table with id "---program:-:communicationHistoryTableId---"
+    Then I can see attach the "SendEmailAttachment.pdf" file format in the attachment section
+    Then I can see attach the "actionsAtEgrid.png" file format in the attachment section
+    Then I can see attach the "DuplicateFile.txt" file format in the attachment section
+
+  @333102 @333072
+  Scenario: Send Email -Select File - To verify, On reply modal user are attached the multiple  file.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Cc Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    And I click on "Reply" icon for "Test for True when file attached To Cc Groups" inside flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "Cc" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for False when file not attached To External" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Cc Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "umang.parekh@reisystems.in" for title "To" inside table "---program:-:communicationHistoryTableId---"
+
+  @333088
+  Scenario: Send Email On reply modal Internal user are attached to file.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "Admin Program for Advance filter"
+    When I click on "View" icon for "Admin Program for Advance filter" inside table
+    When I navigate to "Collab" sub tab
+    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
+    And I click on dropdown inside "To" field and Select "Groups" value
+    When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Groups" in send email LWC
+    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
+    When I click on "Send" button in send email modal
+    When I close modal by clicking the top right x button
+    When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
+    Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"

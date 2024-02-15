@@ -10690,9 +10690,9 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
 
-  @218829
-  Scenario: Page layout-To verify, User is not  edit formula field
-    When I login to "As a Grantor" app as "ADMIN" user
+  @218829 @379068 @379070 @Sanity
+  Scenario Outline: Page layout-To verify, User is not  edit formula field
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -10701,6 +10701,11 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Overview" sub tab
     And I click on "Save" in the page details
     Then I softly see field "Address__c" is not editable
+    Then I softly see field "fieldCFDA_Data__c" is not editable
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @218838
   Scenario Outline: Page layout-To verify,  when user not entered any help text  on field then help icon  not displayed on UI.
@@ -11131,7 +11136,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200266 @200245
+  @200266 @200245 @379387 @379388 @Sanity
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11213,7 +11218,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200249
+  @200249 @379389 @Sanity
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11441,7 +11446,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
 
-  @219886 @219887
+  @219886 @219887 @379091 @379092 @Sanity
   Scenario Outline: Page Tab - Admin -Config - Verify page tab label should displayed properly with icon
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11460,7 +11465,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219888
+  @219888 @379093 @Sanity
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11539,7 +11544,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
-  @219894 @219893
+  @219894 @219893 @379380 @379382 @Sanity
   Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11558,7 +11563,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219895
+  @219895 @379383 @Sanity
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11718,7 +11723,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
    #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
-  @200222
+  @200222 @379087 @Sanity
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -11732,6 +11737,8 @@ Business Need: Page Layout Component Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
+    #379087
+    Then I see step progress bar is displayed
     Then I softly see bulb icon at header instruction is displayed
     Then I see "<new_helpText>" shown as page instruction text
     Examples:
@@ -11787,7 +11794,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @200145 @200155
   Scenario: Page header-SPI-UI-To verify page header should be diplayed
@@ -11834,3 +11841,17 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "EGMS ID" inside page header
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header
+
+    @379085 @379086 @Sanity
+    Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
+      When I login to "As a Grantor" app as "<User>" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Internal Programs - All"
+      When I perform quick search for "Test Approver Table"
+      When I click on "View" icon for "Test Approver Table" inside table
+      Then I see step progress bar is displayed
+      Examples:
+        | User  |
+        | ADMIN |
+        | PM    |
