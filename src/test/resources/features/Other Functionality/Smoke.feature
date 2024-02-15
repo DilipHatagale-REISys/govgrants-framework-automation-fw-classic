@@ -524,7 +524,6 @@ Business Need: smoke testing features
 
 @382875
 Scenario: Sanity TC - Admin - To verify that Notes and Attachments tables should be render on page layout
-  Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
   When I login to "As a Grantor" app as "Admin" user
   And I navigate to "Planning" tab
   And I click toggle button to select "Internal Programs - Active"
