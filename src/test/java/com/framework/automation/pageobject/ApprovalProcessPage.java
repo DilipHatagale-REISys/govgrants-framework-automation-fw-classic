@@ -195,4 +195,23 @@ public class ApprovalProcessPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void assertActionButtonForInsideTable(String usage, String button, String recordid, String tableid) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayedorNot(button, recordid, tableid)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(assertIfActionButtonDisplayedorNot(button, recordid, tableid)).isFalse();
+        }
+    }
+
+    private boolean assertIfActionButtonDisplayedorNot(String button, String recordid , String tableid) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='"+tableid+"']//tr//td//span[@title='"+recordid+"']/ancestor::td/following-sibling::td//a[@title='"+button+"']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
 }

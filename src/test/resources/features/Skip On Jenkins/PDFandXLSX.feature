@@ -956,7 +956,7 @@ Business Need: All pdf and xls related scenario including component and complete
 #    Then I see "Active Programs" on page "1" of "govgrants" pdf file
     Then I see "Internal Programs - Active" on page "1" of "govgrants" pdf file
 
-  @35095    @validateSkipFormForDownload-gapplications @smoke @needtocheckmanually @skiponjenkins
+  @35095    @validateSkipFormForDownload-gapplications @needtocheckmanually @skiponjenkins
   Scenario: Setup skip form download for 'General Budget Details Form' in configuration and validating inside Applications view
     Given I have "default" configuration as below:
       | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
@@ -2002,7 +2002,7 @@ Business Need: All pdf and xls related scenario including component and complete
     And I select "Download as PDF" from parallel lines dropdown of "Internal Programs - Draft"
     Then I see "Status" in downloaded xls or csv file "govgrants"
 
-  @83930    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout @smoke
+  @83930    @verifyPicklistFieldLabelIsShownInDownloadedPDFAtPageLayout-gPlanning @pageLayout
   Scenario: validate a picklist field label is shown in downloaded pdf instead of picklist field API name inside program detail page
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"

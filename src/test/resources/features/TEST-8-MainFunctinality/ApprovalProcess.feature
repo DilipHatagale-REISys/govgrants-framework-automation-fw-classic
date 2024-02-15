@@ -423,7 +423,7 @@ Business Need: Approval Process Component Scenarios
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Do you want to Reject Program?" is displayed
 
-  @37431 @37523 @41058 @202470 @202492 @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+  @37431 @37523 @41058 @202470 @202492 @381960 @Sanity @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario Outline: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -2460,7 +2460,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203680
+  @203680 @381963 @Sanity
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should received on Send To Owner record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -2501,6 +2501,7 @@ The EGMS Team
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Send back" in the approval decision
     And I pause execution for "5" seconds
+    #381963
     Then I softly see status in Progress-bar is "Created" and is "Green"
     And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds
@@ -2590,7 +2591,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203291
+  @203291 @381945 @381948 @381949 @Sanity
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on approved record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -2628,7 +2629,10 @@ The EGMS Team
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    Then I see "Start" action button for "{SavedValue:PEGMSID}" inside flex table id "---program:-:HomePendingTasksTableId---"
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    Then I see only the following ordered radio buttons in the approval decision :
+      | Approve | Reject | Send back | Send back |
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
@@ -2678,7 +2682,7 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
 
-  @203296
+  @203296 @381957 @Sanity
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reject record
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -2713,6 +2717,7 @@ The EGMS Team
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Reject" in the approval decision
     And I pause execution for "5" seconds
+    #381957
     Then I softly see status in Progress-bar is "Rejected" and is "Red"
     And I checkout to yopmail with mailid "automationadmin@yopmail.com"
     And I pause execution for "10" seconds

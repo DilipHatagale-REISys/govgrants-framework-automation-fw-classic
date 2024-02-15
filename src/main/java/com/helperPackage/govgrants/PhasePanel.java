@@ -365,7 +365,8 @@ public final class PhasePanel {
         return By.xpath("//*[@title='" + panelTitleName + "' or text()='"
                 + panelTitleName
                 + "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
-                + buttonName + "']");
+                + buttonName + "'] | " +
+                 "//div/a[@id='EnhanceAppGrantorBudgetPeriodsFlexCollapse']//span[text()='" + panelTitleName + "']//ancestor::div//button[@title='" + buttonName + "']");
     }
 
     private By getTopRightButtonLocatorByTableId(String flexTableId, String buttonName) {

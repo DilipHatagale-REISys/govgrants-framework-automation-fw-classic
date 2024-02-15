@@ -153,4 +153,9 @@ public class DynamicFormSteps {
 
         }
     }
+
+    @Then("^I (see|do not see) for \"([^\"]*)\" field value is \"([^\"]*)\" inside dynamic form$")
+    public void iDoNotSeeForFieldValueIsInsideDynamicForm(String usage, String actionName, String pageBlockName) {
+
+    }
 }

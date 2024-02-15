@@ -55,9 +55,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
-  @89698    @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
-  Scenario: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
-    When I login to "As a Grantor" app as "ADMIN" user
+  @89698 @379346 @379357 @379347 @379358 @Sanity   @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  Scenario Outline: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -70,7 +70,12 @@ Business Need: dynamic forms Component Scenarios
       | Field   | Value |
       | Percent | 12.00 |
     When I click on "Save" in the page details
+    #379347
     Then I see for "Percent" field value is "12.00%" inside dynamic form
+    Examples:
+      | User  |
+      | Admin |
+      | PM    |
 
   @88124    @validateTitleOfFormAtDynamicFormLayout
   Scenario: validate the title of form at dynamic form view page
@@ -369,6 +374,9 @@ Business Need: dynamic forms Component Scenarios
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
     Then I see "Validate" button is displayed
+    When I click on "Validate" button in right header
+    Then I see the following message in the page details :
+      | Validated successfully |
 
   @89934    @ValidateThatValidateButtonIsHiddenAtDynamicFormLayoutInViewMode
   Scenario: validate the validate button is hidden if Validation Button Visibility is set as Hide from config at dynamic form layout
@@ -3789,6 +3797,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    #
     Then I softly do not see "Section: Section 1" block is collapsed
     Then I softly do not see "Section: Section 4" block is collapsed
 
@@ -4035,9 +4044,9 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "Validate" button is displayed
 
-  @100107    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
-  Scenario: validate that by click on cancel button a form is displayed in view mode
-    When I login to "As a Grantor" app as "ADMIN" user
+  @100107 @379350 @379361 @Sanity    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
+  Scenario Outline: validate that by click on cancel button a form is displayed in view mode
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4045,11 +4054,18 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "Edit" icon for "Dynamic Form 1" inside table
+    #379355
+    Then I softly can see top right button "Cancel" in page detail
+    Then I softly can see top right button "Save" in page detail
     And I pause execution for "7" seconds
     When I click on "Cancel" button in right header
     When I pause execution for "5" seconds
     Then I softly can see top right button "Edit" in page detail
     Then I softly can see top right button "Validate" in page detail
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @100108    @validateThatByClickOnSaveButtonAFormIsGettingDisplayedInViewMode
   Scenario: validate that by click on save button a form is displayed in view mode
@@ -4394,7 +4410,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
 
-  @100446 @206248    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  @100446 @206248 @379252 @379363 @Sanity    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
   Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4481,7 +4497,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
-  @100460    @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
+  @100460  @379364 @379353 @Sanity  @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
@@ -4493,7 +4509,7 @@ Business Need: dynamic forms Component Scenarios
       | Capture Form:General  | Hide Pdf Download | true                    | CF-0000            |                           |                            |
       | Flex Table Action     | Action URL Long   | <actionUrlLongNewValue> | DynamicForm        | Name                      | View                       |
       | Flex Table Action     | Where To Open ?   | Newtab                  | DynamicForm        | Name                      | View                       |
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4501,11 +4517,13 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form" inside table
+    #379353
     Then I see "Menu" action is not displayed at the "Dynamic Form" modal
 
     Examples:
-      | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
-      | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
+      | User  | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
+      | ADMIN | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
+      | PM    | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
   @100462    @validateDisablingOfPdfDownloadFromMenuFromDynamicFormEditModalWindow
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form edit modal window
@@ -4932,9 +4950,9 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Form Validated Successfully. |
 
-  @201251 @sprint3
-  Scenario:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
-    When I login to "As a Grantor" app as "ADMIN" user
+  @201251 @379344 @379345 @379349 @379360 @379356 @Sanity @sprint3
+  Scenario Outline:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
@@ -4942,8 +4960,14 @@ Business Need: dynamic forms Component Scenarios
     When I click on "View" icon for "Program For Announcement Testing" inside table
     When I navigate to "Setup" sub tab
     When I click on "View" icon for "Dynamic Form 1" inside table
+    #379345 #379356
+    Then I see "Edit" button is displayed
+    Then I see "Validate" button is displayed
     When I pause execution for "2" seconds
     When I click on "Edit" button in right header
+    #379344
+    Then I see "Cancel" button is displayed
+    Then I see "Save" button is displayed
     When I enter values into "Section 1" page block
       | Field   | Value |
       | Percent | 20    |
@@ -4955,6 +4979,10 @@ Business Need: dynamic forms Component Scenarios
       | Percent | 20    |
     When I click on "Save" in the page details
     Then I softly see "Percent" inside "Section 1" at dynamic form
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @201252 @sprint3
   Scenario:  Form-To verify,When user click  edit action on forms and fill the data and click on save button added details are available on specific form.
@@ -5112,3 +5140,413 @@ Business Need: dynamic forms Component Scenarios
       | User  |
       | ADMIN |
       #  | PM    |
+
+  @379348  @Sanity
+  Scenario: Entering value into number field and click on save , a value is getting saved into number field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I switch to tab number "1"
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number | 12.00 |
+    When I click on "Cancel" in the page details
+    Then I see for "Number" field value is "12.00" inside dynamic form
+    Then I do not see for "Number" field value is "12.00" inside dynamic form
+
+  @100108 @104675
+  Scenario: validate that cancel button is displayed at top right corner at dynamic form layout.
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    And I pause execution for "5" seconds
+    Then I see "Cancel" button is displayed
+
+  @100107 @104674
+  Scenario: validate that save button is displayed at top right corner at dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I see "Save" button is displayed
+
+  @111868 @100110
+  Scenario: validate that cancel button is displayed at bottom right corner at dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I can see bottom button "Cancel" in page detail
+
+  @111864 @100446
+  Scenario: validate that save button is displayed at bottom right corner at dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I click on "Edit" button in right header
+    Then I can see bottom button "Save" in page detail
+
+  @206248 @111866
+  Scenario: validate that validate button is displayed at bottom right corner at dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I can see bottom button "Validate" in page detail
+
+  @100450 @112487
+  Scenario: validate that edit button is displayed at bottom right corner at dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I can see bottom button "Edit" in page detail
+
+  @100451 @112484
+  Scenario: validate that a max score field is displayed inside dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see "Score (Max Score : 50.00)" inside "Section 1" at dynamic form
+
+  @298574 @298575
+  Scenario: validate special characters are accepted at section name in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    Then I see section as "test~!@#$%^&*()_+{}][?/><." inside dynamic form layout
+
+  @100460 @112491
+  Scenario: validate the form name with special characters is displayed at dynamic form view page
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "test" inside table
+    Then I see "test" shown as over view header
+
+  @100462 @112199
+  Scenario: validate if dynamic form name is changed from config then that name should displayed inside dynamic form enhanced table at announcement detail
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    And I pause execution for "5" seconds
+    Then I see "Test Automation Form" value in flex table id "---program:-:DynamicFormFlexToggleTableId---"
+
+  @115550 @112202
+  Scenario: validate alert message if invalid data inserted in any field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency | abc   |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details contains:
+      | Please correct below errors. |
+
+  @149135 @112027
+  Scenario: validate alert message if invalid data inserted in currency field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field    | Value |
+      | Currency | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Currency" field in form detail
+
+  @191190 @298563
+  Scenario: validate alert message if invalid data inserted in number field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field  | Value |
+      | Number | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Number" field in form detail
+
+  @193600 @112219
+  Scenario: validate alert message if invalid data inserted in percent field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field   | Value |
+      | Percent | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Percent" field in form detail
+
+  @193601 @114121
+  Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | 60    |
+    When I click on "Save" in the page details
+    And I pause execution for "5" seconds
+    Then I see message "Score value should not be greater than max score" below "Score (Max Score : 50.00)" field in form detail
+
+  @191189 @104343
+  Scenario: validate alert message if invalid data inserted in max score field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | abc   |
+    When I click on "Save" in the page details
+    Then I see message "Please enter valid number" below "Score (Max Score : 50.00)" field in form detail
+
+  @201239 @104335
+  Scenario: validate the help text is displayed at written field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Written"
+    Then I see "Test Automation Written Help" shown as help text
+
+  @201250 @298570 @298671
+  Scenario: validate alert message if more than max score is inserted in percent field at dynamic form
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I enter values into "Section 1" page block
+      | Field                     | Value |
+      | Score (Max Score : 50.00) | 60    |
+    When I click on "Save" in the page details
+    Then I see the following message in the page details :
+      | Score value should not be greater than max score |
+    Then I see the following messages in the page details contains:
+      | Score value should not be greater than max score |
+    Then I see error massage in the page details "Score value should not be greater than max score"
+
+  @298568 @298564
+  Scenario: validate the help text is displayed at date field as configured in Question Help Text field in view mode on dynamic form layout
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName          | fieldOrignalValue | filterId         |
+      | Capture Item          | Question Help Text |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName          | fieldNewValue             | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Capture Item:General  | Question Help Text | Test Automation Date Help | CI-0001            |                           |                            |
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Date"
+    Then I see "Test Automation Date Help" shown as help text
+
+  @298562 @298565
+  Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Currency"
+    Then I see "Test Automation Currency Help" shown as help text
+
+  @298559 @298560
+  Scenario: validate the help text is displayed at Number field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Number"
+    Then I see "Test Automation Number Help" shown as help text
+
+  @296816 @296817
+  Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Percent"
+    Then I see "Test Automation Percent Help" shown as help text
+
+  @296810 @296815
+  Scenario: validate the help text is displayed at picklist field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    And I pause execution for "5" seconds
+    When I hovering mouse on help text icon inside page block detail "Picklist"
+    Then I see "Test Automation Picklist Help" shown as help text
+
+  @256761 @112492
+  Scenario: validate the help text is displayed at Rich Text Area field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Rich Text Area"
+    Then I see "Test Automation Rich Text Area Help" shown as help text
+
+  @256746 @255931
+  Scenario: validate the help text is displayed at Checkbox field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Checkbox"
+    Then I see "Test Automation Checkbox Help" shown as help text
+
+  @256816 @256817
+  Scenario: validate the help text is displayed at radio field as configured in Question Help Text field in view mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "View" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Radio"
+    Then I see "Test Automation Radio Help" shown as help text
+
+  @256893 @256895
+  Scenario: validate the help text is displayed at percent field as configured in Question Help Text field in Edit mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Percent"
+    Then I see "Test Automation Percent Help" shown as help text
+
+  @256891 @256892
+  Scenario: validate the help text is displayed at Currency field as configured in Question Help Text field in edit mode on dynamic form layout
+    When I login to "As a Grantor" app as "ADMIN" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Announcements" tab
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Program For Announcement Testing"
+    When I click on "View" icon for "Program For Announcement Testing" inside table
+    When I navigate to "Setup" sub tab
+    When I click on "Edit" icon for "Dynamic Form" inside table
+    When I hovering mouse on help text icon inside page block detail "Currency"
+    Then I see "Test Automation Currency Help" shown as help text
