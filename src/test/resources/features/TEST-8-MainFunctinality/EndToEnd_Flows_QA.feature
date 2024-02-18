@@ -1273,9 +1273,7 @@ Business Need: security review Scenarios
    And I execute batch file:
      | programName | announcementName | objectType | projectTitle               | status |
      | NA          | NA               | Program    | Automation Runtime Program | Active |
-
    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-
    When I login to "As a Grantor" app as "PM" user
    When I setup my app as "As a Grantor"
     #Announcement Creation
@@ -1528,7 +1526,6 @@ Business Need: security review Scenarios
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
-
      # create FDM
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Applications" tab

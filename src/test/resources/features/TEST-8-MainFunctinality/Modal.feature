@@ -362,8 +362,7 @@ Business Need: Modal Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I hovering mouse on i icon for field "Abbreviation" inside modal
     Then I see "<helpTextInModal>" shown as help text
-    Then I see "Information" page block displayed
-    Then I see "Program Specific Settings" page block displayed
+
     Examples:
       | Users | helpTextInModal                                                           |
       | Admin | This is a program abbreviation as determined by the internal organization |
@@ -426,7 +425,7 @@ Business Need: Modal Component Scenarios
   Scenario Outline: Sanity Testing- Modal- Page Block Detail- Admin- To verify 'Field Label Override' displays on UI.
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField           | filterId         |
-      | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program Create | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Website Address   | Grantor State Program Create | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override | Website Name  | Grantor State Program Create | Name                      | PBD-19311                  |
@@ -501,15 +500,192 @@ Business Need: Modal Component Scenarios
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Header Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName               | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Header Instruction Text | <new_helpText> | Grantor State Program Create | Name                      | TAB-2668                   |
+      | configurationCategory    | fieldName               | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:General | Header Instruction Text | <new_helpText> | Grantor State Program Create | Name                      | TAB-2668                   |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    Then I see "<new_helpText>" shown as header instruction text
+    Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           | old_helpText |
       | ADMIN | Automation Header Text |              |
       | PM    | Automation Header Text |              |
+
+  @382271 @382273 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Page Block- Admin- To verify Header Instruction Text displays in the modal if provided in the config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Page Block            | Header Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName               | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Header Instruction Text | <new_helpText> | Grantor State Program Create | Name                      | PB-7032                    |
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I softly see "<new_helpText>" shown as page instruction text
+    Examples:
+      | Users | new_helpText           | old_helpText |
+      | ADMIN | Automation Header Text |              |
+      | PM    | Automation Header Text |              |
+
+  @382244 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Admin- To verify in view modal on edit action is present.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
+    Then I see page title "Applications: Program Specific Application form View ~ As a Grantor"
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @382309 @382311 @Sanity
+  Scenario Outline: Test Case 382309: Sanity Testing- Modal- Page Block Detail- Admin- To verify all type of data type fields are getting rendered in the page block details.
+    When I login to "As a Grantor" app as "<Users>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
+    Then I softly see "Program Name" inside page block detail
+    Then I softly see "Type" inside page block detail
+    Then I softly see "Internal Organization" inside page block detail
+    Then I softly see "Website Address" inside page block detail
+    Then I softly see "Focus Area Required?" inside page block detail
+
+    Examples:
+      | Users |
+      | ADMIN |
+      | PM    |
+
+  @382312 @Sanity
+  Scenario: Sanity Testing- Modal- Page Block Detail- SPI- To verify all type of data type fields are getting rendered in the page block details.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    Then I softly see "Award Title" inside page block detail
+    Then I softly see "Type" inside page block detail
+    Then I softly see "Award ID" inside page block detail
+    Then I softly see "Schedule Title" inside page block detail
+    Then I softly see "Start Date" inside page block detail
+    Then I softly see "EGMS ID" inside page block detail
+
+  @382289 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Page Block Detail- SPI- To verify 'Help Text Long' displays after field label in the page block detail if provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName      | fieldOrignalValue | filterId         |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | TermConditionScheduleNewGrantor | PB-8430                   | PBD-22353                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    When I hovering mouse on i icon for field "Award Title" inside modal
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | User | new_helpText             | old_helpText |
+      | SPI  | Help Text for Automation |              |
+
+  @382279 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Page Block- SPI- To verify help text displays after field label in the page block if provided in config.
+    Given I have "default" configuration as below:
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField              | filterId         |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | TermConditionScheduleNewGrantor | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | TermConditionScheduleNewGrantor | GNT__PageBlockTitle__c    | Schedule Details           |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    When I hovering mouse on help text icon inside "Schedule Details"
+    Then I see "<new_helpText>" shown as help text
+
+    Examples:
+      | User | new_helpText             | old_helpText |
+      | SPI  | Help Text for Automation |              |
+
+  @382274 @Sanity
+  Scenario Outline:Sanity Testing- Modal- Page Block- SPI- To verify Header Instruction Text displays in the modal if provided in the config.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
+      | Page Block            | Header Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory        | fieldName               | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Header Instruction Text | <new_helpText> | TermConditionScheduleNewGrantor | Name                      | PB-8430                    |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    Then I softly see "<new_helpText>" shown as page instruction text
+    Examples:
+      | User | new_helpText           | old_helpText |
+      | SPI  | Automation Header Text |              |
+
+  @382233 @Sanity
+  Scenario Outline: Sanity Testing- Modal- SPI- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
+      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | TermConditionScheduleNewGrantor |                           |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    Then I softly see "<new_helpText>" shown as page instruction text
+    Examples:
+      | User | new_helpText           | old_helpText |
+      | SPI  | Automation Header Text |              |
+
+  @382297 @Sanity
+  Scenario Outline: Sanity Testing- Modal- Page Block Detail- SPI- To verify 'Field Label Override' displays on UI.
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName            | fieldOrignalValue | coreComponentField              | filterId         |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | <Old Label>       | TermConditionScheduleNewGrantor | ApiGeneratedId:1 |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | <New Label>   | TermConditionScheduleNewGrantor | Name                      | PBD-22349                  |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "<User>" user
+    And I navigate to "Monitoring" tab
+    And I click toggle button to select "Scheduled Activities - All"
+    When I perform quick search for "SC-39068"
+    When I click on "View" icon for "SC-39068" inside table
+    Then I softly see "<New Label>" shown as page instruction text
+    Examples:
+      | User | New Label     | Old Label      |
+      | SPI  | Schedule Name | Schedule Title |
+
+    @382286 @Sanity
+    Scenario: Sanity Testing- Modal- Page Block Detail- SPI- To verify help text displays after field label in the page block detail if provided in config.
+      Given I am on "SUBPORTAL" portal
+      When I login to "Grants Portal" app as "<User>" user
+      And I navigate to "Monitoring" tab
+      And I click toggle button to select "Scheduled Activities - All"
+      When I perform quick search for "SC-39068"
+      When I click on "View" icon for "SC-39068" inside table

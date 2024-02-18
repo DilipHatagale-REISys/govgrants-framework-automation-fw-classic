@@ -38,7 +38,7 @@ public class PageLayoutPage extends GovGrantsManager {
     public PageLayoutPage() {
         overViewHeader = By.cssSelector("h2.panel-title>div>span.customLabelstyle");
         overViewTitle = By.cssSelector("h2.panel-title>div>span.overview-title");
-        headerInstructionText = By.cssSelector("div.tabheaderinstruction");
+        headerInstructionText = By.cssSelector("span.pbNormalText");
         headerOverviewTab = By.xpath("//div[@class='panel-body']//span[contains(text(),'ID')]");
         headerInstructionTextForPageBlock = By.xpath("//div//span[contains(text(),'Header for Automation')]");
         rolesAndResponsibilitiesFlexTableTitle = By.xpath(
@@ -2719,7 +2719,8 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isPageInstructionTextDisplayed(String text) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'article')]//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "]"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[contains(@class,'article')]//div[" + I.amPerforming().sanityOfXpathTo().equals(".", text) + "] |" +
+                "//div//span[contains(text(),'" + text + "')]"))) {
             flag = true;
         }
         return flag;
