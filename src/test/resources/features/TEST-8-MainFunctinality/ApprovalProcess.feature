@@ -767,11 +767,11 @@ Business Need: Approval Process Component Scenarios
   @37666    @sendToOwnerEmailSentWithApproveTemplateToProgramOwner-Programs
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName                    | fieldOrignalValue          | filterId         |
+      | Approval Process Steps Cache | Send To Owner Email Template | Program Approver Sent Back | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                       | fieldName                    | fieldNewValue              | coreComponentField         | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:Email Template | Send To Owner Email Template | Program Approver Sent Back | Program Approver Sent Back | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
+      | configurationCategory                       | fieldName                    | fieldNewValue              | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Email Template | Send To Owner Email Template | Program Approver Sent Back | Step1              | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
      # | Approval Process Steps Cache:General        | Send To Owner Email Template | Program Approver Sent Back | Step1                    |                           |                            |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"

@@ -31,7 +31,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I softly see "Attachments" page block displayed
@@ -64,7 +64,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see "Add" button inside "---program:-:notesFilesTableid---" flex table
@@ -96,7 +96,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see "Add" button inside "---program:-:AttachmentsTableid---" flex table
@@ -130,7 +130,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see "Add Attachments" opens in overLay window
@@ -164,7 +164,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Notes"
@@ -199,7 +199,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
@@ -234,7 +234,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
@@ -269,7 +269,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
@@ -304,7 +304,7 @@ Business Need: NotesandAttachments Component Scenarios
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I perform quick search for "Vrush Application" in "RecipientApplicationsPhase" panel
+    When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Forms and Files" sub tab
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
@@ -312,7 +312,7 @@ Business Need: NotesandAttachments Component Scenarios
 
   @391248 @Sanity
   Scenario: Sanity TC - Admin - To verify after filling required details in Add attachment modal, attachment record is getting saved on click of save action.
-#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
@@ -325,16 +325,17 @@ Business Need: NotesandAttachments Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in tableName "Attachments"
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test Automation" into description box
-    And I click on "Save" button on modal window
+   # And I click on "Save" button on modal window
+    And I click modal button "Save"
     Then I see "Attachment added successfully." message displayed in modal
 
   @391250 @Sanity
   Scenario: Sanity TC - PM - To verify after filling required details in Add attachment modal, attachment record is getting saved on click of save action.
-#    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
@@ -347,11 +348,10 @@ Business Need: NotesandAttachments Component Scenarios
     When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
-    And I click on top right button "Add" in tableName "Attachments"
-    And I select "Program Artifacts" from dropdown of filetype
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
     When I upload attachment "SendEmailAttachment.pdf" in attachments LWC modal
     And I enter value "Test Automation" into description box
-    And I click on "Save" button on modal window
+    And I click modal button "Save"
     Then I see "Attachment added successfully." message displayed in modal
 
   @391263 @Sanity
@@ -370,8 +370,8 @@ Business Need: NotesandAttachments Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in tableName "Notes"
-    And I enter value "Notes testing" inside "Title" in LWC modal
-    And I enter value "Notes testing" inside "Description" in LWC modal
+    And I enter value "Notes testing" into field "Title"
+    And I enter value "Notes testing" into field "Description"
     And I click on "Save" button in LWC
     And I close modal by clicking the top right x button
     And I refresh the page

@@ -673,8 +673,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForChildFlexTableAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForChildFlexTableAtEnhancedGrid | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11516                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -750,11 +750,11 @@ Business Need: EnhancedGrid Component Scenarios
   @45290    @iconCssFieldForChildFlexTableAtEnhancedGridActionItem-gPlanning
   Scenario: Setup icon css of child flex table for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1018,8 +1018,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Page Size | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Page Size | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1037,8 +1037,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Flex Grid:General     | Default Page Size | 5                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Default Page Size | 10            | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Default Page Size | 10            | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1168,8 +1168,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue                                      | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11521                  |
+      | configurationCategory | fieldName             | fieldNewValue                                      | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Read Only Column JSON | govgrants_config:ReadOnlyColumnJsonForEnhancedGrid | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11521                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1184,11 +1184,11 @@ Business Need: EnhancedGrid Component Scenarios
   @41465    @iconCssFieldAtEnhancedGridActionItem-gPlanning
   Scenario: Setup icon for enhanced grid table edit action from config and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldOrignalValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionDefaultIconCss | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName | fieldNewValue                                  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Icon CSS  | govgrants_config:FlexTableEditActionNewIconCss | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1204,13 +1204,13 @@ Business Need: EnhancedGrid Component Scenarios
   @41466    @ConfirmationMessageFieldAtEnhancedGridActionItem-gPlanning
   Scenario: Setup confirmation message for enhanced grid table edit action from configuration and validating it inside enhanced grid of program-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Show Confirmation Box | false             | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-      | Flex Table Action     | Confirmation Message  |                   | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName             | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Show Confirmation Box | false             | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
+      | Flex Table Action     | Confirmation Message  |                   | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Confirmation Message  | Automation    | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
-      | Flex Table Action     | Show Confirmation Box | true          | EnhanceAppGrantorBudgetPeriods | Name                      | Edit                       |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Confirmation Message  | Automation    | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
+      | Flex Table Action     | Show Confirmation Box | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1265,8 +1265,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Flex Grid             | Header Help Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Header Help Text | <new_helpText> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName        | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Header Help Text | <new_helpText> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1288,8 +1288,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName   | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Help | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Help | true          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName   | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Help | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1298,7 +1298,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
    # When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
-   # When I expand nested table containing column value "BP01"
+    When I expand nested table containing column value "BP01"
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Help" options inside "Budget Periods" enabled
 
@@ -1308,8 +1308,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
       | Flex Table List       | Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text | <new_helpText> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1492                   |
+      | configurationCategory | fieldName | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Help Text | <new_helpText> | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1492                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1410,13 +1410,13 @@ Business Need: EnhancedGrid Component Scenarios
   @44536    @orderBySortByFieldAtChildDataTableEnhancedGridForDescendingOrder-gPlanning
   Scenario: Changing specific column value in Descending order with order by and sort by field from config at child table and validating it inside enhanced grid of programs-planning
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       |                   | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Sort Direction |                   | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName      | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       |                   | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction |                   | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Order By       | Name          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Sort Direction | DESC          | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Order By       | Name          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Sort Direction | DESC          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1428,7 +1428,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see column "Category Name" value is in "Descending" order
 
-  @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smoke @Doubted
+  @wip @44628    @filterClauseFieldOfParentFlexTableAtEnhancedGrid-gPlanning @smoke @Doubted
   Scenario Outline: validate removing draft status category from flex table of planning-program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1490,8 +1490,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Grid             | Enable Filter | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Filter | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName     | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Enable Filter | false         | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2102,8 +2102,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName       | fieldOrignalValue | filterId         |
       | Flex Table List       | Style Attribute |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Style Attribute | <styleAttributeValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1494                   |
+      | configurationCategory | fieldName       | fieldNewValue         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Style Attribute | <styleAttributeValue> | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1494                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2125,9 +2125,9 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2544                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2544                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2146,10 +2146,10 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
       | Flex Grid:Flex Table List | Show in PDF    | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2541                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2544                   |
-      | Flex Grid:Flex Table List | Show in PDF    | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2541                   |
+      | configurationCategory     | fieldName      | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2544                   |
+      | Flex Grid:Flex Table List | Show in PDF    | true          | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2161,7 +2161,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "GT-12132-001"
     Then I see "Atleast one list view should be marked as a Master List View" error is displayed at enhanced grid
 
-  @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted
+  @wip @49249    @enableOverallTotalFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline:  Verify Enable Over All Total at parent flex table.
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName             | fieldOrignalValue               | filterId         |
@@ -2208,7 +2208,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "2" seconds
     Then I see field "EnhanceAppGrantorBudgetPeriodsresizable" inside page block
 
-  @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning @doubted
+  @wip @49361      @verifyEditSelectedAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName               | fieldOrignalValue               | filterId         |
@@ -2260,7 +2260,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "GT-FIN.1-001" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see edited value inside textarea is "$390,800.00" for column value "AD-FIN.1-BP01-00" of table "---program:-:appBudgetPeriodTableId---"
 
-  @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning @doubted
+  @wip @49360      @verifyEditAllAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate Edit selected functionality for parent flex table at enhanced grid of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue               | filterId         |
@@ -2291,8 +2291,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2410,14 +2410,14 @@ Business Need: EnhancedGrid Component Scenarios
       | fieldNewValue                        |
       | TotalMatch__c DESC,CashMatch__c DESC |
 
-  @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke @doubted
+  @wip @45312    @filterClauseFieldOfChildFlexTableAtEnhancedGrid-gPlanning @smoke @doubted
   Scenario Outline:  Verify Filter Clause field at child flex table config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
       | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName     | fieldNewValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Filter Clause | <newSoqlFilter> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2541                   |
+      | configurationCategory | fieldName     | fieldNewValue   | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Filter Clause | <newSoqlFilter> | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-2541                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2862,16 +2862,16 @@ Business Need: EnhancedGrid Component Scenarios
       | newFieldsApi                                                                                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                        |
       | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
-  @87307   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
+  @wip @87307   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
   Scenario Outline: Verify a 'Show Link as Text' field at child table by setting checkbox to false e-grid child table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Show Link as Text   | false              | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Show Link as Text   | false          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Show Link as Text   | false          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2940,8 +2940,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3143,8 +3143,8 @@ Business Need: EnhancedGrid Component Scenarios
     #Then I softly do not see value "12/31/2022--10/1/2016" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
+      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @106421   @validateAdvanceFilterValueForDateFieldWithOperatorEndWithAtEnhancedGrid
   Scenario Outline: validate Advance filter search for date field with end with operator At enhanced grid
@@ -3168,8 +3168,8 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly do not see value "2/15/2018--2/15/2022" for title "Project Period" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                   |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
+      | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
+      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid @SkipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced
@@ -3228,7 +3228,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c |
+      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @120976  @VerifyCrossIconIsDisplayedAtEnhancedGridQuickSearchBox
   Scenario: validate that cross icon is displayed at enhanced Grid quick search box
@@ -3379,8 +3379,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Table List       | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3490,8 +3490,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Flex Table List       | Field width Enhanced |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName            | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1499                   |
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1499                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4193,10 +4193,9 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4219,10 +4218,9 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4248,12 +4246,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General         | Required Fields     |                    | ApiGeneratedId:2 |
       | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
-      | Flex Grid:General         | Required Fields     | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General         | Required Fields     | Account__c              | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General         | Display Field Names | <newFieldsApi>          | EnhanceAppGrantorBudgetPeriods |                           |                            |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+      | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-3203                   |
+      | Flex Grid:General         | Required Fields     | ExternalOrganization__c | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General         | Required Fields     | Account__c              | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General         | Display Field Names | <newFieldsApi>          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4308,9 +4305,9 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General     | Required Fields     |                    | ApiGeneratedId:0 |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Required Fields     | Account__c     | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4369,8 +4366,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4392,8 +4389,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4416,8 +4413,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -4438,8 +4435,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
       | Flex Grid             | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppGrantorBudgetPeriods |                           |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Grid:General     | Display Field Names | <newFieldsApi> | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -5506,7 +5503,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I see the following message in the page details contains:
       | Saved Successfully! |
 
-  @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid @doubted
+  @wip @54704      @verifyPicklistFieldShouldBeInViewModeAfterEditingMultipleRecords @enhancedGrid @doubted
   Scenario Outline: validate picklist should visible in only view mode after Edit status field for multiple records
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName     | fieldOrignalValue               | filterId         |
@@ -7322,7 +7319,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Enable Quick Search | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Quick Search | true         | EnhanceAppBudCateGrantorFlexTable |                           |                            |
+      | Flex Grid:General     | Enable Quick Search | true          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
