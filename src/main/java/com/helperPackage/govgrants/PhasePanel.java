@@ -367,6 +367,7 @@ public final class PhasePanel {
                 + "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
                 + buttonName + "'] | " +
                 " //*[@title='" + panelTitleName + "']/ancestor::div[contains(@class,'col-xs-6')]/following-sibling::div//button[@title='" + buttonName + "'] |" +
+                " //*[@title='" + panelTitleName + "']/ancestor::div[contains(@class,'col-xs-6')]/following-sibling::div//button[text()='" + buttonName + "'] |" +
                 "//div/a[@id='EnhanceAppGrantorBudgetPeriodsFlexCollapse']//span[text()='" + panelTitleName + "']//ancestor::div//button[@title='" + buttonName + "']");
     }
 

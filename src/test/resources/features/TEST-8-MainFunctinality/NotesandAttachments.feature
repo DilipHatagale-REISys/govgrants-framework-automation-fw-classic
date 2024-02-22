@@ -67,7 +67,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "---program:-:notesFilesTableid---" flex table
+    Then I see "Add" button inside "Notes" flex table
 
   @382886 @Sanity @SanityNotes
   Scenario: Sanity TC - Admin - To verify that user able to see Add action on Attachments table at top level
@@ -99,7 +99,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    Then I see "Add" button inside "---program:-:AttachmentsTableid---" flex table
+    Then I see "Add" button inside "Attachments" flex table
 
   @382889 @Sanity @SanityNotes
   Scenario: Sanity TC - Admin - To verify that on clicking Add action on Attachments table Add Attachments modal should be opened
