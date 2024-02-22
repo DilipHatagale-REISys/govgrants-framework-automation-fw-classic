@@ -3290,7 +3290,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Remove" icon for "12 21" inside table without accept popup
+    When I click on "Remove" icon for "12 21" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
   @379008 @Sanity @SanityEnhancedTable

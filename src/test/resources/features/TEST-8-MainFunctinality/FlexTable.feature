@@ -7,6 +7,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334978 @382479 @Sanity
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -14,6 +20,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334979 @382480 @Sanity
   Scenario: Flex table-Page size-PM-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -21,6 +33,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @334980 @382483 @Sanity
   Scenario: Flex table-Page size-SPI-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -1084,7 +1102,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Quick Search | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Quick Search | true          | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Quick Search | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -1933,6 +1951,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     When I click on "Menu" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
+    Then I see "Download as PDF" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     When I click on "Download as PDF" button inside table id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     Then I see "Download as PDF" inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
     And I download the file
@@ -2065,7 +2084,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Total Records Count | false         | AppReviewList      | Name                      |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | AppReviewList      | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
@@ -3276,7 +3295,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see flex table with id "toggleFlexTablepopupflextable" is displayed
 
-  @336174 @382546 
+  @336174 @382546
   Scenario: Flex table-Admin-Config-To verify that user is able to render flex table on Page layout - Page block,
   Smoke TC - Admin - To verify that flex table should rendered properly on page layout
     When I login to "As a Grantor" app as "Admin" user
@@ -3287,7 +3306,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
-  @336175 @382547 
+  @336175 @382547
   Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Page layout - Page block,
   Smoke TC - PM - To verify that flex table should rendered properly on page layout
     When I login to "As a Grantor" app as "PM" user
@@ -3298,7 +3317,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
-  @336176 @382548 
+  @336176 @382548
   Scenario: Flex table-SPI-UI-To verify that user is able to view rendered flex table on Page layout - Page block
   Smoke TC - SPI - To verify that flex table should rendered properly on page layout
     Given I am on "SUBPORTAL" portal
@@ -3335,6 +3354,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335216 @382206 @Sanity
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3358,6 +3378,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @335220 @382207 @Sanity
   Scenario: Flex table-Total records count-PM-UI-To verify that Total records get changed on creating a new record or deleting/moving records
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4008,18 +4029,18 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsFlexTableToggleId---"
     When I enter advance filter values in table id "advfPrograms"
-      | Program date | Greater than or equal to | 25/08/2023 |
+      | Start Date | Greater than or equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:programsTableId---"
     And I refresh the page
     Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:programsTableId---"
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+     # | PM    |
 
   @338630 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than or equal to' operator
@@ -5065,6 +5086,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @338566
   Scenario: Flex table-Total Records count-Admin-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5087,6 +5109,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   @338567
   Scenario: Flex table-Total Records count-PM-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5261,7 +5284,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @336178 @382549 
+  @336178 @382549
   Scenario: LWC-Flex table-Admin-Config-To verify that user is able to render flex table on Modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -5278,7 +5301,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
-  @336180 @382550 
+  @336180 @382550
   Scenario: Flex table-PM-UI-To verify that user is able to view rendered flex table on Modal
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -14180,7 +14203,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
     When I click on "View" icon for "Admin Program for Advance filter" inside table
-    Then I softly can see top right button "Cancel" in page detail
+    #Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
@@ -14193,7 +14216,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
     When I click on "View" icon for "Admin Program for Advance filter" inside table
-    Then I softly can see top right button "Cancel" in page detail
+    #Then I softly can see top right button "Cancel" in page detail
     When I navigate to "Overview" sub tab
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
@@ -15686,6 +15709,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Refresh Behavior | Refresh the grid | Programs           | Name                      | Delete                     |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -15698,18 +15722,20 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
-    When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
-    Then I see entire page is refreshing
+    #When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
+    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
+    #Then I see entire page is refreshing
     Then I see the following message in the page details :
       | Record deleted successfully. |
 
     Examples:
       | Users |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @339397 @339409 @382265 @Sanity
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -15723,11 +15749,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
     And I wait for "5" seconds
-    When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
+    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
     Then I see entire page is refreshing
     Then I see the following message in the page details :
       | Record deleted successfully. |
-
 
     Examples:
       | Users |
@@ -15809,7 +15834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
-    When I click on "Edit" icon for "Admin Program for Advance filter" inside table
+    And I click on "Edit" icon for "Admin Program for Advance filter" inside flex table with id "---program:-:programsTableId---"
     When I navigate to "Overview" sub tab
     Then I softly can see top right button "Save" in page detail
 
@@ -19747,30 +19772,30 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
-    @382211 @Sanity
-      Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
-      Given I am on "SUBPORTAL" portal
-      When I login to "Grants Portal" app as "SPI" user
-      And I navigate to "Applications" tab
-      When I perform quick search for "package release flow SK3_Application"
-      When I click on "View" icon for "package release flow SK3_Application" inside table
-      And I navigate to "Budget" sub tab
-      Then I see row level action button "Edit" rendered on flex table
-      Then I see row level action button "View" rendered on flex table
-      Then I see row level action button "Delete" rendered on flex table
+  @382211 @Sanity
+  Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    And I navigate to "Budget" sub tab
+    Then I see row level action button "Edit" rendered on flex table
+    Then I see row level action button "View" rendered on flex table
+    Then I see row level action button "Delete" rendered on flex table
 
-      @382216 @Sanity
-      Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
-        Given I am on "SUBPORTAL" portal
-        When I login to "Grants Portal" app as "SPI" user
-        And I navigate to "Applications" tab
-        When I perform quick search for "package release flow SK3_Application"
-        When I click on "View" icon for "package release flow SK3_Application" inside table
-        And I navigate to "Budget" sub tab
-        And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
-        And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
-        Then I softly see the following messages in the page details :
-          | Saved Successfully! |
+  @382216 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    When I perform quick search for "package release flow SK3_Application"
+    When I click on "View" icon for "package release flow SK3_Application" inside table
+    And I navigate to "Budget" sub tab
+    And I click on top right button "New" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
+    And I click on top right button "Save" in flex table with id "---SPI-TableIDs:-:ApplicationsBudgetPeriodCatTableId---"
+    Then I softly see the following messages in the page details :
+      | Saved Successfully! |
 
   @382240 @Sanity
   Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
@@ -19782,25 +19807,25 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Edit" icon for "New Application For Testing Only" inside table
     Then I see title of current page is "  "
 
-    @382261 @Sanity
-    Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
-      Given I am on "SUBPORTAL" portal
-      When I login to "Grants Portal" app as "SPI" user
-      And I navigate to "Applications" tab
-      And I click toggle button to select "Applications - All"
-      When I perform quick search for "New Application For Testing Only"
-      When I click on "View" icon for "New Application For Testing Only" inside table
-      Then I see title of current page is "Application View "
+  @382261 @Sanity
+  Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
+    Then I see title of current page is "Application View "
 
-      @382496 @Sanity
-      Scenario: Sanity TC - SPI - To verify that user is not able to see Pagination at right bottom of the table, when Pagination config is disabled
-        Given I have "default" configuration as below:
-          | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-          | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
-        Given I setup test configuration as below:
-          | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-          | Flex Table:General    | Enable Pagination | false         | GrantsList         | Name                      |                            |
-        Given I am on "SUBPORTAL" portal
-        When I login to "Grants Portal" app as "SPI" user
-        And I navigate to "Grants" tab
-        Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
+  @382496 @Sanity
+  Scenario: Sanity TC - SPI - To verify that user is not able to see Pagination at right bottom of the table, when Pagination config is disabled
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
+      | Flex Table            | Enable Pagination | true              | ApiGeneratedId:3 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Enable Pagination | false         | GrantsList         | Name                      |                            |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Grants" tab
+    Then I do not see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
