@@ -122,7 +122,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70049  @382807  @verifyAutoSnapShotIsGettingCapturedWithFieldCaptureSnapshotonApproval-Approval @Sanity
+  @70049  @382807 @382809 @382837 @382842 @Sanity
   Scenario: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
