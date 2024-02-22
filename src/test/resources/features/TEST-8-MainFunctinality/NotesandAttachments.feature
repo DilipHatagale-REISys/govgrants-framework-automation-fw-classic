@@ -133,6 +133,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
     Then I see "Add Attachments" opens in overLay window
 
   @382892 @Sanity @SanityNotes

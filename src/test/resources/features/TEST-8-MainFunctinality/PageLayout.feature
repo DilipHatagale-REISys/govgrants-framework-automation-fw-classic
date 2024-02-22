@@ -11869,3 +11869,28 @@ Business Need: Page Layout Component Scenarios
         | User  |
         | ADMIN |
         | PM    |
+
+  @379088 @Sanity
+  Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Files" sub tab
+#  Then I see entered text in my feed section displayed properly
+    Then I see page block "Notes" aligned properly on page layout
+
+  @379098 @Sanity
+  Scenario: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "ProgramName__c" is not editable
+    Then I softly see field "StartDate__c" is not editable
+    Then I softly see field "EndDate__c" is not editable
+    Then I softly see field "Abbreviation__c" is not editable
+

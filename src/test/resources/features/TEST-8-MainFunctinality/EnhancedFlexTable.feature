@@ -3204,10 +3204,10 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario Outline: To verify that user is able to see Total Records count at bottom of the table, when Total Records count config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3215,7 +3215,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
+    Then I see "Total Records" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | User  |
       | ADMIN |
@@ -3302,19 +3302,9 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Edit" icon for "12 21" inside table without accept popup
+    #When I click on "Edit" icon for "12 21" inside table without accept popup
+    When I click on "Edit" icon for "12 21" inside table
     And I enter value "Program Manager" into field "ProjectRole__c"
     And I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
     Then I see the following message in the page details :
       | Saved Successfully! |
-
-  @abc1
-  Scenario Outline: To verify, Internal User should be able to add details to the newly displayed record
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
