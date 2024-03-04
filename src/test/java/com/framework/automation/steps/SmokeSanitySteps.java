@@ -159,4 +159,18 @@ public class SmokeSanitySteps {
         smokeSanityPage.assertIfButtonIsDislayedOnTableId(usage,buttonname,tableid);
     }
 
+    @Then("I see \"([^\"]*)\" shown as header instruction text in modal$")
+    public void iSeeShownAsHeaderInstructionTextInModal(String headerText) {
+        smokeSanityPage.assertHeaderInstructionTextInModal(headerText);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" Tab title displays on modal$")
+    public void iSeeTabTitleDisplaysOnModal(String usage, String tabName) {
+        smokeSanityPage.assertIfTabTitleOnModalIsDisplayed(usage,tabName);
+    }
+
+    @Then("I see \"([^\"]*)\" inside row of enhance grid id \"([^\"]*)\"$")
+    public void iSeeInsideRowOfEnhanceGridId(String rowGrouping, String tableId) {
+        smokeSanityPage.assertRowGroupingDisplayed(rowGrouping,tableId);
+    }
 }

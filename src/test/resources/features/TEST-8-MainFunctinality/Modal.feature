@@ -3,7 +3,7 @@ Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
 
-  @201270 @201271 @201272 @382218 @382223 @382247 @382248 @Sanity
+  @201270 @201271 @201272 @382218 @382223 @Sanity
   Scenario Outline:Modal- Admin- Config- Verify Pop-up window (modal window) should open,
   Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,
   Action- PM- UI - Verify ‘Modal title’ is displaying correctly
@@ -310,7 +310,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207455 @382234 @382237 @382241 @382242 @Sanity
+  @207455 @382241 @382242 @Sanity
   Scenario Outline: Modal- Admin/PM- Config- Verify if any required field is empty then error massage should display
     Given I delete the record "Automation Program 1234" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
@@ -327,6 +327,22 @@ Business Need: Modal Component Scenarios
       | Users |
       | Admin |
       | PM    |
+
+    @382234 @Sanity
+    Scenario: Sanity Testing- Modal- Admin- To verify required to save and required to submit message displays on edit modal.
+      When I login to "As a Grantor" app as "Admin" user
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+      Then I see field message with text as "Required to Save" and "Required to Submit"
+
+      @382237 @Sanity
+      Scenario: Sanity Testing- Modal- PM- To verify required to save and required to submit message displays on edit modal.
+        When I login to "As a Grantor" app as "PM" user
+        And I navigate to "Planning" tab
+        And I click toggle button to select "Internal Programs - Draft"
+        And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+        Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @207458 @2074
   Scenario Outline: Modal- Admin- Config- Verify if all required field are filled then we should be able to save and continue
@@ -476,24 +492,21 @@ Business Need: Modal Component Scenarios
       | ADMIN | Help Text for Automation |              |
       | PM    | Help Text for Automation |              |
 
-  @382229 @382231 @Sanity
-  Scenario Outline: Sanity Testing- Modal- Admin- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField           | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | <new_helpText> | Grantor State Program Create |                           |                            |
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
+  @382229 @Sanity
+  Scenario: Sanity Testing- Modal- Admin- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    Then I see "<new_helpText>" shown as help text
-    Examples:
-      | Users | new_helpText             | old_helpText                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-      | ADMIN | Help Text for Automation | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office. Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers.Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’.Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
-      | PM    | Help Text for Automation | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office. Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers.Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’.Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
+    Then I see "Test Automation header instruction" shown as header instruction text in modal
+
+  @382231 @Sanity
+  Scenario: Sanity Testing- Modal- PM- To verify when user gives 'Header instructions' in config for page layout, it displays on UI.
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I see "Test Automation header instruction" shown as header instruction text in modal
 
   @382252 @382253 @Sanity
   Scenario Outline:Sanity Testing- Modal- Page Tab- Admin- To verify Header Instruction Text displays in the modal if provided in the config.
@@ -513,3 +526,20 @@ Business Need: Modal Component Scenarios
       | Users | new_helpText           | old_helpText |
       | ADMIN | Automation Header Text |              |
       | PM    | Automation Header Text |              |
+
+    @382247 @Sanity
+      Scenario: Sanity Testing- Modal- Page Tab- Admin- To verify Tab title displays as expected which is provided in the config.
+      When I login to "As a Grantor" app as "Admin" user
+      And I navigate to "Planning" tab
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+      Then I see "Program Information" Tab title displays on modal
+
+
+  @382248 @Sanity
+  Scenario: Sanity Testing- Modal- Page Tab- PM- To verify Tab title displays as expected which is provided in the config.
+    When I login to "As a Grantor" app as "PM" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I see "Program Information" Tab title displays on modal
