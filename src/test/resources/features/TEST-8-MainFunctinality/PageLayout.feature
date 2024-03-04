@@ -2571,7 +2571,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
 
-  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @sanity @wip
+  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @Sanity @SanityPageLayout @wip
   Scenario: verify that user can enter and save specific url in  url field in a valid format when URL Validation Regex is set to true from custom metadata config
     Given I have "customMetaData" configuration as below:
       | id                 | label                | booleanValue | customMetaDataApiName    |
@@ -10704,7 +10704,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
 
-  @218829 @379068 @379070 @Sanity
+  @218829 @379068 @379070 @Sanity @SanityPageLayout
   Scenario Outline: Page layout-To verify, User is not  edit formula field
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11150,7 +11150,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200266 @200245 @379387 @379388 @Sanity
+  @200266 @200245 @379387 @379388 @Sanity @SanityPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11232,7 +11232,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200249 @379389 @Sanity
+  @200249 @379389 @Sanity @SanityPageLayout
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11460,7 +11460,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
 
-  @219886 @219887 @379091 @379092 @Sanity
+  @219886 @219887 @379091 @379092 @Sanity @SanityPageLayout
   Scenario Outline: Page Tab - Admin -Config - Verify page tab label should displayed properly with icon
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11479,7 +11479,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219888 @379093 @Sanity
+  @219888 @379093 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11558,7 +11558,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
-  @219894 @219893 @379380 @379382 @Sanity
+  @219894 @219893 @379380 @379382 @Sanity @SanityPageLayout
   Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11577,7 +11577,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219895 @379383 @Sanity
+  @219895 @379383 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11737,7 +11737,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
    #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
-  @200222 @379087 @Sanity
+  @200222 @379087 @Sanity @SanityPageLayout
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -11856,7 +11856,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header
 
-  @379085 @379086 @Sanity
+  @379085 @379086 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11870,7 +11870,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379088 @Sanity
+  @379088 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -11881,7 +11881,7 @@ Business Need: Page Layout Component Scenarios
 #  Then I see entered text in my feed section displayed properly
     Then I see page block "Notes" aligned properly on page layout
 
-  @379098 @379070 @Sanity
+  @379098 @379070 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11898,7 +11898,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379071 @Sanity
+  @379071 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11911,7 +11911,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "fieldCity__c" is not editable
     Then I softly see field "fieldCounty__c" is not editable
 
-  @379085 @379086 @Sanity
+  @379085 @379086 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11925,7 +11925,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379091 @379092 @Sanity
+  @379091 @379092 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11944,7 +11944,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379380 @379382 @Sanity
+  @379380 @379382 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11963,7 +11963,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379384 @379385 @Sanity
+  @379384 @379385 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11981,7 +11981,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379386 @Sanity
+  @379386 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11995,7 +11995,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Application Files" page block displayed
     Then I softly see "Notes" page block displayed
 
-  @379387 @379388 @Sanity
+  @379387 @379388 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks    When I login to "As a Grantor" app as "PM" user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -12017,7 +12017,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379390 @379391 @Sanity
+  @379390 @379391 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12031,7 +12031,7 @@ Business Need: Page Layout Component Scenarios
       | PM    |
 
 
-  @379392 @Sanity
+  @379392 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12041,7 +12041,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Success" page message displayed in page layout
 
-  @379393 @379394 @Sanity
+  @379393 @379394 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12055,7 +12055,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379395 @Sanity
+  @379395 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12066,7 +12066,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Automation Test Information" page message displayed in page layout
 
 
-  @379396 @379397 @Sanity
+  @379396 @379397 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12080,7 +12080,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379398 @Sanity
+  @379398 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12090,7 +12090,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Alert" page message displayed in page layout
 
-  @379400 @379401 @Sanity
+  @379400 @379401 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12104,7 +12104,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379402 @Sanity
+  @379402 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12114,7 +12114,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Warning" page message displayed in page layout
 
-  @379403 @379404 @Sanity
+  @379403 @379404 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12128,7 +12128,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379405 @Sanity
+  @379405 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12138,7 +12138,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Error" page message displayed in page layout
 
-  @379406 @379407 @Sanity
+  @379406 @379407 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify all page layout actions are displaying which are mentioned in the config.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -12168,7 +12168,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379408 @Sanity
+  @379408 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12179,7 +12179,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Submit to grantor" button is displayed
     Then I see "Edit" button is displayed
 
-  @379409 @379410 @Sanity
+  @379409 @379410 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -12195,7 +12195,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379411 @Sanity
+  @379411 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12206,7 +12206,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "fieldInternalOrganization__c" inside page block
     Then I softly see field "fieldType__c" inside page block
 
-  @379412 @Sanity
+  @379412 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12225,7 +12225,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379414 @Sanity
+  @379414 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12239,7 +12239,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "History" shown at number "3" inside subtabs
     Then I see "Collab" shown at number "3" inside subtabs
 
-  @379415 @379416 @Sanity
+  @379415 @379416 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12266,7 +12266,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "General Information" shown at the number "0" inside page layout
     Then I see "System Information" shown at the number "1" inside page layout
 
-  @379418 @Sanity
+  @379418 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks detail fields are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12288,7 +12288,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379419 @Sanity
+  @379419 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -12298,7 +12298,7 @@ Business Need: Page Layout Component Scenarios
     Then I see helpIcon displayed beside "Contacts" respective field or column
     Then I see helpIcon displayed beside "Information" respective field or column
 
-  @379420 @Sanity
+  @379420 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks detail fields are showing correct.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12309,7 +12309,7 @@ Business Need: Page Layout Component Scenarios
     Then I see helpIcon displayed beside "General Information" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
-  @379421 @379422 @Sanity
+  @379421 @379422 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12324,7 +12324,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379423 @Sanity
+  @379423 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12335,7 +12335,7 @@ Business Need: Page Layout Component Scenarios
     Then I see helpIcon displayed beside "General Information" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
-  @379424 @379425 @Sanity
+  @379424 @379425 @Sanity @SanityPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12353,7 +12353,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379426 @Sanity
+  @379426 @Sanity @SanityPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
