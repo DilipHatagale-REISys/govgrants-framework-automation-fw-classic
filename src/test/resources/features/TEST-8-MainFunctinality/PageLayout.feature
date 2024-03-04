@@ -11856,19 +11856,19 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header
 
-    @379085 @379086 @Sanity
-    Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
-      When I login to "As a Grantor" app as "<User>" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - All"
-      When I perform quick search for "Test Approver Table"
-      When I click on "View" icon for "Test Approver Table" inside table
-      Then I see step progress bar is displayed
-      Examples:
-        | User  |
-        | ADMIN |
-        | PM    |
+  @379085 @379086 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see step progress bar is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
   @379088 @Sanity
   Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
@@ -11881,9 +11881,9 @@ Business Need: Page Layout Component Scenarios
 #  Then I see entered text in my feed section displayed properly
     Then I see page block "Notes" aligned properly on page layout
 
-  @379098 @Sanity
-  Scenario: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
-    When I login to "As a Grantor" app as "Admin" user
+  @379098 @379070 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
+    When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
@@ -11893,4 +11893,477 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "StartDate__c" is not editable
     Then I softly see field "EndDate__c" is not editable
     Then I softly see field "Abbreviation__c" is not editable
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379071 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I softly see field "fieldAddressline1__c" is not editable
+    Then I softly see field "fieldAddressline2__c" is not editable
+    Then I softly see field "fieldCity__c" is not editable
+    Then I softly see field "fieldCounty__c" is not editable
+
+  @379085 @379086 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Overview" sub tab
+    Then I see step progress bar is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379091 @379092 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
+    Then I see "Responsibilities" subtab is present with icon "fa fa-file" in page details
+    Then I see "Files" subtab is present with icon "fa fa-history" in page details
+    Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379380 @379382 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" subtab is present in page details
+    Then I see "Setup" subtab is present in page details
+    Then I see "Responsibilities" subtab is present in page details
+    Then I see "Related Log" subtab is present in page details
+    Then I see "Files" subtab is present in page details
+    Then I see "Messages" subtab is present in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379384 @379385 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Attachments" page block displayed
+    Then I softly see "Notes" page block displayed
+    Then I softly see "Program Files" page block displayed
+    Then I softly see "Notes" page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379386 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Attachments" page block displayed
+    Then I softly see "Notes" page block displayed
+    Then I softly see "Application Files" page block displayed
+    Then I softly see "Notes" page block displayed
+
+  @379387 @379388 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks    When I login to "As a Grantor" app as "PM" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    Then I softly see field "StartDate__c" inside page block
+    Then I softly see field "WebsiteAddress__c" inside page block
+    Then I softly see field "ProgramName__c" inside page block
+    Then I softly see field "PrimaryFundingOrganization__c" inside page block
+    Then I softly see field "Objectives__c" inside page block
+    Then I softly see field "KPIsRequired__c" inside page block
+
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379390 @379391 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Success" page message displayed in page layout
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+
+  @379392 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Success" page message displayed in page layout
+
+  @379393 @379394 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Information" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379395 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Information" page message displayed in page layout
+
+
+  @379396 @379397 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Alert" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379398 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Alert" page message displayed in page layout
+
+  @379400 @379401 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Warning" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379402 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Warning" page message displayed in page layout
+
+  @379403 @379404 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Error" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379405 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Error" page message displayed in page layout
+
+  @379406 @379407 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify all page layout actions are displaying which are mentioned in the config.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    Then I see "Save" button is displayed
+    Then I see "Cancel" button is displayed
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "DataTableEnhanceProgramContacts"
+    When I click "Associate" after selection of "Automation Admin" in the table "DataTableEnhanceProgramContacts"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name             | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation Admin | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "15" seconds
+    Then I see "Submit For Approval" button is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379408 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    Then I see "Submit to grantor" button is displayed
+    Then I see "Edit" button is displayed
+
+  @379409 @379410 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I softly see field "Name" inside page block
+    Then I softly see field "Status__c" inside page block
+    Then I softly see field "Account__c" inside page block
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379411 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I softly see field "fieldInternalOrganization__c" inside page block
+    Then I softly see field "fieldType__c" inside page block
+
+  @379412 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" shown at number "0" inside subtabs
+    Then I see "Setup" shown at number "1" inside subtabs
+    Then I see "Responsibilities" shown at number "2" inside subtabs
+    Then I see "Files" shown at number "3" inside subtabs
+    Then I see "History" shown at number "4" inside subtabs
+    Then I see "Messages" shown at number "5" inside subtabs
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379414 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see "Overview" shown at number "0" inside subtabs
+    Then I see "Financials" shown at number "1" inside subtabs
+    Then I see "Files" shown at number "2" inside subtabs
+    Then I see "History" shown at number "3" inside subtabs
+    Then I see "Collab" shown at number "3" inside subtabs
+
+  @379415 @379416 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Information" shown at the number "0" inside page layout
+    Then I see "Description" shown at the number "1" inside page layout
+    Then I see "Program Specific Settings" shown at the number "2" inside page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379417
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see "General Information" shown at the number "0" inside page layout
+    Then I see "System Information" shown at the number "1" inside page layout
+
+  @379418 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks detail fields are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    Then I softly see field "StartDate__c" inside page block
+    Then I softly see field "WebsiteAddress__c" inside page block
+    Then I softly see field "ProgramName__c" inside page block
+    Then I softly see field "PrimaryFundingOrganization__c" inside page block
+    Then I softly see field "Objectives__c" inside page block
+    Then I softly see field "KPIsRequired__c" inside page block
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379419 @Sanity
+  Scenario: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Contacts" respective field or column
+    Then I see helpIcon displayed beside "Information" respective field or column
+
+  @379420 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks detail fields are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "System Information" respective field or column
+
+  @379421 @379422 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Contacts" respective field or column
+    Then I see helpIcon displayed beside "Information" respective field or column
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379423 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "System Information" respective field or column
+
+  @379424 @379425 @Sanity
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Abbreviation" respective field or column
+    Then I see helpIcon displayed beside "Type" respective field or column
+    Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
+    Then I see helpIcon displayed beside "Project Period End Date" respective field or column
+    Then I see helpIcon displayed beside "Internal Organization" respective field or column
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379426 @Sanity
+  Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
+    Then I see helpIcon displayed beside "Project Period End Date" respective field or column
+    Then I see helpIcon displayed beside "Due Date" respective field or column
+
+
 
