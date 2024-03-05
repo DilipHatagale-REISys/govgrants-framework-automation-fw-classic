@@ -91,8 +91,8 @@ public class AttachmentsPage extends GovGrantsManager {
     }
 
     public void selectFileTypeFromDropDown(String value) {
-        I.amPerforming().click().on(ByUsing.xpath("//button[@aria-label='Select Progress']"));
-        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div//lightning-base-combobox-item//span//span[@class='slds-truncate']"));
+        I.amPerforming().click().on(ByUsing.xpath("//button[@aria-label='Select Progress']|//select//option[@value='" + value + "']"));
+        List<Elements> options = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div//lightning-base-combobox-item//span//span[@class='slds-truncate'] | //select[@class='form-control spacer']"));
         for (Elements opt : options) {
             if (opt.getText().equals(value)) {
                 opt.isDisplayed();

@@ -58,6 +58,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName                | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Decision Expression | <new_hide_config> | Grantor State Program | Name                      | Submit For Approval        |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1096,9 +1097,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I click on Manage Attachments inside page block details
     Then I see "Test1:Test2" inside Type selectbox
@@ -1986,8 +1987,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2097,9 +2098,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2271,9 +2272,9 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2289,9 +2290,9 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2307,9 +2308,9 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2325,9 +2326,9 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -2343,9 +2344,9 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -2361,9 +2362,9 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -2570,7 +2571,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
 
-  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @sanity @wip
+  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @Sanity @SanityPageLayout @wip
   Scenario: verify that user can enter and save specific url in  url field in a valid format when URL Validation Regex is set to true from custom metadata config
     Given I have "customMetaData" configuration as below:
       | id                 | label                | booleanValue | customMetaDataApiName    |
@@ -3847,8 +3848,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3878,8 +3879,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3909,8 +3910,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3941,8 +3942,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3971,8 +3972,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -4001,8 +4002,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4031,8 +4032,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4061,8 +4062,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4398,14 +4399,14 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
@@ -4539,28 +4540,28 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see "Title" shown inside mini page layout on hover
-    Then I softly see "Automation Internal Announcement for Testing" shown inside mini page layout on hover
+    Then I softly see "Announcement for Testing" shown inside mini page layout on hover
 
   @125229  @VerifyMiniPageLayoutShouldDisplayedWithUnBoldValueOnMouseHoverAtSidebarLinks
   Scenario: validate that mini page layout is getting displayed without bold value on mouse hover at sidebar links
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I see mini page layout value is displayed in normal text with "500" font-weight
@@ -4570,9 +4571,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
@@ -6276,6 +6277,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                   | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message @ | An Approver is a required field for a program |
       | Program                      | Status    | Created                         | Test Automation Program for error message dnd |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6306,6 +6308,7 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory        | fieldName | fieldNewValue                     | coreComponentField                            |
       | Error Message Config:General | Message   | Test Automation Error Message 123 | An Approver is a required field for a program |
       | Program                      | Status    | Created                           | Test Automation Program for error message dnd |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -7735,6 +7738,7 @@ Business Need: Page Layout Component Scenarios
 
   @151109    @verifyDisplayOfMissingFieldMessageForReqForSavePhoneNumberFieldInCreateMode
   Scenario: verify missing field msg is displayed for phone no field if req for save is set at newly created record
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
@@ -8075,8 +8079,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I pause execution for "2" seconds
@@ -8090,8 +8094,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I refresh the page
@@ -8104,8 +8108,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -8329,7 +8333,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17697                  |
-    Given I delete the record "{Framework_recordUsed:programOnlyForDescriptionScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9082,9 +9086,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "History" sub tab
     When I softly see expected table with id "toggleFlexTableHistory"
     When I softly see the text :
@@ -9181,6 +9185,7 @@ Business Need: Page Layout Component Scenarios
 
   @171512 @jyoti
   Scenario: page layout -To verify,alternate rendering is configured for Long text area or text field, the user should be able to check the checkbox when Hide Select All Checkbox is checked
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName                | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
@@ -9271,6 +9276,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23604                  |
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23592                  |
       | Page Block Config:Page Block Rule Detail | Is Active                | true          | Grantor State Program | Name                      | PBD-23592                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9615,6 +9621,7 @@ Business Need: Page Layout Component Scenarios
 
   @172151 @jyoti
   Scenario: Page layout-To verify User hover over the lookup field icon on page layout then it should display the Field label override name from the GovGrants side.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9640,6 +9647,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17603                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9665,6 +9673,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9684,6 +9693,7 @@ Business Need: Page Layout Component Scenarios
 
   @172212 @jyoti
   Scenario: Page layout-To verify User fill the lookup field and save the record and after edit the same record  then it should display the Field label override name from the GovGrants side.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9709,6 +9719,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9735,6 +9746,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Field Label Override |               | Grantor State Program | Name                      | PBD-17603                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9761,6 +9773,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17603                  |
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9924,7 +9937,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
     And I hover mouse on text with id "Program__c"
     Then I see lookup link " Program ID" inside page block
@@ -9953,6 +9966,7 @@ Business Need: Page Layout Component Scenarios
 
   @174655 @sprint20 @userstory_171188
   Scenario: page layout : To verify, User should see the  name of the subrecipient's organization  under the planning /home Pending Tasks (Assigned to Me)
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10575,8 +10589,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10597,8 +10611,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10619,8 +10633,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10690,7 +10704,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
 
-  @218829 @379068 @379070 @Sanity
+  @218829 @379068 @379070 @Sanity @SanityPageLayout
   Scenario Outline: Page layout-To verify, User is not  edit formula field
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11130,7 +11144,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200266 @200245 @379387 @379388 @Sanity
+  @200266 @200245 @379387 @379388 @Sanity @SanityPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11212,7 +11226,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200249 @379389 @Sanity
+  @200249 @379389 @Sanity @SanityPageLayout
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11440,7 +11454,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
 
-  @219886 @219887 @379091 @379092 @Sanity
+  @219886 @219887 @379091 @379092 @Sanity @SanityPageLayout
   Scenario Outline: Page Tab - Admin -Config - Verify page tab label should displayed properly with icon
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11459,7 +11473,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219888 @379093 @Sanity
+  @219888 @379093 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11538,7 +11552,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
-  @219894 @219893 @379380 @379382 @Sanity
+  @219894 @219893 @379380 @379382 @Sanity @SanityPageLayout
   Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11557,7 +11571,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219895 @379383 @Sanity
+  @219895 @379383 @Sanity @SanityPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -11717,7 +11731,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
    #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
-  @200222 @379087 @Sanity
+  @200222 @379087 @Sanity @SanityPageLayout
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -11836,16 +11850,514 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header
 
-    @379085 @379086 @Sanity
-    Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
-      When I login to "As a Grantor" app as "<User>" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      And I click toggle button to select "Internal Programs - All"
-      When I perform quick search for "Test Approver Table"
-      When I click on "View" icon for "Test Approver Table" inside table
-      Then I see step progress bar is displayed
-      Examples:
-        | User  |
-        | ADMIN |
-        | PM    |
+  @379085 @379086 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    Then I see step progress bar is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379088 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Files" sub tab
+#  Then I see entered text in my feed section displayed properly
+    Then I see page block "Notes" aligned properly on page layout
+
+  @379098 @379070 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Overview" sub tab
+    Then I softly see field "ProgramName__c" is not editable
+    Then I softly see field "StartDate__c" is not editable
+    Then I softly see field "EndDate__c" is not editable
+    Then I softly see field "Abbreviation__c" is not editable
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379071 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I softly see field "fieldAddressline1__c" is not editable
+    Then I softly see field "fieldAddressline2__c" is not editable
+    Then I softly see field "fieldCity__c" is not editable
+    Then I softly see field "fieldCounty__c" is not editable
+
+  @379085 @379086 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Overview" sub tab
+    Then I see step progress bar is displayed
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379091 @379092 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
+    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
+    Then I see "Responsibilities" subtab is present with icon "fa fa-file" in page details
+    Then I see "Files" subtab is present with icon "fa fa-history" in page details
+    Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379380 @379382 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" subtab is present in page details
+    Then I see "Setup" subtab is present in page details
+    Then I see "Responsibilities" subtab is present in page details
+    Then I see "Related Log" subtab is present in page details
+    Then I see "Files" subtab is present in page details
+    Then I see "Messages" subtab is present in page details
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379384 @379385 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Attachments" page block displayed
+    Then I softly see "Notes" page block displayed
+    Then I softly see "Program Files" page block displayed
+    Then I softly see "Notes" page block displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379386 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    When I navigate to "Files" sub tab
+    Then I softly see "Attachments" page block displayed
+    Then I softly see "Notes" page block displayed
+    Then I softly see "Application Files" page block displayed
+    Then I softly see "Notes" page block displayed
+
+  @379387 @379388 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks    When I login to "As a Grantor" app as "PM" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    Then I softly see field "StartDate__c" inside page block
+    Then I softly see field "WebsiteAddress__c" inside page block
+    Then I softly see field "ProgramName__c" inside page block
+    Then I softly see field "PrimaryFundingOrganization__c" inside page block
+    Then I softly see field "Objectives__c" inside page block
+    Then I softly see field "KPIsRequired__c" inside page block
+
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379390 @379391 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Success" page message displayed in page layout
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+
+  @379392 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Success" page message displayed in page layout
+
+  @379393 @379394 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Information" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379395 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Information" page message displayed in page layout
+
+
+  @379396 @379397 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Alert" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379398 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Alert" page message displayed in page layout
+
+  @379400 @379401 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Warning" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379402 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Warning" page message displayed in page layout
+
+  @379403 @379404 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Automation Test Error" page message displayed in page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379405 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
+    Then I see "Automation Test Error" page message displayed in page layout
+
+  @379406 @379407 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify all page layout actions are displaying which are mentioned in the config.
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    Then I see "Save" button is displayed
+    Then I see "Cancel" button is displayed
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "DataTableEnhanceProgramContacts"
+    When I click "Associate" after selection of "Automation Admin" in the table "DataTableEnhanceProgramContacts"
+    When I navigate to "Overview" sub tab
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name             | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation Admin | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "15" seconds
+    Then I see "Submit For Approval" button is displayed
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379408 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    When I perform quick search for "Autosnapshot grant 1"
+    When I click on "View" icon for "Autosnapshot grant 1" inside table
+    Then I see "Submit to grantor" button is displayed
+    Then I see "Edit" button is displayed
+
+  @379409 @379410 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I softly see field "Name" inside page block
+    Then I softly see field "Status__c" inside page block
+    Then I softly see field "Account__c" inside page block
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379411 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I softly see field "fieldInternalOrganization__c" inside page block
+    Then I softly see field "fieldType__c" inside page block
+
+  @379412 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Overview" shown at number "0" inside subtabs
+    Then I see "Setup" shown at number "1" inside subtabs
+    Then I see "Responsibilities" shown at number "2" inside subtabs
+    Then I see "Files" shown at number "3" inside subtabs
+    Then I see "History" shown at number "4" inside subtabs
+    Then I see "Messages" shown at number "5" inside subtabs
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379414 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see "Overview" shown at number "0" inside subtabs
+    Then I see "Financials" shown at number "1" inside subtabs
+    Then I see "Files" shown at number "2" inside subtabs
+    Then I see "History" shown at number "3" inside subtabs
+    Then I see "Collab" shown at number "3" inside subtabs
+
+  @379415 @379416 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see "Information" shown at the number "0" inside page layout
+    Then I see "Description" shown at the number "1" inside page layout
+    Then I see "Program Specific Settings" shown at the number "2" inside page layout
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379417
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see "General Information" shown at the number "0" inside page layout
+    Then I see "System Information" shown at the number "1" inside page layout
+
+  @379418 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks detail fields are showing correct.
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_LWC_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    Then I softly see field "StartDate__c" inside page block
+    Then I softly see field "WebsiteAddress__c" inside page block
+    Then I softly see field "ProgramName__c" inside page block
+    Then I softly see field "PrimaryFundingOrganization__c" inside page block
+    Then I softly see field "Objectives__c" inside page block
+    Then I softly see field "KPIsRequired__c" inside page block
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379419 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
+    When I login to "As a Grantor" app as "Admin" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Contacts" respective field or column
+    Then I see helpIcon displayed beside "Information" respective field or column
+
+  @379420 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks detail fields are showing correct.
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "System Information" respective field or column
+
+  @379421 @379422 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Contacts" respective field or column
+    Then I see helpIcon displayed beside "Information" respective field or column
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379423 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "System Information" respective field or column
+
+  @379424 @379425 @Sanity @SanityPageLayout
+  Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
+    When I login to "As a Grantor" app as "<User>" user
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - All"
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsFlexTableToggleId---" panel
+    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    Then I see helpIcon displayed beside "Abbreviation" respective field or column
+    Then I see helpIcon displayed beside "Type" respective field or column
+    Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
+    Then I see helpIcon displayed beside "Project Period End Date" respective field or column
+    Then I see helpIcon displayed beside "Internal Organization" respective field or column
+
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
+
+  @379426 @Sanity @SanityPageLayout
+  Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
+    And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
+    When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
+    Then I see helpIcon displayed beside "Project Period Start Date" respective field or column
+    Then I see helpIcon displayed beside "Project Period End Date" respective field or column
+    Then I see helpIcon displayed beside "Due Date" respective field or column
+
+
+

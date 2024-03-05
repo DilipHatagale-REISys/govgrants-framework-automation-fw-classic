@@ -12,7 +12,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3837                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -51,7 +51,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3836                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -91,7 +91,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -128,7 +128,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -162,7 +162,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -190,7 +190,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -396,8 +396,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as PDF" options inside "Contacts@1234567890!@#$%^&*()" disabled
@@ -414,8 +414,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as XLS" options inside "Contacts@1234567890!@#$%^&*()" disabled
@@ -432,12 +432,12 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
-  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity
+  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity @SanityEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -449,8 +449,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see quick search option disabled from enhanced grid
 
@@ -466,8 +466,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "#" in enhanced flex grid header "---program:-:programContactsTableId---"
 
@@ -511,7 +511,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
-  @77113  @379018 @Sanity  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
+  @77113  @379018 @Sanity @SanityEnhancedTable  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
   Scenario Outline: validate disabling of total row count in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -544,8 +544,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
 
@@ -561,8 +561,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
 
@@ -616,8 +616,9 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
+    Then I see over all total for "AmountAwarded__c" field at enhanced grid
     Then I see "BaseSalary" in enhanced flex grid header "---program:-:programContactsTableId---"
 
   @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
@@ -664,8 +665,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "Edit" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Applicationg test88888" in "---program:-:programContactsTableId---" panel
     Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
@@ -714,8 +715,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
@@ -743,8 +744,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "10" seconds
     Then I softly see sorting label as "* Records are sorted by Last Modified Date ascending order" inside "---program:-:programContactsTableId---" table
@@ -762,7 +763,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "FirstName LastNam" inside table
     Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
-  @106413 @379016 @Sanity
+  @106413 @379016 @Sanity @SanityEnhancedTable
   Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -813,8 +814,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     When I hovering mouse on table id "---program:-:programContactsTableId---" with table row level icon "<new_helpText>" for column value "Automation FO"
@@ -1011,8 +1012,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedID---" panel
     When I hover mouse on lookup link "Department of Higher Education" at table
@@ -1033,8 +1034,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -1054,8 +1055,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
     Examples:
@@ -1075,8 +1076,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -1094,8 +1095,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
 
@@ -1162,8 +1163,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text "Contacts@1234567890!@#$%^&*()" icon
     Then I see "Help text for Automation" shown as help text
@@ -1221,7 +1222,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @204991 @204992 @379020 @Sanity
+  @204991 @204992 @379020 @Sanity @SanityEnhancedTable
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI,
   Page Size- PM- UI- Verify dropdown to select page size manually should not appear on UI
     Given I have "default" configuration as below:
@@ -1328,7 +1329,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205013 @205014 @379022 @Sanity
+  @205013 @205014 @379022 @Sanity @SanityEnhancedTable
   Scenario Outline: Pagination - Admin- Config- Verify Pagination should not display on UI,
   Pagination - PM- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
@@ -1353,7 +1354,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
 
-  @205010 @205011 @379021 @Sanity
+  @205010 @205011 @379021 @Sanity @SanityEnhancedTable
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI,Pagination - PM- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
@@ -2124,7 +2125,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
-  @205078 @205080 @379015 @Sanity
+  @205078 @205080 @379015 @Sanity @SanityEnhancedTable
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option should not available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option should not available on UI
     Given I have "default" configuration as below:
@@ -2148,7 +2149,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205077 @205079 @379014 @Sanity
+  @205077 @205079 @379014 @Sanity @SanityEnhancedTable
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option available on UI
     Given I have "default" configuration as below:
@@ -2606,7 +2607,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ######################Test suite: Action Config (Suite ID: 205379)########################
 
-  @205382 @205384 @205388 @379006 @Sanity
+  @205382 @205384 @205388 @379006 @Sanity @SanityEnhancedTable
   Scenario Outline: Action- Admin- config- Verify action is rendered on UI,
   Action- PM- UI- Verify action is rendered on UI
   Action- Admin- config- Verify action name is displaying correctly,
@@ -3199,14 +3200,14 @@ Business Need: DataTableEnhanced Component Scenarios
     And I download the file
     Then I see "4000" on page "1" of "govgrants" pdf file
 
-  @379017 @Sanity
+  @379017 @Sanity @SanityEnhancedTable
   Scenario Outline: To verify that user is able to see Total Records count at bottom of the table, when Total Records count config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Grid             | Enable Total Records Count | true              | ApiGeneratedId:0 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:General     | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
+      | Flex Table:General    | Enable Total Records Count | true          | DataTableEnhanceProgramContacts |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3214,20 +3215,20 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Total Records" count in enhanced grid "---program:-:EnhancedDataTablegrid---"
+    Then I see "Total Records" page size inside table "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @379005 @Sanity
+  @379005 @Sanity @SanityEnhancedTable
   Scenario Outline: To verify that all top level actions are displayed on top of the table, which have been configured
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Automation Program For Contact Data Table Enhanced"
+    When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
     Examples:
@@ -3259,7 +3260,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       #  | PM    |
 
-  @379011 @379013 @379009 @smoke @Sanity
+  @379011 @379013 @379009 @smoke @Sanity @SanityEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3280,7 +3281,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #379009
     Then I see new tab is opened
 
-  @379010 @Sanity
+  @379010 @Sanity @SanityEnhancedTable
   Scenario:To verify that user is able to delete record by clicking on Delete action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3289,10 +3290,10 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Remove" icon for "12 21" inside table without accept popup
+    When I click on "Remove" icon for "12 21" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
-  @379008 @Sanity
+  @379008 @Sanity @SanityEnhancedTable
   Scenario: To verify that user is able to edit existing record by clicking on Edit action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3301,7 +3302,8 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I click on "Edit" icon for "12 21" inside table without accept popup
+    #When I click on "Edit" icon for "12 21" inside table without accept popup
+    When I click on "Edit" icon for "12 21" inside table
     And I enter value "Program Manager" into field "ProjectRole__c"
     And I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
     Then I see the following message in the page details :

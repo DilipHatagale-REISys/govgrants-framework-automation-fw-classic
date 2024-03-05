@@ -330,7 +330,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332781 @382441 @Sanity
+  @332781 @382441 @Sanity  @SanitySendEmail
   Scenario: Send Email-To verify,Internal User send the email from TO field as 'External'
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -408,7 +408,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Email Sent Successfully." message is displayed on Send Email Modal
 
-  @332788 @382439 @Sanity
+  @332788 @382439 @Sanity  @SanitySendEmail
   Scenario: Send Email -To verify , When user sends an Email with an Attachment  from TO (internal) field
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -715,7 +715,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "View" icon for "Test for To External Cc External" inside flex table with id "---program:-:communicationHistoryTableId---"
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332809 @382756 @Sanity
+  @332809 @382756 @Sanity  @SanitySendEmail
   Scenario: Send Email -To verify , When  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -739,7 +739,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "captureModalFields.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @332811 @382757 @Sanity
+  @332811 @382757 @Sanity  @SanitySendEmail
   Scenario: Send Email -To verify , When Internal  user sends an Email with an more than 10 Attachment  then Do not attach more than 10 Files, Attachment limit is Exceeded." error message is getting displayed on the send email modal
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -765,7 +765,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "captureModalFields.png" in Send Email Modal
     Then I see "Do not attach more than 10 Files, Attachment limit is Exceeded." error massage in attachment section
 
-  @382758 @Sanity
+  @382758 @Sanity  @SanitySendEmail
   Scenario: sanity TC-SPI-To verify if user is getting error message "File Size Exceeded Attachments Limits of 25MB" if the total file size is more than 25MB
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -913,8 +913,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see Attachment section is displayed under send email modal
@@ -960,8 +960,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -980,8 +980,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -1034,7 +1034,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I enter value "Automation PM" into field "{testData:CcField}" on send email modal
     Then I see iconName "fa fa-user" with user "Automation PM" is displayed on send email modal
 
-  @382355 @382358 @382361 @382377 @Sanity
+  @382355 @382358 @382361 @382377 @Sanity  @SanitySendEmail
   Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
   Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
   Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
@@ -1061,7 +1061,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   Sandbox: Test Automation Email
   """
 
-  @147248  @382362 @382363 @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal @Sanity
+  @147248  @382362 @382363 @Sanity  @SanitySendEmail
   Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
   Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     When I login to "As a Grantor" app as "<Users>" user
@@ -1095,8 +1095,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -1120,8 +1120,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1150,8 +1150,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I perform quick search for "Test automation mail subject 1" in "---program:-:communicationHistoryTableId---" panel
     When I click on "reply" icon for "Test automation mail subject 1" inside table
@@ -1171,8 +1171,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1198,8 +1198,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1229,8 +1229,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field
@@ -1250,8 +1250,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field
@@ -1368,8 +1368,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1395,8 +1395,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1419,8 +1419,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1446,8 +1446,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test automation mail subject 1" into field "Subject" on send email modal
@@ -1467,8 +1467,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1487,8 +1487,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1507,8 +1507,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1534,8 +1534,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1562,8 +1562,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1588,8 +1588,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1621,8 +1621,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1681,8 +1681,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see select files section is displayed under send email modal
@@ -1699,8 +1699,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I do not see select files section is displayed under send email modal
@@ -1729,8 +1729,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1760,8 +1760,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click modal button "Select Files"
@@ -1832,8 +1832,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1908,8 +1908,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1935,8 +1935,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1971,8 +1971,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2002,8 +2002,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "test@123.com;test@gmail.com" into field "{testData:ToField}" on send email modal
@@ -2065,8 +2065,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2142,8 +2142,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -2184,8 +2184,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -2206,8 +2206,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -2229,8 +2229,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2278,7 +2278,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @382364 @Sanity
+  @382364 @Sanity  @SanitySendEmail
   Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -2303,7 +2303,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting Italic" displayed in "Italic" format inside CK editor
 
-  @332834 @382365 @382366 @Sanity
+  @332834 @382365 @382366 @Sanity  @SanitySendEmail
   Scenario Outline: Sanity TC-Admin/PM-Verify that the user can attach file in the  Attachement section.
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2320,7 +2320,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @382367 @Sanity
+  @382367 @Sanity  @SanitySendEmail
   Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -2333,7 +2333,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @382371 @382372 @Sanity
+  @382371 @382372 @Sanity  @SanitySendEmail
   Scenario Outline:Sanity -TC-Admin-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2350,7 +2350,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @382373 @Sanity
+  @382373 @Sanity  @SanitySendEmail
   Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -2363,7 +2363,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on "Select Files" button send email modal
     Then I softly see "FilesLink" page block displayed
 
-  @382375 @382376 @Sanity
+  @382375 @382376 @Sanity  @SanitySendEmail
   Scenario Outline:Sanity -TC-Admin/PM-Verify that after entering email Ids in either of the ‘To’, ‘cc’  sections, entering Subject line and mail body and clicking ‘Send’ button, mail gets delivered to intended receivers.
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2394,7 +2394,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @382419 @382420 @Sanity
+  @382419 @382420 @Sanity  @SanitySendEmail
   Scenario Outline:Sanity -TC-Admin/PM- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2415,7 +2415,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @382423 @Sanity
+  @382423 @Sanity  @SanitySendEmail
   Scenario: Sanity -TC-SPI- Verify that if the email is sent without Subject, a pop-up is generated warning "Enter Subject for Email."
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -2431,7 +2431,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I softly see the following messages in the page details :
       | Enter Subject for Email. |
 
-  @382428 @382429 @Sanity
+  @382428 @382429 @Sanity  @SanitySendEmail
   Scenario Outline: Sanity-TC-Admin/PM- Verify that if the email is sent without email address, a pop-up is generated warning "Enter To Email Address.
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2451,7 +2451,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
       | Admin |
       | PM    |
 
-  @collabFileAttachFunctionality @Sanity
+  @collabFileAttachFunctionality @Sanity  @SanitySendEmail
   Scenario Outline: validate that upload file from library and computer is displayed at attach file modal at collab phase
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -2508,8 +2508,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2757,8 +2757,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see the text "Send Copy (Cc) to Me" in send email page
@@ -2775,8 +2775,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hovering mouse on help text icon at "{testData:SendCopyCheckbox}" inside send email modal
@@ -2794,8 +2794,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
@@ -2873,8 +2873,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2895,8 +2895,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -2917,8 +2917,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2940,8 +2940,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Internal"
@@ -4516,8 +4516,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -4987,8 +4987,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6596,8 +6596,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6629,8 +6629,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -6650,8 +6650,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6671,8 +6671,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6692,8 +6692,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -6714,8 +6714,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -6736,8 +6736,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -6757,8 +6757,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6791,8 +6791,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "Edit" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Groups"
@@ -6826,8 +6826,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6850,8 +6850,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "External"
@@ -6873,8 +6873,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -6893,8 +6893,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -6914,8 +6914,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -6935,8 +6935,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -6956,8 +6956,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "Groups"
@@ -6977,8 +6977,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in;ashwini.mahore@reisystems.in" into field "{testData:CcField}" on send email modal
@@ -6998,8 +6998,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "3" seconds
@@ -7020,8 +7020,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -7128,7 +7128,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
-  @382774 @Sanity
+  @382774 @Sanity  @SanitySendEmail
     Scenario Outline:Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
@@ -7172,7 +7172,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see "Enter To Email Address." message is displayed on Send Email Modal
 
-  @332883 @333058 @332889 @Sanity
+  @332883 @333058 @332889 @Sanity  @SanitySendEmail
   Scenario: Send Email Functionality
   |Send Email -Verified when External user every fields kept empty then error message is displying when clicked on send button|
   |send email-User send email without filling subject field then error message should displayed on the modal|
@@ -7349,7 +7349,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "Send" button in send email modal
     Then I see checkbox for field "Send Copy (Cc) to Me" on modal is selected
 
-  @382776 @Sanity
+  @382776 @Sanity  @SanitySendEmail
     Scenario: Sanity-TC-SPI-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -7493,8 +7493,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -7507,8 +7507,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I upload attachment "File.pdf" in Send Email Modal
     Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
@@ -7519,8 +7519,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -7551,8 +7551,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -7571,8 +7571,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -8425,8 +8425,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -8462,8 +8462,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     When I upload attachment "File.pdf" in Send Email Modal
     Then I see "Single File Size Attachment Limit Exceeded." error massage in attachment section
@@ -8492,8 +8492,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I pause execution for "10" seconds
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
@@ -8506,8 +8506,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -8544,8 +8544,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -8646,8 +8646,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -8698,8 +8698,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -8718,8 +8718,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I fill the details in field To "automationfo@yopmail.com,automationpm1@yopmail.com" CC "automationpm@yopmail.com" Subject "Subject" in send email LWC
@@ -8781,8 +8781,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "10" seconds
@@ -8798,8 +8798,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on "Reply" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in send email modal
@@ -8812,8 +8812,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     #332363
@@ -8859,8 +8859,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     #332390
@@ -8885,8 +8885,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see and check "To" field dropdown is displayed with "Internal" value
@@ -8929,8 +8929,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see and check "To" field dropdown is displayed with "Internal" value
@@ -9205,8 +9205,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds

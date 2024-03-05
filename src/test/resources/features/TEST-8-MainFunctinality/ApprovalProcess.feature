@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-  @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity
+  @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity @SanityApprovalProcess
   Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
   Sanity TC_PM_To verify that Start action is visible for submitted for approval record, under Pending task table(381944)
     Given I have "default" configuration as below:
@@ -423,7 +423,7 @@ Business Need: Approval Process Component Scenarios
     And I submit the approval in the approval decision without processing
     Then I see confirmation box with body "Do you want to Reject Program?" is displayed
 
-  @37431 @37523 @41058 @202470 @202492 @381960 @Sanity @reassignConfirmationMessageFieldAtApprovalProcess-Programs
+  @37431 @37523 @41058 @202470 @202492 @381960 @Sanity @SanityApprovalProcess @reassignConfirmationMessageFieldAtApprovalProcess-Programs
   Scenario Outline: Setup confirmation message inside confirmation message box for reassign from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
@@ -768,10 +768,10 @@ Business Need: Approval Process Component Scenarios
   Scenario: Setup email setting in configuration and validate that program owner receiving email for reassign with approve email template for program approval
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                    | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Email Template |                   | ApiGeneratedId:0 |
+      | Approval Process Steps Cache | Send To Owner Email Template | a0R3I000000Aqkh   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                       | fieldName                    | fieldNewValue              | coreComponentField         | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
-      | Approval Process Steps Cache:Email Template | Send To Owner Email Template | Program Approver Sent Back | Program Approver Sent Back | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
+      | configurationCategory                       | fieldName                    | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName    | coreComponentSubFieldValue |
+      | Approval Process Steps Cache:Email Template | Send To Owner Email Template | a0R3I000000Aqkh | a0R3I000000Aqkh    | GNT__ApprovalDefinitionId__c | 04a4T000000PFvoQAG         |
      # | Approval Process Steps Cache:General        | Send To Owner Email Template | Program Approver Sent Back | Step1                    |                           |                            |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -1722,7 +1722,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @203073 @203075 @381961 @381962 @Sanity @needtocheckmanually
+  @203073 @203075 @381961 @381962 @Sanity @SanityApprovalProcess @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Send To Owner
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
@@ -1812,7 +1812,7 @@ Business Need: Approval Process Component Scenarios
       | ADMIN |
       | PM    |
 
-  @202939 @202941 @381958 @381959 @Sanity @needtocheckmanually
+  @202939 @202941 @381958 @381959 @Sanity @SanityApprovalProcess @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Reassign
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                     | fieldOrignalValue | filterId         |
@@ -2396,7 +2396,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203406 @381955 @381956 @Sanity
+  @203406 @381955 @381956 @Sanity @SanityApprovalProcess
   Scenario:Approver process Step Cache-PM-Config-To verify email notification should received on reassign record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -2460,7 +2460,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203680 @381963 @Sanity
+  @203680 @381963 @Sanity @SanityApprovalProcess
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should received on Send To Owner record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -2591,7 +2591,7 @@ Thank you.
 The EGMS Team
 """
 
-  @203291 @381945 @381948 @381949 @Sanity
+  @203291 @381945 @381948 @381949 @Sanity @SanityApprovalProcess
   Scenario: Approver process Step Cache-PM-UI-To verify email notification should not received on approved record
     Given I have "default" configuration as below:
       | configurationCategory        | fieldName                | fieldOrignalValue | filterId         |
@@ -2682,7 +2682,7 @@ The EGMS Team
     Then I refresh the page
     And I see the mail subject is as follows :
 
-  @203296 @381957 @Sanity
+  @203296 @381957 @Sanity @SanityApprovalProcess
   Scenario: Approver process Step Cache-Admin-Config-To verify email notification should not received on reject record
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
