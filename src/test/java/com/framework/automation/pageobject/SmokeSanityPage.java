@@ -448,4 +448,47 @@ public class SmokeSanityPage extends GovGrantsManager {
         } else
             I.amPerforming().assertionsTo().assertThat(I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableid + "']/preceding-sibling::div//button[text()='" + buttonname + "']"))).isTrue();
     }
+
+    public void assertHeaderInstructionTextInModal(String headerText) {
+        Assert.assertTrue(isHeaderInstructionTextDisplayedInModal(headerText));
+    }
+
+    private boolean isHeaderInstructionTextDisplayedInModal(String headerText) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='row']//span[@class='pbNormalText' and contains(text(),'" + headerText + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    public void assertIfTabTitleOnModalIsDisplayed(String usage, String tabName) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(tabOnModalDisplayedOrNot(tabName)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(tabOnModalDisplayedOrNot(tabName)).isFalse();
+        }
+    }
+
+    private boolean tabOnModalDisplayedOrNot(String tabName) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-tab-bar//ul//li[@title='" + tabName + "']"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
+    }
+
+    public void assertRowGroupingDisplayed(String rowGrouping, String tableId) {
+        Assert.assertTrue(isRowGroupingDisplayed(rowGrouping, tableId));
+    }
+
+    private boolean isRowGroupingDisplayed(String rowGrouping, String tableId) {
+        boolean flag = false;
+        if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']//span[contains(@ng-bind,'groupingField') and contains(text(),'" + rowGrouping + "')]"))) {
+            flag = true;
+        }
+        return flag;
+    }
 }

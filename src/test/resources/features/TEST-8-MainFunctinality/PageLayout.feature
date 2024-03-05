@@ -11047,12 +11047,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I see "Edit Automation" button is displayed on top right of pagelayout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation   | Recipient ApplicationView | Name                      |                            |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit          | Recipient ApplicationView | Name                      | Edit                       |
 
   @219878 @219879
   Scenario Outline: Page Layout Action-- Admin- config- Verify text is displayed on hovering edit button

@@ -9518,7 +9518,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on dropdown inside "To" field and Select "Groups" value
     When I fill the details in field To "umang.parekh@reisystems.in" CC "umang.parekh@reisystems.in" Subject "Test for True when file attached To Groups" in send email LWC
     And I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    When I click on "Send" button in send email modal
+    And I click on "Send" button in send email modal
     When I close modal by clicking the top right x button
     When I perform quick search for "Test for True when file attached To Groups" in "---program:-:communicationHistoryTableId---" panel
     Then I softly see value "automationadmin@yopmail.com" for title "From Address" inside table "---program:-:communicationHistoryTableId---"

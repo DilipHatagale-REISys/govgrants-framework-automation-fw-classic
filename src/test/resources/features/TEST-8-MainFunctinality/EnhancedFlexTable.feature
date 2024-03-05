@@ -609,17 +609,16 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Flex Table List       | Enable Over All Total | false             | ApiGeneratedId:0 |
-      | Flex Grid             | Default Page Size     | 10                | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Over All Total | true          | GrantorRelatedAwards2 | Name                      | FTC-12821                  |
+      | configurationCategory | fieldName             | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Enable Over All Total | true          | DataTableEnhanceProgramContacts | Name                      | FTC-13607                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    Then I see over all total for "AmountAwarded__c" field at enhanced grid
+    Then I see "BaseSalary" in enhanced flex grid header "---program:-:programContactsTableId---"
 
   @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table -planning
