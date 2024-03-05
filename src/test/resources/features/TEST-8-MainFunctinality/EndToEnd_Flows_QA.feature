@@ -154,12 +154,12 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I can see row level action button "Edit" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    Then I can see row level action button "View" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    Then I can see row level action button "Delete" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    Then I can see row level action button "Edit" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "View" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "Delete" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title
@@ -661,7 +661,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "5" seconds
-    Then I see the sub-header is "Automation Internal Program for Testing" in the page details
+    Then I see the sub-header is "Static Internal Program for Testing" in the page details
 
   @109932 @109931 @109928    @verifyProgramInActiveModeByLoginAsPMUser @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers

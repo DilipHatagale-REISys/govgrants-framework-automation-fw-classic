@@ -521,3 +521,15 @@ Business Need: smoke testing features
       | Users |
       | Admin |
       | PM    |
+
+@382875
+Scenario: Sanity TC - Admin - To verify that Notes and Attachments tables should be render on page layout
+  When I login to "As a Grantor" app as "Admin" user
+  And I navigate to "Planning" tab
+  And I click toggle button to select "Internal Programs - Active"
+  When I perform quick search for "Automation Internal Program for send Email"
+  When I perform quick search for "Automation Internal Program for send Email" in "---program:-:ProgramsFlexTableToggleId---" panel
+  When I click on "View" icon for "Automation Internal Program for send Email" inside table
+  When I navigate to "Files" sub tab
+  Then I see "Attachments" page block displayed
+  Then I see "Notes" page block displayed

@@ -3302,8 +3302,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
   @336175 @382547
@@ -3313,8 +3313,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     Then I see flex table with id "toggleFlexTableAnnouncementContacts" is displayed
 
   @336176 @382548
@@ -12009,11 +12009,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I perform quick search for "Announcement for Testing"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I click on "View" icon for "Announcement for Testing" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12102,10 +12102,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    Then I see record "Automation Internal Announcement for Testing" having action "View" contain icon css "fa fa-eye"
-    Then I see record "Automation Internal Announcement for Testing" having action "Edit" contain icon css "fa fa-pencil"
-    Then I see record "Automation Internal Announcement for Testing" having action "Delete" contain icon css "fa fa-trash-o"
+    When I perform quick search for "Announcement for Testing"
+    Then I see record "Announcement for Testing" having action "View" contain icon css "fa fa-eye"
+    Then I see record "Announcement for Testing" having action "Edit" contain icon css "fa fa-pencil"
+    Then I see record "Announcement for Testing" having action "Delete" contain icon css "fa fa-trash-o"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
@@ -12193,7 +12193,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
+    When I perform quick search for "Announcement for Testing"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
@@ -12459,8 +12459,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
 
@@ -12474,8 +12474,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -18554,7 +18554,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Announcement Name | Contains | ion Internal Announc |
-    Then I softly see value "Automation Internal Announcement for Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
+    Then I softly see value "Announcement for Testing" for title "Announcement Name" inside table "---program:-:programTableDivId---"
 
   @184091
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for text  field with ' Does not Contains' Operator

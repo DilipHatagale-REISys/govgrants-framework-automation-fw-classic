@@ -1097,9 +1097,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I click on Manage Attachments inside page block details
     Then I see "Test1:Test2" inside Type selectbox
@@ -1987,8 +1987,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2098,9 +2098,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Files" sub tab
     Then I see "Digital signature" page block displayed
 
@@ -2272,9 +2272,9 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2290,9 +2290,9 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2308,9 +2308,9 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "Application Deadline" as "saveDate"
     Then I softly see field "Application Deadline" as "{savedValue:saveDate}"
@@ -2326,9 +2326,9 @@ Business Need: Page Layout Component Scenarios
       | en_US  | America/Panama |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -2344,9 +2344,9 @@ Business Need: Page Layout Component Scenarios
       | en_CA  | America/New_York |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -2362,9 +2362,9 @@ Business Need: Page Layout Component Scenarios
       | en_IN  | Asia/Kolkata |
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I save the field labeled "FOA Release Date" as "saveDate"
     Then I softly see field "FOA Release Date" as "{savedValue:saveDate}"
@@ -3848,8 +3848,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3879,8 +3879,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3910,8 +3910,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3942,8 +3942,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -3972,8 +3972,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<new_helpText1>" shown as help text
@@ -4002,8 +4002,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4032,8 +4032,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4062,8 +4062,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     When I hovering mouse on help text icon at "Status" inside "General Information" page block
     Then I softly see "<default_helpText1>" shown as help text
@@ -4399,14 +4399,14 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see title at miniPageLayout is displayed as bold and left aligned
@@ -4540,28 +4540,28 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I softly see "Title" shown inside mini page layout on hover
-    Then I softly see "Automation Internal Announcement for Testing" shown inside mini page layout on hover
+    Then I softly see "Announcement for Testing" shown inside mini page layout on hover
 
   @125229  @VerifyMiniPageLayoutShouldDisplayedWithUnBoldValueOnMouseHoverAtSidebarLinks
   Scenario: validate that mini page layout is getting displayed without bold value on mouse hover at sidebar links
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
     Then I see mini page layout value is displayed in normal text with "500" font-weight
@@ -4571,9 +4571,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     And I save the field labeled "EGMS ID" as "savedValue"
     When I hover mouse on lookup link "{SavedValue:savedValue}"
     And I pause execution for "3" seconds
@@ -8079,8 +8079,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I pause execution for "2" seconds
@@ -8094,8 +8094,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     When I enter value "test" into field "OtherEligibleApplicantTypes__c"
     And I refresh the page
@@ -8108,8 +8108,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I enter value "Other" into field "EligibleApplicantTypes__c"
     Then I see "Are you sure you want to cancel?" message inside confirmation box is displayed on click "Cancel"
 
@@ -9086,9 +9086,9 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "View" icon for "Automation Internal Announcement for Testing" inside table
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "History" sub tab
     When I softly see expected table with id "toggleFlexTableHistory"
     When I softly see the text :
@@ -9937,7 +9937,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed and Archived Announcements"
+    And I click toggle button to select "All Announcements"
     And I click on top right button "Create" in flex table with id "---program:-:ProgramsTableIdNew---"
     And I hover mouse on text with id "Program__c"
     Then I see lookup link " Program ID" inside page block
@@ -10589,8 +10589,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10611,8 +10611,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -10633,8 +10633,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Automation Internal Announcement for Testing"
-    When I click on "Edit" icon for "Automation Internal Announcement for Testing" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     And I clear the value from field "cke_1_contents"
@@ -11061,12 +11061,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I see "Edit Automation" button is displayed on top right of pagelayout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation   | Recipient ApplicationView | Name                      |                            |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit          | Recipient ApplicationView | Name                      | Edit                       |
 
   @219878 @219879
   Scenario Outline: Page Layout Action-- Admin- config- Verify text is displayed on hovering edit button

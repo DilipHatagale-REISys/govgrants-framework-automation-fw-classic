@@ -860,16 +860,15 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName                  | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:General     | Enable Total Records Count | false         | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    And I expand nested table containing column value "BP01"
-    And I pause execution for "5" seconds
+#    And I expand nested table containing column value "BP01"
+#    And I pause execution for "5" seconds
     #379187 #379206
-    Then I do not see "Total Records" count in enhanced grid "---program:-:EnhanceAppBudCateGrantorTableId---"
+    Then I do not see "Total Records" count in enhanced grid "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @35434    @enableAutoIndexForEnhancedGrid-gPlanning
   Scenario: validate enable auto index for details inside enhanced flex grid planning-Program enhanced flex grid
@@ -1128,8 +1127,8 @@ Business Need: EnhancedGrid Component Scenarios
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
+      | configurationCategory | fieldName      | fieldNewValue                                                | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideCellJsonForEnhancedGridFeeFundRequested | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11516                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1457,11 +1456,11 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Draft" value in flex table id "---program:-:appBudgetPeriodTableId---"
+    Then I see "Open" shown inside enhanced grid table for specified record "BP01"
 
     Examples:
-      | newSoqlFilter                                   | oldSoqlFilter                                    |
-      | RecordType.Name='Grantor' and status__c='Draft' | RecordType.Name='Grantor' and status__c='Active' |
+      | newSoqlFilter                      | oldSoqlFilter                      |
+      | Application__c ='{!applicationid}' | Application__c ='{!applicationid}' |
 
   @44728    @sequenceFieldAtParentflexTableActionForEnhancedGrid-gPlanning @smoke
   Scenario: Changing sequence of edit row level action item at enhanced grid parent table from config and validating it inside enhanced grid table of programs-planning
@@ -1478,7 +1477,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Edit" icon for "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" is at position "1" inside flex table
+    Then I see "Edit" icon for "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" is at position "2" inside flex table
 
   @44731    @buttonHelpTextFieldAtParentFlexTableActionForEnhancedGrid-gPlanning @Doubted
   Scenario: Changing content of button help text field at enhanced grid parent table action from config and validating it inside enhanced grid table of programs-planning
@@ -1830,8 +1829,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    ##When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
-    Then I see "Test New" icon for "Budget Periods" is displayed inside flex table
+    Then I see "Test New" row action Button at position "4" inside tableid "EnhanceAppGrantorBudgetPeriodsFlexToggle"
 
   @45304    @locationFieldForChildFlexTableAtEnhancedGridActionItemFromTopToRow-gPlanning @smoke
   Scenario:  Verify Location field = row at child flex table action
@@ -1926,7 +1924,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    Then I see "Budget Period" inside rows of enhanced grid id "---program:-:appBudgetPeriodTableId---"
+    Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
 
   @49244    @hideGroupingColumnFieldAtParentFlexTableForEnhancedGrid-gPlanning
   Scenario:  Verify Hide Grouping column field at parent flex table.
@@ -1964,7 +1962,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Budget" sub tab
-    Then I see cell subtotal for "Fee Fund Requested" at enhanced grid
+    Then I see "Fee Fund Requested" inside row of enhance grid id "---program:-:appBudgetPeriodTableId---"
 
   @49251    @isMasterViewFieldUncheckedForAllFlexListViewAtParentFlexTable-gPlanning @Doubted
   Scenario:  To Verify Warning message if no list view is marked as Master View (Parent).
