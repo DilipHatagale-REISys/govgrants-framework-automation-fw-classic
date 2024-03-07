@@ -661,9 +661,9 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "5" seconds
-    Then I see the sub-header is "Static Internal Program for Testing" in the page details
+    Then I see the sub-header is "Automation Program For Test" in the page details
 
-  @109932 @109931 @109928    @verifyProgramInActiveModeByLoginAsPMUser @flow
+  @109932 @109931 @109928 @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
