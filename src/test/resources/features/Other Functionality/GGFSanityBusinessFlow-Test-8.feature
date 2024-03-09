@@ -177,60 +177,6 @@ Business Need: Sanity check for all Component Scenarios
       | Admin |
       | PM    |
 
-  @382355 @382358 @382361
-  Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
-  Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
-  Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:CCField}" on send email modal
-    When I enter value "Test Automation Email1" into field "Subject" on send email modal
-    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
-
-  @147248  @382362 @382363 @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
-  Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
-  Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Bold" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
-    And I close modal by clicking the top right x button
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Italic" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Italic" format inside CK editor
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
-
   @382364
   Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     Given I am on "SUBPORTAL" portal
@@ -256,23 +202,6 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting Italic" displayed in "Italic" format inside CK editor
 
-  @332834 @382365 @382366
-  Scenario Outline: Sanity TC-Admin/PM-Verify that the user can attach file in the  Attachement section.
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    Then I see "SendEmailAttachment.pdf" file is displayed in modal
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
-
   @382367
   Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
     Given I am on "SUBPORTAL" portal
@@ -285,23 +214,6 @@ Business Need: Sanity check for all Component Scenarios
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
-
-  @382371 @382372
-  Scenario Outline:Sanity -TC-Admin-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    And I click on "Select Files" button send email modal
-    Then I softly see "FilesLink" page block displayed
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
 
   @382373
   Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button

@@ -230,7 +230,7 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Hide For Context |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName        | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide For Context | view          | Grantor State Program | Name                      | TAB-1726                   |
+      | Page Tabs Config:Page Layout Action | Hide For Context | View          | Grantor State Program | Name                      | TAB-1726                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
