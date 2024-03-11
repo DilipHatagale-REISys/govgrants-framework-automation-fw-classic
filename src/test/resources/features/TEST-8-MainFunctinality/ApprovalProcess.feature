@@ -156,8 +156,8 @@ Business Need: Approval Process Component Scenarios
   @34310    @filterCriteriaForUserReassignForApprovalDecisionAction-Programs
   Scenario Outline: Entering filter criteria for user reassign using forward action from configuration and validating it in pending tasks approval decision
     Given I have "default" configuration as below:
-      | configurationCategory    | fieldName                         | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Filter Criteria for User Reassign |                   | ApiGeneratedId:1 |
+      | configurationCategory    | fieldName                         | fieldOrignalValue        | filterId         |
+      | Approval Decision Action | Filter Criteria for User Reassign | <oldFilterCriteriaValue> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName                         | fieldNewValue            | coreComponentField |
       | Approval Decision Action:General | Filter Criteria for User Reassign | <newFilterCriteriaValue> | ADAC-0103          |
@@ -193,8 +193,8 @@ Business Need: Approval Process Component Scenarios
     When I select radio button "Forward" in the approval decision
     Then I can see user "Automation PM" in the user lookup in the approval decision
     Examples:
-      | newFilterCriteriaValue |
-      | Name='Automation PM'   |
+      | oldFilterCriteriaValue                                               | newFilterCriteriaValue |
+      | IsActive = true and Id != '{!User.Id}' and Profile.Name != 'Auditor' | Name='Automation PM'   |
 
   @34311 @wip @automationNotRequired @approverTaskNotCreatedPrograms-Programs
   Scenario: Change approver setting for not receiveing approve task in configuration and validate that pending approver task is not displayed
