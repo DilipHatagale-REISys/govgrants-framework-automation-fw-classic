@@ -4497,7 +4497,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
-  @100460  @379364 @379353 @Sanity  @validateDisablingOfPdfDownloadOptionAtDynamicFormViewModalWindow
+  @379364 @379353 @Sanity
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |

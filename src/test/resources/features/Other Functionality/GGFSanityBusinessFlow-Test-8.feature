@@ -100,62 +100,6 @@ Business Need: Sanity check for all Component Scenarios
     And I pause execution for "10" seconds
     Then I see "Snapshot History" page block displayed
 
-  @382807 @382809 @382837 @382842 @Sanity
-  Scenario Outline: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
-    Given I have "default" configuration as below:
-      | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
-      | Page Layout Action                | History Snapshot-Action Enable? | true              | ApiGeneratedId:0 |
-      | Auto Snapshot On Approval         | Capture Snapshot On Approval?   | false             | ApiGeneratedId:1 |
-      | Page Tabs Config                  | Is Active                       | false             | ApiGeneratedId:2 |
-      | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:3 |
-    Given I setup test configuration as below:
-      | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
-      | Auto Snapshot On Approval:General   | Capture Snapshot On Approval?   | true                             | Program__c            |                           |                            |
-      | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
-      | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
-    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
-    And I click on "Save and Continue" in the page details
-    And I pause execution for "8" seconds
-    When I enter "ProgramFlowEdition_v" values from "Field_Values_For_Flow.xlsx"
-    And I click on "Save" in the page details
-    When I navigate to "Overview" sub tab
-    And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-    When I navigate to "Responsibilities" sub tab
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "10" seconds
-    And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Approve" in the approval decision
-    When I navigate to "History" sub tab
-    And I refresh the page
-    And I pause execution for "10" seconds
-    Then I see Total Records count "Total Records : 1" in table name "Snapshot History"
-    Then I see "Snapshot History" page block displayed
-    Then I see generated snapshot "{SavedValue:DateTaken}" is displayed with "Date Taken"
-    Then I see generated snapshot "{SavedValue:OWNER}" is displayed with "Taken By"
-    Then I see generated snapshot "SnapShot" is displayed with "File Name"
-
-    Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
-
   @382796
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
@@ -233,60 +177,6 @@ Business Need: Sanity check for all Component Scenarios
       | Admin |
       | PM    |
 
-  @382355 @382358 @382361
-  Scenario: Sanity TC-SPI-To verify that the user can enter multiple comma-separated emailIds in ‘To’, ‘cc’ and ‘bcc’ sections.
-  Sanity TC-spi-TO verify that the user can type Subject line in the ‘Subject’ text box,
-  Sanity TC-SPI-To verify that the user can type the email in the email-'Body Content' section.
-    Given I am on "SUBPORTAL" portal
-    When I login to "Grants Portal" app as "SPI" user
-    And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
-    When I enter value "snehal.mulange@reisystems.in,ashwini.mahore@reisystems.in" into field "{testData:CCField}" on send email modal
-    When I enter value "Test Automation Email1" into field "Subject" on send email modal
-    When I enter value "Test Automation Email1" into field "Body Content" on send email modal
-    When I click on "Send" button in send email modal
-    Then I softly see the following messages in the page details :
-      | Email Sent Successfully. |
-
-  @147248  @382362 @382363 @verifyTextInsideCkEditorInputBoxIsDisplayedAsBoldInsideSendEmailModal
-  Scenario Outline: validate text inside ck editor input box is displayed as bold text at send email modal,
-  Sanity TC-Admin/PM-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Bold" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
-    And I close modal by clicking the top right x button
-    When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
-    When I enter value "Automation PM" into field "{testData:ToField}" on send email modal
-    When I select value "Automation PM" with iconName "fa fa-user" into field on send email modal
-    When I enter value "Test Automation" into field "Subject" on send email modal
-    When I enter value "Test Body formatting" into field "Body Content" on send email modal
-    And I change formatting of all text to "Italic" inside CK editor
-    When I click on "Send" button in send email modal
-    Then I see "Test Body formatting" displayed in "Italic" format inside CK editor
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
-
   @382364
   Scenario: Sanity TC-SPI-To verify that users can format mail using editor-options provided like choosing font-family, font-size, bold-italic-underline, etc.
     Given I am on "SUBPORTAL" portal
@@ -312,23 +202,6 @@ Business Need: Sanity check for all Component Scenarios
     When I click on "Send" button in send email modal
     Then I see "Test Body formatting Italic" displayed in "Italic" format inside CK editor
 
-  @332834 @382365 @382366
-  Scenario Outline: Sanity TC-Admin/PM-Verify that the user can attach file in the  Attachement section.
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    Then I see "SendEmailAttachment.pdf" file is displayed in modal
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
-
   @382367
   Scenario: Sanity TC-SPI-Verify that the user can attach file in the  Attachement section.
     Given I am on "SUBPORTAL" portal
@@ -341,23 +214,6 @@ Business Need: Sanity check for all Component Scenarios
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
     Then I see "SendEmailAttachment.pdf" file is displayed in modal
-
-  @382371 @382372
-  Scenario Outline:Sanity -TC-Admin-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button
-    When I login to "As a Grantor" app as "<Users>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
-    When I navigate to "Collab" sub tab
-    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    And I click on "Select Files" button send email modal
-    Then I softly see "FilesLink" page block displayed
-    Examples:
-      | Users |
-      | Admin |
-      | PM    |
 
   @382373
   Scenario: Sanity -TC-SPI-Verify that you can Insert links to file(s) from the record by clicking on "Select files" button

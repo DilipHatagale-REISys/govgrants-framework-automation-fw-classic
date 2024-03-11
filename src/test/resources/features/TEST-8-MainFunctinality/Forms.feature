@@ -37,7 +37,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @208996 @208997 @382041 @382042 @Sanity
+  @208996 @208997 @382041 @382042 @Sanity  @SanityForms
   Scenario Outline: All Forms - Admin- Config- Verify we can download form as PDF
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -315,7 +315,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "OK"
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
 
-  @206854 @206855 @206862 @206861 @382014 @382015 @Sanity
+  @206854 @206855 @206862 @206861 @382014 @382015 @Sanity  @SanityForms
   Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button success message should pop-up
   All forms- PM- UI- Verify when we select Edit action, form should be open in edit mode
     When I login to "As a Grantor" app as "<User>" user
@@ -337,7 +337,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206856 @206863 @382018 @Sanity
+  @206856 @206863 @382018 @Sanity  @SanityForms
   Scenario: All forms- SPI- UI- Verify when we hit ‘Save’ button success message should pop-up
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -353,7 +353,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see the following message in the page details :
       | Form saved successfully. |
 
-  @208998 @382044 @Sanity
+  @208998 @382044 @Sanity  @SanityForms
   Scenario: All Forms - SPI- UI- Verify we can download form as PDF
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -568,7 +568,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Save" in the page details
     Then I see error message contains text "This field is required"
 
-  @206870 @206871 @382030 @382032 @Sanity
+  @206870 @206871 @382030 @382032 @Sanity  @SanityForms
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, form should open in view mode
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -589,7 +589,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
        # | PM    |
 
-  @206872 @382033 @Sanity
+  @206872 @382033 @Sanity  @SanityForms
   Scenario: All forms- SPI- UI- Verify if we hit ‘Yes’ button on confirmation message modal, in edit mode, and opened into view mode.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -605,7 +605,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "Yes"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @206873 @206874 @382025 @382026 @Sanity
+  @206873 @206874 @382025 @382026 @Sanity  @SanityForms
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -628,7 +628,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206875 @382028 @Sanity
+  @206875 @382028 @Sanity  @SanityForms
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -905,7 +905,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Back" in the page details
     Then I softly see "All Forms " page block displayed
 
-  @206864 @382020 @382021 @Sanity
+  @206864 @382020 @382021 @Sanity  @SanityForms
   Scenario Outline: All forms- Admin- Config- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message should open
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -922,7 +922,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206866 @382022 @Sanity
+  @206866 @382022 @Sanity  @SanityForms
   Scenario: All forms- SPI- UI- Verify if we hit ‘Cancel’ button, on edit mode form confirmation message modal should open
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1006,7 +1006,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click on "Cancel" in the page details
     Then I see "FN-01389" shown as over view header
 
-  @381941 @381942 @Sanity
+  @381941 @381942 @Sanity  @SanityForms
   Scenario Outline:
   |Sanity TC - Admin - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
   |Sanity TC - PM - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration|
@@ -1027,7 +1027,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381964 @Sanity
+  @381964 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that all fields displayed in a enhanced form table, which have been added in display fields configuration
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1042,7 +1042,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Last Modified Date" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Allow Edit?" shown inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
 
-  @381967 @381968 @Sanity
+  @381967 @381968 @Sanity  @SanityForms
   Scenario Outline:
   |Sanity TC - Admin - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
   |Sanity TC - PM - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table|
@@ -1059,7 +1059,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381969 @Sanity
+  @381969 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of Enhanced form, on clicking on Edit action in table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1070,7 +1070,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form Edit ~ Grants Portal"
 
-  @381970 @Sanity
+  @381970 @Sanity  @SanityForms
   Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
@@ -1084,7 +1084,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381972 @Sanity
+  @381972 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to View layout of Enhanced form, on clicking on View action in table
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1095,7 +1095,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see title of current page is "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @381987 @381990 @381982 @381983 @Sanity
+  @381987 @381990 @381982 @381983 @Sanity  @SanityForms
   Scenario Outline:Sanity
   |TC - Admin - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
   |Sanity TC - PM - To verify that user is able to see all page blocks in tab on Enhanced form as added in config|
@@ -1116,7 +1116,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | Admin |
       | PM    |
 
-  @381994 @381986 @Sanity
+  @381994 @381986 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to see all page blocks in tab on Enhanced form as added in config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1132,7 +1132,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see "Organization Capacity" page block displayed
     Then I see "AwardFundingAccounts-SD1" page block displayed
 
-  @382001 @382003 @Sanity
+  @382001 @382003 @Sanity  @SanityForms
   Scenario Outline: Sanity TC - Admin - To verify that user is able to see all fields in page blocks on Enhanced form as added in config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Applications" tab
@@ -1182,7 +1182,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Then I see field "fieldTEXTAREAQuestion10__c" inside page block
     Then I see field "fieldTEXTAREAQuestion11__c" inside page block
 
-  @382035 @382036 @Sanity
+  @382035 @382036 @Sanity  @SanityForms
   Scenario Outline: Sanity TC - Admin - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1200,7 +1200,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @382037 @Sanity
+  @382037 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to navigate to Edit layout of enhanced form, on clicking Edit action on View layout
   Last modified - UI- Verify Last modified Date and time must be updated if form is modified
     Given I am on "SUBPORTAL" portal
@@ -1214,7 +1214,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     And I click on "Edit" in the page details
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @382038 @382039 @Sanity
+  @382038 @382039 @Sanity  @SanityForms
   Scenario Outline: Sanity TC - Admin - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -1233,7 +1233,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @382040 @Sanity
+  @382040 @Sanity  @SanityForms
   Scenario: Sanity TC - SPI - To verify that user is able to validate enhanced form, on clicking on Validate action on View layout
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

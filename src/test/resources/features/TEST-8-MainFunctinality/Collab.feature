@@ -3,7 +3,7 @@ Business Need: collab Component Scenarios
   Test all collab component based scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
 
-  @104686 @382404 @Sanity @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
+  @104686 @382404 @Sanity @SanityCollab @382462  @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsAdminUser
   Scenario: validate the pop-up appears by perforing delete action at my feed section by Admin user
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -19,7 +19,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @104678 @382406 @382463 @Sanity
+  @104678 @382406 @382463 @Sanity @SanityCollab
   Scenario:
   |scenario 1  To  verify after delete the comment  we have to given the confirmation box  on collab  phase  for pm user|
   |Sanity TC_PM_To verify that, user should be able to delete the shared post by clicking on delete action button.|
@@ -32,7 +32,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Admin collab phase Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @104681 @382464 @Sanity   @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtCollabPhase
+  @104681 @382464 @Sanity @SanityCollab   @verifyThatByClickOnDeleteCommentAPopUpToConfirmDeleteActionWillAppearsByLoggedInAsSPIUserAtCollabPhase
   Scenario:
   |validate the pop-up appears by performing delete action at my feed section by SPI user at collab phase|
   |Sanity TC_PM_To verify that, user should be able to delete the shared post by clicking on delete action button.|
@@ -456,7 +456,7 @@ Business Need: collab Component Scenarios
     And I navigate to "Collaboration (Collab)" tab
     Then I see navigation logo on page
 
-  @115988 @382389 @Sanity @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtComment
+  @115988 @382389 @Sanity @SanityCollab @verifyThatIfAdminUserUsedAtMentionInCommentThenAutoCompleteListIsDisplayedAtComment
   Scenario: validate that if admin user at mention user in comment then mention auto complete list is displayed
   |Sanity TC_Admin_To verify that, user should be able to enter comment, tag people and share post by click on 'Share' button.|
     When I login to "As a Grantor" app as "ADMIN" user
@@ -912,7 +912,7 @@ Business Need: collab Component Scenarios
     And I enter value "Automation PM Automation Admin" in my feed section and share the post
     Then I see "Automation PM Automation Admin" inside flex table with id "---program:-:myFeedTableId---"
 
-  @382125 @Sanity
+  @382125 @Sanity @SanityCollab
   Scenario: Sanity TC_Admin_To verify that, logged in user name & email id should be visible on Collab phase.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -922,7 +922,7 @@ Business Need: collab Component Scenarios
     Then I see emailid "automationadmin@yopmail.com" is displayed Collab phase
 
 
-  @382128 @Sanity
+  @382128 @Sanity @SanityCollab
   Scenario: Sanity TC_pm_To verify that, logged in user name & email id should be visible on Collab phase.
     When I login to "As a Grantor" app as "pm" user
     When I setup my app as "As a Grantor"
@@ -931,7 +931,7 @@ Business Need: collab Component Scenarios
     Then I see Username "Automation PM" is displayed Collab phase
     Then I see emailid "automationpm@yopmail.com" is displayed Collab phase
 
-  @382130 @Sanity
+  @382130 @Sanity @SanityCollab
   Scenario: Sanity TC_SPI_To verify that, logged in user name & email id should be visible on Collab phase.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -939,7 +939,7 @@ Business Need: collab Component Scenarios
     Then I see Username "Automation SPI" is displayed Collab phase
     Then I see emailid "automationspi@yopmail.com" is displayed Collab phase
 
-  @382132 @Sanity
+  @382132 @Sanity @SanityCollab
   Scenario: Sanity TC_Admin_To verify that, all side bar links should be visible on Collab phase.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -956,7 +956,7 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" inside "My Feeds" menu at collab sidebar
     Then I see "What I Follow(External)" inside "My Feeds" menu at collab sidebar
 
-  @382135 @Sanity
+  @382135 @Sanity @SanityCollab
   Scenario: Sanity TC_PM_To verify that, all side bar links should be visible on Collab phase.
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -973,7 +973,7 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" inside "My Feeds" menu at collab sidebar
     Then I see "What I Follow(External)" inside "My Feeds" menu at collab sidebar
 
-  @382136 @Sanity
+  @382136 @Sanity @SanityCollab
   Scenario: Sanity TC_SPI_To verify that, all side bar links should be visible on Collab phase.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1010,7 +1010,7 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
     Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
-  @382144 @Sanity
+  @382144 @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'To me' link should be clickable from side bar option on Collab phase.|
     Given I am on "SUBPORTAL" portal
@@ -1021,7 +1021,7 @@ Business Need: collab Component Scenarios
     Then I see "What I Follow(Internal)" link on collab phase is displayed and clickable
     Then I see "What I Follow(External)" link on collab phase is displayed and clickable
 
-  @382213 @382222 @382238 @382232 @382257 @382272 @Sanity
+  @382213 @382222 @382238 @382232 @382257 @382272 @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for Admin User,My Colleagues,External Users,My Groups,Membership Requests
   |Sanity TC_Admin_To verify that, 'My Colleagues' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_Admin_To verify that, 'External Users' link should be clickable from side bar option on Collab phase. |
@@ -1038,7 +1038,7 @@ Business Need: collab Component Scenarios
     Then I see "My Content" link on collab phase is displayed and clickable
 
 
-  @382214 @382226 @382235 @382268 @382275 @Sanity
+  @382214 @382226 @382235 @382268 @382275 @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for PM User,My Colleagues,External Users,My Groups,Membership Requests
   |Sanity TC_PM_To verify that, 'My Colleagues' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_PM_To verify that, 'External Users' link should be clickable from side bar option on Collab phase.|
@@ -1053,7 +1053,7 @@ Business Need: collab Component Scenarios
     Then I see "My Groups" link on collab phase is displayed and clickable
     Then I see "Membership Requests" link on collab phase is displayed and clickable
 
-  @382220 @382230 @382238 @382278 @Sanity
+  @382220 @382230 @382238 @382278 @Sanity @SanityCollab
   Scenario: side bar options on collab phase is clickable for SPI User
   |Sanity TC_SPI_To verify that, 'My Colleagues' link should be clickable from side bar option on Collab phase.|
   |Sanity TC_SPI_To verify that, 'External Users' link should be clickable from side bar option on Collab phase.|
@@ -1067,7 +1067,7 @@ Business Need: collab Component Scenarios
     Then I see "My Groups" link on collab phase is displayed and clickable
     Then I see "My Content" link on collab phase is displayed and clickable
 
-  @382383 @382395 @Sanity
+  @382383 @382395 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_Admin_To verify that, user should be able to search post using quick search|
   |Sanity TC_Admin_To verify that, user should be able to like the comment by click on 'like' action link added by self and another user.|
@@ -1079,7 +1079,7 @@ Business Need: collab Component Scenarios
     Then I softly see "search post using quick search" inside flex table with id "---program:-:myFeedTableId---"
     Then I softly see "Like" button is displayed and enabled inside comment "search post using quick search"
 
-  @382398 @382390 @Sanity
+  @382398 @382390 @Sanity @SanityCollab
   Scenario:
   |TC_PM_To verify that, user should be able to like the comment by click on 'like' action link added by self and another user.|
     When I login to "As a Grantor" app as "PM" user
@@ -1090,7 +1090,7 @@ Business Need: collab Component Scenarios
     Then I softly see "search post using quick search" inside flex table with id "---program:-:myFeedTableId---"
     Then I softly see "Like" button is displayed and enabled inside comment "search post using quick search"
 
-  @382394 @382401 @382407 @Sanity
+  @382394 @382401 @382407 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_SPI_To verify that, user should be able to enter comment, tag people and share post by click on 'Share' button.|
   |Sanity TC_SPI_To verify that, user should be able to reply for the comment added by self and another user by clicking on  'Comment' action link.|
@@ -1105,7 +1105,7 @@ Business Need: collab Component Scenarios
     And I enter value "Test Automation Admin collab phase Comment" in my feed section and share the comment
     Then I softly see "Test Automation Admin collab phase Comment" inside flex table with id "---program:-:myFeedTableId---"
 
-  @382408 @Sanity
+  @382408 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_Admin_To verify that, user should be able to share link by adding link URL & name under link section|
     When I login to "As a Grantor" app as "Admin" user
@@ -1116,7 +1116,7 @@ Business Need: collab Component Scenarios
     And I select "My Followers" from dropdown in My Feed and Share Post
     Then I softly see "https://www.Rei.com" inside flex table with id "---program:-:myFeedTableId---"
 
-  @382411 @Sanity
+  @382411 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_PM_To verify that, user should be able to share link by adding link URL & name under link section|
     When I login to "As a Grantor" app as "Admin" user
@@ -1127,7 +1127,7 @@ Business Need: collab Component Scenarios
     And I select "My Followers" from dropdown in My Feed and Share Post
     Then I softly see "https://www.Rei.com" inside flex table with id "---program:-:myFeedTableId---"
 
-  @382412 @382416 @Sanity
+  @382412 @382416 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_SPI_To verify that, user should be able to share link by adding link URL & name under link section|
   |Sanity TC_SPI_To verify that, user should be able to add file by clicking on 'Attach file' link while adding comments.|
@@ -1150,7 +1150,7 @@ Business Need: collab Component Scenarios
     Then I see "SendEmailAttachment.pdf" inside flex table with id "---program:-:myFeedTableId---"
 
 
-  @382413 @382415 @Sanity
+  @382413 @382415 @Sanity @SanityCollab
   Scenario Outline: validate that upload file from library and computer is displayed at attach file modal at collab phase
   |Sanity TC_Admin_To verify that, user should be able to add file by clicking on 'Attach file' link while adding comments.|
   |Sanity TC_PM_To verify that, user should be able to add file by clicking on 'Attach file' link while adding comments |
@@ -1192,7 +1192,7 @@ Business Need: collab Component Scenarios
     Then I see "Automation FO" in collab like list
     Then I see "Automation PM" in collab like list
 
-  @382422 @385452 @Sanity
+  @382422 @385452 @Sanity @SanityCollab
   Scenario:
   |Sanity TC_PM_To verify that, user should be able to see like count for added comments. |
   |Sanity TC_PM_To verify that, user should be able to see user details (who like this comment) by clicking on like count.|
@@ -1237,7 +1237,7 @@ Business Need: collab Component Scenarios
     Then I see "Automation FO" in collab like list
     Then I see "Automation PM" in collab like list
 
-  @382454 @Sanity
+  @382454 @Sanity @SanityCollab
   Scenario: Sanity TC_Admin_To verify that, user should be able to see date and time details for posted comments by user.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1256,7 +1256,7 @@ Business Need: collab Component Scenarios
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
     Then I softly see "January 14, 2024 at 5:11 PM" button is displayed and enabled inside comment "Post DO NOT DELETE"
 
-  @382458 @Sanity
+  @382458 @Sanity @SanityCollab
   Scenario: Sanity TC_SPI_To verify that, user should be able to see date and time details for posted comments by user.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1265,7 +1265,7 @@ Business Need: collab Component Scenarios
     Then I softly see "Just now" button is displayed and enabled inside comment "Post DO NOT DELETE"
     Then I softly see "January 14, 2024 at 5:11 PM" button is displayed and enabled inside comment "Post DO NOT DELETE"
 
-  @382498 @Sanity
+  @382498 @Sanity @SanityCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to delete the comments posted by another user by clicking on '❌' (cross )icon.
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1277,7 +1277,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation PM Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @382500 @Sanity
+  @382500 @Sanity @SanityCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to delete the comments posted by another user by clicking on '❌' (cross )icon.
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1289,7 +1289,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Admin Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @382503 @Sanity
+  @382503 @Sanity @SanityCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to delete the comments posted by another user by clicking on '❌' (cross )icon.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1298,7 +1298,7 @@ Business Need: collab Component Scenarios
     And I click on "Delete" action at "Test Automation Spi Comment" comment inside my feed
     Then I see confirmation box with body "Are you sure you want to delete this comment?" is displayed
 
-  @382504 @Sanity
+  @382504 @Sanity @SanityCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
@@ -1306,7 +1306,7 @@ Business Need: collab Component Scenarios
     Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
     Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
 
-  @382506 @Sanity
+  @382506 @Sanity @SanityCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab
@@ -1314,7 +1314,7 @@ Business Need: collab Component Scenarios
     Then I see "Automation EXE" as user name and "automation.exe@yopmail.com" as emailid
     Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
 
-  @382507 @Sanity
+  @382507 @Sanity @SanityCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see list of user along with email id on click of 'My Colleagues' link.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1324,28 +1324,28 @@ Business Need: collab Component Scenarios
     Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
     Then I see "Automation PM" as user name and "automationpm@yopmail.com" as emailid
 
-  @382511 @Sanity
+  @382511 @Sanity @SanityCollab
   Scenario:  Sanity TC_Admin_To verify that, user should be able to see list of users along with email id , profile picture on click of 'External users' link.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
     Then I see "Automation SPI" as user name and "automationspi@yopmail.com" as emailid with profile picture
 
-  @382512 @Sanity
+  @382512 @Sanity @SanityCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see list of users along with email id , profile picture on click of 'External users' link.
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "External Users" menu inside collab sidebar
     Then I see "Automation SPI" as user name and "automationspi@yopmail.com" as emailid with profile picture
 
-  @382518 @Sanity
+  @382518 @Sanity @SanityCollab
   Scenario: Sanity TC_Admin_To verify that, user should be able to see the created groups along with member details on click of 'My groups' link
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
     When I navigate to "My Groups" menu inside collab sidebar
     Then I see group name "Test group Automation" with member details count "Members: 1"
 
-  @382520 @Sanity
+  @382520 @Sanity @SanityCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see the created groups along with member details on click of 'My groups' link
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1353,7 +1353,7 @@ Business Need: collab Component Scenarios
     When I navigate to "My Groups" menu inside collab sidebar
     Then I see group name "Test group Automation" with member details count "Members: 1"
 
-  @382525 @Sanity
+  @382525 @Sanity @SanityCollab
   Scenario: Sanity TC_Admin_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
@@ -1361,7 +1361,7 @@ Business Need: collab Component Scenarios
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
     Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
 
-  @382526 @Sanity
+  @382526 @Sanity @SanityCollab
   Scenario:  Sanity TC_PM_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Collaboration (Collab)" tab
@@ -1369,7 +1369,7 @@ Business Need: collab Component Scenarios
     Then I see "Add Files" button name inside table id "WorkSpaceFilesFlexToggle"
     Then I see "1" to "10" indexing inside table id "WorkSpaceFilesFlexToggle"
 
-  @382527 @Sanity
+  @382527 @Sanity @SanityCollab
   Scenario:  Sanity TC_SPI_To verify that, user should be able to see all available list of files along with Add File button on click of 'My Content' link
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

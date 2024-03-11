@@ -25,7 +25,11 @@ public class UsersAndURL implements UsersController {
         else
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             userName = getQAEnvironmentUser(userLevel);
-        }else {
+        }else
+        if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
+            userName = getPATCHEnvironmentUser(userLevel);
+        }
+        else {
             userName = getQAEnvironmentUser(userLevel);
         }
 
@@ -37,13 +41,13 @@ public class UsersAndURL implements UsersController {
         String password = null;
         if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("TEST5"))) {
             password = getTEST5EnvironmentPassword(userType);
-        }
-        else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
+        } else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("QA"))) {
             password = getQAEnvironmentPassword(userType);
+        }else if ((EnvironmentFactory.getEnvironmentName() != null) && (EnvironmentFactory.getEnvironmentName().contains("PATCH"))) {
+            password = getPATCHEnvironmentPassword(userType);
         }else {
             password = getQAEnvironmentPassword(userType);
         }
-
         return password;
     }
 
@@ -135,7 +139,6 @@ public class UsersAndURL implements UsersController {
     }
 
 
-
     private String getQAEnvironmentUser(String userLevel) {
         Map<String, String> username = new HashMap<>();
         username.put("ADMIN", "automationadmin@ggp.test8.atm.fwautomat");
@@ -164,6 +167,34 @@ public class UsersAndURL implements UsersController {
             return password.get(userType.toUpperCase());
         } else {
             return password.get("ADMIN");
+        }
+    }
+
+    private String getPATCHEnvironmentUser(String userLevel) {
+        Map<String, String> username = new HashMap<>();
+        username.put("ADMIN", "automationadminpatch@yopmail.com.atm.frwpatch");
+        username.put("PM", "donald_pm@ggp.test7.atm.frwpatch");
+        username.put("PM1", "test8.pm1.automation@yopmail.com.frwpatch");
+        username.put("FO", "fo.automation@yopmail.com");
+        username.put("EXE", "test@gmaildemo.com.atm.frwpatch");
+        if (userLevel.toUpperCase() != null) {
+            return username.get(userLevel.toUpperCase());
+        } else {
+            return username.get("ADMIN");
+        }
+    }
+
+    private String getPATCHEnvironmentPassword(String userType) {
+        Map<String, String> password = new HashMap<>();
+        password.put("ADMIN", "Admin@March2024");
+        password.put("PM", "PM@11March");
+        password.put("PM1", "PM1@AutoMarch");
+        password.put("FO", "AutoPatch@08March");
+        password.put("EXE", "Exe@11March");
+        if (userType.toUpperCase() != null) {
+            return password.get(userType.toUpperCase());
+        } else {
+            return password.get("Admin");
         }
     }
 

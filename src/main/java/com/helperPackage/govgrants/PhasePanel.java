@@ -366,7 +366,10 @@ public final class PhasePanel {
                 + panelTitleName
                 + "']/ancestor::div[contains(@class,'header-title') or 1]/following-sibling::div/div[contains(@class,'header-buttons')]//*[text()='"
                 + buttonName + "'] | " +
-                 "//div/a[@id='EnhanceAppGrantorBudgetPeriodsFlexCollapse']//span[text()='" + panelTitleName + "']//ancestor::div//button[@title='" + buttonName + "']");
+                " //*[@title='" + panelTitleName + "']/ancestor::div[contains(@class,'col-xs-6')]/following-sibling::div//button[@title='" + buttonName + "'] |" +
+                " //*[@title='" + panelTitleName + "']/ancestor::div[contains(@class,'col-xs-6')]/following-sibling::div//button[text()='" + buttonName + "'] |" +
+                " //*[@title='"+ panelTitleName +"'or text()='"+ panelTitleName +"']/ancestor::div/following-sibling::div//*[@title='" + buttonName + "'] |" +
+                "//div/a[@id='EnhanceAppGrantorBudgetPeriodsFlexCollapse']//span[text()='" + panelTitleName + "']//ancestor::div//button[@title='" + buttonName + "']");
     }
 
     private By getTopRightButtonLocatorByTableId(String flexTableId, String buttonName) {

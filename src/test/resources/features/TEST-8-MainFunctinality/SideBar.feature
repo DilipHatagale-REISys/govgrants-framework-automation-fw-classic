@@ -811,8 +811,8 @@ Business Need: Side bar Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I pause execution for "5" seconds
     And I navigate to "Home" tab
@@ -910,7 +910,7 @@ Business Need: Side bar Component Scenarios
     Then I see "Subawards" shown at mouse hover inside "---program:-:sidebarWrapperId---" table
 
   @126111 @255441
-  Scenario: validate that autosuggestion dropdown with expected ecord id is displayed at global search quick search if program is selected
+  Scenario: validate that autosuggestion dropdown with expected record id is displayed at global search quick search if program is selected
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
@@ -1475,3 +1475,4 @@ Business Need: Side bar Component Scenarios
     And I pause execution for "3" seconds
     When I perform quick search for "{SavedValue:PEGMSID}"
     Then I softly see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
+

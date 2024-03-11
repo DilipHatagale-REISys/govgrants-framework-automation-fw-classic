@@ -3,7 +3,7 @@ Business Need: Step Progress Bar Component Scenarios
   Test all step progress bar component based scenarios
   As a configuration manager i make different configurational changes in step progress bar component and will validate them.
 
-  @37328 @382833   @isCreatedFieldAtStepProgressBar-gPlanning
+  @37328 @382833 @201810 @201811 @Sanity  @SanityStepProgressBar
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -27,6 +27,11 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I save the field labeled "Created By" as "OWNER"
+    And I save the field labeled "Created Date" as "DATE"
+    #201810 #201811
+    Then I see "By : {SavedValue:OWNER}" shown as help text
+    Then I see "Date : {SavedValue:DATE}" shown as help text
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -37,8 +42,8 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "Submit For Approval" in the page details
     When I hovering mouse on Status inside step progress bar "Submitted for Approval"
     And I pause execution for "5" seconds
-    Then I see "By : Automation PM" shown as help text
-    #Then I see "Date : 11/27/2018 1:15 AM" shown as help text
+    Then I see "{SavedValue:OWNER}" shown as help text
+    Then I see "{SavedValue:DATE}" shown as help text
 
   @34347    @disablingRenderingOfProgressBarForCustomApp-gPlanning @oldsmoke
   Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
@@ -294,7 +299,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "View" icon for "Automation Program For Test" inside table
     Then I see step progress bar is displayed
 
-  @201457 @201458
+  @201457 @201458 @382797 @382798 @Sanity  @SanityStepProgressBar
   Scenario Outline: Steps- Admin- Config- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -314,7 +319,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201810 @201811 @201813 @201814
+  @201813 @201814 @382714 @382716 @382832 @Sanity  @SanityStepProgressBar
   Scenario Outline: IsCreated- Admin- Config- Verify Admin can configure ‘IsCreated’ support for the step progress bar and  can view the last updated date, time and user name
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -341,9 +346,6 @@ Business Need: Step Progress Bar Component Scenarios
     And I save the field labeled "Project Period Start Date" as "DATE"
     When I hovering mouse on Status inside step progress bar "Created"
     And I pause execution for "5" seconds
-    #201810 #201811
-    Then I see "By : {SavedValue:OWNER}" shown as help text
-    #Then I see "Date : {SavedValue:DATE}" shown as help text
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
     When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
     When I navigate to "Responsibilities" sub tab
@@ -381,6 +383,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     And I pause execution for "3" seconds
+    #382814 #382716
     Then I softly see status in Progress-bar is "Active" and is "Green"
 
     Examples:
@@ -388,7 +391,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201459 @382795 @382799 @Sanity
+  @201459 @382795 @382799 @Sanity  @SanityStepProgressBar
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -400,7 +403,7 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see "Submitted" step is diplayed on step progress bar
     Then I see "Converted to Award" step is diplayed on step progress bar
 
-  @201812
+  @201812 @382834 @Sanity  @SanityStepProgressBar
   Scenario: IsCreated- SPI- UI- Verify user can view the last updated date, time and user name
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -414,15 +417,18 @@ Business Need: Step Progress Bar Component Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
+    And I save the field labeled "Created By" as "CREATEDBY"
+    And I save the field labeled "Created Date" as "CREATEDDATE"
     When I hovering mouse on Status inside step progress bar "Created"
     And I pause execution for "5" seconds
-    Then I see "By : Automation SPI" shown as help text
+    Then I see "{SavedValue:CREATEDBY}" shown as help text
+    Then I see "{SavedValue:CREATEDDATE}" shown as help text
 
   @201815
   Scenario:
 
   ################# Step Progress Bar ######################
-  @201445 @201446 @201454 @201455 @382794 @Sanity
+  @201445 @201446 @201454 @201455 @382794 @Sanity  @SanityStepProgressBar
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
   Color Code Settings - PM- UI- Verify progress bar should should follow given color codes
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
@@ -487,7 +493,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201438 @382792 @Sanity
+  @201438 @382792 @Sanity  @SanityStepProgressBar
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -575,11 +581,87 @@ Business Need: Step Progress Bar Component Scenarios
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
     And I click on back arrow
-    Then I do not see step progress bar is displayed
+    Then I see step progress bar is displayed
     Examples:
       | User  |
       | ADMIN |
       | PM    |
 
+  @382819 @382821 @Sanity  @SanityStepProgressBar
+  Scenario Outline: Sanity -TC-Admin-To verify whether the display values colors are getting changed to red  with a cross mark if any  record is  rejected
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "5" seconds
+    When I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
+    And I navigate to "Planning" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}"
+    When I click on "Start" icon for "{SavedValue:PEGMSID}" inside table
+    When I select radio button "Reject" in the approval decision
+    And I enter comment "Automation testing" in the approval decision
+    And I submit the approval in the approval decision without processing
+    Then I see status in Progress-bar is "Rejected" and is "Red"
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 
+    @382827 @382829 @Sanity  @SanityStepProgressBar
+    Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
+      Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+      Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+      Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+      When I login to "As a Grantor" app as "PM" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+      When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+      And I click on "Save and Continue" in the page details
+      And I pause execution for "8" seconds
+      When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+      And I click on "Save" in the page details
+      When I navigate to "Overview" sub tab
+      And I save the field labeled "EGMS ID" as "PEGMSID"
+      And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+      When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+      When I navigate to "Responsibilities" sub tab
+      When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+        | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+        | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      And I pause execution for "10" seconds
+      And I click on "Submit For Approval" in the page details
+      When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+      And I navigate to "Home" tab
+      And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+      When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+      And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+      And I "Send back" in the approval decision
+      And I refresh the page
+      Then I see status in Progress-bar is "Created" and is "Green"
+
+      Examples:
+        | User  |
+        | ADMIN |
+        | PM    |
 

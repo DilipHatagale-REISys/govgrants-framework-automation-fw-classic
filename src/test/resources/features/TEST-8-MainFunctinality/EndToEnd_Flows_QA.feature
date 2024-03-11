@@ -154,12 +154,12 @@ Business Need: security review Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I can see row level action button "Edit" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    Then I can see row level action button "View" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    Then I can see row level action button "Delete" against "Automation Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Static Internal Program for Testing"
+    Then I can see row level action button "Edit" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "View" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    Then I can see row level action button "Delete" against "Static Internal Program for Testing" in flex table with id "---program:-:programsTableId---"
+    When I perform quick search for "Static Internal Program for Testing"
+    When I click on "View" icon for "Static Internal Program for Testing" inside table
     When I navigate to "History" sub tab
     When I perform quick search for "Framework Admin" in "---program:-:ApplicationTablIdForTestApplication---" panel
     Then I see "Changed By" shown as flex table column title
@@ -661,9 +661,9 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "5" seconds
-    Then I see the sub-header is "Automation Internal Program for Testing" in the page details
+    Then I see the sub-header is "Automation Program For Test" in the page details
 
-  @109932 @109931 @109928    @verifyProgramInActiveModeByLoginAsPMUser @flow
+  @109932 @109931 @109928 @flow
   Scenario: validate status of program is changed to active after getting approved by both the approvers
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -1273,9 +1273,7 @@ Business Need: security review Scenarios
    And I execute batch file:
      | programName | announcementName | objectType | projectTitle               | status |
      | NA          | NA               | Program    | Automation Runtime Program | Active |
-
    Given I published "Competitive" type announcement having name "Automation Runtime Announcement Application" and properties "default"
-
    When I login to "As a Grantor" app as "PM" user
    When I setup my app as "As a Grantor"
     #Announcement Creation
@@ -1528,7 +1526,6 @@ Business Need: security review Scenarios
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
-
      # create FDM
     When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Applications" tab
