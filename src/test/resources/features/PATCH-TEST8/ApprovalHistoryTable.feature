@@ -39,7 +39,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
     #204967 @204972
     Then I see "Approval Request Submitted" and comment is changed in "Submitted for approval." in Approval history table
     Then I see "Step : Step 1 (Pending for first approval) " and status is changed in "Pending" in Approval history table
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel

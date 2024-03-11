@@ -1,4 +1,4 @@
-@PATCH-CustomApp-component @regression-QA @customApp
+@CustomApp-component @regression-QA @customApp
 Business Need: customApp Component Scenarios
   Test all customApp component based scenarios
   As a configuration manager i make different configurational changes in customApp component and will validate them.
