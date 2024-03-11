@@ -64,7 +64,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -110,7 +110,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -162,7 +162,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -203,7 +203,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -236,7 +236,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -270,7 +270,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -305,7 +305,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -342,7 +342,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -358,7 +358,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -390,7 +390,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -423,7 +423,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -460,7 +460,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -496,7 +496,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -528,7 +528,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -559,7 +559,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -594,7 +594,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -633,7 +633,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -671,7 +671,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -706,7 +706,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -740,7 +740,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -775,7 +775,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -811,7 +811,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -858,7 +858,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Overview" sub tab
@@ -897,7 +897,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -927,7 +927,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -958,7 +958,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -1206,7 +1206,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
@@ -1238,7 +1238,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
-    And I click toggle button to select "Applications - Draft"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "package release flow SK3_Application"
     When I click on "View" icon for "package release flow SK3_Application" inside table
     When I navigate to "Files" sub tab
