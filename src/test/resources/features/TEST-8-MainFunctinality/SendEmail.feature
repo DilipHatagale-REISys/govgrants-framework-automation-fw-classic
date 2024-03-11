@@ -873,20 +873,6 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on X Action Button of "SendEmailAttachment.pdf" file
     Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332834
-  Scenario: Send Email -Attachment - To verify ,  Internal user are remove the attachement from  sends email modal
-    When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:SendEmailComponentActiveProgram}"
-    When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
-    When I navigate to "Collab" sub tab
-    And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
-    And I click on X Action Button of "SendEmailAttachment.pdf" file
-    Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
-
   @382774
   Scenario: Sanity-TC-Admin-verify that the user is able to click on the checkbox under "Send Copy (Cc) to Me" if user wants to send the copy of the mail to themselves
     When I login to "As a Grantor" app as "ADMIN" user

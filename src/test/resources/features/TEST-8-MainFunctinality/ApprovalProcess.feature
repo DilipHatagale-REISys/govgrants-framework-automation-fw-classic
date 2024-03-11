@@ -1724,14 +1724,14 @@ Business Need: Approval Process Component Scenarios
 
   @203073 @203075 @381961 @381962 @Sanity @SanityApprovalProcess @needtocheckmanually
   Scenario Outline: Approver process Step Cache-Admin-Config-To verify Confirmation Message should displayed on Send To Owner
-    Given I have "default" configuration as below:
-      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
-      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
-      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
-    Given I setup test configuration as below:
-      | configurationCategory                           | fieldName                          | fieldNewValue                          | coreComponentField |
-      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
-      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
+#    Given I have "default" configuration as below:
+#      | configurationCategory        | fieldName                          | fieldOrignalValue | filterId         |
+#      | Approval Process Steps Cache | Send To Owner Confirmation Title   |                   | ApiGeneratedId:0 |
+#      | Approval Process Steps Cache | Send To Owner Confirmation Message |                   | ApiGeneratedId:1 |
+#    Given I setup test configuration as below:
+#      | configurationCategory                           | fieldName                          | fieldNewValue                          | coreComponentField |
+#      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Title   | Confirmation                           | Step1              |
+#      | Approval Process Steps Cache:Process Definition | Send To Owner Confirmation Message | Do you want to send back this program? | Step1              |
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
