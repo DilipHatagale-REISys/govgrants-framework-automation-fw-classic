@@ -1,4 +1,4 @@
-@NotesandAttachments-component @regression-QA @NotesAttachments
+@NotesandAttachments-PATCHcomponent @regression-PATCH @NotesAttachments
 Business Need: NotesandAttachments Component Scenarios
   Test all NotesandAttachments component based scenarios
   As a configuration manager i make different configurational changes in NotesandAttachments component and will validate them.
@@ -319,11 +319,11 @@ Business Need: NotesandAttachments Component Scenarios
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
@@ -341,11 +341,11 @@ Business Need: NotesandAttachments Component Scenarios
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
@@ -362,11 +362,11 @@ Business Need: NotesandAttachments Component Scenarios
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in tableName "Notes"

@@ -1,4 +1,4 @@
-@EndToEnd_Flows_QA-component @regression-QA @EndToEnd_Flows_QA @skiponjenkins
+@EndToEnd_Flows_QA-PATCHcomponent @regression-PATCH @EndToEnd_Flows_QA @skiponjenkins
 Business Need: security review Scenarios
   Test all security review related scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.
@@ -618,7 +618,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     #And I click on "Save" in the page details
     And I enter value "5000" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
@@ -640,7 +640,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     When I click on "Menu" in the page details
@@ -675,7 +675,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -735,7 +735,7 @@ Business Need: security review Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser @flow
+  @83372   @verifyOrderOfActionAtHistoryTableFromProgramCreationToActivationByReassigningToUser @flow1
   Scenario: validate order of action inside history table from program creation to activation by reassigning to user
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -747,7 +747,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -803,7 +803,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -918,7 +918,7 @@ Business Need: security review Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
@@ -1031,7 +1031,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -1079,7 +1079,7 @@ Business Need: security review Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"

@@ -1,4 +1,4 @@
-@PhasesConfig-component @regression-QA @phase
+@PhasesConfig-PATCHcomponent @regression-PATCH @phase
 Business Need: Phase Config Component Scenarios
   Test all phase config component based scenarios
   As a configuration manager i make different configurational changes in phase component and will validate them.
@@ -157,7 +157,7 @@ Business Need: Phase Config Component Scenarios
       | ADMIN |
 
   @333563
-  Scenario Outline: Phase name- External To verify 'Default Landing Tab?' field should be active on the phases config page  then display label phase should be open
+  Scenario: Phase name- External To verify 'Default Landing Tab?' field should be active on the phases config page  then display label phase should be open
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Phase Config          | Tab Display Label    | Home              | ApiGeneratedId:0 |
@@ -665,14 +665,14 @@ Business Need: Phase Config Component Scenarios
     And I navigate to "Planning" tab
     Then I see "1" charts are displayed
 
-  @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning
+  @44735    @highlightPhaseFieldInSobjectPhaseConfig-gplanning @o
   Scenario: validate highlighting of planning tab by making changes at sobject phase config and validate inside planning-gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Phase Config Sobject  | Highlight Phase? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+      | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0746                   |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -682,14 +682,14 @@ Business Need: Phase Config Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     Then I see "Planning" tab is highlighted for particular program
 
-  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning
+  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @om
   Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
-      | Phase Config Sobject  | Global Search Label | Program           | ApiGeneratedId:0 |
+      | Phase Config Sobject  | Global Search Label | Programs          | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Global Search Label | Program Automation | GrantorPlanning    | Name                      | SPC-0086                   |
+      | Phase Config Sobject  | Global Search Label | Program Automation | GrantorPlanning    | Name                      | SPC-0746                   |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -703,7 +703,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Global Search? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0086                   |
+      | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -717,7 +717,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Recently Viewed? | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0086                   |
+      | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -730,7 +730,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config Sobject  | Add to Recently Viewed? | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0086                   |
+      | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0827                   |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -768,15 +768,15 @@ Business Need: Phase Config Component Scenarios
       | ADMIN |
       | PM    |
 
-    @333532 @333533 @333534
-    Scenario: Phase name- External- To verify 'Total Charts Allowed Per Row' should be added on the phases config page
-      Given I have "default" configuration as below:
-        | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
-        | Phase Config          | Total Charts Allowed | 2                 | ApiGeneratedId:0 |
-      Given I setup test configuration as below:
-        | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
-        | Phase Config:General  | Total Charts Allowed | 1             | RecipientAnnouncements    |
-      Given I am on "SUBPORTAL" portal
-      When I login to "Grants Portal" app as "SPI" user
-      And I navigate to "Opportunities" tab
-      Then I see "1" charts are displayed
+  @333532 @333533 @333534
+  Scenario: Phase name- External- To verify 'Total Charts Allowed Per Row' should be added on the phases config page
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Phase Config          | Total Charts Allowed | 2                 | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue | coreComponentField     |
+      | Phase Config:General  | Total Charts Allowed | 1             | RecipientAnnouncements |
+    Given I am on "SUBPORTAL" portal
+    When I login to "Grants Portal" app as "SPI" user
+    And I navigate to "Opportunities" tab
+    Then I see "1" charts are displayed

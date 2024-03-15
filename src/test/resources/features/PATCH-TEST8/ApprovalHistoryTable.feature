@@ -1,4 +1,4 @@
-@PATCH-ApprovalHistoryTable-component @regression-QA @approvalhistorytable
+@ApprovalHistoryTable-PATCHcomponent @regression-PATCH @approvalhistorytable
 Business Need: ApprovalHistoryTable Component Scenarios
   Test all approvalhistorytable Component based scenarios
   As a configuration manager I make different changes related to flow and will validate them in approvalhistorytable component.
@@ -157,7 +157,7 @@ Business Need: ApprovalHistoryTable Component Scenarios
   Approval history-External User-To verify, user should able to see each step approval history should be highlighted in blue color.
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Announcement For Flow" from the object "Announcement__c" with field "AnnouncementName__c"
-    Given I delete the record "Program For Flow" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Program Creation For Flow" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

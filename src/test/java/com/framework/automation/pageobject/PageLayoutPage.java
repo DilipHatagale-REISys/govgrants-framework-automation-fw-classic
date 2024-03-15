@@ -3811,4 +3811,45 @@ public class PageLayoutPage extends GovGrantsManager {
 
     }
 
+    public void isPageMessageDisplayedOnPageLayoutOrNot(String usage, String pageMessage) {
+        if (usage.equalsIgnoreCase("see")) {
+            I.amPerforming().assertionsTo().assertThat(pagemessageDisplayedOrNotOnPageLayout(pageMessage)).isTrue();
+        } else if (usage.equalsIgnoreCase("do not see")) {
+            I.amPerforming().assertionsTo().assertThat(pagemessageDisplayedOrNotOnPageLayout(pageMessage)).isFalse();
+        }
+    }
+
+    private boolean pagemessageDisplayedOrNotOnPageLayout(String pageMessage) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//div[@class='bs alert alert-warning border-msg']//span[contains(text(),'" + pageMessage + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    public void assertSortingOfPageBlock(String usage, String subTabName, int number) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockSequence(subTabName, number)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isPageBlockSequence(subTabName, number)).isFalse();
+        } else if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isPageBlockSequence(subTabName, number));
+        }
+    }
+
+    private boolean isPageBlockSequence(String subTabName, int number) {
+        if (getListSubTabsInsideMainDetailPage().get(number).getText().contains(subTabName)) {
+            return true;
+        } else
+            return false;
+    }
+
+    public List<Elements> getListSubTabsInsideMainDetailPage() {
+        I.amPerforming().getElementReference().of(By.xpath("//div[@class='tabSection']//div[@class='panel-heading']//h3[@class='panel-title']"));
+        return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3[@class='panel-title']//a//span[@class='togglePageBlock fa fa-caret-up']"));
+    }
 }

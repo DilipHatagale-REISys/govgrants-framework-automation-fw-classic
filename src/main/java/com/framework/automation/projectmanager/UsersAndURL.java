@@ -175,7 +175,7 @@ public class UsersAndURL implements UsersController {
         username.put("ADMIN", "automationadminpatch@yopmail.com.atm.frwpatch");
         username.put("PM", "donald_pm@ggp.test7.atm.frwpatch");
         username.put("PM1", "test8.pm1.automation@yopmail.com.frwpatch");
-        username.put("FO", "fo.automation@yopmail.com");
+        username.put("FO", "auto.fm@auto.com.atm.frwpatch");
         username.put("EXE", "test@gmaildemo.com.atm.frwpatch");
         if (userLevel.toUpperCase() != null) {
             return username.get(userLevel.toUpperCase());
