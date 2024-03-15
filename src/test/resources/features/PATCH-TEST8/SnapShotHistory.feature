@@ -21,7 +21,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
