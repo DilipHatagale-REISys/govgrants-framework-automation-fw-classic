@@ -1,4 +1,4 @@
-@calenderConfig-component @regression-QA @calenderConfig
+@calenderConfig-PATCHcomponent @regression-PATCH @calenderConfig
 Business Need: Calender Config Component Scenarios
   Test all calender config component based scenarios
   As a configuration manager i make different configurational changes in calender component and will validate them.
@@ -84,8 +84,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -103,7 +103,7 @@ Business Need: Calender Config Component Scenarios
 
   @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
     And I execute batch file:
       | programName | announcementName | objectType | projectTitle               | status |
       | NA          | NA               | Program    | Automation Runtime Program | Active |
@@ -174,7 +174,7 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory                    | fieldName         | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active         | false         | Annoucement Profile-FOA | Name                      | PBD-3057                   |
      # | Page Tabs Config:Page Layout Action      | Highlights Panel? | true          | Grantor State Program   | Name                      | TAB-2624                   |
-    Given I delete the record "Automation Internal Program for Testing" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -184,7 +184,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -504,8 +504,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "View" icon for "Created state change Automation" inside table
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
@@ -517,8 +517,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "View" icon for "Created state change Automation" inside table
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Week" Button at calendar
@@ -530,8 +530,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "View" icon for "Created state change Automation" inside table
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Day" Button at calendar
@@ -554,7 +554,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "10" seconds
     When I navigate to "Overview" sub tab
@@ -582,7 +582,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -609,7 +609,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -631,8 +631,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     When I click on "Save" in the page details
@@ -664,7 +664,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -687,8 +687,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -720,8 +720,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -748,8 +748,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -770,8 +770,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "View" icon for "Created state change Automation" inside table
     When I click on "Menu" in the page details
     And I select "Calendar" from dropdown
     And I click on "Month" Button at calendar
@@ -791,8 +791,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForRequiredBehaviourOnly}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForRequiredBehaviourOnly}" inside table
+    When I perform quick search for "Created state change Automation"
+    When I click on "Edit" icon for "Created state change Automation" inside table
     When I enter value "0" into field "fieldStartDate__c"
     When I enter value "365" into field "fieldEndDate__c"
     #When I enter value "0" into field "fieldDateandTime__c"
@@ -1022,7 +1022,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -1045,7 +1045,7 @@ Business Need: Calender Config Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"

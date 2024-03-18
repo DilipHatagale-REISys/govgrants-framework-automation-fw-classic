@@ -1,4 +1,4 @@
-@SnapshotHistory-component @regression-QA
+@SnapshotHistory-PATCHcomponent @regression-PATCH
 Business Need: Snapshot Config Component Scenarios
   Test all sanpshot config component based scenarios
   As a configuration manager i make different configurational changes in snapshot component and will validate them.
@@ -12,7 +12,7 @@ Business Need: Snapshot Config Component Scenarios
       | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false         | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -21,7 +21,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    When I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -50,8 +50,8 @@ Business Need: Snapshot Config Component Scenarios
       | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                                    | Program__c            | Name                      | SAS-0008                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                                    | Program__c            | Name                      | SAS-0013                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0013                   |
      # | Page Tabs Config:Page Layout Action | Is Active                       | true                                    | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                                   | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -91,8 +91,8 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0008                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                             | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0013                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                             | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
@@ -365,8 +365,8 @@ Business Need: Snapshot Config Component Scenarios
  #     | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active | true          | Program__c         | Name                      | SAS-0008                   |
-      #| Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active | true          | Program__c         | Name                      | SAS-0013                   |
+      #| Auto Snapshot:Sobject Auto Snapshot | Expression JSON                 | govgrants_config:SnapShotExpressionJSON | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true          | Grantor State Program | Name                      | TAB-1724                   |
     #  | Page Layout Action                  | History Snapshot-Action Enable? | false         | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -504,8 +504,8 @@ Business Need: Snapshot Config Component Scenarios
       | Auto Snapshot On Approval:General | Approval Snapshot File Name     |                   | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0008                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                             | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot           | Program__c            | Name                      | SAS-0013                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | true                             | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                             | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                            | Grantor State Program | Name                      | Submit For Approval        |
       | Auto Snapshot On Approval:General   | Approval Snapshot File Name     | TestAutomationSnapshotOnApproval | Program__c            |                           |                            |
@@ -554,8 +554,8 @@ Business Need: Snapshot Config Component Scenarios
       | Page Layout Action    | History Snapshot-Action Enable? | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName                       | fieldNewValue          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot | Program__c            | Name                      | SAS-0008                   |
-      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false                  | Program__c            | Name                      | SAS-0008                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Snapshot File Name              | testAutomationSnapshot | Program__c            | Name                      | SAS-0013                   |
+      | Auto Snapshot:Sobject Auto Snapshot | Is Active                       | false                  | Program__c            | Name                      | SAS-0013                   |
     #  | Page Tabs Config:Page Layout Action | Is Active                       | true                   | Grantor State Program | Name                      | TAB-1724                   |
       | Page Layout Action                  | History Snapshot-Action Enable? | false                  | Grantor State Program | Name                      | Submit For Approval        |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"

@@ -948,4 +948,13 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
         pageLayoutPage.assertfieldHeader(usage, fieldName);
     }
 
+    @Then("^I (see|do not see) \"([^\"]*)\" page message displayed in page layout$")
+    public void iSeeMessageDisplayedInPageLayout(String usage, String pageMessage) {
+        pageLayoutPage.isPageMessageDisplayedOnPageLayoutOrNot(usage,pageMessage);
+    }
+
+    @Then("^I (see|do not see) \"([^\"]*)\" shown at the number \"([^\"]*)\" inside page layout$")
+    public void iSeeShownAtTheNumberInsidePageLayout(String usage, String subTabName, String number) {
+        pageLayoutPage.assertSortingOfPageBlock(usage, subTabName, Integer.parseInt(number));
+    }
 }
