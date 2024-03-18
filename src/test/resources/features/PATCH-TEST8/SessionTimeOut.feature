@@ -1,4 +1,4 @@
-@NewAPIRelatedScenarios @regression-QA
+@NewAPIRelatedScenarios @regression-PATCH
 Business Need: New API related scenarios temporary
 
   @61467   @VerifySessionTimeoutRemainderDialogBoxShownInBrowserTab

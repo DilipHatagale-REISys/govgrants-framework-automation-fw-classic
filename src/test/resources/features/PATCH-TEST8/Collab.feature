@@ -1,4 +1,4 @@
-@Collab-component @regression-QA @collab
+@Collab-PATCHcomponent @regression-PATCH @collab
 Business Need: collab Component Scenarios
   Test all collab component based scenarios
   As a configuration manager i make different configurational changes in collab component and will validate them.

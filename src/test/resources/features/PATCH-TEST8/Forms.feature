@@ -1,4 +1,4 @@
-@Forms-Component @regression-QA @Forms
+@Forms-PATCHComponent @regression-PATCH @Forms
 Business Need: Forms Scenarios flextable UI,Forms Interface
   Test all SendEmail component based scenarios
   As a configuration manager I make different configurational changes in Forms component and will validate them.

@@ -1,4 +1,4 @@
-@FrameworkCookies-component @regression-QA @FrameworkCookies
+@FrameworkCookies-PATCHcomponent @regression-PATCH @FrameworkCookies
 Business Need: FrameworkCookies Component Scenarios
   Test all FrameworkCookies component based scenarios
   As a configuration manager i make different configurational changes in FrameworkCookies component and will validate them.
@@ -2502,7 +2502,7 @@ Business Need: FrameworkCookies Component Scenarios
     Then I see value "Vrush Application" for title "Application Title" inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
 ################### Sorting ###########
-  @268444 @268459
+  @a1 @268444 @268459
   Scenario Outline: To verify when sort direction of data type-standard field is set in ascending order, user clicks on row level view action and click on page back arrow then records should be in ascending order for data type-standard field (Admin)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |

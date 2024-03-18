@@ -1,4 +1,4 @@
-@Modal-component @regression-QA @Modal
+@Modal-PATCHcomponent @regression-PATCH @Modal
 Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
@@ -75,7 +75,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see modal window is open in same tab with style "width: 1000"
     Examples:
       | Users |
@@ -126,7 +126,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Save and Continue" at bottom of Attachment Modal
     Examples:
       | Users |
@@ -140,7 +140,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I click dropdown field "fieldType__c"
     When I pause execution for "3" seconds
     Then I see only the following ordered options in dropdown field "fieldType__c" :
@@ -158,12 +158,12 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "10" seconds
     And I save the field labeled "ID" as "EGMSID"
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Primary Funding Organization" field contains "Children’s Health Insurance Program" value
@@ -180,11 +180,11 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "Test" into field "Abbreviation__c"
     And I click on "Save and Continue" in the page details
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Title" field contains "Automation Program For Test" value
@@ -200,11 +200,11 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "Automation Program 1234" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
-    When I enter "ProgramEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     Then I see "Title" field contains "Automation Program 1234" value
@@ -261,7 +261,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see Required behavior under field "ProgramName__c" with star mark on modal
     Then I see Required behavior under field "Type__c" with star mark on modal
     Then I see Required behavior under field "Account__c" with star mark on modal
@@ -297,7 +297,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "fieldProgramName__c" is displayed at position "1" inside table table name "Information" in modal
     Then I see "fieldAbbreviation__c" is displayed at position "2" inside table table name "Information" in modal
     Then I see "fieldType__c" is displayed at position "3" inside table table name "Information" in modal
@@ -317,8 +317,8 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
     Then I see the following message in the page details contains:
@@ -333,7 +333,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @382237 @Sanity
@@ -341,7 +341,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @207458 @2074
@@ -351,8 +351,8 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "7" seconds
     Then I see page title "Planning ~ As a Grantor"
@@ -375,7 +375,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I hovering mouse on i icon for field "Abbreviation" inside modal
     Then I see "<helpTextInModal>" shown as help text
 
@@ -398,7 +398,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Information" page block displayed
     Then I see "Program Specific Settings" page block displayed
     Examples:
@@ -428,7 +428,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Save and Continue" at bottom of Attachment Modal
     And I pause execution for "5" seconds
     Then I see "Create Program" modal window is open in same tab
@@ -449,7 +449,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field "Website Name" inside page block
     Examples:
       | Users |
@@ -483,7 +483,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -503,7 +503,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Test Automation header instruction" shown as header instruction text in modal
 
   @382231 @Sanity
@@ -511,7 +511,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Test Automation header instruction" shown as header instruction text in modal
 
   @382252 @382253 @Sanity  @SanityModal
@@ -526,7 +526,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           | old_helpText |
@@ -545,7 +545,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           | old_helpText |
@@ -715,7 +715,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Program Information" Tab title displays on modal
 
   @382248 @Sanity
@@ -723,5 +723,5 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Program Information" Tab title displays on modal
