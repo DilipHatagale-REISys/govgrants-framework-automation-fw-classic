@@ -8,7 +8,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
@@ -19,7 +19,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
@@ -42,7 +42,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table
@@ -52,7 +52,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Notes" flex table
@@ -74,7 +74,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Attachments" flex table
@@ -84,7 +84,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see "Add" button inside "Attachments" flex table
@@ -106,7 +106,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
@@ -117,7 +117,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
@@ -141,7 +141,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Notes"
@@ -152,7 +152,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Notes"
@@ -176,7 +176,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
@@ -187,7 +187,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Edit" against "AttachmentTesting.png" in table name "Attachments"
@@ -211,7 +211,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
@@ -222,7 +222,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Delete" against "AttachmentTesting.png" in table name "Attachments"
@@ -246,7 +246,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
@@ -257,7 +257,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "View" against "AttachmentTesting.png" in table name "Attachments"
@@ -281,7 +281,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Download" against "AttachmentTesting.png" in table name "Attachments"
@@ -292,7 +292,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:programsTableId---" panel
+    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
     When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
     When I navigate to "Files" sub tab
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
@@ -318,7 +318,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -340,7 +340,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -361,7 +361,7 @@ Business Need: NotesandAttachments Component Scenarios
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds

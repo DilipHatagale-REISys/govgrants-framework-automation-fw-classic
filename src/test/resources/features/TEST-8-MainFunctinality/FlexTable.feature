@@ -15947,7 +15947,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Total Row | false         | Programs           | Name                      |                            |
-      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-12929                  |
+      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-13206                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -15978,7 +15978,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Total Row Label | Automation Total | Programs           | Name                      | Total                      |
-      | Flex Table List       | Enable Total    | true             | Programs           | Name                      | FTC-12929                  |
+      | Flex Table List       | Enable Total    | true             | Programs           | Name                      | FTC-13206                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -16252,7 +16252,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Default Page Size | 20            | Programs           | Name                      |                            |
-      | Flex Table List       | Enable Total      | false         | Programs           | Name                      | FTC-12929                  |
+      | Flex Table List       | Enable Total      | false         | Programs           | Name                      | FTC-13206                  |
       | Flex Table:General    | Enable Total Row  | false         | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -16300,7 +16300,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Enable Total | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Total     | true          | Programs           | Name                      | FTC-12929                  |
+      | Flex Table List       | Enable Total     | true          | Programs           | Name                      | FTC-13206                  |
       | Flex Table:General    | Enable Total Row | true          | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -16807,7 +16807,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?  | false         | Programs           | Name                      | FLV-2217                   |
+      | Flex Table List       | Active ?  | false         | Programs           | Name                      | FLV-2254                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -16894,7 +16894,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Enable Total Row | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-12929                  |
+      | Flex Table List       | Enable Total     | false         | Programs           | Name                      | FTC-13206                  |
       | Flex Table:General    | Enable Total Row | false         | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

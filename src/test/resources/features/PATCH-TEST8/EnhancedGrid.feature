@@ -11,7 +11,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -34,7 +34,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -56,7 +56,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -80,7 +80,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -98,7 +98,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -115,7 +115,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -142,7 +142,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -169,7 +169,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -204,7 +204,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -226,7 +226,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -285,7 +285,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -324,7 +324,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -350,7 +350,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -376,7 +376,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -402,7 +402,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -427,7 +427,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -451,7 +451,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -468,7 +468,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -490,7 +490,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -512,7 +512,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -537,7 +537,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -561,7 +561,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Responsibilities" sub tab
@@ -580,7 +580,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -604,7 +604,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I navigate to "Setup tabs" sub tab
@@ -626,7 +626,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -788,7 +788,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Label     | Budget Periods    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName | fieldNewValue            | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Label     | Automation Enhanced Grid | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1448,7 +1448,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Filter Clause | <oldSoqlFilter>   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue   | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Filter Clause | <newSoqlFilter> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Table List       | Filter Clause | <newSoqlFilter> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -1971,7 +1971,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2545                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1989,7 +1989,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:Flex Table List | Is Master View | false         | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-2545                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2030,7 +2030,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
+      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2092,7 +2092,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | StyleClass |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName  | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1499                   |
+      | Flex Table List       | StyleClass | <styleClassValue> | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11882                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2182,9 +2182,9 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Filter Clause         | <defaultFilterClauseForFLV2539> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName             | fieldNewValue               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List           | Enable Over All Total | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1497                   |
-      | Flex Grid:Flex Table List | Is Master View        | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
-      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Table List           | Enable Over All Total | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Grid:Flex Table List | Is Master View        | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
+      | Flex Grid:Flex Table List | Filter Clause         | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2229,8 +2229,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table                | Enable Record Selection | false                           | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName               | fieldNewValue               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View          | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
-      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View          | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
+      | Flex Grid:Flex Table List | Filter Clause           | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Table:General        | Enable Record Selection | true                        | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2280,8 +2280,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Filter Clause  | <defaultFilterClauseForFLV2539> | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
-      | Flex Grid:Flex Table List | Filter Clause  | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View | true                        | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
+      | Flex Grid:Flex Table List | Filter Clause  | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -2453,7 +2453,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid                 | Required Fields |                   | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName       | fieldNewValue     | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true              | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View  | true              | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | SequenceNumber__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3227,7 +3227,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List           | Formula             | govgrants_config:FormulaFieldToDisplayFormulaAtLastRowAtEnhancedGrid | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Table List           | Hide Cell JSON      | govgrants_config:HideCellJsonForEnhancedGridNumberField              | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Grid:General         | Display Field Names | <newFieldsApi>                                                       | EnhanceAppGrantorBudgetPeriods |                           |                            |
-      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Filter Clause       | <newFilterClauseForFLV2539>                                          | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3503,7 +3503,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Table List       | Field width Enhanced |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-1499                   |
+      | Flex Table List       | Field width Enhanced | 50%           | EnhanceAppBudCateGrantorFlexTable | Name                      | FTC-11882                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -3810,11 +3810,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1552                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1550                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1551                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1551                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                        | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3848,11 +3848,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                         | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1552                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1550                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1551                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1551                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForPercentTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                  | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                        | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3886,8 +3886,8 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1497                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1548                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
       | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
@@ -3924,7 +3924,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1545                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1547                   |
@@ -3962,7 +3962,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                          | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1546                   |
       | Flex Table List       | Enable Sub Total                         | true                                                                   | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1491                   |
       | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForCurrencyTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1547                   |
@@ -3997,11 +3997,11 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid             | Display Field Names                      | <defaultFieldsApi> | ApiGeneratedId:5 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                                | fieldNewValue                                                        | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1502                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1497                   |
-      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1548                   |
-      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
-      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-1549                   |
+      | Flex Table List       | Enable Row Grouping                      | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Sub Total                         | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Column Subtotal Percentage JSON          | govgrants_config:PercenatageForNumberTypeWhenValueNegativeOrPositive | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
+      | Flex Table List       | Enable Column Subtotal Percentage Change | true                                                                 | EnhanceAppGrantorBudgetPeriods | Name                      | FTC-11871                   |
       | Flex Grid:General     | Display Field Names                      | <newFieldsApi>                                                       | EnhanceAppGrantorBudgetPeriods |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -4044,7 +4044,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Budget" sub tab
@@ -4139,14 +4139,14 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Budget" sub tab
@@ -4162,14 +4162,14 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     When I navigate to "Budget" sub tab
@@ -4186,7 +4186,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:General         | Required Fields |                   | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName       | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View  | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
     Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
@@ -4260,7 +4260,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppBudCateGrantorFlexTable | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields     | ExternalOrganization__c | EnhanceAppBudCateGrantorFlexTable |                           |                            |
       | Flex Grid:General         | Required Fields     | Account__c              | EnhanceAppBudCateGrantorFlexTable |                           |                            |
       | Flex Grid:General         | Display Field Names | <newFieldsApi>          | EnhanceAppBudCateGrantorFlexTable |                           |                            |
@@ -4350,7 +4350,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid                 | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName           | fieldNewValue           | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Is Master View      | true                    | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
       | Flex Grid:General         | Required Fields     | ExternalOrganization__c | EnhanceAppGrantorBudgetPeriods |                           |                            |
       | Flex Grid:General         | Required Fields     | Account__c              | EnhanceAppGrantorBudgetPeriods |                           |                            |
       | Flex Grid:General         | Display Field Names | <newFieldsApi>          | EnhanceAppGrantorBudgetPeriods |                           |                            |
@@ -4608,7 +4608,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
 #    When I enter "Creation" values from "Program_Field_Values.xlsx"
 #    And I click on "Save and Close Modal" in the page details
     When I perform quick search for "New Application For Testing Only"
@@ -4628,7 +4628,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
-#    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+#    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
 #    When I enter "Creation" values from "Program_Field_Values.xlsx"
 #    And I click on "Save and Close Modal" in the page details
     And I pause execution for "15" seconds
@@ -5523,7 +5523,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Flex Grid:Flex Table List | Filter Clause | <defaultFilterClauseForFLV2539> | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName     | fieldNewValue               | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3203                   |
+      | Flex Grid:Flex Table List | Filter Clause | <newFilterClauseForFLV2539> | EnhanceAppGrantorBudgetPeriods | Name                      | FLV-3375                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab

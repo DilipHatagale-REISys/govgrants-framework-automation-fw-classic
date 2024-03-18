@@ -3208,7 +3208,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Menu" button inside table id "toggleFlexTablePrograms"
     Then I do not see "Help" help text displayed in table "toggleFlexTablePrograms"
 
-  @339458
+  @339458p
   Scenario: Help Config- PM- UI- Verify if we can find help option under menu.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -3363,8 +3363,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    Then I softly can see top right button "New" in flex table with id "---program:-:programsTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I softly can see top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -3387,8 +3387,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    Then I softly can see top right button "New" in flex table with id "---program:-:programsTableId---"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    Then I softly can see top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -4033,10 +4033,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I enter advance filter values in table id "advfPrograms"
       | Start Date | Greater than or equal to | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
-    Then I see table contains "Showing 1 to 5" inside table id "---program:-:programsTableId---"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
     And I refresh the page
     Then I see filter "filter in filterDisplayList" is displayed
-    Then I see table contains "Showing 1 to 5" inside table id "---program:-:programsTableId---"
+    Then I see table contains "Showing 1 to 5" inside table id "---program:-:ProgramsgridTableId---"
     Examples:
       | User  |
       | ADMIN |
@@ -5095,7 +5095,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -5118,7 +5118,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I save the total record available from flex table id "---program:-:ProgramsFlexTableToggleId---" as "totalRecordCount"
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -5274,7 +5274,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
@@ -5291,7 +5291,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
@@ -5308,7 +5308,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
@@ -15713,7 +15713,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I wait for "20" seconds
@@ -15723,7 +15723,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
     #When I click on "Delete" icon for "{SavedValue:PEGMSID}" inside table
-    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
+    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:ProgramsgridTableId---"
     #Then I see entire page is refreshing
     Then I see the following message in the page details :
       | Record deleted successfully. |
@@ -15739,7 +15739,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I wait for "20" seconds
@@ -15749,7 +15749,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{SavedValue:PEGMSID}"
     And I wait for "5" seconds
-    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:programsTableId---"
+    And I click on "Delete" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:ProgramsgridTableId---"
     Then I see entire page is refreshing
     Then I see the following message in the page details :
       | Record deleted successfully. |
@@ -15834,7 +15834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Admin Program for Advance filter"
-    And I click on "Edit" icon for "Admin Program for Advance filter" inside flex table with id "---program:-:programsTableId---"
+    And I click on "Edit" icon for "Admin Program for Advance filter" inside flex table with id "---program:-:ProgramsgridTableId---"
     When I navigate to "Overview" sub tab
     Then I softly can see top right button "Save" in page detail
 
@@ -15967,7 +15967,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see no "Total Records" count in "---program:-:programsTableId---"
+    Then I see no "Total Records" count in "---program:-:ProgramsgridTableId---"
 
   @34032    @additionOfLabelForRowNamedTotal-gPlanning
   Scenario: validate addition of label for row named as total of programs-planning
@@ -16011,7 +16011,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I softly do not see "Created" value in flex table id "---program:-:programsTableId---"
+    Then I softly do not see "Created" value in flex table id "---program:-:ProgramsgridTableId---"
 
     Examples:
       | newSoqlFilter                                                                                                   | oldSoqlFilter                                                                                                             |
@@ -16226,7 +16226,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "Show" with page size dropdown at "---program:-:programsTableId---"
+    Then I see "Show" with page size dropdown at "---program:-:ProgramsgridTableId---"
 
   @39299    @enablePaginationFieldAtFlexTable-gPlanning
   Scenario: validate enabling of page size dropdown at bottom in flex table of programs-planning
@@ -16240,7 +16240,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
+    Then I see "Page" with pagination arrow at "---program:-:ProgramsgridTableId---" at "Top"
 
   @39302    @defaultPageSizeFieldAtFlexTable-gPlanning
   Scenario: validate change of default page size inside dropdown at bottom in flex table of programs-planning
@@ -16601,7 +16601,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I enter "Creation" values from "Program_Field_Values.xlsx"
     And I click on "Save and Close Modal" in the page details
     And I save the field labeled "EGMS ID" as "savedValue"
@@ -17099,7 +17099,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/16/2020 |
     Then I see label containing value as "09/16/2020" inside advance filter
@@ -17110,13 +17110,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than | 09/06/2023 |
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Created state change Automation |
-    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @106404    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanAtFlexTable
   Scenario: validate Advance filter search for date field with less than operator at flex table
@@ -17124,16 +17124,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than | 09/26/2023 |
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Contains | Created state change Automation |
     And I pause execution for "5" seconds
-    Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "03/01/2022" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
     And I pause execution for "5" seconds
-    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @106406    @validateAdvanceFilterValueForDateFieldWithOperatorGreaterThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with Greater than or Equal to operator at flex table
@@ -17141,12 +17141,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date   | Greater than or Equal to | 09/07/2023                      |
       | Program Name | Contains                 | Created state change Automation |
-    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "09/07/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "07/01/2018" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @106407    @validateAdvanceFilterValueForDateFieldWithOperatorLessThanOrEqualtoAtFlexTable
   Scenario: validate Advance filter search for date field with less than or Equal to operator at flex table
@@ -17154,11 +17154,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than or Equal to | 08/28/2023 |
-    Then I softly see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I softly see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "05/19/2026" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @106409    @validateAdvanceFilterValueForDateFieldAtFlexTable
   Scenario: validate Advance filter search  for date field with equals operator at flex table
@@ -17166,10 +17166,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 08/25/2023 |
-    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @118453    @validateQuickSearchDisplayedRelevantDataOnlyAtFlexTable
   Scenario: Validate quickSearch displayed relevant data only at flex table
@@ -17178,8 +17178,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Time Zone Testing"
-    Then I softly see value "Automation Internal Program for Time Zone Testing" for title "Program Name" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "Automation Internal Program for Time Zone Testing1" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I softly see value "Automation Internal Program for Time Zone Testing" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "Automation Internal Program for Time Zone Testing1" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
 
   @119059    @validateQuickSearchDisplayedRelevantDataISearchedPicklistValueAtFlexTable
   Scenario: Validate quickSearch displayed relevant data if searched picklist value at flex table
@@ -17188,8 +17188,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Submitted for Approval	"
-    Then I softly see value "Created" for title "Status" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "Submitted for Approval" for title "Status" inside table "---program:-:programsTableId---"
+    Then I softly see value "Created" for title "Status" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "Submitted for Approval" for title "Status" inside table "---program:-:ProgramsgridTableId---"
 
   @119074    @validateQuickSearchDisplayedRelevantDataISearchedLookupValueAtFlexTable
   Scenario: Validate quickSearch displayed relevant data if searched lookup value at flex table
@@ -17198,8 +17198,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Automation Organization"
-    Then I softly do not see value "Department of Community Health" for title "Internal Organization" inside table "---program:-:programsTableId---"
-    Then I softly see value "Test Automation Organization" for title "Internal Organization" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Department of Community Health" for title "Internal Organization" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly see value "Test Automation Organization" for title "Internal Organization" inside table "---program:-:ProgramsgridTableId---"
 
 
   @120975  @VerifyCrossIconIsDisplayedAtFlexTableQuickSearchBox
@@ -17359,11 +17359,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Equals to | 09/07/2023 |
     And I pause execution for "5" seconds
-    Then I see value "09/07/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "09/07/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @144828    @validateCommaSeparatedValueIsDisplayedOnFlexTableForNumberField
   Scenario: Validate comma separated  value should be display on the Number field at flex table
@@ -17378,8 +17378,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "12345678" for title "Number" inside table "---program:-:programsTableId---"
+    Then I softly see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "12345678" for title "Number" inside table "---program:-:ProgramsgridTableId---"
 
   @144829    @validateCommaSeparatedValueIsDisplayedOnFlexTableForCurrencyField
   Scenario Outline: Validate comma separated  value should be display on the currency field at flex table
@@ -17400,8 +17400,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    Then I softly see value "$12,345,678" for title "Funded Amount" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:programsTableId---"
+    Then I softly see value "$12,345,678" for title "Funded Amount" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "12345678" for title "Funded Amount" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -17429,8 +17429,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    Then I softly see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
-    Then I softly do not see value "90000" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I softly see value "90,000%" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly do not see value "90000" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -17442,12 +17442,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Program Name | Does not contains | test |
     When I perform quick search for "Road Construction"
-    Then I softly do not see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:programsTableId---"
-    Then I softly see value "Road Construction" for title "Program Name" inside table "---program:-:programsTableId---"
+    Then I softly do not see value "Automation Internal Program for Testing" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
+    Then I softly see value "Road Construction" for title "Program Name" inside table "---program:-:ProgramsgridTableId---"
 
   @145998    @validateDecimalValueIsDisplayedOnFlexTableForNumberField
   Scenario Outline: Validate decimal value should be display on the Number field at flex table
@@ -17468,7 +17468,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
-    Then I see value "12,345,678.00" for title "Number" inside table "---program:-:programsTableId---"
+    Then I see value "12,345,678.00" for title "Number" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -17486,8 +17486,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Top"
-    Then I see "Page" with pagination arrow at "---program:-:programsTableId---" at "Bottom"
+    Then I see "Page" with pagination arrow at "---program:-:ProgramsgridTableId---" at "Top"
+    Then I see "Page" with pagination arrow at "---program:-:ProgramsgridTableId---" at "Bottom"
 
   @148305    @validateQuickSearchWorkingForPartialValueFromPicklistFieldAtFlexTable
   Scenario:To verify, Picklist value is searchable in Quick search of Data table if partial keyword is entered.
@@ -17499,8 +17499,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I pause execution for "4" seconds
     When I perform quick search for "Road Construction"
     And I pause execution for "10" seconds
-    Then I softly see "Road Construction" value in flex table id "---program:-:programsTableId---"
-    Then I softly do not see "Automation Test" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Road Construction" value in flex table id "---program:-:ProgramsgridTableId---"
+    Then I softly do not see "Automation Test" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148817    @validateQuickSearchWorkingContainingNumericValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containg numeric value followed by space at flex table
@@ -17510,7 +17510,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "edu 2 program"
     And I pause execution for "10" seconds
-    Then I see "edu 2 program" value in flex table id "---program:-:programsTableId---"
+    Then I see "edu 2 program" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148818    @validateQuickSearchWorkingContainingSpecialCharacterValueFollowedBySpaceAtFlexTable
   Scenario: Validate quick search working containing special character followed by space at flex table
@@ -17519,7 +17519,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ created for special char" into field "fieldProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -17528,7 +17528,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ created"
     And I pause execution for "3" seconds
-    Then I see "Program @@/ created for special char" value in flex table id "---program:-:programsTableId---"
+    Then I see "Program @@/ created for special char" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148894    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndNumericValueAtFlexTable
   Scenario: Validate quick search working containing space between alpha and numeric value at flex table
@@ -17537,7 +17537,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program 1 Created for numeric value" into field "fieldProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -17546,7 +17546,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program 1 Created"
     And I pause execution for "8" seconds
-    Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:programsTableId---"
+    Then I see "Program 1 Created for numeric value" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148819    @validateQuickSearchWorkingContainingSpaceBetweenAlphaAndSpecialValueAtFlexTable
   Scenario: Validate quick search working containing space between alpha and special character at flex table
@@ -17555,7 +17555,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ Created for special value" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -17564,7 +17564,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ Created"
     And I pause execution for "10" seconds
-    Then I see "Program @@/ Created for special value" value in flex table id "---program:-:programsTableId---"
+    Then I see "Program @@/ Created for special value" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148903    @validateQuickSearchWorkingContainingSpaceBetweenNumericAndSpecialValueAtFlexTable
   Scenario: Validate quick search working containing space between numeric and special character at flex table
@@ -17573,7 +17573,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ 1 Created for special value" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -17582,7 +17582,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Program @@/ 1 Created"
     And I pause execution for "3" seconds
-    Then I see "Program @@/ 1 Created for special value" value in flex table id "---program:-:programsTableId---"
+    Then I see "Program @@/ 1 Created for special value" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @149995    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet1AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "nge Req" at flex table
@@ -17592,7 +17592,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "itted for Approval"
     And I pause execution for "15" seconds
-    Then I softly see "Submitted for Approval" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Submitted for Approval" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @149992    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet2AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "Requested" at flex table
@@ -17602,7 +17602,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Construction"
     And I pause execution for "10" seconds
-    Then I softly see "Road Construction" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Road Construction" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @150000    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet3AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "mitt" at flex table
@@ -17612,7 +17612,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "mitt"
     And I pause execution for "3" seconds
-    Then I softly see "Submitted for Approval" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Submitted for Approval" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @150003    @validateQuickSearchWorkingForPartialValueFromPicklistFieldSet4AtFlexTable
   Scenario: Validate quick search working for picklist partial value as "rea" at flex table
@@ -17621,7 +17621,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "rea"
-    Then I softly see "Created" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Created" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @150054    @validate4DecimalValueIsDisplayedOnFlexTableForNumberFieldTotal
   Scenario Outline: Validate 4 decimal value should be display on the Number field at flex table total
@@ -17660,7 +17660,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     And I pause execution for "3" seconds
-    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @151631    @validateIsSearchWorkingForShortTextSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for short text searched in flex table quick search box
@@ -17670,7 +17670,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     And I pause execution for "3" seconds
-    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:programsTableId---"
+    Then I softly see "Automation Internal Program for Testing" value in flex table id "---program:-:ProgramsgridTableId---"
 
   @148905    @validateIsSearchWorkingForSpecialCharNumberAndAlphabetsTogetherSearchedInFlexTableQuickSearchBox
   Scenario: Validate search is working for special char,number,alphabets searched in flex table quick search box
@@ -17757,7 +17757,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Road Construction"
-    Then I see value "90,000%" for title "Percent" inside table "---program:-:programsTableId---"
+    Then I see value "90,000%" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
@@ -17784,10 +17784,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than or Equal to | 08/25/2023 |
-    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @148810     @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAdminUser @abhishekS
   Scenario: validate date and time field is working in advance filter for pacific time zone by login as admin user
@@ -17800,10 +17800,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than or Equal to | 08/25/2023 |
-    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @148812 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
   Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
@@ -17816,10 +17816,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Greater than | 06/30/2022 |
-    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @148813 @verifyDateTimeWorkingInAdvanceFilterForPacificTimeZoneByLoginAsAAdminUser @vaibhavC
   Scenario: Validate date time field is working in advance filter for pacific time zone by login as a admin user
@@ -17832,10 +17832,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | en_US  | America/Los_Angeles |
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "---program:-:programsTableId---"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values inside id "advfPrograms"
       | Start Date | Less than | 01/01/2029 |
-    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:programsTableId---"
+    Then I see value "08/25/2023" for title "Start Date" inside table "---program:-:ProgramsgridTableId---"
 
   @159944    @refreshBehaviourFieldAtRolesAndResponsilitiesFlexTableAsRefreshTheGrid  @abhishekS
   Scenario: validate flex table refresh behaviour-to refresh the grid
@@ -18036,7 +18036,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see value "Internal Program" for title "Record Type ID" inside table "---program:-:programsTableId---"
+    Then I see value "Internal Program" for title "Record Type ID" inside table "---program:-:ProgramsgridTableId---"
     Examples:
       | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                     |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,RecordType.Name |
@@ -19038,7 +19038,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19047,7 +19047,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19056,8 +19056,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
-    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19066,7 +19066,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19075,7 +19075,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19084,8 +19084,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
-    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19094,7 +19094,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19103,7 +19103,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19112,8 +19112,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:programsTableId---"
-    And I click on top right button "Bulk CSV" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "Bulk Pdf" in flex table with id "---program:-:ProgramsgridTableId---"
+    And I click on top right button "Bulk CSV" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see the following message in the page details contains:
       | You will receive an email within 30 minutes. If you haven't received any response, please contact your system administrator. |
 
@@ -19261,7 +19261,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see no "Total Records" count in "---program:-:programsTableId---"
+    Then I see no "Total Records" count in "---program:-:ProgramsgridTableId---"
 
   @217220 @TotalRecordCount
   Scenario: To verify that on disabling 'Enable Total Records Count' value and label of total records count not displayed on UI for respective flex table
@@ -19280,7 +19280,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see no "Total Records" count in "---program:-:programsTableId---"
+    Then I see no "Total Records" count in "---program:-:ProgramsgridTableId---"
 
   @217216 @PageSize
   Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
@@ -19294,7 +19294,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramsgridTableId---"
 
   @217217 @PageSize
   Scenario: To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
@@ -19313,7 +19313,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramsgridTableId---"
 
   @217218 @PageSize
   Scenario:To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
@@ -19329,7 +19329,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:programsTableId---"
+    Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramsgridTableId---"
 
   @217292 @DisableMenu
   Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
@@ -19343,7 +19343,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+    Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
   @217293 @DisableMenu
   Scenario: To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
@@ -19362,7 +19362,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+    Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
   @217294 @DisableMenu
   Scenario:  To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
@@ -19378,7 +19378,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+    Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
   @217415 @SortDirection
   Scenario: To verify that on selecting None option for Sort direction, records on flex table get sorted by ascending order
@@ -19441,7 +19441,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Applications" tab
-    Then I see Menu icon is disabled from planning flex table "---program:-:programsTableId---"
+    Then I see Menu icon is disabled from planning flex table "---program:-:ProgramsgridTableId---"
 
   @217316 @disablingPDFExportFile-gPlanning
   Scenario: To verify that on disabling 'Enable Export (PDF)' , Download as PDF link not displayed under Menu section on UI
@@ -19485,7 +19485,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" in flex table header "---program:-:programsTableId---"
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsgridTableId---"
 
   @217556 @HideColoumnJsonNotHideDataPMUser
   Scenario: Detail config - Hide column Json - PM - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
@@ -19498,7 +19498,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" in flex table header "---program:-:programsTableId---"
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsgridTableId---"
 
   @217557 @HideColoumnJsonNotHideDataSPIUser
   Scenario: Detail config - Hide column Json - SPI - UI - To verify that when user applied any wrong Hide Column Json then respective field not get hide on UI
@@ -19528,7 +19528,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" in flex table header "---program:-:programsTableId---"
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsgridTableId---"
 
   @217559 @HideCellJsonNotHideDataPmUser
   Scenario: To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
@@ -19541,7 +19541,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    Then I see "EGMS ID" in flex table header "---program:-:programsTableId---"
+    Then I see "EGMS ID" in flex table header "---program:-:ProgramsgridTableId---"
 
   @217560  @HideCellJsonNotHideDataSPIUser
   Scenario: Hide Cell Json - SPI - UI - To verify that when user applied any wrong Hide Cell Json then respective field not get hide on UI
