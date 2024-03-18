@@ -3,31 +3,31 @@ Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
 
-  @201270 @201271 @201272 @382218 @382223 @382247 @382248 @Sanity  @SanityModal
+  @201270p @201271 @201272 @382218 @382223 @382247 @382248 @Sanity  @SanityModal
   Scenario Outline:Modal- Admin- Config- Verify Pop-up window (modal window) should open,
   Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,
   Action- PM- UI - Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
@@ -43,7 +43,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Width     |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | OpenURL          | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 800              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
@@ -62,20 +62,20 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title     | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width     | 1000              | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title     | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width     | 1000            | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title     | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width     | 1000           | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see modal window is open in same tab with style "width: 1000"
     Examples:
       | Users |
@@ -91,7 +91,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Width     |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | OpenURL          | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 1000             | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
@@ -109,24 +109,24 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Save and Continue" at bottom of Attachment Modal
     Examples:
       | Users |
@@ -140,7 +140,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I click dropdown field "fieldType__c"
     When I pause execution for "3" seconds
     Then I see only the following ordered options in dropdown field "fieldType__c" :
@@ -158,7 +158,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "10" seconds
@@ -180,7 +180,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "Test" into field "Abbreviation__c"
     And I click on "Save and Continue" in the page details
@@ -200,7 +200,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "Automation Program 1234" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -218,19 +218,19 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | OpenURL           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Modal Title                |                   | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Modal Width                | 1000              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Location                   | Row               | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Header Action Display Type | Button            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | Open in overlay | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title                | Create Program  | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Width                | 1000            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Row             | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button          | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | OpenURL        | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title                | Create Program | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Modal Width                | 1000           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Location                   | Row            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type | Button         | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Admin Program for Advance filter"
@@ -261,7 +261,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see Required behavior under field "ProgramName__c" with star mark on modal
     Then I see Required behavior under field "Type__c" with star mark on modal
     Then I see Required behavior under field "Account__c" with star mark on modal
@@ -297,7 +297,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "fieldProgramName__c" is displayed at position "1" inside table table name "Information" in modal
     Then I see "fieldAbbreviation__c" is displayed at position "2" inside table table name "Information" in modal
     Then I see "fieldType__c" is displayed at position "3" inside table table name "Information" in modal
@@ -317,7 +317,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
@@ -333,7 +333,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @382237 @Sanity
@@ -341,7 +341,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field message with text as "Required to Save" and "Required to Submit"
 
   @207458 @2074
@@ -351,7 +351,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "7" seconds
@@ -375,7 +375,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I hovering mouse on i icon for field "Abbreviation" inside modal
     Then I see "<helpTextInModal>" shown as help text
 
@@ -398,7 +398,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Information" page block displayed
     Then I see "Program Specific Settings" page block displayed
     Examples:
@@ -411,24 +411,24 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Save and Continue" at bottom of Attachment Modal
     And I pause execution for "5" seconds
     Then I see "Create Program" modal window is open in same tab
@@ -449,7 +449,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see field "Website Name" inside page block
     Examples:
       | Users |
@@ -483,7 +483,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     When I hovering mouse on help text icon inside "Information"
     Then I see "<new_helpText>" shown as help text
     Examples:
@@ -503,7 +503,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Test Automation header instruction" shown as header instruction text in modal
 
   @382231 @Sanity
@@ -511,7 +511,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Test Automation header instruction" shown as header instruction text in modal
 
   @382252 @382253 @Sanity  @SanityModal
@@ -526,7 +526,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           | old_helpText |
@@ -545,7 +545,7 @@ Business Need: Modal Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I softly see "<new_helpText>" shown as page instruction text
     Examples:
       | Users | new_helpText           | old_helpText |
@@ -715,7 +715,7 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Program Information" Tab title displays on modal
 
   @382248 @Sanity
@@ -723,5 +723,5 @@ Business Need: Modal Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     Then I see "Program Information" Tab title displays on modal

@@ -783,16 +783,16 @@ Business Need: Snapshot Config Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
-    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "6" seconds
     And I click on "Edit" in the page details
@@ -909,16 +909,16 @@ Business Need: Snapshot Config Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
-    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "6" seconds
     And I click on "Edit" in the page details
@@ -1036,16 +1036,16 @@ Business Need: Snapshot Config Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
     And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
-    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "6" seconds
     And I click on "Edit" in the page details
