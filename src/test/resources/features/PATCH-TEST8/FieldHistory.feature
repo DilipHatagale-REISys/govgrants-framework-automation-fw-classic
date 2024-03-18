@@ -35,7 +35,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -79,7 +79,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -122,7 +122,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -165,7 +165,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -209,7 +209,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -252,7 +252,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -332,7 +332,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -473,7 +473,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -541,7 +541,7 @@ Business Need: history Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -802,7 +802,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
@@ -824,7 +824,7 @@ Business Need: history Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     When I enter "ProgramCreationFlow_v" values from "Field_Values_For_Flow.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds

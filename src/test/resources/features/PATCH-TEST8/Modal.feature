@@ -3,31 +3,31 @@ Business Need: Modal Component Scenarios
   Test all Modal component based scenarios
   As a configuration manager i make different configurational changes in Modal component and will validate them.
 
-  @201270 @201271 @201272 @382218 @382223 @382247 @382248 @Sanity  @SanityModal
+  @201270p @201271 @201272 @382218 @382223 @382247 @382248 @Sanity  @SanityModal
   Scenario Outline:Modal- Admin- Config- Verify Pop-up window (modal window) should open,
   Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,
   Action- PM- UI - Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
+    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
@@ -43,7 +43,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Width     |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | OpenURL          | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 800              | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
@@ -62,15 +62,15 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ? | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title     | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width     | 1000              | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ? | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title     | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width     | 1000            | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName       | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title     | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width     | 1000           | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -91,7 +91,7 @@ Business Need: Modal Component Scenarios
       | Flex Table Action     | Modal Width     |                   | Programs           | Name                      | View                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Action Behavior | Open in overlay  | GrantsList         | Name                      | View                       |
+      | Flex Table Action     | Action Behavior | OpenURL          | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Title     | Automation Title | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Modal Width     | 1000             | GrantsList         | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
@@ -109,19 +109,19 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -218,19 +218,19 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | OpenURL           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Modal Title                |                   | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Modal Width                | 1000              | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Location                   | Row               | DataTableEnhanceProgramContacts | Name                      | Edit                       |
       | Flex Table Action     | Header Action Display Type | Button            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Action Behavior            | Open in overlay | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Title                | Create Program  | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Modal Width                | 1000            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Location                   | Row             | DataTableEnhanceProgramContacts | Name                      | Edit                       |
-      | Flex Table Action     | Header Action Display Type | Button          | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Action Behavior            | OpenURL        | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Modal Title                | Create Program | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Modal Width                | 1000           | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Location                   | Row            | DataTableEnhanceProgramContacts | Name                      | Edit                       |
+      | Flex Table Action     | Header Action Display Type | Button         | DataTableEnhanceProgramContacts | Name                      | Edit                       |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Admin Program for Advance filter"
@@ -411,19 +411,19 @@ Business Need: Modal Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL           | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
       | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
       | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
       | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName                  | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ?            | Modal          | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior            | OpenURL        | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title                | Create Program | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width                | 1000           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Location                   | Top            | Programs           | Name                      | New                        |
+      | Flex Table Action     | Header Action Display Type | Button         | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab

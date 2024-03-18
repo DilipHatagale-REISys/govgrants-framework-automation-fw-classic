@@ -11,7 +11,7 @@ import java.util.List;
 
 public class QuickSearch {
     private final By
-            searchInput = By.cssSelector("div>div.quick-search>div>input"),
+            searchInput = By.cssSelector("div>div.quick-search>div>input, div>input[id='Programs_quickserchtext']"),
             quickSearchButton = By.cssSelector("div.input-group-btn>a>i.fa.fa-search"),
             globalSearchInput = By.cssSelector("div.input-group>input#isTypeNotAhead"),
             globalSearchButton = By.cssSelector("div.input-group>a>i.fa.fa-search");
@@ -152,11 +152,11 @@ public class QuickSearch {
      * @param searchElement
      * @param tableId
      * @param searchTerm
+     * @return
      * @modifier Monu.Kumar
      * <p>
-     *     Modified css path at line 166 and 172
+     * Modified css path at line 166 and 172
      * </p>
-     * @return
      */
     private boolean handleQuickSearch(Elements searchElement, String tableId, String searchTerm) {
         boolean flag = false;

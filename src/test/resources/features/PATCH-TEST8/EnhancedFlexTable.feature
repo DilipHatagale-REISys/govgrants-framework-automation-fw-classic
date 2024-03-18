@@ -11,9 +11,9 @@ Business Need: DataTableEnhanced Component Scenarios
       | Page Tabs Config          | Is Active      | false              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List           | Is Master View | false         | FederalPrograms       | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List           | Is Master View | false         | FederalPrograms       | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List           | Is Master View | true          | FederalPrograms       | Name                      | FLV-3837                   |
-      | Page Tabs Config:Page Layout Action | Is Active      | true          | Grantor State Program | Name                      | TAB-3262                   |
+      | Page Tabs Config:Page Layout Action | Is Active      | true          | Grantor State Program | Name                      | TAB-3330                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -22,7 +22,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Component testing " sub tab
+    When I navigate to "Component testing" sub tab
     #258152 #258153
     Then I see "Test 4" page block displayed
      #258584 #258588
@@ -37,7 +37,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3837                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 4" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -51,7 +51,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3836                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -76,7 +76,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3836                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 3" on page "1" of "govgrants" pdf file
     And I pause execution for "3" seconds
     Examples:
@@ -91,8 +91,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -114,8 +114,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I download the file
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3835                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2872                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 2" on page "1" of "govgrants" pdf file
     Examples:
       | User  |
@@ -129,7 +129,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -163,7 +163,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -177,7 +177,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Atleast one list view should be marked as a Master List View |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Examples:
       | User  |
       | ADMIN |
@@ -190,8 +190,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -205,8 +205,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Two Master List Views are not allowed |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2872                   |
     Examples:
       | User  |
       | ADMIN |
@@ -219,7 +219,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -231,7 +231,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Atleast one list view should be marked as a Master List View |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
 
  @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
   Scenario: To verify when any 2 list views are marked as true for 'Is master view' then getting the error message as only list view can be master view. (SPI)
@@ -240,8 +240,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -253,8 +253,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Two Master List Views are not allowed |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2872                   |
 
   @wip @271925 @271917 @271918 @Toverifywhen'showinPDF'isfalseforeachlistview&whenuserselectslistviewas'Test4&clickson'downloadasPDF'thenrecordswhichcomesunder'Test4'shouldshow(SPI) @vrushali @sprint-19
   Scenario: To verify when 'show in PDF' is false for each list view and when user selects the list view as 'Test 4' and clicks on 'download as PDF' then records which comes under 'Test 4' should show (SPI)
@@ -263,7 +263,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3837                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -286,7 +286,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3837                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 4" on page "1" of "govgrants" pdf file
 
  @wip  @271926 @271919 @271920 @Toverifywhen'Ismasterview'istruefor'Test3'listviewpageisrefreshedhenitwilllandon'Test3'listview(SPI) @vrushali @Sprint-19
@@ -296,7 +296,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3836                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -320,7 +320,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3836                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 3" on page "1" of "govgrants" pdf file
 
   @wip @271927 @271921 @271922 @Toverifywhen'Ismasterview'istruefor'Test2'listviewpagesrefreshedthenitwilllandon'Test2'listview(SPI) @Vrushali @Sprint-19
@@ -330,8 +330,8 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3834                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3835                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2254                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2872                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -352,8 +352,8 @@ Business Need: DataTableEnhanced Component Scenarios
     And I download the file
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-3835                   |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | false         | FederalPrograms    | Name                      | FLV-2872                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 2" on page "1" of "govgrants" pdf file
 
  @wip @271928 @271924 @271923 @Toverifywhen'Ismasterview'istruefor'Test1'listviewpageisrefreshedthenitwilllandon'Test1'listview(SPI) @Vrushali @Sprint-19
@@ -363,7 +363,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-3834                   |
+      | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab

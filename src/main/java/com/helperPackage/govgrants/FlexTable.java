@@ -453,7 +453,7 @@ public final class FlexTable implements FlexTableComponent {
             I.amPerforming().getElementReference().of((By.xpath("//div[@id='" + flexTableDivId + "']//tr")));
             WebElement row = I.amPerforming().getElementReference().of((By.xpath("//div[@id='" + flexTableDivId + "']//*[" + I.amPerforming().sanityOfXpathTo().equals("text()", columnValue) + "]//ancestor::tr[1]")));
             Map<String, Integer> columnMapping = constructColumnMapping(row, Collections.singleton(columnTitle));
-            I.amPerforming().getElementReference().ofNested(row, By.xpath(".//td[not(contains(@class, 'ng-hide'))][" + columnMapping.get(columnTitle) + "]//descendant-or-self::*[" + I.amPerforming().sanityOfXpathTo().equals("text()", columnValue) + "] | //span[@title='"+columnValue+"']"));
+            I.amPerforming().getElementReference().ofNested(row, By.xpath(".//td[not(contains(@class, 'ng-hide'))][" + columnMapping.get(columnTitle) + "]//descendant-or-self::*[" + I.amPerforming().sanityOfXpathTo().equals("text()", columnValue) + "] | //span[@title='" + columnValue + "']"));
             return true;
         } catch (Exception e) {
             return false;
@@ -521,7 +521,7 @@ public final class FlexTable implements FlexTableComponent {
     public List<Elements> getCompleteTableRow(String tableId) {
         By tableRow = By.xpath("//div[@id='" + tableId
                 + "']//div[contains(@class,'panel-body')]//div/table/tbody/tr | //div[@id='" + tableId + "']//div/table/tbody/tr |" +
-                "//div[@id='"+ tableId +"']//div/table/tbody/tr//td//span[@class='pull-right ng-scope']");
+                "//div[@id='" + tableId + "']//div/table/tbody/tr//td//span[@class='pull-right ng-scope']");
         return I.amPerforming().getElementReference().forListOfElements().of(tableRow);
     }
 
@@ -572,7 +572,8 @@ public final class FlexTable implements FlexTableComponent {
      * @modifier saranjit.modak (04/01/2022) - Added Condition for OSPI testcase 117618 specific
      */
     public By getTopRightButtonLocatorByTableId(String flexTableDivId, String buttonName) {
-        By locator = By.xpath("//*[" + I.amPerforming().sanityOfXpathTo().equals("@id", flexTableDivId) + "]"
+        By locator = By.xpath("//div[@id='" + flexTableDivId + "']/preceding-sibling::div//button[@title='" + buttonName + "'] |" +
+                " //*[" + I.amPerforming().sanityOfXpathTo().equals("@id", flexTableDivId) + "]"
                 + "//div[" + I.amPerforming().sanityOfXpathTo().contains("@class", "panel-heading") + "]"
                 + "//*[" + I.amPerforming().sanityOfXpathTo().equals("text()", buttonName)
                 + " or " + I.amPerforming().sanityOfXpathTo().equals("@value", buttonName)
@@ -591,10 +592,9 @@ public final class FlexTable implements FlexTableComponent {
                 + "//div[" + I.amPerforming().sanityOfXpathTo().contains("@class", "active") + "]//button[" + I.amPerforming().sanityOfXpathTo().equals("@id", flexTableDivId) + "]"
         );
         try {
-            if(EnvironmentFactory.getProjectName().contains("OSPI") && ScenarioController.getScenario().getSourceTagNames().contains("@117618")){
+            if (EnvironmentFactory.getProjectName().contains("OSPI") && ScenarioController.getScenario().getSourceTagNames().contains("@117618")) {
                 I.amPerforming().checkToSee().isElementDisplayed(locator);
-            }
-            else{
+            } else {
                 I.amPerforming().waitFor().ElementToBePresent(locator, 2);
             }
         } catch (Exception ee) {
@@ -790,7 +790,7 @@ public final class FlexTable implements FlexTableComponent {
      * @modifier saranjit.modak added xpath
      */
     public void clickOnLinkInsideTable(String tableId, String linkText) {
-        I.amPerforming().click().on(By.xpath("//*[@id='" + tableId + "']//a[contains(text(),'" + linkText + "')]|//*[@id='"+tableId+"']//span[contains(text(),'"+linkText+"')]"));
+        I.amPerforming().click().on(By.xpath("//*[@id='" + tableId + "']//a[contains(text(),'" + linkText + "')]|//*[@id='" + tableId + "']//span[contains(text(),'" + linkText + "')]"));
     }
 
     /**

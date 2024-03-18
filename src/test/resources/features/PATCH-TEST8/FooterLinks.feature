@@ -40,7 +40,7 @@ Business Need: Footer Links Component Scenarios
     And I refresh the page
     Then I see "Terms and Conditions" footer link is present
 
-  @69951   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks @footerLinks
+  @69951p   @expectedTargetURLShouldGetsOpenByClickOnFooterLinks @footerLinks
   Scenario Outline: validate given target URL opens by click on 508 Compliance link from footer
     Given I have "customAppFooter" configuration as below:
       | id              | Name | DisplayText    | TargetURL                            | Sequence | booleanValue                                         | customSettingApiName          |
@@ -56,4 +56,4 @@ Business Need: Footer Links Component Scenarios
     Then I see "Complete" "<Logout_URL>" page is displayed
     Examples:
       | Logout_URL                                                                                 |
-      | https://test8-internal--fwautomat--gnt.sandbox.vf.force.com/apex/Help?uniqueName=Help-0113 |
+      | https://test8-internal--frwpatch--gnt.sandbox.vf.force.com/apex/Help?uniqueName=Help-0113 |

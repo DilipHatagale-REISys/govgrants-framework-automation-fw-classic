@@ -1,4 +1,4 @@
-@wip @ExpressionBuilder-component @regression-QA @expressionBuilder
+@ExpressionBuilder-component @regression-QA @expressionBuilder
 Business Need: Expression Builder Component Scenarios
   Test all expression builder component based scenarios
   As a configuration manager i make different configurational changes in expression builder component and will validate them.
@@ -17,7 +17,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42369    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
+  @42369p    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
   Scenario: validate disabling of create button for Admin user from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -175,7 +175,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
+  @42499p    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
   Scenario: validate disabling of create button for context view with operator IN -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -186,9 +186,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -203,9 +203,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -220,9 +220,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -237,9 +237,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -254,9 +254,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -301,9 +301,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -350,9 +350,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -367,9 +367,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -384,9 +384,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -401,9 +401,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -418,9 +418,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -435,9 +435,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -452,9 +452,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -469,9 +469,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -486,9 +486,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -503,9 +503,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -520,9 +520,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -537,9 +537,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -554,9 +554,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -571,9 +571,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -588,9 +588,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -605,9 +605,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -622,9 +622,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -639,9 +639,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -656,9 +656,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -673,9 +673,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -690,9 +690,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -707,9 +707,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -724,9 +724,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -741,9 +741,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -758,9 +758,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -775,9 +775,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -792,9 +792,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -809,9 +809,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -826,9 +826,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -843,9 +843,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -860,9 +860,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -877,9 +877,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -894,9 +894,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
 
@@ -911,9 +911,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @43891    @hideExpressioJsonForLeftOperandForProfilePMAndSystemAdminAtPageLayout-gPlanning @smoke
@@ -927,9 +927,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @43892    @hideExpressioJsonForLeftOperandForProfileSystemAdminAndPMAtPageLayout-gPlanning
@@ -943,9 +943,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @43893    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInAtPageLayout-gPlanning
@@ -960,8 +960,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44158    @hideExpressioJsonForLeftOperandForProfilePMWithOperatorNotInLoggingAsAdmminAtPageLayout-gPlanning @smoke
@@ -975,9 +975,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44160    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorInAtPageLayout-gPlanning
@@ -991,9 +991,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44210    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
@@ -1007,9 +1007,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44211    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
@@ -1023,9 +1023,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44212    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Internal-gPlanning
@@ -1039,9 +1039,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44213    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Reviewer-gPlanning
@@ -1055,9 +1055,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44214    @hideExpressioJsonForLeftOperandForUserTypeInternalAndReviewerAndApplicantWithOPeratorInAtPageLayout-Applicant-gPlanning
@@ -1071,9 +1071,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "FO" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44215    @hideExpressioJsonForLeftOperandForContextViewWithOperatorInAtPageLayout-gPlanning
@@ -1087,9 +1087,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44216    @hideExpressioJsonForLeftOperandForContextViewWithOperatorNotInAtPageLayout-gPlanning
@@ -1103,9 +1103,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44222    @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
@@ -1119,9 +1119,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44223    @hideExpressioJsonForLeftOperandForUserTypeStateAsGranteeWithOperatorInAtPageLayout-gAnnouncement @wip
@@ -1168,9 +1168,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44285    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorANDAtPageLayout-gPlanning @smoke
@@ -1184,9 +1184,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44286    @hideExpressioJsonForLeftOperandForProfileSystemAdministratorAndUserTypeInternalInternalWithOperatorORAtPageLayout-gPlanning
@@ -1200,9 +1200,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44316    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorANDAtPageLayout-gPlanning
@@ -1216,9 +1216,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44317    @hideExpressioJsonForLeftOperandForUserTypeInternalContextViewWithOperatorORAtPageLayout-gPlanning
@@ -1232,9 +1232,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @44318    @hideExpressioJsonForLeftOperandForUserTypeInternalUserAppSAGrantorWithOperatorANDAtPageLayout-gPlanning @smoke
@@ -1248,9 +1248,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45289    @HideExpressionLeftOperandUseOROperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
@@ -1264,9 +1264,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45291    @HideExpressionLeftOperandUseANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning
@@ -1280,9 +1280,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45294    @HideExpressionLeftOperandUseAllDataTypesOfFieldUsingANDOperatorWithWHEREClauseAsADMINandAppAsStateGrantorPageLayout-gPlanning @smoke
@@ -1296,9 +1296,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     And I pause execution for "10" seconds
     Then I see "Submit For Approval" button is not displayed
 
@@ -1313,9 +1313,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45296    @hide_expression_using_AND_operator_for_all_fields_using_group_expression
@@ -1329,9 +1329,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45306    @hide_expression_using_OR_operator_using_group_expression
@@ -1345,25 +1345,25 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @45311    @hide_expression_using_IN_operator_for_left_operand_profile_as_Admin
   Scenario: Page Tab - Verify Hide expression JSON for Left Operand= Profile as "Admin" and  operator = "IN"
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorIN | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
 
@@ -1371,176 +1371,176 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operand and Left operator as Profile PM -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndUserPM | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndUserPM | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45316    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand=Profile_As_Admin_PM
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operand and Left operator as Profile Admin PM -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorORAndUserAdminPM | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45317    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_USERTYPE=Internal
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand USERTYPE
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorINAndOperandUSERTYPE | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45319    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_USERTYPE=Internal @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand USERTYPE
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOveriviewHideExpressionWithOperatorANDAndOperandUSERTYPEAsInternal | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45320    @hide_expression_Overview_Tab_using_IN_operator_and_Left_Operand_AS_Context_View
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with IN operator and Left Operand AS Context View
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandAsViewAndOperatorIN | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45322    @hide_expression_Overview_Tab_using_NOTIN_operator_and_Left_Operand_AS_Context
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with NOTIN operator and Left Operand AS Context
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45323    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context View and Admin Profile
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextViewAndAdminProfileAndOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45324    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_Profile
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context And Profile
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAndProfileWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45325    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_View_And_Admin_Profile @smoke
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context View and Admin Profile
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandASContextAsViewAndProfileAsAdminWithOperatorOR | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45327    @hide_expression_Overview_Tab_using_AND_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with AND operator and Left Operand AS Context and UserType
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextAndUserTypeWithOperatorAND | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45329    @hide_expression_Overview_Tab_using_OR_operator_and_Left_Operand_AS_Context_And_UserType
   Scenario: Hide OVERVIEW Tab for user type internal and user app state as Grantor with OR operator and Left Operand AS Context and UserType
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabOverviewHideExpressionWithLeftOperandContextEditCreateWithNOTINOperatorUserTypeWithINOperatorUsingOROperator | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @45702    @hide_expression_Program_Information_Page_Block_IN_Operator_SysAdmin_Profile
@@ -1554,9 +1554,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45704    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_User_Profile
@@ -1570,9 +1570,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45705    @hide_expression_Program_Information_Page_Block_IN_Operator_PM_ADMIN_User_Profile @smoke
@@ -1586,9 +1586,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45709    @hide_expression_Program_Information_Page_Block_UserTypeIN_Internal_AND_ProfileIN_SystemAdministrator
@@ -1602,9 +1602,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45707    @hide_expression_Program_Information_Page_Block_LeftOperandsprofileNOTINoperator_ADMIN_PM @smoke
@@ -1618,9 +1618,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45708    @hide_expression_Program_Information_Page_Block_LeftOperands_UserTypeIN_Internal
@@ -1634,9 +1634,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45711    @hide_expression_Program_Information_Page_Block_Title_Context_InEdit
@@ -1650,9 +1650,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45712    @hide_expression_Program_Information_Page_Block_Title_Context_InView
@@ -1666,9 +1666,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45713    @hide_expression_Program_Information_Page_Block_Title_Context_NotIn_With_Create_Edit
@@ -1682,9 +1682,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45719    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_UserType_IN_Internal
@@ -1698,9 +1698,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45717    @hide_expression_Program_Information_Page_Block_Title_Context_Context_NOT_IN_Edit_Create_AND_UserType_IN_Internal
@@ -1714,9 +1714,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45716    @hide_expression_Program_Information_Page_Block_Title_Context_Context_IN_View_OR_Profile_IN_System_Administrator
@@ -1730,9 +1730,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45714    @hide_expression_Program_Information_Page_Block_Title_Context_IN_View_AND_Profile_IN_System_Administrator
@@ -1746,9 +1746,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45715    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_Validate_using_PM_profile @smoke
@@ -1762,9 +1762,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can see "Information" page block displayed
 
   @45868    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_EqualTo_400000
@@ -1778,9 +1778,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
@@ -1794,9 +1794,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45875    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_greaterThan_5678
@@ -1810,9 +1810,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45876    @hide_expression_Program_Information_Page_Block_Title_For_Field_Number__c_lessThan_5678
@@ -1826,9 +1826,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45877    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_equalto_true
@@ -1842,9 +1842,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
@@ -1858,9 +1858,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45748    @hide_expression_Program_Information_Page_Block_Title_Context_NOT_IN_Edit_Create_OR_Profile_IN_System_Administrator_PMUser
@@ -1874,9 +1874,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45821    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_IN_StateasGrantor
@@ -1890,9 +1890,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45822    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_NOT_IN_StateasGrantor
@@ -1906,9 +1906,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45843    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_ProgramType__c_Grant @smoke
@@ -1922,9 +1922,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45844    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_ProgramType_c_Grant
@@ -1938,9 +1938,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45845    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account_r_Name_Department_of_Community_Health
@@ -1954,9 +1954,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45850    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_less_than_equals_StartDate__c_11_30_2020
@@ -1970,9 +1970,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smoke
@@ -1986,9 +1986,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45848    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_NOT_Equals_FunderType__c_Federal
@@ -2002,9 +2002,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45846  @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account__r_Name_Department_of_Community_Health @smoke
@@ -2018,9 +2018,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45847    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FederalProgramCFDA__c_CONTAINS_TPA01
@@ -2034,9 +2034,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
@@ -2050,9 +2050,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45855    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_UserApp_IN_StateasGrantor_for_AND
@@ -2066,9 +2066,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45859    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_FunderType__c_CONTAINS_Federal
@@ -2082,9 +2082,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45879    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_CFDA_Data__c_equalto_true_for_OR
@@ -2098,9 +2098,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
@@ -2114,9 +2114,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45918    @hide_expression_ProgramCode_With_UserType_NotIn_Internal
@@ -2130,9 +2130,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45919    @hide_expression_ProgramCode_With_Profile_In_SystemAdministrator
@@ -2146,9 +2146,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45920    @hide_expression_ProgramCode_With_Context_In_View @smoke
@@ -2162,9 +2162,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45921    @hide_expression_ProgramCode_With_Context_In_Edit
@@ -2178,9 +2178,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45923    @hide_expression_ProgramCode_With_Context_NotIn_View
@@ -2194,9 +2194,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45924    @hide_expression_ProgramCode_With_Context_NotIn_Edit
@@ -2210,9 +2210,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45925    @hide_expression_ProgramCode_With_UserApp_In_StateAsGrantor @smoke
@@ -2226,9 +2226,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45926    @hide_expression_ProgramCode_With_UserApp_NotIn_StateAsGrantor
@@ -2242,9 +2242,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Program Code" inside page block
 
   @45930    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_AND
@@ -2258,9 +2258,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45932    @hide_expression_ProgramCode_With_UserType_Internal_Profile_Admin_Operator_OR
@@ -2274,9 +2274,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45933    @hide_expression_ProgramCode_With_Context_AND_UserApp_StateAsGrantor
@@ -2290,9 +2290,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45934    @hide_expression_ProgramCode_With_Context_OR_UserApp_StateAsGrantor
@@ -2306,9 +2306,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Code" is not displayed inside page block detail
 
   @45823    @hide_expression_Program_Information_Page_Block_Title_Context_UserApp_IN_StateasGrantor_PM
@@ -2322,9 +2322,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45853    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_FunderType__c_Federal_OR_ProgramType__c_Grant
@@ -2338,9 +2338,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45852    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_StartDate__c_11_30_2020
@@ -2354,9 +2354,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45851    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Equals_StartDate__c_11_30_2020
@@ -2370,9 +2370,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @46314    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_In_Operator
@@ -2386,9 +2386,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45962    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_NotIN_SystemAdmin_PM_SPI
@@ -2398,13 +2398,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_Admin_PM_SPI | Grantor State Program | Name                      | PB-6612                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_NOTIN_Admin_PM_SPI | Grantor State Program | Name                      | PB-6822                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Specific Settings" page block displayed
 
   @45959    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_IN_Internal
@@ -2414,13 +2414,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal | Grantor State Program | Name                      | PB-6612                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_IN_Internal | Grantor State Program | Name                      | PB-6822                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see "Program Specific Settings" page block displayed
 
   @45960    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal
@@ -2430,13 +2430,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal | Grantor State Program | Name                      | PB-6612                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal | Grantor State Program | Name                      | PB-6822                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Specific Settings" page block displayed
 
   @45963    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_UserType_NotIN_Internal_Applicant_Reviewer
@@ -2446,13 +2446,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant_Review | Grantor State Program | Name                      | PB-6612                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_UserType_NOTIN_Internal_Applicant_Review | Grantor State Program | Name                      | PB-6822                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Program Specific Settings" page block displayed
 
   @45964    @hide_expression_Budget_Period_Details_Page_Block_LeftOperand_Profile_IN_or_UserType_IN
@@ -2462,13 +2462,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_or_UserType_IN | Grantor State Program | Name                      | PB-6612                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Profile_IN_or_UserType_IN | Grantor State Program | Name                      | PB-6822                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see "Program Specific Settings" page block displayed
 
   @45965    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Profile_IN_PM_SystemAdmin_SPI
@@ -2482,9 +2482,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
 
   @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
@@ -2498,9 +2498,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Contacts@1234567890!@#$%^&*()" page block displayed
 
   @45967    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
@@ -2514,9 +2514,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Contacts@1234567890!@#$%^&*()" page block displayed
 
   @45969    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
@@ -2530,9 +2530,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
 
   @45984    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NOTIN_SPI_PM
@@ -2546,9 +2546,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45985    @hide_expression_Program_Information_Page_Block_LeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth
@@ -2562,9 +2562,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45986    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @smoke
@@ -2578,9 +2578,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45988    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_IN_SystemAdministrator_OR_PM
@@ -2594,9 +2594,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45989    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_NOTIN__Internal_Applicant
@@ -2610,9 +2610,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
 
   @45991    @hide_expression_Program_Information_Page_Block_LeftOperand_UserType_IN_Internal_Applicant_Reviewer @smoke
@@ -2626,9 +2626,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @45993    @hide_expression_Program_Information_Page_Block_LeftOperand_Federal_OR_StartDate
@@ -2642,9 +2642,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @46051    @hide_expression_Program_Information_Page_Block_LeftOperand_Funder_OR_UserApp
@@ -2658,9 +2658,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @46064    @hide_expression_Program_Information_Page_Block_LeftOperand_ExpectedFunding_OR_UserApp
@@ -2674,9 +2674,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @46065    @hide_expression_Program_Information_Page_Block_LeftOperand_UserApp_IN
@@ -2690,9 +2690,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
   @46370    @hide_expression_Website_Address_Page_Block_Details_With_FunderType_c_Contains_Federal @smoke
@@ -2706,9 +2706,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46371    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_equalto_40000
@@ -2722,9 +2722,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46372    @hide_expression_Website_Address_Page_Block_Details_With_FunderAccount_c_notequalto_40000
@@ -2738,9 +2738,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
   @46373    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_greaterequalto_11_30_2020 @smoke
@@ -2754,9 +2754,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46375    @hide_expression_Website_Address_Page_Block_Details_With_StartDate_c_lessequalto_11_30_2020
@@ -2770,9 +2770,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46376    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterthan_5678 @smoke
@@ -2786,9 +2786,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
   @46377    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessthan_5678
@@ -2802,9 +2802,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
   @46378    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_equalto_true
@@ -2818,9 +2818,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46379    @hide_expression_Website_Address_Page_Block_Details_With_CFDA_Data_c_notequalto_true
@@ -2834,9 +2834,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
   @46380    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_greaterequalto_5678
@@ -2850,9 +2850,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46386    @hide_expression_Website_Address_Page_Block_Details_With_CONTAINS_OR_Number @smoke
@@ -2866,9 +2866,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @45302    @hide_expression_SubmitForApproval_Page_Layout_Using_GROUP_EXPRESSION_With_AND_Operator
@@ -2882,9 +2882,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
   @46381    @hide_expression_Website_Address_Page_Block_Details_With_Number_c_lessequalto_5678
@@ -2898,9 +2898,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46383    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_equalto_DepartmentOfCommunityHealth
@@ -2914,9 +2914,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46384    @hide_expression_Website_Address_Page_Block_Details_With_Account_r_Name_notequalto_DepartmentOfCommunityHealth
@@ -2930,9 +2930,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see field "Website Address" inside page block
 
   @46388    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_AND_FunderType_CONTAINS
@@ -2946,9 +2946,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46389    @hide_expression_Website_Address_Page_Block_Details_With_ExpectedFunding_OR_FunderType_CONTAINS
@@ -2962,9 +2962,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Website Address" is not displayed inside page block detail
 
   @46392    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Internal @smoke @wip
@@ -2978,7 +2978,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46393    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal @wip
@@ -2992,7 +2992,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46395    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator @smoke @wip
@@ -3006,7 +3006,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46396    @render_expression_SideBar_ManageFundingSource_With_Profile_NOTIN_SystemAdministrator @wip
@@ -3020,7 +3020,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46397    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal @wip
@@ -3034,7 +3034,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46398    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal @wip
@@ -3048,7 +3048,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46415    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_AND_Profile_IN_PM @wip
@@ -3062,7 +3062,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46416    @render_expression_SideBar_ManageFundingSource_With_Profile_IN_SystemAdministrator_OR_Profile_IN_PM @wip
@@ -3076,7 +3076,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46399    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke @wip
@@ -3090,7 +3090,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46400    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @wip
@@ -3104,7 +3104,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46417    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Reviewer @wip
@@ -3118,7 +3118,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46418    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Reviewer @wip
@@ -3132,7 +3132,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46401    @render_expression_SideBar_ManageFundingSource_With_UserType_IN_Applicant_Internal_Reviewer @wip
@@ -3146,7 +3146,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @46402    @render_expression_SideBar_ManageFundingSource_With_UserType_NOTIN_Applicant_Internal_Reviewer @wip
@@ -3160,7 +3160,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I do not see "Manage Funding Source" inside "Activities" is displayed
 
   @46403    @render_expression_CustomApp_With_UserType_IN_Internal @smoke
@@ -3294,7 +3294,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     Then I see "Manage Funding Source" inside "Activities" is displayed
 
   @47285    @render_expression_CustomApp_With_UserType_IN_Applicant_Reviewer
@@ -3971,9 +3971,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48481    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal @smoke
   Scenario: Set up configuration to display view action of program flex table using UserType NOTIN Internal and validating it inside flex table of program-planning
@@ -3986,9 +3986,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48482    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator and validating it inside flex table of program-planning
@@ -4001,9 +4001,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48483    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using profile NOTIN system administrator and validating it inside flex table of program-planning
@@ -4016,9 +4016,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48484    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator AND UserType IN Internal and validating it inside flex table of program-planning
@@ -4031,9 +4031,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48485    @hide_Expression_ProgramFlexTable_ViewAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
   Scenario: Set up configuration to hide view action of program flex table using profile IN system administrator OR UserType IN Internal and validating it inside flex table of program-planning
@@ -4046,9 +4046,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48486    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal AND profile NOTIN system administrator and validating it inside flex table of program-planning
@@ -4061,9 +4061,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48597    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using user type IN Internal and validating it inside program detail page-planning
@@ -4076,9 +4076,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48598    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal
@@ -4092,9 +4092,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48601    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor @smoke
@@ -4108,9 +4108,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48602    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Set up configuration to display Edit action of program flex table using User App NOTIN State As grantor and validating it inside flex table of program-planning
@@ -4123,9 +4123,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48600    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Set up configuration to display view action of program flex table using UserType IN Internal AND Profile IN PM and validating it inside flex table of program-planning
@@ -4138,9 +4138,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48603    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal AND UserApp IN StateAsGrantor and validating it inside flex table of program-planning
@@ -4153,9 +4153,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48604    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Internal OR UserApp IN StateAsGrantor and validating it inside flex table of program-planning
@@ -4168,9 +4168,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48605    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_IN_Applicant_Internal_Reviewer
   Scenario: Set up configuration to hide Edit action of program flex table using UserType IN Applicant Internal Reviewer and validating it inside flex table of program-planning
@@ -4183,9 +4183,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48606    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_IN_StateAsGrantor_Admin_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp IN StateasGrantor, Admin, Recipient and validating it inside flex table of program-planning
@@ -4198,9 +4198,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48607    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Admin
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Admin and validating it inside flex table of program-planning
@@ -4213,9 +4213,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48608    @hide_Expression_ProgramFlexTable_EditAction_With_UserApp_NOTIN_Recipient
   Scenario: Set up configuration to hide Edit action of program flex table using UserApp NOTIN Recipient and validating it inside flex table of program-planning
@@ -4228,9 +4228,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48609    @hide_Expression_ProgramFlexTable_EditAction_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Set up configuration to hide Edit action of program flex table using Profile IN System Administrator OR UserApp IN StateasGrantor and validating it inside flex table of program-planning
@@ -4243,9 +4243,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48610    @hide_Expression_ProgramFlexTable_EditAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
   Scenario: Set up configuration to hide Edit action of program flex table using UserType NOT IN Internal AND Profile NOT IN System Administrator and validating it inside flex table of program-planning
@@ -4258,9 +4258,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "Edit" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48611    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Set up configuration to display view action of program flex table using user type NOTIN Internal OR profile NOTIN system administrator and validating it inside flex table of program-planning
@@ -4273,9 +4273,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is displayed inside flex table
 
   @48612    @hide_Expression_ProgramFlexTable_ViewAction_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Set up configuration to hide view action of program flex table using User type IN Internal OR Profile IN PM and validating it inside flex table of program-planning
@@ -4288,9 +4288,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    Then I see "View" icon for "Automation Internal Program for Testing" is not displayed inside flex table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    Then I see "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" is not displayed inside flex table
 
   @48613    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator @smoke
   Scenario: Set up configuration to hide submit for approval status of program from step progress bar using Profile IN System Administrator and validating it inside program detail page-planning
@@ -4303,9 +4303,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48614    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_NOTIN_SystemAdministrator
@@ -4319,9 +4319,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48615    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -4335,9 +4335,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48616    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
@@ -4351,9 +4351,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48617    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
@@ -4367,9 +4367,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48618    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
@@ -4383,9 +4383,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48619    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_Profile_IN_PM
@@ -4399,9 +4399,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48620    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_Profile_IN_PM
@@ -4415,9 +4415,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48621    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor @smoke
@@ -4431,9 +4431,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48622    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_StateAsGrantor
@@ -4447,9 +4447,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is displayed inside step progress bar
 
   @48623    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
@@ -4463,9 +4463,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48624    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
@@ -4479,9 +4479,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48625    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_IN_Applicant_Internal_Reviewer
@@ -4495,9 +4495,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48626    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_IN_StateAsGrantor_Admin_Recipient @smoke
@@ -4513,7 +4513,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4535,9 +4535,9 @@ Business Need: Expression Builder Component Scenarios
 #    When I login to "As a Grantor" app as "ADMIN" user
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
-#    And I click toggle button to select "Internal Programs - Draft"
-#    When I perform quick search for "Automation Internal Program for Testing"
-#    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+#    And I click toggle button to select "Internal Programs - All"
+#    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+#    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48627    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Admin
@@ -4551,9 +4551,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48628    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserApp_NOTIN_Recipient
@@ -4567,9 +4567,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48629    @hide_Expression_StepProgressBar_SubmitForApproval_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
@@ -4583,9 +4583,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48630    @hide_Expression_StepProgressBar_SubmitForApproval_With_UserType_NOTIN_Internal_OR_Profile_IN_SystemAdministratror_EXE
@@ -4599,9 +4599,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @48634    @hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal @smoke
@@ -4617,7 +4617,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4659,7 +4659,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4700,7 +4700,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4741,7 +4741,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4783,7 +4783,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4824,7 +4824,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4866,7 +4866,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4907,7 +4907,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4949,7 +4949,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -4991,7 +4991,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5033,7 +5033,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5075,7 +5075,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5116,7 +5116,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5158,7 +5158,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5200,7 +5200,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5242,7 +5242,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5283,7 +5283,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5326,7 +5326,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5369,7 +5369,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5411,7 +5411,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5453,7 +5453,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5495,7 +5495,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5538,7 +5538,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5581,7 +5581,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -5621,9 +5621,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I see "Attachments" page block displayed
 
@@ -5638,9 +5638,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
@@ -5655,9 +5655,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
@@ -5672,9 +5672,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
@@ -5689,9 +5689,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
@@ -5706,9 +5706,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I see "Attachments" page block displayed
 
@@ -5723,9 +5723,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Files" sub tab
     Then I do not see "Attachments" page block displayed
 
@@ -5740,9 +5740,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5757,9 +5757,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5774,9 +5774,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5791,9 +5791,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5808,9 +5808,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5825,9 +5825,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5842,9 +5842,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5859,9 +5859,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5876,9 +5876,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5893,9 +5893,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5910,9 +5910,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5927,9 +5927,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
@@ -5944,9 +5944,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5961,9 +5961,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -5978,9 +5978,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
@@ -6187,9 +6187,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     #Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
     Then I see "Submit For Approval" button is not displayed
 
@@ -6197,16 +6197,16 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Hide Overview sub tab with left operand profile NOTIN -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory               | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |                   | Grantor State Program | Name                      | TAB-2673                   |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorNOTIN | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:PageTabsConfigOverviewHideExpressionWithOperatorNOTIN | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "EXE" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I cannot see "Overview" sub tab at view detail page
 
   @82039    @verifyHideExpressionJSONAtEnhancedGridForMultipleGroupsByAndOperatorAtRowLevelActions-EGrid @enhancedGrid @egrid
@@ -6363,9 +6363,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "Test Announcement 24-04-2018" in "---program:-:flexGridDataTableEnhanceProgramContactsId---" panel
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
@@ -6381,9 +6381,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
 
@@ -6400,9 +6400,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Remaining Grant Amount" not displayed in enhanced grid table column title
 
@@ -6445,9 +6445,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "Budget Periods" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "Budget Periods"
@@ -6939,9 +6939,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     When I click on "Edit" icon for "BP01" inside table
@@ -7245,9 +7245,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7268,9 +7268,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7291,9 +7291,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7314,9 +7314,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7337,9 +7337,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7360,9 +7360,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7383,9 +7383,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7406,9 +7406,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7430,9 +7430,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7453,9 +7453,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Cumulative Awarded Amount" not displayed in enhanced grid table column title
 
@@ -7476,7 +7476,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
@@ -7500,9 +7500,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7562,9 +7562,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7585,8 +7585,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    Then I see "New" button inside "Internal Programs - Draft" flex table not displayed
+    And I click toggle button to select "Internal Programs - All"
+    Then I see "New" button inside "Internal Programs - All" flex table not displayed
 
   @96670  @hideExpressionJSONAtFundingAccountFlexTableTopLevelActionWithProfileIN_SystemAdministratorORUserAppINStateAsGrantorAndUserTypeAsInternal
   Scenario: Set up configuration to hide Associate action of funding account by configuring json at Top action config-planning
@@ -7599,9 +7599,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table with table id "toggleFlexTablePrograms" without processing
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table with table id "toggleFlexTablePrograms" without processing
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
 
@@ -7639,7 +7639,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -7687,7 +7687,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
@@ -7711,7 +7711,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "PG-REI-2183"
     When I click on "View" icon for "PG-REI-2183" inside table
     When I navigate to "Overview" sub tab
@@ -7735,9 +7735,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7760,9 +7760,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7785,9 +7785,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     When I expand nested table containing column value "BP01"
@@ -7808,9 +7808,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I do not see "Description" in enhanced flex grid header "Review Steps"
 
@@ -7860,9 +7860,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Setup tabs" sub tab
     Then I do not see "Actions" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
 
@@ -7883,9 +7883,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I do not see "Actions" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
@@ -7903,9 +7903,9 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Internal Program for Testing"
-    When I click on "View" icon for "Automation Internal Program for Testing" inside table
+    And I click toggle button to select "Internal Programs - All"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "BP01" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "12.00%" shown inside enhanced grid table for specified record "BP01"
@@ -7927,7 +7927,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -7946,7 +7946,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -7965,7 +7965,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -7984,7 +7984,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8003,7 +8003,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8022,7 +8022,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8041,7 +8041,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8060,7 +8060,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8079,7 +8079,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8098,7 +8098,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8117,7 +8117,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8136,7 +8136,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "Edit" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8155,7 +8155,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8174,7 +8174,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Internal Program for Attachment Testing"
     When I click on "View" icon for "Automation Internal Program for Attachment Testing" inside table
     When I navigate to "Files" sub tab
@@ -8193,7 +8193,7 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:programsTableId---"
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
@@ -8438,7 +8438,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @217363 @217364
+  @217363p @217364
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify hide expression for actions can be used using Left operand as ‘Context’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -8458,7 +8458,7 @@ Business Need: Expression Builder Component Scenarios
     Examples:
       | Users |
       | Admin |
-      | PM    |
+#      | PM    |
 
   @217365
   Scenario Outline: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be used using Left operand as ‘Context’
@@ -8775,14 +8775,14 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @217427 @217428
+  @217427p @217428
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘In’  that field value should display ***** on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                   | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldIn | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldIn | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8802,7 +8802,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                      | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotIn | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotIn | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8823,7 +8823,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                       | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldEquals | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8844,7 +8844,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                          | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotEquals | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldNotEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8865,7 +8865,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8886,7 +8886,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                                  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThanEquals | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8907,7 +8907,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                         | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldLessThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8930,7 +8930,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8951,7 +8951,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8972,7 +8972,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -8993,7 +8993,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9014,7 +9014,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9035,7 +9035,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9056,7 +9056,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9077,7 +9077,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9098,7 +9098,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9119,7 +9119,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9140,7 +9140,7 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue                                                            | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-13608                  |
+      | Flex Table List       | Hide Cell JSON | govgrants_config:HideActionsColumnInContactsByLoperandAsFieldGreaterThan | DataTableEnhanceProgramContacts | Name                      | FTC-14073                  |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
@@ -9164,11 +9164,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9184,11 +9184,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppAsStateAsGrantor | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9204,11 +9204,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9270,11 +9270,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9290,11 +9290,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForUserAppIn | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9310,11 +9310,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6613                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6823                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9378,11 +9378,11 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
@@ -9399,7 +9399,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
+    And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Program for hide expression builder test"
     When I click on "View" icon for "Program for hide expression builder test" inside table
     Then I cannot see "Collab" sub tab at view detail page
@@ -11765,7 +11765,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11782,7 +11782,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11799,7 +11799,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11850,7 +11850,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11871,7 +11871,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11892,7 +11892,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11956,7 +11956,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11977,7 +11977,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11998,7 +11998,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6614                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Grantor State Program | Name                      | PB-6824                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12145,7 +12145,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12165,7 +12165,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12185,7 +12185,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12267,7 +12267,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12287,7 +12287,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2624                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2673                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
