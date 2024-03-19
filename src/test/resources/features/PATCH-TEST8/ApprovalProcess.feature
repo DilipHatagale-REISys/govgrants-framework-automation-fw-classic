@@ -3,7 +3,7 @@ Business Need: Approval Process Component Scenarios
   Test all approval process component based scenarios
   As a configuration manager i make different configurational changes in approval process component and will validate them.
 
-   @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity @SanityApprovalProcess
+   @ovi @34307  @383943 @383944 @381946 @383947 @381949 @381950 @changeApproveOptionSequence-Programs @Sanity @SanityApprovalProcess
   Scenario Outline: Changing sequence of Approve option from configuration and validating its sequence in pending tasks approval decision
   Sanity TC_PM_To verify that Start action is visible for submitted for approval record, under Pending task table(381944)
     Given I have "default" configuration as below:

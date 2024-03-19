@@ -5,7 +5,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   ############Test suite: Flex Table UI (Suite ID: 334515)############
 
-  @334978 @382479 @Sanity  @SanityFlexTable
+  @ew @334978 @382479 @Sanity  @SanityFlexTable
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |

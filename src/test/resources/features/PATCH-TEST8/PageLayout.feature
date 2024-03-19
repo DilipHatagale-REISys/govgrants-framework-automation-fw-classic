@@ -676,8 +676,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
@@ -698,8 +698,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
