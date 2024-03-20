@@ -4,7 +4,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
   As a configuration manager I make different configurational changes in SendEmail component and will validate them.
 
   ##########Test suite: Send Email UI/UX (Suite ID: 332319)##########
-  @332320
+  @332320p
   Scenario: UI - when Internal user Hover on the TO field help icon and help text is displayed
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -37,8 +37,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "To" inside Send Email Modal
@@ -77,8 +77,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Cc" inside Send Email Modal
@@ -116,8 +116,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
@@ -155,8 +155,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Subject" inside Send Email Modal
@@ -194,8 +194,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
@@ -233,8 +233,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
@@ -272,8 +272,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
@@ -309,8 +309,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
@@ -447,8 +447,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -772,8 +772,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -919,8 +919,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -987,8 +987,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1009,8 +1009,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -1029,8 +1029,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -1055,8 +1055,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:CcField}" email Search By field and select dropdown value as "External"
@@ -2271,8 +2271,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "snehal.mulange@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -2296,8 +2296,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -2313,8 +2313,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I upload attachment "SendEmailAttachment.pdf" in Send Email Modal
@@ -2326,8 +2326,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button send email modal
@@ -2343,8 +2343,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on "Select Files" button send email modal
@@ -2356,8 +2356,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2387,8 +2387,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I click on "{testData:ToField}" email Search By field and select dropdown value as "Internal"
@@ -2408,8 +2408,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Automationadminpm@yopmail.com,ashwini.mahore@reisystems.in" into field "{testData:ToField}" on send email modal
@@ -2424,8 +2424,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Automation Internal Program for send Email"
-    When I click on "View" icon for "Automation Internal Program for send Email" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ActiveProgramForSendEmailModule}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test Automation Email" into field "Subject" on send email modal
@@ -7168,8 +7168,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     When I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     When I enter value "Test Automation Email" into field "Subject" on send email modal
@@ -7308,8 +7308,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -7342,8 +7342,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "Internal" value
@@ -7361,8 +7361,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I click on dropdown inside "To" field and Select "External" value
@@ -7849,8 +7849,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     Then I see help text "*" is displayed related field "To" inside Send Email
@@ -7861,8 +7861,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
@@ -7969,8 +7969,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Body Content" inside Send Email Modal
@@ -7982,8 +7982,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Attachments" inside Send Email Modal
@@ -8661,8 +8661,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -8737,8 +8737,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on "Reply LWC" icon for "Subject" inside flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -8901,8 +8901,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
@@ -9144,8 +9144,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
     And I hover mouse on text "Select Files" inside Send Email Modal
@@ -9216,8 +9216,8 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
+    When I perform quick search for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}"
+    When I click on "View" icon for "{PatchFramework_recordUsed:ApplicationInCreatedStateOnlyForSPI}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email LWC" in flex table with id "---program:-:communicationHistoryTableId---"
     And I pause execution for "5" seconds
