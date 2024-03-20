@@ -107,7 +107,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I click on "View" icon for "{Framework_recordUsed:SendEmailComponentActiveProgram}" inside table
     When I navigate to "Collab" sub tab
     And I click on top right button "Send Email" in flex table with id "---program:-:communicationHistoryTableId---"
-    And I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
+    When I hover mouse on text "Send Copy (Cc) to Me" inside Send Email Modal
     Then I see help text "Enable this checkbox to include yourself in Cc" is displayed related field "Send Copy (Cc) to Me" inside Send Email
 
   @332328
