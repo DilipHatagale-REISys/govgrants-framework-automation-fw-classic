@@ -1,4 +1,4 @@
-@EnhancedGrid-component @regression-PATCH @EnhancedGrid
+@EnhancedGrid-PATCHcomponent @regression-PATCH @EnhancedGrid
 Business Need: EnhancedGrid Component Scenarios
   Test all EnhancedGrid component based scenarios
   As a configuration manager i make different configurational changes in EnhancedGrid component and will validate them.
