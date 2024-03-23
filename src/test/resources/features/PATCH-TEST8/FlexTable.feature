@@ -16639,7 +16639,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
@@ -18105,7 +18105,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see quick search option is displayed
@@ -18121,7 +18121,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I pause execution for "6" seconds
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
@@ -18198,7 +18198,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
@@ -18995,7 +18995,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-9004                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19276,7 +19276,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "7" seconds
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19308,7 +19308,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19358,7 +19358,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"

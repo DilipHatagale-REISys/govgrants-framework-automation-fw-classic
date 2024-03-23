@@ -55,7 +55,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -99,7 +99,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -142,7 +142,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -185,7 +185,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -229,7 +229,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -352,7 +352,7 @@ Business Need: history Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel

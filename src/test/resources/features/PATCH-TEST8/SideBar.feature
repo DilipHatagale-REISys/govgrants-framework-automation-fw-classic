@@ -571,7 +571,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -588,7 +588,7 @@ Business Need: Side bar Component Scenarios
     When I check "{SavedValue:PEGMSID}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -628,7 +628,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -645,7 +645,7 @@ Business Need: Side bar Component Scenarios
     When I check "{SavedValue:PEGMSID}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -699,7 +699,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -751,7 +751,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -798,7 +798,7 @@ Business Need: Side bar Component Scenarios
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID1}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -869,7 +869,7 @@ Business Need: Side bar Component Scenarios
       | Automation-PM | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1137,7 +1137,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1154,7 +1154,7 @@ Business Need: Side bar Component Scenarios
     When I check "{SavedValue:PEGMSID}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -1400,7 +1400,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1417,7 +1417,7 @@ Business Need: Side bar Component Scenarios
     When I check "{SavedValue:PEGMSID}" boxes in flex table with id "---program:-:taskReassigneTableId---"
     And I click on top right button "Reassign" in flex table with id "---program:-:taskReassigneTableId---"
     Then I softly do not see value "{SavedValue:PEGMSID}" for title "EGMS ID" inside table "---program:-:taskReassigneTableId---"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -1461,7 +1461,7 @@ Business Need: Side bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
