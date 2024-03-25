@@ -26,7 +26,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257614 @257611 @US-255921 @379174 @Sanity @SanityEGrid
+  @257614 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -129,7 +129,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-  @257474 @379185  @Sanity @SanityEGrid @US-255921
+  @257474 @379185  @SanityPATCH @SanityPATCHEGrid @US-255921
   Scenario: To verify, Advanced filter should be working for newly added child record in the table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -156,7 +156,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379185
     Then I see value "Test Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257472 @379204 @379202 @379193 @Sanity @SanityEGrid
+  @257472 @379204 @379202 @379193 @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -646,7 +646,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257551
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
 
-  @35432 @379184   @Sanity @SanityEGrid @smoke
+  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -834,7 +834,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
 
-  @35439  @379181 @smoke @Sanity @SanityEGrid
+  @35439  @379181 @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -851,7 +851,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437 @379187 @379206 @Sanity @SanityEGrid @smoke
+  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -964,7 +964,7 @@ Business Need: EnhancedGrid Component Scenarios
       | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
-  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @Sanity @SanityEGrid
+  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1044,7 +1044,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:appBudgetPeriodTableId---"
 
-  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @Sanity @SanityEGrid
+  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @SanityPATCH @SanityPATCHEGrid
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1497,7 +1497,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
 
-  @44993  @379203  @Sanity @SanityEGrid
+  @44993  @379203  @SanityPATCH @SanityPATCHEGrid
   Scenario: Disabling the Advance Filter at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1576,7 +1576,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
     Then I see "Download as XLS" options inside "Budget Categories" disabled
 
-  @44996  @379200 @Sanity @SanityEGrid
+  @44996  @379200 @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of Quick Search field at Child Flex Table for Enhanced Grid - Planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1596,7 +1596,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379200
     Then I see quick search option disabled from enhanced grid for child flex table "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44997 @379205   @Sanity @SanityEGrid @smoke
+  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1642,7 +1642,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see select check box enabled for child flex table in enhanced flex grid
 
-  @45096 @379178  @Sanity @SanityEGrid
+  @45096 @379178  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate open new tab for view at parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1662,7 +1662,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379178
     Then I see new tab is opened
 
-  @45097  @379180 @379182  @Sanity @SanityEGrid
+  @45097  @379180 @379182  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate enhanced grid view action open in new window for parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1686,7 +1686,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "BP01" inside table
     Then I see new tab is opened
 
-  @45098  @379197 @Sanity @SanityEGrid
+  @45098  @379197 @SanityPATCH @SanityPATCHEGrid
   Scenario: validate enhanced grid view action open in new tab for child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1750,7 +1750,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see no new tab is opened
 
-  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @Sanity @SanityEGrid
+  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2691,7 +2691,7 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
 
-  @82800 @379175  @Sanity @SanityEGrid
+  @82800 @379175  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify Quick Search disables on inline edit action-e grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3130,7 +3130,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
-  @106419 @379183 @Sanity @SanityEGrid
+  @106419 @379183 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5486,7 +5486,7 @@ Business Need: EnhancedGrid Component Scenarios
 #      | newFieldsApi                                                                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
 #      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,Test_num__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @192952 @379194 @379196 @379201 @Sanity @SanityEGrid @sprint1
+  @192952 @379194 @379196 @379201 @SanityPATCH @SanityPATCHEGrid @sprint1
   Scenario: Data table Enhanced-To verify , currency field should accept the negative value
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5685,7 +5685,7 @@ Business Need: EnhancedGrid Component Scenarios
       | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
 
 
-  @218461 @218462 @352192 @352197 @379190 @Sanity @SanityEGrid
+  @218461 @218462 @352192 @352197 @379190 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
   Admin-Parent table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
@@ -5714,7 +5714,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @218464 @218465 @379191 @Sanity @SanityEGrid
+  @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -5822,7 +5822,7 @@ Business Need: EnhancedGrid Component Scenarios
       | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
       | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
 
-  @218446 @218447 @379188 @Sanity @SanityEGrid
+  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5864,7 +5864,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218449 @218450 @352425 @352427 @379189 @Sanity @SanityEGrid
+  @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
   Admin-Parent Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
@@ -6221,7 +6221,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Table has been reset. |
 
 ##################### Test suite: Page size & Pagination (Suite ID: 352166) #######################
-  @352265 @352267 @379209 @Sanity @SanityEGrid
+  @352265 @352267 @379209 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6296,7 +6296,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352419 @352420 @379210 @Sanity @SanityEGrid
+  @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6321,7 +6321,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352429 @352430 @379208 @Sanity @SanityEGrid
+  @352429 @352430 @379208 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6345,7 +6345,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352278 @352279 @379207 @Sanity @SanityEGrid
+  @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6437,7 +6437,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @296562 @296563 @379172 @Sanity @SanityEGrid
+  @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -7325,7 +7325,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
 
-  @379199  @Sanity @SanityEGrid
+  @379199  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify that user is able to see Quick search input field on child table, when Quick search config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |

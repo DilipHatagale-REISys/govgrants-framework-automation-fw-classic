@@ -148,7 +148,7 @@ Business Need: security review Scenarios
     When I navigate to "Overview" sub tab
     Then I see expected table with id "AppContactFlexToggle"
 
-  @106311 @382209 @382210 @Sanity
+  @106311 @382209 @382210 @SanityPATCH
   Scenario Outline: validate flex  table at record table is rendered properly by admin user
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -791,7 +791,7 @@ Business Need: security review Scenarios
     Then I softly see column "Status" inside row "2" at position "2" and column at position "5" contains text "Approved"
     Then I softly see column "Status" inside row "3" at position "2" and column at position "5" contains text "Started"
 
-  @83371 @381952 @381953  @Sanity
+  @83371 @381952 @381953  @SanityPATCH
   Scenario Outline: validate order of action inside history table from program creation to activation by sending back the record to owser for approval
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user

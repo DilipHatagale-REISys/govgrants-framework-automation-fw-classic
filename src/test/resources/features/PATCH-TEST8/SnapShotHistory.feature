@@ -122,7 +122,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70049  @382807 @382809 @382837 @382842 @Sanity @SanitySnap
+  @70049  @382807 @382809 @382837 @382842 @SanityPATCH @SanityPATCHSnap
   Scenario: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
@@ -617,7 +617,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @Sanity @SanitySnap
+  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
   Scenario Outline:Snapshot History Table -Admin- Config-To verify Date Taken should captured when user taken snapshot
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -716,7 +716,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @Sanity @SanitySnap
+  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -770,7 +770,7 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409 @217476 @382811 @382843 @Sanity @SanitySnap
+  @201409 @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"

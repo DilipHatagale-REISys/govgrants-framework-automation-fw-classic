@@ -182,7 +182,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
     private boolean isOptionDisplayedUnderMenu(String option, String tableId) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + option + "'] | //div[@id='" + tableId + "']//option[contains(text(),'" + option + "')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@id='" + tableId + "']/preceding-sibling::div/div/div[@align='right']//span[@class='dropdown ng-scope open']/ul/li//span[text()='" + option + "'] | //div[@id='" + tableId + "']//option[contains(text(),'" + option + "')] |" +
+                    "//div[@id='" + tableId + "']//div[@class='panel-heading']//div//span//ul//li//a//span[text()='" + option + "'] "))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {
@@ -199,7 +200,8 @@ public class FlexTable_AllComponentPage extends GovGrantsManager {
                 "//div[@id='" + tabeleId + "']//div//div[contains(@class,'displayFlexCenter flexEnd')]//span/a[@title='" + buttonName + "'] | " +
                 "//div[@id='" + tabeleId + "']/preceding-sibling::div/div//div[contains(@class,'displayFlexCenter flexEnd')]//ul/li/a/span[text()='" + buttonName + "'] |" +
                 "//grid[@table-meta-data='" + tabeleId + "']//a[@data-toggle='dropdown']/ancestor::div[contains(@class,'panel-heading')]//a[@title='" + buttonName + "'] |" +
-                " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "']"));
+                " //*[contains(@data-target,'" + tabeleId + "')]/following-sibling::div[@id='" + buttonName + "'] |" +
+                "//div[@id='" + tabeleId + "']//div[@class='panel-heading']//div//span//a[@title='" + buttonName + "']"));
     }
 
     public void assertShowEntriesDropdownIsDisplayed(String usage, int values, String tableId) {
