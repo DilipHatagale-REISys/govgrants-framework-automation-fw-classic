@@ -461,7 +461,7 @@ Business Need: history Component Scenarios
       | ADMIN |
 #      | PM    |
 
-  @114729  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
+  @114729p  @verifyDecimalCurrencyFieldFormatForNewValueUnderHistoryTable
   Scenario: validate the decimal currency field format under field history table inside new value column
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
