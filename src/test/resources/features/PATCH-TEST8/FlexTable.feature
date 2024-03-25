@@ -2370,7 +2370,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    And I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
     When I click on "Menu" button inside table id "---program:-:activeGrantsTableId---"
     Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:activeGrantsTableId---"
