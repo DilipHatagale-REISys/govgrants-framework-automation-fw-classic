@@ -402,7 +402,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
-    Then I see "Download as PDF" options inside "Contacts@1234567890!@#$%^&*()" disabled
+    Then I see "Download as PDF" options inside "Contacts" disabled
 
   @76945    @disablingXLSExportFileForEnhancedDataTable-gPlanning @smoke
   Scenario: validate disabling of XLS download from menu option in enhanced flex table planning
@@ -420,7 +420,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
-    Then I see "Download as XLS" options inside "Contacts@1234567890!@#$%^&*()" disabled
+    Then I see "Download as XLS" options inside "Contacts" disabled
 
   @76931    @disablingAdvanceFilterForEnhancedDataTable-gPlanning @smoke
   Scenario: validate disabling of advance filter from enhanced flex table planning
@@ -439,7 +439,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
-  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @Sanity @SanityEnhancedTable
+  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -513,7 +513,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "5" records inside enhanced grid id "---program:-:programContactsTableId---"
 
-  @77113  @379018 @Sanity @SanityEnhancedTable  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
+  @77113  @379018 @SanityPATCH @SanityPATCHEnhancedTable  @disablingEnableTotalRecordCountFieldForAtEnhancedDataTable-gPlanning
   Scenario Outline: validate disabling of total row count in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -549,7 +549,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
+    Then I see Menu icon is disabled from planning flex table "Contacts"
 
   @77215    @enableRecordSelectionForEnhancedDataTable-gPlanning
   Scenario: validate enabling of record selection check boxes in in enhanced flex table planning
@@ -566,7 +566,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see Menu icon is disabled from planning flex table "Contacts@1234567890!@#$%^&*()"
+    Then I see Menu icon is disabled from planning flex table "Contacts"
 
   @77220    @orderBySortByFieldAtEnhancedDataTable-gPlanning @Smoke
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside  enhanced flex table planning
@@ -721,7 +721,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
-    Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
+    Then I see no "New" button inside "Contacts" enhanced grid
 
   @77329    @enableHideGroupingColumnFieldAtFlexTableEnhanced-gPlanning
   Scenario: validate display of number of project areas column after checking checkbox true of Hide Grouping Column field from config and validating it inside enhanced data table -planning
@@ -765,7 +765,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Edit" icon for "FirstName LastNam" inside table
     Then I see "--None--:Authorized Signatory:Ebiz POC:Fiscal Contact:Grants Administrator:Principal Investigator:Program Manager:Project Director/Manager:Other" inside selectbox field "ProjectRole__c"
 
-  @106413 @379016 @Sanity @SanityEnhancedTable
+  @106413 @379016 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: validate date inside value input box field is inserted successfullyAtFlexTableEnhanced
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -900,7 +900,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
     When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
     And I navigate to "Overview" sub tab
-    Then I softly do not see "Organization" in flex table header "Contacts@1234567890!@#$%^&*()"
+    Then I softly do not see "Organization" in flex table header "Contacts"
 
   @194456 @sprint1
   Scenario: Data Table Enhanced - To verify, Hide  expression builder is working for $user with number  field
@@ -1039,7 +1039,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I do not see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Then I do not see Header field "Contacts" displayed as a Header on flex table
     Examples:
       | User  |
       | Admin |
@@ -1060,7 +1060,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Then I see Header field "Contacts" displayed as a Header on flex table
     Examples:
       | User  |
       | Admin |
@@ -1070,10 +1070,10 @@ Business Need: DataTableEnhanced Component Scenarios
   Scenario: Name- Admin- Config- Verify Flex table name displayed correctly on UI,
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
-      | Flex Table            | Header    | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:1 |
+      | Flex Table            | Header    | Contacts | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Header    | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1081,17 +1081,17 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Then I see Header field "Contacts" displayed as a Header on flex table
 
   @204737
   Scenario: Name- PM- UI- Verify Flex table name displayed correctly on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
-      | Flex Table            | Header    | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:1 |
+      | Flex Table            | Header    | Contacts | ApiGeneratedId:1 |
       | Flex Table            | Is Active | true                          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Header    | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Is Active | true                          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1100,7 +1100,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see Header field "Contacts@1234567890!@#$%^&*()" displayed as a Header on flex table
+    Then I see Header field "Contacts" displayed as a Header on flex table
 
   @204738
   Scenario: Name- SPI- UI- Verify Flex table name displayed correctly on UI
@@ -1168,7 +1168,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text "Contacts@1234567890!@#$%^&*()" icon
+    When I hovering mouse on help text "Contacts" icon
     Then I see "Help text for Automation" shown as help text
     Examples:
       | User  | defaultHelpText                                                                                         | newHelpText              |
@@ -1204,10 +1204,10 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue             | filterId         |
       | Flex Table            | Display Field Names | <defaultFieldsApi>            | ApiGeneratedId:1 |
-      | Flex Table            | Header              | Contacts@1234567890!@#$%^&*() | ApiGeneratedId:2 |
+      | Flex Table            | Header              | Contacts | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header              | Contacts@1234567890!@#$%^&*() | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Header              | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
       | Flex Table:General    | Display Field Names | <newFieldsApi>                | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
@@ -1224,7 +1224,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @204991 @204992 @379020 @Sanity @SanityEnhancedTable
+  @204991 @204992 @379020 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI,
   Page Size- PM- UI- Verify dropdown to select page size manually should not appear on UI
     Given I have "default" configuration as below:
@@ -1331,7 +1331,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205013 @205014 @379022 @Sanity @SanityEnhancedTable
+  @205013 @205014 @379022 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Pagination - Admin- Config- Verify Pagination should not display on UI,
   Pagination - PM- UI- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
@@ -1356,7 +1356,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
 
-  @205010 @205011 @379021 @Sanity @SanityEnhancedTable
+  @205010 @205011 @379021 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI,Pagination - PM- UI- Verify ‘Pagination’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue  | filterId         |
@@ -2127,7 +2127,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
     #########################Test suite: Advanced Filter (Suite ID: 205069)############################
 
-  @205078 @205080 @379015 @Sanity @SanityEnhancedTable
+  @205078 @205080 @379015 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option should not available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option should not available on UI
     Given I have "default" configuration as below:
@@ -2151,7 +2151,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Admin | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
       | PM    | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c | ProjectRole__c,Contact__c,Contact__r.Email,Contact__r.Organization__c,BaseSalary__c |
 
-  @205077 @205079 @379014 @Sanity @SanityEnhancedTable
+  @205077 @205079 @379014 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Advanced Filter- Admin- Config- Verify Advanced Filter option available on UI,
   Advanced Filter- PM- UI- Verify Advanced Filter option available on UI
     Given I have "default" configuration as below:
@@ -2609,7 +2609,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
 ######################Test suite: Action Config (Suite ID: 205379)########################
 
-  @205382 @205384 @205388 @379006 @Sanity @SanityEnhancedTable
+  @205382 @205384 @205388 @379006 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: Action- Admin- config- Verify action is rendered on UI,
   Action- PM- UI- Verify action is rendered on UI
   Action- Admin- config- Verify action name is displaying correctly,
@@ -3202,7 +3202,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I download the file
     Then I see "4000" on page "1" of "govgrants" pdf file
 
-  @379017 @Sanity @SanityEnhancedTable
+  @379017 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: To verify that user is able to see Total Records count at bottom of the table, when Total Records count config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -3223,7 +3223,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379005 @Sanity @SanityEnhancedTable
+  @379005 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario Outline: To verify that all top level actions are displayed on top of the table, which have been configured
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -3232,7 +3232,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
     Examples:
       | User  |
       | ADMIN |
@@ -3262,7 +3262,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       #  | PM    |
 
-  @379011 @379013 @379009 @smoke @Sanity @SanityEnhancedTable
+  @379011 @379013 @379009 @smoke @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3283,7 +3283,7 @@ Business Need: DataTableEnhanced Component Scenarios
     #379009
     Then I see new tab is opened
 
-  @379010 @Sanity @SanityEnhancedTable
+  @379010 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario:To verify that user is able to delete record by clicking on Delete action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3295,7 +3295,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "Remove" icon for "12 21" inside table
     Then I see confirmation box with body "Do you want to delete? Once it is deleted it cannot be restored." is displayed
 
-  @379008 @Sanity @SanityEnhancedTable
+  @379008 @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: To verify that user is able to edit existing record by clicking on Edit action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

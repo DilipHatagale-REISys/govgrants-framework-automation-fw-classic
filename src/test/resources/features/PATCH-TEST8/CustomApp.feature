@@ -4,7 +4,7 @@ Business Need: customApp Component Scenarios
   As a configuration manager i make different configurational changes in customApp component and will validate them.
 
   ######## As a Grantor ###
-  @332481 @332482 @332484 @332534 @382715 @382716 @Sanity
+  @332481 @332482 @332484 @332534 @382715 @382716 @SanityPATCH
   Scenario Outline: Custom App- To verify, for the Grantor user 'StateasGrantor' Label name is displayed.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -56,7 +56,7 @@ Business Need: customApp Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantor" inside CustomApp dropDown
 
-  @332488 @382717 @382718 @Sanity
+  @332488 @382717 @382718 @SanityPATCH
   Scenario Outline: Custom App- To verify, when URL is "/apex/PhaseView?t=GrantorHome" should be saved on Custom App:grantor
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -141,7 +141,7 @@ Business Need: customApp Component Scenarios
     When I click CustomApp select dropdown
     Then I see "As a Grantee" inside CustomApp dropDown
 
-  @332511 @382719 @382720 @Sanity
+  @332511 @382719 @382720 @SanityPATCH
   Scenario Outline: Custom App- To verify, when URL is "/apex/PhaseView?t=GranteeHome" should be saved on Custom App:grantee
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |

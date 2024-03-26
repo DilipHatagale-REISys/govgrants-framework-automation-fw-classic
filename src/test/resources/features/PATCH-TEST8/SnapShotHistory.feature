@@ -122,7 +122,7 @@ Business Need: Snapshot Config Component Scenarios
     When I navigate to "History" sub tab
     Then I see take snap shot getting saved with "Snapshot History"
 
-  @70049  @382807 @382809 @382837 @382842 @Sanity @SanitySnap
+  @70049  @382807 @382809 @382837 @382842 @SanityPATCH @SanityPATCHSnap
   Scenario: Validate Auto Snapshot is getting captured on record approval after making change for field Capture Snapshot on Approval at config
     Given I have "default" configuration as below:
       | configurationCategory             | fieldName                       | fieldOrignalValue | filterId         |
@@ -158,7 +158,7 @@ Business Need: Snapshot Config Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -204,13 +204,13 @@ Business Need: Snapshot Config Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Send to Owner" in the approval decision
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -257,7 +257,7 @@ Business Need: Snapshot Config Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -302,7 +302,7 @@ Business Need: Snapshot Config Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -347,7 +347,7 @@ Business Need: Snapshot Config Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -393,7 +393,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -474,7 +474,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I refresh the page
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -483,7 +483,7 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -617,7 +617,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @Sanity @SanitySnap
+  @217197 @217198 @217455 @217456 @217464 @217465 @217467 @217471 @217472 @217468 @382790 @SanityPATCH @SanityPATCHSnap
   Scenario Outline:Snapshot History Table -Admin- Config-To verify Date Taken should captured when user taken snapshot
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -716,7 +716,7 @@ Business Need: Snapshot Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @Sanity @SanitySnap
+  @217469 @217463 @217199 @217457 @217473 @207366 @207362 @382796 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History Table - SPI- UI - Verify Take Snapshot button should present in Menu option
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -770,7 +770,7 @@ Business Need: Snapshot Config Component Scenarios
     And I pause execution for "5" seconds
     Then I do not see "Take Snapshot" options is displayed
 
-  @201409 @217476 @382811 @382843 @Sanity @SanitySnap
+  @201409 @217476 @382811 @382843 @SanityPATCH @SanityPATCHSnap
   Scenario: Snapshot History-SPI-UI-To verify snapshot history when Application is submitted for approval state
   Snapshot History Table - SPI- UI- Verify file name when snapshot captured automatically
     Given I delete the record "Automation Internal Announcement for Testing" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -811,7 +811,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Submit For Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
      #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -819,14 +819,14 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -834,7 +834,7 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
@@ -938,7 +938,7 @@ Business Need: Snapshot Config Component Scenarios
     #110210
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -946,14 +946,14 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -961,7 +961,7 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel
@@ -1065,7 +1065,7 @@ Business Need: Snapshot Config Component Scenarios
     #110210
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
     #1st Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1073,14 +1073,14 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
         #2nd Approval process for announcement
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -1088,7 +1088,7 @@ Business Need: Snapshot Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     #Announcement Publish
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:allAnnouncementTableId---" panel

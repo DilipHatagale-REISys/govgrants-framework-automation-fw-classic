@@ -682,7 +682,7 @@ Business Need: Phase Config Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
     Then I see "Planning" tab is highlighted for particular program
 
-  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning @om
+  @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning
   Scenario: Setup label change of program at sobject phase config and validating changed label for program inside global search at planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |

@@ -4779,7 +4779,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
   @338539
@@ -4798,7 +4798,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
   @338540
@@ -4815,7 +4815,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
   @338542
@@ -4834,7 +4834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338543
@@ -4853,7 +4853,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338544
@@ -4870,7 +4870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
 
   @338545
@@ -4888,7 +4888,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
 
@@ -4907,8 +4907,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "First" for table id "toggleFlexTablePrograms"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338548
@@ -4924,8 +4924,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
+    And I click on page navigation arrow "First" for table id "toggleFlexTableGrantsList"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTableGrantsList"
 
   @338550
@@ -4943,7 +4943,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338552
@@ -4961,7 +4961,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338553
@@ -4977,7 +4977,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
 
   @338555
@@ -4995,7 +4995,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
@@ -5014,7 +5014,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
@@ -5031,8 +5031,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
+    And I click on page navigation arrow "First" for table id "toggleFlexTableGrantsList"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
   @338560
@@ -5082,7 +5082,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
 
   @338566
   Scenario: Flex table-Total Records count-Admin-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
@@ -17416,7 +17416,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17632,7 +17632,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23587                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17648,8 +17648,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                                    | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number_Test__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
 
   @151627    @validateIsSearchWorkingForLongTextSearchedInFlexTableQuickSearchBox
@@ -17715,8 +17715,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
-      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-1542                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23587                  |
+      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-13619                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17744,7 +17744,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-13620                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -18056,7 +18056,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on global search and select "Program"
-    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    When I perform quick search inside global search "Test Approver Table"
     Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180719
@@ -18686,8 +18686,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
 #    And I click toggle button to select "Internal Programs - Active"
-#    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-#    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+#    When I perform quick search for "Test Approver Table"
+#    When I click on "View" icon for "Test Approver Table" inside table
 #    When I navigate to "Overview" sub tab
 #    Then I see field "Description Field" inside page block
 
@@ -18703,8 +18703,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see value "Automation FO" for title "Name" inside table "---program:-:ProgramContactsTableId---"
 
@@ -18720,8 +18720,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     #Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
     Then I do not see hyperlink at value "Test Automation Organization" inside "Organization" columnname for tableId "DataTableEnhanceProgramContactsFlexToggle"
@@ -18764,8 +18764,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:Field ProgramName__c not found for sobject BudgetPeriod__c : table:a0I1500000ITVOSEA5 |
@@ -18805,8 +18805,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:unexpected token: 'ASC' |
