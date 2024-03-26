@@ -1,4 +1,4 @@
-@DynamicForms-PATCHcomponent @regression-PATCH @dynamicForms @skiponjenkins
+@skiponjenkins @DynamicForms-PATCHcomponent @regression-PATCH @dynamicForms
 Business Need: dynamic forms Component Scenarios
   Test all dynamic forms component based scenarios
   As a configuration manager i make different configurational changes in dynamic forms component and will validate them.
