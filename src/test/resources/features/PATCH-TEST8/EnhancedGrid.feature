@@ -1,4 +1,4 @@
-@EnhancedGrid-component @regression-PATCH @EnhancedGrid
+@EnhancedGrid-PATCHcomponent @regression-PATCH @EnhancedGrid
 Business Need: EnhancedGrid Component Scenarios
   Test all EnhancedGrid component based scenarios
   As a configuration manager i make different configurational changes in EnhancedGrid component and will validate them.
@@ -14,7 +14,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     And I expand nested table containing column value "Pre-Screen Review"
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
@@ -26,7 +26,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257614 @257611 @US-255921 @379174 @Sanity @SanityEGrid
+  @257614 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -37,7 +37,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379174
     Then I see "New" button inside "---program:-:ProgramReviewStepTemplatesTableId---" flex table
@@ -59,7 +59,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     Then I see fields "StepNumber__c" is in edit mode
@@ -83,7 +83,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     And I expand nested table containing column value "SME Review"
     Then I softly see "Review Forms" page block displayed
     Examples:
@@ -101,7 +101,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
@@ -118,7 +118,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
@@ -129,7 +129,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I expand nested table containing column value "Test Review"
     Then I softly see value "Testing" for title "Form Name" inside table "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
-  @257474 @379185  @Sanity @SanityEGrid @US-255921
+  @257474 @379185  @SanityPATCH @SanityPATCHEGrid @US-255921
   Scenario: To verify, Advanced filter should be working for newly added child record in the table
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -145,18 +145,18 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on advance filter "#advfProgramReviewStepTemplates" of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     When I enter advance filter values inside id "advfProgramReviewStepTemplates"
       | Step Name | contains | Test Review |
     #379185
     Then I see value "Test Review" for title "Step Name" inside table "---program:-:ProgramReviewStepTemplatesTableId---"
 
-  @257472 @379204 @379202 @379193 @Sanity @SanityEGrid
+  @257472 @379204 @379202 @379193 @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify, User should be able to add new child record in child table that attached to the newly created record.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I have "default" configuration as below:
@@ -172,7 +172,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
@@ -207,7 +207,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ProgramChecklistsFlexToggle"
     And I select "Download as XLS" from parallel lines dropdown of "Supporting Documents Checklist"
@@ -229,7 +229,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Supporting Documents Checklist" page block displayed
     When I click on parallel lines menu bar with data target value "#ProgramChecklistsFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Supporting Documents Checklist"
@@ -310,7 +310,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257457
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
     #257477
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I click on parallel lines menu bar with data target value "#ProgramReviewStepTemplatesFlexToggle"
     And I select "Download as PDF" from parallel lines dropdown of "Review Steps"
     Then I download the file
@@ -331,7 +331,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #257481
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
@@ -357,7 +357,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #257480
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
@@ -383,7 +383,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #257482
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
@@ -409,7 +409,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
@@ -434,7 +434,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 1          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
@@ -454,7 +454,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
@@ -471,7 +471,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description |
       | 4          | Test Review | Description |
@@ -497,7 +497,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      | Step Weight (%) | # of Panels | Agency | Announcement | Funding Opportunity Id | Count of reviewers | Justification | Recall Comment |
       | 4          | Pre-Screen Review | Review Step Desc |                 |             |        |              |                        |                    |               |                |
@@ -519,7 +519,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description      |
       | 4          | Pre-Screen Review | Review Step Desc |
@@ -544,7 +544,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I save the field labeled "EGMS ID" as "PEGMSID"
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name         | Description |
       | 4          | Pre-Screen Review | Test file   |
@@ -583,7 +583,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
@@ -607,7 +607,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I enter the following values into flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" by clicking "New" :
       | Step Order | Step Name   | Description            |
       | 4          | Test Review | Automation Description |
@@ -646,7 +646,7 @@ Business Need: EnhancedGrid Component Scenarios
     #257551
     Then I do not see "Desc test1" Description inside "Peer Reviewers" table
 
-  @35432 @379184   @Sanity @SanityEGrid @smoke
+  @35432 @379184   @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate disabling of advance filter from planning-Program enhance flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -834,7 +834,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppGrantorBudgetPeriodsFlexToggle"
     Then I see "Download as XLS" options inside "Budget Periods" disabled
 
-  @35439  @379181 @smoke @Sanity @SanityEGrid
+  @35439  @379181 @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of quick search in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -851,7 +851,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see quick search option disabled from enhanced grid
 
-  @35437 @379187 @379206 @Sanity @SanityEGrid @smoke
+  @35437 @379187 @379206 @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate disbaling of total row count in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -964,7 +964,7 @@ Business Need: EnhancedGrid Component Scenarios
       | actionUrlLongValue          |
       | /apex/GrantEdit?id={!rowId} |
 
-  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @Sanity @SanityEGrid
+  @35435 @379170   @addingfieldNamesOfDifferentDataTypesForEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate adding field names for different data types in enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -1044,7 +1044,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I pause execution for "5" seconds
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:appBudgetPeriodTableId---"
 
-  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @Sanity @SanityEGrid
+  @41304 @379171   @defaultPageSizeFieldAtParentFlexTableForEnhancedGrid-gPlanning @SanityPATCH @SanityPATCHEGrid
   Scenario: validate change of default page size inside dropdown at bottom enhanced flex grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -1497,7 +1497,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I perform quick search for "Demo_Title" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "Test Automation" as title for "Demo_Title" inside flex table action
 
-  @44993  @379203  @Sanity @SanityEGrid
+  @44993  @379203  @SanityPATCH @SanityPATCHEGrid
   Scenario: Disabling the Advance Filter at child flex table of enhanced grid from config and validating it at enhanced grid planning-Program enhanced flex grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -1576,7 +1576,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on parallel lines menu bar with data target value "#EnhanceAppBudCateGrantorFlexTableFlexToggle"
     Then I see "Download as XLS" options inside "Budget Categories" disabled
 
-  @44996  @379200 @Sanity @SanityEGrid
+  @44996  @379200 @SanityPATCH @SanityPATCHEGrid
   Scenario: validate disabling of Quick Search field at Child Flex Table for Enhanced Grid - Planning phase
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1596,7 +1596,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379200
     Then I see quick search option disabled from enhanced grid for child flex table "---program:-:EnhanceAppBudCateGrantorTableId---"
 
-  @44997 @379205   @Sanity @SanityEGrid @smoke
+  @44997 @379205   @SanityPATCH @SanityPATCHEGrid @smoke
   Scenario: validate total row count in child flex table for enhanced grid.
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1642,7 +1642,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "BP01"
     Then I see select check box enabled for child flex table in enhanced flex grid
 
-  @45096 @379178  @Sanity @SanityEGrid
+  @45096 @379178  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate open new tab for view at parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1662,7 +1662,7 @@ Business Need: EnhancedGrid Component Scenarios
     #379178
     Then I see new tab is opened
 
-  @45097  @379180 @379182  @Sanity @SanityEGrid
+  @45097  @379180 @379182  @SanityPATCH @SanityPATCHEGrid
   Scenario: validate enhanced grid view action open in new window for parent flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | coreComponentField             | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1686,7 +1686,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "BP01" inside table
     Then I see new tab is opened
 
-  @45098  @379197 @Sanity @SanityEGrid
+  @45098  @379197 @SanityPATCH @SanityPATCHEGrid
   Scenario: validate enhanced grid view action open in new tab for child flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1750,7 +1750,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I click on "View" icon for "Equipment" inside table
     Then I see no new tab is opened
 
-  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @Sanity @SanityEGrid
+  @45276  @379173  @addingfieldNamesOfDifferentDataTypesForChildFlexTableOfEnhancedGrid-gPlanning @smoke @SanityPATCH @SanityPATCHEGrid
   Scenario: validate adding field names for different data types for child flex table of enhanced flex grid planning-Program enhanced flex grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -2691,7 +2691,7 @@ Business Need: EnhancedGrid Component Scenarios
     #When I perform quick search for "Demo_Title" in "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" panel
     Then I see hyperlink at column value "Department of Transportation" inside "---program:-:appBudgetPeriodTableId---" table
 
-  @82800 @379175  @Sanity @SanityEGrid
+  @82800 @379175  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify Quick Search disables on inline edit action-e grid
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -3130,7 +3130,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see sorting label as "* Records are sorted by " inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
     Then I softly see sorting label as "Last Modified Date ascending order" inside "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---" table
 
-  @106419 @379183 @Sanity @SanityEGrid
+  @106419 @379183 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: validate Advance filter search for date field with start with operator At enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5486,7 +5486,7 @@ Business Need: EnhancedGrid Component Scenarios
 #      | newFieldsApi                                                                                                                                                                                                                                   | defaultFieldsApi                                                                                                                                                                                                                   |
 #      | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c,Test_num__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 
-  @192952 @379194 @379196 @379201 @Sanity @SanityEGrid @sprint1
+  @192952 @379194 @379196 @379201 @SanityPATCH @SanityPATCHEGrid @sprint1
   Scenario: Data table Enhanced-To verify , currency field should accept the negative value
 #    Given I have "default" configuration as below:
 #      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5685,7 +5685,7 @@ Business Need: EnhancedGrid Component Scenarios
       | PM    | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c | Id,StepNumber__c,Name,Description__c,Weight__c,CountReviewPanels__c |
 
 
-  @218461 @218462 @352192 @352197 @379190 @Sanity @SanityEGrid
+  @218461 @218462 @352192 @352197 @379190 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Pagination- Admin- Config- Verify ‘Pagination’ displays on UI
   Admin-Parent table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
@@ -5704,7 +5704,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Review Steps" page block displayed
       # 379190
     Then I see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5714,7 +5714,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @218464 @218465 @379191 @Sanity @SanityEGrid
+  @218464 @218465 @379191 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Pagination - Admin- Config- Verify Pagination should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -5732,7 +5732,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Review Steps" page block displayed
       # 379191
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5756,7 +5756,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
@@ -5822,7 +5822,7 @@ Business Need: EnhancedGrid Component Scenarios
       | User | defaultFieldsApi                                                             | newFieldsApi                                                                 |
       | SPI  | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c | BudgetPeriodTitle__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c |
 
-  @218446 @218447 @379188 @Sanity @SanityEGrid
+  @218446 @218447 @379188 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Page Size- Admin- Config- Verify dropdown appears on UI to select page size manually
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -5836,7 +5836,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379188
     Then I see "Show" with page size dropdown at "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5864,7 +5864,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I expand nested table containing column value "Fiscal Year(2022-2023)"
     Then I see "Show" with page size dropdown at "---program:-:RecGrantBudgetCategoryFlexTableId---"
 
-  @218449 @218450 @352425 @352427 @379189 @Sanity @SanityEGrid
+  @218449 @218450 @352425 @352427 @379189 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Page Size- Admin- Config- Verify dropdown to select page size manually should not appear on UI
   Admin-Parent Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
@@ -5879,7 +5879,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     #379189
     Then I do not see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -5922,7 +5922,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see "5" records inside enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
@@ -5980,7 +5980,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I do not see Total Records count "Total Records : " in table name "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Examples:
@@ -6059,7 +6059,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I do not see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
 
@@ -6101,7 +6101,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see "Menu" action is displayed at the "---program:-:ProgramReviewStepTemplatesgridTableId---" modal
 
@@ -6124,7 +6124,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     When I enter value "5" into field "StepNumber__c"
@@ -6152,7 +6152,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     When I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     When I enter value "5" into field "StepNumber__c"
@@ -6192,7 +6192,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     And I click on menu inside "---program:-:ProgramReviewStepTemplatesgridTableId---"
     And I select "Reset Table" from parallel lines dropdown of "Review Steps"
@@ -6221,7 +6221,7 @@ Business Need: EnhancedGrid Component Scenarios
       | Table has been reset. |
 
 ##################### Test suite: Page size & Pagination (Suite ID: 352166) #######################
-  @352265 @352267 @379209 @Sanity @SanityEGrid
+  @352265 @352267 @379209 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is able to see pagination, when have been provided 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6260,7 +6260,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Review Steps" page block displayed
     Then I see "Entries" with page size dropdown in enhanced grid "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6287,7 +6287,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Review Steps" page block displayed
     Then I do not see pagination "Next" arrow displayed inside table id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6296,7 +6296,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352419 @352420 @379210 @Sanity @SanityEGrid
+  @352419 @352420 @379210 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child Table-Verified that user is unable to see pagination, when have not been enabled 'Enable Pagination' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -6321,7 +6321,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352429 @352430 @379208 @Sanity @SanityEGrid
+  @352429 @352430 @379208 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin-Child Table-Verified that user is unable to see show entries dropdown, when have not been enabled 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6345,7 +6345,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @352278 @352279 @379207 @Sanity @SanityEGrid
+  @352278 @352279 @379207 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline:Admin-Child table-Verified that user is able to see show entries dropdown, when have been provided 'Enable Page Size' configuration.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -6384,7 +6384,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -6406,7 +6406,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     Then I see "Test Automation" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
 
@@ -6429,7 +6429,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Step Number" shown inside flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
     Examples:
@@ -6437,7 +6437,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       # | PM    |
 
-  @296562 @296563 @379172 @Sanity @SanityEGrid
+  @296562 @296563 @379172 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: Admin_Child table_Verified that label of column from object level displayed in table, when user not provided it in "Field label override" config
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -6451,7 +6451,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     #379172
     Then I see "Panel Name" shown inside flex table with id "---program:-:ProgramReviewStepPanelTemplatesFlexToggleTableId---"
@@ -6469,7 +6469,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I hovering mouse on help text icon inside "Step Order" for flex table column
     Then I see "This is the order in which the associated reviews will need to be completed." shown as help text
 
@@ -6486,7 +6486,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
     Then I see "Scoring weight for this form in relation to all required panels in this review step. (% out of 100%)" shown as help text
@@ -6510,7 +6510,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I do not see help text icon is displayed for field "Step Order"
 
     Examples:
@@ -6532,7 +6532,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     Then I do not see help text icon is displayed for field "Form Weight (%)"
 
@@ -6555,7 +6555,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I hovering mouse on help text icon inside "Step Order" for flex table column
     Then I see "@#$%^&*()!<>1234567890" shown as help text
 
@@ -6578,7 +6578,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "1"
     When I hovering mouse on help text icon inside "Form Weight (%)" for flex table column
     Then I see "@#$%^&*()!<>1234567890 " shown as help text
@@ -6602,7 +6602,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I see field "Manual Test" inside page block
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6652,7 +6652,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I softly see "Step Name :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
 
@@ -6709,7 +6709,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Step Order :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
    # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I see over all total for "StepNumber__c" at enhanced grid
@@ -6769,7 +6769,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
    # Then I softly see "Testing Sub Total :" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I softly see "Step Name : Reference Testing " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -6798,7 +6798,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
     Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
@@ -6831,7 +6831,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I do not see " Step Name : Manual Test " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -6860,7 +6860,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
     Then I softly see "Form Weight (%) : " inside rows of enhanced grid id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
@@ -6894,7 +6894,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I do not see "Manual Test" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     Then I do not see "Step Name : Reference Testing" inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -6923,7 +6923,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     ##Row grouping
     Then I do not see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
@@ -6953,7 +6953,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Step Number" not displayed in enhanced grid table column title
     Examples:
       | User  |
@@ -6976,7 +6976,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Examples:
@@ -7000,7 +7000,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I softly see "Step Name : " inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
@@ -7024,7 +7024,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%)" not displayed in enhanced grid table column title
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
@@ -7056,7 +7056,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     Then I see " NoOfCompletedReviews :  --  " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
@@ -7088,7 +7088,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
     ##subtotal
@@ -7118,7 +7118,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #Then I softly see "Manual Test" inside rows of enhanced grid id "---program:-:ProgramReviewStepTemplatesgridTableId---"
     Then I see "NoOfCompletedReviews : " inside rows of table id "---program:-:ProgramReviewStepTemplatesTableId---"
     #Sub Total Label Displayed
@@ -7147,7 +7147,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I expand nested table containing column value "Manual Test"
     Then I see "Form Weight (%) : " inside rows of table id "---program:-:ProgramReviewStepPanelTemplatesTableId---"
     #subtotal label displayed
@@ -7174,7 +7174,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" flex table not displayed
 
     Examples:
@@ -7198,7 +7198,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Edit" icon for "Test" is not displayed inside flex table
     Examples:
       | User  |
@@ -7219,7 +7219,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see select check box enabled in flex table
     Examples:
       | User  |
@@ -7240,7 +7240,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I do not see select check box enabled in flex table
     Examples:
       | User  |
@@ -7264,7 +7264,7 @@ Business Need: EnhancedGrid Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "Automation Program For Contact Data Table Enhanced"
     When I click on "View" icon for "Automation Program For Contact Data Table Enhanced" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:ProgramReviewStepTemplatesTableId---"
 
     Examples:
@@ -7325,7 +7325,7 @@ Business Need: EnhancedGrid Component Scenarios
     When I navigate to "Budget" sub tab
     Then I see "Select All Check Box" column position is "!= 'Right" in table id "---program:-:RecGrantBudgetCategoryFlexGridTableId---"
 
-  @379199  @Sanity @SanityEGrid
+  @379199  @SanityPATCH @SanityPATCHEGrid
   Scenario: To verify that user is able to see Quick search input field on child table, when Quick search config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |

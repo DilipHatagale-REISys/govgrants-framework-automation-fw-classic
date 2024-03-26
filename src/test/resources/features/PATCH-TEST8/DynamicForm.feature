@@ -1,4 +1,4 @@
-@DynamicForms-PATCHcomponent @regression-PATCH @dynamicForms @skiponjenkins
+@skiponjenkins @DynamicForms-PATCHcomponent @regression-PATCH @dynamicForms
 Business Need: dynamic forms Component Scenarios
   Test all dynamic forms component based scenarios
   As a configuration manager i make different configurational changes in dynamic forms component and will validate them.
@@ -55,7 +55,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Save" in the page details
     Then I see for "Number" field value is "12.00" inside dynamic form
 
-  @89698 @379346 @379357 @379347 @379358 @Sanity   @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
+  @89698 @379346 @379357 @379347 @379358 @SanityPATCH   @validateByEnteringValueInPercentFieldAResponseIsGettingSavedAndDisplayedAtDynamicFormLayout
   Scenario Outline: Entering value into percent field and click on save , a value is getting saved into percent field at dynamic form
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -4044,7 +4044,7 @@ Business Need: dynamic forms Component Scenarios
     When I click on "Edit" icon for "Dynamic Form 1" inside table
     Then I do not see "Validate" button is displayed
 
-  @100107 @379350 @379361 @Sanity    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
+  @100107 @379350 @379361 @SanityPATCH    @validateThatByClickOnCancelButtonAFormIsGettingDisplayedInViewMode
   Scenario Outline: validate that by click on cancel button a form is displayed in view mode
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -4410,7 +4410,7 @@ Business Need: dynamic forms Component Scenarios
     Then I softly see "Currency" inside "Section 1" at dynamic form
     Then I softly see "Currency Section 3" inside "Section 3" at dynamic form
 
-  @100446 @206248 @379252 @379363 @Sanity    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
+  @100446 @206248 @379252 @379363 @SanityPATCH    @validateEnablePdfDownloadFromMenuFromDynamicFormLayoutViewMode
   Scenario Outline: validating Download as pdf option is displayed inside burger menu at dynamic form view mode
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -4497,7 +4497,7 @@ Business Need: dynamic forms Component Scenarios
       | actionUrlLongOldValue                                                 | actionUrlLongNewValue                                                 |
       | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View | /apex/DynamicFormRedirect?packageId={!CapturePackage__c.Id}&mode=View |
 
-  @379364 @379353 @Sanity
+  @379364 @379353 @SanityPATCH
   Scenario Outline: validating Menu button for Download as pdf option is not displayed inside burger menu at dynamic form view modal window
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue       | filterId         |
@@ -4950,7 +4950,7 @@ Business Need: dynamic forms Component Scenarios
     Then I cannot see the following message in the page details :
       | Form Validated Successfully. |
 
-  @201251 @379344 @379345 @379349 @379360 @379356 @Sanity @sprint3
+  @201251 @379344 @379345 @379349 @379360 @379356 @SanityPATCH @sprint3
   Scenario Outline:  Form-To verify,When user click  view action on forms and then click on Edit action fill the data and click on save button. without refresh the application again click on view action of same form data is available
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -5141,7 +5141,7 @@ Business Need: dynamic forms Component Scenarios
       | ADMIN |
       #  | PM    |
 
-  @379348  @Sanity
+  @379348  @SanityPATCH
   Scenario: Entering value into number field and click on save , a value is getting saved into number field at dynamic form
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"

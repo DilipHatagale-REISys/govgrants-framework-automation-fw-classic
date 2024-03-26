@@ -2442,7 +2442,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2458,7 +2458,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2474,7 +2474,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2490,7 +2490,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2506,7 +2506,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2522,7 +2522,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2755,7 +2755,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "New Application For Testing Only"
     When I click on "Edit" icon for "New Application For Testing Only" inside table
     When I navigate to "Overview" sub tab
-    When I clear the value from field "ProjectDirectorContact__c"
+    When I clear the value from field "fieldCity__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
     Then I see missing field badge on "Overview" tab
@@ -2953,7 +2953,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -2977,7 +2977,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Cooperative Agreement" into field "Type__c"
@@ -3001,7 +3001,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3026,7 +3026,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3050,7 +3050,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                  | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -3074,7 +3074,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3099,7 +3099,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                                   | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3124,7 +3124,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -3150,7 +3150,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3176,12 +3176,12 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
-    And I enter value "Loan" into field "Type__c"
+    And I enter value "Block Grants" into field "Type__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
-    And I enter value "Grant" into field "Type__c"
+    And I enter value "Formula Grants" into field "Type__c"
     Then I softly see "Primary Funder Type" is not displayed inside page block detail
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
@@ -3397,7 +3397,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3423,7 +3423,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3447,7 +3447,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-23592                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -4292,8 +4292,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I pause execution for "7" seconds
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Automation Notes" inside table
@@ -4307,8 +4307,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -4370,8 +4370,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Allen PM" in "toggleFlexTableProgramContacts" panel
     When I hover mouse on lookup link "Allen PM" at table
@@ -6345,7 +6345,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-17604                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6372,7 +6372,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-23590                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6399,7 +6399,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantor State Program | Name                      | PBD-23589                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6426,7 +6426,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-17698                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6453,7 +6453,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | PBD-23586                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6480,7 +6480,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-23588                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6507,7 +6507,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-23594                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6534,7 +6534,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-23595                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6561,7 +6561,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-17603                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6588,7 +6588,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-17696                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -7609,7 +7609,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17696                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -7629,7 +7629,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17696                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
     When I click on "Save" in the page details
@@ -8817,7 +8817,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantor State Program | Name                      | PBD-17696                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8837,7 +8837,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantor State Program | Name                      | PBD-17696                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8903,7 +8903,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8972,7 +8972,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-17696                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10555,7 +10555,7 @@ Business Need: Page Layout Component Scenarios
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I pause execution for "7" seconds
     And I navigate to "Applications" tab
     Then I do not see "Help" options inside "flexTableDivId" enabled
@@ -11029,10 +11029,10 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Action Name | Edit1              | Grantor State Program | Name                      | Edit1                       |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                       |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11050,10 +11050,10 @@ Business Need: Page Layout Component Scenarios
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Recipient ApplicationView | Name                      |                            |
+      | Page Layout Action    | Action Name | Edit1              | Recipient ApplicationView | Name                      |                            |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit                       |
+      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit1                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11127,7 +11127,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17696                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17696                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17596                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"

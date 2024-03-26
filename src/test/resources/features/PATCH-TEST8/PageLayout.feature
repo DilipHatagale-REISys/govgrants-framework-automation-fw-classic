@@ -63,9 +63,9 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -676,8 +676,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
@@ -698,8 +698,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programInSAModeOnlyNotApproved}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programInSAModeOnlyNotApproved}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I click on "Save" in the page details
     When I click on "Submit For Approval" in the page details
     When I navigate to "Files" sub tab
@@ -915,15 +915,15 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-17604                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true              | Grantor State Program | Name                      | PBD-17094                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17094                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     Then I see the following message in the page details contains:
       | Program Sub Type is required to save. |
@@ -1166,10 +1166,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -2228,10 +2228,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -2252,10 +2252,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -2442,7 +2442,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2458,7 +2458,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2474,7 +2474,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2490,7 +2490,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2506,7 +2506,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                            | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2522,7 +2522,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:DisabledDateTimeFieldOnTheBasisOfPicklistUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2571,7 +2571,7 @@ Business Need: Page Layout Component Scenarios
     Then I see the following message in the page details contains:
       | Please enter valid URL value. |
 
-  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @Sanity @SanityPageLayout @wip
+  @105118    @verifyThatUserIsAbleToSaveSpecificURLFieldWhenURLValidationRegexCustomMetadataCheckboxIsSetToTrue @SanityPATCH @SanityPATCHPageLayout @wip
   Scenario: verify that user can enter and save specific url in  url field in a valid format when URL Validation Regex is set to true from custom metadata config
     Given I have "customMetaData" configuration as below:
       | id                 | label                | booleanValue | customMetaDataApiName    |
@@ -2631,6 +2631,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see bulb icon at header instruction is displayed
@@ -2642,7 +2643,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17744                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17363                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2658,7 +2659,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17744                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17363                  |
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2698,20 +2699,21 @@ Business Need: Page Layout Component Scenarios
   @113064    @requiredForSaveBehaviourAtPageBlockDetailForSPIUser-gPlanning
   Scenario: Changing value for required for save behaviour field from config and checking error message at program save for SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApplicationView    | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | ApplicationView    | Name                      | PBD-19851                  |
+      | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "Edit" icon for "New Application For Testing Only" inside table
-    When I clear the value from field "ProjectPeriodStartDate__c"
+    When I clear the value from field "fieldCity__c"
     When I click on "Save" in the page details
     Then I see the following message in the page details contains:
-      | Project Period Start Date is required to save under Overview. |
+      | City is required to save under Overview. |
 
   @112010   @validateFieldMessageDisplayedAtHeaderForRequiredForSubmitAndSaveFieldsForPMUser-gPlanning
   Scenario: validate field message displayed for required for save and submit Field at page header for PM user
@@ -2741,21 +2743,22 @@ Business Need: Page Layout Component Scenarios
     When I click on "Submit For Approval" in the page details
     Then I see missing field badge on "Overview" tab
 
-  @112571    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
+   @112571    @verifyBadgesShownAtOverviewTabInEditLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
   Scenario: verify that badges shown at Overview tab in page edit mode if required field from overview tab is blank by login as SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApplicationView    | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | ApplicationView    | Name                      | PBD-19684                  |
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "Edit" icon for "New Application For Testing Only" inside table
     When I navigate to "Overview" sub tab
-    When I clear the value from field "ProjectDirectorContact__c"
+    When I clear the value from field "fieldCity__c"
     When I click on "Save" in the page details
     When I click on "Edit" in the page details
     Then I see missing field badge on "Overview" tab
@@ -2841,14 +2844,15 @@ Business Need: Page Layout Component Scenarios
   @112373  @verifyBadgesShownAtOverviewTabInViewLayoutIfRequiredForSubmitFieldIsBlankByLoginAsSPIUser
   Scenario: verify that badges shown at Overview tab in page view mode if required field from overview tab is blank by login as SPI user
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | ApplicationView    | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | ApplicationView    | Name                      | PBD-19684                  |
+      | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Recipient ApplicationView | Name                      | PBD-19851                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I see missing field badge on "Overview" tab
@@ -2903,12 +2907,12 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline: Changing content of help text long field at page block seperator type of block from config and validating it at program detail page for SPI user
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName      | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active      | false             | ISASpend           | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | ISASpend           | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active      | false             | Recipient ApplicationView           | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Recipient ApplicationView           | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true           | ISASpend           | Name                      | PBD-23617                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | ISASpend           | Name                      | PBD-23617                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true           | Recipient ApplicationView           | Name                      | PBD-23617                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Recipient ApplicationView           | Name                      | PBD-23617                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -2928,7 +2932,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17545                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit | Grantor State Program | Name                      | PBD-17107                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -2953,7 +2957,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -2977,7 +2981,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueCooperativeAgreement | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                             | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Cooperative Agreement" into field "Type__c"
@@ -3001,7 +3005,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                       | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                 | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3026,7 +3030,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3050,7 +3054,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueAsGrant | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                  | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -3074,7 +3078,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValueUsingNotOperator | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                           | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3099,7 +3103,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfMultipleReqFieldAsPicklistAndTextAreHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                                                   | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3124,7 +3128,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination1 | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -3150,7 +3154,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination2 | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3176,12 +3180,12 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
-    And I enter value "Loan" into field "Type__c"
+    And I enter value "Block Grants" into field "Type__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
-    And I enter value "Grant" into field "Type__c"
+    And I enter value "Formula Grants" into field "Type__c"
     Then I softly see "Primary Funder Type" is not displayed inside page block detail
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
@@ -3397,7 +3401,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination3 | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                  | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3423,7 +3427,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HideBadgesIfReqFieldIsHiddenOnTheBasisOfPicklistFieldValue | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                                         | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
@@ -3447,7 +3451,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingBadgesByUsingJSONCombination12 | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Submit                                   | Grantor State Program | Name                      | PBD-23990                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -3589,14 +3593,14 @@ Business Need: Page Layout Component Scenarios
     When I click on "Save" in the page details
     Then I softly do not see missing field badge on "Overview" tab
 
-  @114989    @verifyPageBlockSeperatorDisplayedForSPIUser-gPlanning
+   @114989    @verifyPageBlockSeperatorDisplayedForSPIUser-gPlanning
   Scenario: verify page block seperator displayed at SPI user if is active field is checked for record type as page block seperator
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | false             | ISASpend           | ApiGeneratedId:0 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | ISASpend           | Name                      | PBD-23617                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-23617                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -3721,6 +3725,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     Then I softly see FaviconIcon at "Planning" browser tab
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     Then I softly see FaviconIcon at "Applications" browser tab
     And I navigate to "Grants" tab
     Then I softly see FaviconIcon at "Grants" browser tab
@@ -3732,7 +3737,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3751,14 +3756,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistBlankValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-23994                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
-    And I enter value "Grant" into field "Type__c"
+    And I enter value "Formula Grants" into field "Type__c"
     And I enter value "Formula Grants" into field "ProgramSubType__c"
     And I click on "Save" in the page details
     Then I see "Project Goals" is not displayed inside page block detail
@@ -3770,7 +3775,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONMultipleCondition | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3789,7 +3794,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistValueUsingHideFiledJSONNotEqualsOperator | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -3840,10 +3845,10 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3851,7 +3856,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
     When I hovering mouse on help text icon at "Status" inside "Overview Header" header
@@ -3871,10 +3876,10 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3882,7 +3887,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
     When I hovering mouse on help text icon at "Status" inside "Overview Header" header
@@ -3902,10 +3907,10 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3913,7 +3918,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Overview" sub tab
@@ -3934,10 +3939,10 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1>   | Annoucement Profile-FOA | ApiGeneratedId:3 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText1> | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3945,7 +3950,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Overview" sub tab
@@ -3965,9 +3970,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2>   | Annoucement Profile-FOA | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue   | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true            | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -3975,7 +3980,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<new_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Financials" sub tab
@@ -3995,9 +4000,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4005,7 +4010,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<default_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Financials" sub tab
@@ -4025,9 +4030,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4035,7 +4040,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<default_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Financials" sub tab
@@ -4055,9 +4060,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText2> | Annoucement Profile-FOA | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue       | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23593                  |
-      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-14063                  |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-14063                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-23997                  |
+      | Page Block Config:Page Block Rule Detail | Is Active      | true                | Annoucement Profile-FOA | Name                      | PBD-13668                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <default_helpText1> | Annoucement Profile-FOA | Name                      | PBD-13668                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -4065,7 +4070,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Announcement for Testing"
     When I click on "Edit" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
-    When I hovering mouse on help text icon at "Status" inside "General Information" page block
+    When I hovering mouse on help text icon at "Status" inside "Description" page block
     Then I softly see "<default_helpText1>" shown as help text
     And I refresh the page
     When I navigate to "Financials" sub tab
@@ -4267,6 +4272,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
@@ -4279,6 +4285,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
@@ -4292,8 +4299,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     And I pause execution for "7" seconds
     When I navigate to "Files" sub tab
     When I click on "Edit" icon for "Automation Notes" inside table
@@ -4307,8 +4314,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "Edit" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Files" sub tab
     When I click on "Delete" icon for "Notes Record" inside table
     When I click "Yes" on modal confirmation box
@@ -4370,8 +4377,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "{Framework_recordUsed:programForExpressionBuilderScenarios2}"
-    When I click on "View" icon for "{Framework_recordUsed:programForExpressionBuilderScenarios2}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Allen PM" in "toggleFlexTableProgramContacts" panel
     When I hover mouse on lookup link "Allen PM" at table
@@ -4384,6 +4391,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Automation Direct Grant"
     When I click on "View" icon for "Automation Direct Grant" inside table
     When I navigate to "Budget" sub tab
@@ -4439,8 +4447,8 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17100                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4449,16 +4457,16 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     Then I do not see missing field badge on "Overview" tab
 
-  @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
+   @121224  @verifyThatVisualIndicatorNotDisplayedAtProgramDetailPageIfReqForSaveFieldIsInactive
   Scenario: validate that visual indicator not displayed at detail page if req for save field is inactive
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | coreComponentField    | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active         | true             | Grantor State Program | ApiGeneratedId:0 |
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active         | false             | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save | Grantor State Program | Name                      | PBD-17100                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4477,9 +4485,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-17100                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4497,9 +4505,9 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-17602                  |
-      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-17602                  |
+      | Page Block Config:Page Block Rule Detail | Is Active            | true                                                                    | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior    | Required for Save                                                       | Grantor State Program | Name                      | PBD-17100                  |
+      | Page Block Config:Page Block Rule Detail | Hide Expression JSON | govgrants_config:HideExpressionAtPageBlockDetailFieldForVisualIndicator | Grantor State Program | Name                      | PBD-17100                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4647,6 +4655,7 @@ Business Need: Page Layout Component Scenarios
     When I login as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationForValidateButtonAtBusinessForm}" inside table
     When I navigate to "History" sub tab
@@ -5726,6 +5735,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     Then I see the following page detail buttons :
@@ -5743,6 +5753,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -5759,6 +5770,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -5775,6 +5787,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -5793,6 +5806,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Roles" sub tab
@@ -5809,6 +5823,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -5825,6 +5840,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -5846,6 +5862,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     Then I see field message with text as "Required to Save" and "Required to Submit"
@@ -5861,6 +5878,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "Edit1" icon for "Vrush Application" inside table
     When I navigate to "Roles" sub tab
@@ -5925,14 +5943,14 @@ Business Need: Page Layout Component Scenarios
     And I pause execution for "3" seconds
     Then I softly see "Value" as "PG-343-0058" inside mini page layout
 
-  @133875    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
+   @133875    @verifyHideFieldJsonFieldByHidingDateFieldOnTheBasisOfPicklistFieldValueInEditMode
   Scenario: Set up hide field json value to Hide date from Overview page block using picklist field value in edit mode
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName        | fieldOrignalValue | coreComponentField    | filterId         |
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideDateFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5950,7 +5968,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HidePicklistFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5969,7 +5987,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -5987,7 +6005,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6021,7 +6039,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideMultipleFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideMultipleFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6187,7 +6205,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6205,7 +6223,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideCheckboxPicklistDateCurrencyFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6242,7 +6260,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideLookupFieldOnTheBasisOfPicklistInEditMode | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -6283,10 +6301,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -6313,10 +6331,10 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -6345,8 +6363,8 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
-      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPicklistFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
+      | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-17094                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
  # @136938 verify that picklist field is hidden on the basis of program type field value
@@ -6372,7 +6390,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-23989                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6399,7 +6417,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingURLFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                 | Grantor State Program | Name                      | PBD-17398                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6426,7 +6444,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingCurrencyFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-17329                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6453,7 +6471,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                         | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingPercentFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                     | Grantor State Program | Name                      | PBD-23987                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6480,7 +6498,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-23986                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6507,7 +6525,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingDateTimeFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                      | Grantor State Program | Name                      | PBD-23988                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6534,7 +6552,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingNumberFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-23985                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6561,7 +6579,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                        | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingLookupFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                    | Grantor State Program | Name                      | PBD-17603                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -6588,7 +6606,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Required Behavior |                   | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName         | fieldNewValue                                      | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON  | govgrants_config:HidingTextFieldUsingHideFieldJSON | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Required Behavior | Required for Save                                  | Grantor State Program | Name                      | PBD-17333                  |
     When I click on "Edit" in the page details
     And I enter value "Grant" into field "Type__c"
@@ -7165,6 +7183,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7181,6 +7200,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7197,6 +7217,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7213,6 +7234,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7229,6 +7251,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7245,6 +7268,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7261,6 +7285,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7277,6 +7302,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7293,6 +7319,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7309,6 +7336,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7325,6 +7353,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7341,6 +7370,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7359,6 +7389,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7409,6 +7440,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7425,6 +7457,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7441,6 +7474,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7457,6 +7491,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7475,6 +7510,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7494,6 +7530,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7511,6 +7548,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7527,6 +7565,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7545,6 +7584,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Program For Application"
     When I click on "View" icon for "Program For Application" inside table
     When I navigate to "Files" sub tab
@@ -7559,10 +7599,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -7581,10 +7621,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -7609,7 +7649,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17333                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
     Then I softly see "Project Goals" is not displayed inside page block detail
@@ -7629,7 +7669,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJSONAtLongTextAreaField | Grantor State Program | Name                      | PBD-17333                  |
     When I click on "Edit" in the page details
     And I enter value "Loan" into field "Type__c"
     When I click on "Save" in the page details
@@ -7752,10 +7792,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8299,7 +8339,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideTextFieldUsingHideFiledJSON | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8417,10 +8457,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8458,10 +8498,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8478,10 +8518,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8517,10 +8557,10 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8538,7 +8578,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -8565,7 +8605,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
     When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
     When I enter value "Yes" into field "fieldIsWBSRequired__c"
@@ -8596,7 +8636,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Yes" into field "fieldBuildupFunctionalityNeeded__c"
     When I enter value "Yes" into field "fieldRiskAssessmentRequired__c"
     When I enter value "Yes" into field "fieldIsWBSRequired__c"
@@ -8652,10 +8692,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8685,10 +8725,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8718,10 +8758,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8751,10 +8791,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8780,7 +8820,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Roles" sub tab
     And I click on "Edit" in the page details
@@ -8802,7 +8842,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Roles" sub tab
@@ -8817,7 +8857,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingEqualToOperatorDisableProgramOrganisationField | Grantor State Program | Name                      | PBD-17333                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -8837,14 +8877,14 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonPageLayoutUsingNotEqualToOperatorEnableProgramOrganisationField | Grantor State Program | Name                      | PBD-17333                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I save the field labeled "EGMS ID" as "EGMSID"
     When I navigate to "Overview" sub tab
@@ -8865,7 +8905,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     When I navigate to "Roles" sub tab
     And I click on top right button "New" in flex table with id "---program:-:rolesAndResponsibilitiesTableId---"
@@ -8903,7 +8943,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingEqualToOperator | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8954,7 +8994,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -8972,7 +9012,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                             | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:OwnerOrgnizationFeildDoNotShowUsingJSONExpressionUsingNotEqualToOperator | Grantor State Program | Name                      | PBD-17333                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9030,7 +9070,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9059,8 +9099,8 @@ Business Need: Page Layout Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "AN-A11-145"
-    When I click on "View" icon for "AN-A11-145" inside table
+    When I perform quick search for "Announcement for Testing"
+    When I click on "View" icon for "Announcement for Testing" inside table
     When I navigate to "Overview" sub tab
     Then I see field "Eligible Applicant Types" inside page block
 
@@ -9169,7 +9209,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9197,7 +9237,7 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
@@ -9211,7 +9251,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false         | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9282,10 +9322,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9295,7 +9335,7 @@ Business Need: Page Layout Component Scenarios
     Then I select below checkbox options for field "fieldObjectives__c"
       | YES |
 
-  @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
+   @205806 @ToverifyValidationmessageshoulddisplayproperlywhenweusefieldlabeloverrideinarialfontStyleforcurrencyfieldforautomationuser @Jyoti
   Scenario: To verify - Validation message should display properly when we use field label override in arial font Style for currency field  for automation user
     When I login as "PM" user
     When I setup my app as "As a Grantor"
@@ -9304,7 +9344,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
-    When I enter value "111111111111111111111111111111111" into field "fieldFundedAmount__c"
+    When I enter value "8888888888888888888888888888888888" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     And I pause execution for "5" seconds
     Then I see the following message in the page details :
@@ -9627,10 +9667,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9653,10 +9693,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9679,10 +9719,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9699,10 +9739,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9725,10 +9765,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9752,10 +9792,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9779,10 +9819,10 @@ Business Need: Page Layout Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9820,7 +9860,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9837,7 +9877,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Label | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName  | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Label | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9854,7 +9894,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9871,7 +9911,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Field Label Override |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Field Label Override | Automation    | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9888,7 +9928,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9905,7 +9945,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Is Hidden Field | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName       | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Is Hidden Field | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9922,7 +9962,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -9973,10 +10013,10 @@ Business Need: Page Layout Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -9994,7 +10034,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Submit For Approval" in the page details
     When I navigate to "History" sub tab
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -10007,7 +10047,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10024,7 +10064,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10041,7 +10081,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Read Only | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Read Only | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10058,7 +10098,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | false             | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName                | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23574                  |
+      | Page Block Config:Page Block Rule Detail | Hide Select All Checkbox | true          | Grantor State Program | Name                      | PBD-23995                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10079,7 +10119,7 @@ Business Need: Page Layout Component Scenarios
     When I click on "Edit" icon for "Test Approver Table" inside table
     When I enter value "111111111111111111111111111111111111111111111" into field "Percent__c"
     When I enter value "222222222222222222222222222222222222222222222222" into field "Number__c"
-    When I enter value "3333333333333333333333333333333333333333333333333" into field "fieldFundedAmount__c"
+    When I enter value "888888888888888888888888888888888888" into field "fieldFundedAmount__c"
     And I click on "Save" in the page details
     Then I see the following message in the page details contains:
       | Funded Amount : Number is too large. |
@@ -10345,7 +10385,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHide | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10366,7 +10406,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJson | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJson | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10387,7 +10427,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonNumberField | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonNumberField | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10408,7 +10448,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForDateAndTime | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForDateAndTime | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10429,7 +10469,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForFundedAmount | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForFundedAmount | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10450,7 +10490,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Hide Fields JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName        | fieldNewValue                                                                     | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForPercentField | Grantor State Program | Name                      | PBD-17604                  |
+      | Page Block Config:Page Block Rule Detail | Hide Fields JSON | govgrants_config:HideFieldJsonForThePageBlockFieldHideForHideJsonnForPercentField | Grantor State Program | Name                      | PBD-17094                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10555,9 +10595,10 @@ Business Need: Page Layout Component Scenarios
       | Flex Table:General    | Header Help Text | <new_helpText> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "Grants Portal" app as "Automation-SPI2" user on "SUBPORTAL" portal
+    When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I pause execution for "7" seconds
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     Then I do not see "Help" options inside "flexTableDivId" enabled
 
     Examples:
@@ -10704,7 +10745,7 @@ Business Need: Page Layout Component Scenarios
     And I click on "Save" in the page details
     Then I softly see field "fieldCFDA_Data__c" is not editable
 
-  @218829 @379068 @379070 @Sanity @SanityPageLayout
+  @218829 @379068 @379070 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Page layout-To verify, User is not  edit formula field
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -10728,7 +10769,7 @@ Business Need: Page Layout Component Scenarios
       | Page Block Config:Page Block Rule Detail | Help Text Long | <old_helpText>    | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName      | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-17545                  |
+      | Page Block Config:Page Block Rule Detail | Help Text Long | <new_helpText> | Grantor State Program | Name                      | PBD-17107                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -10736,7 +10777,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     When I hovering mouse on help text icon inside page block detail "Title"
-    Then I do not see help text icon is displayed for field "Program Code"
+    Then I do not see help text icon is displayed for field "Title"
 
     Examples:
       | new_helpText | old_helpText                                              |
@@ -10768,6 +10809,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     When I click on "Menu" in the page details
@@ -10782,11 +10824,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
       | Page Layout           | Hide PDF Download | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide PDF Download | true          | Recipient ApplicationView |                           |                            |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide PDF Download | true          | Recipient Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -10821,6 +10864,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -10864,11 +10908,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName              | fieldOrignalValue | filterId         |
       | Page Layout           | Hide On Demand Snaphot | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName              | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient ApplicationView | Name                      |                            |
+      | configurationCategory | fieldName              | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Hide On Demand Snaphot | true          | Recipient Recipient ApplicationView | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -10895,6 +10940,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -10950,6 +10996,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I see "Edit" button is displayed on top right of pagelayout
@@ -10962,12 +11009,13 @@ Business Need: Page Layout Component Scenarios
       | Page Layout Action    | Is Active | true              | ApiGeneratedId:0 |
       | Page Layout Action    | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Is Active | false         | Recipient ApplicationView | Name                      | Edit                       |
-      | Page Layout Action    | Is Active | false         | Recipient ApplicationView | Name                      | Submit Application         |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Is Active | false         | Recipient Recipient ApplicationView | Name                      | Edit                       |
+      | Page Layout Action    | Is Active | false         | Recipient Recipient ApplicationView | Name                      | Submit Application         |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11020,6 +11068,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "Edit" icon for "New Application For Testing Only" inside table
     Then I see "Cancel" button is displayed on top right of pagelayout
@@ -11029,10 +11078,10 @@ Business Need: Page Layout Component Scenarios
   Scenario Outline:Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
       | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Action Name | Edit1             | Grantor State Program | Name                      | Edit1                      |
     Given I setup test configuration as below:
       | configurationCategory | fieldName   | fieldNewValue   | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit                       |
+      | Page Layout Action    | Action Name | Edit Automation | Grantor State Program | Name                      | Edit1                      |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -11040,12 +11089,6 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Edit Automation" button is displayed on top right of pagelayout
-    Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation   | Grantor State Program | Name                      | Edit                       |
-    Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit          | Grantor State Program | Name                      | Edit                       |
 
     Examples:
       | User  |
@@ -11055,14 +11098,15 @@ Business Need: Page Layout Component Scenarios
   @219877
   Scenario: Page Layout Action-- Admin- config- Verify action name is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit              | Recipient ApplicationView | Name                      |                            |
+      | configurationCategory | fieldName   | fieldOrignalValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit1             | Recipient Recipient ApplicationView | Name                      | Edit1                      |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Action Name | Edit Automation | Recipient ApplicationView | Name                      | Edit                       |
+      | configurationCategory | fieldName   | fieldNewValue   | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Action Name | Edit Automation | Recipient Recipient ApplicationView | Name                      | Edit1                      |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11094,11 +11138,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
       | Page Layout Action    | Button Help Text |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout Action    | Button Help Text | Edit The Record | Recipient ApplicationView | Name                      | Edit                       |
+      | configurationCategory | fieldName        | fieldNewValue   | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout Action    | Button Help Text | Edit The Record | Recipient Recipient ApplicationView | Name                      | Edit                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11133,7 +11178,7 @@ Business Need: Page Layout Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17333                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17595                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17333                  |
       | Page Block Config:Page Block Rule Detail | Is Active | false         | Grantor State Program | Name                      | PBD-17596                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11150,7 +11195,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200266 @200245 @379387 @379388 @Sanity @SanityPageLayout
+  @200266 @200245 @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline:Page Block-PM-UI-To verify all fields should displayed under pageblock
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11174,7 +11219,7 @@ Business Need: Page Layout Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-     # | PM    |
+      | PM    |
 
   @200267 @200246
   Scenario Outline: Page Block-PM-UI-To verify all fields should not displayed under pageblock.
@@ -11232,11 +11277,12 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @200249 @379389 @Sanity @SanityPageLayout
+  @200249 @379389 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Block-SPI-UI-To verify configured fields displayed in page block  as Program Name,Type ,Primary Funding Organization in Informatopn Block
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11248,20 +11294,21 @@ Business Need: Page Layout Component Scenarios
   @200250
   Scenario: Page Block-SPI-UI-To verify configured fields should not displayed in page block  as Applicant Organization, Address, SAM Expiration Date, DUNS in Information Block
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
-    #  | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:2 |
+    #  | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19708                 |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19710                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19725                 |
-    #  | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20168                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19708                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19710                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19725                  |
+    #  | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-20168                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11276,6 +11323,7 @@ Business Need: Page Layout Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I softly see field "Opportunity ID" inside page block
@@ -11286,20 +11334,21 @@ Business Need: Page Layout Component Scenarios
   @200252
   Scenario: Page Block-SPI-UI-To verify configured fields should not displayed in page block  as Opportunity ID, Opportunity Title, Funding Organization, Subaward Floor in Opportunity Overview
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:2 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19869                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19646                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-20364                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-23993                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19869                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19646                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-20364                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-23993                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11311,14 +11360,15 @@ Business Need: Page Layout Component Scenarios
   @201280
   Scenario Outline: Help Text SPI- UI- Verify given header help text is getting displayed under 'i' icon.
     Given I have "default" configuration as below:
-      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Recipient ApplicationView | ApiGeneratedId:0 |
+      | configurationCategory        | fieldName | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Block:Page Block Detail | Help Text | <old_helpText>    | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Help Text | <new_helpText> | Recipient ApplicationView | GNT__PageBlockTitle__c    | Information                |
+      | configurationCategory        | fieldName | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Help Text | <new_helpText> | Recipient Recipient ApplicationView | GNT__PageBlockTitle__c    | Information                |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11412,16 +11462,17 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:5 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2923                   |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2911                   |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2922                   |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2924                  |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2788                   |
-      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient ApplicationView | Name                      | TAB-2730                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2911                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2922                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2924                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
+      | Page Tabs Config:Page Layout Action | Is Active | true          | Recipient Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11442,15 +11493,16 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2923                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2911                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2922                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2924                  |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2788                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2911                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2922                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2924                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11460,7 +11512,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
 
-  @219886 @219887 @379091 @379092 @Sanity @SanityPageLayout
+  @219886 @219887 @379091 @379092 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Page Tab - Admin -Config - Verify page tab label should displayed properly with icon
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11479,11 +11531,12 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219888 @379093 @Sanity @SanityPageLayout
+  @219888 @379093 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab label should displayed properly with icon
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11539,15 +11592,16 @@ Business Need: Page Layout Component Scenarios
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:3 |
       | Page Tabs Config      | Is Active | true              | ApiGeneratedId:4 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2923                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2911                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2922                   |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2924                  |
-      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2788                   |
+      | configurationCategory               | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2911                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2922                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2924                   |
+      | Page Tabs Config:Page Layout Action | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2788                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11558,7 +11612,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
     Then I do not see "Collab" subtab is present with icon "fa fa-wechat" in page details
 
-  @219894 @219893 @379380 @379382 @Sanity @SanityPageLayout
+  @219894 @219893 @379380 @379382 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Page Tab - PM -UI - Verify page tab should displayed properly in given sequence
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11577,11 +11631,12 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
      # | PM    |
 
-  @219895 @379383 @Sanity @SanityPageLayout
+  @219895 @379383 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Page Tab - SPI- UI - Verify page tab should displayed properly in given sequence
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11623,11 +11678,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName  | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Sort Order | 0                 | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient ApplicationView | Name                      | TAB-2923                   |
+      | configurationCategory               | fieldName  | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Sort Order | 6             | Recipient Recipient ApplicationView | Name                      | TAB-2923                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11691,11 +11747,12 @@ Business Need: Page Layout Component Scenarios
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11710,6 +11767,7 @@ Business Need: Page Layout Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11737,17 +11795,18 @@ Business Need: Page Layout Component Scenarios
       | ADMIN | 0123456789!@#$%^&*() | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
    #   | PM    |   0123456789!@#$%^&*()           | The program construct of grants and awards that are managed throughout a program's life cycle. The program is approved and maintained by the program office.Program Manager (PM) is an authorised user that can create a program and who can also assign internal users to review/approve it. When a program is initiated it will start with a status of ‘Created’.The status for a created ‘Internal Program' that is submitted for approval by a pm will change to ‘Send for Approval’. a new task will be created for all assigned program approvers. Program approvers can review the program and are required to provide feedback/comments prior to approving. once approved the status is set to ‘Approved’. Program owner can see comments provided by program approver in ‘history’ tab and ‘active’ the program. once activated the status is set to ‘Active’ . |
 
-  @200222 @379087 @Sanity @SanityPageLayout
+  @200222 @379087 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Page Instruction-SPI-UI-To  verify page instruction should accept the number & any special character
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
       | Page Layout           | Page Instruction Text | <old_helpText>    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient ApplicationView |                           |                            |
+      | configurationCategory | fieldName             | fieldNewValue  | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Layout:General   | Page Instruction Text | <new_helpText> | Recipient Recipient ApplicationView |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11813,18 +11872,19 @@ Business Need: Page Layout Component Scenarios
   @200145 @200155
   Scenario: Page header-SPI-UI-To verify page header should be diplayed
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-19821                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-19757                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient ApplicationView | Name                      | PBD-19800                  |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient Recipient ApplicationView | Name                      | PBD-19821                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient Recipient ApplicationView | Name                      | PBD-19757                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Recipient Recipient ApplicationView | Name                      | PBD-19800                  |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11835,20 +11895,21 @@ Business Need: Page Layout Component Scenarios
   @200154 @200156
   Scenario: Page Header-SPI-UI-To verify page header should not be diplayed
     Given I have "default" configuration as below:
-      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField        | filterId         |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:0 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:1 |
-      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:2 |
-      | Page Tabs Config                         | Is Active | true              | Recipient ApplicationView | ApiGeneratedId:3 |
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField                  | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:0 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:1 |
+      | Page Block Config:Page Block Rule Detail | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:2 |
+      | Page Tabs Config                         | Is Active | true              | Recipient Recipient ApplicationView | ApiGeneratedId:3 |
     Given I setup test configuration as below:
-      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19821                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19757                  |
-      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient ApplicationView | Name                      | PBD-19800                  |
-      | Page Tabs Config:Page Layout Action      | Is Active | false         | Recipient ApplicationView | Name                      | TAB-2731                   |
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField                  | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19821                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19757                  |
+      | Page Block Config:Page Block Rule Detail | Is Active | false         | Recipient Recipient ApplicationView | Name                      | PBD-19800                  |
+      | Page Tabs Config:Page Layout Action      | Is Active | false         | Recipient Recipient ApplicationView | Name                      | TAB-2731                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "New Application For Testing Only"
     When I click on "View" icon for "New Application For Testing Only" inside table
@@ -11856,7 +11917,7 @@ Business Need: Page Layout Component Scenarios
     Then I do not see field "Status" inside page header
     Then I do not see field "Application Due Date" inside page header
 
-  @379085 @379086 @Sanity @SanityPageLayout
+  @379085 @379086 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -11870,7 +11931,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379088 @Sanity @SanityPageLayout
+  @379088 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify page blocks are aligned properly on page layout.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -11881,7 +11942,7 @@ Business Need: Page Layout Component Scenarios
 #  Then I see entered text in my feed section displayed properly
     Then I see page block "Notes" aligned properly on page layout
 
-  @379098 @379070 @Sanity @SanityPageLayout
+  @379098 @379070 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify on View page layout, fields are not editable.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11898,11 +11959,12 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379071 @Sanity @SanityPageLayout
+  @379071 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify on View page layout, fields are not editable.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -11911,7 +11973,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "fieldCity__c" is not editable
     Then I softly see field "fieldCounty__c" is not editable
 
-  @379085 @379086 @Sanity @SanityPageLayout
+  @379085 @379086 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify Step Progress bar is visible on page layout
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11925,7 +11987,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379091 @379092 @Sanity @SanityPageLayout
+  @379091 @379092 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page tabs and tab icons are showing as expected.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11944,7 +12006,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379380 @379382 @Sanity @SanityPageLayout
+  @379380 @379382 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page tabs are showing correct which are added in the config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11963,7 +12025,7 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379384 @379385 @Sanity @SanityPageLayout
+  @379384 @379385 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify number of page blocks are showing correct which are added in the config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -11981,11 +12043,12 @@ Business Need: Page Layout Component Scenarios
       | ADMIN |
       | PM    |
 
-  @379386 @Sanity @SanityPageLayout
+  @379386 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify number of page blocks are showing correct which are added in the config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
@@ -11995,29 +12058,29 @@ Business Need: Page Layout Component Scenarios
     Then I softly see "Application Files" page block displayed
     Then I softly see "Notes" page block displayed
 
-  @379387 @379388 @Sanity @SanityPageLayout
+  @379387 @379388 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify fields of all data type are rendering in the page blocks
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    Then I softly see field "StartDate__c" inside page block
-    Then I softly see field "WebsiteAddress__c" inside page block
-    Then I softly see field "ProgramName__c" inside page block
-    Then I softly see field "PrimaryFundingOrganization__c" inside page block
-    Then I softly see field "Objectives__c" inside page block
-    Then I softly see field "KPIsRequired__c" inside page block
-Examples:
+    Then I softly see field "Project Period Start Date" inside page block
+    Then I softly see field "Website Address" inside page block
+    Then I softly see field "Title" inside page block
+    Then I softly see field "Primary Funding Organization" inside page block
+    Then I softly see field "Description" inside page block
+    Then I softly see field "KPI's Required?" inside page block
+    Examples:
       | User  |
       | ADMIN |
       | PM    |
 
-  @379390 @379391 @Sanity @SanityPageLayout
+  @379390 @379391 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Success is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12031,17 +12094,18 @@ Examples:
       | PM    |
 
 
-  @379392 @Sanity @SanityPageLayout
+  @379392 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Success is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Success" page message displayed in page layout
 
-  @379393 @379394 @Sanity @SanityPageLayout
+  @379393 @379394 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Information is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12055,18 +12119,19 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379395 @Sanity @SanityPageLayout
+  @379395 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Information is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Information" page message displayed in page layout
 
 
-  @379396 @379397 @Sanity @SanityPageLayout
+  @379396 @379397 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Alert is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12080,17 +12145,18 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379398 @Sanity @SanityPageLayout
+  @379398 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Alert is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Alert" page message displayed in page layout
 
-  @379400 @379401 @Sanity @SanityPageLayout
+  @379400 @379401 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12104,17 +12170,18 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379402 @Sanity @SanityPageLayout
+  @379402 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Warning is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Warning" page message displayed in page layout
 
-  @379403 @379404 @Sanity @SanityPageLayout
+  @379403 @379404 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify page message type - Warning is getting displayed on page layout.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12128,17 +12195,18 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379405 @Sanity @SanityPageLayout
+  @379405 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify page message type - Error is getting displayed on page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     Then I see "Automation Test Error" page message displayed in page layout
 
-  @379406 @379407 @Sanity @SanityPageLayout
+  @379406 @379407 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify all page layout actions are displaying which are mentioned in the config.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -12168,18 +12236,19 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379408 @Sanity @SanityPageLayout
+  @379408 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify all page layout actions are displaying which are mentioned in the config.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     Then I see "Submit to grantor" button is displayed
     Then I see "Edit" button is displayed
 
-  @379409 @379410 @Sanity @SanityPageLayout
+  @379409 @379410 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -12195,18 +12264,19 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379411 @Sanity @SanityPageLayout
+  @379411 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify for page tabs if Highlights Panel? is true then its showing top of the page layout.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
     Then I softly see field "fieldInternalOrganization__c" inside page block
     Then I softly see field "fieldType__c" inside page block
 
-  @379412 @Sanity @SanityPageLayout
+  @379412 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page tabs are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12225,11 +12295,12 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379414 @Sanity @SanityPageLayout
+  @379414 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page tabs are showing correct.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
@@ -12239,7 +12310,7 @@ Examples:
     Then I see "History" shown at number "3" inside subtabs
     Then I see "Collab" shown at number "3" inside subtabs
 
-  @379415 @379416 @Sanity @SanityPageLayout
+  @379415 @379416 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12261,12 +12332,13 @@ Examples:
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
-    Then I see "General Information" shown at the number "0" inside page layout
+    Then I see "Description" shown at the number "0" inside page layout
     Then I see "System Information" shown at the number "1" inside page layout
 
-  @379418 @Sanity @SanityPageLayout
+  @379418 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify sort order of page blocks detail fields are showing correct.
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12288,7 +12360,7 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379419 @Sanity @SanityPageLayout
+  @379419 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
@@ -12298,18 +12370,19 @@ Examples:
     Then I see helpIcon displayed beside "Contacts" respective field or column
     Then I see helpIcon displayed beside "Information" respective field or column
 
-  @379420 @Sanity @SanityPageLayout
+  @379420 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify sort order of page blocks detail fields are showing correct.
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
-    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
-  @379421 @379422 @Sanity @SanityPageLayout
+  @379421 @379422 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12324,18 +12397,19 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379423 @Sanity @SanityPageLayout
+  @379423 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
+    And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table
-    Then I see helpIcon displayed beside "General Information" respective field or column
+    Then I see helpIcon displayed beside "Description" respective field or column
     Then I see helpIcon displayed beside "System Information" respective field or column
 
-  @379424 @379425 @Sanity @SanityPageLayout
+  @379424 @379425 @SanityPATCH @SanityPATCHPageLayout
   Scenario Outline: Sanity Testing- Page Layout- Admin- To verify help icon is visible on layout when help text is provided in page block detail config
     When I login to "As a Grantor" app as "<User>" user
     And I navigate to "Planning" tab
@@ -12353,11 +12427,12 @@ Examples:
       | ADMIN |
       | PM    |
 
-  @379426 @Sanity @SanityPageLayout
+  @379426 @SanityPATCH @SanityPATCHPageLayout
   Scenario: Sanity Testing- Page Layout- SPI- To verify help icon is visible on layout when help text is provided in page block detail config
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     And I click toggle button to select "Applications - All"
     And I perform quick search for "Application Autosnapshot TD AN 4 from D" in "toggleFlexTablepopupflextable" panel
     When I click on "View" icon for "Application Autosnapshot TD AN 4 from D" inside table

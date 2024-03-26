@@ -5,7 +5,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 
   ############Test suite: Flex Table UI (Suite ID: 334515)############
 
-  @334978 @382479 @Sanity  @SanityFlexTable
+  @ew @334978 @382479 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -18,7 +18,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334979 @382480 @Sanity  @SanityFlexTable
+  @334979 @382480 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-PM-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -31,7 +31,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334980 @382483 @Sanity  @SanityFlexTable
+  @334980 @382483 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-SPI-UI-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -44,7 +44,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Entries" page size inside table "---program:-:toggleFlexTablepopupflextableTableId---"
 
-  @334981 @336206 @382486 @Sanity  @SanityFlexTable
+  @334981 @336206 @382486 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-Admin-Config-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - Admin - Config - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -60,7 +60,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334984 @336208 @382487 @Sanity  @SanityFlexTable
+  @334984 @336208 @382487 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-PM-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - PM - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -74,7 +74,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Entries" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @334985 @336232 @382488 @Sanity  @SanityFlexTable
+  @334985 @336232 @382488 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Page size-SPI-UI-To verify that on disabling page size, "Show entries" block not displayed at bottom (left side) of flex table
   Page size - SPI - UI - To verify that on disabling 'Enable Page Size' Show 'x' Entries block not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -180,7 +180,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "Total Records" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334995 @382489 @Sanity  @SanityFlexTable
+  @334995 @382489 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Flex table-Pagination-Admin-Config-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -195,7 +195,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @334997 @382491 @Sanity  @SanityFlexTable
+  @334997 @382491 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Pagination-PM-UI-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
@@ -210,7 +210,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @334999 @382492 @Sanity  @SanityFlexTable
+  @334999 @382492 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Pagination-SPI-UI-To verify that on enabling Pagination, respective pagination block/component displayed at right side(on top and bottom) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -227,7 +227,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "Page 1 of" text-allignment is "right" in table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335000 @336242 @382493 @Sanity  @SanityFlexTable
+  @335000 @336242 @382493 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Flex table-Pagination-Admin-Config-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
   Pagination - Admin - Config - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -243,7 +243,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "---program:-:toggleFlexTableActiveFundingOpportunitiesAll---" table contains "Page 1 of"
 
-  @335001 @366243 @382495 @Sanity  @SanityFlexTable
+  @335001 @366243 @382495 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Pagination-PM-UI-To verify that on disabling Pagination, respective pagination block/component not displayed at right side(on top and bottom) of flex table,
   Pagination - PM - UI - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -333,7 +333,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index-Admin-Config-To verify that on enabling auto index, Index column get displayed to the left of flex table, and all records get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -346,7 +346,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index-PM-UI-To verify that on enabling auto index, Index column get displayed to the left of flex table, and all records get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -359,7 +359,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index-SPI-UI-To verify that on enabling auto index, Index column get displayed to the left of flex table, and all records get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
@@ -372,10 +372,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index-Admin-Config-To verify that on disabling auto index, Index column not get displayed to the left of flex table, and all records not get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -385,10 +385,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index-PM-UI-To verify that on disabling auto index, Index column not get displayed to the left of flex table, and all records not get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | Programs           | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -401,7 +401,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -411,7 +411,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index Behavior-Admin-Config-To verify that on selecting auto index behavior-All Rows, all the rows in flex table get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -424,7 +424,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index Behavior-PM-UI-To verify that on selecting auto index behavior-All Rows, all the rows in flex table get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -437,7 +437,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Auto Index Behavior-SPI-UI-To verify that on selecting auto index behavior-All Rows, all the rows in flex table get indexes
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | GrantsList         | Name                      |                            |
@@ -451,7 +451,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Auto Index Behavior - Admin - Config - To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -468,7 +468,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Auto Index Behavior - PM - UI - To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 10                | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -498,7 +498,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "10" indexing inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335049 @382499 @Sanity  @SanityFlexTable
+  @335049 @382499 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Enable Record Selection-Admin-Config-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -517,7 +517,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335052 @382501 @Sanity  @SanityFlexTable
+  @335052 @382501 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Enable Record Selection-PM-UI-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -534,7 +534,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335054 @382502 @Sanity  @SanityFlexTable
+  @335054 @382502 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Enable Record Selection-SPI-UI-To verify that on enabling record selection, a Record selection column displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -551,7 +551,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see "1" to "5" Record Selection inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @335055 @382508 @Sanity  @SanityFlexTable
+  @335055 @382508 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Disable Record Selection-Admin-Config-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -568,7 +568,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335059 @382509 @Sanity  @SanityFlexTable
+  @335059 @382509 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Disable Record Selection-PM-UI-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -585,7 +585,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "1" to "10" Record Selection inside table id "---program:-:ProgramsFlexTableToggleId---"
 
-  @335060 @382510 @Sanity  @SanityFlexTable
+  @335060 @382510 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Disable Record Selection-SPI-UI-To verify that on disabling record selection, a Record selection column not displayed on flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName               | fieldOrignalValue | filterId         |
@@ -745,7 +745,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Menu - Admin - Config - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -763,7 +763,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Menu - PM - UI - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -781,7 +781,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Menu - SPI - UI - To verify that on enabling 'Disable Menu' Menu feature not get displayed on UI for respective flex table.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -798,7 +798,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Enable Menu-Admin-Config-To verify that on enabling Menu, Menu option displayed on UI for the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -815,7 +815,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Enable Menu-PM-UI-To verify that on enabling Menu, Menu option displayed on UI for the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -828,11 +828,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see "Menu" action is displayed at the "---program:-:ProgramsFlexTableToggleId---" modal
 
-  @335120 @382517 @Sanity  @SanityFlexTable
+  @335120 @382517 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Enable Menu-SPI-UI-To verify that on enabling Menu, Menu option displayed on UI for the flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Default Page Size | 5                 | ApiGeneratedId:2 |
       | Flex Table            | Disable Menu      | false             | ApiGeneratedId:2 |
     Given I setup test configuration as below:
@@ -1095,7 +1095,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @382282 @382293 @Sanity  @SanityFlexTable
+  @382282 @382293 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Sanity TC - Admin - To verify that user is able to see Quick search input field on table, when Quick search config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1126,7 +1126,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @382296 @Sanity  @SanityFlexTable
+  @382296 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to see Quick search input field on table, when Quick search config is enabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1140,7 +1140,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "quick-search" is displayed on table id "---program:-:grantsFlexTableIdForSPIuser---"
 
 
-  @334659 @382396 @Sanity  @SanityFlexTable
+  @334659 @382396 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-Admin-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -1148,7 +1148,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "GT-GA-00077" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334660 @382397 @Sanity  @SanityFlexTable
+  @334660 @382397 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-PM-UI-To verify that user is able to search for text field (i.e. Text data type)
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -1156,7 +1156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see list contain "GT-GA-00068" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @334661 @382399 @Sanity  @SanityFlexTable
+  @334661 @382399 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Quick Search-SPI-UI-To verify that user is able to search for text field (i.e. Text data type)
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -1901,7 +1901,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Automation Internal Program for flow" inside table "---program:-:toggleFlexTableIdForAdminPM---"
     And I refresh the page
 
-  @334746 @382513 @382541 @Sanity  @SanityFlexTable
+  @334746 @382513 @382541 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1920,7 +1920,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
-  @334747 @382515 @382543 @Sanity  @SanityFlexTable
+  @334747 @382515 @382543 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -1939,7 +1939,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I download the file
     Then I cannot see "Total Records" on page "1" of "govgrants" pdf file
 
-  @334748 @382544 @Sanity  @SanityFlexTable
+  @334748 @382544 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: To verify that only searched results/records not displayed in exported PDF/XLS
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -2065,7 +2065,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I see table contains "Showing 1 to 10 of" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338469 @382444 @Sanity  @SanityFlexTable
+  @338469 @382444 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- Admin- Config- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2077,7 +2077,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338471 @382445 @Sanity  @SanityFlexTable
+  @338471 @382445 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- PM- UI- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2089,7 +2089,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTableIdForAdminPM---"
 
-  @338472 @382446 @Sanity  @SanityFlexTable
+  @338472 @382446 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- SPI- UI- Verify ‘Total Records Count’ displays on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2102,7 +2102,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "Total Records" page size inside table "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @338473 @382449 @Sanity  @SanityFlexTable
+  @338473 @382449 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- Admin- Config- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2115,7 +2115,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338475 @382456 @Sanity  @SanityFlexTable
+  @338475 @382456 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- PM- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2128,7 +2128,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see "Total Records" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @338477 @382457 @Sanity  @SanityFlexTable
+  @338477 @382457 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Total Records Count- SPI- UI- Verify Total Records Count should not display on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
@@ -2207,7 +2207,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Pagination - SPI - UI - To verify that on disabling 'Enable Pagination' pagination feature not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2222,7 +2222,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index- Admin- Config- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2237,7 +2237,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - PM- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2252,7 +2252,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Auto Index - SPI- UI- Verify records are getting indexed under separate column (#)
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:1 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:1 |
       | Flex Table            | Enable Pagination | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -2370,10 +2370,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Export (PDF) | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I setup my app as "As a Grantor"
+    And I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
-    When I click on "Menu" button inside table id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
-    Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
+    When I click on "Menu" button inside table id "---program:-:activeGrantsTableId---"
+    Then I see "Download as PDF" option is getting displayed under Menu in table "---program:-:activeGrantsTableId---"
 
   @338951
   Scenario: Download as XLS/CSV - Admin - Config- Verify Download as XLS/CSV option is visible on UI
@@ -3253,8 +3253,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on "Menu" button inside table id "toggleFlexTablePrograms"
-    Then I do not see "Help" option is getting displayed under Menu in table "toggleFlexTablePrograms"
+    When I click on "Menu" button inside table id "Programs"
+    Then I do not see "Help" option is getting displayed under Menu in table "Programs"
 
   @339459
   Scenario: Help Config- Admin- Config- Verify if we can find help option under menu.
@@ -3352,7 +3352,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Application Desk Reviews" content inside "Applications" subheader on left panel
     Then I see flex table with id "toggleFlexTableApplicationsSiteVisitReportsGrid" is displayed
 
-  @335216 @382206 @Sanity  @SanityFlexTable
+  @335216 @382206 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Total records count-Admin-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
@@ -3365,10 +3365,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I softly can see top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
@@ -3376,7 +3376,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see "{SavedValue:totalRecordCount}" page size inside table "---program:-:ProgramsFlexTableToggleId---"
 
-  @335220 @382207 @Sanity  @SanityFlexTable
+  @335220 @382207 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Flex table-Total records count-PM-UI-To verify that Total records get changed on creating a new record or deleting/moving records
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -3389,10 +3389,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     Then I softly can see top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
@@ -3461,7 +3461,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see "{SavedValue:totalPageCount}" page size inside table "---program:-:grantsFlexTableIdForSPIuser---"
 
     ######################Test suite: Advanced Filter (Suite ID: 338458)#########################
-  @338592 @336238 @382432 @Sanity  @SanityFlexTable
+  @338592 @336238 @382432 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- Admin- Config- Verify Filter option should not available on UI
   Advanced filter - Admin - Config - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -3475,7 +3475,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338590 @382402 @Sanity  @SanityFlexTable
+  @338590 @382402 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- Admin- Config- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3488,7 +3488,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338595 @336239 @382433 @Sanity  @SanityFlexTable
+  @338595 @336239 @382433 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- PM- UI- Verify Filter option should not available on UI,Advanced filter - PM - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3501,7 +3501,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I do not see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338594 @382417 @Sanity  @SanityFlexTable
+  @338594 @382417 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- PM- UI- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3514,7 +3514,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     Then I see Advance Filter box is displayed inside table id "toggleFlexTablePrograms" in flex table
 
-  @338598 @336241 @382434 @Sanity  @SanityFlexTable
+  @338598 @336241 @382434 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- SPI- UI- Verify Filter option should not available on UI,
   Advanced filter - SPI - UI - To verify that on disabling 'Enable Filter' advanced filter not displayed on UI for respective flex table
     Given I have "default" configuration as below:
@@ -3528,7 +3528,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Grants" tab
     Then I do not see Advance Filter box is displayed inside table id "---program:-:grantsFlexTableIdForSPIuser---" in flex table
 
-  @338596 @382418 @Sanity  @SanityFlexTable
+  @338596 @382418 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advanced Filter- SPI- UI- Verify Filter option available on UI
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -3552,7 +3552,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
     Then I see dropdown value "Program Name" under field name "Column Name" inside flex table
@@ -3573,7 +3573,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     Then I see dropdown value "EGMS ID" under field name "Column Name" inside flex table
     Then I see dropdown value "Program Name" under field name "Column Name" inside flex table
@@ -3617,7 +3617,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" after click advance filter
     And I click on "Column Name" and select "EGMS ID"
     Then I see Operator list change with field "Contains"
@@ -3641,7 +3641,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     And I click on "Column Name" and select "EGMS ID"
     Then I see Operator list change with field "Contains"
     And I click on "Column Name" and select "Program Name"
@@ -3687,7 +3687,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
 #    And I click on "fa fa-plus" after click advance filter
@@ -3704,7 +3704,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
     Then I see "fa fa-plus" button is enabled in flex table
@@ -3736,7 +3736,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
     And I click on "fa fa-plus" after click advance filter
@@ -3755,7 +3755,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
     And I click on "fa fa-plus" after click advance filter
@@ -3794,7 +3794,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
     When I enter advance filter values in table id "advfPrograms"
@@ -3814,7 +3814,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | test1 |
     When I enter advance filter values in table id "advfPrograms"
@@ -3855,7 +3855,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -3879,7 +3879,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -3926,7 +3926,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -3947,7 +3947,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -3955,7 +3955,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338625 @334630 @382438 @Sanity  @SanityFlexTable
+  @338625 @334630 @382438 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Advance filter - SPI- UI- Verify when we get records with ‘Advance filter’ and refresh the page Advance filter should cleared and all records should be displayed on UI
   |Flex table-Filter-SPI-To verify that on reloading page, applied filter get cleared|
     Given I have "default" configuration as below:
@@ -3989,7 +3989,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Start Date | Greater than | 09/22/2023 |
     Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
@@ -4009,7 +4009,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
@@ -4018,7 +4018,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
 
-  @338628 @382436 @382437 @Sanity  @SanityFlexTable
+  @338628 @382436 @382437 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex Table :Admin:-To verify,advanced filter should work for the date field with 'Greater than or equal to' operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -4053,7 +4053,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program date | Less than | 25/08/2023 |
     And I click on "fa fa-plus" after click advance filter
@@ -4076,7 +4076,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -4100,7 +4100,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Does not contains | Hi Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -4119,7 +4119,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Starts with | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -4138,7 +4138,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Ends with | Testing |
     And I click on "fa fa-plus" after click advance filter
@@ -4156,7 +4156,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
@@ -4173,7 +4173,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
@@ -4190,7 +4190,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Internal Organization | Equals to | SYSTEM |
     And I click on "fa fa-plus" after click advance filter
@@ -4209,7 +4209,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 1000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4228,7 +4228,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Less than | 100000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4247,7 +4247,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than or Equal to | 1000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4266,7 +4266,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Less than or Equal to | 10000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4285,7 +4285,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Equals to | 5000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4303,7 +4303,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 5000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4322,7 +4322,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Less than | 5000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4341,7 +4341,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 5000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4360,7 +4360,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Less than or Equal to | 100000 |
     When I click on "fa fa-plus" after click advance filter
@@ -4376,7 +4376,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -4390,7 +4390,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | ActiveGrants       | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | ActiveGrants       | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Grants" tab
@@ -4401,10 +4401,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Enable Auto Index - SPI - UI - To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:2 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Enable Auto Index | true         | RecipientApplications | Name                      |                            |
+      | Flex Table:General    | Enable Auto Index | true          | RecipientApplications | Name                      |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -4662,7 +4662,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338529
@@ -4679,7 +4679,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
 
   @338531
@@ -4720,7 +4720,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -4740,7 +4740,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "---program:-:ProgramsFlexTableToggleId---"
@@ -4779,7 +4779,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
   @338539
@@ -4798,7 +4798,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
   @338540
@@ -4815,7 +4815,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
     Then I see page description is displayed "Page 2 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
   @338542
@@ -4834,7 +4834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338543
@@ -4853,7 +4853,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338544
@@ -4870,7 +4870,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     Then I see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Next" pagination arrow inside table id "toggleFlexTableGrantsList"
 
   @338545
@@ -4888,7 +4888,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
 
@@ -4897,6 +4897,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
       | Flex Table            | Enable Pagination          | true              | ApiGeneratedId:1 |
+      | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Total Records Count | true              | ApiGeneratedId:2 |
       | Flex Table            | Enable Filter              | true              | ApiGeneratedId:3 |
     Given I setup test configuration as below:
@@ -4907,8 +4908,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Next"
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTablePrograms"
+    And I click on page navigation arrow "First" for table id "toggleFlexTablePrograms"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338548
@@ -4924,7 +4925,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Next"
+    And I click on page navigation arrow "Next" for table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
     Then I do not see "Previous" pagination arrow inside table id "toggleFlexTableGrantsList"
 
@@ -4943,7 +4944,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338552
@@ -4961,7 +4962,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTablePrograms"
 
   @338553
@@ -4977,7 +4978,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     Then I do not see "Last" pagination arrow inside table id "toggleFlexTableGrantsList"
 
   @338555
@@ -4995,7 +4996,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
@@ -5014,7 +5015,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click on page navigation arrow "toggleFlexTablePrograms" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTablePrograms"
     And I click on page navigation arrow "toggleFlexTablePrograms" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
 
@@ -5031,7 +5032,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
     And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "First"
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTableGrantsList"
 
@@ -5082,7 +5083,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click on page navigation arrow "toggleFlexTableGrantsList" for table id "Last"
+    And I click on page navigation arrow "Last" for table id "toggleFlexTableGrantsList"
 
   @338566
   Scenario: Flex table-Total Records count-Admin-UI_To verify that on adding/creating a new record, Total Records count get changed i.e. increased
@@ -5096,10 +5097,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
@@ -5119,10 +5120,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "7" seconds
     And I navigate to "Planning" tab
@@ -5275,13 +5276,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
-    And I click on top right button "Associate" in tableName "Contacts@1234567890!@#$%^&*()"
+    And I click on top right button "Associate" in tableName "Contacts"
     Then I see table id "toggleFlexTableAssociateProgramContacts" flex table render in modal view
 
   @336178 @382549
@@ -5292,10 +5293,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
@@ -5309,10 +5310,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
@@ -5328,7 +5329,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages" displayed as a Header on flex table
@@ -5363,7 +5364,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
@@ -5378,7 +5379,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages@1234567890!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages@1234567890!@#$%^&*()" displayed as a Header on flex table
@@ -5762,7 +5763,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                                                                             | defaultFieldsApi                                                                                                                                                         |
       | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c | Id,Name,ProjectTitle__c,ExternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,BudgetRedirectionThreshhold__c |
 
-  @336100 @382120 @Sanity  @SanityFlexTable
+  @336100 @382120 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-Display fields-Admin-Config-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5789,7 +5790,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @336101 @382121 @Sanity  @SanityFlexTable
+  @336101 @382121 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-Display fields-PM-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5816,7 +5817,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
       | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
-  @336102 @382122 @Sanity  @SanityFlexTable
+  @336102 @382122 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-Display fields-SPI-UI-To verify that sequence of all the displayed columns/fields of flex table, be same as that of provided display fields in config.
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -5992,7 +5993,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -6009,7 +6010,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -6043,7 +6044,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -6065,7 +6066,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     And I click on "fa fa-plus" after click advance filter
@@ -6535,11 +6536,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6552,11 +6553,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6588,11 +6589,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6605,11 +6606,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6641,11 +6642,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6660,11 +6661,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | false         | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | false         | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false         | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6705,12 +6706,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6728,12 +6729,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | 1234567890    | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | 1234567890    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6776,12 +6777,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6802,12 +6803,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6856,12 +6857,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6882,12 +6883,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6936,12 +6937,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -6962,12 +6963,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Label     | Applications - Draft     | ApiGeneratedId:4 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-2663                   |
+      | Flex Table List       | Label          | <labelName>   | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true          | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true          | AppReviewList      | Name                      | FLV-3848                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7012,12 +7013,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7033,12 +7034,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7076,13 +7077,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7099,13 +7100,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "pm" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7147,13 +7148,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7170,13 +7171,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7218,13 +7219,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7241,13 +7242,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7287,13 +7288,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7309,13 +7310,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7355,14 +7356,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7378,14 +7379,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7426,12 +7427,12 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true           | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Is Master View | false          | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Filter Clause  | <FilterClause> | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true           | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Is Master View | false          | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Filter Clause  | <FilterClause> | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7447,15 +7448,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Is Master View | false                    | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Is Master View | false                    | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | false                    | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7494,13 +7495,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7516,13 +7517,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7561,10 +7562,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Sequence  |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName     | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Filter Clause | <FilterClause> | AppReviewList      | Name                      | FLV-3807                   |
-#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2613                   |
-#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-2663                   |
-#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Filter Clause | <FilterClause> | AppReviewList      | Name                      | FLV-2749                   |
+#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2738                   |
+#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-3848                   |
+#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7583,9 +7584,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Sequence  |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2613                   |
-#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-2663                   |
-#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-3807                   |
+#      | Flex Table List       | Sequence      | 1              | AppReviewList      | Name                      | FLV-2738                   |
+#      | Flex Table List       | Sequence      | 2              | AppReviewList      | Name                      | FLV-3848                   |
+#      | Flex Table List       | Sequence      | 3              | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7623,15 +7624,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7651,15 +7652,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7707,14 +7708,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2738                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7735,14 +7736,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2613                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | true                     | AppReviewList      | Name                      | FLV-2738                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7791,13 +7792,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7816,13 +7817,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7868,15 +7869,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7897,15 +7898,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Active ?  | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName      | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?       | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?      | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label          | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause  | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF    | false                    | AppReviewList      | Name                      | FLV-2749                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -7957,15 +7958,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2749                   |
       | Flex Table:General    | Enable Export (XLS / CSV) | true                     | AppReviewList      | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -7988,15 +7989,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Enable Export (XLS / CSV) | false             | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName                 | fieldNewValue            | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-2663                   |
-      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-3807                   |
-      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2613                   |
-      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-3807                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Active ?                  | true                     | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Is Master View            | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Default ?                 | true                     | AppReviewList      | Name                      | FLV-3848                   |
+      | Flex Table List       | Label                     | Applications - Submitted | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Filter Clause             | <FilterClause>           | AppReviewList      | Name                      | FLV-2749                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2738                   |
+      | Flex Table List       | Show in PDF               | true                     | AppReviewList      | Name                      | FLV-2749                   |
       | Flex Table:General    | Enable Export (XLS / CSV) | true                     | AppReviewList      | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -8261,7 +8262,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
+    When I perform quick search for "Vrush Announcement"
     And I pause execution for "5" seconds
     Then I see sequence of "Edit" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "View" Actions is "2" on UI as per given sequence in flex table
@@ -8316,7 +8317,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
+    When I perform quick search for "Vrush Announcement"
     Then I see sequence of "View" Actions is "1" on UI as per given sequence in flex table
     Then I see sequence of "Delete" Actions is "2" on UI as per given sequence in flex table
     Then I see sequence of "Edit" Actions is "3" on UI as per given sequence in flex table
@@ -10101,10 +10102,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   @334101
   Scenario Outline: Flex table-Actions-Header action display type-SPI-UI-To verify that on selecting Render Location - "Row" and Header action display type - "Button", then respective action get displayed as a Link at each record level
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Sequence  | 1                 | ApiGeneratedId:0 |
-    Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Sequence                   | 1                   | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Location                   | Row                 | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action URL                 | <actionUrlOldValue> | GrantsList         | Name                      | View                       |
       | Flex Table Action     | Action Behavior            | Open in same window | GrantsList         | Name                      | View                       |
@@ -11905,7 +11904,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                 | actionUrlNewValue                 |
       | /apex/GrantView?id={!Grant__c.Id} | /apex/GrantView?id={!Grant__c.Id} |
 
-  @334186 @382212 @Sanity  @SanityFlexTable
+  @334186 @382212 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-Actions-Modal Config-Admin-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11929,7 +11928,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
 
-  @334187 @382215 @Sanity  @SanityFlexTable
+  @334187 @382215 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-Actions-Modal Config-PM-UI-To verify that New button displayed on top of the table and on clicking on it, respective Create modal get opened
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11976,11 +11975,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
+    When I perform quick search for "Vrush Announcement"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I click on "View" icon for "Vrush Announcement" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12071,10 +12070,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    Then I see record "Test 11-Jul" having action "View" contain icon css "fa fa-eye"
-    Then I see record "Test 11-Jul" having action "Edit" contain icon css "fa fa-pencil"
-    Then I see record "Test 11-Jul" having action "Delete" contain icon css "fa fa-trash-o"
+    When I perform quick search for "Vrush Announcement"
+    Then I see record "Vrush Announcement" having action "View" contain icon css "fa fa-eye"
+    Then I see record "Vrush Announcement" having action "Edit" contain icon css "fa fa-pencil"
+    Then I see record "Vrush Announcement" having action "Delete" contain icon css "fa fa-trash-o"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
       | /apex/AnnouncementView?id={!Announcement__c.Id} | /apex/AnnouncementView?id={!Announcement__c.Id} |
@@ -12160,11 +12159,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
+    When I perform quick search for "Vrush Announcement"
     Then I see "Edit" row action Button at position "0"
     Then I see "View" row action Button at position "1"
     Then I see "Delete" row action Button at position "2"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I click on "View" icon for "Vrush Announcement" inside table
     Then I see page title "Announcement View"
     Examples:
       | actionUrlOldValue                               | actionUrlNewValue                               |
@@ -12238,7 +12237,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -12258,7 +12257,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Help Text           | Hello Automation | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
     When I login to "As a Grantor" app as "pm" user
     When I setup my app as "As a Grantor"
@@ -12278,7 +12277,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text           | Hello Automation | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Help Text           | Hello Automation | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | GrantsList         |                           |                            |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12300,9 +12299,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text            |                 | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Help Text            |                 | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Field Label Override | Automation Test | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Field Label Override | Automation Test | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -12322,9 +12321,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text            |                 | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Help Text            |                 | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Automation Test | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Automation Test | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -12342,9 +12341,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text            |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Help Text            |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -12363,9 +12362,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table            | Field Label Override |                    | ApiGeneratedId:2 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Help Text            |                | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Help Text            |                | GrantsList         | Name                      | FTC-9721                   |
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Grants" tab
@@ -12387,7 +12386,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Messages Test Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Messages Test Automation" displayed as a Header on flex table
@@ -12420,7 +12419,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text | Help text for Automation | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
@@ -12443,6 +12442,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12456,7 +12456,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
+      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
     When I perform quick search for "Announcement for Testing"
@@ -12471,7 +12471,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Announcements" tab
     When I perform quick search for "Announcement for Testing"
@@ -12486,11 +12486,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7348                    |
+      | Page Block:Page Block Detail | Is Active | false         | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I do not see Header field "Contacts" displayed as a Header on flex table
 
@@ -12501,11 +12501,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Page Block            | Is Active | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName | fieldNewValue | coreComponentField      | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7348                    |
+      | Page Block:Page Block Detail | Is Active | true          | Annoucement Profile-FOA | Name                      | PB-7539                    |
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Announcements" tab
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see Header field "Contacts" displayed as a Header on flex table
 
@@ -12521,7 +12521,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see "Subject" in flex table header "toggleFlexTableCommunicationHistory"
@@ -12548,6 +12548,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<Users>" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12572,7 +12573,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test1234" displayed as a Header on flex table
@@ -12592,6 +12593,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12608,7 +12610,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "1234567890" displayed as a Header on flex table
@@ -12628,6 +12630,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12644,7 +12647,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header    | Test!@#$%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see Header field "Test!@#$%^&*()" displayed as a Header on flex table
@@ -12664,6 +12667,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12681,7 +12685,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test1234      | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test1234" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
@@ -12703,6 +12707,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12720,7 +12725,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | 1234567890    | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see text "1234567890" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
@@ -12742,6 +12747,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12760,7 +12766,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Instruction | Test!@#$%%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     Then I see text "Test!@#$%%^&*()" in header instruction field flex table id "toggleFlexTableCommunicationHistory"
@@ -12782,6 +12788,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12802,7 +12809,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | AlphanumericTest1234 | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
@@ -12827,6 +12834,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12847,7 +12855,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | 12345678980   | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
@@ -12870,6 +12878,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -12890,7 +12899,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Header Help Text   | Test!@#$%^%^&*() | CommunicationHistory | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     When I navigate to "Collab" sub tab
     When I hovering mouse on help text "Messages" icon
@@ -12913,6 +12922,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     When I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Collab" sub tab
@@ -13040,9 +13050,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Date and Time" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "Award Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @338765 @338766
   Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Picklist (Multi-Select),Flex table-Display fields-PM-UI_To verify that entered field rendered correctly on table, of data type Multi-Picklist
@@ -13057,9 +13067,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see "Date and Time" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Then I see "Award Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @338770 @338771 @338773 @338775 @338779 @338780
   Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Lookup
@@ -13885,7 +13895,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
     Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
     Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
@@ -13903,7 +13913,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     Then I see Advance Filter "Column Name" sub component is displayed inside table id "advfPrograms" in flex table
     Then I see Advance Filter "Operator" sub component is displayed inside table id "advfPrograms" in flex table
     Then I see Advance Filter "Value" sub component is displayed inside table id "advfPrograms" in flex table
@@ -13988,7 +13998,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Automation |
     Then I see table contains "Showing 1 to 5" inside table id "toggleFlexTablePrograms"
@@ -14004,7 +14014,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Equals to | 40000 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -14195,7 +14205,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "AgPG-REI-2208" inside table "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
     Then I see "No Records Found" inside flex table with id "---program:-:GrantsFlexTableIdForAdminAndPMuser---"
 
-  @336267 @382249 @Sanity  @SanityFlexTable
+  @336267 @382249 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Quick Search - Admin - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
@@ -14208,7 +14218,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I quick search "Testing Grant for Automation" inside table "DataTableEnhanceProgramContactsFlexToggle"
     Then I see "No Records Found" inside flex table with id "DataTableEnhanceProgramContactsFlexToggle"
 
-  @336268 @382258 @Sanity  @SanityFlexTable
+  @336268 @382258 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Quick Search - PM - UI - To verify that when user entered invalid data related to available/displayed reference field, then 'No records found' message get displayed
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -14324,7 +14334,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
@@ -14340,7 +14350,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | PG-T09-0049---- |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
@@ -14374,7 +14384,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 5000---- |
     When I click on "fa fa-plus" after click advance filter
@@ -14396,7 +14406,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than | 5000---- |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
@@ -14440,7 +14450,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Email | Contains | testing@gamil--com |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
@@ -14461,7 +14471,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     When I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Email | Contains | testing@gamil--com |
     Then I see "No Records Found" inside flex table with id "---program:-:ProgramsFlexTableToggleId---"
@@ -14724,7 +14734,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Help Text           |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Help Text           |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14743,7 +14753,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | GrantsList         |                           |                            |
-      | Flex Table List       | Help Text           |                | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Help Text           |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14762,7 +14772,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Field Label Override |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14781,7 +14791,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi> | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override |                | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14800,7 +14810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Hide Column JSON    | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Hide Column JSON    | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14819,8 +14829,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
-      | Flex Table List       | Hide Column JSON     | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
+      | Flex Table List       | Hide Column JSON     | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14839,7 +14849,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue    | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi>   | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Hide Cell JSON      | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Hide Cell JSON      | <HideJsonColumn> | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14859,8 +14869,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
-      | Flex Table List       | Hide Cell JSON       | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
+      | Flex Table List       | Hide Cell JSON       | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14873,13 +14883,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Detail config - Read Only column Json - Admin - config - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
   Detail config - Read Only column Json - PM - UI - To verify that when user applied any wrong Read only Column Json then respective field not get read only on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
-      | Flex Table            | Display Field Names   |                   | ApiGeneratedId:0 |
-      | Flex Table List       | Read Only Column JSON |                   | ApiGeneratedId:1 |
+      | configurationCategory | fieldName             | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names   | <defaultFieldsApi> | ApiGeneratedId:0 |
+      | Flex Table List       | Read Only Column JSON |                    | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names   | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Read Only Column JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Read Only Column JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14899,8 +14909,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names   | <newFieldsApi>   | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override  | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
-      | Flex Table List       | Read Only Column JSON | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override  | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
+      | Flex Table List       | Read Only Column JSON | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14919,7 +14929,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14939,8 +14949,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>   | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9555                   |
-      | Flex Table List       | Read Only Cell JSON  | <HideJsonColumn> | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount  | GrantsList         | Name                      | FTC-9721                   |
+      | Flex Table List       | Read Only Cell JSON  | <HideJsonColumn> | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14959,7 +14969,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -14978,7 +14988,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -14997,7 +15007,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -15016,7 +15026,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -15035,7 +15045,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | ActiveFundingOpportunitiesAll |                           |                            |
-      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-13569                  |
+      | Flex Table List       | Read Only Cell JSON |                | ActiveFundingOpportunitiesAll | Name                      | FTC-14085                  |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
@@ -15054,7 +15064,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -15096,7 +15106,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names  | <newFieldsApi>  | GrantsList         |                           |                            |
-      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9555                   |
+      | Flex Table List       | Field Label Override | Subaward Amount | GrantsList         | Name                      | FTC-9721                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
@@ -15136,14 +15146,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Date and Time | Less than or Equal to | 10/16/2023 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @334575 @334577
   Scenario Outline: Flex table-Filter-"<User>"-To verify that user is able to filter records by using Formula field
@@ -15234,7 +15244,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Status | Equals to | Created |
     Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
@@ -15272,14 +15282,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Funded Amount | Greater than or Equal to | 11 |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @334588 @334618
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Currency field
@@ -15310,14 +15320,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Review Initiated | Not equals to | false |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                       |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,ReviewInitiated__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,ReviewInitiated__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                         |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,ReviewInitiated__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,ReviewInitiated__c |
 
   @334591
   Scenario Outline: Flex table-Filter-To verify that user is able to filter records by using Checkbox field
@@ -15348,7 +15358,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Types Of Assistance | Includes | Project Grants |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -15428,7 +15438,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Email Test | Contains | test |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
@@ -15475,7 +15485,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | ADMIN | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
       | PM    | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c,URL__c | Name,ProjectTitle__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardedAmount__c,CurrentAward__c,Status__c,Application__c |
 
-  @334607
+  @3346071
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using URL field
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
@@ -15551,16 +15561,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Auto |
     When I enter advance filter first two column values in table id "advfPrograms"
       | (Obsolate)Funder Type | Equals to |
     Then I see table contains "Showing 1 to" inside table id "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @334621
   Scenario Outline: Flex table-Filter-SPI-To verify that user is able to filter records by using Checkbox field
@@ -15593,14 +15603,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | ACBDE |
     Then I see "No Records Found" inside flex table with id "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @334624
   Scenario Outline: Flex table-Filter-SPI-To verify that when applied filter not matched with any of the record details, then "No results found" message displayed
@@ -15632,7 +15642,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Auto |
     And I click on "fa fa-plus" after click advance filter
@@ -15673,7 +15683,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | Program Name | Contains | Auto |
     And I click on "Remove Filter Clause" after click advance filter
@@ -15701,7 +15711,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click on "Remove Filter Clause" after click advance filter
     Then I do not see filter "filter in filterDisplayList" is displayed
 
-  @339390 @339395 @needDilipConfirmation @382264 @Sanity  @SanityFlexTable
+  @339390 @339395 @needDilipConfirmation @382264 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the grid". for the Delete action
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue       | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -15714,7 +15724,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I wait for "20" seconds
     When I navigate to "Overview" sub tab
@@ -15733,14 +15743,14 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | ADMIN |
       | PM    |
 
-  @339397 @339409 @382265 @Sanity  @SanityFlexTable
+  @339397 @339409 @382265 @SanityPATCH  @SanityPATCHFlexTable
   Scenario Outline: Flex table-"<Users>"-To verify refresh behaviour "Refresh the entire page"for the delete action
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I wait for "20" seconds
     When I navigate to "Overview" sub tab
@@ -15778,16 +15788,16 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "toggleFlexTablePrograms"
+    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
     When I enter advance filter values in table id "advfPrograms"
       | EGMS ID | Contains | PG |
     Then I see page description is displayed "Page 1 of" with "Next" arrow inside table id "toggleFlexTablePrograms"
     Then I see "Total Records:" page size inside table "toggleFlexTablePrograms"
     Then I see "Entries" page size inside table "toggleFlexTablePrograms"
     Examples:
-      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                 |
-      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,DateandTime__c,AwardType__c |
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                                   |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
+      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Date_and_Time__c,AwardType__c |
 
   @334646
   Scenario Outline: Flex table-Filter-SPI-To verify that page size, Total records count and Pagination behavior on filtered records
@@ -15816,7 +15826,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Users | defaultFieldsApi                                                                                                                                           | newFieldsApi                                                                                                                                                                                 |
       | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c,ApplicationSectionsForRevision__c |
 
-  @382219 @Sanity  @SanityFlexTable
+  @382219 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - Admin - To verify that user is able to edit existing record by clicking on Edit action
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
@@ -15827,7 +15837,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I navigate to "Overview" sub tab
     Then I softly can see top right button "Save" in page detail
 
-  @382221 @Sanity  @SanityFlexTable
+  @382221 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - PM - To verify that user is able to edit existing record by clicking on Edit action
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -15989,7 +15999,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: validate enable auto index for details inside flex table of programs-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           | Name                      |                            |
@@ -16100,8 +16110,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16117,8 +16127,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation " is not displayed inside flex table
 
@@ -16134,8 +16144,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16155,8 +16165,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation" is not displayed inside flex table
 
@@ -16176,8 +16186,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" icon for "Automation PM" is not displayed inside flex table
 
@@ -16388,8 +16398,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "Edit" button inside "Contacts" flex table
 
@@ -16407,8 +16417,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "New" icon for "Contacts" is displayed inside flex table
 
@@ -16424,8 +16434,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     When I click on parallel lines menu bar with data target value "#toggleFlexTableAnnouncementContacts"
     Then I see "New" options inside "Contacts" enabled
@@ -16442,8 +16452,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "Edit" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     Then I see "New" button inside "Contacts" flex table
 
@@ -16624,11 +16634,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I enter value "Allen PM" into field "fieldName__c"
     And I enter value "Key POC" into field "fieldBusinessRole__c"
     And I click modal button "Save"
-    And I navigate to "Setup tabs" sub tab
+    And I navigate to "Setup" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:fundingAccountInformationTableId---"
     When I click "Add" after selection of "FA-17-03" in the table "---program:-:fundingAccountSelectionTableId---"
     When I pause execution for "3" seconds
-    And I navigate to "Setup tabs" sub tab
+    And I navigate to "Setup" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:budgetCategoryTableId---"
     When I click "Add" after selection of "SBC-A-209" in the table "---program:-:budgetCategorySelectionTableId---"
     And I navigate to "Log" sub tab
@@ -16639,7 +16649,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click "Save" after selection of "PSA-0005" in the table "---program:-:programServiceAreaSelectionTableId---"
     And I refresh the page
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     When I navigate to "Pending" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}"
@@ -16827,8 +16837,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -16847,8 +16857,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "Test 11-Jul"
-    When I click on "View" icon for "Test 11-Jul" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "View" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     And I click on "Edit" icon for "Automation" inside flex table with id "AnnouncementContacts" with wait for record
     When I enter value "Automation PM" into field "fieldResponsibility__c"
@@ -17313,7 +17323,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
     And I pause execution for "15" seconds
-    When I hovering mouse on help text icon inside "Contacts@1234567890!@#$%^&*()" for flex table
+    When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
 
   @130538    @helpTextDisplayedAtBottomOfHelpIconAtFlexTableInPageEditMode
@@ -17324,7 +17334,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
-    When I hovering mouse on help text icon inside "Contacts@1234567890!@#$%^&*()" for flex table
+    When I hovering mouse on help text icon inside "Contacts" for flex table
     Then I see help text is displayed at bottom
 
   @130095    @VerifyTitleLabelAndValueAtMiniPageLayoutIsDisplayedProperlyOnMouseHoverAtFlexTable @skipOnJenkins
@@ -17416,7 +17426,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-14083                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17520,7 +17530,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ created for special char" into field "fieldProgramName__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "7" seconds
@@ -17538,7 +17548,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program 1 Created for numeric value" into field "fieldProgramName__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "7" seconds
@@ -17556,7 +17566,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ Created for special value" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
@@ -17574,7 +17584,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     When I enter value "Program @@/ 1 Created for special value" into field "ProgramName__c"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
@@ -17632,7 +17642,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23998                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17692,7 +17702,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     When I navigate to "Overview" sub tab
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on "Edit" in the page details
@@ -17715,8 +17725,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory                    | fieldName           | fieldNewValue  | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General                       | Display Field Names | <newFieldsApi> | Programs              |                           |                            |
-      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-9265                   |
-      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-1542                   |
+      | Page Block Config:Page Block Rule Detail | Is Active           | true           | Grantor State Program | Name                      | PBD-23998                  |
+      | Flex Table List                          | Enable Total        | true           | Programs              | Name                      | FTC-14083                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17732,8 +17742,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see value "1,235.0000" for title "Number Test" against the value "Total" inside table "---program:-:ProgramsFlexTableToggleId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                                    | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Number_Test__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @136016    @validateCommasAreDisplayedIn4DecimalValueOnFlexTableForPercentFieldTotal
   Scenario Outline: Validate commas are displayed in 4 decimal value at percent field at flex table total
@@ -17744,7 +17754,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
-      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-1505                   |
+      | Flex Table List       | Enable Total        | true           | Programs           | Name                      | FTC-14083                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -17757,11 +17767,11 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Road Construction"
-    Then I see value "90,000%" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
+    Then I see value "90000%" for title "Percent" inside table "---program:-:ProgramsgridTableId---"
 
     Examples:
-      | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                 |
-      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
+      | newFieldsApi                                                                                                                | defaultFieldsApi                                                                                                 |
+      | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,Percent__c | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 
   @155301    @validateIfUserSearchRecordAtQuickSearchThenRecordCountIsDisplayedCorrectlyUnderFlexTableShowRecord
   Scenario: Validate if user search any record then total record count should display correctly under showing total records
@@ -17849,8 +17859,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -17870,8 +17880,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Automation PM" to save inside subtab
     When I enter value "Program Manager" into field "ProjectRole__c"
@@ -17890,20 +17900,21 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "Edit" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I click on "Edit" icon for "Program Manager" to save inside subtab
     And I click on "Save" in the page details
     Then I see entire page is refreshing
 
-  @174406 @sprint19
+  @1744061 @sprint19
   Scenario:Data Table - To verify,lookup  fields should not  be displayed as text in on view  modal , when 'Show link as Text' checkbox is unchecked
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Responsibilities" sub tab
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}"
     When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
@@ -17914,8 +17925,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
-    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    And I click toggle button to select "All Applications"
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Responsibilities" sub tab
     When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}"
     When I click on "Edit" icon for "{Framework_recordUsed:ApplicationStaticRecordRolesAndResponcebilitisName}" inside table
@@ -17926,6 +17938,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
+    And I click toggle button to select "All Applications"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Overview" sub tab
@@ -17948,7 +17961,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
     Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
@@ -17971,7 +17984,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     When I perform quick search for "APP2- FOA for DHP12" in "---program:-:flexGridEnhancedDataTableId---" panel
     When I save the value from row "1" for column name "Applicant Organization" as "valuesWithHyperLink" from flex table "---program:-:flexGridEnhancedDataTableId---"
     Then I see hyperlink at column value "{SavedValue:valuesWithHyperLink}" inside "---program:-:flexGridEnhancedDataTableId---" table
@@ -17992,8 +18005,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18014,8 +18027,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "Edit" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "Edit" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see value "$0.00" for title "BaseSalary" inside table "---program:-:programContactsTableId---"
@@ -18056,7 +18069,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     When I click on global search and select "Program"
-    When I perform quick search inside global search "{Framework_recordUsed:EGMSIDRecord}"
+    When I perform quick search inside global search "Test Approver Table"
     Then I see value "11/08/2021, 02:28 PM" for title "DateandTime" inside table "PageTemplateApp"
 
   @180719
@@ -18105,7 +18118,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table:General    | Enable Quick Search | false         | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I do not see quick search option is displayed
@@ -18121,7 +18134,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I pause execution for "6" seconds
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     Then I see Advance Filter is disabled from table "toggleFlexTablePrograms" with data target value "#advfPrograms"
@@ -18198,7 +18211,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     When I click on advance filter "#advfPrograms" of table id "---program:-:programTableDivId---"
@@ -18224,8 +18237,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
@@ -18245,8 +18258,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
@@ -18266,8 +18279,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "All Applications"
-    When I perform quick search for "{Framework_recordUsed:ApplicationStaticRecordviewAction}"
-    When I click on "View" icon for "{Framework_recordUsed:ApplicationStaticRecordviewAction}" inside table
+    When I perform quick search for "Vrush Application"
+    When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Budget" sub tab
     And I save the value from row "1" for column name "Support Year" as "sYear" from flex table "---program:-:applicationBudgetCategoryInlineEditTableId---"
     And I click on top right button "New" in flex table with id "---program:-:applicationBudgetCategoryInlineEditTableId---" without processing
@@ -18289,7 +18302,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
     When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
     And I enter value "1" into field "StepNumber__c"
@@ -18313,9 +18326,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -18334,9 +18347,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
     Then I see confirmation box with body "Automation" is displayed
@@ -18358,7 +18371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "Edit" icon for "Automation Internal Program for Testing" inside table
     And I pause execution for "5" seconds
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     And I pause execution for "5" seconds
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "ProgramReviewStepTemplatesgrid" without processing
@@ -18386,7 +18399,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Test Program For Automation - Created - Required Behaviour"
     When I click on "Edit" icon for "Test Program For Automation - Created - Required Behaviour" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
     And I enter value "1" into field "StepNumber__c"
@@ -18472,10 +18485,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Greater than or Equal to | $1,000 |
-    Then I softly see value "$10,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$10,000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
   @184240
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'less than or equal to   ' Operator
@@ -18483,10 +18496,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
   @176520 @sprint20
   Scenario: E-grid - To verify, when user double-click on top level action button then single confirmation box appears on the layout
@@ -18502,9 +18515,9 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "{Framework_recordUsed:MoniotoringScheduleForAllActiveGrantsRecord}" in "ProgramReviewStepTemplatesgrid" panel
     And I click on top right button "New" in flex table with id "---program:-:ProgramReviewStepTemplatesgridTableId---" without processing
     And I pause execution for "5" seconds
@@ -18516,8 +18529,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "5" seconds
     Then I see hyperlink at value "Test Automation Organization" inside "fieldAccountId" modal
@@ -18606,10 +18619,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Internal Organization | Equals to | SYSTEM |
-    Then I softly do not see value "Competitive" for title "Type" inside table "---program:-:programTableDivId---"
+    Then I softly do not see value "Competitive" for title "Type" inside table "---program:-:allAnnouncementTableId---"
 
   @184237
   Scenario: Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for currency field with 'grater than  ' Operator
@@ -18617,10 +18630,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Greater than | $1,000 |
-    Then I softly see value "$100,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$80,000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
   @184087
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' start with ' Operator
@@ -18639,10 +18652,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Equals to | $1,000.00 |
-    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$1,000.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
   @184085
   Scenario:Data Table- To verify,User added 'OR' operator in filter criteria ,advance filter should work properly for formula field with ' Does not Contains' Operator
@@ -18661,7 +18674,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Automation Program For Test"
+    When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Automation Program For Test" inside table
     And I click on "Edit" in the page details
     When I navigate to "Overview" sub tab
@@ -18675,10 +18688,10 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:programTableDivId---"
+    When I click on advance filter "#advfActiveFundingOpportunitiesAll" of table id "---program:-:allAnnouncementTableId---"
     When I enter advance filter values in table id "advfActiveFundingOpportunitiesAll"
       | Award Ceiling | Less than or Equal to | $1,000 |
-    Then I softly see value "$0.00" for title "Award Ceiling" inside table "---program:-:programTableDivId---"
+    Then I softly see value "$0.00" for title "Award Ceiling" inside table "---program:-:allAnnouncementTableId---"
 
 #  @184238
 #  Scenario: Data table-To verify, "Enable Rich Text Area Editor" setting is disabled HTML tags  is displayed on the layout
@@ -18686,8 +18699,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #    When I setup my app as "As a Grantor"
 #    And I navigate to "Planning" tab
 #    And I click toggle button to select "Internal Programs - Active"
-#    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-#    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+#    When I perform quick search for "Test Approver Table"
+#    When I click on "View" icon for "Test Approver Table" inside table
 #    When I navigate to "Overview" sub tab
 #    Then I see field "Description Field" inside page block
 
@@ -18698,13 +18711,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-13602                  |
+      | Flex Table List       | Show Link as Text | true          | ProgramContacts    | Name                      | FTC-14084                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I softly see value "Automation FO" for title "Name" inside table "---program:-:ProgramContactsTableId---"
 
@@ -18712,19 +18725,19 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Data Table - To verify, Lookup  fields of a record in Data table should be displayed as text when 'Show link as Text' checkbox is checked
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | coreComponentField | filterId         |
-      | Flex Table List       | Show Link as Text | false             | ProgramContacts    | ApiGeneratedId:0 |
+      | Flex Table List       | Show Link as Text | false             | Programs           | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | DataTableEnhanceProgramContacts | Name                      | FTC-13602                  |
+      | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Show Link as Text | true          | Programs           | Name                      | FTC-14084                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     #Then I softly see value "Bob PM" for title "Assigned To" inside table "---program:-:ApplicationTablIdForTestApplication---"
-    Then I do not see hyperlink at value "Test Automation Organization" inside "Organization" columnname for tableId "DataTableEnhanceProgramContactsFlexToggle"
+    Then I do not see hyperlink at value "ADMIN Test" inside "PrimaryFundingOrganization__c" columnname for tableId "Programs"
 
   @173826 @sprint20
   Scenario Outline: Data Table Enhanced - To verify, Relationship fields should be displayed as text in Edit format of the record in Data table Enhanced, when 'Show link as Text' checkbox is checked
@@ -18739,13 +18752,13 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Show Link as Text | false             | DataTableEnhanceProgramContacts | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Show Link as Text | true          | DataTableEnhanceProgramContacts | Name                      | FTC-13602                  |
+      | Flex Table List       | Show Link as Text | true          | DataTableEnhanceProgramContacts | Name                      | FTC-14084                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see field "Applicant Organization" inside page block
 
     Examples:
@@ -18764,8 +18777,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:Field ProgramName__c not found for sobject BudgetPeriod__c : table:a0I1500000ITVOSEA5 |
@@ -18790,8 +18803,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Error creating table:Field not found for sobject Program__c : table:a0I1500000ITVFEEA5 |
 
     Examples:
-      | newFieldsApi                                                                                             | defaultFieldsApi                                                                  |
-      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,DateandTime__c,Number__c |
+      | newFieldsApi                                                                                             | defaultFieldsApi                                                                    |
+      | Name,Id,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById, | Name,ProgramName__c,Account__c,FundedAmount__c,Status__c,Date_and_Time__c,Number__c |
 
   @189255 @sprint26
   Scenario Outline: To verify, when the user make some incorrect changes to 'Order By' config of the Flextable, the error message is displayed on the Page
@@ -18805,8 +18818,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "{Framework_recordUsed:EGMSIDRecord}"
-    When I click on "View" icon for "{Framework_recordUsed:EGMSIDRecord}" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     Then I see the following message in the page details contains:
       | Error creating table:unexpected token: 'ASC' |
@@ -18820,8 +18833,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "Automation FO" in "---program:-:programContactsTableId---" panel
     Then I see "Name" shown as flex table column title
@@ -18832,8 +18845,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "PG-A11-1253"
-    When I click on "View" icon for "PG-A11-1253" inside table
+    When I perform quick search for "Test Approver Table"
+    When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     When I perform quick search for "govgrantsuat@gmail.com.invalid" in "---program:-:programContactsTableId---" panel
     Then I see "Email" shown as flex table column title
@@ -18842,7 +18855,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: To verify that on disabling 'Enable Auto Index' index column not displayed on UI for respective flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
@@ -18995,7 +19008,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Table List       | Field Label Override |               | Programs           | Name                      | FTC-2877                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19131,7 +19144,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see cell subtotal as expected as given formula at "TotalAwardObligatedAmount__c" field
 
   @207072 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
@@ -19165,7 +19178,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Total Award Obligated Amount :" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
 
   @206942 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
@@ -19182,7 +19195,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     And I pause execution for "5" seconds
     Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
 
@@ -19200,7 +19213,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Sub Total :" inside rows of enhanced grid id "ProgramReviewStepTemplates"
 
   @217213 @onDisablingEnableDataImport/ExportUploadButtonNotDisplayedOnUI
@@ -19276,7 +19289,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "7" seconds
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19308,7 +19321,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     And I pause execution for "5" seconds
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -19358,7 +19371,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I pause execution for "5" seconds
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
@@ -19572,7 +19585,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "Automation Internal Program for Testing"
     When I click on "View" icon for "Automation Internal Program for Testing" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "Total:" inside rows of enhanced grid id "ProgramReviewStepTemplatesgrid"
 
   @207134 @ToVerifySubTotalLabelDisplayedAfterAddingFormula @Sprint6
@@ -19638,7 +19651,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario Outline: Admin-To verify that on selecting 'None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | Programs           |                           |                            |
@@ -19675,8 +19688,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "AN-A11-164"
-    When I click on "Edit" icon for "AN-A11-164" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     #When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -19688,8 +19701,8 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "All Announcements"
-    When I perform quick search for "AN-A11-164"
-    When I click on "Edit" icon for "AN-A11-164" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I navigate to "Overview" sub tab
     And I pause execution for "3" seconds
     #When I perform quick search for "{Framework_recordUsed:BudgetPeriodDetailsRecordPMuser}"
@@ -19726,7 +19739,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario:SPI-To verify that on selecting None' option for Auto index behavior, then also Index column get displayed for all rows
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Auto Index | true             | ApiGeneratedId:0 |
+      | Flex Table            | Enable Auto Index | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Auto Index | true          | RecipientApplications |                           |                            |
@@ -19762,7 +19775,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
 #      | Is Federal Program     | IsFederalProgram__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById   | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 #      | Number                 | Number__c,Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById             | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById |
 #
-  @382208 @Sanity  @SanityFlexTable
+  @382208 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Sanity TC - SPI - To verify that all top level actions are displayed on top of the parent table, which have been configured
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -19772,7 +19785,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Budget" sub tab
     Then I see "Test New" button inside "Budget Periods" flex table
 
-  @382211 @Sanity  @SanityFlexTable
+  @382211 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that all row level actions are displayed for each record on table, which have been configured
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -19784,7 +19797,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I see row level action button "View" rendered on flex table
     Then I see row level action button "Delete" rendered on flex table
 
-  @382216 @Sanity  @SanityFlexTable
+  @382216 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to create a new record by clicking on 'New' action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -19797,7 +19810,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I softly see the following messages in the page details :
       | Saved Successfully! |
 
-  @382240 @Sanity  @SanityFlexTable
+  @382240 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is able to edit existing record by clicking on Edit action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -19807,7 +19820,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "Edit" icon for "New Application For Testing Only" inside table
     Then I see title of current page is "  "
 
-  @382261 @Sanity  @SanityFlexTable
+  @382261 @SanityPATCH  @SanityPATCHFlexTable
   Scenario:Sanity TC - SPI - To verify that user is able to view record by clicking on View action
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -19817,7 +19830,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     When I click on "View" icon for "New Application For Testing Only" inside table
     Then I see title of current page is "Application View "
 
-  @382496 @Sanity  @SanityFlexTable
+  @382496 @SanityPATCH  @SanityPATCHFlexTable
   Scenario: Sanity TC - SPI - To verify that user is not able to see Pagination at right bottom of the table, when Pagination config is disabled
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue | filterId         |

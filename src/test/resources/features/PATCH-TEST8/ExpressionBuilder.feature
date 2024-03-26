@@ -6634,7 +6634,7 @@ Business Need: Expression Builder Component Scenarios
    # When I perform quick search for "Test Demo" in "---program:-:flexGridEnhancedTableId---" panel
     Then I see "*****" shown inside enhanced grid table for specified record "BP01"
 
-  @83693    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfGroup-EGrid @enhancedGrid @sanity @egrid
+  @83693    @verifyHideCellJSONAtEnhancedGridByHidingCellValueOnTheBasisOfGroup-EGrid @enhancedGrid @SanityPATCH @egrid
   Scenario: Verify Hide cell JSON By hiding cell on the basis of group - enhanced grid
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |

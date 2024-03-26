@@ -3,7 +3,7 @@ Business Need: Step Progress Bar Component Scenarios
   Test all step progress bar component based scenarios
   As a configuration manager i make different configurational changes in step progress bar component and will validate them.
 
-  @37328 @382833 @201810 @201811 @Sanity  @SanityStepProgressBar
+  @37328 @382833 @201810 @201811 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -299,7 +299,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "View" icon for "Automation Program For Test" inside table
     Then I see step progress bar is displayed
 
-  @201457 @201458 @382797 @382798 @Sanity  @SanityStepProgressBar
+  @201457 @201458 @382797 @382798 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Steps- Admin- Config- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -319,7 +319,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201813 @201814 @382714 @382716 @382832 @Sanity  @SanityStepProgressBar
+  @201813 @201814 @382714 @382716 @382832 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: IsCreated- Admin- Config- Verify Admin can configure ‘IsCreated’ support for the step progress bar and  can view the last updated date, time and user name
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -358,7 +358,7 @@ Business Need: Step Progress Bar Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -367,7 +367,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I pause execution for "5" seconds
     #201813 #201814
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -376,7 +376,7 @@ Business Need: Step Progress Bar Component Scenarios
     #201813 #201814
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -391,7 +391,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201459 @382795 @382799 @Sanity  @SanityStepProgressBar
+  @201459 @382795 @382799 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -403,7 +403,7 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see "Submitted" step is diplayed on step progress bar
     Then I see "Converted to Award" step is diplayed on step progress bar
 
-  @201812 @382834 @Sanity  @SanityStepProgressBar
+  @201812 @382834 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: IsCreated- SPI- UI- Verify user can view the last updated date, time and user name
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
@@ -428,7 +428,7 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario:
 
   ################# Step Progress Bar ######################
-  @201445 @201446 @201454 @201455 @382794 @Sanity  @SanityStepProgressBar
+  @201445 @201446 @201454 @201455 @382794 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
   Color Code Settings - PM- UI- Verify progress bar should should follow given color codes
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
@@ -463,7 +463,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "Submit For Approval" in the page details
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -471,7 +471,7 @@ Business Need: Step Progress Bar Component Scenarios
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -480,7 +480,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -493,7 +493,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
     #  | PM    |
 
-  @201438 @382792 @Sanity  @SanityStepProgressBar
+  @201438 @382792 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -587,7 +587,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
       | PM    |
 
-  @382819 @382821 @Sanity  @SanityStepProgressBar
+  @382819 @382821 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Sanity -TC-Admin-To verify whether the display values colors are getting changed to red  with a cross mark if any  record is  rejected
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -625,7 +625,7 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
       | PM    |
 
-    @382827 @382829 @Sanity  @SanityStepProgressBar
+    @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
     Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
       Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
       Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
@@ -651,7 +651,7 @@ Business Need: Step Progress Bar Component Scenarios
         | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
       And I pause execution for "10" seconds
       And I click on "Submit For Approval" in the page details
-      When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+      When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
       And I navigate to "Home" tab
       And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
       When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
