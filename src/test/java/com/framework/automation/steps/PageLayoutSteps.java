@@ -957,4 +957,9 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
     public void iSeeShownAtTheNumberInsidePageLayout(String usage, String subTabName, String number) {
         pageLayoutPage.assertSortingOfPageBlock(usage, subTabName, Integer.parseInt(number));
     }
+
+    @Then("^I (see|do not see) contacts \"([^\"]*)\" in suggestion box$")
+    public void iSeeContactsInSuggestionBox(String usage,String contacts) {
+        pageLayoutPage.assertIfContactDisplayedInuggestionBox(usage,contacts);
+    }
 }

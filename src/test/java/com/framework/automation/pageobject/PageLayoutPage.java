@@ -1696,6 +1696,11 @@ public class PageLayoutPage extends GovGrantsManager {
         return element;
     }
 
+    public List<Elements> getCompleteContentForContactsSendEmailSuggestionBox() {
+        List<Elements> element = I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//div[@class='listDropdownToScroll' or @class='listDropdownTo']//ul//li//p"));
+        return element;
+    }
+
     /**
      * return true if text is displayed on reply email modal
      *
@@ -3851,5 +3856,27 @@ public class PageLayoutPage extends GovGrantsManager {
     public List<Elements> getListSubTabsInsideMainDetailPage() {
         I.amPerforming().getElementReference().of(By.xpath("//div[@class='tabSection']//div[@class='panel-heading']//h3[@class='panel-title']"));
         return I.amPerforming().getElementReference().forListOfElements().of(By.xpath("//h3[@class='panel-title']//a//span[@class='togglePageBlock fa fa-caret-up']"));
+    }
+
+
+    public void assertIfContactDisplayedInuggestionBox(String usage, String contacts) {
+        if (usage.equalsIgnoreCase("softly see")) {
+            I.amPerforming().assertionsTo().assertThat(isContactDisplayedInBox(contacts)).isTrue();
+        } else if (usage.equalsIgnoreCase("softly do not see")) {
+            I.amPerforming().assertionsTo().assertThat(isContactDisplayedInBox(contacts)).isFalse();
+        } else if (usage.equalsIgnoreCase("see")) {
+            Assert.assertTrue(isContactDisplayedInBox(contacts));
+        }
+    }
+
+    private boolean isContactDisplayedInBox(String contacts) {
+        boolean flag = false;
+        try {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='listDropdownToScroll' or @class='listDropdownTo']//ul//li//p[contains(text(),'" + contacts + "')]"))) {
+                flag = true;
+            }
+        } catch (Exception e) {
+        }
+        return flag;
     }
 }

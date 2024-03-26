@@ -9486,8 +9486,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "*****" with record name "FA-ST-01" in table id "---program:-:AwardFundingAccountsOldForms---"
@@ -9540,8 +9540,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
@@ -9594,8 +9594,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
@@ -9648,8 +9648,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
@@ -9702,8 +9702,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Funding Account" in flex table header "---program:-:AwardFundingAccountsOldForms---"
@@ -9716,7 +9716,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -9735,7 +9735,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -9753,13 +9753,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                 | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForANDoperatorContextInAND | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Organization Capacity" page block displayed
@@ -9771,7 +9771,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -9789,7 +9789,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -9807,13 +9807,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                             | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideExpressionJsonForORoperatorProfileOR | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Organization Capacity" page block displayed
@@ -9866,8 +9866,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -9920,8 +9920,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -9974,8 +9974,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10028,8 +10028,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -10082,8 +10082,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10136,8 +10136,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -10190,8 +10190,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10244,8 +10244,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -10298,8 +10298,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10352,8 +10352,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -10406,8 +10406,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10460,8 +10460,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Project Characteristics" page block displayed
@@ -10514,8 +10514,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10568,8 +10568,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Project Characteristics" page block displayed
@@ -10581,7 +10581,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -10599,7 +10599,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -10610,20 +10610,20 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see "Organization Capacity" page block displayed
 
-  @217539
+  @217539p
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                         | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Organization Capacity" page block displayed
@@ -10635,7 +10635,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -10653,7 +10653,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
@@ -10671,13 +10671,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Program Specific Application form | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                            | coreComponentField                | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7330                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HideHideColumnJSONforHidePageBlockLoperandDollarUserNotEqualsADMINPMSPI | Program Specific Application form | Name                      | PB-7479                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I see "Organization Capacity" page block displayed
@@ -10730,8 +10730,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:toggleFlexTableFormEnhancedTableId---"
     Then I do not see "Validate" button is displayed
@@ -11021,8 +11021,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11070,8 +11070,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11119,8 +11119,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11168,8 +11168,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11217,8 +11217,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11266,8 +11266,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11315,8 +11315,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11364,8 +11364,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11416,8 +11416,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11465,8 +11465,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11514,8 +11514,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11563,8 +11563,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
@@ -11821,8 +11821,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "System Information" page block displayed
 
@@ -11838,8 +11838,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "System Information" page block displayed
 
@@ -11919,8 +11919,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -11940,8 +11940,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12024,8 +12024,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12045,8 +12045,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12104,7 +12104,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "Program for hide expression builder test"
     When I click on "View" icon for "Program for hide expression builder test" inside table
-    Then I see "Collab" subtab is present in page details
+    Then I see "Automation tab test" subtab is present in page details
 
   @201072
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab
@@ -12118,8 +12118,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see "Collab" subtab is present in page details
 
   @201074
@@ -12134,8 +12134,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I see "Collab" subtab is present in page details
 
   @204593
@@ -12210,8 +12210,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12231,8 +12231,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12312,8 +12312,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12333,8 +12333,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12370,8 +12370,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see "Collab" subtab is present in page details
 
 #######################Test suite: Hide Expression Builder (Suite ID: 201609)#####################
@@ -12420,8 +12420,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201618
@@ -12435,8 +12435,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201619
@@ -12482,8 +12482,8 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201625
@@ -12529,6 +12529,6 @@ Business Need: Expression Builder Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
