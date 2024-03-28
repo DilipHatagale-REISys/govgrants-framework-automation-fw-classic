@@ -23,7 +23,7 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -424,9 +424,6 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see "{SavedValue:CREATEDBY}" shown as help text
     Then I see "{SavedValue:CREATEDDATE}" shown as help text
 
-  @201815
-  Scenario:
-
   ################# Step Progress Bar ######################
   @201445 @201446 @201454 @201455 @382794 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
@@ -630,7 +627,7 @@ Business Need: Step Progress Bar Component Scenarios
       Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
       Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
       Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-      When I login to "As a Grantor" app as "PM" user
+      When I login to "As a Grantor" app as "<User>" user
       When I setup my app as "As a Grantor"
       And I navigate to "Planning" tab
       When I navigate to "Internal Programs" content inside "Programs" subheader on left panel

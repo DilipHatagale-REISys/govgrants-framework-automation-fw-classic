@@ -80,16 +80,20 @@ Business Need: Calender Config Component Scenarios
 
   @127031    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that admin user is redirected to respective record detail page by click on record id at calendar layout
-    When I login to "As a Grantor" app as "ADMIN" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    When I perform quick search for "Created state change Automation"
-    When I click on "Edit" icon for "Created state change Automation" inside table
-    When I enter value "0" into field "fieldStartDate__c"
-    When I enter value "365" into field "fieldEndDate__c"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     #When I enter value "0" into field "fieldDateandTime__c"
-    When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -101,7 +105,7 @@ Business Need: Calender Config Component Scenarios
     And I wait for "5" seconds
     Then I softly see field "EGMS ID" as "{SavedValue:PEGMSID}"
 
-  @127066    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
+  @127066p    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that SPI user is redirected to respective record detail page by click on record id at calendar layout
     Given I delete the record "Automation Runtime Program" from the object "Program__c" with field "ProgramName__c"
     And I execute batch file:
@@ -139,15 +143,17 @@ Business Need: Calender Config Component Scenarios
     Given I delete the record "{SavedValue:ANNEGMSID}" from the object "Announcement__c" with field "Name"
     Given I delete the record "{SavedValue:PEGMSID}" from the object "Program__c" with field "Name"
 
-  @127042  @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
+  @127042  @verifyByMouseHoverOnRecordIdAMini
   Scenario: validate that mini page layout is displayed to admin user by hover on record id at calendar layout
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
-    And I click modal button "Save and Continue"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
     And I save the field labeled "Program Name" as "TITLE"
@@ -180,8 +186,8 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
-    And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
