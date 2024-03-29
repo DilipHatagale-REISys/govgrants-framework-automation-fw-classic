@@ -410,7 +410,7 @@ Business Need: Phase Config Component Scenarios
     When I setup my app as "As a Grantor"
     #Then I see "Home" phase
     #Then I see "Planning" tab is highlighted for particular program
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     Then I see "Planning" tab is highlighted for particular program
     Examples:
@@ -624,7 +624,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config:General  | Is Phase  | false         | GrantorPlanning    |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     Then I donot see "Planning" in task summary by phase
 
   @34589    @validateSettingAsDefaultLandingTab-gplanning
@@ -746,7 +746,7 @@ Business Need: Phase Config Component Scenarios
       | Phase Config:General  | Is Phase  | true          | GrantorPlanning    |
     When I login as "ADMIN" user
     When I setup my app as "As a Grantor"
-    And I navigate to "HOME" tab
+    And I navigate to "Home" tab
     Then I see "0" at "Late" inside task summary by due date chart
 
     ################# Charts ###############

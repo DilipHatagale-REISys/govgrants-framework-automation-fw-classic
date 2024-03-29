@@ -279,7 +279,7 @@ Business Need: customApp Component Scenarios
     When I setup my app as "As Administrator"
     Then I see govgrants logo "Current App logo" is displayed with name "As Administrator"
 
-  @332501
+  @332501p
   Scenario: Custom App- To verify, when Default Theme Name is  "ColorContrast_Admin" should be saved on the  Custom App: Admin
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"

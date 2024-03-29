@@ -2030,7 +2030,6 @@ Business Need: security review Scenarios
     When I click on "Submit" in the page details without processing
     When I click alert button "OK"
     Then I softly see field "Status" as "Review Completed"
-
      # create FDM
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Applications" tab
@@ -2067,7 +2066,6 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-
     When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     When I navigate to "Applications" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
@@ -2075,7 +2073,6 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "green"
-
     # create Sub-Award
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Applications" tab
@@ -2125,7 +2122,6 @@ Business Need: security review Scenarios
     When I "Approve" in the approval decision
     Then I softly see field "Status" as "Approved"
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-
     # Sub-Award sent to sub-recepient
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Grants" tab
@@ -2136,7 +2132,6 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:subawardsTableId---" without waiting for record
     When I click on "Send to Subrecipient" in the page details
     Then I softly see field "Status" as "Sent to Subrecipient after Approval"
-
   # Sub-Award accpted by sub-recepient
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Grants" tab
@@ -2145,7 +2140,6 @@ Business Need: security review Scenarios
     When I click on "Start" icon for "{SavedValue:SUBAWARD_EGMSID}" inside table
     And I click on "Accept after Approval" in the page details
     Then I softly see field "Status" as "Accepted after Approval"
-
   # Sub-Award activation by owner
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Grants" tab
@@ -2156,14 +2150,12 @@ Business Need: security review Scenarios
     And I click on "View" icon for "{SavedValue:SUBAWARD_EGMSID}" inside flex table with id "---program:-:subawardsTableId---" without waiting for record
     And I click on "Activate" in the page details
     Then I softly see status in Progress-bar is "Activated" and is "green"
-
   # Grant activation by owner
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
     When I perform quick search for "{SavedValue:GRANT_ID}" in "---program:-:grantsTableId---" panel
     And I click on "View" icon for "{SavedValue:GRANT_ID}" inside flex table with id "---program:-:grantsTableId---" without waiting for record
     Then I softly see status in Progress-bar is "Active" and is "green"
-
     #createsitevisit
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Grants" tab
@@ -2180,7 +2172,6 @@ Business Need: security review Scenarios
     When I click on "Save" in the page details
     Then I softly see status in Progress-bar is "Created" and is "green"
     And I save the field labeled "EGMS ID" as "SV_EGMSID"
-
   #@111198 site visit in progress
     Given I navigate to "Overview" sub tab
     And I click on top right button "Associate" in flex table with id "---program:-:participantsTableId---"
@@ -2197,7 +2188,6 @@ Business Need: security review Scenarios
     When I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     And I perform quick search for "{SavedValue:SV_EGMSID}" in "---program:-:pendingTaskTableId---" panel
     When I click on "Start" icon for "{SavedValue:SV_EGMSID}" inside flex table with id "---program:-:pendingTaskTableId---"
-
   #@111198 submit site visit for approval
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Monitoring" tab
@@ -2216,7 +2206,6 @@ Business Need: security review Scenarios
       | Automation Observation | Automation Description | Observation |
     When I click on "Submit for Approval" in the page details
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-
   #@111198 site visit approved by 1st approval
     When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
     And I navigate to "Monitoring" tab
@@ -2225,7 +2214,6 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "SV-0739" inside flex table with id "---program:-:pendingTaskTableId---"
     And I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "green"
-
   #@111198 site visit approved by 2nd approval
     When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Monitoring" tab
@@ -2234,7 +2222,6 @@ Business Need: security review Scenarios
     And I click on "Start" icon for "SV-0739" inside flex table with id "---program:-:pendingTaskTableId---"
     And I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "green"
-
   #@111198 site visit sent to sub-recipient
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Monitoring" tab
@@ -2243,7 +2230,6 @@ Business Need: security review Scenarios
     And I click on "View" icon for "SV-0739" inside flex table with id "---program:-:manageSiteVisitTableId---"
     Given I click on "Send to Subrecipient" in the page details
     Then I softly see status in Progress-bar is "Sent to Subrecipient" and is "green"
-
   #@111198 site visit submitted to grantor
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
     And I navigate to "Monitoring" tab
@@ -2268,7 +2254,6 @@ Business Need: security review Scenarios
     And I collapse nested table containing column value "Automation Finding"
     When I click on "Submit to Grantor" in the page details
     Then I softly see status in Progress-bar is "Submitted to Grantor" and is "green"
-
   # site visit closure
     When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Monitoring" tab
@@ -2290,7 +2275,7 @@ Business Need: security review Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
     And I click toggle button to select "Grants - All"
-    When I perform quick search for "{Framework_recordUsed:AutomationPermanentAward}"
-    When I click on "View" icon for "{Framework_recordUsed:AutomationPermanentAward}" inside table
+    When I perform quick search for "Application Program For Announcement Testing"
+    When I click on "View" icon for "Application Program For Announcement Testing" inside table
     When I navigate to "Budget" sub tab
     Then I see expected table with id "toggleFGridRecipentGrantBudgetCategoryFlexGrid"
