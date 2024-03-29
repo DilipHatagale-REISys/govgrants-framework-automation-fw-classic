@@ -7,7 +7,7 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
-      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
+      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       #| Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |

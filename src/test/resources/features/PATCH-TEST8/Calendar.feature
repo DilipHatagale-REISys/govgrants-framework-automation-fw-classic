@@ -115,16 +115,16 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
-    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "6" seconds
     And I click on "Edit" in the page details
@@ -170,7 +170,7 @@ Business Need: Calender Config Component Scenarios
       | Department of Community Health |
       | {SavedValue:PT}                |
 
-  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser @wip
+  @127071    @verifyByMouseHoverOnRecordIdAMini-PageLayoutDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForSPIUser
   Scenario: validate that mini page layout is displayed to SPI user by hover on record id at calendar layout
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName         | fieldOrignalValue | filterId         |
@@ -206,7 +206,7 @@ Business Need: Calender Config Component Scenarios
       | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -214,7 +214,7 @@ Business Need: Calender Config Component Scenarios
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted For Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "QA" portal
+    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -222,7 +222,7 @@ Business Need: Calender Config Component Scenarios
     When I "Approve" in the approval decision
     Then I softly see status in Progress-bar is "Approved" and is "Green"
     When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "QA" portal
+    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -232,16 +232,16 @@ Business Need: Calender Config Component Scenarios
     #Announcement Creation
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
-    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
     And I enter value "{SavedValue:PEGMSID}" into field "fieldProgram__c"
     And I click modal button "Continue"
-    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "ANNEGMSID"
     Then I softly see status in Progress-bar is "Created" and is "Green"
     When I click on "Edit" in the page details
-    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_QA_org.xlsx"
+    And I enter "NewOrgAnnEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     And I pause execution for "3" seconds
     When I re-login to "Grants Portal" app as "SPI" user on "SUBPORTAL" portal
@@ -551,13 +551,13 @@ Business Need: Calender Config Component Scenarios
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
 #      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -579,13 +579,13 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
    #   | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -606,13 +606,13 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
     #  | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -661,13 +661,13 @@ Business Need: Calender Config Component Scenarios
 #    Given I setup test configuration as below:
 #      | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
 #      | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -906,7 +906,7 @@ Business Need: Calender Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar2}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar3}" from the object "Program__c" with field "ProgramName__c"
     Given I delete the record "{Framework_recordUsed:programForCalendar4}" from the object "Program__c" with field "ProgramName__c"
@@ -917,42 +917,42 @@ Business Need: Calender Config Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID1"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID2"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID3"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID4"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID5"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "3" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID6"
@@ -1019,13 +1019,13 @@ Business Need: Calender Config Component Scenarios
       | configurationCategory               | fieldName         | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Calender Config:General             | Modal Page Url    | /{!OwnerId}   | Grantor_Home_Program  |                           |                            |
      # | Page Tabs Config:Page Layout Action | Highlights Panel? | true          | Grantor State Program | Name                      | TAB-2624                   |
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
@@ -1040,15 +1040,15 @@ Business Need: Calender Config Component Scenarios
     Then I see the text containing :
       | Automation PM |
 
-  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC @wip
+  @158247 @VerifyUserClickOnProgramIDFromHomePhaseCalendarThenOpenRecordPage @vaibhavC
   Scenario: verify user click on program ID from home phase calendar then open record page
-    Given I delete the record "{Framework_recordUsed:programOnlyForApprovalAndSnapshotScenarios}" from the object "Program__c" with field "ProgramName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---patchprogram:-:programsTableId---"
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
