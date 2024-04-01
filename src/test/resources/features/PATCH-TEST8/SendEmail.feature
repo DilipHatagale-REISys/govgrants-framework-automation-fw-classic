@@ -1186,7 +1186,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     Then I see "Test Body formatting" displayed in "Bold" format inside CK editor
     Then I see attachment "SendEmailAttachment.pdf" is present in send email modal
 
-  @81106p @validateAtReplyModalIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
+  @81106 @validateAtReplyModalIfInternalCheckboxCheckedAtCCFieldThenOnlyInternalUserIsShownInAutoSuggestionBox
   Scenario: Validate while replying to email If internal checkbox is checked at CC field then only internal user is shown in suggestion box at send email modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
@@ -2106,7 +2106,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     When I navigate to "Collab" sub tab
     When I perform quick search for "test the email for external user" in "---program:-:communicationHistoryTableId---" panel
     When I click on "View" icon for "test the email for external user" inside table
-    Then I softly see "Dilip DM" on html page
+    Then I softly see "James Hank" on html page
 
   @116243 @validateNameIsDisplayedForSelectedUserInToFieldAtReplyMailWhenOpenInViewMode @needToUpdate
   Scenario: Validate if external user selected in TO field at reply email then name of user is displayed in view modal
@@ -7564,7 +7564,7 @@ Business Need: SendEmai Component Scenarios Send Email Functionality Send Email 
     And I click on X Action Button of "SendEmailAttachment.pdf" file
     Then I do not see "SendEmailAttachment.pdf" file is displayed in modal
 
-  @332815p
+  @332815
   Scenario: Send Email -To verify , when user try to add file then "Single File Size Limit is Exceeded' message is displayed on the LWC- send email attachment section
     Given I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"

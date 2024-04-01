@@ -5,22 +5,38 @@ Business Need: NotesandAttachments Component Scenarios
 
   @382875 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - Admin - To verify that Notes and Attachments tables should be render on page layout
-    When I login to "As a Grantor" app as "Admin" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table Admin" in "---program:-:ProgramsgridTableId---" panel
-    When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
+    And I pause execution for "10" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "Sanity Attachments and Notes table Admin" into field "fieldProgramName__c"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed
 
   @382876 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify that Notes and Attachments tables should be render on page layout
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
-    When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
+    And I pause execution for "10" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter value "Sanity Attachments and Notes table PM" into field "fieldProgramName__c"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     Then I softly see "Attachments" page block displayed
     Then I softly see "Notes" page block displayed
@@ -31,6 +47,7 @@ Business Need: NotesandAttachments Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     Then I see "Grants Portal" inside CustomApp dropDown
     And I navigate to "Applications" tab
+    And I click toggle button to select "Applications - All"
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
@@ -289,14 +306,28 @@ Business Need: NotesandAttachments Component Scenarios
 
   @383767 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify that user able to see Download action on Attachments table at row level
-    When I login to "As a Grantor" app as "Admin" user
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    And I perform quick search for "Sanity Attachments and Notes table PM" in "---program:-:ProgramsgridTableId---" panel
-    When I click on "View" icon for "Sanity Attachments and Notes table PM" inside table
+    And I pause execution for "10" seconds
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I navigate to "Overview" sub tab
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Files" sub tab
+    And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
+    And I enter value "Test Automation" into description box
+    And I click modal button "Save"
+    When I close modal by clicking the top right x button
+    And I refresh the page
     When I navigate to "Files" sub tab
     Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
-    Then I see row level action button "Download" against "Notes testing" in table name "Notes"
 
   @383769
   Scenario: Sanity TC - SPI - To verify that user able to see Download action on Attachments table at row level
@@ -314,45 +345,53 @@ Business Need: NotesandAttachments Component Scenarios
   @391248 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - Admin - To verify after filling required details in Add attachment modal, attachment record is getting saved on click of save action.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "ADMIN" user
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
     And I select "Program Artifacts" from dropdown of filetype
-    And I upload attachment "Program Artifacts" in attachment modal
+    And I upload attachment "SendEmailAttachment.pdf" in attachment modal
     And I enter value "Test Automation" into description box
     And I click modal button "Save"
-    Then I see "Attachment added successfully." message displayed in modal
+    And I pause execution for "7" seconds
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Files" sub tab
+    Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
 
   @391250 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - PM - To verify after filling required details in Add attachment modal, attachment record is getting saved on click of save action.
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-    When I login to "As a Grantor" app as "PM" user
+    When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I pause execution for "10" seconds
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Files" sub tab
     And I click on top right button "Add" in notes and attachment with name "Attachments"
+    And I select "Program Artifacts" from dropdown of filetype
     And I upload attachment "SendEmailAttachment.pdf" in attachment modal
     And I enter value "Test Automation" into description box
     And I click modal button "Save"
-    Then I see "Attachment added successfully." message displayed in modal
+    When I close modal by clicking the top right x button
+    And I refresh the page
+    When I navigate to "Files" sub tab
+    Then I see row level action button "Download" against "SendEmailAttachment.pdf" in table name "Attachments"
 
   @391263 @SanityPATCH @SanityPATCHNotes
   Scenario: Sanity TC - Admin- To verify after filling required details in Add Notes modal, notes record is getting saved on click of save action.

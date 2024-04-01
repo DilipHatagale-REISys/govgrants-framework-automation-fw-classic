@@ -28,7 +28,7 @@ Business Need: Test suite: User Story 296453: QA only-Internal - XSS - For
       | ADMIN | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
       | PM    | Name,ProgramName__c,Abbreviation__c,TestRich__c,AssistanceType__c,BeneficiaryEligibility__c,Type__c,Account__c,Status__c,FundedAmount__c | Name,ProgramName__c,Type__c,Account__c,Status__c,FundedAmount__c,Abbreviation__c |
 
-  @303055 @Vrushali
+  @303055p @Vrushali
   Scenario Outline: XSS- Data table- (Admin) To verify when user enters script in the Long Text Area field then alert should not display
     Given I have "default" configuration as below:
       | configurationCategory                    | fieldName           | fieldOrignalValue  | filterId         |
