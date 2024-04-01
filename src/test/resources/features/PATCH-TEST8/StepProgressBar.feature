@@ -3,6 +3,21 @@ Business Need: Step Progress Bar Component Scenarios
   Test all step progress bar component based scenarios
   As a configuration manager i make different configurational changes in step progress bar component and will validate them.
 
+  @phaseLevelTableConfig
+  Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Text area
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | Programs           |                           |                            |
+    When I login to "As a Grantor" app as "<Users>" user
+    And I navigate to "Planning" tab
+    Then I see "Assistance Type" in flex table header "---program:-:ProgramsFlexTableToggleId---"
+    Examples:
+      | Users | defaultFieldsApi                                                                                                 | newFieldsApi                                                                                                                       |
+      | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,AssistanceType__c |
+
   @37328 @382833 @201810 @201811 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
@@ -19,11 +34,11 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -49,10 +64,10 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario Outline: validate after disabling of progress bar for grantor planning and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application |               | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -63,16 +78,16 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | defaultcustomApp |
-      | Grantor          |
+      | Grantor; Grantee |
 
   @34348    @disablingRenderingOfProgressBarForUser-gPlanning
   Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultuser>     | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultuser>     | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application |               | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -82,8 +97,8 @@ Business Need: Step Progress Bar Component Scenarios
     Then I do not see step progress bar is displayed
 
     Examples:
-      | defaultuser |
-      | Internal    |
+      | defaultuser      |
+      | Grantor; Grantee |
 
   @34349    @disablingRenderingOfParticularStatusProgressBarForUser-gPlanning @oldsmoke
   Scenario Outline: validate after disabling of submit for approval status from progress bar for internal user and validating it on program detail page-programs
@@ -119,10 +134,10 @@ Business Need: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -143,17 +158,17 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after changing color of created status to different and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName      | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Complete Color | #3ba10b           | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Complete Color | #3ba10b           | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Complete Color | #0b0ba0       | PB-0092            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "10" seconds
     Then I see status in Progress-bar is "Created" and is "Blue"
@@ -162,22 +177,22 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after enabling negative field for submit for approval step progress bar and validating its appearence on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName     | fieldOrignalValue | filterId |
-      | Step Progressbar Detail Detail         | Negative Path | false             | PB-0108  |
-      | Step Progressbar Header Config:General | Reject Color  | #E60000           | PB-0108  |
+      | Step Progressbar Detail Detail         | Negative Path | false             | PB-0092  |
+      | Step Progressbar Header Config:General | Reject Color  | #E60000           | PB-0092  |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName     | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Step Progressbar Detail Detail         | Negative Path | true          | Program Progress Bar | Name                      | Submitted for Approval     |
-      | Step Progressbar Header Config:General | Reject Color  | #E60000       | PB-0108              |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color  | #E60000       | PB-0092              |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -195,10 +210,10 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName    | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0092            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -206,10 +221,10 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -221,7 +236,7 @@ Business Need: Step Progress Bar Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -235,10 +250,10 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate after changing color of rejected status to different color and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName    | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color | #E60000           | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName    | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0093            |                           |                            |
+      | Step Progressbar Header Config:General | Reject Color | #0b0ba0       | PB-0092            |                           |                            |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -246,11 +261,11 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -262,7 +277,7 @@ Business Need: Step Progress Bar Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -335,10 +350,10 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -415,14 +430,11 @@ Business Need: Step Progress Bar Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "New Application For Testing Only"
-    When I click on "View" icon for "New Application For Testing Only" inside table
-    And I save the field labeled "Created By" as "CREATEDBY"
-    And I save the field labeled "Created Date" as "CREATEDDATE"
-    When I hovering mouse on Status inside step progress bar "Created"
-    And I pause execution for "5" seconds
-    Then I see "{SavedValue:CREATEDBY}" shown as help text
-    Then I see "{SavedValue:CREATEDDATE}" shown as help text
+    When I perform quick search for "Application Program For Announcement Testing"
+    When I click on "View" icon for "Application Program For Announcement Testing" inside table
+    Then I see "Created Date" field contains "03/15/2024 12:15 AM" value
+    Then I see "Last Modified Date" field contains "03/28/2024 10:05 AM" value
+
 
   @201815
   Scenario:
@@ -440,10 +452,10 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     #201454 #201455
     Then I softly see status in Progress-bar is "Created" and is "Green"
@@ -456,10 +468,6 @@ Business Need: Step Progress Bar Component Scenarios
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
-    And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
@@ -471,36 +479,27 @@ Business Need: Step Progress Bar Component Scenarios
     When I "Approve" in the approval decision
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Submitted for Approval" and is "Green"
-    When I re-login to "As a Grantor" app as "FO" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "<User>" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-    When I "Approve" in the approval decision
-    And I pause execution for "5" seconds
-    Then I softly see status in Progress-bar is "Approved" and is "Green"
-    When I navigate to "History" sub tab
-    When I re-login to "As a Grantor" app as "PM" user on "PATCH" portal
-    And I navigate to "Home" tab
-    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-    And I click on "View" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I click on "Activate" in the page details
     And I pause execution for "5" seconds
     Then I softly see status in Progress-bar is "Active" and is "Green"
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @201438 @382792 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Steps Progress Bar- Admin -config- Verify admin can configure Step Progress Bar
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue  | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultcustomApp> | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -510,16 +509,16 @@ Business Need: Step Progress Bar Component Scenarios
 
     Examples:
       | defaultcustomApp |
-      | Grantor          |
+      | Grantor; Grantee |
 
   @201449 @201448 @doubtedonUI
   Scenario Outline:Render Config- PM- UI- Verify progress bar should not be visible for non selected application (eg. Grantee, Grantor, Recipient)
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application | <defaultuser>     | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application | <defaultuser>     | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName              | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for Application |               | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for Application |               | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -528,18 +527,18 @@ Business Need: Step Progress Bar Component Scenarios
     Then I do not see step progress bar is displayed
 
     Examples:
-      | User  | defaultuser |
-      | ADMIN | Grantor     |
-      | PM    | Grantor     |
+      | User  | defaultuser      |
+      | ADMIN | Grantor; Grantee |
+      | PM    | Grantor; Grantee |
 
   @201451 @201452 @doubtedonUI
   Scenario Outline: Render Config- Admin- Config- Verify progress bar should not be visible for non selected users (eg. Internal, External, Reviewer)
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User |               | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for User |               | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -548,33 +547,18 @@ Business Need: Step Progress Bar Component Scenarios
     Then I do not see step progress bar is displayed
 
     Examples:
-      | User  | defaultuser |
-      | ADMIN | Internal    |
-      | PM    | Internal    |
+      | User  | defaultuser                  |
+      | ADMIN | External; Internal; Reviewer |
+      | PM    | External; Internal; Reviewer |
 
   @201439 @201440 @notcleared
   Scenario Outline: sObject Name -Admin – Config- Verify if we can find step progress bar under expected object type
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0108            |                           |                            |
+      | Step Progressbar Header Config:General | Render for User | <defaultuser>     | PB-0092            |                           |                            |
     Given I setup test configuration as below:
       | configurationCategory                  | fieldName       | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Step Progressbar Header Config Sobject | Render for User |               | PB-0108            |                           |                            |
-    When I login to "As a Grantor" app as "<User>" user
-    When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Draft"
-    And I click on "View" icon in flex table for first draft record
-    And I click on back arrow
-    Then I do not see step progress bar is displayed
-
-    Examples:
-      | User  | defaultuser |
-      | ADMIN | Internal    |
-      | PM    | Internal    |
-
-  @201442 @201443 @notcleared
-  Scenario Outline: Steps- Admin- Config- Verify all steps having same ‘Step Progress bar Header’ are getting displayed on UI
+      | Step Progressbar Header Config Sobject | Render for User | Reviewer      | PB-0092            |                           |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -582,10 +566,24 @@ Business Need: Step Progress Bar Component Scenarios
     And I click on "View" icon in flex table for first draft record
     And I click on back arrow
     Then I see step progress bar is displayed
+
     Examples:
-      | User  |
-      | ADMIN |
-      | PM    |
+      | User  | defaultuser                  |
+      | ADMIN | External; Internal; Reviewer |
+#      | PM    | External; Internal; Reviewer |
+
+  @201442 @201443
+  Scenario Outline: Steps- Admin- Config- Verify all steps having same ‘Step Progress bar Header’ are getting displayed on UI
+    When I login to "As a Grantor" app as "<User>" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on "View" icon in flex table for first draft record
+    Then I see step progress bar is displayed
+    Examples:
+      | User |
+#      | ADMIN |
+      | PM   |
 
   @382819 @382821 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Sanity -TC-Admin-To verify whether the display values colors are getting changed to red  with a cross mark if any  record is  rejected
@@ -596,10 +594,10 @@ Business Need: Step Progress Bar Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - Draft"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -611,7 +609,7 @@ Business Need: Step Progress Bar Component Scenarios
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
     And I pause execution for "5" seconds
     When I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "default" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Planning" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}"
@@ -625,43 +623,43 @@ Business Need: Step Progress Bar Component Scenarios
       | ADMIN |
       | PM    |
 
-    @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
-    Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
-      Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
-      Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
-      Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
-      When I login to "As a Grantor" app as "PM" user
-      When I setup my app as "As a Grantor"
-      And I navigate to "Planning" tab
-      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
-      And I click toggle button to select "Internal Programs - Draft"
-      And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-      And I click on "Save and Continue" in the page details
-      And I pause execution for "8" seconds
-      When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
-      And I click on "Save" in the page details
-      When I navigate to "Overview" sub tab
-      And I save the field labeled "EGMS ID" as "PEGMSID"
-      And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
-      When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
-      When I navigate to "Responsibilities" sub tab
-      When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-        | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-        | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-      And I pause execution for "10" seconds
-      And I click on "Submit For Approval" in the page details
-      When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
-      And I navigate to "Home" tab
-      And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
-      When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
-      And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
-      And I "Send back" in the approval decision
-      And I refresh the page
-      Then I see status in Progress-bar is "Created" and is "Green"
+  @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
+  Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
+    Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+    Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+    Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+    When I login to "As a Grantor" app as "PM" user
+    When I setup my app as "As a Grantor"
+    And I navigate to "Planning" tab
+    When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+    And I click toggle button to select "Internal Programs - Draft"
+    And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save and Continue" in the page details
+    And I pause execution for "8" seconds
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    And I click on "Save" in the page details
+    When I navigate to "Overview" sub tab
+    And I save the field labeled "EGMS ID" as "PEGMSID"
+    And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+    When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+    When I navigate to "Responsibilities" sub tab
+    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+      | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+      | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+    And I pause execution for "10" seconds
+    And I click on "Submit For Approval" in the page details
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+    And I navigate to "Home" tab
+    And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+    When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+    And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+    And I "Send back" in the approval decision
+    And I refresh the page
+    Then I see status in Progress-bar is "Created" and is "Green"
 
-      Examples:
-        | User  |
-        | ADMIN |
-        | PM    |
+    Examples:
+      | User  |
+      | ADMIN |
+      | PM    |
 

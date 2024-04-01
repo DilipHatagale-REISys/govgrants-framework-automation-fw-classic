@@ -12964,7 +12964,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 
-  @338725 @338726
+  @338725p @338726
   Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Text area
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
