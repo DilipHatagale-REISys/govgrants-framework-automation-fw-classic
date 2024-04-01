@@ -386,7 +386,7 @@ Business Need: DataTableEnhanced Component Scenarios
 
     ##########  Depricated Test Cases From Test 5 Org ####################
 
-  @76929    @disablingPDFExportFileForEnhancedDataTable-gPlanning @smoke
+  @76929    @disablingPDFExportFileForEnhancedDataTable-gPlanning @smokePATCH
   Scenario: validate disabling of PDF download from menu option in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -404,7 +404,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as PDF" options inside "Contacts" disabled
 
-  @76945    @disablingXLSExportFileForEnhancedDataTable-gPlanning @smoke
+  @76945    @disablingXLSExportFileForEnhancedDataTable-gPlanning @smokePATCH
   Scenario: validate disabling of XLS download from menu option in enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                 | fieldOrignalValue | filterId         |
@@ -422,7 +422,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on parallel lines menu bar with data target value "#DataTableEnhanceProgramContactsFlexToggle"
     Then I see "Download as XLS" options inside "Contacts" disabled
 
-  @76931    @disablingAdvanceFilterForEnhancedDataTable-gPlanning @smoke
+  @76931    @disablingAdvanceFilterForEnhancedDataTable-gPlanning @smokePATCH
   Scenario: validate disabling of advance filter from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName     | fieldOrignalValue | filterId         |
@@ -439,7 +439,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Advance Filter is disabled from table "---program:-:programContactsTableId---" with data target value "#advfDataTableEnhanceProgramContacts"
 
-  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smoke @SanityPATCH @SanityPATCHEnhancedTable
+  @76932 @379012    @disablingQuickSearchForEnhancedDataTable-gPlanning @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -568,7 +568,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see Menu icon is disabled from planning flex table "Contacts"
 
-  @77220    @orderBySortByFieldAtEnhancedDataTable-gPlanning @Smoke
+  @77220    @orderBySortByFieldAtEnhancedDataTable-gPlanning @smokePATCH
   Scenario: Changing specific column value in ascending order with order by and sort by field from config and validating it inside  enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -587,7 +587,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Ascending" order
 
-  @77221    @orderBySortDirectionAsDescFieldAtEnhancedDataTable-gPlanning @Smoke
+  @77221    @orderBySortDirectionAsDescFieldAtEnhancedDataTable-gPlanning @smokePATCH
   Scenario: Changing specific column value in Descending order with order by and sort by field from config and validating it inside  enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -606,7 +606,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see column "ProjectRole__c" value is in "Descending" order
 
-  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning @smoke
+  @77284    @enableOverallTotalFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: validate enabling of overall total field after checking checkbox true of Enable Over All Total from config and validating it inside enhanced data table-planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName             | fieldOrignalValue | filterId         |
@@ -623,7 +623,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Then I see over all total for "AmountAwarded__c" field at enhanced grid
     Then I see "BaseSalary" in enhanced flex grid header "---program:-:programContactsTableId---"
 
-  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
+  @77288    @hideCellJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: Hiding specific cell value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -638,7 +638,7 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     Then I softly do not see "External Organization" in flex table header "Subawards - Active"
 
-  @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
+  @77286    @hideColumnJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: Hiding specific column value of enhanced data table from config and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
@@ -655,7 +655,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Organization" not displayed in enhanced grid table column title
 
-  @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning @smoke
+  @77315    @hideExpressionJsonFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: Set up configuration to hide edit action of parent enhanced grid using UserType IN Internal and validating it inside enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -673,7 +673,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I perform quick search for "Applicationg test88888" in "---program:-:programContactsTableId---" panel
     Then I see "Edit" icon for "Applicationg test88888" is not displayed inside flex table
 
-  @77353    @enableGroupingFieldAtFlexTableForEnhanced-gPlanning @smoke
+  @77353    @enableGroupingFieldAtFlexTableForEnhanced-gPlanning @smokePATCH
   Scenario: validate same value rows getting grouped and shown in sequence after checking checkbox true of Enable Row Grouping from config and validating it inside  enhanced data table -planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3256,13 +3256,14 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"
     When I enter "Contacts" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save"
+    
 
     Examples:
       | User  |
       | ADMIN |
       #  | PM    |
 
-  @379011 @379013 @379009 @smoke @SanityPATCH @SanityPATCHEnhancedTable
+  @379011 @379013 @379009 @smokePATCH @SanityPATCH @SanityPATCHEnhancedTable
   Scenario: validate disabling of quick search from enhanced flex table planning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue | filterId         |
@@ -3305,7 +3306,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I click on "View" icon for "Test Approver Table" inside table
     When I navigate to "Overview" sub tab
     #When I click on "Edit" icon for "12 21" inside table without accept popup
-    When I click on "Edit" icon for "12 21" inside table
+    When I click on "Edit" icon for "Automation PM" inside table
     And I enter value "Program Manager" into field "ProjectRole__c"
     And I click on top right button "Save" in flex table with id "---program:-:programContactsTableId---"
     Then I see the following message in the page details :

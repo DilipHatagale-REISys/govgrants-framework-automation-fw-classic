@@ -26,7 +26,7 @@ Business Need: EnhancedGrid Component Scenarios
       | ADMIN |
       | PM    |
 
-  @257614 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
+  @2576141 @257611 @US-255921 @379174 @SanityPATCH @SanityPATCHEGrid
   Scenario Outline: To verify,Admin User click on new action and then click on Refresh button from Page layout  then new record should not show up
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "<User>" user
@@ -991,7 +991,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 #      | fieldDisplayNames | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
 #      | Current Budget Period End Date | BudgetPeriodEndDate__c,Name,ProjectTitle__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
 #      | External Organization          | ExternalOrganization__c,Name,ProjectTitle__c,BudgetPeriodEndDate__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c | Name,ProjectTitle__c,BudgetPeriodEndDate__c,ExternalOrganization__c,InternalOrganization__c,CurrentProjectPeriod__c,NumberofAwards__c,TotalAwardObligatedAmount__c,Status__c,CFDANumber__c,isClosedOut__c,AddressProgramContact__c |
@@ -2021,7 +2021,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | styleAttributeValue | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | color: 'red'        | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | color: 'red'        | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @49271    @styleClassFieldAtParentFlexTableForEnhancedGrid-gPlanning @doubted
   Scenario Outline: validate color change of number of awards cells content after making changes at style class from config and validating it inside enhanced grid of programs-planning
@@ -2323,7 +2323,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @48901    @orderByFieldAtParentDataTableEnhancedGridForAscendingOrderForMultipleField-gPlanning
   Scenario Outline: Verify order by multiple field at parent Enhanced flex grid for ascending order
@@ -2510,7 +2510,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                  | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Status__c,CreatedBy | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @79737  @verifyIfNoneIsSelectedInPicklistFieldThenAfterSaveABlankValueIsShownAtUIAtEnhancedGrid-gPlanning @doubted @wip
   Scenario Outline: Verify a blank value is shown if user select "None" value in pick-list field
@@ -2536,7 +2536,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @80046    @verifyModalTitleFieldForEnhancedGridRowLevelPreviewAction-gPlanning
   Scenario: Setup modal title for enhanced grid preview action from configuration and validating it at e-grid-planning
@@ -2731,7 +2731,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @86427  @verifyDateFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to EDT Local
@@ -2759,7 +2759,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @86430  @verifyDateFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date field format under enhanced grid flex table with respective to IST Local
@@ -2787,7 +2787,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @86302  @verifyDateAndTimeFieldFormatForLocalAsESTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EST Local
@@ -2815,7 +2815,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @86303  @verifyDateAndTimeFieldFormatForLocalAsEDTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to EDT Local
@@ -2844,7 +2844,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @86304  @verifyDateAndTimeFieldFormatForLocalAsISTUnderEnhancedGridParentTable
   Scenario Outline: validate the date and time field format under enhanced grid flex table with respective to IST Local
@@ -2872,7 +2872,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                             | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c,Date_and_Time__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @wip @87307   @verifyHyperlinkShouldBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
   Scenario Outline: Verify a 'Show Link as Text' field at child table by setting checkbox to false e-grid child table
@@ -2897,7 +2897,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                        |
-      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | ServiceAreaTitle__c,CatName__c,BudgetRequest__c,CashMatch__c,NonCashMatch__c,TotalMatch__c,OtherLeverageOptional__c,TotalProjectCost__c,IsFirstBudgetPeriodRelated__c,Name,RequestedAmount__c,Description__c,ApplicationStatus__c,AppBudgetCategoryStatus__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @87314   @verifyHyperlinkShouldNotBePresentAtColumnValueIfEnableHyperlinkAsTextFieldCheckboxIsCheckedAtChildTable-gPlanning @doubted
   Scenario Outline: validate hyperlink is not present at column value after checking the Show Link as Text Field from config at e-grid child table
@@ -2944,7 +2944,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @88090    @VerifyTheDecimalValueShownForNumberFieldAtEnhancedGridChildFlexTable
   Scenario Outline: verify decimal places at Number field value of child flex table at enhanced grid
@@ -2991,7 +2991,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @87573   @verifyLookupFieldShouldBeInViewModeIfEnableEditDisplayFieldCheckboxIsUncheckedAtChildTable-gPlanning @doubted @wip
   Scenario Outline: validate lookup field is in view mode after unchecking the Enable Edit Display Field from config at e-grid child table - gplanning
@@ -3156,7 +3156,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @106421   @validateAdvanceFilterValueForDateFieldWithOperatorEndWithAtEnhancedGrid
   Scenario Outline: validate Advance filter search for date field with end with operator At enhanced grid
@@ -3181,7 +3181,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @111923  @validateToolTipDisplayedAtHoverOnColumnValueInsideEnhancedGrid @SkipOnJenkins
   Scenario Outline: validate tool tip displayed at hover on column value inside Flex grid Enhanced
@@ -3240,7 +3240,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                                                                 | defaultFieldsApi                                                                                                                                                                                                                                             |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @120976  @VerifyCrossIconIsDisplayedAtEnhancedGridQuickSearchBox
   Scenario: validate that cross icon is displayed at enhanced Grid quick search box
@@ -3361,7 +3361,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @148362    @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridParentTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of parent table
@@ -3383,7 +3383,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @148507  @verifyNumberFieldIsDisplayedWithFourDecimalPlacesAtEnhancedGridChidTable
   Scenario Outline: verify number field is displayed with 4 decimal places at enhanced grid of child table
@@ -3407,7 +3407,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @146709 @verifyThatConfirmationMessageInPopUpShouldDisplayWhenUserClickOnBrowserRefreshButtonWithUnsavedDataInEnhancedGrid
   Scenario: validate that users should be warned when they click on browser refresh button with unsaved data in enhanced grid
@@ -3459,7 +3459,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @145510   @verifyPositionOfPaginationDisplayedAtTopAndBottomRightCornerOfEnhancedGrid
   Scenario: verify position of pagination bar displayed at top and bottom right corner of enhanced grid
@@ -3494,7 +3494,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @150251    @verifyWidthEnhancedGridChildTableColumnIfFieldWidthEnhancedIsConfiguredAs50Percent
   Scenario: verify width of enhanced grid child table column if Field width enhanced is configured as 50 %
@@ -3569,7 +3569,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @151610 @verifyThatParentPageDoesNotRefreshAfterClickingOnSaveActionInEnhancedGrid
   Scenario: validate that Parent page does not refresh after clicking on Save action in enhanced grid
@@ -3673,7 +3673,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @159529 @VerifyInAdvanceFilterOnEgridWhenWeSelectAnyPickListDataTypeFieldSelectPickListValueThenValueReturnedByLoginAsAAdminUser @vaibhavC
   Scenario: Verify In Advance Filter On E Grid When We Select Any Pick List Data Type Field Select Pick List Value Then Value Returned
@@ -3834,7 +3834,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @164811   @verifyThatPercentageCalculationForPercentTypeFieldWhenCalculateValuePositive
   Scenario Outline: To verify Percentage change calculation for percent type field when the CalCulated value is positive.
@@ -3872,7 +3872,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @163536   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValueNegative
   Scenario Outline: To verify Percentage change calculation for Numbertype field when the CalCulated value is negative.
@@ -3910,7 +3910,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @164795   @verifyThatPercentageCalculationForCurrencyTypeFeildWhenCalculateValueNegative
   Scenario Outline: To verify Percentage change calculation for currency type field when the CalCulated value is negative.
@@ -3947,7 +3947,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
 
   @164808   @verifyThatPercentageCalculationForCurrencytypeFeildWhenCalculateValuePositive
@@ -3982,7 +3982,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
 
   @164809   @verifyThatPercentageCalculationForNumbertypeFeildWhenCalculateValuePositive
@@ -4020,7 +4020,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @166740   @verifyThatEGridToVerifyInAdvancedFilterWhenUserSelectThePicklistDataTypeFieldThenCorrectResultIsDisplayEqualToOprator
   Scenario:  E-grid-To verify in advanced filter when user select the picklist data type field then correct result display with equal to operator
@@ -4075,7 +4075,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @168722 @VerifyIfCurruncyReferenceFeildIsAvailableOnTheTableItDispalyDollerSignForViewLayout
   Scenario Outline: E-grid-To verify,  if a currency reference field is available on the table it displays a dollar sign for the View layout
@@ -4097,7 +4097,7 @@ Business Need: EnhancedGrid Component Scenarios
 
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @170496
   Scenario: Verify if a currency reference field is available on the page layout it displays a dollar sign for the View layout
@@ -4222,7 +4222,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Account__c" field is required
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @171871
   Scenario Outline: Verify if User create a new user/record  lookup field on child table  (Required to Save) then mandatory icon should display
@@ -4247,7 +4247,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Account__c" field is required
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @172133 @172143
   Scenario Outline: Verify if User create edit  lookup field on child &parent  table  (Required to Save) then mandatory icon should display
@@ -4279,7 +4279,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "ExternalOrganization__c" field is required
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @172150
   Scenario: Verify If User edits a Row level lookup field on parent table  (field is not Required to Save) then mandatory icon should not  display for lookup field
@@ -4338,7 +4338,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "Account__c" field is required
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @172144
   Scenario Outline: Verify If User new record on child & parent  table  lookup fieldon child table  (Required to Save) then mandatory icon should display for lookup field
@@ -4371,7 +4371,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see "ExternalOrganization__c" field is required
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @181124 @sprint20
   Scenario Outline: To verify, Hover over multiselect picklist in view mode then Value should be shown  on child table
@@ -4394,7 +4394,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @181122 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown  on child table
@@ -4418,7 +4418,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @181115 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in Edit  mode then Value should be shown on child table
@@ -4440,7 +4440,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @181112 @sprint20
   Scenario Outline: E-grid - To verify, Hover over multiselect picklist in view mode then Value should be shown
@@ -4463,7 +4463,7 @@ Business Need: EnhancedGrid Component Scenarios
     Then I softly see value "test2" for title "multiselecttest" inside table "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
     Examples:
       | newFieldsApi                                                                                                                                                                                                            | defaultFieldsApi                                                                                                                                                                                                        |
-      | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | SupportYear__c,BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
+      | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c | BudgetStartDate__c,BudgetEndDate__c,FeeFundRequested__c,BudgetPeriod__c,SequenceNumber__c,Modified__c,Application__c,FundingOpportunity__c,BudgetPeriodCloseoutRequired__c,Award__c,Program__c,Status__c |
 
   @181116 @sprint20 @wip
   Scenario:E-grid - To verify, Hover over multiselect picklist  Value should be shown if user edit and save the multiselect picklist value
@@ -5775,7 +5775,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5792,7 +5792,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5809,7 +5809,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5857,7 +5857,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5901,7 +5901,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5941,7 +5941,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5959,7 +5959,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5999,7 +5999,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6018,7 +6018,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6037,7 +6037,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6079,7 +6079,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6177,7 +6177,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6210,7 +6210,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7283,7 +7283,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7300,7 +7300,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7319,7 +7319,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab

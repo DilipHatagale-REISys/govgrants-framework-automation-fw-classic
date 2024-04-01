@@ -283,6 +283,7 @@ Business Need: customApp Component Scenarios
   Scenario: Custom App- To verify, when Default Theme Name is  "ColorContrast_Admin" should be saved on the  Custom App: Admin
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As Administrator"
+    And I pause execution for "5" seconds
     Then I see "ColorContrast_Admin" on complete page for custom App as a Grantor
 
     #### As a recipient #####
@@ -299,7 +300,7 @@ Business Need: customApp Component Scenarios
     When I click CustomApp select dropdown
     Then I see "Grants Portal" inside CustomApp dropDown
 
-  @332521
+  @332521p
   Scenario: Custom App- To verify, to verify, on Sequence when user provide sequence as "1" then As a Recipient app should display at 1st position
     Given I have "default" configuration as below:
       | configurationCategory | fieldName | fieldOrignalValue | filterId         |
