@@ -5775,7 +5775,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5792,7 +5792,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5809,7 +5809,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "<User>" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5857,7 +5857,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5901,7 +5901,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5941,7 +5941,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5959,7 +5959,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -5999,7 +5999,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6018,7 +6018,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6037,7 +6037,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6079,7 +6079,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6177,7 +6177,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -6210,7 +6210,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7283,7 +7283,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7300,7 +7300,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab
@@ -7319,7 +7319,7 @@ Business Need: EnhancedGrid Component Scenarios
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Grants" tab
-    And I click toggle button to select "Grants - Active"
+    And I click toggle button to select "Grants - All"
     When I perform quick search for "Autosnapshot grant 1"
     When I click on "View" icon for "Autosnapshot grant 1" inside table
     When I navigate to "Budget" sub tab

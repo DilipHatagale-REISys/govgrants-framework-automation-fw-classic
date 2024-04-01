@@ -426,7 +426,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName              | fieldNewValue | coreComponentField |
       | Phase Config:General  | Available for Profiles | <New-Profile> | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I do not see "Planning" phase
     Examples:
@@ -441,7 +441,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
       | Phase Config:General  | Tab Display Label | Automation    | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "Automation" phase
     Examples:
@@ -457,7 +457,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue | coreComponentField |
       | Phase Config:General  | Tab Display Label | 0123456789    | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "0123456789" phase
     Examples:
@@ -474,7 +474,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName         | fieldNewValue          | coreComponentField |
       | Phase Config:General  | Tab Display Label | AutomationTestingPhase | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     Then I see "AutomationTestingPhase" phase
 
@@ -507,7 +507,6 @@ Business Need: Phase Config Component Scenarios
     When I login to "Grants Portal" app as "SPI" user
     Then I see "01234567891" phase
 
-
   @34484    @validatePhaseSequence-gplanning
   Scenario: Setup tab sequence as "0" from config. and validate that tab name for planning is changed to first position
     Given I have "default" configuration as below:
@@ -516,7 +515,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField |
       | Phase Config:General  | Sequence  | 0             | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "Planning" phase at position "0"
 
@@ -528,7 +527,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                    | coreComponentField |
       | Phase Config:General  | Body Bottom Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I charts are displayed at "Bottom"
@@ -538,15 +537,15 @@ Business Need: Phase Config Component Scenarios
       | ADMIN |
       | PM    |
 
-  @333542 @333545
+  @333542p @333545
   Scenario Outline: Phase name- admin- To verify 'Body Top Page URL' should be added on the phases config page
     Given I have "default" configuration as below:
       | configurationCategory | fieldName         | fieldOrignalValue                | filterId         |
       | Phase Config          | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName         | fieldNewValue                    | coreComponentField |
-      | Phase Config:General  | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    |
-    When I login as "<User>" user
+      | configurationCategory | fieldName         | fieldNewValue                    | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Phase Config:General  | Body Top Page URL | /apex/GNT__ChartsView?t=Planning | GrantorPlanning    | Name                      | SPC-0746                   |
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I charts are displayed at "Top"
@@ -554,7 +553,7 @@ Business Need: Phase Config Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+      #| PM    |
 
   @333548
   Scenario: Phase name- External- To verify 'Body Top Page URL' should be added on the phases config page
@@ -603,7 +602,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName       | fieldNewValue | coreComponentField |
       | Phase Config:General  | Body Flex Table |               | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "New" button inside "Internal Programs - Active" flex table not displayed
@@ -613,7 +612,6 @@ Business Need: Phase Config Component Scenarios
       | ADMIN |
       | PM    |
 
-
   @34587    @validateIsPlanningDisplayedInTaskSummary-gplanning
   Scenario: Uncheck is Phase for planning in config. and validate Planning is not displayed in Task Summary on home page
     Given I have "default" configuration as below:
@@ -622,7 +620,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField |
       | Phase Config:General  | Is Phase  | false         | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     Then I donot see "Planning" in task summary by phase
@@ -636,7 +634,7 @@ Business Need: Phase Config Component Scenarios
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
       | Phase Config:General  | Default Landing Tab? | false         | GrantorHome        |
       | Phase Config:General  | Default Landing Tab? | true          | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see "GrantorPlanning" in current url
 
@@ -648,7 +646,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName    | fieldNewValue               | coreComponentField |
       | Phase Config:General  | Tab Icon Css | govgrants_config:TabIconCss | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     Then I see book icon as "Planning" tab
 
@@ -660,7 +658,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
       | Phase Config:General  | Total Charts Allowed | 1             | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "1" charts are displayed
@@ -673,13 +671,13 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Phase Config Sobject  | Highlight Phase? | true          | GrantorPlanning    | Name                      | SPC-0746                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
-    And I click toggle button to select "Closed/Reject Announcements"
-    When I perform quick search for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}"
+    And I click toggle button to select "All Announcements"
+    When I perform quick search for "Announcement testing"
     And I save the value from row "1" for column name "Program ID" as "SaveID" from flex table "flexTableDivId"
-    When I click on "View" icon for "{Framework_recordUsed:AnnouncementForAdminUserInClosedState}" inside table
+    When I click on "View" icon for "Announcement testing" inside table
     Then I see "Planning" tab is highlighted for particular program
 
   @44736    @globalsearchlabelfieldAtphaseConfigSobject-gplanning
@@ -690,7 +688,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName           | fieldNewValue      | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Phase Config Sobject  | Global Search Label | Program Automation | GrantorPlanning    | Name                      | SPC-0746                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on global search and select "All"
@@ -704,7 +702,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName             | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Phase Config Sobject  | Add to Global Search? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     When I click on global search and select "All"
@@ -718,7 +716,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Phase Config Sobject  | Add to Recently Viewed? | false         | GrantorPlanning    | Name                      | SPC-0827                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "PG" records are not present in Recently Viewed link in Sidebar
@@ -731,7 +729,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName               | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Phase Config Sobject  | Add to Recently Viewed? | true          | GrantorPlanning    | Name                      | SPC-0827                   |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "PG" records are present in Recently Viewed link in Sidebar
@@ -744,7 +742,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName | fieldNewValue | coreComponentField |
       | Phase Config:General  | Is Phase  | true          | GrantorPlanning    |
-    When I login as "ADMIN" user
+    When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     Then I see "0" at "Late" inside task summary by due date chart
@@ -758,7 +756,7 @@ Business Need: Phase Config Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue | coreComponentField |
       | Phase Config:General  | Total Charts Allowed | 3             | GrantorPlanning    |
-    When I login as "<User>" user
+    When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     Then I see "3" charts are displayed

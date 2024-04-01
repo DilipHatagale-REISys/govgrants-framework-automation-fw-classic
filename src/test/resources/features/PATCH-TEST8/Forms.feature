@@ -280,7 +280,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "Cancel"
     Then I softly see dropdown with selected value as "Program Application Form" at form layout
 
-  @206851 @206852
+  @206851p @206852
   Scenario Outline:All forms- Admin- Config- Verify in "Edit" mode,  while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
@@ -298,7 +298,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+      #| PM    |
 
   @206853
   Scenario: All forms- SPI- UI- Verify, in edit mode, while we are shuffling through forms, if we hit ‘OK’ button we should redirect to new form

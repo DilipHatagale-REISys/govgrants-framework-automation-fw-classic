@@ -78,7 +78,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Day" Button at calendar
     Then I see calender displayed in "Day" format
 
-  @127031    @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
+  @127031p   @verifyByClickOnRecordIdDisplayedAtCalendarItShouldRedirectToRespectiveRecordDetailPageForAdminUser
   Scenario: validate that admin user is redirected to respective record detail page by click on record id at calendar layout
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
@@ -156,7 +156,7 @@ Business Need: Calender Config Component Scenarios
     And I click on "Save and Continue" in the page details
     And I pause execution for "5" seconds
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Program" as "TITLE"
     And I save the field labeled "Type" as "PT"
     And I pause execution for "3" seconds
     And I navigate to "Home" tab
@@ -643,7 +643,7 @@ Business Need: Calender Config Component Scenarios
     When I enter value "365" into field "fieldEndDate__c"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Program" as "TITLE"
     And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -700,7 +700,7 @@ Business Need: Calender Config Component Scenarios
     #When I enter value "0" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Program" as "TITLE"
     And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -733,7 +733,7 @@ Business Need: Calender Config Component Scenarios
     #When I enter value "0" into field "fieldDateandTime__c"
     When I click on "Save" in the page details
     And I save the field labeled "EGMS ID" as "PEGMSID"
-    And I save the field labeled "Program Name" as "TITLE"
+    And I save the field labeled "Program" as "TITLE"
     And I save the field labeled "Internal Organization" as "ORG"
     And I navigate to "Home" tab
     And I pause execution for "25" seconds
@@ -830,8 +830,8 @@ Business Need: Calender Config Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click toggle button to select "Draft Announcements"
-    When I perform quick search for "Announcement For Calendar Testing"
-    When I click on "Edit" icon for "Announcement For Calendar Testing" inside table
+    When I perform quick search for "Vrush Announcement"
+    When I click on "Edit" icon for "Vrush Announcement" inside table
     When I pause execution for "10" seconds
     When I enter value "0" into field "fieldApplicationDueDate__c"
     When I click on "Save" in the page details
