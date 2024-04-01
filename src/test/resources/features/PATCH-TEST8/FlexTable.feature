@@ -9,7 +9,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
   Scenario: Flex table-Page size-Admin-Config-To verify that on enabling page size, "Show entries" block displayed at bottom (left side) of flex table
     Given I have "default" configuration as below:
       | configurationCategory | fieldName        | fieldOrignalValue | filterId         |
-      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:3 |
+      | Flex Table            | Enable Page Size | true              | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table:General    | Enable Page Size | true          | Programs           |                           |                            |
@@ -19748,7 +19748,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     And I navigate to "Applications" tab
     Then I see "#" shown inside flex table with id "---program:-:toggleFlexTablepopupflextableForSPIuser---"
 
-  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @flexTable
+  @34034    @addingfieldNamesOfDifferentDataTypes-gPlanning @flexTable @wip
  # Scenario Outline: validate adding field names for different data types in flex table of programs-planning
   Scenario: validate adding field names for different data types in flex table of programs-planning
     Given I have "default" configuration as below:

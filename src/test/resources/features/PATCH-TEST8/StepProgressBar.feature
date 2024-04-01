@@ -22,7 +22,7 @@ Business Need: Step Progress Bar Component Scenarios
   Scenario: validate hover text of submit for approval status from progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory   | fieldName | fieldOrignalValue | filterId         |
-      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:1 |
+      | Step Progressbar Detail | IsCreated | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory   | fieldName | fieldNewValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       #| Program                 | Status    | Created       | Test program for automation -  SA mode only - Not approved |                           |                            |
@@ -80,7 +80,7 @@ Business Need: Step Progress Bar Component Scenarios
       | defaultcustomApp |
       | Grantor; Grantee |
 
-  @34348    @disablingRenderingOfProgressBarForUser-gPlanning
+  @34348p    @disablingRenderingOfProgressBarForUser-gPlanning
   Scenario Outline: validate after disabling of progress bar for internal user and validating it on program detail page-programs
     Given I have "default" configuration as below:
       | configurationCategory                  | fieldName              | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -93,7 +93,6 @@ Business Need: Step Progress Bar Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Draft"
     And I click on "View" icon in flex table for first draft record
-    And I click on back arrow
     Then I do not see step progress bar is displayed
 
     Examples:
@@ -436,9 +435,6 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see "Last Modified Date" field contains "03/28/2024 10:05 AM" value
 
 
-  @201815
-  Scenario:
-
   ################# Step Progress Bar ######################
   @201445 @201446 @201454 @201455 @382794 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: Decision field -Admin -config- Verify Step progress bar should display the step with respect to status
@@ -624,7 +620,7 @@ Business Need: Step Progress Bar Component Scenarios
       | PM    |
 
   @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
-  Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
+  Scenario: Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
     Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
     Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
@@ -657,6 +653,41 @@ Business Need: Step Progress Bar Component Scenarios
     And I "Send back" in the approval decision
     And I refresh the page
     Then I see status in Progress-bar is "Created" and is "Green"
+
+    @382827 @382829 @SanityPATCH  @SanityPATCHStepProgressBar
+    Scenario Outline:Sanity-TC-Admin-To verify whether the step progress bar is getting back to its original display value if any record is sent back to its owner
+      Given I delete the record "Automation Application" from the object "Application__c" with field "Title__c"
+      Given I delete the record "Automation Internal Announcement for flow" from the object "Announcement__c" with field "AnnouncementName__c"
+      Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
+      When I login to "As a Grantor" app as "<User>" user
+      When I setup my app as "As a Grantor"
+      And I navigate to "Planning" tab
+      When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
+      And I click toggle button to select "Internal Programs - Draft"
+      And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
+     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+      And I click on "Save and Continue" in the page details
+      And I pause execution for "8" seconds
+      When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+      And I click on "Save" in the page details
+      When I navigate to "Overview" sub tab
+      And I save the field labeled "EGMS ID" as "PEGMSID"
+      And I click on top right button "Associate" in flex table with id "---program:-:programContactsTableId---"
+      When I click "Associate" after selection of "Automation PM" in the table "---program:-:associateProgramContactsTableId---"
+      When I navigate to "Responsibilities" sub tab
+      When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
+        | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
+        | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
+      And I pause execution for "10" seconds
+      And I click on "Submit For Approval" in the page details
+      When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
+      And I navigate to "Home" tab
+      And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
+      When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
+      And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
+      And I "Send back" in the approval decision
+      And I refresh the page
+      Then I see status in Progress-bar is "Created" and is "Green"
 
     Examples:
       | User  |

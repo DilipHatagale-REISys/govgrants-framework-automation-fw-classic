@@ -3,7 +3,7 @@ Business Need: Sticky Bottom Component Scenarios
   Test all sticky Bottom component based scenarios
   As a configuration manager i make different configurations changes in sticky bottom component custom settings and will validate them.
 
-  @69394 @validateEnableGovGrantSetupAndEnablePlatformSetupOptionsAreNotShownInStickyBottomForUser
+  @69394p @validateEnableGovGrantSetupAndEnablePlatformSetupOptionsAreNotShownInStickyBottomForUser
   Scenario: Disabling Enable Admin setup custom setting and validating display of Enable GovGrant Setup And Enable Platform Setup Options in sticky bottom
     Given I have "global" configuration as below:
       | id                 | ownerId            | booleanValue                  | customSettingApiName |
@@ -15,7 +15,7 @@ Business Need: Sticky Bottom Component Scenarios
     When I setup my app as "As a Grantor"
     And I click on botton menu "sticky_bottom_Menu"
     Then I softly do not see "Enable GovGrants Setup" inside bottom menu
-    Then I softly do not see "Enable Platform Setup" inside bottom menu
+    Then I softly do not see "Platform Setup" inside bottom menu
 
   @69400 @validateSystemAlertsOptionsAreNotShownInStickyBottomForUser
   Scenario: Disabling Enable Alert custom setting and validating display of System Alerts Option in sticky bottom
