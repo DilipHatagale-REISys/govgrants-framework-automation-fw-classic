@@ -112,7 +112,7 @@ Business Need: Calender Config Component Scenarios
       | programName | announcementName | objectType | projectTitle               | status |
       | NA          | NA               | Program    | Automation Runtime Program | Active |
     When I login to "As a Grantor" app as "PM" user
-    When I setup my app as "As a Grantor"
+    And I setup my app as "As a Grantor"
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
