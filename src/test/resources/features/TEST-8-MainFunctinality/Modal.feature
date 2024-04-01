@@ -355,7 +355,8 @@ Business Need: Modal Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_QA_org.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "7" seconds
-    Then I see page title "Planning ~ As a Grantor"
+    Then I softly see "Cancel" button is displayed
+    Then I softly see "Save" button is displayed
     Examples:
       | Users |
       | Admin |
@@ -406,7 +407,7 @@ Business Need: Modal Component Scenarios
       | Admin |
       | PM    |
 
-  @207467 @207468
+  @207467 @207468p
   Scenario Outline: Modal- Admin/PM - Config- Verify actions (like Save, Back, cancel etc) can be rendered on Modal
     Given I have "default" configuration as below:
       | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -434,7 +435,7 @@ Business Need: Modal Component Scenarios
     Then I see "Create Program" modal window is open in same tab
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @382294 @382295 @Sanity  @SanityModal

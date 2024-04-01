@@ -26,7 +26,7 @@ public class AttachmentSteps {
 
     @And("I enter value {string} into description box")
     public void iEnterValueIntoDescriptionBox(String description) {
-        I.amPerforming().textInput().in(ByUsing.xpath("//lightning-textarea//div//textarea[@name='attDescription']"), description);
+        I.amPerforming().textInput().in(ByUsing.xpath("//label[text()='Description']/parent::div//textarea | //lightning-textarea//div//textarea[@name='attDescription']"), description);
     }
 
     @And("I click on {string} on LWC modal")

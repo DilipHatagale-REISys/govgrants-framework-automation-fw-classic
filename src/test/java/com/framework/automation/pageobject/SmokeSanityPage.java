@@ -472,7 +472,7 @@ public class SmokeSanityPage extends GovGrantsManager {
     private boolean tabOnModalDisplayedOrNot(String tabName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-tab-bar//ul//li[@title='" + tabName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-tab-bar//ul//li[@title='" + tabName + "'] | //*[@data-toggle='tab' and @name='" + tabName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

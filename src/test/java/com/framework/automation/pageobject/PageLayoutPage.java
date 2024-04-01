@@ -2217,7 +2217,7 @@ public class PageLayoutPage extends GovGrantsManager {
      */
     private boolean isModalContainingTopLevelAction(String topActionName) {
         boolean flag = false;
-        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + topActionName + "']"))) {
+        if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//button[text()='" + topActionName + "'] | //input[@value='" + topActionName + "']"))) {
             flag = true;
         }
         return flag;

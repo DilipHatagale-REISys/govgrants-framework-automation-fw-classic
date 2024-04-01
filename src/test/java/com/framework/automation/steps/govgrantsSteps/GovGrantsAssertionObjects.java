@@ -496,7 +496,7 @@ public final class GovGrantsAssertionObjects {
                 + " | //div[contains(@class,'alert-danger')]" // get the alert danger message...
                 + " | //div//span[contains(@class,'dynamic-msg-box-margin')]"
                 + "| //div//p[contains(@class,'requiredError Type__c')] |" +
-                "//div//span[contains(normalize-space(text()),'"+unsanitizedDesiredMessages+"')]"
+                "//div//span[contains(normalize-space(text()),'" + unsanitizedDesiredMessages + "')]"
         );
 
         List<String> desiredMessages = unsanitizedDesiredMessages
@@ -1588,7 +1588,7 @@ public final class GovGrantsAssertionObjects {
      * @modifier keerti.munde
      */
     private WebElement getPageBlockDetailsElement(String changedFieldName) {
-        return I.amPerforming().getElementReference().of(By.xpath("//span[contains(text(),'" + changedFieldName + "')] | //div//dl//span[contains(text(),'" + changedFieldName + "')] | //div[@id='" + changedFieldName + "'] | //span//b[text()='" + changedFieldName + "']"));
+        return I.amPerforming().getElementReference().of(By.xpath("//span[contains(text(),'" + changedFieldName + "')] | //div//dl//span[contains(text(),'" + changedFieldName + "')] | //div[@id='" + changedFieldName + "'] | //span//b[text()='" + changedFieldName + "'] | //div[@id='" + changedFieldName + "'] | //span[@id='" + changedFieldName + "']"));
     }
 
     /**
@@ -1648,7 +1648,7 @@ public final class GovGrantsAssertionObjects {
             I.amPerforming().assertionsTo().assertThat(isValuePresentInsideSelectDropdownPickList(dropDownValue, fieldApiName)).isTrue();
         } else if (usage.equalsIgnoreCase("see")) {
             Assert.assertTrue(isValuePresentInsideSelectDropdownPickList(dropDownValue, fieldApiName));
-        }else if (usage.equalsIgnoreCase("softly cannot see")) {
+        } else if (usage.equalsIgnoreCase("softly cannot see")) {
             I.amPerforming().assertionsTo().assertThat(isValuePresentInsideSelectDropdownPickList(dropDownValue, fieldApiName)).isFalse();
         }
     }
@@ -1779,7 +1779,7 @@ public final class GovGrantsAssertionObjects {
             exp = dropDownValue.split(":");
         }
         List<String> opt01 = Arrays.asList(exp);
-        By selectD = By.xpath("//div[@id='" + fieldApiName + "']//select|//*[@field-name='" + fieldApiName + "']//select|//div[@id='" + fieldApiName + "']//select//option|//span[@id='" + fieldApiName + "']//select|//span[contains(text(),'"+fieldApiName+"')]/..//following-sibling::dd//select");
+        By selectD = By.xpath("//div[@id='" + fieldApiName + "']//select|//*[@field-name='" + fieldApiName + "']//select|//div[@id='" + fieldApiName + "']//select//option|//span[@id='" + fieldApiName + "']//select|//span[contains(text(),'" + fieldApiName + "')]/..//following-sibling::dd//select");
         List<WebElement> wee = I.amPerforming().dropDownSelection().from(selectD).getOptions();
         List<String> opt = new ArrayList<>();
         for (int i = 0; i < wee.size(); i++) {
@@ -1911,7 +1911,7 @@ public final class GovGrantsAssertionObjects {
     private boolean isHyperTextDisplayed(String linkName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(text(),'" + linkName + "')]/ancestor::a |  //a[contains(text(),'"+linkName+"')]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//span[contains(text(),'" + linkName + "')]/ancestor::a |  //a[contains(text(),'" + linkName + "')]"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -3140,15 +3140,15 @@ public final class GovGrantsAssertionObjects {
      * @param colorName, TabType
      * @author ashwini.mahore
      * @modifier tejal.gadewar,
-     * @modifier  richa.sharma - added xpath and color for header and footer as well
+     * @modifier richa.sharma - added xpath and color for header and footer as well
      */
     public void asserPhaseTabBackgroundColor(String Usage, String TabType, String colorName) {
         if (Usage.contains("softly")) {
-            I.amPerforming().assertionsTo().assertThat(isPhaseTabBackgroundColorChanged( TabType,colorName)).isTrue();
+            I.amPerforming().assertionsTo().assertThat(isPhaseTabBackgroundColorChanged(TabType, colorName)).isTrue();
         } else {
             Assert.assertTrue(isPhaseTabBackgroundColorChanged(TabType, colorName));
         }
-        I.amPerforming().assertionsTo().assertThat(isPhaseTabBackgroundColorChanged(TabType,colorName)).isTrue();
+        I.amPerforming().assertionsTo().assertThat(isPhaseTabBackgroundColorChanged(TabType, colorName)).isTrue();
     }
 
     /**
@@ -3164,9 +3164,9 @@ public final class GovGrantsAssertionObjects {
         } else if (TabType.equalsIgnoreCase("Registration Footer")) {
             getPhaseTab = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'footerDiv-content')]"));
         } else if (TabType.equalsIgnoreCase("Registration Header")) {
-        getPhaseTab = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'navTopHeader clearfix')]"));
-    }
-        
+            getPhaseTab = I.amPerforming().getElementReference().of(By.xpath("//div[contains(@class,'navTopHeader clearfix')]"));
+        }
+
         switch (colorName.toUpperCase()) {
             case "VERY DARK BLUE":
                 if (getPhaseTab.getCssValue("background-color").contains("rgba(0, 57, 107, 1)")
@@ -3217,7 +3217,7 @@ public final class GovGrantsAssertionObjects {
                 break;
             case "BLUE":
                 if (getPhaseTab.getCssValue("background").contains("rgb(5, 89, 156)")
-                        || getPhaseTab.getCssValue("color").contains("rgb(5, 89, 156)")){
+                        || getPhaseTab.getCssValue("color").contains("rgb(5, 89, 156)")) {
                     flag = true;
                 }
                 break;
@@ -3390,6 +3390,7 @@ public final class GovGrantsAssertionObjects {
 
     /**
      * function used to validate the text inside modal
+     *
      * @param text
      * @return
      * @author saranjit.modak
@@ -3407,6 +3408,7 @@ public final class GovGrantsAssertionObjects {
 
     /**
      * Method to check if button is present on confirmation pop-up
+     *
      * @param usage
      * @param buttonName
      * @author Vaibhav.c
@@ -3421,9 +3423,10 @@ public final class GovGrantsAssertionObjects {
 
     /**
      * Method to check if button is present on confirmation pop-up
+     *
      * @param buttonLabel
-     * @author Vaibhav.c
      * @return true: if button is present
+     * @author Vaibhav.c
      */
     private boolean isButtonPresent(String buttonLabel) {
         try {
