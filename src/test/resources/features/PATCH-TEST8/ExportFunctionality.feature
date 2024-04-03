@@ -1,4 +1,4 @@
-@ExportFunctionality-Component @regression-QA
+@ExportFunctionality-ComponentPatch @regression-QA
 Business Need: All pdf and xls related scenario including component and completed backlogs
   Test all Export Functionality based scenarios
   As a configuration manager i make different configurational changes for Export Functionality related scenarios and will validate them.

@@ -17,7 +17,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42369p    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
+  @42369    @hideExpressioJsonForRightOperandForAdminUser-gAnnouncement
   Scenario: validate disabling of create button for Admin user from Announcement-Program
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField            | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -175,7 +175,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Draft Announcements"
     Then I see "New" button inside "Draft Announcements" flex table not displayed
 
-  @42499p    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
+  @42499    @hideExpressioJsonForRightOperandForContextViewWithOperatorIn-gPlanning @smoke
   Scenario: validate disabling of create button for context view with operator IN -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -190,7 +190,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42612    @hideExpressioJsonForRightOperandForContextEditWithOperatorIn-gPlanning
   Scenario: validate disabling of create button for context edit with operator IN -gPlanning
@@ -207,7 +207,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42684    @hideExpressioJsonForRightOperandForContextViewWithOperatorNotIn-gPlanning
   Scenario: validate disabling of create button for context view with operator Not IN -gPlanning
@@ -220,11 +220,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}"
+    When I click on "View" icon for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
   @42685    @hideExpressioJsonForRightOperandForContextEditWithOperatorNotIn-gPlanning
   Scenario: validate disabling of create button for context edit with operator Not IN -gPlanning
@@ -237,11 +237,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}"
+    When I click on "Edit" icon for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
   @42690    @hideExpressioJsonForRightOperandForUserAppStateAsGrantorWithOperatorIn-gPlanning
   Scenario: validate disabling of create button for user app state as grantor with operator IN -gPlanning
@@ -258,7 +258,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42691    @hideExpressioJsonForRightOperandForUserAppStateAsGranteeWithOperatorInAtFlexTableAction-gOpportunities @wip
   Scenario: validate disabling of Associate button for user app state as grantee with operator IN-gOpportuities
@@ -305,7 +305,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42704    @hideExpressioJsonForRightOperandForUserAppRecipientWithOperatorIn-gPlanning @wip
   Scenario: validate disabling of Associate button for user app Recipient with operator In -gOpportunities
@@ -354,7 +354,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42710    @hideExpressioJsonForRightOperandForProfileSystemAdministratorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile system adminitrator with operator OR -gPlanning
@@ -371,7 +371,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42711    @hideExpressioJsonForRightOperandForUserTypeInternalAndContextViewWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and context view with operator AND -gPlanning
@@ -388,7 +388,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42712    @hideExpressioJsonForRightOperandForUserTypeInternalAndContextViewWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and context view with operator OR -gPlanning
@@ -405,7 +405,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42714    @hideExpressioJsonForRightOperandForUserTypeInternalAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and user app state as grantor with operator AND -gPlanning
@@ -422,7 +422,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42716    @hideExpressioJsonForRightOperandForUserTypeInternalAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for user type Internal and user app state as grantor with operator OR -gPlanning
@@ -439,7 +439,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42717    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile sys Administrator and user app state as grantor with operator OR -gPlanning
@@ -456,7 +456,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42719    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for profile sys Administrator and user app state as grantor with operator AND -gPlanning
@@ -473,7 +473,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42720    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndContextViewWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for profile Sys Administrator and Context View with operator AND -gPlanning
@@ -490,7 +490,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42722    @hideExpressioJsonForRightOperandForProfileSystemAdministratorAndContextViewWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for profile Sys Administrator and Context View with operator OR -gPlanning
@@ -507,7 +507,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42806    @hideExpressioJsonForRightOperandForContextViewAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for context view and user app state as grantor with operator AND -gPlanning
@@ -524,7 +524,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42807    @hideExpressioJsonForRightOperandForContextViewAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for context view and user app state as grantor with operator OR -gPlanning
@@ -541,7 +541,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42808    @hideExpressioJsonForRightOperandForFieldAndUserTypeInternalWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and user type internal with operator AND -gPlanning
@@ -558,7 +558,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42833    @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and profile system administrator with operator AND -gPlanning
@@ -575,7 +575,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42835    @hideExpressioJsonForRightOperandForFieldAndProfileSystemAdministratorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and profile system administrator with operator OR -gPlanning
@@ -592,7 +592,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42836    @hideExpressioJsonForRightOperandForFieldAndContextEditWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and context edit with operator AND -gPlanning
@@ -609,7 +609,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42837    @hideExpressioJsonForRightOperandForFieldAndContextEditWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and context edit with operator OR -gPlanning
@@ -626,7 +626,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42838    @hideExpressioJsonForRightOperandForFieldAndUserAppSAGrantorWithOperatorAND-gPlanning
   Scenario: validate disabling of Associate button for Field and user app state as grantor with operator AND -gPlanning
@@ -643,7 +643,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @42839    @hideExpressioJsonForRightOperandForFieldAndUserAppSAGrantorWithOperatorOR-gPlanning
   Scenario: validate disabling of Associate button for Field and user app state as grantor with operator OR -gPlanning
@@ -660,7 +660,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43226    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEquals-gPlanning @smoke
   Scenario: validate Associate button is present for Field with operator NotEquals -gPlanning
@@ -673,11 +673,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}"
+    When I click on "View" icon for "{Framework_recordUsed:TestprogramforautomationCreatedmodeonly}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
   @43229    @hideExpressioJsonForLeftOperandForFieldWithOperatorNotEqualsAtDifferentPrograms-gPlanning
   Scenario: validate Associate button is not present for other programs which is not defined in Json  with operator NotEquals -gPlanning
@@ -690,11 +690,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43720    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorEqualsTo-gPlanning @smoke
   Scenario: validate disabling of Associate button for field using picklist value grant with operator Equals To -gPlanning
@@ -711,7 +711,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43721    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorEqualsTo-gPlanning
   Scenario: validate disabling of Associate button for field using lookup relationship with operator Equals To -gPlanning
@@ -728,7 +728,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43722    @hideExpressioJsonForLeftOperandForFieldUsingPicklistWithOperatorNotEqualsTo-gPlanning
   Scenario: validate Associate button is present for Field using picklist with operator Not Equals To -gPlanning
@@ -741,11 +741,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
   @43723    @hideExpressioJsonForLeftOperandForFieldUsingLookupWithOperatorNotEqualsTo-gPlanning @smoke
   Scenario: validate Associate button is present for Field using lookup with operator Not Equals To -gPlanning
@@ -758,11 +758,11 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
   @43881    @hideExpressioJsonForLeftOperandForFieldUsingOperatorContains-gPlanning
   Scenario: validate disabling of Associate button for field with operator Contains -gPlanning
@@ -779,7 +779,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43883    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEquals-gAnnouncement @smoke
   Scenario: validate disabling of Associate button for field with operator Less than equals -gAnnouncement
@@ -796,7 +796,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43884    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThanEqualsWithDiffAnnouncement-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator equals(less than equals) -gAnnouncement
@@ -813,7 +813,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43885    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThanEquals-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator greater than equals -gAnnouncement
@@ -830,7 +830,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43886    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThanEqualsWithDifferentAnnouncement-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator euuals(greater than equals) -gAnnouncement
@@ -847,7 +847,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43887    @hideExpressioJsonForLeftOperandForFieldUsingOperatorLessThan-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator less than -gAnnouncement
@@ -864,7 +864,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43888    @hideExpressioJsonForLeftOperandForFieldUsingOperatorGreaterThan-gAnnouncement
   Scenario: validate disabling of Associate button for field with operator greater than -gAnnouncement
@@ -881,7 +881,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @43889    @hideExpressioJsonForLeftOperandForFieldUsingOperatorNotIn-gPlanning
   Scenario: validate Associate button is present for Field using lookup with operator Not In -gPlanning
@@ -898,9 +898,9 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table
+    Then I see "Associate" button inside "Contacts" flex table
 
-  @43890    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
+  @43890pp    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for Profile PM using hide expression Json -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -911,7 +911,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -927,7 +927,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -959,7 +959,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is displayed
@@ -996,7 +996,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
 
-  @44210    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
+  @44210p    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-gPlanning
   Scenario: Validate submit for approval button is present for internal user using user type internal and operator NotIn -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -1008,8 +1008,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:SubmitforapprovalAutomationPG}"
+    When I click on "View" icon for "{Framework_recordUsed:SubmitforapprovalAutomationPG}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44211    @hideExpressioJsonForLeftOperandForUserTypeInternalWithOperatorNotInAtPageLayout-Reviewer-gPlanning
@@ -1023,7 +1023,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1039,7 +1039,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1055,7 +1055,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1068,10 +1068,10 @@ Business Need: Expression Builder Component Scenarios
     Given I setup test configuration as below:
       | configurationCategory | fieldName            | fieldNewValue                                                                                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Layout Action    | Hide Expression JSON | govgrants_config:PageLayoutHideExpressionBuilderJsonForUserTypeInternalApplicantReviewerWithOperatorIn | Grantor State Program | Name                      | Submit For Approval        |
-    When I login to "As a Grantor" app as "FO" user
+    When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Submit For Approval" button is not displayed
@@ -1104,8 +1104,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:SubmitforapprovalAutomationPG}"
+    When I click on "View" icon for "{Framework_recordUsed:SubmitforapprovalAutomationPG}" inside table
     Then I see "Submit For Approval" button is displayed
 
   @44222    @hideExpressioJsonForLeftOperandForUserTypeStateAsGrantorWithOperatorInAtPageLayout-gPlanning
@@ -1298,8 +1298,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    And I pause execution for "10" seconds
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside tableAnd I pause execution for "10" seconds
     Then I see "Submit For Approval" button is not displayed
 
   @45295    @hide_expression_using_OR_operator_for_fields_text,picklist,date,lookup,longtextarea @smoke
@@ -1570,7 +1569,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
@@ -1586,7 +1585,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
@@ -1618,7 +1617,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
@@ -1762,7 +1761,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can see "Information" page block displayed
@@ -1779,8 +1778,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @45872    @hide_expression_Program_Information_Page_Block_Title_For_Field_FundedAmount__c_NotEqualTo_400000
@@ -1843,8 +1842,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @45878    @hide_expression_Program_Information_Page_Block_Title_For_Field_CFDA_Data__c_notequalto_true
@@ -1874,7 +1873,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Draft"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I see "Information" page block displayed
@@ -1890,7 +1889,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
@@ -1944,13 +1943,13 @@ Business Need: Expression Builder Component Scenarios
     Then I see "Information" page block displayed
 
   @45845    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Not_Equals_Account_r_Name_Department_of_Community_Health
-  Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field Equals( Account__r.Name = Department of Community Health )
+  Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field Equals( Account__r.Name = SYSTEM )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                                 | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Equals_Account__r.Name_Department_of_Community_Health | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                    | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Equals_Account__r.SYSTEM | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1959,7 +1958,7 @@ Business Need: Expression Builder Component Scenarios
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
 
-  @45850    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_less_than_equals_StartDate__c_11_30_2020
+  @45850p    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_less_than_equals_StartDate__c_11_30_2020
   Scenario: Set up configuration for Hide Information from Overview Tab for ADMIN User using Field less than equals ( StartDate__c <= 11/30/2020 )
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -1971,8 +1970,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @45849    @hide_expression_Program_Information_Page_Block_Title_LeftOperand_Greater_than_equals_StartDate__c_11_30_2020 @smoke
@@ -2028,15 +2027,21 @@ Business Need: Expression Builder Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I have "default" configuration as below:
+      | configurationCategory                    | fieldName | fieldOrignalValue | coreComponentField    | filterId         |
+      | Page Block Config:Page Block Rule Detail | Is Active | false             | Grantor State Program | ApiGeneratedId:1 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_FederalProgramCFDA__c_CONTAINS_TPA01 | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
+    Given I setup test configuration as below:
+      | configurationCategory                    | fieldName | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block Config:Page Block Rule Detail | Is Active | true          | Grantor State Program | Name                      | PBD-17107                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @45854    @hide_expression_Program_Information_Page_Block_Title_LeftOperandField_Account__r.Name_IN_DepartmentofCommunityHealth_OR_StartDate__c_greaterthan_11/30/2020
@@ -2099,8 +2104,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @45917    @hide_expression_ProgramCode_With_UserType_Internal @smoke
@@ -2322,7 +2327,7 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
+    And I click toggle button to select "Internal Programs - Active"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     Then I can not see "Information" page block displayed
@@ -2371,8 +2376,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
-    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    When I perform quick search for "{Framework_recordUsed:Programforhideexpressionbuildertest}"
+    When I click on "View" icon for "{Framework_recordUsed:Programforhideexpressionbuildertest}" inside table
     Then I can not see "Information" page block displayed
 
   @46314    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_In_Operator
@@ -2485,7 +2490,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
+    Then I do not see "Contacts" page block displayed
 
   @45966    @hide_expression_Program_Contacts_Page_Block_LeftOperand_Context_NotIN__Create_Edit @smoke
   Scenario: Set up configuration to display Program contacts inside Overview Tab using context NOTIN (Create,Edit)
@@ -2501,7 +2506,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Contacts@1234567890!@#$%^&*()" page block displayed
+    Then I see "Contacts" page block displayed
 
   @45967    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_NotIN_StateAsGrantor
   Scenario: Set up configuration to display Program contacts inside Overview Tab using UserApp NOTIN (StateAsGrantor)
@@ -2517,7 +2522,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I see "Contacts@1234567890!@#$%^&*()" page block displayed
+    Then I see "Contacts" page block displayed
 
   @45969    @hide_expression_Program_Contacts_Page_Block_LeftOperand_UserApp_IN
   Scenario: Set up configuration to hide Program contacts inside Overview Tab using UserApp IN
@@ -2533,7 +2538,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
+    Then I do not see "Contacts" page block displayed
 
   @45984    @hide_expression_Program_Information_Page_Block_LeftOperand_Profile_NOTIN_SPI_PM
   Scenario: Set up configuration to hide Information inside Overview Tab using Profile NOTIN for PM, SPI
@@ -2552,13 +2557,13 @@ Business Need: Expression Builder Component Scenarios
     Then I can not see "Information" page block displayed
 
   @45985    @hide_expression_Program_Information_Page_Block_LeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth
-  Scenario: Set up configuration to hide Information inside Overview Tab using (Account__r.Name CONTAINS Department of Community Health)
+  Scenario: Set up configuration to hide Information inside Overview Tab using (Account__r.Name CONTAINS Department of Community Health) SYSTEM
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Block            | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory        | fieldName            | fieldNewValue                                                                                               | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Account_r_Name_CONTAINS_DepartmentOfCommunityHealth | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
+      | configurationCategory        | fieldName            | fieldNewValue                                                                           | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:PageBlockHideExpressionWithLeftOperand_Account_r_Name_CONTAINS_Systems | Grantor State Program | GNT__PageBlockTitle__c    | Information                |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -4515,11 +4520,11 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
     When I navigate to "Overview" sub tab
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4608,10 +4613,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide forward option from configuration for approval decision using User Type IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_IN_Internal | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4619,10 +4624,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4632,13 +4637,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -4650,10 +4651,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to display forward option from configuration for approval decision using User Type NotIN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_UserType_NOTIN_Internal | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4661,10 +4662,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4674,13 +4675,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -4691,10 +4688,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to display forward option from configuration for approval decision using Profile IN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                       | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4702,10 +4699,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4715,13 +4712,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -4732,10 +4725,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide forward option from configuration for approval decision using Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                          | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_NOTIN_SystemAdministrator | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4743,10 +4736,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4756,28 +4749,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     And I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send Back |
+      | Approve | Reject | Send back |
 
   @48640    @hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
   Scenario: Setup configuration to display forward option from configuration for approval decision using  Profile IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4785,10 +4774,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4798,13 +4787,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -4815,10 +4800,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide forward option from configuration for approval decision using  Profile IN System Administrator OR UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                               | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0103          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Forward_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0172          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4826,10 +4811,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4839,28 +4824,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Reject | Send Back |
+      | Approve | Reject | Send back |
 
   @48646    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NotIN_Internal_AND_Profile_NOTIN_SystemAdministrator @smoke
   Scenario: Setup configuration to display Reject option from configuration for approval decision using User Type NOTIN Internal AND Profile NOTIN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                     | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4868,10 +4849,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4881,13 +4862,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -4898,10 +4875,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType NOT IN Internal OR Profile NOT IN System Administrator and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4909,10 +4886,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4922,28 +4899,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send Back |
+      | Approve | Forward | Send back |
 
   @48648    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal OR Profile IN PM and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_OR_Profile_IN_PM | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4951,10 +4924,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -4964,28 +4937,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send Back |
+      | Approve | Forward | Send back |
 
   @48649    @hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using UserType IN Internal AND Profile IN PM and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserType_IN_Internal_AND_Profile_IN_PM | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -4993,10 +4962,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5006,28 +4975,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send Back |
+      | Approve | Forward | Send back |
 
   @48650    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Reject option from configuration for approval decision using userApp IN StateAs Grantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_IN_StateAsGrantor | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5035,10 +5000,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5048,28 +5013,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Approve | Forward | Send Back |
+      | Approve | Forward | Send back |
 
   @48651    @hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor
   Scenario: Setup configuration to display Reject option from configuration for approval decision using userApp NOTIN State As Grantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor | ADAC-0106          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Reject_With_UserApp_NOTIN_StateAsGrantor | ADAC-0157          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5077,10 +5038,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5090,13 +5051,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5107,10 +5064,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal AND UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                            | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5118,10 +5075,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5131,13 +5088,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5149,10 +5102,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Internal OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                           | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5160,10 +5113,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5173,13 +5126,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5191,10 +5140,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserType IN Applicant Internal Reviewer and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                 | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserType_IN_Applicant_Internal_Reviewer | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5202,10 +5151,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5215,13 +5164,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5233,10 +5178,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to display Send back option from configuration for approval decision using UserApp IN State As Grantee and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                   | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantee | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5244,10 +5189,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5257,13 +5202,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5274,10 +5215,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                             | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Admin | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5285,10 +5226,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5298,13 +5239,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5316,11 +5253,11 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp NOTIN Recipient and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                 | coreComponentField                                         |
       | Program                          | Status               | Created                                                                                       | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient | ADAC-0104                                                  |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_NOTIN_Recipient | ADAC-0155                                                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5328,10 +5265,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5341,13 +5278,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5360,10 +5293,10 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Send back option from configuration for approval decision using UserApp IN StateasGrantor, StateasGrantee, Recipient, Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin | ADAC-0104          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_SendBAck_With_UserApp_IN_StateAsGrantor_StateAsGrantee_Recipient_Admin | ADAC-0155          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5371,10 +5304,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5384,13 +5317,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5398,14 +5327,14 @@ Business Need: Expression Builder Component Scenarios
     Then I see only the following radio buttons in the approval decision :
       | Approve | Reject | Forward |
 
-  @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor @wip
+  @48662    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN System Administrator OR UserApp IN StateasGrantor and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                    | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | ADAC-0105          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_SystemAdministrator_OR_UserApp_IN_StateAsGrantor | ADAC-0156          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5413,10 +5342,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5426,28 +5355,24 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
+      | Reject | Forward | Send back |
 
   @48663    @hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin
   Scenario: Setup configuration to display Approve option from configuration for approval decision using UserType NOT IN Internal AND Profile NOT IN  Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                        | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0105          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_Admin | ADAC-0156          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5455,10 +5380,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5468,13 +5393,9 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
@@ -5485,11 +5406,11 @@ Business Need: Expression Builder Component Scenarios
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM OR UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                             | coreComponentField                                         |
       | Program                          | Status               | Created                                                                                                   | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin | ADAC-0105                                                  |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_OR_UserApp_NOTIN_Admin | ADAC-0156                                                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5497,10 +5418,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5510,29 +5431,25 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
+      | Reject | Forward | Send back |
 
   @48667    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin @wip
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile IN PM AND UserApp NOT IN Admin and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                              | coreComponentField                                         |
       | Program                          | Status               | Created                                                                                                    | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin | ADAC-0105                                                  |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_IN_PM_AND_UserApp_NOTIN_Admin | ADAC-0156                                                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5540,10 +5457,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5553,29 +5470,25 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
+      | Reject | Forward | Send back |
 
   @48670    @hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal @wip
   Scenario: Setup configuration to hide Approve option from configuration for approval decision using Profile NOT IN System Administrator AND UserType IN Internal and validating its content in pending tasks approval decision
     Given I have "default" configuration as below:
       | configurationCategory    | fieldName            | fieldOrignalValue | filterId         |
-      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:1 |
+      | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                   | coreComponentField                                         |
       | Program                          | Status               | Created                                                                                                                         | Test program for automation -  SA mode only - Not approved |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0105                                                  |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_AND_UserType_IN_Internal | ADAC-0156                                                  |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -5583,10 +5496,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -5596,19 +5509,15 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login to "As a Grantor" app as "EXE" user on "QA" portal
+    When I re-login to "As a Grantor" app as "EXE" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
+      | Reject | Forward | Send back |
 
   @51604    @hide_expression_Page_Block_Profile_IN_PM_For_Notes_And_Attachment
   Scenario: Set up configuration to display Notes and Attachment page block using expression json field
@@ -5743,7 +5652,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52911    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal
@@ -5760,7 +5669,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52914    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator
@@ -5777,7 +5686,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52915    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_NOTIN_SystemAdministrator
@@ -5794,7 +5703,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52917    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_AND_UserType_IN_Internal
@@ -5811,7 +5720,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52916    @Hide_Expression_EnhancedGrid_TopAction_With_Profile_IN_SystemAdministrator_OR_UserType_IN_Internal
@@ -5828,7 +5737,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52918    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_AND_Profile_NOTIN_SystemAdministrator
@@ -5845,7 +5754,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52919    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_Profile_IN_PM
@@ -5862,7 +5771,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52927    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_NOTIN_Internal_OR_Profile_NOTIN_SystemAdministrator
@@ -5879,7 +5788,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52928    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_AND_Profile_IN_PM
@@ -5896,7 +5805,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52929    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_IN_StateAsGrantor
@@ -5913,7 +5822,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52930    @Hide_Expression_EnhancedGrid_TopAction_With_UserApp_NOTIN_StateAsGrantor
@@ -5930,7 +5839,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see "New" button inside "Review Steps" enhanced grid
 
   @52931    @Hide_Expression_EnhancedGrid_TvopAction_With_UserType_IN_Internal_AND_UserApp_IN_StateAsGrantor
@@ -5947,7 +5856,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52932    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Internal_OR_UserApp_IN_StateAsGrantor
@@ -5964,7 +5873,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @52933    @Hide_Expression_EnhancedGrid_TopAction_With_UserType_IN_Applicant_Internal_Reviewer
@@ -5981,7 +5890,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I see no "New" button inside "Review Steps" enhanced grid
 
   @53008    @Hide_Expression_EnhancedGrid_ChildTable_TopAction_With_UserType_IN_Internal @egrid
@@ -6190,7 +6099,7 @@ Business Need: Expression Builder Component Scenarios
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    #Then I do not see "Contacts@1234567890!@#$%^&*()" page block displayed
+    #Then I do not see "Contacts" page block displayed
     Then I see "Submit For Approval" button is not displayed
 
   @45314    @hide_expression_using_left_operand_profile_NOTIN
@@ -6385,7 +6294,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "Edit" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    Then I see no "New" button inside "Contacts@1234567890!@#$%^&*()" enhanced grid
+    Then I see no "New" button inside "Contacts" enhanced grid
 
   @82633    @verifyFormulaFieldIsHiddenUsingHodeColumnJsonFieldForInternalUserAtEnhancedGrid-gPlanning @enhancedGrid @egrid @wip
   Scenario Outline: Hiding specific column of type formula for internal user from config and validating it inside enhanced grid of programs-planning
@@ -7603,7 +7512,7 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table with table id "toggleFlexTablePrograms" without processing
     When I navigate to "Overview" sub tab
-    Then I see "Associate" button inside "Contacts@1234567890!@#$%^&*()" flex table not displayed
+    Then I see "Associate" button inside "Contacts" flex table not displayed
 
   @96921    @ValidateHideExpressionJSONAtRowLevelActionAtEnhancedGridChildTable @enhancedGrid @egrid
   Scenario: Set up configuration to hide edit action of child enhanced grid using NOTIN operator and validating it inside planning
@@ -7641,10 +7550,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -7804,14 +7713,14 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                               | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-10962                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | FTC-11193                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I do not see "Description" in enhanced flex grid header "Review Steps"
 
   @117405  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenAtEGridChildTable @enhancedGrid @egrid
@@ -7831,39 +7740,33 @@ Business Need: Expression Builder Component Scenarios
       | Flex Table List       | Hide Column JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory | fieldName        | fieldNewValue                                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepPanelTemplates | Name                      | FTC-12052                  |
+      | Flex Table List       | Hide Column JSON | govgrants_config:HideExpressionAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepPanelTemplates | Name                      | FTC-12308                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "PG-REI-2183"
-    When I click on "View" icon for "PG-REI-2183" inside table
-    When I navigate to "Setup tabs" sub tab
+    And I click toggle button to select "Internal Programs - Active"
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    When I navigate to "Setup" sub tab
     #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
-    When I expand nested table containing column value "Test"
+    And I expand nested table containing column value "SME Review"
     Then I do not see "Required?" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @118109  @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all three row level actions are hidden using date time field value at enhanced grid parent table
-#    Given I have "default" configuration as below:
-#      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-#      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
-#      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:1 |
-#      | Flex Table Action     | Location                   | Row               | ApiGeneratedId:2 |
-#      | Flex Table Action     | Header Action Display Type |                   | ApiGeneratedId:3 |
-#    Given I setup test configuration as below:
-#      | configurationCategory | fieldName                  | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-#      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
-#      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionAtViewActionToHideActionColumnAtEnhancedGrid            | ProgramReviewStepTemplates | Name                      | View                       |
-#      | Flex Table Action     | Location                   | Top                                                                                    | ProgramReviewStepTemplates | Name                      | Preview                    |
-#      | Flex Table Action     | Header Action Display Type | Button                                                                                 | ProgramReviewStepTemplates | Name                      | Preview                    |
+    Given I have "default" configuration as below:
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
+    Given I setup test configuration as below:
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
-    When I navigate to "Setup tabs" sub tab
+    When I navigate to "Setup" sub tab
     Then I do not see "Actions" in enhanced flex grid header "---program:-:ProgramReviewStepTemplatesTableId---"
 
   @118118  @verifyActionColumnIsHiddenWhenAllActionsAreHiddenUsingDateTimeAtEGridChildTable @enhancedGrid @egrid
@@ -7887,7 +7790,6 @@ Business Need: Expression Builder Component Scenarios
     When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
     When I navigate to "Overview" sub tab
-    #When I perform quick search for "BP01" in "---program:-:flexGridEnhancedID---" panel
     Then I do not see "Actions" in enhanced flex grid header "---program:-:EnhanceAppGrantorBudgetPeriodsTableId---"
 
   @118847    @verifyHideCellJSONAtEnhancedGridIfUsedFieldIsNotPresentInsideTable-EGrid @enhancedGrid @egrid @wip
@@ -8187,7 +8089,7 @@ Business Need: Expression Builder Component Scenarios
       | Approval Decision Action | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory            | fieldName            | fieldNewValue                                                                                                                  | coreComponentField |
-      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0105          |
+      | Approval Decision Action:General | Hide Expression JSON | govgrants_config:Hide_Expression_ApprovalDecisionAction_Approve_With_Profile_NOTIN_SystemAdministrator_OR_UserType_IN_Internal | ADAC-0156          |
     Given I delete the record "Automation Program For Test" from the object "Program__c" with field "ProgramName__c"
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
@@ -8195,10 +8097,10 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Internal Programs" content inside "Programs" subheader on left panel
     And I click toggle button to select "Internal Programs - All"
     And I click on top right button "New" in flex table with id "---program:-:ProgramsgridTableId---"
-   When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I save the field labeled "EGMS ID" as "PEGMSID"
@@ -8208,20 +8110,16 @@ Business Need: Expression Builder Component Scenarios
     When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
       | Name           | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
       | Automation EXE | Step 1  | Step 1       | Step 1 | Step 1 | Step 1                  | Step 1   |
-    And I pause execution for "5" seconds
-    When I enter the following values into flex table with id "---program:-:RolesAndResponsibilitiesInternalProgTableID---" by clicking "New" :
-      | Name          | Program | Announcement | FDM    | Award  | Post Award / Monitoring | Closeout |
-      | Automation FO | Step 2  | Step 2       | Step 2 | Step 2 | Step 2                  | Step 2   |
     And I pause execution for "10" seconds
     And I click on "Submit For Approval" in the page details
-    When I re-login as "PM" user on "QA" portal
+    When I re-login as "PM" user on "PATCH" portal
     When I setup my app as "As a Grantor"
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:PEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
     And I click on "Start" icon for "{SavedValue:PEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     Then I see only the following radio buttons in the approval decision :
-      | Reject | Forward | Send Back |
+      | Reject | Forward | Send back |
 
     ############Test suite: Hide Expression Builder (Suite ID: 217331)#############
 
@@ -8240,8 +8138,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8261,8 +8159,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8303,8 +8201,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8346,14 +8244,14 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
       | Admin |
-      | PM    |
+#      | PM    |
 
   @217359
   Scenario Outline: Hide Expression Builder- SPI- UI- Verify hide expression for actions can be configured depending on ‘Profile’
@@ -8389,8 +8287,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8438,7 +8336,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @217363p @217364
+  @217363 @217364
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify hide expression for actions can be used using Left operand as ‘Context’
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
@@ -8451,8 +8349,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8493,8 +8391,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8535,8 +8433,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8577,8 +8475,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8599,8 +8497,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8641,8 +8539,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8703,8 +8601,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "Actions" in flex table header "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8745,8 +8643,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8775,7 +8673,7 @@ Business Need: Expression Builder Component Scenarios
       | Users |
       | SPI   |
 
-  @217427p @217428
+  @217427 @217428
   Scenario Outline: Hide Expression Builder- Admin/PM- Config- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘In’  that field value should display ***** on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
@@ -8786,13 +8684,13 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
       | Users |
-      | Admin |
+#      | Admin |
       | PM    |
 
   @217430 @217431
@@ -8806,8 +8704,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8827,8 +8725,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "300" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8848,8 +8746,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8869,8 +8767,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "300" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "*****" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8890,8 +8788,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "program for grand total enhance table"
-    When I click on "View" icon for "program for grand total enhance table" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" with record name "FirstName LastName" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "100" with record name "Automation PM" in table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8911,8 +8809,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "300" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "*****" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8934,8 +8832,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "500" value column Number Of Personnel inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Examples:
@@ -8955,8 +8853,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8976,8 +8874,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -8997,8 +8895,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9018,8 +8916,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9039,8 +8937,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9060,8 +8958,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9081,8 +8979,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9102,8 +9000,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9123,8 +9021,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
     Then I see "Edit" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9144,8 +9042,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "*****" shown inside enhanced grid table for specified record "Educational Pro"
     Then I see "View" icon inside table id "---program:-:DataTableEnhanceTableIDforContactsTable---"
@@ -9395,13 +9293,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | Grantor State Program | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                                                                | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HidePageBlockOrBlockDetailOrTabForContextInCreateViewDelete | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - All"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I cannot see "Collab" sub tab at view detail page
 
   @206792
@@ -10610,7 +10508,7 @@ Business Need: Expression Builder Component Scenarios
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see "Organization Capacity" page block displayed
 
-  @217539p
+  @217539
   Scenario: Hide Expression Builder- SPI- UI- Verify if we can configure hide expression using Left operand as ‘$ User’ and operator as ‘Equals’ that Page block (from Form) should not display on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField                | filterId         |
@@ -10988,8 +10886,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11004,8 +10902,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11037,12 +10935,12 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
-  @339530
+  @339530p
   Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Context’ and operator as ‘Not In’ that action should display on UI
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11053,8 +10951,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11064,8 +10962,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Table Action Sobject | Hide Expression JSON |                   | CommunicationHistory | Name                      | View                       |
     Given I setup test configuration as below:
-      | configurationCategory     | fieldName            | fieldNewValue                                                                    | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTable | CommunicationHistory | Name                      | View                       |
+      | configurationCategory     | fieldName            | fieldNewValue                                                                        | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action Sobject | Hide Expression JSON | govgrants_config:HideExpressionForFlextableActionConfigContextNotINMessagesTableEdit | CommunicationHistory | Name                      | View                       |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11086,8 +10984,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11102,8 +11000,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11135,8 +11033,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11151,8 +11049,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11184,8 +11082,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11200,8 +11098,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11233,8 +11131,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11249,8 +11147,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11282,8 +11180,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11298,8 +11196,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11331,8 +11229,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11347,8 +11245,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside table id "---program:-:MessageTableIdOnCollabTab---"
 
@@ -11381,8 +11279,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside record subject as "Subject"
 
@@ -11398,8 +11296,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside record subject as "Subject"
 
@@ -11432,8 +11330,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
@@ -11448,8 +11346,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
@@ -11481,8 +11379,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside record subject as "Subject"
 
@@ -11497,8 +11395,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I do not see "View" icon inside record subject as "Subject"
 
@@ -11530,12 +11428,12 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "Admin" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
-  @339570
+  @339570p
   Scenario: Hide Expression Builder- PM- UI- Verify if we configure hide expression for any action using Left operand as ‘Field’ and operator as ‘Not Equals’ that action should display on UI for values in right operand
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName            | fieldOrignalValue | coreComponentField   | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -11546,8 +11444,8 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Collab" sub tab
     Then I see "View" icon inside record subject as "Subject"
 
@@ -11770,8 +11668,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "System Information" page block displayed
 
@@ -11787,8 +11685,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I do not see "System Information" page block displayed
 
@@ -11804,8 +11702,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     Then I see "System Information" page block displayed
 
@@ -11816,7 +11714,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11833,7 +11731,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11855,8 +11753,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -11876,8 +11774,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -11897,8 +11795,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -11914,7 +11812,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                    | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingDUserEquals | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11935,7 +11833,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON |               | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -11961,8 +11859,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -11982,8 +11880,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12003,8 +11901,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I navigate to "Overview" sub tab
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
@@ -12019,7 +11917,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -12040,7 +11938,7 @@ Business Need: Expression Builder Component Scenarios
       | Page Block            | Hide Expression JSON |                   | Recipient ApplicationView | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory        | fieldName            | fieldNewValue                                | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7418                    |
+      | Page Block:Page Block Detail | Hide Expression JSON | govgrants_config:HidePageBlockByUsingUserApp | Recipient ApplicationView | Name                      | PB-7569                    |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -12064,13 +11962,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see "Collab" subtab is present in page details
 
 
@@ -12081,30 +11979,30 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see "Collab" subtab is present in page details
 
-  @201070
+  @201070p
   Scenario: Page Tab-Expression Builder-PM-UI-To verify PM user should  see page tab
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-3330                   |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
-    Then I see "Automation tab test" subtab is present in page details
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    Then I see "Component testing" subtab is present in page details
 
   @201072
   Scenario: Page Tab-Expression Builder-SPI-UI-To verify SPI user should not see page tab
@@ -12112,8 +12010,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Grantor State Program | Name                      | TAB-2852                   |
+      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -12128,8 +12026,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Grantor State Program | Name                      | TAB-2852                   |
+      | configurationCategory               | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -12150,8 +12048,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12170,8 +12068,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12190,8 +12088,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12247,13 +12145,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12272,8 +12170,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12292,8 +12190,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     When I click on "Menu" in the page details
     And I select "Download As PDF" from dropdown
     And I download the file
@@ -12349,13 +12247,13 @@ Business Need: Expression Builder Component Scenarios
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2626                   |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2675                   |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see "Collab" subtab is present in page details
 
   @206752
@@ -12364,8 +12262,8 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Grantor State Program | Name                      | TAB-2852                   |
+      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
@@ -12389,8 +12287,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201616
@@ -12404,10 +12302,10 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
-    Then I do not see step progress bar is displayed
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:ProgramRecordUsedForExpBuilder}" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @201618
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for Steps under ‘Step Progress Bar’  can be configured depending on ‘User type’
@@ -12422,7 +12320,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    Then I do not see step progress bar is displayed
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @201618
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for Steps under ‘Step Progress Bar’  can be configured depending on ‘User type’
@@ -12437,7 +12335,7 @@ Business Need: Expression Builder Component Scenarios
     And I navigate to "Grants" tab
     When I perform quick search for "{Framework_recordUsed:applicationrecordForExpressionBuilder}"
     When I click on "View" icon for "{Framework_recordUsed:applicationrecordForExpressionBuilder}" inside table
-    Then I do not see step progress bar is displayed
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @201619
   Scenario: Hide Expression Builder- Admin- Config- Verify hide expression for Steps under ‘Step Progress Bar’ can be configured depending on ‘Profile’
@@ -12451,8 +12349,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201621
@@ -12466,10 +12364,10 @@ Business Need: Expression Builder Component Scenarios
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
-    And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
-    Then I do not see step progress bar is displayed
+    And I click toggle button to select "Internal Programs - Draft"
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
+    Then I see "Submitted for Approval" is not displayed inside step progress bar
 
   @201624
   Scenario: Hide Expression Builder- SPI- UI- Verify hide expression for Steps under ‘Step Progress Bar’ can be configured depending on ‘Profile’
@@ -12498,8 +12396,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201626
@@ -12514,8 +12412,8 @@ Business Need: Expression Builder Component Scenarios
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
     And I click toggle button to select "Internal Programs - Active"
-    When I perform quick search for "Program for hide expression builder test"
-    When I click on "View" icon for "Program for hide expression builder test" inside table
+    When I perform quick search for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}"
+    When I click on "View" icon for "{Framework_recordUsed:AdminCollabMessageProgramExpressionBuilder}" inside table
     Then I do not see step progress bar is displayed
 
   @201782

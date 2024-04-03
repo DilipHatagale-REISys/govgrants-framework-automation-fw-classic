@@ -122,7 +122,7 @@ public class AttachmentsPage extends GovGrantsManager {
     private boolean isActionButtonDisplaed(String icon, String fileName, String tableName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(By.xpath(" //a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "'] |//*[text()='" + tableName + "']/ancestor::div/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(By.xpath("//a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "'] |//*[text()='" + tableName + "']/ancestor::div/following-sibling::div/descendant::a[text()='" + fileName + "']/ancestor::td/following-sibling::td/a[@title='" + icon + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {

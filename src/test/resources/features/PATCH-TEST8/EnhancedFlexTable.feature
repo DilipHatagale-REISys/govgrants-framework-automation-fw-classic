@@ -8,7 +8,7 @@ Business Need: DataTableEnhanced Component Scenarios
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
       | Flex Grid:Flex Table List | Is Master View | true              | ApiGeneratedId:0 |
-      | Page Tabs Config          | Is Active      | false              | ApiGeneratedId:0 |
+      | Page Tabs Config          | Is Active      | false             | ApiGeneratedId:0 |
     Given I setup test configuration as below:
       | configurationCategory               | fieldName      | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List           | Is Master View | false         | FederalPrograms       | Name                      | FLV-2254                   |
@@ -84,7 +84,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | ADMIN |
       | PM    |
 
- @wip @258163 @258166 @258385 @258386 @258393 @258394 @Toverifywhen'Ismasterview'istruefor'Test2'listviewandpageisrefreshedthenitwilllandon'Test2listview(PM) @vrushali @sprint-19
+  @wip @258163 @258166 @258385 @258386 @258393 @258394 @Toverifywhen'Ismasterview'istruefor'Test2'listviewandpageisrefreshedthenitwilllandon'Test2listview(PM) @vrushali @sprint-19
   Scenario Outline:To verify when 'Is master view' is true for 'Test 2' list view and the page is refreshed then it will land on 'Test 2' list view (PM)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -122,7 +122,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | PM    |
       | ADMIN |
 
- @wip @258164 @258165 @258375 @258381 @258382 @258384 @Toverifywhen'Ismasterview'istruefor'Test1'listviewandpageisrefreshedthenitwilllandon'Test1'listview(PM) @vrushali @sprint-19
+  @wip @258164 @258165 @258375 @258381 @258382 @258384 @Toverifywhen'Ismasterview'istruefor'Test1'listviewandpageisrefreshedthenitwilllandon'Test1'listview(PM) @vrushali @sprint-19
   Scenario Outline:To verify when 'Is master view' is true for 'Test 1' list view and the page is refreshed then it will land on 'Test 1' list view (PM)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -233,7 +233,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | configurationCategory     | fieldName      | fieldNewValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
 
- @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
+  @wip @271916 @Toverifywhenany2istviewsaremarkedastruefor'Ismasterview'gettingerrormessageasonlylistviewcanbemasterview(SPI) @vrushali @sprint-19
   Scenario: To verify when any 2 list views are marked as true for 'Is master view' then getting the error message as only list view can be master view. (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -289,7 +289,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 4" on page "1" of "govgrants" pdf file
 
- @wip  @271926 @271919 @271920 @Toverifywhen'Ismasterview'istruefor'Test3'listviewpageisrefreshedhenitwilllandon'Test3'listview(SPI) @vrushali @Sprint-19
+  @wip  @271926 @271919 @271920 @Toverifywhen'Ismasterview'istruefor'Test3'listviewpageisrefreshedhenitwilllandon'Test3'listview(SPI) @vrushali @Sprint-19
   Scenario: To verify when 'Is master view' is true for 'Test 3' list view and the page is refreshed then it will land on 'Test 3' list view (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -356,7 +356,7 @@ Business Need: DataTableEnhanced Component Scenarios
       | Flex Grid:Flex Table List | Is Master View | true          | FederalPrograms    | Name                      | FLV-2254                   |
     Then I softly see "Test 2" on page "1" of "govgrants" pdf file
 
- @wip @271928 @271924 @271923 @Toverifywhen'Ismasterview'istruefor'Test1'listviewpageisrefreshedthenitwilllandon'Test1'listview(SPI) @Vrushali @Sprint-19
+  @wip @271928 @271924 @271923 @Toverifywhen'Ismasterview'istruefor'Test1'listviewpageisrefreshedthenitwilllandon'Test1'listview(SPI) @Vrushali @Sprint-19
   Scenario: To verify when 'Is master view' is true for 'Test 1' list view and the page is refreshed then it will land on 'Test 1' list view (SPI)
     Given I have "default" configuration as below:
       | configurationCategory     | fieldName      | fieldOrignalValue | filterId         |
@@ -885,14 +885,14 @@ Business Need: DataTableEnhanced Component Scenarios
     And I click toggle button to select "Subawards  - All"
     Then I softly do not see "External Organization" in flex table header "Subawards - Active"
 
-  @194451 @sprint1
+  @194451p @sprint1
   Scenario:  Data Table Enhanced - To verify, Hide  expression builder is working for $user with text  field   with not equal to operator
     Given I have "default" configuration as below:
       | configurationCategory | fieldName      | fieldOrignalValue | filterId         |
       | Flex Table List       | Hide Cell JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName      | fieldNewValue                                               | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table List       | Hide Cell JSON | govgrants_config:HideExpreesionColumnJsonGrantEnhancedTable | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
+      | configurationCategory | fieldName      | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table List       | Hide Cell JSON |               | DataTableEnhanceProgramContacts | Name                      | FTC-12390                  |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1069,11 +1069,11 @@ Business Need: DataTableEnhanced Component Scenarios
   @204736
   Scenario: Name- Admin- Config- Verify Flex table name displayed correctly on UI,
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
-      | Flex Table            | Header    | Contacts | ApiGeneratedId:1 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Contacts          | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Contacts      | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "Admin" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1086,13 +1086,13 @@ Business Need: DataTableEnhanced Component Scenarios
   @204737
   Scenario: Name- PM- UI- Verify Flex table name displayed correctly on UI
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName | fieldOrignalValue             | filterId         |
-      | Flex Table            | Header    | Contacts | ApiGeneratedId:1 |
-      | Flex Table            | Is Active | true                          | ApiGeneratedId:1 |
+      | configurationCategory | fieldName | fieldOrignalValue | filterId         |
+      | Flex Table            | Header    | Contacts          | ApiGeneratedId:1 |
+      | Flex Table            | Is Active | true              | ApiGeneratedId:1 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header    | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Is Active | true                          | DataTableEnhanceProgramContacts | Name                      |                            |
+      | configurationCategory | fieldName | fieldNewValue | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header    | Contacts      | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Is Active | true          | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "PM" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -1202,13 +1202,13 @@ Business Need: DataTableEnhanced Component Scenarios
   @204748 @204749 @204751 @204752
   Scenario Outline: Display Field Name - Admin -Config- Verify if all fields from 'Display field names' are getting displayed under on flex Table,Display Field Name -PM- UI- Verify if all fields from 'Display field names' are getting displayed under on flex Table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName           | fieldOrignalValue             | filterId         |
-      | Flex Table            | Display Field Names | <defaultFieldsApi>            | ApiGeneratedId:1 |
-      | Flex Table            | Header              | Contacts | ApiGeneratedId:2 |
+      | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
+      | Flex Table            | Display Field Names | <defaultFieldsApi> | ApiGeneratedId:1 |
+      | Flex Table            | Header              | Contacts           | ApiGeneratedId:2 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName           | fieldNewValue                 | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table:General    | Header              | Contacts | DataTableEnhanceProgramContacts | Name                      |                            |
-      | Flex Table:General    | Display Field Names | <newFieldsApi>                | DataTableEnhanceProgramContacts | Name                      |                            |
+      | configurationCategory | fieldName           | fieldNewValue  | coreComponentField              | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table:General    | Header              | Contacts       | DataTableEnhanceProgramContacts | Name                      |                            |
+      | Flex Table:General    | Display Field Names | <newFieldsApi> | DataTableEnhanceProgramContacts | Name                      |                            |
     When I login to "As a Grantor" app as "<Users>" user
     And I navigate to "Planning" tab
     When I perform quick search for "Automation Program For Test"
@@ -3250,7 +3250,7 @@ Business Need: DataTableEnhanced Component Scenarios
     When I enter "ProgramCreation_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save and Continue" in the page details
     And I pause execution for "8" seconds
-   When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
+    When I enter "ProgramEdition_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click on "Save" in the page details
     When I navigate to "Overview" sub tab
     And I click on top right button "New" in flex table with id "---program:-:programContactsTableId---"

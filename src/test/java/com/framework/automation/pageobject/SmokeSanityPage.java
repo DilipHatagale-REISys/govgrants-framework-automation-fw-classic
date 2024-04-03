@@ -472,7 +472,7 @@ public class SmokeSanityPage extends GovGrantsManager {
     private boolean tabOnModalDisplayedOrNot(String tabName) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-tab-bar//ul//li[@title='" + tabName + "']"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//lightning-tab-bar//ul//li[@title='" + tabName + "'] | //*[@data-toggle='tab' and @name='" + tabName + "']"))) {
                 flag = true;
             }
         } catch (Exception e) {
@@ -490,5 +490,9 @@ public class SmokeSanityPage extends GovGrantsManager {
             flag = true;
         }
         return flag;
+    }
+
+    public void clickOnActionButtonInFormsRecord(String action, String formname, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//tbody//td//*[@title='" + formname + "']//ancestor::td//following-sibling::td//a[@title='" + action + "']"));
     }
 }

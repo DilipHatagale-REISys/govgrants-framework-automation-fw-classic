@@ -868,7 +868,7 @@ pageLayoutPage.assertUpOrDownArrowDisplayedOrNotDisplayed(usage,arrow,columnName
 
     @And("I upload attachment {string} in attachment modal")
     public void iUploadAttachmentInAttachmentModal(String attachmentName) {
-        By attachmentChooseFilePath = By.xpath("//div[@class='panel panel-default ng-scope']/div/div//button[contains(@title,'Attachments')]//*[text()='Add']");
+        By attachmentChooseFilePath = By.xpath("//input[@class='spacer'] | //div[@class='panel panel-default ng-scope']/div/div//button[contains(@title,'Attachments')]//*[text()='Add']");
         String defaultFilePath = System.getProperty("user.dir") + "/src/main/resources/";
         I.amPerforming().textInput().in(attachmentChooseFilePath, defaultFilePath + attachmentName);
     }

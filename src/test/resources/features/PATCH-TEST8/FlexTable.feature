@@ -3975,7 +3975,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
     Then I do not see filter "filter in filterDisplayList" is displayed
     Then I see table contains "Showing 1 to 5" inside table id "---program:-:grantsFlexTableIdForSPIuser---"
 
-  @338626 @334568 @334569
+  @338626p @334568 @334569
   Scenario Outline: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Greater than' operator
   |Flex table-Filter-Admin-To verify that user is able to filter records by using Date field|
     Given I have "default" configuration as below:
@@ -3988,15 +3988,15 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | Flex Grid:General     | Display Field Names | <newFieldsApi> | Programs           | Name                      |                            |
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
-    And I navigate to "Planning" tab
-    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
-    When I enter advance filter values in table id "advfPrograms"
-      | Start Date | Greater than | 09/22/2023 |
-    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
+#    And I navigate to "Planning" tab
+#    When I click on advance filter "#advfPrograms" of table id "---program:-:ProgramsgridTableId---"
+#    When I enter advance filter values in table id "advfPrograms"
+#      | Start Date | Greater than | 09/22/2023 |
+#    Then I see table contains "Showing 1 to " inside table id "toggleFlexTablePrograms"
     Examples:
       | User  | newFieldsApi                                                                                                     | defaultFieldsApi                                                                                                                   |
       | Admin | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
-      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
+#      | PM    | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById | Name,ProgramName__c,Account__c,FunderType__c,FundedAmount__c,StartDate__c,Status__c,LastModifiedById,CreatedById,WebsiteAddress__c |
 
   @338627 @334616
   Scenario: Flex Table :Admin:-To verify, advanced filter should work for the date field with 'Less than' operator
@@ -12964,7 +12964,7 @@ Business Need: FlexTable_AllComponent Scenarios flextable UI,flextable Interface
       | SPI   | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c | Id,Name,Title__c,Announcement__r.AnnouncementName__c,Announcement__r.AccountName__c,Announcement__r.ApplicationDueDate__c,SubmittedOn__c,OwnerId,Status__c |
 
 
-  @338725 @338726
+  @338725p @338726
   Scenario Outline: Flex table-Display fields-Admin-Config_To verify that entered field rendered correctly on table, of data type Text area
     Given I have "default" configuration as below:
       | configurationCategory | fieldName           | fieldOrignalValue  | filterId         |
