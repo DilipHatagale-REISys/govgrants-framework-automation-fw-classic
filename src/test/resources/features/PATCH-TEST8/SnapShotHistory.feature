@@ -784,7 +784,7 @@ Business Need: Snapshot Config Component Scenarios
     And I navigate to "Announcements" tab
     And I click on top right button "New" in flex table with id "---program:-:allAnnouncementTableId---"
     And I enter "QA_OrgAnnCreation" values from "Program_Field_Values_PATCH.xlsx"
-    And I enter value "{SavedValue:Program}" into field "fieldProgram__c"
+    And I enter value "Active Internal Program For Announcement Record" into field "fieldProgram__c"
     And I click modal button "Continue"
     When I enter "NewOrg2ndModal_v" values from "Program_Field_Values_PATCH.xlsx"
     And I click modal button "Save and Continue"
@@ -826,7 +826,7 @@ Business Need: Snapshot Config Component Scenarios
     And I click on "Start" icon for "{SavedValue:ANNEGMSID}" inside flex table with id "---program:-:HomePendingTasksTableId---"
     When I "Approve" in the approval decision
     #3rd Approval process for announcement
-    When I re-login to "As a Grantor" app as "PM1" user on "PATCH" portal
+    When I re-login to "As a Grantor" app as "ADMIN" user on "PATCH" portal
     And I navigate to "Home" tab
     And I navigate to "Pending Tasks" content inside "My Tasks" subheader on left panel
     When I perform quick search for "{SavedValue:ANNEGMSID}" in "---program:-:HomePendingTasksTableId---" panel
