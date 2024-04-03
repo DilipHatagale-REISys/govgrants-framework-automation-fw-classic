@@ -900,7 +900,7 @@ Business Need: Expression Builder Component Scenarios
     When I navigate to "Overview" sub tab
     Then I see "Associate" button inside "Contacts" flex table
 
-  @43890p    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
+  @43890pp    @hideExpressioJsonForLeftOperandForProfilePMAtPageLayout-gPlanning
   Scenario: Hide Submit for approval button for Profile PM using hide expression Json -gPlanning
     Given I have "default" configuration as below:
       | configurationCategory | fieldName            | fieldOrignalValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
@@ -7755,11 +7755,11 @@ Business Need: Expression Builder Component Scenarios
   @118109  @verifyActionColumnIsHiddenWhenAllThreeActionsAreHiddenUsingDateTimeAtEGridParentTable @enhancedGrid @egrid
   Scenario: Verify action column is hidden if all three row level actions are hidden using date time field value at enhanced grid parent table
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | filterId         |
-      | Flex Table Action     | Hide Expression JSON       |                   | ApiGeneratedId:0 |
+      | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
+      | Flex Table Action     | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Hide Expression JSON       | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
+      | configurationCategory | fieldName            | fieldNewValue                                                                          | coreComponentField         | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Hide Expression JSON | govgrants_config:HideExpressionUsingFieldsAtEditActionToHideActionColumnAtEnhancedGrid | ProgramReviewStepTemplates | Name                      | Edit                       |
     When I login to "As a Grantor" app as "ADMIN" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -12010,7 +12010,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue                              | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingDuserEquals | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12026,7 +12026,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON |               | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
@@ -12262,7 +12262,7 @@ Business Need: Expression Builder Component Scenarios
       | configurationCategory | fieldName            | fieldOrignalValue | filterId         |
       | Page Tabs Config      | Hide Expression JSON |                   | ApiGeneratedId:0 |
     Given I setup test configuration as below:
-      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField    | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | configurationCategory               | fieldName            | fieldNewValue                          | coreComponentField        | coreCOmponentSubFieldName | coreComponentSubFieldValue |
       | Page Tabs Config:Page Layout Action | Hide Expression JSON | govgrants_config:HideTabByUsingUserApp | Recipient ApplicationView | Name                      | TAB-2730                   |
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user

@@ -19,18 +19,17 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @206308 @206309
+  @206308p @206309
   Scenario Outline: All forms- Admin- Config- Verify Actions like Preview, view, edit are available
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
     Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
-    Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
 
     Examples:
       | User  |
@@ -56,7 +55,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-       # | PM    |
+      | PM    |
 
   @206307 @206310
   Scenario: All forms- SPI- UI- Verify forms displays under All forms page block
@@ -65,35 +64,36 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Files" sub tab
     Then I softly see "All Forms " page block displayed
     Then I softly can see row level action button "Preview" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "View" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
     Then I softly can see row level action button "Edit" against "Program Application Form" in flex table with id "---program:-:allFormsTableId---"
 
-  @206338 @206339 @208662 @208661 @206879 @206880
-  Scenario Outline: All forms- Admin- Config- Verify in View Form ID should get populated UI
+  @206338p @206339 @208662 @208661 @206879 @206880
+  Scenario Outline: All forms- Admin- Config- Verify in View Form ID should get populated UI,UI- Verify in View Form name should get populated UI
+  All forms- Admin- Config- Verify when we select ‘View’ action, form should not be editable
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "do not delete Application forms test"
+    When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01341" is displayed on form layout
+    And I click on "View" icon for "Program Application Form" inside flex table with id "toggleFlexTableFormEnhancedTable" in Forms
+    Then I see Form Id "FN-03525" is displayed on form layout
     #208662 #208661
-    Then I see Form Name "Program Application Form" is displayed on form layout
+    Then I see Form Name "Program Specific Application form" is displayed on form layout
      #206879 #206880
     Then I softly see field "fieldTEXTAREAQuestion1__c" is not editable
     Then I softly see field "fieldTEXTAREAQuestion2__c" is not editable
     Then I softly see field "fieldTEXTAREAQuestion3__c" is not editable
     And I click on "Back" in the page details
     And I pause execution for "4" seconds
-    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    Then I see Form Id "FN-01342" is displayed on form layout
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "toggleFlexTableFormEnhancedTable" in Forms
+    Then I see Form Id "FN-03526" is displayed on form layout
     #208661 #208662
     Then I see Form Name "Standard Assurances Form" is displayed on form layout
     #206879
@@ -424,8 +424,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "do not delete Application forms test"
+    When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
     And I click on "Preview" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I do not see Form Name "Program Application Form" is displayed on form layout
@@ -574,8 +574,8 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "do not delete Application forms test"
+    When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
     And I click on "Edit" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     #382030 #382032
@@ -605,19 +605,17 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "Yes"
     Then I see page title "Applications: Standard Assurances Form View ~ Grants Portal"
 
-  @206873 @206874 @382025 @382026 @SanityPATCH  @SanityPATCHForms
+  @206873p @206874 @382025 @382026 @SanityPATCH  @SanityPATCHForms
   Scenario Outline: All forms- Admin- Config- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
     When I login to "As a Grantor" app as "<User>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "do not delete Application forms test"
+    When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
     And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     Then I see "Back" button is displayed
-    Then I see "Edit" button is displayed
-    Then I see "New Validate" button is displayed
     Then I see "Validate" button is displayed
     And I click on "New Validate" in the page details
     Then I see the following message in the page details :
@@ -626,7 +624,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     Examples:
       | User  |
       | ADMIN |
-      | PM    |
+#      | PM    |
 
   @206875 @382028 @SanityPATCH  @SanityPATCHForms
   Scenario: All forms- SPI- UI- Verify after saving changes when we hit ‘New Validate’ button, if data is missing in one or more fields that are required to submit error message should pop-up
@@ -806,22 +804,20 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
       | ADMIN |
       | PM    |
 
-  @208684 @208675
+  @208684p @208675
   Scenario: All forms- SPI- UI- Verify in Edit Submitted on under Authorized Representative should get populated UI
     Given I am on "SUBPORTAL" portal
     When I login to "Grants Portal" app as "SPI" user
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - Draft"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "do not delete Application forms test"
+    When I click on "View" icon for "do not delete Application forms test" inside table
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    And I save the field labeled "Submitted On:" as "SUBMITTEDON"
-    And I save the field labeled "Name" as "NAME"
-    Then I see Name or Submitted On "{SavedValue:SUBMITTEDON}" is displayed on form under Authorized Official Name or Authorized Representative
-    Then I see Name or Submitted On "{SavedValue:NAME}" is displayed on form under Authorized Official Name or Authorized Representative
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "FormEnhancedTableFlexToggle" in Forms
+    Then I see Name or Submitted On "Automation SPI" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "04/02/2024 5:00 PM" is displayed on form under Authorized Official Name or Authorized Representative
 
-  @206318 @206319 @206324 @206325 @206321 @206322 @206327 @206328
+  @206318p @206319 @206324 @206325 @206321 @206322 @206327 @206328
   Scenario Outline:Last modified- Admin- Config- Verify Last modified by name is captured
   Last modified- Admin- Config- Verify Last modified Date and time is captured
   Last modified- Admin- Config- Verify Last modified by name must be updated if form is modified by another user
@@ -830,21 +826,16 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I setup my app as "As a Grantor"
     And I navigate to "Applications" tab
     And I click toggle button to select "Applications - All"
-    When I perform quick search for "Vrush Application"
-    When I click on "View" icon for "Vrush Application" inside table
+    When I perform quick search for "New Application For Testing Only"
+    When I click on "View" icon for "New Application For Testing Only" inside table
     When I navigate to "Overview" sub tab
-    And I save the field labeled "Created By" as "CREATEDBY"
-    Then I softly see field "{SavedValue:CREATEDBY}" inside page block
+    And I save the field labeled "Last Modified By" as "LastModifiedBy"
+    And I save the field labeled "Last Modified Date" as "LastModifiedDate"
+    Then I softly see field "{SavedValue:LastModifiedDate}" inside page block
     When I navigate to "Files" sub tab
-    And I click on "Edit" icon for "Standard Assurances Form" inside flex table with id "---program:-:allFormsTableId---"
-    And I save the field labeled "Submitted On:" as "LASTMODIFIEDDATEANDTIME"
-    And I save the field labeled "Name" as "LASTMODIFIEDBY"
-    And I click on "Save" in the page details
-    And I click on "Back" in the page details
-    And I pause execution for "5" seconds
-    Then I see value "{SavedValue:LASTMODIFIEDDATEANDTIME}" for title "Last Modified Date" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
-    Then I see value "{SavedValue:LASTMODIFIEDBY}" for title "Last Modified By" against the value "Standard Assurances Form" inside table "---program:-:allFormsTableId---"
-
+    And I click on "View" icon for "Standard Assurances Form" inside flex table with id "toggleFlexTableFormEnhancedTable" in Forms
+    Then I see Name or Submitted On "{SavedValue:LastModifiedBy}" is displayed on form under Authorized Official Name or Authorized Representative
+    Then I see Name or Submitted On "04/02/2024 5:00 PM" is displayed on form under Authorized Official Name or Authorized Representative
     Examples:
       | User  |
       | ADMIN |

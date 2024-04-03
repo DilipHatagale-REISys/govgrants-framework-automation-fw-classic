@@ -306,7 +306,7 @@ public class FormPage extends GovGrantsManager {
     private boolean isFormNameandSubmittedOn(String name) {
         boolean flag = false;
         try {
-            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='textFieldWrapFlex']//dd//span[(contains(text(),'" + name + "'))]"))) {
+            if (I.amPerforming().checkToSee().isDisplayed(ByUsing.xpath("//div[@class='textFieldWrapFlex']//dd//span[(contains(text(),'" + name + "'))] | //div[@class='textFieldWrapFlex']//dd//input[(contains(@value,'" + name + "'))]"))) {
                 flag = true;
             }
         } catch (org.openqa.selenium.NoSuchElementException e) {

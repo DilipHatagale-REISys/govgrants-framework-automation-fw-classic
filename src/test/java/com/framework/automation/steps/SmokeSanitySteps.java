@@ -173,4 +173,9 @@ public class SmokeSanitySteps {
     public void iSeeInsideRowOfEnhanceGridId(String rowGrouping, String tableId) {
         smokeSanityPage.assertRowGroupingDisplayed(rowGrouping,tableId);
     }
+
+    @And("I click on \"([^\"]*)\" icon for \"([^\"]*)\" inside flex table with id \"([^\"]*)\" in Forms$")
+    public void iClickOnIconForInsideFlexTableWithIdInForms(String action, String formname, String tableId) {
+        smokeSanityPage.clickOnActionButtonInFormsRecord(action,formname,tableId);
+    }
 }
