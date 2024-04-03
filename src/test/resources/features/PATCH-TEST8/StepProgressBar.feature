@@ -331,7 +331,7 @@ Business Need: Step Progress Bar Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @201813 @201814 @382714 @382716 @382832 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario Outline: IsCreated- Admin- Config- Verify Admin can configure ‘IsCreated’ support for the step progress bar and  can view the last updated date, time and user name
@@ -403,7 +403,7 @@ Business Need: Step Progress Bar Component Scenarios
     Examples:
       | User  |
       | ADMIN |
-    #  | PM    |
+      | PM    |
 
   @201459 @382795 @382799 @SanityPATCH  @SanityPATCHStepProgressBar
   Scenario: Steps- SPI- UI- Verify all steps displaying in correct sequence under ‘Step Progress bar’ on UI
@@ -566,7 +566,7 @@ Business Need: Step Progress Bar Component Scenarios
     Examples:
       | User  | defaultuser                  |
       | ADMIN | External; Internal; Reviewer |
-#      | PM    | External; Internal; Reviewer |
+      | PM    | External; Internal; Reviewer |
 
   @201442 @201443
   Scenario Outline: Steps- Admin- Config- Verify all steps having same ‘Step Progress bar Header’ are getting displayed on UI
@@ -578,7 +578,7 @@ Business Need: Step Progress Bar Component Scenarios
     Then I see step progress bar is displayed
     Examples:
       | User |
-#      | ADMIN |
+      | ADMIN |
       | PM   |
 
   @382819 @382821 @SanityPATCH  @SanityPATCHStepProgressBar

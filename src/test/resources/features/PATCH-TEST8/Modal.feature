@@ -8,21 +8,17 @@ Business Need: Modal Component Scenarios
   Action- Admin- Config- Verify ‘Modal title’ is displaying correctly,
   Action- PM- UI - Verify ‘Modal title’ is displaying correctly
     Given I have "default" configuration as below:
-      | configurationCategory | fieldName                  | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay   | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program    | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000              | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top               | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button            | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName       | fieldOrignalValue | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal             | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | Open in overlay   | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title     | Create Program    | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width     | 1000              | Programs           | Name                      | New                        |
     Given I setup test configuration as below:
-      | configurationCategory | fieldName                  | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
-      | Flex Table Action     | Where To Open ?            | Modal           | Programs           | Name                      | New                        |
-      | Flex Table Action     | Action Behavior            | Open in overlay | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Title                | Create Program  | Programs           | Name                      | New                        |
-      | Flex Table Action     | Modal Width                | 1000            | Programs           | Name                      | New                        |
-      | Flex Table Action     | Location                   | Top             | Programs           | Name                      | New                        |
-      | Flex Table Action     | Header Action Display Type | Button          | Programs           | Name                      | New                        |
+      | configurationCategory | fieldName       | fieldNewValue   | coreComponentField | coreCOmponentSubFieldName | coreComponentSubFieldValue |
+      | Flex Table Action     | Where To Open ? | Modal           | Programs           | Name                      | New                        |
+      | Flex Table Action     | Action Behavior | Open in overlay | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Title     | Create Program  | Programs           | Name                      | New                        |
+      | Flex Table Action     | Modal Width     | 1000            | Programs           | Name                      | New                        |
     When I login to "As a Grantor" app as "<Users>" user
     When I setup my app as "As a Grantor"
     And I navigate to "Planning" tab
@@ -31,7 +27,7 @@ Business Need: Modal Component Scenarios
     Then I see "Create Program" opens in overLay window
     Examples:
       | Users |
-#      | Admin |
+      | Admin |
       | PM    |
 
   @201273p @382224 @382251 @382269 @SanityPATCH  @SanityPATCHModal

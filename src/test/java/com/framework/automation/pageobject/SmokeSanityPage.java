@@ -491,4 +491,8 @@ public class SmokeSanityPage extends GovGrantsManager {
         }
         return flag;
     }
+
+    public void clickOnActionButtonInFormsRecord(String action, String formname, String tableId) {
+        I.amPerforming().click().on(ByUsing.xpath("//div[@id='" + tableId + "']//tbody//td//*[@title='" + formname + "']//ancestor::td//following-sibling::td//a[@title='" + action + "']"));
+    }
 }
