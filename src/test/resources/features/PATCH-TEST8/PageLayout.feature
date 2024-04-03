@@ -11146,7 +11146,7 @@ Business Need: Page Layout Component Scenarios
     Then I softly see field "Published Date" inside page block
     Then I softly see field "TestPicklist" inside page block
     Then I softly see field "Project Goals" inside page block
-    Then I softly see field "Program Type" inside page block
+    Then I softly see field "Type" inside page block
     Then I softly see field "Primary Funder Type" inside page block
     Examples:
       | User  |
