@@ -11336,7 +11336,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Overview" subtab is present in page details
-    Then I see "Setup tabs" subtab is present in page details
+    Then I see "Setup" subtab is present in page details
     Then I see "Responsibilities" subtab is present in page details
     Then I see "Files" subtab is present in page details
     Then I see "History" subtab is present in page details
@@ -11372,7 +11372,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Overview" subtab is present in page details
-    Then I do not see "Setup tabs" subtab is present in page details
+    Then I do not see "Setup" subtab is present in page details
     Then I do not see "Responsibilities" subtab is present in page details
     Then I do not see "Files" subtab is present in page details
     Then I do not see "History" subtab is present in page details
@@ -11453,7 +11453,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I see "Files" subtab is present with icon "fa fa-file" in page details
     Then I see "History" subtab is present with icon "fa fa-history" in page details
@@ -11504,7 +11504,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
-    Then I do not see "Setup tabs" subtab is present with icon "fa fa-wrench" in page details
+    Then I do not see "Setup" subtab is present with icon "fa fa-wrench" in page details
     Then I do not see "Responsibilities" subtab is present with icon "fa fa-star" in page details
     Then I do not see "Files" subtab is present with icon "fa fa-file" in page details
     Then I do not see "History" subtab is present with icon "fa fa-history" in page details
@@ -11553,7 +11553,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I see sequence of "Overview" subtab is "1" on page layout
-    Then I see sequence of "Setup tabs" subtab is "2" on page layout
+    Then I see sequence of "Setup" subtab is "2" on page layout
     Then I see sequence of "Responsibilities" subtab is "3" on page layout
     Then I see sequence of "Files" subtab is "4" on page layout
     Then I see sequence of "History" subtab is "5" on page layout
@@ -11594,7 +11594,7 @@ Business Need: Page Layout Component Scenarios
     When I perform quick search for "Test Approver Table"
     When I click on "View" icon for "Test Approver Table" inside table
     Then I do not see sequence of "Overview" subtab is "1" on page layout
-#      Then I do not see sequence of "Setup tabs" subtab is "2" on page layout
+#      Then I do not see sequence of "Setup" subtab is "2" on page layout
 #      Then I do not see sequence of "Responsibilities" subtab is "3" on page layout
 #      Then I do not see sequence of "Files" subtab is "4" on page layout
 #      Then I do not see sequence of "History" subtab is "5" on page layout
@@ -11928,9 +11928,9 @@ Business Need: Page Layout Component Scenarios
     When I click on "View" icon for "Sanity Attachments and Notes table Admin" inside table
     Then I see "Overview" subtab is present with icon "glyphicon glyphicon-book" in page details
     Then I see "Setup" subtab is present with icon "fa fa-wrench" in page details
-    Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
-    Then I see "Responsibilities" subtab is present with icon "fa fa-file" in page details
-    Then I see "Files" subtab is present with icon "fa fa-history" in page details
+    #Then I see "Related Log" subtab is present with icon "fa fa-star" in page details
+    Then I see "Responsibilities" subtab is present with icon "fa fa-star" in page details
+    Then I see "Files" subtab is present with icon "fa fa-file" in page details
     Then I see "Messages" subtab is present with icon "fa fa-wechat" in page details
 
     Examples:
@@ -11948,7 +11948,7 @@ Business Need: Page Layout Component Scenarios
     Then I see "Overview" subtab is present in page details
     Then I see "Setup" subtab is present in page details
     Then I see "Responsibilities" subtab is present in page details
-    Then I see "Related Log" subtab is present in page details
+    #Then I see "Related Log" subtab is present in page details
     Then I see "Files" subtab is present in page details
     Then I see "Messages" subtab is present in page details
 

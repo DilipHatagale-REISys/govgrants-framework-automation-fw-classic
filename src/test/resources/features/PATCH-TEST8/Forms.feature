@@ -315,7 +315,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I click alert button "OK"
     Then I softly see dropdown with selected value as "Standard Assurances Form" at form layout
 
-  @206854 @206855 @206862 @206861 @382014 @382015 @SanityPATCH  @SanityPATCHForms
+  @206854p @206855 @206862 @206861 @382014 @382015 @SanityPATCH  @SanityPATCHForms
   Scenario Outline: All forms- Admin- Config- Verify when we hit ‘Save’ button success message should pop-up
   All forms- PM- UI- Verify when we select Edit action, form should be open in edit mode
     When I login to "As a Grantor" app as "<User>" user
