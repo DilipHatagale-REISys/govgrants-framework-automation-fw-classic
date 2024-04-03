@@ -1233,7 +1233,7 @@ Business Need: Forms Scenarios flextable UI,Forms Interface
     When I perform quick search for "Vrush Application"
     When I click on "View" icon for "Vrush Application" inside table
     When I navigate to "Files" sub tab
-    And I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
+    When I click on "View" icon for "Program Application Form" inside flex table with id "---program:-:allFormsTableId---"
     And I click on "Validate" in the page details
     Then I see the following message in the page details :
       | Form validated successfully. |
